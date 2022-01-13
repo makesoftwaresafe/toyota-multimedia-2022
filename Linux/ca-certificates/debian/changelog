@@ -1,0 +1,1028 @@
+ca-certificates (20160104) unstable; urgency=medium
+
+  * debian/rules:
+    Sort certificate list for reproducible builds.  Closes: #808711
+  * mozilla/certdata2pem.py:
+    Drop old CK*_NETSCAPE trust flag checks
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 04 Jan 2016 11:08:26 -0600
+
+ca-certificates (20151214) unstable; urgency=medium
+
+  * Removed SPI CA.  Closes: #796208
+  * debian/{compat,control}:
+    Updated d/compat to version 9 and updated Build-Depends.
+  * debian/postinst:
+    Handle /usr/local/share/ca-certificates permissions and ownership on
+    upgrade.  Closes: #611501
+  * mozilla/certdata2pem.py:
+    Add Python 3 support to ca-certificates.
+    Thanks to Andrew Wilcox and Richard Ipsum for the patch!  Closes: #789753
+  * sbin/update-ca-certificates:
+    Update local certificates directory when calling --fresh.
+    Thanks for the patch, Daniel Lutz!  Closes: #783615
+  * mozilla/{certdata.txt,nssckbi.h}:
+    Update Mozilla certificate authority bundle to version 2.6.
+    The following certificate authorities were added (+):
+    + "CA WoSign ECC Root"
+    + "Certification Authority of WoSign G2"
+    + "Certinomis - Root CA"
+    + "OISTE WISeKey Global Root GB CA"
+    + "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı H5"
+    + "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı H6"
+    The following certificate authorities were removed (-):
+    - "A-Trust-nQual-03"
+    - "Buypass Class 3 CA 1"
+    - "ComSign Secured CA"
+    - "Digital Signature Trust Co. Global CA 1"
+    - "Digital Signature Trust Co. Global CA 3"
+    - "SG TRUST SERVICES RACINE"
+    - "TC TrustCenter Class 2 CA II"
+    - "TC TrustCenter Universal CA I"
+    - "TURKTRUST Certificate Services Provider Root 1"
+    - "TURKTRUST Certificate Services Provider Root 2"
+    - "UTN DATACorp SGC Root CA"
+    - "Verisign Class 4 Public Primary Certification Authority - G3"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 14 Dec 2015 18:51:50 -0600
+
+ca-certificates (20150426) unstable; urgency=medium
+
+  * debian/postinst:
+    Set mode and group of /usr/local/share/ca-certificates based on current
+    /usr/local permissions and ownership.  Closes: #611501
+  * sbin/update-ca-certificates:
+    Allow customisation of the paths used by update-ca-certificates.
+    Add an option to set the certs in a directory to the defaults.
+    Thanks for the patches, Paul Wise.  Closes: #774059, #774201
+    Fix shellcheck warnings and a little indentation.
+  * sbin/update-ca-certificates.8:
+    Correct concatenated file name in man page from certificates.crt to
+    ca-certificates.crt.  Closes: #782230
+  * mozilla/{certdata.txt,nssckbi.h}:
+    Update Mozilla certificate authority bundle to version 2.4.
+    The following certificate authorities were added (+):
+    + "CFCA EV ROOT"
+    + "COMODO RSA Certification Authority"
+    + "Entrust Root Certification Authority - EC1"
+    + "Entrust Root Certification Authority - G2"
+    + "GlobalSign ECC Root CA - R4"
+    + "GlobalSign ECC Root CA - R5"
+    + "IdenTrust Commercial Root CA 1"
+    + "IdenTrust Public Sector Root CA 1"
+    + "S-TRUST Universal Root CA"
+    + "Staat der Nederlanden EV Root CA"
+    + "Staat der Nederlanden Root CA - G3"
+    + "USERTrust ECC Certification Authority"
+    + "USERTrust RSA Certification Authority"  Closes: #762709
+    The following certificate authorities were removed (-):
+    - "America Online Root Certification Authority 1"
+    - "America Online Root Certification Authority 2"
+    - "E-Guven Kok Elektronik Sertifika Hizmet Saglayicisi"
+    - "GTE CyberTrust Global Root"
+    - "Thawte Premium Server CA"
+    - "Thawte Server CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 26 Apr 2015 10:37:48 -0500
+
+ca-certificates (20141019) unstable; urgency=medium
+
+  * debian/copyright:
+    Add coverage for all files reported by lintian
+    file-without-copyright-information warning.
+  * debian/source/lintian-overrides:
+    Add file-without-copyright-information override for SPI certificate file.
+  * sbin/update-ca-certificates:
+    Restore SELinux label after generating ca-certificates.crt file.
+    Thanks to Laurent Bigonville for the patch.  Closes: #742957
+    Tidy indentation whitespace.
+    Thanks to Antonio Terceiro for the patch.  Closes: #742663
+  * debian/control:
+    Update to Standards-Version: 3.9.6 (no other changes needed).
+    Update Vcs-Browser link to cgit URL.
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 19 Oct 2014 10:36:49 -0500
+
+ca-certificates (20140927) unstable; urgency=medium
+
+  * Update Mozilla certificate authority bundle to version 2.1.
+    The following certificate authorities were added (+):
+    + "DigiCert Assured ID Root G2"
+    + "DigiCert Assured ID Root G3"
+    + "DigiCert Global Root G2"
+    + "DigiCert Global Root G3"
+    + "DigiCert Trusted Root G4"
+    + "QuoVadis Root CA 1 G3"
+    + "QuoVadis Root CA 2 G3"
+    + "QuoVadis Root CA 3 G3"
+    + "WoSign"
+    + "WoSign China"
+    The following certificate authorities were removed (-):
+    - "Entrust.net Secure Server CA"
+    - "RSA Root Certificate 1"
+    - "TDC Internet Root CA"
+    - "ValiCert Class 1 VA"
+    - "ValiCert Class 2 VA"
+  * Include clear list of CAs added/removed, as above, and include better note
+    in README.Debian for trust reconfiguration.  Closes: #743365
+  * Remove debian/config in debian/rules clean target.
+  * Include d/{changelog,NEWS} entries in 20140223 for duplicate CKA_LABEL
+    rename of "StartCom Certification Authority"_2.
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sat, 27 Sep 2014 15:14:00 -0500
+
+ca-certificates (20140325) unstable; urgency=medium
+
+  * Update mozilla/certdata.txt to version 1.97+revert_of_936304
+    Mozilla reverted the removal of 1024-bit root certificates for
+    Entrust.net, GTE CyberTrust, and ValiCert (RSA), but did not update the
+    version number in nssckbi.h.
+    Certificates added (+) (none removed):
+    + "Entrust.net Secure Server CA"
+    + "GTE CyberTrust Global Root"
+    + "RSA Root Certificate 1"
+    + "ValiCert Class 1 VA"
+    + "ValiCert Class 2 VA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Tue, 25 Mar 2014 13:28:19 -0500
+
+ca-certificates (20140223) unstable; urgency=medium
+
+  * No longer ship cacert.org certificates.  Closes: #718434, LP: #1258286
+  * Fix certdata2pem.py for multiple CAs using the same CKA_LABEL.  Thanks
+    to Marc Deslauriers for the patch.  Closes: #683403, LP: #1031333
+  * Sort local CA certificates on update-ca-certificates runs.  Thanks to
+    Vaclav Ovsik for the suggestion and patch.  Closes: #727136
+  * Add trailing newline to certificate, if it is missing.  Closes: #635570
+  * Update mozilla/certdata.txt to version 1.97.
+    Certificates added (+), removed (-), and renamed (~):
+    + "ACCVRAIZ1"
+    + "Atos TrustedRoot 2011"
+    + "E-Tugra Certification Authority"
+    + "SG TRUST SERVICES RACINE"
+    + "StartCom Certification Authority"
+    ~ "StartCom Certification Authority"_2
+      (both StartCom CAs now included with duplicate CKA_LABEL fix)
+    + "T-TeleSec GlobalRoot Class 2"
+    + "TWCA Global Root CA"
+    + "TeliaSonera Root CA v1"
+    + "Verisign Class 3 Public Primary Certification Authority"
+    ~ "Verisign Class 3 Public Primary Certification Authority"_2
+      (both Verisign Class 3 CAs now included with duplicate CKA_LABEL fix)
+    - "Entrust.net Secure Server CA"
+    - "Firmaprofesional Root CA"
+    - "GTE CyberTrust Global Root"
+    - "RSA Root Certificate 1"
+    - "TDC OCES Root CA"
+    - "ValiCert Class 1 VA"
+    - "ValiCert Class 2 VA"
+    - "Wells Fargo Root CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 23 Feb 2014 23:22:29 -0600
+
+ca-certificates (20130906) unstable; urgency=low
+
+  * Add ca-certificates-local source package example to documentation
+  * Update local certificate handling in README.Debian.
+    Closes: #718173, LP: #487845
+  * Update CA inclusion policy for ca-certificates in README.Debian. With
+    the exception of SPI and CAcert, only those CAs included in Mozilla's
+    trust store will be included in ca-certificates in Debian.
+    Closes: #647848, LP: #103074
+  * Clarify that not all software that uses SSL uses ca-certificates in
+    README.Debian.  Closes: #664769
+  * Add mozilla/nssckbi.h to source, since certdata.txt no longer contains
+    a version number.
+  * Update debian/copyright to "Copyright: Mozilla Contributors" for
+    mozilla/{certdata.txt,nssckbi.h}.
+  * Update mozilla/certdata.txt to version 1.94
+    Certificates added (+) and removed (-):
+    + "CA Disig Root R1"
+    + "CA Disig Root R2"
+    + "China Internet Network Information Center EV Certificates Root"
+    + "D-TRUST Root Class 3 CA 2 2009"
+    + "D-TRUST Root Class 3 CA 2 EV 2009"
+    + "PSCProcert"
+    + "Swisscom Root CA 2"
+    + "Swisscom Root EV CA 2"
+    + "TURKTRUST Certificate Services Provider Root 2007"
+    - "Equifax Secure eBusiness CA 2"
+    - "TC TrustCenter Universal CA III"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Fri, 06 Sep 2013 11:31:06 -0500
+
+ca-certificates (20130610) unstable; urgency=low
+
+  [ Michael Shuler ]
+  * Install CAcert root and class3 certificates individually, no longer
+    installing the concatenation of the two. The individual certificates
+    are installed as cacert.org_root.crt and cacert.org_class3.crt for ease
+    of identification. Additionally, this allows openssl maintainers to drop
+    a problematic patch to c_rehash for handling multi-certificate files.
+    (see #642314)  Closes: #692323
+  * Update Vcs-* fields for lintian vcs-field-not-canonical
+  * Update to machine-readable debian/copyright file v1.0
+
+  [ Thijs Kinkhorst ]
+  * Drop upgrading code for upgrades from Debian Etch and earlier. 
+  * Remove obsolete debconf.org CA certificate. DebConf now uses an
+    intermediate certificate signed by SPI. (Closes: #693405)
+  * Remove obsolete SPI CA certiticate.
+  * Update Standards-Version: 3.9.4 (no changes needed)
+  * Clean up man page (LP: #850997).
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Mon, 10 Jun 2013 19:52:15 +0200
+
+ca-certificates (20130119) unstable; urgency=low
+
+  * Update mozilla/certdata.txt to version 1.87  Closes: #697366
+    Certificates removed (-) (none added):
+    - "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı"
+  * Remove unneeded and confusing usage of interest-noawait; remove unneeded
+    Pre-Depends on dpkg. Thanks to Guillem Jover for the help and patch.
+    Closes: #537051
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sat, 19 Jan 2013 14:02:09 -0600
+
+ca-certificates (20121114) unstable; urgency=low
+
+  [ Don Armstrong ]
+  * Breaks ca-certificates-java (<<20121112+nmu1); partially fixing #537051.
+  * Provide update-ca-certificates and update-ca-certificates-fresh
+    triggers.
+  * Call the triggers using no-await so that the configuration files from
+    the newer version of ca-certificates-java are in places before the
+    upgrade. Closes: #537051.
+
+  [ Michael Shuler ]
+  * Add note to previous mozilla/certdata.txt changelog entry to document
+    CKT_NSS_MUST_VERIFY_TRUST changes.
+
+ -- Michael Shuler <michael@pbandjelly.org>  Wed, 14 Nov 2012 23:58:59 -0600
+
+ca-certificates (20121105) unstable; urgency=low
+
+  * Update mozilla/certdata.txt to version 1.86  Closes: #683728
+    - Replace legacy "no explicit trust" flag of CKT_NSS_TRUST_UNKNOWN for
+      CKT_NSS_MUST_VERIFY_TRUST, instead of a mix of both flags:
+      https://bugzilla.mozilla.org/show_bug.cgi?id=757189
+      This upstream fix does not change the CA certificates installed in
+      ca-certificates as both flags are ignored. Only those CA certificates
+      with the CKT_NSS_TRUSTED_DELEGATOR flag in certdata.txt are installed.
+    Certificates added (+) (none removed):
+    + "Actalis Authentication Root CA"
+    + "Trustis FPS Root CA"
+    + "StartCom Certification Authority" (renewal/rehash)
+    + "StartCom Certification Authority G2"
+    + "Buypass Class 2 Root CA"
+    + "Buypass Class 3 Root CA"
+    + "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı"
+    + "T-TeleSec GlobalRoot Class 3"
+    + "EE Certification Centre Root CA"
+  * Correct piuparts package remove/purge behavior  Closes: #682125
+    - Remove deletes of /etc/ssl{,/certs} from debian/postrm
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 05 Nov 2012 10:56:05 -0600
+
+ca-certificates (20120623) unstable; urgency=low
+
+  * Add Polish translation, thanks to Michał Kułach.  Closes: #660002
+  * Add Turkish translation, thanks to Atila KOÇ.  Closes: #661785
+  * Correct update-ca-certificates(8) alignment  Closes: #666932
+  * Add note to update-ca-certificates(8) about .crt extension needed for
+    CA certificates in /usr/local/share/ca-certificates  Closes: #595279
+  * Update mozilla/certdata.txt to version 1.83
+    Mozilla Public License updated to v2.0
+    (no added/removed CAs)
+  * Update debian/copyright to:
+    - reflect MPL v2.0 update for mozilla/certdata.txt
+    - specify GPL-2 instead of GPL symlink
+  * Update debian/NEWS with added/removed certs from 20111211 and 20120212
+  * Update to Standards-Version: 3.9.3 (no changes needed)
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sat, 23 Jun 2012 09:16:54 -0500
+
+ca-certificates (20120212) unstable; urgency=low
+
+  * Update mozilla/certdata.txt to version 1.81
+    Certificates added (+) and removed (-):
+    + "Security Communication RootCA2"
+    + "EC-ACC"
+    + "Hellenic Academic and Research Institutions RootCA 2011"
+    - "Verisign Class 2 Public Primary Certification Authority"
+    - "Verisign Class 4 Public Primary Certification Authority - G2"
+    - "TC TrustCenter, Germany, Class 2 CA"
+    - "TC TrustCenter, Germany, Class 3 CA"
+  * Add notice to README.Debian deprecating CA inclusions and refer to
+    #647848 for Debian CA Certificate Policy discussion.
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 12 Feb 2012 15:12:59 -0600
+
+ca-certificates (20111211) unstable; urgency=low
+
+  * Clarify CA audit note in package description and README.debian. Thanks
+    to C.J. Adams-Collier for the patch.  Closes: #594383
+  * Remove French Government IGC/A CA certificates. The RSA certificate is
+    included in the Mozilla bundle and the DSA certificate is not in use.
+    Closes: #646767
+  * Remove expired signet.pl CAs.  Closes: #647849
+  * Remove expired brasil.gov.br CA.
+  * Edit 20111025 changelog/NEWS entries to correctly list installed CAs
+  * Use 'set -e' in body of debian/postinst
+  * Update mozilla/certdata.txt to version 1.80
+    (no added/removed CAs)
+  * Update mozilla/certdata2pem.py to parse NETSCAPE or NSS data
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 11 Dec 2011 19:05:32 -0600
+
+ca-certificates (20111025) unstable; urgency=low
+
+  [ Michael Shuler ]
+  * Add 3.0 (native) source format
+  * Add Vcs-Git/Browser fields
+  * Add myself as new Maintainer with Uploaders  Closes: #588219
+  * Update mozilla/certdata.txt to latest (NSS branch version 1.64.2.13)
+    Certificates added (+) and removed (-):
+    + "AffirmTrust Commercial"
+    + "AffirmTrust Networking"
+    + "AffirmTrust Premium"
+    + "AffirmTrust Premium ECC"
+    + "A-Trust-nQual-03"
+    + "Certinomis - Autorité Racine"
+    + "Certum Trusted Network CA"
+    + "Go Daddy Root Certificate Authority - G2"
+    + "Root CA Generalitat Valenciana"
+    + "Starfield Root Certificate Authority - G2"
+    + "Starfield Services Root Certificate Authority - G2"
+    + "TWCA Root Certification Authority"
+    - "AOL Time Warner Root Certification Authority 1"
+    - "AOL Time Warner Root Certification Authority 2"
+    - "DigiNotar Root CA"
+    - "Entrust.net Global Secure Personal CA"
+    - "Entrust.net Global Secure Server CA"
+    - "Entrust.net Secure Personal CA"
+    - "IPS Chained CAs root"
+    - "IPS CLASE1 root"
+    - "IPS CLASE3 root"
+    - "IPS CLASEA1 root"
+    - "IPS CLASEA3 root"
+    - "IPS Timestamping root"
+    - "Thawte Personal Freemail CA"
+    - "Thawte Time Stamping CA"
+  * Update CAcert-Class 3-Subroot-certificate  Closes: #630232
+
+  [ Steve Langasek ]
+  * sbin/update-ca-certificates: move the ca-certificates.crt bundle out of
+    the way before calling c_rehash, so that symlinks don't accidentally get
+    pointed here, breaking openssl certificate verification  LP: #854927
+
+  [ Loïc Minier ]
+  * Drop bogus c_rehash on upgrades, which caused issue when
+    ca-certificates.crt was still in place; instead, call
+    update-ca-certificates --fresh on upgrades to this version, and
+    the usual update-ca-certificates otherwise  Closes: #643667, #537382
+
+ -- Michael Shuler <michael@pbandjelly.org>  Tue, 25 Oct 2011 09:12:10 -0500
+
+ca-certificates (20111022) unstable; urgency=low
+
+  * QA upload.
+  * Fix pending l10n issues. Debconf translations:
+    - German (Helge Kreutzmann).  Closes: #634000
+    - French (Christian Perrier).  Closes: #634092
+    - Russian (Yuri Kozlov).  Closes: #635146
+    - Swedish (Martin Bagge / brother).  Closes: #640622
+    - Slovak (Slavko).  Closes: #641987
+    - Spanish; (Javier Fernández-Sanguino).  Closes: #642359
+    - Japanese (Kenshi Muto).  Closes: #644828
+    - Czech (Miroslav Kure).  Closes: #644843
+    - Danish (Joe Hansen).  Closes: #644854
+    - Italian (Luca Monducci).  Closes: #645004
+    - Dutch; (Jeroen Schot).  Closes: #645090
+    - Portuguese (Miguel Figueiredo).  Closes: #645126
+    - Galician (Jorge Barreiro).  Closes: #645138
+    - Catalan; (Jordi Mallach).  Closes: #645182
+    - Brazilian Portuguese (Adriano Rafael Gomes).  Closes: #645526
+  * Split Choices in debconf templates
+  * Add build-arch and build-indep build targets
+  * Bump debhelper compatibility level to 8
+  * Bump Standards to 3.9.2 (checked)
+  * Replace "dh_clean -k" by dh_prep
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 22 Oct 2011 14:24:00 +0200
+
+ca-certificates (20110502+nmu1) unstable; urgency=high
+
+  * Non-maintainer upload by the Security Team.
+  * Blacklist "DigiNotar Root CA" (Closes: #639744)
+
+ -- Raphael Geissert <geissert@debian.org>  Tue, 30 Aug 2011 21:00:55 -0500
+
+ca-certificates (20110502) unstable; urgency=low
+
+  * QA upload.
+  * Mark the package as multi-arch:foreign.  (Closes: #622323)
+  * Use db_settitle in config script to allow translations of the
+    dialog title; thanks to Frans Pop.  (Closes: #560314)
+
+ -- Philipp Kern <pkern@debian.org>  Mon, 02 May 2011 19:27:50 +0200
+
+ca-certificates (20110421) unstable; urgency=low
+
+  * QA upload.
+  * Package is orphaned, set maintainer to QA group
+  * Depend on openssl 1.0.0 and force a call of c_rehash so that we have
+    both the old and new style of symlinks.  (Closes: #611102)
+  * Remove libssl0.9.8 from enhances
+  * Update mozilla certdata.txt file to the latest version.
+    Removed:
+    - ABAecom_=sub.__Am._Bankers_Assn.=_Root_CA.crt
+    - beTRUSTed_Root_CA-Baltimore_Implementation.crt
+    - beTRUSTed_Root_CA.crt
+    - beTRUSTed_Root_CA_-_Entrust_Implementation.crt
+    - beTRUSTed_Root_CA_-_RSA_Implementation.crt
+    - Digital_Signature_Trust_Co._Global_CA_2.crt
+    - Digital_Signature_Trust_Co._Global_CA_4.crt
+    - Entrust.net_Global_Secure_Personal_CA.crt
+    - Entrust.net_Global_Secure_Server_CA.crt
+    - Entrust.net_Secure_Personal_CA.crt
+    - GTE_CyberTrust_Root_CA.crt
+    - IPS_Chained_CAs_root.crt
+    - IPS_CLASE1_root.crt
+    - IPS_CLASE3_root.crt
+    - IPS_CLASEA1_root.crt
+    - IPS_CLASEA3_root.crt
+    - IPS_Servidores_root.crt
+    - IPS_Timestamping_root.crt
+    - RSA_Security_1024_v3.crt
+    - StartCom_Ltd..crt
+    - Thawte_Personal_Basic_CA.crt
+    - Thawte_Personal_Premium_CA.crt
+    - UTN-USER_First-Network_Applications.crt
+    - Verisign_RSA_Secure_Server_CA.crt
+    - Verisign_Time_Stamping_Authority_CA.crt
+    - Visa_International_Global_Root_2.crt
+    Added:
+    - ACEDICOM_Root.crt
+    - AC_Raíz_Certicámara_S.A..crt
+    - ApplicationCA_-_Japanese_Government.crt
+    - Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt
+    - Buypass_Class_2_CA_1.crt
+    - Buypass_Class_3_CA_1.crt
+    - CA_Disig.crt
+    - Certigna.crt
+    - certSIGN_ROOT_CA.crt
+    - Chambers_of_Commerce_Root_-_2008.crt
+    - CNNIC_ROOT.crt
+    - ComSign_CA.crt
+    - ComSign_Secured_CA.crt
+    - Cybertrust_Global_Root.crt
+    - Deutsche_Telekom_Root_CA_2.crt
+    - EBG_Elektronik_Sertifika_Hizmet_Sağlayıcısı.crt
+    - E-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi.crt
+    - ePKI_Root_Certification_Authority.crt
+    - GeoTrust_Primary_Certification_Authority_-_G2.crt
+    - GeoTrust_Primary_Certification_Authority_-_G3.crt
+    - Global_Chambersign_Root_-_2008.crt
+    - GlobalSign_Root_CA_-_R3.crt
+    - Hongkong_Post_Root_CA_1.crt
+    - IGC_A.crt
+    - Izenpe.com.crt
+    - Juur-SK.crt
+    - Microsec_e-Szigno_Root_CA_2009.crt
+    - Microsec_e-Szigno_Root_CA.crt
+    - NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt
+    - OISTE_WISeKey_Global_Root_GA_CA.crt
+    - SecureSign_RootCA11.crt
+    - Security_Communication_EV_RootCA1.crt
+    - Staat_der_Nederlanden_Root_CA_-_G2.crt
+    - S-TRUST_Authentication_and_Encryption_Root_CA_2005_PN.crt
+    - TÜBİTAK_UEKAE_Kök_Sertifika_Hizmet_Sağlayıcısı_-_Sürüm_3.crt
+    - TC_TrustCenter_Class_2_CA_II.crt
+    - TC_TrustCenter_Class_3_CA_II.crt
+    - TC_TrustCenter_Universal_CA_I.crt
+    - TC_TrustCenter_Universal_CA_III.crt
+    - thawte_Primary_Root_CA_-_G2.crt
+    - thawte_Primary_Root_CA_-_G3.crt
+    - VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.crt
+    - VeriSign_Universal_Root_Certification_Authority.crt
+    Changed:
+    - Verisign_Class_1_Public_Primary_Certification_Authority.crt
+    - Verisign_Class_3_Public_Primary_Certification_Authority.crt
+  * Remove telesec.de/deutsche-telekom-root-ca-2.crt, now in mozilla.
+  * String decode the mozilla certdata.txt so the filenames show up as
+    proper UTF-8 strings.
+
+ -- Kurt Roeckx <kurt@roeckx.be>  Thu, 21 Apr 2011 18:56:08 +0200
+
+ca-certificates (20090814+nmu3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix pending l10n issues. Debconf translations:
+    - French (Christian Perrier).  Closes: #594231
+    - Danish (Joe Hansen).  Closes: #601129
+    - Catalan (Jordi Mallach).  Closes: #601089
+    - Brazilian Portuguese (Adriano Rafael Gomes).  Closes: #618633
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 19 Mar 2011 07:47:00 +0100
+
+ca-certificates (20090814+nmu2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fixes buggy shell functions included in the postinst script.
+    (Closes: #591607)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 13 Aug 2010 20:16:21 -0300
+
+ca-certificates (20090814+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Preserve user changes to the /etc/ca-certificates.conf.
+    (Closes: #514220)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 30 Jul 2010 12:55:28 -0400
+
+ca-certificates (20090814) unstable; urgency=low
+
+  * Call Debconf and its db_purge as early as possible in postrm.
+    (Closes: #541275)
+
+ -- Philipp Kern <pkern@debian.org>  Fri, 14 Aug 2009 11:10:00 +0200
+
+ca-certificates (20090709) unstable; urgency=low
+
+  * Fix purge by checking for `/etc/ssl/certs' first.  (Closes: #536331)
+
+ -- Philipp Kern <pkern@debian.org>  Thu, 09 Jul 2009 10:35:39 +0200
+
+ca-certificates (20090708) unstable; urgency=low
+
+  * Removed CA files:
+    - cacert.org/root.crt and cacert.org/class3.crt:
+      Both certificate files were deprecated with 20080809.  Users of these
+      root certificates are encouraged to switch to
+      `cacert.org/cacert.org.crt' which contains both class 1 and class 3
+      roots joined in a single file.
+    - quovadis.bm/QuoVadis_Root_Certification_Authority.crt:
+      This certificate has been added into the Mozilla truststore and
+      is available as `mozilla/QuoVadis_Root_CA.crt'.
+  * Do not redirect c_rehash error messages to /dev/null.
+    (Closes: #495224)
+  * Remove dangling symlinks on purge, which also gets rid of the hash
+    symlink for ca-certificates.crt.  (Closes: #475240)
+  * Use subshells when grepping for certificates in config, avoiding
+    SIGPIPE because of grep's immediate exit after it finds the pattern.
+    (Closes: #486737)
+  * Fix VERBOSE_ARG usage in update-ca-certificates.  Thanks to
+    Robby Workman of Slackware.
+  * Updated Standards-Version and FSF portal address in the copyright file.
+
+ -- Philipp Kern <pkern@debian.org>  Wed, 08 Jul 2009 23:19:56 +0200
+
+ca-certificates (20090701) unstable; urgency=low
+
+  * Reactivated "Equifax Secure Global eBusiness CA".  (Closes: #534674)
+    Rationale: The rogue collision CA has its validity period in the past.
+    Thus it does not impose a risk upon us at the moment.
+  * Restrict search for local certificates to add on files ending with '.crt'.
+  * Canonicalize PEM names by applying the same set of substitions to
+    local and other certificates like the Mozilla certdata dumper does.
+
+ -- Philipp Kern <pkern@debian.org>  Wed, 01 Jul 2009 14:50:00 +0200
+
+ca-certificates (20090624) unstable; urgency=low
+
+  * Allow local certificate installation.  All certificates found
+    in `/usr/local/share/ca-certificates' will be automatically added
+    to the list of trusted certificates in `/etc/ssl/certs'.
+    (Closes: #352637, #419491, #473677, #476663, #511150)
+  * Updated Mozilla certificates from nss 3.12.3-1 (certdata.txt revision
+    1.51):
+    + COMODO ECC Certification Authority
+    + DigiNotar Root CA
+    + Network Solutions Certificate Authority
+    + WellsSecure Public Root Certificate Authority
+    - Equifax Secure Global eBusiness CA
+    - UTN USERFirst Object Root CA
+  * Reimplemented the Mozilla certdata parser mainly to exclude explicitly
+    untrusted certificates.  This led to the exclusion of the
+    "MD5 Collisions Forged Rogue CA 23c3" and its parent
+    "Equifax Secure Global eBusiness CA".  Furthermore code signing-only
+    certificates are no longer included neither.
+  * Remove the purging of old PEM files in postinst dating back to
+    versions earlier than 20030414.
+  * Hooks are now called at every invocation of `update-ca-certificates'.
+    If no changes were done to `/etc/ssl/certs', the input for the
+    hooks will be empty, though.  Failure exit codes of hooks will not
+    tear down the upgrade process anymore.  They are printed but ignored.
+
+ -- Philipp Kern <pkern@debian.org>  Tue, 24 Jun 2009 21:04:08 +0200
+
+ca-certificates (20081127) unstable; urgency=low
+
+  * Remove /etc/ssl{,/certs} in postrm to please piuparts.  (Closes:
+    #454334)
+
+ -- Philipp Kern <pkern@debian.org>  Thu, 27 Nov 2008 19:13:17 +0100
+
+ca-certificates (20080809) unstable; urgency=low
+
+  * New cacert.org.pem joining both CACert Class 1 and Class 3 certificates.
+    This file can be used for proper certificate chaining if CACert
+    server certificates are used.  The old class3.pem and root.pem
+    certificates are deprecated.  This new file could safely serve as
+    a replacement for both.  (Closes: #494343)
+  * This also reintroduces the old name for the CACert certificate,
+    thus closing a long-standing bug about its rename to root.crt.
+    (Closes: #413766)
+
+ -- Philipp Kern <pkern@debian.org>  Sat, 09 Aug 2008 14:58:24 -0300
+
+ca-certificates (20080617) unstable; urgency=low
+
+  * Added French Government's IGC/A CA (both DSA and RSA).
+    (Closes: #416470)
+
+ -- Philipp Kern <pkern@debian.org>  Mon, 23 Jun 2008 20:55:53 +0200
+
+ca-certificates (20080616) unstable; urgency=low
+
+  * Fix installation on pt_BR locales.  The problem was caused by the
+    .templates choices strings being marked for translation, with pt_BR
+    being the only language which actually translated them.  Thanks to
+    Ubuntu for the fix, which needs to be around until Lenny is released
+    or six months have passed, whichever is later.  (Closes: #472507)
+  * Drop Fumitoshi from the list of maintainers.  Farewell!
+  * Bump Standards-Version to 3.8.0.
+
+ -- Philipp Kern <pkern@debian.org>  Mon, 16 Jun 2008 17:41:50 +0200
+
+ca-certificates (20080514) unstable; urgency=medium
+
+  * Added the new SPI CA certificate, created in response to the latest
+    openssl security update.
+  * Removed old SPI CA certificates (2006, 2007) as CAs cannot be
+    revoked sensibly.  Expired CA created in 2003, expired in 2007 left
+    around for reference.
+  * Updated the Galician translation, thanks to Glennie Vignarajah.
+    (Closes: #416470)
+
+ -- Philipp Kern <pkern@debian.org>  Wed, 14 May 2008 10:03:42 +0200
+
+ca-certificates (20080411) unstable; urgency=low
+
+  * Added the current SPI CA certificate, used by Debian's infrastructure.
+  * Added Deutsche Telekom Root CA 2, which is used by German institutions
+    through the DFN PKI.
+  * Updated mozilla certificates from trunk, which led to the following
+    adds (+) and removes (-):
+    + Camerfirma Chambers of Commerce Root
+    + Camerfirma Global Chambersign Root
+    + Certplus Class 2 Primary CA
+    + COMODO Certification Authority
+    + DigiCert Assured ID Root CA
+    + DigiCert Global Root CA
+    + DigiCert High Assurance EV Root CA
+    + DST ACES CA X6
+    + DST Root CA X3
+    + Entrust Root Certification Authority
+    + Firmaprofesional Root CA
+    + GeoTrust Global CA 2
+    + GeoTrust Primary Certification Authority
+    + GeoTrust Universal CA
+    + GeoTrust Universal CA 2
+    + GlobalSign Root CA - R2
+    + Go Daddy Class 2 CA
+    + NetLock Business (Class B) Root
+    + NetLock Express (Class C) Root
+    + NetLock Notary (Class A) Root
+    + NetLock Qualified (Class QA) Root
+    + QuoVadis Root CA 2
+    + QuoVadis Root CA 3
+    + Secure Global CA
+    + SecureTrust CA
+    + Starfield Class 2 CA
+    + StartCom Certification Authority
+    + StartCom Ltd.
+    + Swisscom Root CA 1
+    + SwissSign Gold CA - G2
+    + SwissSign Platinum CA - G2
+    + SwissSign Silver CA - G2
+    + Taiwan GRCA
+    + thawte Primary Root CA
+    + TURKTRUST Certificate Services Provider Root 1
+    + TURKTRUST Certificate Services Provider Root 2
+    + VeriSign Class 3 Public Primary Certification Authority - G5
+    + Wells Fargo Root CA
+    + XRamp Global CA Root
+    - Verisign Class 1 Public Primary OCSP Responder
+    - Verisign Class 2 Public Primary OCSP Responder
+    - Verisign Class 3 Public Primary OCSP Responder
+    - Verisign Secure Server OCSP Responder
+    (Closes: #447062, #456581)
+  * Updated the Russian debconf translation, thanks to Mikhail Gusarov.
+    (Closes: #434856)
+  * Reworded the description and made it static to ease translations.
+  * Reworded and amended README.Debian.
+  * Added myself to the uploaders of this package.
+  * Applied a patch by Martin F. Krafft to support hooks scripts
+    on add/remove of a certificate.  (Closes: #377314)
+
+ -- Philipp Kern <pkern@debian.org>  Sat, 12 Apr 2008 17:35:26 +0200
+
+ca-certificates (20070303-0.1) unstable; urgency=low
+
+  * Non-maintainer upload to fix longstanding pending l10n issues.
+  * Debconf templates and debian/control reviewed by the debian-l10n-
+    english team as part of the Smith review project.
+    Closes: #432249, #434789
+  * Debconf translation updates:
+    - Japanese. Closes:#433067
+    - Basque. Closes: #433074
+    - Spanish. Closes: #433078
+    - Czech. Closes: #433100
+    - Galician. Closes: #433215
+    - Russian. Closes: #433224
+    - Swedish. Closes: #433432
+    - Vietnamese. Closes: #433792, #427000, #434992
+    - Dutch. Closes: #434670
+    - German. Closes: #434788
+    - Italian. Closes: #435029
+  * Portuguese. Closes: #435471
+  * Finnish. Closes: #448826
+  * Remove /etc/ssl when purging the package (only if that
+    directory is empty). Closes: #454334
+  * [Lintian] Give a reference to the GPL text in debian/copyright
+  * [Lintian] No longer ignore errors from "make clean"
+  * [Lintian] Upgrade debhelper compatibility to 4 (with debian/compat).
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 14 Feb 2008 19:52:37 +0100
+
+ca-certificates (20070303) unstable; urgency=low
+
+  * Add debconf.org crt. closes: Bug#342088
+  * Add cacert class3 crt. closes: Bug#350282
+  * Add debian/po/pt.po. closes: Bug#408183
+  * Update debian/po/ru.po. closes: Bug#410770
+  * Update debian/po/pt_BR.po. closes: Bug#403824
+  * Add debian/po/gl.po. closes: Bug#407951
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Sun,  4 Mar 2007 14:12:23 +0900
+
+ca-certificates (20061027.2) unstable; urgency=low
+
+  * Non-maintainer upload to fix an RC issue revealed by the last NMU.
+  * Avoid cd to /etc/ssl/certs to removing hash symlinks
+    Closes: #408469
+
+ -- Christian Perrier <bubulle@debian.org>  Fri,  2 Feb 2007 07:23:27 +0100
+
+ca-certificates (20061027.1) unstable; urgency=low
+
+  * Non-maintainer upload to fix remaining l10n issues
+  * Debconf translation updates:
+    - Czech. Closes: #407807
+    - Spanish. Closes: #401968
+    - German. Closes: #396942
+  * Add debconf-updatepo to the clean target in debian/rules
+    to guarantee up-to-date PO(T) files
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 22 Jan 2007 18:56:53 +0100
+
+
+ca-certificates (20061027) unstable; urgency=low
+
+  * sbin/update-ca-certificates:
+    in fresh mode, rm symlinks only point to /usr/share/ca-certificates.
+    preserve other symlinks. closes: Bug#387089
+  * debian/po/nl.po: updated
+    closes: Bug#386767
+  * debian/po/fr.po: updated
+    closes: Bug#386806
+  * debian/po/da.po: updated
+    closes: Bug#388018
+    
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Sat, 28 Oct 2006 02:28:50 +0900
+
+ca-certificates (20060816) unstable; urgency=low
+
+  * debian/control: explicitly mention that trustworthiness of certificate
+    authorities is not evaluated.
+    closes: Bug#350726
+  * debian/templates: refine messages
+    closes: Bug#309481
+  * debian/postinst: remove tailing spaces to avoid unnecessary dpkg-old file.
+    closes: Bug#349346
+  * debian/control: libssl0.9.7->libssl0.9.8
+    closes: Bug#345197
+  * debian/postrm: remove .dpkg-old files
+    closes: Bug#349351
+  * debian/README.Debian: fix
+    closes: Bug#354509
+  * debian/postinst: fix typo
+    closes: Bug#355271
+  * debian/po/sv.po: added
+    closes: Bug#330984
+  * debian/po/es.po: added
+    closes: Bug#334383
+  * add new SPI CA certificate
+    submitted by Michael C. Schultheiss <schultmc@debian.org>
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Thu, 17 Aug 2006 13:12:27 +0900
+
+ca-certificates (20050804) unstable; urgency=low
+
+  * use ${misc:Depends} in debian/control for debconf
+  * update description in debian/control
+    closes: Bug#309547
+  * update debian/po/vi.po
+    closes: Bug#313186
+  * update debian/po/de.po
+    closes: Bug#313678
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Thu,  4 Aug 2005 01:29:38 +0900
+
+ca-certificates (20050518) unstable; urgency=high
+
+  * fix ca-certificates.crt generationumask-sensitive and racy
+    closes: Bug#296212
+  * update mozilla/certdata.txt
+    add: "Certum Root CA", "Comodo AAA Services root"
+         "Comodo Secure Services root", 
+	 "Comodo Trusted Services root",
+	 "IPS Chained CAs root", "IPS CLASE1 root", "IPS CLASE3 root",
+	 "IPS CLASEA1 root", "IPS CLASEA3 root", "IPS Servidores root"
+	 "IPS Timestamping root",
+	 "QuoVadis Root CA",
+	 "Security Communication Root CA",
+	 "Sonera Class 1 Root CA", "Sonera Class 2 Root CA",
+	 "Staat der Nederlanden Root CA",
+	 "TDC Internet Root CA", "TDC OCES Root CA", 
+	 "UTN DATACorp SGC Root CA", "UTN USERFirst Email Root CA",
+	 "UTN USERFirst Hardware Root CA", "UTN USERFirst Object Root CA"
+  * add CACert.org's Root CA
+    closes: Bug#213086, Bug#288293
+  * add debian/po/vi.po
+    closes: Bug#309480
+  * add debian/po/cs.po
+    closes: Bug#309019
+  * write "How certificate will be accepted in ca-certificates package"
+    in README.Debain
+    
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Wed, 18 May 2005 00:40:54 +0900
+
+ca-certificates (20040809) unstable; urgency=low
+
+  * previous version was not fixed Bug#255933 correctly.
+    update-ca-certificates now remove symlinks of deselected entries 
+    in ca-certificates.conf
+    closes: Bug#255933
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon,  9 Aug 2004 03:23:20 +0900
+
+ca-certificates (20040808) unstable; urgency=low
+
+  * run update-ca-certificates by /bin/sh -e
+    closes: Bug#247581
+  * update-ca-certificates remove symlinks of deselected entries 
+    in ca-certificates.conf
+    closes: Bug#255933
+  * change default of trust_new_crts from 'ask' to 'yes'
+    closes: Bug#218838, Bug#221527, Bug#236675, Bug#247509
+  * refer libssl0.9.7 instead of libssl0.9.6 in Enhances:
+    closes: Bug#251158
+  * add brasil.gov.br certs
+    closes: Bug#224612
+  * add Signet CA Roots certs
+    closes: Bug#233206
+  * add QuoVadis CA Roots certs
+    closes: Bug#250847
+  * update pt_BR.po
+    closes: Bug#218812
+  * add da.po
+    closes: Bug#235322
+  * add ca.po
+    closes: Bug#237124
+  * add nl.po
+    closes: Bug#23840
+  * add de.po
+    closes: Bug#250785
+  * fix quote characters in template
+    closes: Bug#255738
+  * remove debian.org, because certs used in db.debian.org has been
+    revoked due to debian.org crack incidents.
+    db.debian.org uses certificates using spi-inc.org Root CA.
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Sun,  8 Aug 2004 10:58:30 +0900
+
+ca-certificates (20031007.1) unstable; urgency=low
+
+  * NMU
+  * Add brasil.gov.br/brasil.gov.br.crt, created from
+    http://www.icpbrasil.gov.br/certificadoACRaiz.crt
+  * Add debian/po/pt_BR.po: closes: Bug#224612
+
+ -- Otavio Salvador <otavio@debian.org>  Thu,  5 Aug 2004 12:16:26 -0300
+
+ca-certificates (20031007) unstable; urgency=low
+
+  * add debian/po/ru.po: closes: Bug#214371
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Tue,  7 Oct 2003 03:06:06 +0900
+
+ca-certificates (20030924) unstable; urgency=low
+
+  * add debian/po/ja.po: closes: Bug#212565
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Wed, 24 Sep 2003 22:09:09 +0900
+
+ca-certificates (20030916) unstable; urgency=low
+
+  * add debian/po/fr.po: closes: Bug#211224, Bug#206769
+  * debian/config: if new cert is asked, don't ask all available certs
+    closes: Bug#211199
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Wed, 17 Sep 2003 02:12:14 +0900
+
+ca-certificates (20030915) unstable; urgency=low
+
+  * debian/config.in: fix typo. closes: Bug#190990
+  * add option for new CA certificates. closes: Bug#190989
+  * switch to gettext-based debconf templates. closes: Bug#205782
+  * update mozilla/certdata.txt from mozilla 1.4 release
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon, 15 Sep 2003 01:15:04 +0900
+
+ca-certificates (20030420) unstable; urgency=low
+
+  * add README.Debian and update-ca-certificates(8). closes: Bug#189604
+  * fix broken English in debconf template. closes: Bug#189606
+  * don't remove symlinks in /etc/ssl/certs. closes: Bug#189607
+  * preserve comments in /etc/ca-certificates.conf when upgrading.
+    closes: Bug#189611
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon, 21 Apr 2003 00:06:01 +0900
+
+ca-certificates (20030415) unstable; urgency=medium
+
+  * fix upgrade problem
+    closes: Bug#188938, Bug#188940
+  * purge debconf
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon, 14 Apr 2003 23:00:58 +0900
+
+ca-certificates (20030414) unstable; urgency=medium
+    
+  * certificates are installed in /usr/share/ca-certificates
+    you can find md5sum of certs files. closes: Bug#170777
+  
+  * debconf to generate /etc/ca-certificates.conf
+  * update-ca-certificates update /etc/ssl/certs according 
+    /etc/ca-certificates.conf
+    It also generate /etc/ssl/certs/ca-certificates.crt
+    which is single-file version of certs.
+    closes: Bug#158904
+  
+  * change extension from .pem to .crt in /usr/share/ca-certificates
+    - /etc/mime.types:
+      application/x-x509-ca-cert crt
+    but it will be hardlink or copied in /etc/ssl/certs with .pem
+    extension by update-ca-certificates.
+    c_rehash requires .pem extension
+
+  * Update certificate from mozilla 2:1.3-4
+    mozilla/security/nss/lib/ckfw/builtins/certdata.txt 
+    cefd05b299ea683fc6b1ce9ff1e23a3f  mozilla/certdata.txt
+
+  * Add spi-inc.org/spi-ca.crt from http://www.spi-inc.org/secretary/
+    33922a1660820e44812e7ddc392878cb  spi-inc.org/spi-ca.crt
+    % openssl x509 -in spi-inc.org/spi-ca.crt -fingerprint -noout
+    MD5 Fingerprint=ED:85:3A:FD:32:43:13:73:91:4D:94:06:C4:10:EB:E5
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon, 14 Apr 2003 00:02:48 +0900
+
+ca-certificates (20020323) unstable; urgency=low
+
+  * Moved from non-US to main now that openssl has moved there.
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Sun, 24 Mar 2002 03:11:54 +0900
+
+ca-certificates (20020208) unstable; urgency=low
+
+  * add db.debian.org certificate
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Fri,  8 Feb 2002 23:46:11 +0900
+
+ca-certificates (20020112) unstable; urgency=low
+
+  * upload to non-US instead of main, because it depends on openssl
+    (it uses c_rehash in openssl in maintainer scripts)
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Sun, 13 Jan 2002 04:30:28 +0900
+
+ca-certificates (20020107) unstable; urgency=low
+
+  * Initial Release. closes: Bug#126586
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Mon,  7 Jan 2002 21:16:51 +0900
+

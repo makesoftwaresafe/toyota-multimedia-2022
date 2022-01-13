@@ -1,0 +1,6 @@
+%C - service for IPU4 driver
+
+ipu4 [options]
+
+Options:
+   -U: Run with that user's uid and gid(s)

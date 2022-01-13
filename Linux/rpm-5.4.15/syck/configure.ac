@@ -1,0 +1,37 @@
+# Process this file with autoconf to produce a configure script.
+AC_INIT(syck, 0.60)
+AC_CONFIG_AUX_DIR(config)
+AC_PREREQ(2.50)
+
+AM_INIT_AUTOMAKE
+m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+AM_CONFIG_HEADER(config.h)
+
+# Checks for programs.
+AC_PROG_CC_STDC
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_LIBTOOL
+AC_PROG_MAKE_SET
+AC_PROG_AWK
+AC_PROG_YACC
+AM_PROG_LEX
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(alloca.h stdlib.h string.h)
+AC_CHECK_SIZEOF(int, 4)
+AC_CHECK_SIZEOF(long, 4)
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+AC_FUNC_VPRINTF
+
+AC_CONFIG_FILES([Makefile 
+                 lib/Makefile 
+                 tests/Makefile])
+AC_OUTPUT

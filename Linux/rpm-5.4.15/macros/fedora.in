@@ -1,0 +1,291 @@
+%distribution		@RPMCANONVENDOR@ Linux
+%vendor		        @RPMCANONVENDOR@ 
+%bugurl			http://bugzilla.redhat.com
+%disturl		http://software.open@RPMCANONVENDOR@.org
+# 
+# Below are the fedora/redhat macros
+# contained in redhat-rpm-config
+# 
+# Per-platform rpm configuration file.
+
+#==============================================================================
+# ---- per-platform macros.
+#
+%_vendor		@RPMCANONVENDOR@
+%_os			linux
+%_target_platform	%{_target_cpu}-%{_vendor}-%{_target_os}%{?_gnu}
+
+#==============================================================================
+# ---- configure macros.  note that most of these are inherited
+#      from the defaults.
+#
+%_prefix		/usr
+%_sysconfdir		/etc
+%_localstatedir		/var
+%_infodir		/usr/share/info
+%_mandir		/usr/share/man
+
+%_defaultdocdir		%{_usr}/share/doc
+
+%_fmoddir		%{_libdir}/gfortran/modules
+
+%_enable_debug_packages 1
+
+#==============================================================================
+# ---- configure and makeinstall.
+#
+%_configure ./configure
+%configure \
+  CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
+  CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
+  FFLAGS="${FFLAGS:-%optflags -I%_fmoddir}" ; export FFLAGS ; \
+  %{_configure} --build=%{_build} --host=%{_host} \\\
+	--program-prefix=%{?_program_prefix} \\\
+	--disable-dependency-tracking \\\
+	--prefix=%{_prefix} \\\
+	--exec-prefix=%{_exec_prefix} \\\
+	--bindir=%{_bindir} \\\
+	--sbindir=%{_sbindir} \\\
+	--sysconfdir=%{_sysconfdir} \\\
+	--datadir=%{_datadir} \\\
+	--includedir=%{_includedir} \\\
+	--libdir=%{_libdir} \\\
+	--libexecdir=%{_libexecdir} \\\
+	--localstatedir=%{_localstatedir} \\\
+	--sharedstatedir=%{_sharedstatedir} \\\
+	--mandir=%{_mandir} \\\
+	--infodir=%{_infodir}
+
+%makeinstall \
+  %{__make} \\\
+	prefix=%{?buildroot:%{buildroot}}%{_prefix} \\\
+	exec_prefix=%{?buildroot:%{buildroot}}%{_exec_prefix} \\\
+	bindir=%{?buildroot:%{buildroot}}%{_bindir} \\\
+	sbindir=%{?buildroot:%{buildroot}}%{_sbindir} \\\
+	sysconfdir=%{?buildroot:%{buildroot}}%{_sysconfdir} \\\
+	datadir=%{?buildroot:%{buildroot}}%{_datadir} \\\
+	includedir=%{?buildroot:%{buildroot}}%{_includedir} \\\
+	libdir=%{?buildroot:%{buildroot}}%{_libdir} \\\
+	libexecdir=%{?buildroot:%{buildroot}}%{_libexecdir} \\\
+	localstatedir=%{?buildroot:%{buildroot}}%{_localstatedir} \\\
+	sharedstatedir=%{?buildroot:%{buildroot}}%{_sharedstatedir} \\\
+	mandir=%{?buildroot:%{buildroot}}%{_mandir} \\\
+	infodir=%{?buildroot:%{buildroot}}%{_infodir} \\\
+  install
+
+%_smp_mflags %([ -z "$RPM_BUILD_NCPUS" ] \\\
+	&& RPM_BUILD_NCPUS="`/usr/bin/getconf _NPROCESSORS_ONLN`"; \\\
+        if [ "$RPM_BUILD_NCPUS" -gt 16 ]; then echo "-j16"; \\\
+        elif [ "$RPM_BUILD_NCPUS" -gt 1 ]; then echo "-j$RPM_BUILD_NCPUS"; fi)
+
+#==============================================================================
+# ---- Build policy macros.
+#
+#
+#---------------------------------------------------------------------
+#	Expanded at beginning of %install scriptlet.
+#
+
+%__spec_install_pre %{___build_pre}\
+    [ "$RPM_BUILD_ROOT" != "/" ] && rm -rf "${RPM_BUILD_ROOT}"\
+    mkdir -p `dirname "$RPM_BUILD_ROOT"`\
+    mkdir "$RPM_BUILD_ROOT"\
+%{nil}
+
+#---------------------------------------------------------------------
+#	Expanded at end of %install scriptlet.
+#
+
+%__arch_install_post   /usr/lib/rpm/check-buildroot
+
+%__os_install_post    \
+    /usr/lib/rpm/redhat/brp-compress \
+    %{!?__debug_package:\
+    /usr/lib/rpm/redhat/brp-strip %{__strip} \
+    /usr/lib/rpm/redhat/brp-strip-comment-note %{__strip} %{__objdump} \
+    } \
+    /usr/lib/rpm/redhat/brp-strip-static-archive %{__strip} \
+    /usr/lib/rpm/brp-python-bytecompile %{__python} %{?_python_bytecompile_errors_terminate_build} \
+    /usr/lib/rpm/redhat/brp-python-hardlink \
+    %{!?__jar_repack:/usr/lib/rpm/redhat/brp-java-repack-jars} \
+%{nil}
+
+#    /usr/lib/rpm/redhat/brp-implant-ident-static
+
+%__spec_install_post\
+    %{?__debug_package:%{__debug_install_post}}\
+    %{__arch_install_post}\
+    %{__os_install_post}\
+%{nil}
+
+
+#	Template for debug information sub-package.
+# NOTE: This is a copy from rpm to get the ifnarch noarch fix, it can be removed later
+%debug_package \
+%ifnarch noarch\
+%global __debug_package 1\
+%package debuginfo \
+Summary: Debug information for package %{name}\
+Group: Development/Debug\
+AutoReqProv: 0\
+%description debuginfo\
+This package provides debug information for package %{name}.\
+Debug information is useful when developing applications that use this\
+package or when debugging this package.\
+%files debuginfo -f debugfiles.list\
+%defattr(-,root,root)\
+%endif\
+%{nil}
+
+# Bad hack to set $LANG to C during all RPM builds
+%prep \
+%%prep\
+LANG=C\
+export LANG\
+unset DISPLAY\
+%{nil}
+
+%build %%build\
+LANG=C\
+export LANG\
+unset DISPLAY\
+%{nil}
+
+%install %{?_enable_debug_packages:%{?buildsubdir:%{debug_package}}}\
+%%install\
+LANG=C\
+export LANG\
+unset DISPLAY\
+%{nil}
+
+%check %%check\
+unset DISPLAY\
+%{nil}
+
+#
+# use internal dep generator?
+%_use_internal_dependency_generator 1
+
+#
+# Should missing %doc files terminate a build?
+%_missing_doc_files_terminate_build    1
+#
+# Should missing buildids terminate a build?
+%_missing_build_ids_terminate_build    1
+
+#
+# Should unpackaged files in a build root terminate a build?
+%_unpackaged_files_terminate_build    1
+
+#
+## Should python bytecompilation errors terminate a build?
+%_python_bytecompile_errors_terminate_build 1
+
+# Use SHA-256 for FILEDIGESTS instead of default MD5
+%_source_filedigest_algorithm 8
+%_binary_filedigest_algorithm 8
+
+# Use XZ compression for binary payloads
+%_binary_payload w2.xzdio
+
+%__find_provides        /usr/lib/rpm/redhat/find-provides
+%__find_requires        /usr/lib/rpm/redhat/find-requires
+
+%__global_cflags	-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4
+
+# Use these macros to differentiate between RH and other KMP implementation(s).
+redhat_kernel_module_package	1
+kernel_module_package_release	1
+
+#kernel_module_package [ -n name ] [ -v version ] [ -r release ] [ -s script ]
+#                      [ -f filelist] [ -x ] [ -p preamble ] flavor flavor ...
+
+%kernel_module_package_buildreqs	%global kmodtool_generate_buildreqs 1 \
+					kernel-devel
+
+%kernel_module_package(n:v:r:s:f:xp:) %{expand:%( \
+	%define kmodtool %{-s*}%{!-s:/usr/lib/rpm/redhat/kmodtool} \
+	%define kmp_version %{-v*}%{!-v:%{version}} \
+	%define kmp_release %{-r*}%{!-r:%{release}} \
+	%define latest_kernel %(rpm -q --qf '%{VERSION}-%{RELEASE}\\\\n' `rpm -q kernel-devel | /usr/lib/rpm/redhat/rpmsort -r | head -n 1` | head -n 1) \
+	%{!?kernel_version:%{expand:%%global kernel_version %{latest_kernel}}} \
+	%global kverrel %(%{kmodtool} verrel %{?kernel_version} 2>/dev/null) \
+	flavors="default" \
+	if [ "i686" == "%{_target_cpu}" ] || [ "x86_64" == "%{_target_cpu}" ] \
+	then \
+		xenver=$(rpm -q kernel-xen-devel-%{kverrel}|head -n 1)\
+		kdver=$(rpm -q kernel-kdump-devel-%{kverrel}|head -n 1)\
+		if [ "kernel-xen-devel-%{kverrel}" == "$xenver" ] \
+		then \
+			flavors="$flavors xen" \
+		fi \
+		if [ "kernel-kdump-devel-%{kverrel}" == "$kdver" ] \
+		then \
+			flavors="$flavors kdump" \
+		fi \
+	fi \
+	if [ -z "%*" ]; then \
+		flavors_to_build=$flavors \
+	elif [ -z "%{-x}" ]; then \
+		flavors_to_build="%*" \
+	else \
+		flavors_to_build=" $flavors "\
+		echo "[$flavors_to_build]" >/tmp/tmp.txt
+		for i in %* \
+		do \
+			flavors_to_build=${flavors_to_build//$i /}
+		done \
+	fi \
+	echo "%%global flavors_to_build ${flavors_to_build:-%%nil}" \
+	echo "%%global kernel_source() /usr/src/kernels/%kverrel-\\\$([ %%%%{1} = default ] || echo "%%%%{1}-")%_target_cpu" \
+	if [ ! -z "%{-f*}" ] \
+	then \
+		filelist="%{-f*}" \
+	fi \
+	if [ ! -z "%{-p*}" ] \
+	then \
+		preamble="%{-p*}" \
+	fi \
+	if [ -z "%{kmodtool_generate_buildreqs}" ] \
+	then \
+		nobuildreqs="yes" \
+	fi \
+	kmp_override_filelist="$filelist" kmp_override_preamble="$preamble" kmp_nobuildreqs="$buildreqs" %{kmodtool} rpmtemplate_kmp %{-n*}%{!-n:%name} %{kverrel} $flavors_to_build 2>/dev/null \
+)}
+
+#==============================================================================
+# ---- Generic auto req/prov filtering macros 
+#
+# http://fedoraproject.org/wiki/PackagingDrafts/AutoProvidesAndRequiresFiltering
+
+# prevent anything matching from being scanned for provides
+%filter_provides_in(P) %{expand: \
+%global __filter_prov_cmd %{?__filter_prov_cmd} %{__grep} -v %{-P} '%*' | \
+}
+
+# prevent anything matching from being scanned for requires
+%filter_requires_in(P) %{expand: \
+%global __filter_req_cmd %{?__filter_req_cmd} %{__grep} -v %{-P} '%*' | \
+}
+
+# filter anything matching out of the provides stream
+%filter_from_provides() %{expand: \
+%global __filter_from_prov %{?__filter_from_prov} | %{__sed} -e '%*' \
+}
+
+# filter anything matching out of the requires stream
+%filter_from_requires() %{expand: \
+%global __filter_from_req %{?__filter_from_req} | %{__sed} -e '%*' \
+}
+
+# actually set up the filtering bits 
+%filter_setup %{expand: \
+%global _use_internal_dependency_generator 0 \
+%global __deploop() while read FILE; do /usr/lib/rpm/rpmdeps -%{1} ${FILE}; done | /bin/sort -u \
+%global __find_provides /bin/sh -c "%{?__filter_prov_cmd} %{__deploop P} %{?__filter_from_prov}" \
+%global __find_requires /bin/sh -c "%{?__filter_req_cmd}  %{__deploop R} %{?__filter_from_req}" \
+}
+#
+# rpm5 prolog for loading the standard macro
+%{load:/etc/rpm/macros.d/*.macros}
+

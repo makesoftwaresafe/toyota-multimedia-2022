@@ -1,0 +1,68 @@
+#!/usr/bin/python3
+
+from gi.repository import GLib
+
+import dbus
+import dbus.mainloop.glib
+
+def property_changed(name, value):
+	print("Modem property %s changed to %s" % (name, value))
+
+if __name__ == "__main__":
+	dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
+
+	bus = dbus.SystemBus()
+
+	manager = dbus.Interface(bus.get_object('org.ofono', '/'),
+							'org.ofono.Manager')
+
+	modems = manager.GetModems()
+	modem = dbus.Interface(bus.get_object('org.ofono', modems[0][0]),
+							'org.ofono.Modem')
+
+	modem.connect_to_signal("PropertyChanged", property_changed)
+
+	properties = modem.GetProperties()
+
+	if 'Name' in properties:
+		print("Name: %s" % (properties['Name']))
+
+	if 'Manufacturer' in properties:
+		print("Manufacturer: %s" % (properties['Manufacturer']))
+
+	if 'Model' in properties:
+		print("Model: %s" % (properties['Model']))
+
+	if 'Revision' in properties:
+		print("Revision: %s" % (properties['Revision']))
+
+	if 'Serial' in properties:
+		print("Serial: %s" % (properties['Serial']))
+
+	if 'SoftwareVersionNumber' in properties:
+		print("SoftwareVersionNumber: %s" % (properties['SoftwareVersionNumber']))
+
+	if 'Powered' in properties:
+		print("Powered: %s" % (properties['Powered']))
+
+	if 'Online' in properties:
+		print("Online: %s" % (properties['Online']))
+
+	if 'Lockdown' in properties:
+		print("Lockdown: %s" % (properties['Lockdown']))
+
+	if 'Emergency' in properties:
+		print("Emergency: %s" % (properties['Emergency']))
+
+	if 'Features' in properties:
+		print("Features:")
+		for feature in properties["Features"]:
+			print("    [ %s ]" % (feature))
+
+	if 'Interfaces' in properties:
+		print("Interfaces:")
+		for interface in properties["Interfaces"]:
+			print("    [ %s ]" % (interface))
+
+	mainloop = GLib.MainLoop()
+	mainloop.run()

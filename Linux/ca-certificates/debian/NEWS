@@ -1,0 +1,365 @@
+ca-certificates (20151214) unstable; urgency=medium
+
+  Removed SPI CA.  Closes: #796208
+  Updated Mozilla certificate authority bundle to version 2.6.
+    The following certificate authorities were added (+):
+    + "CA WoSign ECC Root"
+    + "Certification Authority of WoSign G2"
+    + "Certinomis - Root CA"
+    + "OISTE WISeKey Global Root GB CA"
+    + "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı H5"
+    + "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı H6"
+    The following certificate authorities were removed (-):
+    - "A-Trust-nQual-03"
+    - "Buypass Class 3 CA 1"
+    - "ComSign Secured CA"
+    - "Digital Signature Trust Co. Global CA 1"
+    - "Digital Signature Trust Co. Global CA 3"
+    - "SG TRUST SERVICES RACINE"
+    - "TC TrustCenter Class 2 CA II"
+    - "TC TrustCenter Universal CA I"
+    - "TURKTRUST Certificate Services Provider Root 1"
+    - "TURKTRUST Certificate Services Provider Root 2"
+    - "UTN DATACorp SGC Root CA"
+    - "Verisign Class 4 Public Primary Certification Authority - G3"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 14 Dec 2015 18:51:50 -0600
+
+ca-certificates (20150426) unstable; urgency=medium
+
+  Update Mozilla certificate authority bundle to version 2.4.
+    The following certificate authorities were added (+):
+    + "CFCA EV ROOT"
+    + "COMODO RSA Certification Authority"
+    + "Entrust Root Certification Authority - EC1"
+    + "Entrust Root Certification Authority - G2"
+    + "GlobalSign ECC Root CA - R4"
+    + "GlobalSign ECC Root CA - R5"
+    + "IdenTrust Commercial Root CA 1"
+    + "IdenTrust Public Sector Root CA 1"
+    + "S-TRUST Universal Root CA"
+    + "Staat der Nederlanden EV Root CA"
+    + "Staat der Nederlanden Root CA - G3"
+    + "USERTrust ECC Certification Authority"
+    + "USERTrust RSA Certification Authority"  Closes: #762709
+    The following certificate authorities were removed (-):
+    - "America Online Root Certification Authority 1"
+    - "America Online Root Certification Authority 2"
+    - "E-Guven Kok Elektronik Sertifika Hizmet Saglayicisi"
+    - "GTE CyberTrust Global Root"
+    - "Thawte Premium Server CA"
+    - "Thawte Server CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 26 Apr 2015 10:37:48 -0500
+
+ca-certificates (20140927) unstable; urgency=medium
+
+  Update Mozilla Certificate Authority bundle to version 2.1.
+    The following Certificate Authorities were added (+):
+    + "DigiCert Assured ID Root G2"
+    + "DigiCert Assured ID Root G3"
+    + "DigiCert Global Root G2"
+    + "DigiCert Global Root G3"
+    + "DigiCert Trusted Root G4"
+    + "QuoVadis Root CA 1 G3"
+    + "QuoVadis Root CA 2 G3"
+    + "QuoVadis Root CA 3 G3"
+    + "WoSign"
+    + "WoSign China"
+    The following Certificate Authorities were removed (-):
+    - "Entrust.net Secure Server CA"
+    - "RSA Root Certificate 1"
+    - "TDC Internet Root CA"
+    - "ValiCert Class 1 VA"
+    - "ValiCert Class 2 VA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sat, 27 Sep 2014 15:16:51 -0500
+
+ca-certificates (20140325) unstable; urgency=medium
+
+  Update mozilla/certdata.txt to version 1.97+revert_of_936304
+    Mozilla reverted the removal of 1024-bit root certificates for
+    Entrust.net, GTE CyberTrust, and ValiCert (RSA), but did not update the
+    version number in nssckbi.h.
+    Certificates added (+) (none removed):
+    + "Entrust.net Secure Server CA"
+    + "GTE CyberTrust Global Root"
+    + "RSA Root Certificate 1"
+    + "ValiCert Class 1 VA"
+    + "ValiCert Class 2 VA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Tue, 25 Mar 2014 13:28:19 -0500
+
+ca-certificates (20140223) unstable; urgency=medium
+
+  Debian will no longer ship cacert.org certificates.
+
+  Update mozilla/certdata.txt to version 1.97.
+    Certificates added (+), removed (-), and renamed (~):
+    + "ACCVRAIZ1"
+    + "Atos TrustedRoot 2011"
+    + "E-Tugra Certification Authority"
+    + "SG TRUST SERVICES RACINE"
+    + "StartCom Certification Authority"
+    ~ "StartCom Certification Authority"_2
+      (both StartCom CAs now included with duplicate CKA_LABEL fix)
+    + "T-TeleSec GlobalRoot Class 2"
+    + "TWCA Global Root CA"
+    + "TeliaSonera Root CA v1"
+    + "Verisign Class 3 Public Primary Certification Authority"
+    ~ "Verisign Class 3 Public Primary Certification Authority"_2
+      (both Verisign Class 3 CAs now included with duplicate CKA_LABEL fix)
+    - "Entrust.net Secure Server CA"
+    - "Firmaprofesional Root CA"
+    - "GTE CyberTrust Global Root"
+    - "RSA Root Certificate 1"
+    - "TDC OCES Root CA"
+    - "ValiCert Class 1 VA"
+    - "ValiCert Class 2 VA"
+    - "Wells Fargo Root CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 23 Feb 2014 15:21:39 -0600
+
+ca-certificates (20130906) unstable; urgency=low
+
+  Update mozilla/certdata.txt to version 1.94
+    Certificates added (+) and removed (-):
+    + "CA Disig Root R1"
+    + "CA Disig Root R2"
+    + "China Internet Network Information Center EV Certificates Root"
+    + "D-TRUST Root Class 3 CA 2 2009"
+    + "D-TRUST Root Class 3 CA 2 EV 2009"
+    + "PSCProcert"
+    + "Swisscom Root CA 2"
+    + "Swisscom Root EV CA 2"
+    + "TURKTRUST Certificate Services Provider Root 2007"
+    - "Equifax Secure eBusiness CA 2"
+    - "TC TrustCenter Universal CA III"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Fri, 06 Sep 2013 11:31:06 -0500
+
+ca-certificates (20130610) unstable; urgency=low
+
+  CAcert root and class3 certificates are now installed as individual
+  files, no longer as the concatenation of the two. The certificates
+  are installed as cacert.org_root.crt and cacert.org_class3.crt for
+  ease of identification.
+
+  Remove obsolete debconf.org CA.
+  Remove obsolete SPI CA certificate expired in 2007.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Mon, 10 Jun 2013 19:57:05 +0200
+
+ca-certificates (20130119) unstable; urgency=low
+
+  Update mozilla/certdata.txt to version 1.87
+    Certificates removed (-) (none added):
+    - "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sat, 19 Jan 2013 14:08:50 -0600
+
+ca-certificates (20121105) unstable; urgency=low
+
+  Update mozilla/certdata.txt to version 1.86
+    Certificates added (+) (none removed):
+    + "Actalis Authentication Root CA"
+    + "Trustis FPS Root CA"
+    + "StartCom Certification Authority" (renewal/rehash)
+    + "StartCom Certification Authority G2"
+    + "Buypass Class 2 Root CA"
+    + "Buypass Class 3 Root CA"
+    + "TÜRKTRUST Elektronik Sertifika Hizmet Sağlayıcısı"
+    + "T-TeleSec GlobalRoot Class 3"
+    + "EE Certification Centre Root CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Mon, 05 Nov 2012 10:56:28 -0600
+
+ca-certificates (20120212) unstable; urgency=low
+
+  Update mozilla/certdata.txt to version 1.81
+    Certificates added (+) and removed (-):
+    + "Security Communication RootCA2"
+    + "EC-ACC"
+    + "Hellenic Academic and Research Institutions RootCA 2011"
+    - "Verisign Class 2 Public Primary Certification Authority"
+    - "Verisign Class 4 Public Primary Certification Authority - G2"
+    - "TC TrustCenter, Germany, Class 2 CA"
+    - "TC TrustCenter, Germany, Class 3 CA"
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 12 Feb 2012 15:12:59 -0600
+
+ca-certificates (20111211) unstable; urgency=low
+
+  Remove French Government IGC/A CA certificates. The RSA certificate is
+    included in the Mozilla bundle and the DSA certificate is not in use.
+  Remove expired signet.pl CAs.
+  Remove expired brasil.gov.br CA.
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 11 Dec 2011 19:05:32 -0600
+
+ca-certificates (20111025) unstable; urgency=low
+
+  Update mozilla/certdata.txt to latest (NSS branch version 1.64.2.13)
+    Certificates added (+) and removed (-):
+    + "AffirmTrust Commercial"
+    + "AffirmTrust Networking"
+    + "AffirmTrust Premium"
+    + "AffirmTrust Premium ECC"
+    + "A-Trust-nQual-03"
+    + "Certinomis - Autorité Racine"
+    + "Certum Trusted Network CA"
+    + "Go Daddy Root Certificate Authority - G2"
+    + "Root CA Generalitat Valenciana"
+    + "Starfield Root Certificate Authority - G2"
+    + "Starfield Services Root Certificate Authority - G2"
+    + "TWCA Root Certification Authority"
+    - "AOL Time Warner Root Certification Authority 1"
+    - "AOL Time Warner Root Certification Authority 2"
+    - "DigiNotar Root CA"
+    - "Entrust.net Global Secure Personal CA"
+    - "Entrust.net Global Secure Server CA"
+    - "Entrust.net Secure Personal CA"
+    - "IPS Chained CAs root"
+    - "IPS CLASE1 root"
+    - "IPS CLASE3 root"
+    - "IPS CLASEA1 root"
+    - "IPS CLASEA3 root"
+    - "IPS Timestamping root"
+    - "Thawte Personal Freemail CA"
+    - "Thawte Time Stamping CA"
+  Update CAcert-Class 3-Subroot-certificate  Closes: #630232
+
+ -- Michael Shuler <michael@pbandjelly.org>  Sun, 23 Oct 2011 23:16:57 -0500
+
+ca-certificates (20090708) unstable; urgency=low
+
+  * Removed CA files:
+    - cacert.org/root.crt and cacert.org/class3.crt:
+      Both certificate files were deprecated with 20080809.  Users of these
+      root certificates are encouraged to switch to
+      `cacert.org/cacert.org.crt' which contains both class 1 and class 3
+      roots joined in a single file.
+    - quovadis.bm/QuoVadis_Root_Certification_Authority.crt:
+      This certificate has been added into the Mozilla truststore and
+      is available as `mozilla/QuoVadis_Root_CA.crt'.
+
+ -- Philipp Kern <pkern@debian.org>  Wed, 08 Jul 2009 23:19:56 +0200
+
+ca-certificates (20090701) unstable; urgency=low
+
+  * Readded Equifax Secure Global eBusiness CA.
+
+ -- Philipp Kern <pkern@debian.org>  Wed, 01 Jul 2009 14:47:02 +0200
+
+ca-certificates (20090624) unstable; urgency=low
+
+  * This update eases the installation of local certification authorities
+    by providing a canonical location in `/usr/local/share/ca-certificates'.
+    All certificates found in this directory will automatically be included
+    into the list of trusted certificates.  For details please see
+    `/usr/share/doc/ca-certificates/README.Debian'.
+  * New CA certificates:
+    - COMODO ECC Certification Authority
+    - DigiNotar Root CA
+    - Network Solutions Certificate Authority
+    - WellsSecure Public Root Certificate Authority
+  * Removed CA certificates:
+    - Equifax Secure Global eBusiness CA
+    - UTN USERFirst Object Root CA
+
+ -- Philipp Kern <pkern@debian.org>  Wed, 24 Jun 2009 21:04:45 +0200
+
+ca-certificates (20080809) unstable; urgency=low
+
+  * New cacert.org.pem joining both CACert Class 1 and Class 3 certificates.
+    This file can be used for proper certificate chaining if CACert
+    server certificates are used.  The old class3.pem and root.pem
+    certificates are deprecated.  This new file could safely serve as
+    a replacement for both.
+
+ -- Philipp Kern <pkern@debian.org>  Sat, 09 Aug 2008 14:58:24 -0300
+
+ca-certificates (20080617) unstable; urgency=low
+
+  * New CA certificates:
+    - gouv.fr: added French Government's IGC/A CA
+    - spi-inc.org: added new SPI CA certificate, created in reponse to
+      the infamous OpenSSL security update (already in 20080514)
+  * Removed CA certificates:
+    - spi-inc.org: removed old, still valid but possibly compromised
+      SPI CA certificates from 2006 and 2007 (already in 20080514)
+
+ -- Philipp Kern <pkern@debian.org>  Fri, 20 Jun 2008 10:05:49 +0200
+
+ca-certificates (20080411) unstable; urgency=low
+
+  * New CA certificates:
+    - spi-inc.org: current SPI CA certificate
+    - telesec.de: added Deutsche Telekom Root CA 2
+    - mozilla:
+      + Camerfirma Chambers of Commerce Root
+      + Camerfirma Global Chambersign Root
+      + Certplus Class 2 Primary CA
+      + COMODO Certification Authority
+      + DigiCert Assured ID Root CA
+      + DigiCert Global Root CA
+      + DigiCert High Assurance EV Root CA
+      + DST ACES CA X6
+      + DST Root CA X3
+      + Entrust Root Certification Authority
+      + Firmaprofesional Root CA
+      + GeoTrust Global CA 2
+      + GeoTrust Primary Certification Authority
+      + GeoTrust Universal CA
+      + GeoTrust Universal CA 2
+      + GlobalSign Root CA - R2
+      + Go Daddy Class 2 CA
+      + NetLock Business (Class B) Root
+      + NetLock Express (Class C) Root
+      + NetLock Notary (Class A) Root
+      + NetLock Qualified (Class QA) Root
+      + QuoVadis Root CA 2
+      + QuoVadis Root CA 3
+      + Secure Global CA
+      + SecureTrust CA
+      + Starfield Class 2 CA
+      + StartCom Certification Authority
+      + StartCom Ltd.
+      + Swisscom Root CA 1
+      + SwissSign Gold CA - G2
+      + SwissSign Platinum CA - G2
+      + SwissSign Silver CA - G2
+      + Taiwan GRCA
+      + thawte Primary Root CA
+      + TURKTRUST Certificate Services Provider Root 1
+      + TURKTRUST Certificate Services Provider Root 2
+      + VeriSign Class 3 Public Primary Certification Authority - G5
+      + Wells Fargo Root CA
+      + XRamp Global CA Root
+  * Removed CA certificates:
+    - mozilla:
+      + Verisign Class 1 Public Primary OCSP Responder
+      + Verisign Class 2 Public Primary OCSP Responder
+      + Verisign Class 3 Public Primary OCSP Responder
+      + Verisign Secure Server OCSP Responder
+
+ -- Philipp Kern <pkern@debian.org>  Mon, 07 Apr 2008 18:00:06 +0200
+
+ca-certificates (20070303) unstable; urgency=low
+
+  * New CA certificates:
+    - debconf.org: DebConf
+    - cacert.org: add class3
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Sat,  3 Mar 2007 21:21:50 -0800
+
+ca-certificates (20040808) unstable; urgency=low
+
+  * New CA certificates:
+   - brasil.gov.gr: Autoridade Certificadora Raiz Brasileira
+   - signet.pl: Certification Center Signet (CC Signet)
+   - quovadis.bm: QuoVadis CA certificates
+  * Remove CA certificates:
+   - debian.org: revoked due to crack incident.
+
+ -- Fumitoshi UKAI <ukai@debian.or.jp>  Sun,  8 Aug 2004 22:43:36 +0900

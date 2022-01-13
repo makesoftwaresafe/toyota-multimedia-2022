@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# A fixed version of this file that doesn't bomb out
+# when failing to match. Also removed the case statement
+# as it's simpler to just let 'find' do everything in one pass.
+#
+#
+# If using normal root, avoid changing anything.
+if [ -z "$RPM_BUILD_ROOT" -o "$RPM_BUILD_ROOT" = "/" ]; then
+    exit 0
+fi
+#
+# Remove occurrences of $RPM_BUILD_ROOT from *.la and *.pc files.
+#
+for f in `find $RPM_BUILD_ROOT -type f -name \*.pc -o -name \*.la` ; do
+    # -c to count the occurrences, only proceed if >= 1
+    if [ "`grep -c "${RPM_BUILD_ROOT}\/" "$f"`" -ge 1 ]; then
+        sed -e "s|${RPM_BUILD_ROOT}/|/|g" "$f" > "$f.out" && \
+        mv -f "$f.out" "$f"
+    fi
+done

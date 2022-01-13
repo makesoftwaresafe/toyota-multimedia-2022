@@ -1,0 +1,7 @@
+LIBRPMCONSTANT_0
+{
+  global:
+    rpm*;
+  local:
+    *;
+};

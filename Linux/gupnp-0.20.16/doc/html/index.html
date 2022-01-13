@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnP Reference Manual: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="next" href="tutorial.html" title="Part I. Tutorial">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="book">
+<div class="titlepage">
+<div>
+<div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">GUPnP Reference Manual</p></th></tr></table></div>
+<div><p class="releaseinfo">Version 0.20.16
+</p></div>
+<div><p class="copyright">Copyright © 2007, 2008, 2009 OpenedHand Ltd, Nokia Corporation</p></div>
+<div><div class="legalnotice">
+<a name="id-1.1.4"></a><p>
+        Permission is granted to copy, distribute and/or modify this
+        document under the terms of the <em class="citetitle">GNU Free
+        Documentation License</em>, Version 1.1 or any later
+        version published by the Free Software Foundation with no
+        Invariant Sections, no Front-Cover Texts, and no Back-Cover
+        Texts. You may obtain a copy of the <em class="citetitle">GNU Free
+        Documentation License</em> from the Free Software
+        Foundation by visiting <a class="ulink" href="http://www.fsf.org" target="_top">their Web site</a> or by writing
+        to:
+
+        </p>
+<div class="address"><p><br>
+          The Free Software Foundation, Inc.,<br>
+          <span class="street">59 Temple Place</span> - Suite 330,<br>
+          <span class="city">Boston</span>, <span class="state">MA</span> <span class="postcode">02111-1307</span>,<br>
+          <span class="country">USA</span></p></div>
+<p>
+      </p>
+</div></div>
+</div>
+<hr>
+</div>
+<div class="toc"><dl class="toc">
+<dt><span class="part"><a href="tutorial.html">I. Tutorial</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="overview.html">Overview</a></span></dt>
+<dt><span class="chapter"><a href="client-tutorial.html">Writing a UPnP Client</a></span></dt>
+<dt><span class="chapter"><a href="server-tutorial.html">Writing a UPnP Service</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="api.html">II. Reference</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="api-device-info.html">Device Information</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GUPnPDeviceInfo.html">GUPnPDeviceInfo</a></span><span class="refpurpose"> — Base abstract class for querying device information.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPServiceInfo.html">GUPnPServiceInfo</a></span><span class="refpurpose"> — Base abstract class for querying service information.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gupnp-gupnp-service-introspection.html">GUPnPServiceIntrospection</a></span><span class="refpurpose"> — Service introspection class.</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="api-device-control.html">Device Control</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GUPnPControlPoint.html">GUPnPControlPoint</a></span><span class="refpurpose"> — Class for resource discovery.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPDeviceProxy.html">GUPnPDeviceProxy</a></span><span class="refpurpose"> — Proxy class for remote devices.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPServiceProxy.html">GUPnPServiceProxy</a></span><span class="refpurpose"> — Proxy class for remote services.</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="api-device-impl.html">Device Implementation</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GUPnPDevice.html">GUPnPDevice</a></span><span class="refpurpose"> — Class for device implementations.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPRootDevice.html">GUPnPRootDevice</a></span><span class="refpurpose"> — Class for root device implementations.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPService.html">GUPnPService</a></span><span class="refpurpose"> — Class for service implementations.</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="api-context.html">Network context handling</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GUPnPContext.html">GUPnPContext</a></span><span class="refpurpose"> — Context object wrapping shared networking bits.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPContextManager.html">GUPnPContextManager</a></span><span class="refpurpose"> — Manages GUPnPContext objects.</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="api-utility.html">Utility Functions</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="GUPnPAcl.html">GUPnPAcl</a></span><span class="refpurpose"> — Object providing a simple access control list for
+GUPnP.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPWhiteList.html">GUPnPWhiteList</a></span><span class="refpurpose"> — Class for network filtering.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPResourceFactory.html">GUPnPResourceFactory</a></span><span class="refpurpose"> — Class for resource and resource proxy object creation.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="GUPnPXMLDoc.html">GUPnPXMLDoc</a></span><span class="refpurpose"> — GObject wrapper for xmlDoc.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gupnp-Error-codes.html">Error codes</a></span><span class="refpurpose"> — Error domains and codes.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gupnp-Special-UPnP-types.html">Special UPnP types</a></span><span class="refpurpose"> — Extra types for use when calling UPnP actions.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="gupnp-Utility-functions.html">Utility functions</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="api-tools.html">Tools</a></span></dt>
+<dd><dl><dt>
+<span class="refentrytitle"><a href="gupnp-binding-tool.html">gupnp-binding-tool</a></span><span class="refpurpose"> — creates C convenience wrappers for UPnP services</span>
+</dt></dl></dd>
+</dl></dd>
+<dt><span class="part"><a href="schemas.html">III. XML Schemas</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="schemas-device.html">Device Description</a></span></dt>
+<dt><span class="chapter"><a href="schemas-service.html">Service Description</a></span></dt>
+</dl></dd>
+<dt><span class="glossary"><a href="glossary.html">Glossary</a></span></dt>
+<dt><span class="glossary"><a href="annotation-glossary.html">Annotation Glossary</a></span></dt>
+<dt><span class="index"><a href="ix01.html">Index</a></span></dt>
+</dl></div>&gt;
+
+  </div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

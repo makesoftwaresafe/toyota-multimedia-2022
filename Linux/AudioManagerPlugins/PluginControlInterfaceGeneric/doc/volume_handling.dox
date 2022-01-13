@@ -1,0 +1,85 @@
+/*!
+
+\page volHandling Volume Handling
+
+
+When setSinkVolume is received by audiomanager on command side, this is hooked
+to generic controller. The controller forwards this request to the policy engine.
+Based on the policy configuration, the set of actions would be executed. The 
+details of the volume actions are covered in the \ref volumeActions. This page
+covers in detail about the ACTION_SET_VOLUME action.
+
+Usually during the execution of the ACTION_SET_VOLUME action following things 
+are performed, controller would convert the mainVolume to the volume i.e user 
+volume to the routing side volume and send the routing side asynchronous 
+volume request. On receiving the acknowledge from the routing side for the 
+volume, generic controller would update the audiomanager daemon database with 
+the received volume. The update of the database would trigger the notification 
+on the command side.
+
+The volume is effective only for a connected connection with audio data 
+streaming. Hence the controller treats the volume request as a main connection
+volume request. This concepts simplifies the volume handling in complex mixed 
+volume scenario.
+
+Consider the example below, 
+\image html Scenario-1.png
+
+We have already existing connection between radio source and speaker sink.
+Let say we define connection volume as sum of all the elements(source and sink )
+present in the connection. The radio connection volume is 0. There is a request 
+for the navigation connection indicated by the dotted line. Imagine that the 
+policy gives the action to limit(i.e ACTION_LIMIT) the radio volume to -100. In that case controller 
+would determine that the speaker sink is already shared between radio and navigation,
+if speaker volume is changed it affects both the connection. Here controller would
+change the source side volume as shown in the diagram below
+
+\image html Scenario-2.png
+
+Now imagine user send the volume request(-50), controller would determine that 
+the volume request is for the foreground connection and it would execute the 
+volume request for the navigation connection and  the result would be as below
+
+\image html Scenario-3.png
+
+In all the above cases even though the volume of the source is changed the controller
+would update it as the sink main volume.
+
+There is one feature implemented in the controller called as per sink class 
+volume handling. This feature can be enabled by configuring the class with class 
+property type CP_PER_SINK_CLASS_VOLUME_SUPPORT. If this property is set to 1 then 
+the class would remember per sink volume. 
+
+@code
+How to set the class property to support Per sink class volume.
+
+<class>
+    <name>BASE</name>
+    <type>C_PLAYBACK</type>
+    <topology>SharedSink=Gateway0(BaseSource)</topology>
+    <topology>ExclusiveSink=Gateway1(BaseSource)</topology>
+    <classProperty>
+        <type>CP_PER_SINK_CLASS_VOLUME_SUPPORT</type>
+        <value>1</value>
+    </classProperty>
+    <defaultVolume>100</defaultVolume>
+</class>
+@endcode
+
+In addition to setting the sink main volume in the database for a volume change 
+request controller would set the main sound property of the sink. Every sink 
+would have a main sound property defined in the reserved sound property area 
+corresponding to each class. Example in the above case the speaker is shared in 
+both radio(i.e lets say entertainment class) and the navigation(i.e announcement 
+class), the controller would remember the volume of speaker in both the 
+connections separately by setting the sound property for each class. 
+
+The main sound property for a sink are internally defined/Managed by the controller 
+using following formula
+
+MSP_SINK_PER_CLASS_VOLUME_TYPE(CLASS_ID) = VOLUME_PROPERTY_BASE - CLASS_ID_BASE + CLASS_ID
+where, VOLUME_PROPERTY_BASE = 61824,
+       CLASS_ID_BASE = 101,
+       CLASS_ID = class id.
+
+*/

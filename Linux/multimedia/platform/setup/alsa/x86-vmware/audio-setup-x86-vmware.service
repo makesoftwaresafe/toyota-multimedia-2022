@@ -1,0 +1,20 @@
+[Unit]
+Description=Setup of audio device on x86-vmware
+DefaultDependencies=yes
+ConditionPathExistsGlob=/var/lib/opkg/info/vmware-guest.control
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we are deploy the common vad configuration -------
+# - this call is ADIT internally used to provide a common set of
+#   virtual devices on all targets 
+ExecStart=/bin/mount --bind /etc/alsa-brd-cfg/x86-vmware/asound_board.conf /etc/asound_board.conf
+
+#-------------------- we are setting up the alsa devices ---------------
+# - adapt this call in a way that loads it the settings from your
+#   expected destination
+ExecStart=/usr/sbin/alsactl restore AudioPCI -f /etc/alsa-brd-cfg/x86-vmware/asound.state

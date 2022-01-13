@@ -1,0 +1,11 @@
+#!/bin/sh
+# Use a modules directory which doesn't exist so we don't load random things
+# which may then get deleted (or their dependencies) and potentially segfault
+export GIO_MODULE_DIR=/home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/lib64/gio/modules-dummy
+
+PSEUDO_UNLOAD=1 qemu-x86_64 -r 3.2.0  -cpu Nehalem,check=false -L /home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 -E LD_LIBRARY_PATH=$GIR_EXTRA_LIBS_PATH:.libs:/home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64//usr/lib64:/home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64//lib64  "$@"
+if [ $? -ne 0 ]; then
+    echo "If the above error message is about missing .so libraries, then setting up GIR_EXTRA_LIBS_PATH in the recipe should help."
+    echo "(typically like this: GIR_EXTRA_LIBS_PATH=\"$""{B}/something/.libs\" )"
+    exit 1
+fi

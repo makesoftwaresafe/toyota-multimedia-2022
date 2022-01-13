@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c:configuration xmlns:c="controller" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="controller audiomanagertypes.xsd ">
+    <listSources>
+        <source>
+            <id>0</id>
+            <domainName>UNKNOWN</domainName>
+            <name>SourceTemplate</name>
+            <volume>0</volume>
+            <visible>TRUE</visible>
+            <className>UNKNOWN</className>
+            <sourceState>SS_OFF</sourceState>
+            <connectionFormat>CF_GENIVI_STEREO</connectionFormat>
+            <interruptState>IS_OFF</interruptState>
+            <availability>
+                <availability>A_AVAILABLE</availability>
+                <availabilityReason>AR_UNKNOWN</availabilityReason>
+            </availability>
+            <soundProperty>
+                <type>SP_GENIVI_TREBLE</type>
+                <value minValue="0" maxValue="10">5</value>
+            </soundProperty>
+            <soundProperty>
+                <type>SP_GENIVI_MID</type>
+                <value minValue="0" maxValue="10">5</value>
+            </soundProperty>
+            <soundProperty>
+                <type>SP_GENIVI_BASS</type>
+                <value minValue="0" maxValue="10">5</value>
+            </soundProperty>
+            <mainSoundProperty>
+                <type>MSP_GENIVI_TREBLE</type>
+                <value minValue="0" maxValue="10">5</value>
+            </mainSoundProperty>
+            <mainSoundProperty>
+                <type>MSP_GENIVI_MID</type>
+                <value minValue="0" maxValue="10">5</value>
+            </mainSoundProperty>
+            <mainSoundProperty>
+                <type>MSP_GENIVI_BASS</type>
+                <value minValue="0" maxValue="10">5</value>
+            </mainSoundProperty>
+            <registrationType>REG_TEMPLATE</registrationType>
+            <isVolumeSupported>FALSE</isVolumeSupported>
+            <priority>1</priority>
+            <listMainSoundPropertiesToSoundProperties>
+                <mapEntry>MSP_UNKNOWN,SP_UNKNOWN</mapEntry>
+                <mapEntry>MSP_GENIVI_BASS,SP_GENIVI_BASS</mapEntry>
+                <mapEntry>MSP_GENIVI_MID,SP_GENIVI_MID</mapEntry>
+                <mapEntry>MSP_GENIVI_TREBLE,SP_GENIVI_TREBLE</mapEntry>
+            </listMainSoundPropertiesToSoundProperties>
+            <minVolume>-3000</minVolume>
+            <maxVolume>3000</maxVolume>
+            <listSourceVolumeMap>
+                <tableEntry>-3000.0,-3000.0</tableEntry>
+                <tableEntry>0.0,-100.0</tableEntry>
+                <tableEntry>3000.0,0.0</tableEntry>
+            </listSourceVolumeMap>
+        </source>
+        <source baseName="SourceTemplate">
+            <id>1</id>
+            <domainName>Applications</domainName>
+            <name>MediaPlayer</name>
+            <className>BASE</className>
+            <registrationType>REG_CONTROLLER</registrationType>
+        </source>
+        <source baseName="SourceTemplate">
+            <id>2</id>
+            <domainName>Applications</domainName>
+            <name>Navigation</name>
+            <className>NAVI</className>
+            <registrationType>REG_CONTROLLER</registrationType>
+        </source>
+        <source baseName="SourceTemplate">
+            <domainName>VirtDSP</domainName>
+            <name>Gateway0</name>
+            <className>BASE</className>
+            <registrationType>REG_ROUTER</registrationType>
+            <isVolumeSupported>TRUE</isVolumeSupported>
+        </source>
+        <source baseName="SourceTemplate">
+            <domainName>VirtDSP</domainName>
+            <name>Gateway1</name>
+            <className>NAVI</className>
+            <registrationType>REG_ROUTER</registrationType>
+            <isVolumeSupported>TRUE</isVolumeSupported>
+        </source>
+    </listSources>  
+    <listSinks>
+        <sink>
+            <id>0</id>
+            <domainName>UNKNOWN</domainName>
+            <name>SinkTemplate</name>
+            <volume>0</volume>
+            <visible>TRUE</visible>
+            <mainVolume>10</mainVolume>
+            <className>UNKNOWN</className>
+            <muteState>MS_UNMUTED</muteState>
+            <connectionFormat>CF_GENIVI_STEREO</connectionFormat>
+            <availability>
+                <availability>A_AVAILABLE</availability>
+                <availabilityReason>AR_GENIVI_NEWMEDIA</availabilityReason>
+            </availability>
+            <soundProperty>
+                <type>SP_GENIVI_TREBLE</type>
+                <value minValue="0" maxValue="10">5</value>
+            </soundProperty>
+            <soundProperty>
+                <type>SP_GENIVI_MID</type>
+                <value minValue="0" maxValue="10">5</value>
+            </soundProperty>
+            <soundProperty>
+                <type>SP_GENIVI_BASS</type>
+                <value minValue="0" maxValue="10">5</value>
+            </soundProperty>
+            <mainSoundProperty>
+                <type>MSP_GENIVI_TREBLE</type>
+                <value minValue="0" maxValue="10">5</value>
+            </mainSoundProperty>
+            <mainSoundProperty>
+                <type>MSP_GENIVI_MID</type>
+                <value minValue="0" maxValue="10">5</value>
+            </mainSoundProperty>
+            <mainSoundProperty>
+                <type>MSP_GENIVI_BASS</type>
+                <value minValue="0" maxValue="10">5</value>
+            </mainSoundProperty>
+            <registrationType>REG_TEMPLATE</registrationType>
+            <isVolumeSupported>FALSE</isVolumeSupported>
+            <priority>1</priority>
+            <listMainSoundPropertiesToSoundProperties>
+                <mapEntry>MSP_UNKNOWN,SP_UNKNOWN</mapEntry>
+                <mapEntry>MSP_GENIVI_BASS,SP_GENIVI_BASS</mapEntry>
+                <mapEntry>MSP_GENIVI_MID,SP_GENIVI_MID</mapEntry>
+                <mapEntry>MSP_GENIVI_TREBLE,SP_GENIVI_TREBLE</mapEntry>
+            </listMainSoundPropertiesToSoundProperties>
+        </sink>
+        <sink baseName="SinkTemplate">
+            <id>1</id>
+            <domainName>VirtDSP</domainName>
+            <name>AMP</name>
+            <className>BASE</className>
+            <registrationType>REG_CONTROLLER</registrationType>
+            <isVolumeSupported>TRUE</isVolumeSupported>
+            <listMainVolumesToNormalizedVolumes>
+                <tableEntry>0,0.0</tableEntry>
+                <tableEntry>1,0.8</tableEntry>
+                <tableEntry>10,1.0</tableEntry>
+            </listMainVolumesToNormalizedVolumes>
+            <listNormalizedVolumesToDecibelVolumes>
+                <tableEntry>0.0,-300.0</tableEntry>
+                <tableEntry>1.0,0.0</tableEntry>
+            </listNormalizedVolumesToDecibelVolumes>
+        </sink>
+        <sink baseName="SinkTemplate">
+            <domainName>Applications</domainName>
+            <name>Gateway0</name>
+            <className>BASE</className>
+            <registrationType>REG_ROUTER</registrationType>
+        </sink>
+        <sink baseName="SinkTemplate">
+            <domainName>Applications</domainName>
+            <name>Gateway1</name>
+            <className>NAVI</className>
+            <registrationType>REG_ROUTER</registrationType>
+        </sink>
+    </listSinks>
+    <listGateways>
+        <gateway>
+            <name>Gateway0</name>
+            <conversionMatrix>CF_GENIVI_STEREO,CF_GENIVI_STEREO</conversionMatrix>
+            <sinkName>Gateway0</sinkName>
+            <sourceName>Gateway0</sourceName>
+            <controlDomainName>Applications</controlDomainName>
+        </gateway>
+        <gateway>
+            <name>Gateway1</name>
+            <conversionMatrix>CF_GENIVI_STEREO,CF_GENIVI_STEREO</conversionMatrix>
+            <sinkName>Gateway1</sinkName>
+            <sourceName>Gateway1</sourceName>
+            <controlDomainName>Applications</controlDomainName>
+        </gateway>
+    </listGateways>
+    <listDomains>
+        <domain>
+            <id>0</id>
+            <name>Applications</name>
+            <busName>busName1</busName>
+            <nodeName>Cpu</nodeName>
+            <early>FALSE</early>
+            <complete>TRUE</complete>
+            <state>DS_CONTROLLED</state>
+            <registrationType>REG_ROUTER</registrationType>
+        </domain>
+        <domain>
+            <id>0</id>
+            <name>VirtDSP</name>
+            <busName>busName2</busName>
+            <nodeName>Cpu</nodeName>
+            <early>FALSE</early>
+            <complete>TRUE</complete>
+            <state>DS_CONTROLLED</state>
+            <registrationType>REG_ROUTER</registrationType>
+        </domain>
+    </listDomains>
+    <listClasses>
+        <class>
+            <name>BASE</name>
+            <type>C_PLAYBACK</type>
+            <priority>1</priority>
+            <topology>AMP=Gateway0(MediaPlayer)</topology>
+            <classProperty>
+                <type>CP_PER_SINK_CLASS_VOLUME_SUPPORT</type>
+                <value>1</value>
+            </classProperty>
+            <defaultVolume>10</defaultVolume>
+        </class>
+        <class>
+            <name>NAVI</name>
+            <type>C_PLAYBACK</type>
+            <priority>1</priority>
+            <topology>AMP=Gateway1(Navigation)</topology>
+            <classProperty>
+                <type>CP_PER_SINK_CLASS_VOLUME_SUPPORT</type>
+                <value>1</value>
+            </classProperty>
+            <defaultVolume>10</defaultVolume>
+        </class>
+    </listClasses>
+    <listPolicies>
+        <!--Connect Policy Start-->
+        <policy>
+            <trigger>USER_CONNECTION_REQUEST</trigger>
+            <process>
+                <condition>name(CLASS, REQUESTING) EQ "BASE"</condition>
+                <condition>connectionState(CONNECTIONOFCLASS, REQUESTING, OTHERS) INC CS_CONNECTED</condition>
+                <action>
+                    <type>ACTION_DISCONNECT</type>
+                    <param>
+                        <className>"BASE"</className>
+                        <connectionState>CS_CONNECTED</connectionState>
+                    </param>
+                </action>
+ 	       </process>
+            <process>
+                <condition>name(CLASS, REQUESTING) EQ "NAVI"</condition>
+                <action>
+                    <type>ACTION_PUSH</type>
+                    <param>
+                        <className>"BASE"</className>
+                    </param>
+                </action>
+            </process>
+            <process>
+                <action>
+                    <type>ACTION_CONNECT</type>
+                    <param>
+                        <className>REQUESTING</className>
+                        <timeOut>5000</timeOut>
+                    </param>
+                </action>
+            </process>
+        </policy>
+        <!--Connect policy end-->
+        <!--Disconnect policy start-->
+        <policy>
+            <trigger>USER_DISCONNECTION_REQUEST</trigger>
+            <process>
+                <action>
+                    <type>ACTION_DISCONNECT</type>
+                    <param>
+                        <sourceName>REQUESTING</sourceName>
+                        <sinkName>REQUESTING</sinkName>
+                    </param>
+                </action>
+            </process>
+            <process>
+                <condition>name(CLASS, REQUESTING) EQ "NAVI"</condition>
+                <action>
+                    <type>ACTION_POP</type>
+                    <param>
+                        <className>"BASE"</className>
+                    </param>
+                </action>
+            </process>
+        </policy>
+        <!--Disconnect policy end -->
+        <policy>
+            <trigger>USER_SET_VOLUME</trigger>
+            <process>
+                <action>
+                    <type>ACTION_SET_VOLUME</type>
+                    <param>
+                        <sinkName>REQUESTING</sinkName>
+                    </param>
+                </action>
+            </process>
+        </policy>
+        <!-- default mute policy start -->
+        <policy>
+            <trigger>USER_SET_SINK_MUTE_STATE</trigger>
+            <process>
+                <condition>muteState(USER,REQUESTING) EQ MS_MUTED</condition>
+                <condition>connectionState(CONNECTIONOFCLASS, "NAVI") INC CS_CONNECTED</condition>
+                <action>
+                    <type>ACTION_MUTE</type>
+                    <param>
+                        <className>NAVI</className>
+                    </param>
+                </action>
+                <action>
+                    <type>ACTION_DISCONNECT</type>
+                    <param>
+                        <className>NAVI</className>
+                    </param>
+                </action>
+            </process>
+            <process>
+                <condition>muteState(USER,REQUESTING) EQ MS_MUTED</condition>
+                <condition>connectionState(CONNECTIONOFCLASS, "NAVI") INC CS_CONNECTED</condition>
+                <condition>connectionState(CONNECTIONOFCLASS, "BASE") INC CS_CONNECTED</condition>
+                <action>
+                    <type>ACTION_UNLIMIT</type>
+                    <param>
+                        <className>BASE</className>
+                        <rampTime>1000</rampTime>
+                        <rampType>RAMP_GENIVI_LINEAR</rampType>
+                    </param>
+                </action>
+                <break>TRUE</break>
+            </process>
+            <process>
+                <condition>muteState(USER,REQUESTING) EQ MS_MUTED</condition>
+                <condition>connectionState(CONNECTIONOFCLASS, "BASE") INC CS_CONNECTED</condition>
+                <action>
+                    <type>ACTION_SUSPEND</type>
+                    <param>
+                        <className>BASE</className>
+                    </param>
+                </action>
+            </process>
+            <process>
+                <condition>muteState(USER,REQUESTING) EQ MS_UNMUTED</condition>
+                <condition>connectionState(CONNECTIONOFCLASS, "BASE") INC CS_SUSPENDED</condition>
+                <action>
+                    <type>ACTION_RESUME</type>
+                    <param>
+                        <className>BASE</className>
+                        <order>O_NEWEST</order>
+                    </param>
+                </action>
+            </process>
+<!--
+            <process>
+                <condition>muteState(USER,REQUESTING) EQ MS_MUTED</condition>
+                <action>
+                    <type>ACTION_MUTE</type>
+                    <param>
+                        <sinkName>REQUESTING</sinkName>
+                    </param>
+                </action>
+            </process>
+            <process>
+                <condition>muteState(USER,REQUESTING) EQ MS_UNMUTED</condition>
+                <action>
+                    <type>ACTION_UNMUTE</type>
+                    <param>
+                        <sinkName>REQUESTING</sinkName>
+                    </param>
+                </action>
+            </process>
+-->
+        </policy>
+        <!-- default mute policy end -->
+        <!-- default set sink sound property policy start -->
+        <policy>
+            <trigger>USER_SET_SINK_MAIN_SOUND_PROPERTY</trigger>
+            <process>
+                <action>
+                    <type>ACTION_SET_PROPERTY</type>
+                    <param>
+                        <sinkName>REQUESTING</sinkName>
+                    </param>
+                </action>
+            </process>
+        </policy>
+        <!-- default set sink sound property policy end -->
+        <!-- default set source sound property policy start -->
+        <policy>
+            <trigger>USER_SET_SOURCE_MAIN_SOUND_PROPERTY</trigger>
+            <process>
+                <action>
+                    <type>ACTION_SET_PROPERTY</type>
+                    <param>
+                        <sourceName>REQUESTING</sourceName>
+                    </param>
+                </action>
+            </process>
+        </policy>
+        <!-- default set source sound property policy end -->
+    </listPolicies>
+    <listSystemProperties>
+        <systemProperty>
+            <type>SYP_GLOBAL_LOG_THRESHOLD</type>
+            <value>4</value>
+        </systemProperty>
+        <systemProperty>
+            <type>SYP_REGISTRATION_ALLOW_UNKNOWN_ELEMENT</type>
+            <value>1</value>
+        </systemProperty>
+    </listSystemProperties>
+</c:configuration>

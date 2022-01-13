@@ -1,0 +1,205 @@
+.\"  This page Copyright (C) 1994 Henry Ware <al172@yfn.ysu.edu>
+.\"  Distributed under the GPL, Copyleft 1994.
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH VMSTAT 8 "wrzesień 2011" procps\-ng "Administracja systemem"
+.SH NAZWA
+vmstat \- statystyki pamięci wirtualnej
+.SH SKŁADNIA
+\fBvmstat\fP [opcje] [\fIopóźnienie\fP [\fIliczba\fP]]
+.SH OPIS
+\fBvmstat\fP raportuje informacje o aktywności procesów, pamięci,
+stronicowania, blokowego we/wy, pułapek, dysków i procesora.
+.PP
+Pierwszy tworzony raport podaje średnie wartości od ostatniego restartu
+systemu. Dodatkowe raporty podają informacje dla okresów próbkowania o
+długości \fIopóźnienia\fP. Raporty dotyczące procesów i pamięci są w obu
+przypadkach natychmiastowe.
+.SH OPCJE
+.TP 
+\fIopóźnienie\fP
+\fIOpóźnienie\fP pomiędzy uaktualnieniami w sekundach. Jeśli nie podano
+\fIopóźnienia\fP, wypisywany jest tylko raport z wartościami średnimi od
+rozruchu systemu.
+.TP 
+\fIliczba\fP
+Liczba uaktualnień. W przypadku braku \fIliczby\fP, jeśli podano \fIopóźnienie\fP,
+domyślna jest nieskończoność.
+.TP 
+\fB\-a\fP, \fB\-\-active\fP
+Wyświetlenie pamięci aktywnej i nieaktywnej, jeśli używane jest jądro 2.5.41
+lub nowsze.
+.TP 
+\fB\-f\fP, \fB\-\-forks\fP
+Opcja \fB\-f\fP wyświetla liczbę rozgałęzień procesów od rozruchu
+systemu. Liczba ta obejmuje wywołania systemowe fork, vfork oraz clone; jest
+odpowiednikiem całkowitej liczby utworzonych zadań. Każdy proces jest
+reprezentowany przez jedno lub więcej zadań, w zależności od wykorzystania
+wątków. Ten widok się nie powtarza.
+.TP 
+\fB\-m\fP, \fB\-\-slabs\fP
+Wyświetlenie slabinfo.
+.TP 
+\fB\-n\fP, \fB\-\-one\-header\fP
+Wyświetlenie nagłówka tylko raz zamiast regularnie.
+.TP 
+\fB\-s\fP, \fB\-\-stats\fP
+Wyświetlenie tabeli różnych liczników zdarzeń i statystyk pamięci. Ten widok
+się nie powtarza.
+.TP 
+\fB\-d\fP, \fB\-\-disk\fP
+Raport statystyk dysku (wymagane jądro 2.5.70 lub nowsze).
+.TP 
+\fB\-D\fP, \fB\-\-disk\-sum\fP
+Raport pewnych statystyk zbiorczych dotyczących aktywności dysku.
+.TP 
+\fB\-p\fP, \fB\-\-partition\fP \fIurządzenie\fP
+Szczegółowe statystyki dotyczące partycji (wymagane jądro 2.5.70 lub
+nowsze).
+.TP 
+\fB\-S\fP, \fB\-\-unit\fP \fIznak\fP
+Przełączenie wyjścia między jednostkami 1000 (\fIk\fP), 1024 (\fIK\fP),1000000
+(\fIm\fP) lub 1048576 (\fIM\fP) bajtów. Opcja nie zmienia pól operacji wymiany
+(si/so) ani blokowych (bi/bo).
+.TP 
+\fB\-t\fP, \fB\-\-timestamp\fP
+Dołączenie znacznika czasu do każdej linii
+.TP 
+\fB\-w\fP, \fB\-\-wide\fP
+Tryb szerokiego wyjścia (przydatny dla systemów z dużą ilością pamięci,
+gdzie domyślny tryb wyjścia cierpi przez niechciane łamanie kolumn). Wyjście
+jest szersze niż 80 znaków w linii.
+.TP 
+\fB\-V\fP, \fB\-\-version\fP
+Wyświetlenie informacji o wersji i zakończenie.
+.TP 
+\fB\-h\fP, \fB\-\-help\fP
+Wyświetlenie opisu i zakończenie.
+.PD
+.SH "OPIS PÓL DLA TRYBU VM"
+.SS Proc.
+.nf
+r: Liczba procesów działających (działających lub czekających na czas pracy).
+b: Liczba procesów w nieprzerywalnym śnie.
+.fi
+.PP
+.SS Pamięć
+.nf
+swap:   ilość użytej pamięci wirtualnej.
+wolna:  ilość pamięci bezczynnej.
+bufor:  ilość pamięci używanej jako bufory.
+cache:  ilość pamięci używanej jako podręczna.
+nieakt: ilość pamięci nieaktywnej (opcja \-a).
+akt:    ilość pamięci aktywnej (opcja \-a).
+.fi
+.PP
+.SS Swap
+.nf
+si: Ilość pamięci wymiany wczytanej z dysku (/s).
+so: Ilość pamięci wymiany zapisanej na dysk (/s).
+.fi
+.PP
+.SS IO
+.nf
+bi: Bloki odebrane z urządzenia blokowego (bloki/s).
+bo: Bloki wysłane do urządzenia blokowego (bloki/s).
+.fi
+.PP
+.SS System
+.nf
+in: Liczba przerwań na sekundę, włącznie z zegarowym.
+cs: Liczba przełączeń kontekstu na sekundę.
+.fi
+.PP
+.SS CPU
+Procenty całkowitego czasu procesora.
+.nf
+us: Czas spędzony w kodzie poza jądrem (czas użytkownika, w tym nice).
+sy: Czas spędzony w kodzie jądra (czas systemu)
+id: Czas spędzony bezczynnie. Przed Linuksem 2.5.41 obejmował czas IO\-wait.
+wa: Czas spędzony na oczekiwaniu na we/wy. Przed 2.5.41 zawarty w bezczynnym.
+st: Czas skradziony wirtualnej maszynie. Przed Linuksem 2.6.11 nieznany.
+.fi
+.PP
+.SH "OPIS PÓL DLA TRYBU DYSKOWEGO"
+.SS Odczyty
+.nf
+total: wszystkie odczyty zakończone poprawnie
+merged: odczyty zgrupowane (zakończone w jednym we/wy)
+sectors: sektory odczytane poprawnie
+ms: milisekundy spędzone na odczycie
+.fi
+.PP
+.SS Zapisy
+.nf
+total: wszystkie zapisy zakończone poprawnie
+merged: zapisy zgrupowane (zakończone w jednym we/wy)
+sectors: sektory zapisane poprawnie
+ms: milisekundy spędzone na zapisie
+.fi
+.PP
+.SS IO
+.nf
+cur: operacje we/wy w trakcie
+s: sekundy spędzone na operacjach we/wy
+.fi
+.PP
+.SH "OPIS PÓL DLA TRYBU PARTYCJI DYSKU"
+.nf
+reads: całkowita liczba odczytów zleconych dla tej partycji
+read sectors: całkowita liczba sektorów odczytanych z partycji
+writes: całkowita liczba zapisów zleconych dla tej partycji
+requested writes: całkowita liczba żądań zapisu dla partycji
+.fi
+.PP
+.SH "OPIS PÓL DLA TRYBU PŁYT"
+.nf
+cache: nazwa pamięci podręcznej
+num: liczba obecnie aktywnych obiektów
+total: całkowita liczba dostępnych obiektów
+size: rozmiar każdego obiektu
+pages: liczba stron z przynajmniej jednym aktywnym obiektem
+.fi
+.SH UWAGI
+\fBvmstat \fP nie wymaga specjalnych uprawnień.
+.PP
+Niniejsze raporty mają na celu pomoc przy identyfikacji wąskich gardeł w
+systemie. Linuksowy \fBvmstat\fP nie liczy siebie jako działającego procesu.
+.PP
+Wszystkie bloki dla Linuksa mają obecnie 1024 bajty. Stare jądra mogły
+używać bloków 512\-, 2048\- lub 4096\-bajtowych.
+.PP
+Od wersji procps 3.1.9, vmstat pozwala wybrać jednostki (k, K, m,
+M). Domyślna to K (1024 bajty) w trybie domyślnym.
+.PP
+vmstat wykorzystuje slabinfo 1.1
+.SH PLIKI
+.ta 
+.nf
+/proc/meminfo
+/proc/stat
+/proc/*/stat
+.fi
+.SH "ZOBACZ TAKŻE"
+\fBfree\fP(1), \fBiostat\fP(1), \fBmpstat\fP(1), \fBps\fP(1), \fBsar\fP(1), \fBtop\fP(1)
+.PP
+.SH BŁĘDY
+Nie raportuje blokowego we/wy per urządzenie ani nie liczy wywołań
+systemowych.
+.SH AUTORZY
+Autorem jest
+.UR al172@yfn.\:ysu.\:edu
+Henry Ware
+.UE .
+.br
+.UR ffrederick@users.\:sourceforge.\:net
+Fabian Fr\('ed\('erick
+.UE
+(dyski, płyty, partycje...)
+.SH "ZGŁASZANIE BŁĘDÓW"
+Zgłoszenia błędów prosimy wysyłać na adres
+.UR procps@freelists.org
+.UE

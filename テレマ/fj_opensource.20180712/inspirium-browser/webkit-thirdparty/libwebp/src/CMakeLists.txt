@@ -1,0 +1,134 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+SET(LIBWEBP_HEADERS
+	mux/muxi.h
+	enc/cost.h
+	enc/vp8enci.h
+	enc/backward_references.h
+	enc/histogram.h
+	enc/vp8li.h
+	webp/encode.h
+	webp/decode.h
+	webp/mux_types.h
+	webp/config.h
+	webp/format_constants.h
+	webp/demux.h
+	webp/types.h
+	webp/mux.h
+	utils/bit_writer.h
+	utils/quant_levels_dec.h
+	utils/quant_levels.h
+	utils/bit_reader.h
+	utils/rescaler.h
+	utils/color_cache.h
+	utils/huffman_encode.h
+	utils/thread.h
+	utils/filters.h
+	utils/random.h
+	utils/utils.h
+	utils/endian_inl.h
+	utils/bit_reader_inl.h
+	utils/huffman.h
+	dsp/neon.h
+	dsp/yuv_tables_sse2.h
+	dsp/yuv.h
+	dsp/lossless.h
+	dsp/dsp.h
+	dec/decode_vp8.h
+	dec/vp8li.h
+	dec/webpi.h
+	dec/alphai.h
+	dec/vp8i.h
+)
+
+SET(LIBWEBP_SWIG_SOURCES
+	./swig/libwebp_java_wrap.c
+	./swig/libwebp_gc.c
+	./swig/libwebp_python_wrap.c
+	./swig/libwebp_go_wrap.c
+)
+
+SET(LIBWEBP_SOURCES
+	mux/muxread.c
+	mux/muxedit.c
+	mux/muxinternal.c
+	demux/demux.c
+	enc/webpenc.c
+	enc/vp8l.c
+	enc/syntax.c
+	enc/token.c
+	enc/frame.c
+	enc/picture_tools.c
+	enc/alpha.c
+	enc/filter.c
+	enc/cost.c
+	enc/analysis.c
+	enc/backward_references.c
+	enc/picture_csp.c
+	enc/histogram.c
+	enc/tree.c
+	enc/picture_rescale.c
+	enc/picture_psnr.c
+	enc/quant.c
+	enc/picture.c
+	enc/config.c
+	enc/iterator.c
+	utils/bit_reader.c
+	utils/color_cache.c
+	utils/quant_levels.c
+	utils/thread.c
+	utils/bit_writer.c
+	utils/huffman_encode.c
+	utils/filters.c
+	utils/rescaler.c
+	utils/huffman.c
+	utils/utils.c
+	utils/random.c
+	utils/quant_levels_dec.c
+	dsp/enc_neon.c
+	dsp/upsampling.c
+	dsp/yuv_sse2.c
+	dsp/yuv.c
+	dsp/alpha_processing_sse2.c
+	dsp/dec_clip_tables.c
+	dsp/dec_neon.c
+	dsp/dec_mips32.c
+	dsp/upsampling_sse2.c
+	dsp/yuv_mips32.c
+	dsp/upsampling_neon.c
+	dsp/lossless_neon.c
+	dsp/enc_avx2.c
+	dsp/dec.c
+	dsp/lossless.c
+	dsp/cpu.c
+	dsp/dec_sse2.c
+	dsp/alpha_processing.c
+	dsp/enc_sse2.c
+	dsp/lossless_sse2.c
+	dsp/lossless_mips32.c
+	dsp/enc.c
+	dsp/enc_mips32.c
+	dec/idec.c
+	dec/vp8l.c
+	dec/frame.c
+	dec/alpha.c
+	dec/io.c
+	dec/tree.c
+	dec/buffer.c
+	dec/quant.c
+	dec/webp.c
+	dec/vp8.c
+)
+
+INCLUDE_DIRECTORIES(
+	.
+	dec
+	demux
+	dsp
+	enc
+	mux
+	utils
+	webp
+)
+
+include(Platform${PORT}.cmake)

@@ -1,0 +1,18 @@
+[Unit]
+Description=Setup of CS42888 audio device on imx6q-sabreauto, imx6dl-sabreauto, imx6s-sabreauto
+DefaultDependencies=yes
+ConditionPathExistsGlob=/sys/devices/soc*/sound_cs42888.*
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we start loading the modules here and wait for devices to appear ------
+ExecStart=/bin/kmodule_loader -c /etc/alsa-brd-cfg/imx6qdls-sabreauto/kmodules_loader.conf
+
+#-------------------- we are setting up the alsa devices ---------------
+# - adapt this call in a way that loads it the settings from your
+#   expected destination
+ExecStart=/usr/sbin/alsactl restore imx6qsabreaics4 -f /etc/alsa-brd-cfg/imx6qdls-sabreauto/asound.state

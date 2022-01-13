@@ -1,0 +1,258 @@
+Scanning dependencies of target dlt
+[  1%] Building C object src/lib/CMakeFiles/dlt.dir/dlt_user.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_user.c: In function 'dlt_initialize_socket_connection':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_user.c:232:9: warning: unused variable 'status' [-Wunused-variable]
+     int status = 0;
+         ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_user.c: In function 'dlt_register_injection_callback_with_id':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_user.c:2834:69: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+         dlt_user.dlt_ll_ts[i].injection_table[j].injection_callback = dlt_injection_callback;
+                                                                     ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_user.c: In function 'dlt_register_injection_callback':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_user.c:2853:72: warning: passing argument 3 of 'dlt_register_injection_callback_with_id' from incompatible pointer type [-Wincompatible-pointer-types]
+     return dlt_register_injection_callback_with_id(handle, service_id, dlt_injection_callback, NULL);
+                                                                        ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_user.c:2753:16: note: expected 'int (*)(uint32_t,  void *, uint32_t,  void *) {aka int (*)(unsigned int,  void *, unsigned int,  void *)}' but argument is of type 'int (*)(uint32_t,  void *, uint32_t) {aka int (*)(unsigned int,  void *, unsigned int)}'
+ DltReturnValue dlt_register_injection_callback_with_id(DltContext *handle, uint32_t service_id,
+                ^
+[  2%] Building C object src/lib/CMakeFiles/dlt.dir/dlt_client.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c: In function 'dlt_client_init':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c:145:55: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ((tmp_port < IPPORT_RESERVED) || (tmp_port > USHRT_MAX))
+                                                       ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c: In function 'dlt_client_connect':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c:270:21: warning: passing argument 2 of 'connect' from incompatible pointer type [-Wincompatible-pointer-types]
+                     (struct sockaddr_un *)&addr,
+                     ^
+In file included from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c:76:0:
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/target/qnx7/usr/include/sys/socket.h:596:5: note: expected 'const struct sockaddr *' but argument is of type 'struct sockaddr_un *'
+ int connect(int, const struct sockaddr *, socklen_t);
+     ^
+[  3%] Building C object src/lib/CMakeFiles/dlt.dir/dlt_filetransfer.c.o
+[  4%] Building C object src/lib/CMakeFiles/dlt.dir/dlt_env_ll.c.o
+[  5%] Building C object src/lib/CMakeFiles/dlt.dir/__/shared/dlt_common.c.o
+[  7%] Building C object src/lib/CMakeFiles/dlt.dir/__/shared/dlt_user_shared.c.o
+[  8%] Building C object src/lib/CMakeFiles/dlt.dir/__/shared/dlt_protocol.c.o
+[  9%] Linking C shared library libdlt.so
+[  9%] Built target dlt
+Scanning dependencies of target dlt-daemon
+[ 10%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt-daemon.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c: In function 'dlt_daemon_process_control_connect':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c:1979:41: warning: passing argument 2 of 'accept' from incompatible pointer type [-Wincompatible-pointer-types]
+     if ((in_sock = accept(receiver->fd, &ctrl, &ctrl_size)) < 0)
+                                         ^
+In file included from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c:33:0:
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/target/qnx7/usr/include/sys/socket.h:594:5: note: expected 'struct sockaddr * restrict' but argument is of type 'struct sockaddr_un *'
+ int accept(int, struct sockaddr * __restrict, socklen_t * __restrict);
+     ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c: In function 'dlt_daemon_process_app_connect':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c:2036:41: warning: passing argument 2 of 'accept' from incompatible pointer type [-Wincompatible-pointer-types]
+     if ((in_sock = accept(receiver->fd, &app, &app_size)) < 0)
+                                         ^
+In file included from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c:33:0:
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/target/qnx7/usr/include/sys/socket.h:594:5: note: expected 'struct sockaddr * restrict' but argument is of type 'struct sockaddr_un *'
+ int accept(int, struct sockaddr * __restrict, socklen_t * __restrict);
+     ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c: In function 'create_timer_fd':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c:3408:23: warning: unused variable 'l_timer_spec' [-Wunused-variable]
+     struct itimerspec l_timer_spec;
+                       ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.c:3404:25: warning: unused parameter 'starts_in' [-Wunused-parameter]
+                     int starts_in,
+                         ^
+[ 11%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_common.c.o
+[ 12%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_connection.c.o
+[ 14%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_event_handler.c.o
+[ 15%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_filter.c.o
+[ 16%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/gateway/dlt_gateway.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/gateway/dlt_gateway.c: In function 'dlt_gateway_check_port':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/gateway/dlt_gateway.c:129:41: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if ((tmp > IPPORT_RESERVED) && (tmp <= USHRT_MAX))
+                                         ^
+[ 17%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_socket.c.o
+In file included from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/include/dlt/dlt_user.h:85:0,
+                 from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_common.h:83,
+                 from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt-daemon.h:74,
+                 from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_socket.c:57:
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/include/dlt/dlt_user_macros.h:342:0: warning: "DLT_RAW" redefined
+ #define DLT_RAW(BUF,LEN) \
+ ^
+In file included from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/target/qnx7/usr/include/net/if.h:111:0,
+                 from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_socket.c:45:
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/target/qnx7/usr/include/net/dlt.h:58:0: note: this is the location of the previous definition
+ #define DLT_RAW  12 /* raw IP */
+ ^
+[ 18%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_unix_socket.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_unix_socket.c: In function 'dlt_daemon_unix_socket_open':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_unix_socket.c:64:5: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+     memcpy(addr.sun_path, sock_path, sizeof(addr.sun_path));
+     ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_unix_socket.c:64:5: warning: incompatible implicit declaration of built-in function 'memcpy'
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_unix_socket.c:64:5: note: include '<string.h>' or provide a declaration of 'memcpy'
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_unix_socket.c: In function 'dlt_daemon_unix_socket_close':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_unix_socket.c:95:61: warning: implicit declaration of function 'strerror' [-Wimplicit-function-declaration]
+         sprintf(err_string, "unix socket close failed: %s", strerror(errno));
+                                                             ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/daemon/dlt_daemon_unix_socket.c:95:29: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
+         sprintf(err_string, "unix socket close failed: %s", strerror(errno));
+                             ^
+[ 20%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_serial.c.o
+[ 21%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_client.c.o
+[ 22%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/dlt_daemon_offline_logstorage.c.o
+[ 23%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/shared/dlt_user_shared.c.o
+[ 24%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/shared/dlt_common.c.o
+[ 25%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/shared/dlt_offline_trace.c.o
+[ 27%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/offlinelogstorage/dlt_offline_logstorage.c.o
+[ 28%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/lib/dlt_client.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c: In function 'dlt_client_init':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c:145:55: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ((tmp_port < IPPORT_RESERVED) || (tmp_port > USHRT_MAX))
+                                                       ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c: In function 'dlt_client_connect':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c:270:21: warning: passing argument 2 of 'connect' from incompatible pointer type [-Wincompatible-pointer-types]
+                     (struct sockaddr_un *)&addr,
+                     ^
+In file included from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/lib/dlt_client.c:76:0:
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/target/qnx7/usr/include/sys/socket.h:596:5: note: expected 'const struct sockaddr *' but argument is of type 'struct sockaddr_un *'
+ int connect(int, const struct sockaddr *, socklen_t);
+     ^
+[ 29%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/shared/dlt_config_file_parser.c.o
+[ 30%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/offlinelogstorage/dlt_offline_logstorage_behavior.c.o
+[ 31%] Building C object src/daemon/CMakeFiles/dlt-daemon.dir/__/shared/dlt_protocol.c.o
+[ 32%] Linking C executable dlt-daemon
+[ 32%] Built target dlt-daemon
+Scanning dependencies of target dlt-receive
+[ 34%] Building C object src/console/CMakeFiles/dlt-receive.dir/dlt-receive.c.o
+[ 35%] Linking C executable dlt-receive
+[ 35%] Built target dlt-receive
+Scanning dependencies of target dlt-blockmode-ctrl
+[ 36%] Building C object src/console/CMakeFiles/dlt-blockmode-ctrl.dir/dlt-blockmode-ctrl.c.o
+[ 37%] Building C object src/console/CMakeFiles/dlt-blockmode-ctrl.dir/dlt-control-common.c.o
+[ 38%] Linking C executable dlt-blockmode-ctrl
+[ 38%] Built target dlt-blockmode-ctrl
+Scanning dependencies of target dlt-passive-node-ctrl
+[ 40%] Building C object src/console/CMakeFiles/dlt-passive-node-ctrl.dir/dlt-passive-node-ctrl.c.o
+[ 41%] Building C object src/console/CMakeFiles/dlt-passive-node-ctrl.dir/dlt-control-common.c.o
+[ 42%] Linking C executable dlt-passive-node-ctrl
+[ 42%] Built target dlt-passive-node-ctrl
+Scanning dependencies of target dlt-control
+[ 43%] Building C object src/console/CMakeFiles/dlt-control.dir/dlt-control.c.o
+[ 44%] Building C object src/console/CMakeFiles/dlt-control.dir/dlt-control-common.c.o
+[ 45%] Linking C executable dlt-control
+[ 45%] Built target dlt-control
+Scanning dependencies of target dlt-convert
+[ 47%] Building C object src/console/CMakeFiles/dlt-convert.dir/dlt-convert.c.o
+[ 48%] Linking C executable dlt-convert
+[ 48%] Built target dlt-convert
+Scanning dependencies of target dlt-filter-ctrl
+[ 49%] Building C object src/console/CMakeFiles/dlt-filter-ctrl.dir/dlt-filter-ctrl.c.o
+[ 50%] Building C object src/console/CMakeFiles/dlt-filter-ctrl.dir/dlt-control-common.c.o
+[ 51%] Linking C executable dlt-filter-ctrl
+[ 51%] Built target dlt-filter-ctrl
+Scanning dependencies of target dlt-logstorage-ctrl
+[ 52%] Building C object src/console/logstorage/CMakeFiles/dlt-logstorage-ctrl.dir/dlt-logstorage-ctrl.c.o
+[ 54%] Building C object src/console/logstorage/CMakeFiles/dlt-logstorage-ctrl.dir/dlt-logstorage-common.c.o
+[ 55%] Building C object src/console/logstorage/CMakeFiles/dlt-logstorage-ctrl.dir/dlt-logstorage-list.c.o
+[ 56%] Building C object src/console/logstorage/CMakeFiles/dlt-logstorage-ctrl.dir/__/dlt-control-common.c.o
+[ 57%] Linking C executable dlt-logstorage-ctrl
+[ 57%] Built target dlt-logstorage-ctrl
+Scanning dependencies of target dlt-example-user
+[ 58%] Building C object src/examples/CMakeFiles/dlt-example-user.dir/dlt-example-user.c.o
+In file included from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/include/dlt/dlt_user.h:85:0,
+                 from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/include/dlt/dlt.h:74,
+                 from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/examples/dlt-example-user.c:76:
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/examples/dlt-example-user.c: In function 'main':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/include/dlt/dlt_user_macros.h:166:11: warning: implicit declaration of function 'dlt_register_context_llccb' [-Wimplicit-function-declaration]
+     (void)dlt_register_context_llccb(&(CONTEXT), CONTEXTID, DESCRIPTION, CBK);} while(0)
+           ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/examples/dlt-example-user.c:289:5: note: in expansion of macro 'DLT_REGISTER_CONTEXT_LLCCB'
+     DLT_REGISTER_CONTEXT_LLCCB(mycontext2, "TS1", "Test Context1 for injection", dlt_user_log_level_changed_callback);
+     ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/include/dlt/dlt_user_macros.h:192:11: warning: implicit declaration of function 'dlt_register_injection_callback_with_id' [-Wimplicit-function-declaration]
+     (void)dlt_register_injection_callback_with_id(&(CONTEXT),SERVICEID, CALLBACK, PRIV_DATA);} while(0)
+           ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/examples/dlt-example-user.c:294:5: note: in expansion of macro 'DLT_REGISTER_INJECTION_CALLBACK_WITH_ID'
+     DLT_REGISTER_INJECTION_CALLBACK_WITH_ID(mycontext2, 0x1000, dlt_user_injection_callback_with_specific_data, (void*)"TS1 context");
+     ^
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/examples/dlt-example-user.c:139:9: warning: unused variable 'ret' [-Wunused-variable]
+     int ret = 0;
+         ^
+[ 60%] Linking C executable dlt-example-user
+[ 60%] Built target dlt-example-user
+Scanning dependencies of target dlt-example-filetransfer
+[ 61%] Building C object src/examples/CMakeFiles/dlt-example-filetransfer.dir/dlt-example-filetransfer.c.o
+[ 62%] Linking C executable dlt-example-filetransfer
+[ 62%] Built target dlt-example-filetransfer
+Scanning dependencies of target dlt-example-user-common-api
+[ 63%] Building C object src/examples/CMakeFiles/dlt-example-user-common-api.dir/dlt-example-user-common-api.c.o
+[ 64%] Linking C executable dlt-example-user-common-api
+[ 64%] Built target dlt-example-user-common-api
+Scanning dependencies of target dlt-example-user-func
+[ 65%] Building C object src/examples/CMakeFiles/dlt-example-user-func.dir/dlt-example-user-func.c.o
+[ 67%] Linking C executable dlt-example-user-func
+[ 67%] Built target dlt-example-user-func
+Scanning dependencies of target dlt-adaptor-stdin
+[ 68%] Building C object src/adaptor/CMakeFiles/dlt-adaptor-stdin.dir/dlt-adaptor-stdin.c.o
+[ 69%] Linking C executable dlt-adaptor-stdin
+[ 69%] Built target dlt-adaptor-stdin
+Scanning dependencies of target dlt-adaptor-udp
+[ 70%] Building C object src/adaptor/CMakeFiles/dlt-adaptor-udp.dir/dlt-adaptor-udp.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/adaptor/dlt-adaptor-udp.c: In function 'main':
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/adaptor/dlt-adaptor-udp.c:172:5: warning: 'bzero' is deprecated [-Wdeprecated-declarations]
+     bzero(&(server_addr.sin_zero), 8);
+     ^
+In file included from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/target/qnx7/usr/include/string.h:52:0,
+                 from /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/src/src/adaptor/dlt-adaptor-udp.c:70:
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/target/qnx7/usr/include/strings.h:36:14: note: declared here
+ extern void (bzero)(void *, size_t) __attribute__((__deprecated__)); /* use memset */
+              ^
+[ 71%] Linking C executable dlt-adaptor-udp
+[ 71%] Built target dlt-adaptor-udp
+Scanning dependencies of target dlt-test-non-verbose
+[ 72%] Building C object src/tests/CMakeFiles/dlt-test-non-verbose.dir/dlt-test-non-verbose.c.o
+[ 74%] Linking C executable dlt-test-non-verbose
+[ 74%] Built target dlt-test-non-verbose
+Scanning dependencies of target dlt-test-init-free
+[ 75%] Building C object src/tests/CMakeFiles/dlt-test-init-free.dir/dlt-test-init-free.c.o
+[ 76%] Linking C executable dlt-test-init-free
+[ 76%] Built target dlt-test-init-free
+Scanning dependencies of target dlt-test-user
+[ 77%] Building C object src/tests/CMakeFiles/dlt-test-user.dir/dlt-test-user.c.o
+[ 78%] Linking C executable dlt-test-user
+[ 78%] Built target dlt-test-user
+Scanning dependencies of target dlt-test-multi-process
+[ 80%] Building C object src/tests/CMakeFiles/dlt-test-multi-process.dir/dlt-test-multi-process.c.o
+[ 81%] Linking C executable dlt-test-multi-process
+[ 81%] Built target dlt-test-multi-process
+Scanning dependencies of target dlt-test-stress-user
+[ 82%] Building C object src/tests/CMakeFiles/dlt-test-stress-user.dir/dlt-test-stress-user.c.o
+[ 83%] Linking C executable dlt-test-stress-user
+[ 83%] Built target dlt-test-stress-user
+Scanning dependencies of target dlt-test-client
+[ 84%] Building C object src/tests/CMakeFiles/dlt-test-client.dir/dlt-test-client.c.o
+[ 85%] Linking C executable dlt-test-client
+[ 85%] Built target dlt-test-client
+Scanning dependencies of target dlt-test-logstorage
+[ 87%] Building C object src/tests/CMakeFiles/dlt-test-logstorage.dir/dlt-test-logstorage.c.o
+[ 88%] Linking C executable dlt-test-logstorage
+[ 88%] Built target dlt-test-logstorage
+Scanning dependencies of target dlt-test-stress-client
+[ 89%] Building C object src/tests/CMakeFiles/dlt-test-stress-client.dir/dlt-test-stress-client.c.o
+[ 90%] Linking C executable dlt-test-stress-client
+[ 90%] Built target dlt-test-stress-client
+Scanning dependencies of target dlt-test-multi-process-client
+[ 91%] Building C object src/tests/CMakeFiles/dlt-test-multi-process-client.dir/dlt-test-multi-process-client.c.o
+[ 92%] Linking C executable dlt-test-multi-process-client
+[ 92%] Built target dlt-test-multi-process-client
+Scanning dependencies of target dlt-test-stress
+[ 94%] Building C object src/tests/CMakeFiles/dlt-test-stress.dir/dlt-test-stress.c.o
+[ 95%] Linking C executable dlt-test-stress
+[ 95%] Built target dlt-test-stress
+Scanning dependencies of target dlt-test-filetransfer
+[ 96%] Building C object src/tests/CMakeFiles/dlt-test-filetransfer.dir/dlt-test-filetransfer.c.o
+[ 97%] Linking C executable dlt-test-filetransfer
+[ 97%] Built target dlt-test-filetransfer
+Scanning dependencies of target dlt-test-fork-handler
+[ 98%] Building C object src/tests/CMakeFiles/dlt-test-fork-handler.dir/dlt-test-fork-handler.c.o
+[100%] Linking C executable dlt-test-fork-handler
+[100%] Built target dlt-test-fork-handler

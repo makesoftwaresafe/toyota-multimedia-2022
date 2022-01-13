@@ -1,0 +1,1541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPServiceProxy: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-device-control.html" title="Device Control">
+<link rel="prev" href="GUPnPDeviceProxy.html" title="GUPnPDeviceProxy">
+<link rel="next" href="api-device-impl.html" title="Device Implementation">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPServiceProxy.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPServiceProxy.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPServiceProxy.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GUPnPServiceProxy.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-device-control.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPDeviceProxy.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-device-impl.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPServiceProxy"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPServiceProxy.top_of_page"></a>GUPnPServiceProxy</span></h2>
+<p>GUPnPServiceProxy — Proxy class for remote services.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyActionCallback" title="GUPnPServiceProxyActionCallback ()">*GUPnPServiceProxyActionCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyNotifyCallback" title="GUPnPServiceProxyNotifyCallback ()">*GUPnPServiceProxyNotifyCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action" title="gupnp_service_proxy_send_action ()">gupnp_service_proxy_send_action</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action-valist" title="gupnp_service_proxy_send_action_valist ()">gupnp_service_proxy_send_action_valist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action-hash" title="gupnp_service_proxy_send_action_hash ()">gupnp_service_proxy_send_action_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action-list" title="gupnp_service_proxy_send_action_list ()">gupnp_service_proxy_send_action_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="returnvalue">GUPnPServiceProxyAction</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-begin-action" title="gupnp_service_proxy_begin_action ()">gupnp_service_proxy_begin_action</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="returnvalue">GUPnPServiceProxyAction</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-begin-action-valist" title="gupnp_service_proxy_begin_action_valist ()">gupnp_service_proxy_begin_action_valist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="returnvalue">GUPnPServiceProxyAction</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-begin-action-hash" title="gupnp_service_proxy_begin_action_hash ()">gupnp_service_proxy_begin_action_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="returnvalue">GUPnPServiceProxyAction</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-begin-action-list" title="gupnp_service_proxy_begin_action_list ()">gupnp_service_proxy_begin_action_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action" title="gupnp_service_proxy_end_action ()">gupnp_service_proxy_end_action</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action-valist" title="gupnp_service_proxy_end_action_valist ()">gupnp_service_proxy_end_action_valist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action-hash" title="gupnp_service_proxy_end_action_hash ()">gupnp_service_proxy_end_action_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action-list" title="gupnp_service_proxy_end_action_list ()">gupnp_service_proxy_end_action_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-cancel-action" title="gupnp_service_proxy_cancel_action ()">gupnp_service_proxy_cancel_action</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-add-notify" title="gupnp_service_proxy_add_notify ()">gupnp_service_proxy_add_notify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-add-notify-full" title="gupnp_service_proxy_add_notify_full ()">gupnp_service_proxy_add_notify_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-add-raw-notify" title="gupnp_service_proxy_add_raw_notify ()">gupnp_service_proxy_add_raw_notify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-remove-notify" title="gupnp_service_proxy_remove_notify ()">gupnp_service_proxy_remove_notify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-remove-raw-notify" title="gupnp_service_proxy_remove_raw_notify ()">gupnp_service_proxy_remove_raw_notify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-set-subscribed" title="gupnp_service_proxy_set_subscribed ()">gupnp_service_proxy_set_subscribed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-get-subscribed" title="gupnp_service_proxy_get_subscribed ()">gupnp_service_proxy_get_subscribed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxy--subscribed" title="The “subscribed” property">subscribed</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxy-subscription-lost" title="The “subscription-lost” signal">subscription-lost</a></td>
+<td class="signal_flags">Run Last</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxy-struct" title="struct GUPnPServiceProxy">GUPnPServiceProxy</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction">GUPnPServiceProxyAction</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo">GUPnPServiceInfo</a>
+        <span class="lineart">╰──</span> GUPnPServiceProxy
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> sends commands to a remote UPnP service and handles
+incoming event notifications. <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> implements the
+<a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> interface.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="GUPnPServiceProxyActionCallback"></a><h3>GUPnPServiceProxyActionCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*GUPnPServiceProxyActionCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> *action</code></em>,
+                                    <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Callback notifying that <em class="parameter"><code>action</code></em>
+ on <em class="parameter"><code>proxy</code></em>
+ has returned and
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action" title="gupnp_service_proxy_end_action ()"><code class="function">gupnp_service_proxy_end_action()</code></a> etc can be called.</p>
+<div class="refsect3">
+<a name="GUPnPServiceProxyActionCallback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> <em class="parameter"><code>action</code></em>
+is called from</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> in progress</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceProxyNotifyCallback"></a><h3>GUPnPServiceProxyNotifyCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*GUPnPServiceProxyNotifyCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                    <em class="parameter"><code>const <span class="type">char</span> *variable</code></em>,
+                                    <em class="parameter"><code><span class="type">GValue</span> *value</code></em>,
+                                    <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Callback notifying that the state variable <em class="parameter"><code>variable</code></em>
+ on <em class="parameter"><code>proxy</code></em>
+ has changed to
+<em class="parameter"><code>value</code></em>
+.</p>
+<div class="refsect3">
+<a name="GUPnPServiceProxyNotifyCallback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> the notification originates from</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>variable</p></td>
+<td class="parameter_description"><p>The name of the variable being notified</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The <span class="type">GValue</span> of the variable being notified</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-send-action"></a><h3>gupnp_service_proxy_send_action ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_send_action (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                 <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                 <em class="parameter"><code><span class="type">GError</span> **error</code></em>,
+                                 <em class="parameter"><code>...</code></em>);</pre>
+<p>Sends action <em class="parameter"><code>action</code></em>
+ with parameters <em class="parameter"><code>Varargs</code></em>
+ to the service exposed by
+<em class="parameter"><code>proxy</code></em>
+ synchronously. If an error occurred, <em class="parameter"><code>error</code></em>
+ will be set. In case of
+a UPnPError the error code will be the same in <em class="parameter"><code>error</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-send-action.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>An action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> The location where to store any error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>tuples of in parameter name, in parameter type, and in parameter
+value, followed by <code class="literal">NULL</code>, and then tuples of out parameter name,
+out parameter type, and out parameter value location, terminated with <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-send-action.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if sending the action was succesful.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-send-action-valist"></a><h3>gupnp_service_proxy_send_action_valist ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_send_action_valist
+                               (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>,
+                                <em class="parameter"><code><span class="type">va_list</span> var_args</code></em>);</pre>
+<p>See <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action" title="gupnp_service_proxy_send_action ()"><code class="function">gupnp_service_proxy_send_action()</code></a>.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-send-action-valist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>An action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> The location where to store any error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>var_args</p></td>
+<td class="parameter_description"><p>va_list of tuples of in parameter name, in parameter type, and in
+parameter value, followed by <code class="literal">NULL</code>, and then tuples of out parameter name,
+out parameter type, and out parameter value location</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-send-action-valist.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if sending the action was succesful.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-send-action-hash"></a><h3>gupnp_service_proxy_send_action_hash ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_send_action_hash (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>,
+                                      <em class="parameter"><code><span class="type">GHashTable</span> *in_hash</code></em>,
+                                      <em class="parameter"><code><span class="type">GHashTable</span> *out_hash</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_service_proxy_send_action_hash</code> has been deprecated since version 0.20.9 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action" title="gupnp_service_proxy_send_action ()"><code class="function">gupnp_service_proxy_send_action()</code></a> or
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action-list" title="gupnp_service_proxy_send_action_list ()"><code class="function">gupnp_service_proxy_send_action_list()</code></a></p>
+</div>
+<p>See <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action" title="gupnp_service_proxy_send_action ()"><code class="function">gupnp_service_proxy_send_action()</code></a>; this version takes a pair of
+<span class="type">GHashTable</span>s for runtime determined parameter lists.</p>
+<p>Do not use this function in newly written code; it cannot guarantee the
+order of arguments and thus breaks interaction with many devices.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-send-action-hash.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>An action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> The location where to store any error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>in_hash</p></td>
+<td class="parameter_description"><p> A <span class="type">GHashTable</span> of in
+parameter name and <span class="type">GValue</span> pairs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GValue][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_hash</p></td>
+<td class="parameter_description"><p> A <span class="type">GHashTable</span>
+of out parameter name and initialized <span class="type">GValue</span> pairs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GValue][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-send-action-hash.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if sending the action was succesful.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-send-action-list"></a><h3>gupnp_service_proxy_send_action_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_send_action_list (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>,
+                                      <em class="parameter"><code><span class="type">GList</span> *in_names</code></em>,
+                                      <em class="parameter"><code><span class="type">GList</span> *in_values</code></em>,
+                                      <em class="parameter"><code><span class="type">GList</span> *out_names</code></em>,
+                                      <em class="parameter"><code><span class="type">GList</span> *out_types</code></em>,
+                                      <em class="parameter"><code><span class="type">GList</span> **out_values</code></em>);</pre>
+<p>The synchronous variant of <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-begin-action-list" title="gupnp_service_proxy_begin_action_list ()"><span class="type">gupnp_service_proxy_begin_action_list</span></a> and
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action-list" title="gupnp_service_proxy_end_action_list ()"><span class="type">gupnp_service_proxy_end_action_list</span></a>.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-send-action-list.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>An action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> The location where to store any error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>in_names</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of 'in' parameter
+names (as strings). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>in_values</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of values (as
+<span class="type">GValue</span>) that line up with <em class="parameter"><code>in_names</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GValue][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_names</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of 'out' parameter
+names (as strings). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_types</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of types (as <span class="type">GType</span>)
+that line up with <em class="parameter"><code>out_names</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GType][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_values</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of values
+(as <span class="type">GValue</span>) that line up with <em class="parameter"><code>out_names</code></em>
+and <em class="parameter"><code>out_types</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GValue][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-send-action-list.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if sending the action was succesful.</p>
+</div>
+<p class="since">Since: 0.13.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-begin-action"></a><h3>gupnp_service_proxy_begin_action ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="returnvalue">GUPnPServiceProxyAction</span></a> *
+gupnp_service_proxy_begin_action (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                  <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyActionCallback" title="GUPnPServiceProxyActionCallback ()"><span class="type">GUPnPServiceProxyActionCallback</span></a> callback</code></em>,
+                                  <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                  <em class="parameter"><code>...</code></em>);</pre>
+<p>Sends action <em class="parameter"><code>action</code></em>
+ with parameters <em class="parameter"><code>Varargs</code></em>
+ to the service exposed by
+<em class="parameter"><code>proxy</code></em>
+ asynchronously, calling <em class="parameter"><code>callback</code></em>
+ on completion. From <em class="parameter"><code>callback</code></em>
+, call
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action" title="gupnp_service_proxy_end_action ()"><code class="function">gupnp_service_proxy_end_action()</code></a> to check for errors, to retrieve return
+values, and to free the <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a>.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-begin-action.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>An action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> The callback to call when sending the action has succeeded
+or failed. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>tuples of in parameter name, in parameter type, and in parameter
+value, terminated with <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-begin-action.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle. This will be freed when
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-cancel-action" title="gupnp_service_proxy_cancel_action ()"><code class="function">gupnp_service_proxy_cancel_action()</code></a> or
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action-valist" title="gupnp_service_proxy_end_action_valist ()"><code class="function">gupnp_service_proxy_end_action_valist()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-begin-action-valist"></a><h3>gupnp_service_proxy_begin_action_valist ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="returnvalue">GUPnPServiceProxyAction</span></a> *
+gupnp_service_proxy_begin_action_valist
+                               (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyActionCallback" title="GUPnPServiceProxyActionCallback ()"><span class="type">GUPnPServiceProxyActionCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                <em class="parameter"><code><span class="type">va_list</span> var_args</code></em>);</pre>
+<p>See <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-begin-action" title="gupnp_service_proxy_begin_action ()"><code class="function">gupnp_service_proxy_begin_action()</code></a>.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-begin-action-valist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>An action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>(scope async) : The callback to call when sending the action has succeeded
+or failed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>var_args</p></td>
+<td class="parameter_description"><p>A va_list of tuples of in parameter name, in parameter type, and
+in parameter value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-begin-action-valist.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle. This will
+be freed when calling <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-cancel-action" title="gupnp_service_proxy_cancel_action ()"><code class="function">gupnp_service_proxy_cancel_action()</code></a> or
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action-valist" title="gupnp_service_proxy_end_action_valist ()"><code class="function">gupnp_service_proxy_end_action_valist()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-begin-action-hash"></a><h3>gupnp_service_proxy_begin_action_hash ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="returnvalue">GUPnPServiceProxyAction</span></a> *
+gupnp_service_proxy_begin_action_hash (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                       <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyActionCallback" title="GUPnPServiceProxyActionCallback ()"><span class="type">GUPnPServiceProxyActionCallback</span></a> callback</code></em>,
+                                       <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                       <em class="parameter"><code><span class="type">GHashTable</span> *hash</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_service_proxy_begin_action_hash</code> has been deprecated since version 0.20.9 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action" title="gupnp_service_proxy_send_action ()"><code class="function">gupnp_service_proxy_send_action()</code></a> or
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-send-action-list" title="gupnp_service_proxy_send_action_list ()"><code class="function">gupnp_service_proxy_send_action_list()</code></a></p>
+</div>
+<p>See <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-begin-action" title="gupnp_service_proxy_begin_action ()"><code class="function">gupnp_service_proxy_begin_action()</code></a>; this version takes a <span class="type">GHashTable</span>
+for runtime generated parameter lists.</p>
+<p>Do not use this function in newly written code; it cannot guarantee the
+order of arguments and thus breaks interaction with many devices.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-begin-action-hash.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>An action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> The callback to call when sending the action has succeeded
+or failed. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hash</p></td>
+<td class="parameter_description"><p> A <span class="type">GHashTable</span> of in parameter name and <span class="type">GValue</span> pairs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GValue]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-begin-action-hash.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle. This will
+be freed when calling <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-cancel-action" title="gupnp_service_proxy_cancel_action ()"><code class="function">gupnp_service_proxy_cancel_action()</code></a> or
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action-hash" title="gupnp_service_proxy_end_action_hash ()"><code class="function">gupnp_service_proxy_end_action_hash()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-begin-action-list"></a><h3>gupnp_service_proxy_begin_action_list ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="returnvalue">GUPnPServiceProxyAction</span></a> *
+gupnp_service_proxy_begin_action_list (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                       <em class="parameter"><code>const <span class="type">char</span> *action</code></em>,
+                                       <em class="parameter"><code><span class="type">GList</span> *in_names</code></em>,
+                                       <em class="parameter"><code><span class="type">GList</span> *in_values</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyActionCallback" title="GUPnPServiceProxyActionCallback ()"><span class="type">GUPnPServiceProxyActionCallback</span></a> callback</code></em>,
+                                       <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>A variant of <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-begin-action" title="gupnp_service_proxy_begin_action ()"><span class="type">gupnp_service_proxy_begin_action</span></a> that takes lists of
+in-parameter names, types and values.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-begin-action-list.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p> A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>An action</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>in_names</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of 'in' parameter
+names (as strings). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>in_values</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of values (as
+<span class="type">GValue</span>) that line up with <em class="parameter"><code>in_names</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GValue][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>(scope async) : The callback to call when sending the action has succeeded or
+failed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-begin-action-list.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle. This will
+be freed when calling <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-cancel-action" title="gupnp_service_proxy_cancel_action ()"><code class="function">gupnp_service_proxy_cancel_action()</code></a> or
+<a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action-list" title="gupnp_service_proxy_end_action_list ()"><code class="function">gupnp_service_proxy_end_action_list()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.13.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-end-action"></a><h3>gupnp_service_proxy_end_action ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_end_action (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> *action</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>,
+                                <em class="parameter"><code>...</code></em>);</pre>
+<p>Retrieves the result of <em class="parameter"><code>action</code></em>
+. The out parameters in <em class="parameter"><code>Varargs</code></em>
+ will be
+filled in, and if an error occurred, <em class="parameter"><code>error</code></em>
+ will be set. In case of
+an UPnP error the error code will be the same in <em class="parameter"><code>error</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-end-action.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> The location where to store any error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>tuples of out parameter name, out parameter type, and out parameter
+value location, terminated with <code class="literal">NULL</code>. The out parameter values should be
+freed after use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-end-action.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-end-action-valist"></a><h3>gupnp_service_proxy_end_action_valist ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_end_action_valist (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> *action</code></em>,
+                                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>,
+                                       <em class="parameter"><code><span class="type">va_list</span> var_args</code></em>);</pre>
+<p>See <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action" title="gupnp_service_proxy_end_action ()"><code class="function">gupnp_service_proxy_end_action()</code></a>.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-end-action-valist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> The location where to store any error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>var_args</p></td>
+<td class="parameter_description"><p>A va_list of tuples of out parameter name, out parameter type,
+and out parameter value location. The out parameter values should be
+freed after use</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-end-action-valist.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-end-action-hash"></a><h3>gupnp_service_proxy_end_action_hash ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_end_action_hash (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> *action</code></em>,
+                                     <em class="parameter"><code><span class="type">GError</span> **error</code></em>,
+                                     <em class="parameter"><code><span class="type">GHashTable</span> *hash</code></em>);</pre>
+<p>See <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action" title="gupnp_service_proxy_end_action ()"><code class="function">gupnp_service_proxy_end_action()</code></a>; this version takes a <span class="type">GHashTable</span> for
+runtime generated parameter lists.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-end-action-hash.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The location where to store any error, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hash</p></td>
+<td class="parameter_description"><p> A <span class="type">GHashTable</span> of
+out parameter name and initialised <span class="type">GValue</span> pairs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 GValue][<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-end-action-hash.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-end-action-list"></a><h3>gupnp_service_proxy_end_action_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_end_action_list (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> *action</code></em>,
+                                     <em class="parameter"><code><span class="type">GError</span> **error</code></em>,
+                                     <em class="parameter"><code><span class="type">GList</span> *out_names</code></em>,
+                                     <em class="parameter"><code><span class="type">GList</span> *out_types</code></em>,
+                                     <em class="parameter"><code><span class="type">GList</span> **out_values</code></em>);</pre>
+<p>A variant of <a class="link" href="GUPnPServiceProxy.html#gupnp-service-proxy-end-action" title="gupnp_service_proxy_end_action ()"><span class="type">gupnp_service_proxy_end_action</span></a> that takes lists of
+out-parameter names, types and place-holders for values. The returned list
+in <em class="parameter"><code>out_values</code></em>
+ must be freed using <span class="type">g_list_free</span> and each element in it using
+<span class="type">g_value_unset</span> and <span class="type">g_slice_free</span>.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-end-action-list.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> The location where to store any error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_names</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of 'out' parameter
+names (as strings). </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_types</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of types (as <span class="type">GType</span>)
+that line up with <em class="parameter"><code>out_names</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GType][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>out_values</p></td>
+<td class="parameter_description"><p> <span class="type">GList</span> of values
+(as <span class="type">GValue</span>) that line up with <em class="parameter"><code>out_names</code></em>
+and <em class="parameter"><code>out_types</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GValue][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-end-action-list.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-cancel-action"></a><h3>gupnp_service_proxy_cancel_action ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_proxy_cancel_action (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> *action</code></em>);</pre>
+<p>Cancels <em class="parameter"><code>action</code></em>
+, freeing the <em class="parameter"><code>action</code></em>
+ handle.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-cancel-action.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyAction" title="GUPnPServiceProxyAction"><span class="type">GUPnPServiceProxyAction</span></a> handle</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-add-notify"></a><h3>gupnp_service_proxy_add_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_add_notify (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *variable</code></em>,
+                                <em class="parameter"><code><span class="type">GType</span> type</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyNotifyCallback" title="GUPnPServiceProxyNotifyCallback ()"><span class="type">GUPnPServiceProxyNotifyCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Sets up <em class="parameter"><code>callback</code></em>
+ to be called whenever a change notification for
+<em class="parameter"><code>variable</code></em>
+ is recieved.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-add-notify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>variable</p></td>
+<td class="parameter_description"><p>The variable to add notification for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The type of the variable</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> The callback to call when <em class="parameter"><code>variable</code></em>
+changes. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-add-notify.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-add-notify-full"></a><h3>gupnp_service_proxy_add_notify_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_add_notify_full (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *variable</code></em>,
+                                     <em class="parameter"><code><span class="type">GType</span> type</code></em>,
+                                     <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyNotifyCallback" title="GUPnPServiceProxyNotifyCallback ()"><span class="type">GUPnPServiceProxyNotifyCallback</span></a> callback</code></em>,
+                                     <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                     <em class="parameter"><code><span class="type">GDestroyNotify</span> notify</code></em>);</pre>
+<p>Sets up <em class="parameter"><code>callback</code></em>
+ to be called whenever a change notification for
+<em class="parameter"><code>variable</code></em>
+ is recieved.</p>
+<p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> gupnp_service_proxy_add_notify]</span></p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-add-notify-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>variable</p></td>
+<td class="parameter_description"><p>The variable to add notification for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The type of the variable</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> The callback to call when <em class="parameter"><code>variable</code></em>
+changes. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until the GDestroyNotify argument is called."><span class="acronym">scope notified</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>notify</p></td>
+<td class="parameter_description"><p> Function to call when the notification is removed, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-add-notify-full.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+<p class="since">Since: 0.20.12</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-add-raw-notify"></a><h3>gupnp_service_proxy_add_raw_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_add_raw_notify (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyNotifyCallback" title="GUPnPServiceProxyNotifyCallback ()"><span class="type">GUPnPServiceProxyNotifyCallback</span></a> callback</code></em>,
+                                    <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                    <em class="parameter"><code><span class="type">GDestroyNotify</span> notify</code></em>);</pre>
+<p>Get a notification for anything that happens on the peer. <em class="parameter"><code>value</code></em>
+ in
+<em class="parameter"><code>callback</code></em>
+ will be of type <span class="type">G_TYPE_POINTER</span> and contain the pre-parsed
+<span class="type">xmlDoc</span>. Do NOT free or modify this document.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-add-raw-notify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> The callback to call when the peer issues any
+variable notification. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until the GDestroyNotify argument is called."><span class="acronym">scope notified</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>notify</p></td>
+<td class="parameter_description"><p> A <span class="type">GDestroyNotify</span> for <em class="parameter"><code>user_data</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-add-raw-notify.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+<p class="since">Since: 0.20.12</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-remove-notify"></a><h3>gupnp_service_proxy_remove_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_remove_notify (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *variable</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyNotifyCallback" title="GUPnPServiceProxyNotifyCallback ()"><span class="type">GUPnPServiceProxyNotifyCallback</span></a> callback</code></em>,
+                                   <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Cancels the variable change notification for <em class="parameter"><code>callback</code></em>
+ and <em class="parameter"><code>user_data</code></em>
+.</p>
+<p>Up to version 0.20.9 this function must not be called directlya or
+indirectly from a <a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyNotifyCallback" title="GUPnPServiceProxyNotifyCallback ()"><span class="type">GUPnPServiceProxyNotifyCallback</span></a> associated with this
+service proxy, even if it is for another variable. In later versions such
+calls are allowed.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-remove-notify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>variable</p></td>
+<td class="parameter_description"><p>The variable to add notification for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> The callback to call when <em class="parameter"><code>variable</code></em>
+changes. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-remove-notify.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-remove-raw-notify"></a><h3>gupnp_service_proxy_remove_raw_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_remove_raw_notify (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                       <em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyNotifyCallback" title="GUPnPServiceProxyNotifyCallback ()"><span class="type">GUPnPServiceProxyNotifyCallback</span></a> callback</code></em>,
+                                       <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Cancels the variable change notification for <em class="parameter"><code>callback</code></em>
+ and <em class="parameter"><code>user_data</code></em>
+.</p>
+<p>This function must not be called directly or indirectly from a
+<a class="link" href="GUPnPServiceProxy.html#GUPnPServiceProxyNotifyCallback" title="GUPnPServiceProxyNotifyCallback ()"><span class="type">GUPnPServiceProxyNotifyCallback</span></a> associated with this service proxy, even
+if it is for another variable.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-remove-raw-notify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> The callback to call when <em class="parameter"><code>variable</code></em>
+changes. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-remove-raw-notify.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-set-subscribed"></a><h3>gupnp_service_proxy_set_subscribed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_proxy_set_subscribed (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>,
+                                    <em class="parameter"><code><span class="type">gboolean</span> subscribed</code></em>);</pre>
+<p>(Un)subscribes to this service.</p>
+<p>Note that the relevant messages are not immediately sent but queued.
+If you want to unsubcribe from this service because the application
+is quitting, rely on automatic synchronised unsubscription on object
+destruction instead.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-set-subscribed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>subscribed</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> to subscribe to this service</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-proxy-get-subscribed"></a><h3>gupnp_service_proxy_get_subscribed ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_service_proxy_get_subscribed (<em class="parameter"><code><a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy</code></em>);</pre>
+<p>Returns if we are subscribed to this service.</p>
+<div class="refsect3">
+<a name="gupnp-service-proxy-get-subscribed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-proxy-get-subscribed.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if we are subscribed to this service, otherwise <code class="literal">FALSE</code>.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPServiceProxy-struct"></a><h3>struct GUPnPServiceProxy</h3>
+<pre class="programlisting">struct GUPnPServiceProxy;</pre>
+<p>This struct contains private data only, and should be accessed using the
+functions below.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceProxyAction"></a><h3>GUPnPServiceProxyAction</h3>
+<pre class="programlisting">typedef struct _GUPnPServiceProxyAction GUPnPServiceProxyAction;</pre>
+<p>Opaque structure for holding in-progress action data.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPServiceProxy--subscribed"></a><h3>The <code class="literal">“subscribed”</code> property</h3>
+<pre class="programlisting">  “subscribed”               <span class="type">gboolean</span></pre>
+<p>Whether we are subscribed to this service.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceProxy.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GUPnPServiceProxy-subscription-lost"></a><h3>The <code class="literal">“subscription-lost”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> *proxy,
+               <span class="type">gpointer</span>           error,
+               <span class="type">gpointer</span>           user_data)</pre>
+<p>Emitted whenever the subscription to this service has been lost due
+to an error condition.</p>
+<div class="refsect3">
+<a name="GUPnPServiceProxy-subscription-lost.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>proxy</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A pointer to a <span class="type">GError</span> describing why the subscription has
+been lost. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GError]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca-certificates\n"
+"Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2007-11-01 11:21+0200\n"
+"Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Finnish\n"
+"X-Poedit-Country: FINLAND\n"
+
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "yes"
+msgstr "kyllä"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "ei"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "kysy"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid "Trust new certificates from certificate authorities?"
+msgstr "Luotetaanko varmentajien uusiin varmenteisiin?"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+"This package may install new CA (Certificate Authority) certificates when "
+"upgrading. You may want to check such new CA certificates and select only "
+"certificates that you trust."
+msgstr ""
+"Tämä paketti saattaa asentaa uusia CA-varmenteita (Certificate Authority, "
+"varmentaja) päivitettäessä. Saatat haluta tarkistaa tällaiset uudet CA-"
+"varmenteet ja valita vain ne varmenteet, joihin luotat."
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+" - yes: new CA certificates will be trusted and installed;\n"
+" - no : new CA certificates will not be installed by default;\n"
+" - ask: prompt for each new CA certificate."
+msgstr ""
+" - kyllä: uusiin CA-varmenteisiin luotetaan ja ne asennetaan\n"
+" - ei:    uusia CA-varmenteita ei oletuksena asenneta\n"
+" - kysy:  kunkin uuden CA-varmenteen kohdalla kysytään erikseen"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid "New certificates to activate:"
+msgstr "Uudet aktivoitavat varmenteet:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid ""
+"During upgrades, new certificates will be added. Please choose those you "
+"trust."
+msgstr ""
+"Päivitysten yhteydessä lisätään uusia varmenteita. Valitse ne, joihin luotat."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid "Certificates to activate:"
+msgstr "Aktivoitavat varmenteet:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"This package installs common CA (Certificate Authority) certificates in /usr/"
+"share/ca-certificates."
+msgstr ""
+"Tämä paketti asentaa yleisiä CA-varmenteita (Certificate Authority, "
+"varmentaja) hakemistoon /usr/share/ca-certificates."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"Please select the certificate authorities you trust so that their "
+"certificates are installed into /etc/ssl/certs. They will be compiled into a "
+"single /etc/ssl/certs/ca-certificates.crt file."
+msgstr ""
+"Valitse varmentajat, joihin luotat. Heidän varmenteensa asennetaan "
+"hakemistoon /etc/ssl/certs. Ne kootaan yhteen tiedostoon /etc/ssl/certs/ca-"
+"certificates.crt."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "kyllä, ei, kysy"
+
+#~ msgid "${new_crts}"
+#~ msgstr "${new_crts}"
+
+#~ msgid "${enable_crts}"
+#~ msgstr "${enable_crts}"
+
+#~ msgid "Select new certificates to activate:"
+#~ msgstr "Valitse uudet aktivoitavat varmenteet:"
+
+#~ msgid ""
+#~ "This package installs common CA (Certificate Authority) certificates in /"
+#~ "usr/share/ca-certificates. You can select certs from these available "
+#~ "certs to be installed into /etc/ssl/certs. This package will make "
+#~ "symlinks and generate a single file of all your selected certs, /etc/ssl/"
+#~ "certs/ca-certificates.crt."
+#~ msgstr ""
+#~ "Tämä paketti asentaa yleisiä CA-varmenteita (Certificate Authority) "
+#~ "hakemistoon /usr/share/ca-certificates. Voit valita mitkä näistä "
+#~ "saatavilla olevista varmenteista asennetaan hakemistoon /etc/ssl/certs. "
+#~ "Tämä paketti tekee valitsemistasi varmenteista symboliset linkit ja luo "
+#~ "yhden tiedoston /etc/ssl/certs/ca-certificates.crt, jossa ovat kaikki "
+#~ "valitsemasi varmenteet."

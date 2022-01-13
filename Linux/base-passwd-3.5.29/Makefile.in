@@ -1,0 +1,55 @@
+srcdir		= @srcdir@
+VPATH		= @srcdir@
+top_srcdir	= @top_srcdir@
+
+# Compilation tools
+CC		= @CC@
+CFLAGS		= @CPPFLAGS@ @CFLAGS@ @DEFS@ -I.
+LDFLAGS		= @LDFLAGS@
+
+# Other tools
+INSTALL		= @INSTALL@
+INSTALL_DATA	= @INSTALL_DATA@
+
+# Installation locations
+prefix		= @prefix@
+exec_prefix	= @exec_prefix@
+sbindir		= @sbindir@
+
+# Files used
+sources		= update-passwd.c
+objects		= $(patsubst %.c, %.o, $(sources))
+gen_autoheader	= config.h.in
+gen_autoconf	= configure
+gen_configure	= config.cache config.status config.log \
+		  confdefhs.h config.h Makefile
+
+all: update-passwd
+	$(MAKE) -C doc all
+	$(MAKE) -C man all
+
+install: all
+	mkdir -p $(DESTDIR)$(sbindir)
+	$(INSTALL) update-passwd $(DESTDIR)$(sbindir)/
+	$(MAKE) -C man install
+
+update-passwd.o: version.h
+
+update-passwd: $(objects)
+	$(CC) $(LDFLAGS) -o $@ $^
+
+clean:
+	rm -f update-passwd update-passwd.o core
+	$(MAKE) -C doc clean
+	$(MAKE) -C man clean
+
+mrproper realclean: clean
+	rm -f $(gen_configure)
+	rm -rf autom4te.cache
+
+cvsclean: mrproper
+	for i in $(gen_autoconf) $(gen_autoheader) ; do \
+		rm -f $(srcdir)/$$i ; \
+	done
+
+.PHONY: all install clean mrproper cvsclean

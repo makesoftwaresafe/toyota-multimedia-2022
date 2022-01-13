@@ -1,0 +1,348 @@
+/**
+\page functionTable Functions
+
+<table>
+ <tr>
+  <td>Function format</td>
+  <td>Return type</td>
+  <td>Description</td>
+  <td>Example expression</td>
+ </tr>
+ <tr>
+  <td>name(elementType)</td>
+  <td>string</td>
+  <td>returns name of particular element from trigger parameter<br>
+    elementType = SOURCE, SINK, DOMAIN, CONNECTION, CLASS
+  </td>
+  <td>name(SOURCE) EQ &quot;MediaPlayer&quot;<br>
+    name(SINK) EQ &quot;Speaker&quot;<br>
+    name(CLASS) NE &quot;INTERRUPT&quot;<br>
+  </td>
+ </tr>
+ <tr>
+  <td>name(elementTypeOfType)<br>
+    name(elementTypeOfType, elementName)</td>
+  <td>string</td>
+  <td>returns name of particular element that source, sink
+  belongs to.<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically chosen by elementTypeOfType.<br>
+    elementTypeOfType = CLASSOFSOURCE, CLASSOFSINK, DOMAINOFSOURCE, DOMAINOFSINK</td>
+  <td>name(CLASSOFSOURCE) EQ &quot;BASE&quot;<br>
+    name(DOMAINOFSINK, &quot;Bluetooth&quot;) EQ &quot;TestDomain&quot;<br>
+    name(DOMAINOFSINK) EQ name(DOMAINOFSINK, &quot;Bluetooth&quot;)</td>
+ </tr>
+ <tr>
+  <td>name(elementTypeOfType)<br>
+    name(elementTypeOfType, elementName)</td>
+  <td>string[]</td>
+  <td>returns list of names of source, sink which belong to
+  elementType derived from trigger parameter.<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically chosen by elementTypeOfType.<br>
+    elementTypeOfType = SOURCEOFCLASS, SINKOFCLASS</td>
+  <td>name(SOURCEOFCLASS) INC &quot;Bluetooth&quot;<br>
+    name(SINKOFCLASS, &quot;Speaker&quot;) INC &quot;Headphone&quot;</td>
+ </tr>
+ <tr>
+  <td>priority(elementType)<br>
+    priority(elementType, elementName)</td>
+  <td>integer</td>
+  <td>returns priority of particular element.<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically chosen by elementType.<br>
+    elementType = SOURCE, SINK, CONNECTION, CLASS</td>
+  <td>priority(SOURCE) LT 20<br>
+    priority(SOURCE, REQUESTING) GT priority(SOURCE,&quot;RadioTuner&quot;)<br>
+    </td>
+ </tr>
+ <tr>
+  <td>volume()<br>
+    volume(elementType)<br>
+    volume(elementType, elementName)<br>
+    </td>
+  <td>am_volume_t</td>
+  <td>returns volume.<br>
+    If both elementType and elementName are not specified it returns the value
+  updated by system.<br>
+    If elementType is not specified or REQUESTING, trigger parameter is
+  automatically chosen by elementType.<br>
+    elementType = SOURCE, SINK, CONNECTION, CLASS</td>
+  <td>volume() GT 40<br>
+    volume(SOURCE) LT 40<br>
+    volume(SINK) EQ 30<br>
+    volume(SOURCE) LT volume(SOURCE, &quot;MediaPlayer&quot;)</td>
+ </tr>
+ <tr>
+  <td>mainVolume()<br>
+    mainVolume(elementType)<br>
+    mainVolume(elementType, elementName)</td>
+  <td>am_mainVolume_t</td>
+  <td>returns main volume.<br>
+    If both elementType and elementName are not specified it returns the value
+  set by user.<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically chosen by elementType.<br>
+    elementType = SINK, CONNECTION, CLASS</td>
+  <td>mainVolume() GT 40<br>
+    mainVolume(SINK) EQ 10<br>
+    mainVolume(SINK, &quot;Speaker&quot;) LT 40<br>
+    mainVolume(SINK) EQ mainVolume(CLASS, &quot;BASE&quot;)</td>
+ </tr>
+ <tr>
+  <td>systemPropertyType()</td>
+  <td>am_CustomSystemPropertyType_t</td>
+  <td>returns system property type set by user</td>
+  <td>systemPropertyType() NE SYP_UNKNOWN</td>
+ </tr>
+ <tr>
+  <td>systemPropertyValue()<br>
+    systemPropertyValue(SYSTEM)<br>
+    systemPropertyValue(SYSTEM, propertyType)</td>
+  <td>int16_t</td>
+  <td>returns system property value.<br>
+    If nothing is specified, it returns the value set by user.<br>
+    If propertyType is not specified, trigger parameter is automatically
+  selected.</td>
+  <td>systemPropertyValue() EQ 100<br>
+    systemPropertyValue(SYSTEM, SYP_UNKNOWN) EQ 10</td>
+ </tr>
+ <tr>
+  <td>soundPropertyType()</td>
+  <td>am_CustomSoundPropertyType_t</td>
+  <td>returns sound property type updated by routing side.</td>
+  <td>soundPropertyType() EQ SP_UNKOWN</td>
+ </tr>
+ <tr>
+  <td>soundPropertyValue()<br>
+    soundPropertyValue(elementType)<br>
+    soundPropertyValue(elementType, elementName, propertyType)</td>
+  <td>int16_t</td>
+  <td>returns sound property value.<br>
+    If nothing is specified, it returns the value notified by system.<br>
+    If elementName and propertyType are not specified, trigger parameter is
+  automatically selected by elementType.<br>
+    elementType = SOURCE, SINK</td>
+  <td>soundPropertyValue() EQ -10<br>
+    soundPropertyValue(SOURCE) EQ 10<br>
+    soundPropertyValue(SINK, &quot;Speaker&quot;, SP_GENIVI_BASS) EQ 10</td>
+ </tr>
+ <tr>
+  <td>mainSoundPropertyType()</td>
+  <td>am_CustomMainSoundPropertyType_t</td>
+  <td>returns main sound property type set by user, or updated by
+  routing side</td>
+  <td>mainSoundPropertyType() NE MSP_UNKOWN</td>
+ </tr>
+ <tr>
+  <td>mainSoundPropertyValue()<br>
+    mainSoundPropertyValue(elementType)<br>
+    mainSoundPropertyValue(elementType, elementName, propertyType)</td>
+  <td>int16_t</td>
+  <td>returns main sound property value.<br>
+    If nothing is specified, it returns the value notified by system.<br>
+    If elementName and propertyType are not specified, trigger parameter is
+  automatically selected by elementType.<br>
+    elementType = SOURCE, SINK</td>
+  <td>mainSoundPropertyValue() EQ -10<br>
+    mainSoundPropertyValue(SOURCE) EQ 10<br>
+    mainSoudPropertyValue(SINK, &quot;Speaker&quot;, MSP_GENIVI_BASS) EQ 10</td>
+ </tr>
+ <tr>
+  <td>muteState()<br>
+    muteState(elementType)<br>
+    muteState(elementType, elementName)</td>
+  <td>am_MuteState_e</td>
+  <td>returns mute state.<br>
+    If both elementType and elementName are not specified it returns the value
+  set by user or updated by routing side.<br>
+    If elementType is not specified or REQUESTING, trigger parameter is
+  automatically selected by elementType.<br>
+    elementType = SINK, CONNECTION, CLASS</td>
+  <td>muteState() EQ MS_MUTED<br>
+    muteState(SINK, &quot;Speaker&quot;) NE MS_UNKNOWN<br>
+    </td>
+ </tr>
+ <tr>
+  <td>availability()<br>
+    availability(elementType)<br>
+    availability(elementType, elementName)</td>
+  <td>am_Availability_e</td>
+  <td>returns availability.<br>
+    If both elementType and elementName are not specified it returns the value
+  updated by system.<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically selected by elementType<br>
+    elementType = SOURCE, SINK</td>
+  <td>availability() EQ A_AVAILABLE<br>
+    availability(SOURCE) NE A_UNAVAILABLE<br>
+    availability(SINK, &quot;Speaker&quot;) EQ A_AVAILABLE</td>
+ </tr>
+ <tr>
+  <td>availabilityReason()<br>
+    availabilityReason(elementType)<br>
+    availabilityReason(elementType, elementName)</td>
+  <td>am_CustomAvailabilityReason_t</td>
+  <td>returns availability reason.<br>
+    If both elementType and elementName are not specified it returns the value
+  updated by system.<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically selected by elementType<br>
+    elementType = SOURCE, SINK</td>
+  <td>availabilityReason() EQ AR_UNKOWN<br>
+    availabilityReason(SOURCE) NE AR_GENIVI_NEWMEDIA <br>
+    availabilityReason(SINK, &quot;Speaker&quot;) EQ AR_GENIVI_TEMPERATURE</td>
+ </tr>
+ <tr>
+  <td>connectionState(CONNECTION)<br>
+    connectionState(CONNECTION, elementName)<br>
+    </td>
+  <td>am_ConnectionState_e</td>
+  <td>returns state of main connection which is specified in
+  trigger parameter.<br>
+    returns the connection state of given connection name.<br>
+    elementType = CONNECTION</td>
+  <td>connectionState() EQ CS_CONNECTED<br>
+    connectionState(CONNECTION, &quot;RadioTuner:Amp&quot;) EQ CS_CONNECTED</td>
+ </tr>
+ <tr>
+  <td>connectionState(elementType)<br>
+    connectionState(elementType, elementName)</td>
+  <td>am_ConnectionState_e[]</td>
+  <td>returns the list of state of main connections<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically selected by elementType<br>
+    elementType = CONNECTIONOFSOURCE, CONNECTIONOFSINK, CONNECTIONOFCLASS</td>
+  <td>connectionState(SOURCE) INC CS_CONNECTED<br>
+    connectionState(SINK, &quot;Speaker&quot;) INC CS_SUSPENDED<br>
+    </td>
+ </tr>
+ <tr>
+  <td>interruptState()<br>
+    interruptState(elementType)<br>
+    interruptState(elementType, elementName)</td>
+  <td>am_InterruptState_e</td>
+  <td>returns interrupt state.<br>
+    If both elementType and elementName are not specified it returns the value
+  updated by system.<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically selected by elementType<br>
+    elementType = SOURCE, CONNECTION</td>
+  <td>interruptState(SOURCE) EQ IS_INTERRUPTED<br>
+    interruptState(SOURCE, &quot;PDC&quot;) EQ IS_OFF<br>
+    interruptState(CONNECTION, &quot;PDC:Amp&quot;) EQ IS_OFF</td>
+ </tr>
+ <tr>
+  <td>state(elementType)<br>
+    state(elementType, elementType)</td>
+  <td>am_SourceState_e<br>
+    am_DomainState_e</td>
+  <td>returns state of particular element<br>
+    If elementName is not specified, trigger parameter is automatically
+  selected by elementType<br>
+    elementType = SOURCE, DOMAIN</td>
+  <td>state(SOURCE) EQ SS_ON<br>
+    state(SOURCE, &quot;RadioTuner&quot;) NE SS_ON<br>
+    state(DOMAIN, &quot;TestDomian&quot;) EQ DS_CONTROLLED</td>
+ </tr>
+ <tr>
+  <td>isRegistered(elementType)<br>
+    isRegistered(elementType, elementName)</td>
+  <td>boolean</td>
+  <td>returns result of registration of particular element.<br>
+    If elementName is not specified or REQUESTING, trigger parameter is
+  automatically selected by elementType<br>
+    elementType = SOURCE, SINK, GATEWAY, DOMAIN</td>
+  <td>isRegistered(SOURCE) EQ TRUE<br>
+    isRegistered(SOURCE, &quot;MediaPlayer&quot;) EQ TRUE<br>
+    isRegistered(SINK, &quot;Speaker&quot;) EQ TRUE</td>
+ </tr>
+ <tr>
+  <td>isRegistrationComplete(DOMAIN)<br>
+    isRegistrationComplete(DOMAIN, domainName)</td>
+  <td>boolean</td>
+  <td>check if particular domain indicated by
+  &quot;domainName&quot; is registered<br>
+    If domainName is not specified, all domains are indicated.</td>
+  <td>isRegisterationComplete(DOMAIN) EQ TRUE<br>
+    isRegisterationComplete(DOMAIN, &quot;TestDomain&quot;) EQ FALSE</td>
+ </tr>
+ <tr>
+  <td>peek(elementTypeOfType,className, Order, Index)</td>
+  <td>string</td>
+  <td>returns the element name belonging to connection queue
+  maintained by class based on order and index. <br>
+    If className is not specified or REQUESTING is specified then className is
+  obtained from trigger parameter. If order and Index if not specified order is
+  considered as HIGH_PRIOIRTY and index as 1.<br>
+    elementTypeOfType = SOURCEOFCLASS, SINKOFCLASS</td>
+  <td>peek(SOURCEOFCLASS, &quot;BASE&quot;,O_NEWEST,2) EQ &quot;Mic1&quot;<br>
+    peek(SOURCEOFCLASS, REQUESTING, O_NEWEST) EQ &quot;BT&quot;<br>
+    peek(SOURCEOFCLASS, REQUESTING, O_NEWEST,2) EQ &quot;Mic1&quot;<br>
+    peek(SINKOFCLASS) EQ &quot;Mono0&quot;</td>
+ </tr>
+ <tr>
+  <td>notificationConfigurationStatus(elementType,elemenetName,notificationType)</td>
+  <td>am_NotificationStatus_e</td>
+  <td>it returns the status of notification type.<br>
+    If REQUESTING is specified as elementName then elementName is obtained from
+  trigger parameter.<br>
+    elementType = SOURCE, SINK</td>
+  <td>notificationConfigurationStatus(SOURCE,REQUESTING,NT_TEMP) EQ NS_PERIODIC<br>
+    notificationConfigurationStatus(SINK,&quot;NAVI1&quot;, NT_TEMP) EQ NS_MINIMUM</td>
+ </tr>
+ <tr>
+  <td>notificationConfigurationParam(elementType,elemenetName,notificationType)</td>
+  <td>int16_t</td>
+  <td>it returns the value of notification type.<br>
+    If REQUESTING is specified as elementName then elementName is obtained from
+  trigger parameter.<br>
+    elementType = SOURCE, SINK</td>
+  <td>notificationConfigurationParam(SOURCE,REQUESTING,NT_TEMP) EQ 5<br>
+    notificationConfigurationParam(SINK,&quot;NAVI1&quot;, NT_TEMP) EQ 2</td>
+ </tr>
+ <tr>
+  <td>notificationDataValue()</td>
+  <td>int16_t</td>
+  <td>it returns the notification value as received during
+  notification data change request from system</td>
+  <td>notificationDataValue() EQ 2</td>
+ </tr>
+ <tr>
+  <td>mainNotificationConfigurationType()</td>
+  <td>am_CustomNotificationType_t</td>
+  <td>it returns the main notification type as receive in trigger
+  parameter</td>
+  <td>mainNotificationConfigurationType() EQ NT_TEMP</td>
+ </tr>
+ <tr>
+  <td>mainNotificationConfigurationStatus(elementType,elemenetName,notificationType)</td>
+  <td>am_NotificationStatus_e</td>
+  <td>it returns the status of main notification type.<br>
+    If REQUESTING is specified as elementName or notificationType then
+  elementName or notificationType is obtained from trigger parameter.<br>
+    elementType = SOURCE, SINK</td>
+  <td>mainNotificationConfigurationStatus(SOURCE,REQUESTING,REQUESTING) EQ NS_PERIODIC<br>
+    mainNotificationConfigurationStatus(SINK,&quot;NAVI1&quot;, NT_TEMP) EQ NS_MINIMUM</td>
+ </tr>
+ <tr>
+  <td>mainNotificationConfigurationParam(elementType,elemenetName,notificationType)</td>
+  <td>int16_t</td>
+  <td>it returns the value of main notification type.<br>
+    If REQUESTING is specified as elementName or notificationType then
+  elementName or notificationType is obtained from trigger parameter.<br>
+    elementType = SOURCE, SINK</td>
+  <td>mainNotificationConfigurationParam(SOURCE,REQUESTING,NT_TEMP) EQ 5<br>
+    mainNotificationConfigurationParam(SINK,&quot;NAVI1&quot;, REQUESTING) EQ 2</td>
+ </tr>
+ <tr>
+  <td>connectionError()</td>
+  <td>am_Error_e</td>
+  <td>it returns the error code which indicates the result of
+  connection process.</td>
+  <td>connectionError() EQ E_UNKNOWN</td>
+ </tr>
+</table>
+
+
+*/

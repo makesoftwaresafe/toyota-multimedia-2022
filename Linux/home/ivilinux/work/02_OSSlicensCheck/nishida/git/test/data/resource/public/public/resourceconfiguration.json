@@ -1,0 +1,56 @@
+{
+  "config_appl": "shared",
+  "version": "0.1.0",
+  "resources": {
+    "pubSettingB": {
+      "policy": "NA",
+      "permission": "WO",
+      "storage": "local",
+      "max_size": "na",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "anotherSharedResource": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "4096",
+      "responsible": "pfs_test",
+      "custom_name": "11",
+      "type": "key",
+      "customID": "960c42c53a416d44eb0b6c784f0b9840"
+    },
+    "language/current_language": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "4096",
+      "responsible": "public",
+      "custom_name": "11",
+      "type": "key",
+      "customID": "960c42c53a416d44eb0b6c784f0b9840"
+    },
+    "docA.txt": {
+      "policy": "NA",
+      "permission": "WO",
+      "storage": "local",
+      "max_size": "na",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "aSharedResource": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "4096",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "11",
+      "type": "key",
+      "customID": "960c42c53a416d44eb0b6c784f0b9840"
+    }
+  }
+}

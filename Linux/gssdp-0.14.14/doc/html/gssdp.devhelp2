@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="GSSDP Reference Manual" link="index.html" author="" name="gssdp" version="2" language="c" online="http://developer.gnome.org/gssdp/unstable/">
+  <chapters>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+    <sub name="GSSDP" link="ch01.html">
+      <sub name="GSSDPClient" link="GSSDPClient.html"/>
+      <sub name="GSSDPResourceBrowser" link="GSSDPResourceBrowser.html"/>
+      <sub name="GSSDPResourceGroup" link="GSSDPResourceGroup.html"/>
+      <sub name="Error codes" link="gssdp-Error-codes.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <keyword type="function" name="gssdp_client_new ()" link="GSSDPClient.html#gssdp-client-new"/>
+    <keyword type="function" name="gssdp_client_new_with_port ()" link="GSSDPClient.html#gssdp-client-new-with-port"/>
+    <keyword type="function" name="gssdp_client_get_main_context ()" link="GSSDPClient.html#gssdp-client-get-main-context"/>
+    <keyword type="function" name="gssdp_client_set_server_id ()" link="GSSDPClient.html#gssdp-client-set-server-id"/>
+    <keyword type="function" name="gssdp_client_get_server_id ()" link="GSSDPClient.html#gssdp-client-get-server-id"/>
+    <keyword type="function" name="gssdp_client_get_interface ()" link="GSSDPClient.html#gssdp-client-get-interface"/>
+    <keyword type="function" name="gssdp_client_get_host_ip ()" link="GSSDPClient.html#gssdp-client-get-host-ip"/>
+    <keyword type="function" name="gssdp_client_set_network ()" link="GSSDPClient.html#gssdp-client-set-network"/>
+    <keyword type="function" name="gssdp_client_get_network ()" link="GSSDPClient.html#gssdp-client-get-network"/>
+    <keyword type="function" name="gssdp_client_get_active ()" link="GSSDPClient.html#gssdp-client-get-active"/>
+    <keyword type="function" name="gssdp_client_append_header ()" link="GSSDPClient.html#gssdp-client-append-header"/>
+    <keyword type="function" name="gssdp_client_clear_headers ()" link="GSSDPClient.html#gssdp-client-clear-headers"/>
+    <keyword type="function" name="gssdp_client_remove_header ()" link="GSSDPClient.html#gssdp-client-remove-header"/>
+    <keyword type="struct" name="struct GSSDPClient" link="GSSDPClient.html#GSSDPClient-struct"/>
+    <keyword type="property" name="The “active” property" link="GSSDPClient.html#GSSDPClient--active"/>
+    <keyword type="property" name="The “host-ip” property" link="GSSDPClient.html#GSSDPClient--host-ip"/>
+    <keyword type="property" name="The “interface” property" link="GSSDPClient.html#GSSDPClient--interface"/>
+    <keyword type="property" name="The “main-context” property" link="GSSDPClient.html#GSSDPClient--main-context"/>
+    <keyword type="property" name="The “msearch-port” property" link="GSSDPClient.html#GSSDPClient--msearch-port"/>
+    <keyword type="property" name="The “network” property" link="GSSDPClient.html#GSSDPClient--network"/>
+    <keyword type="property" name="The “server-id” property" link="GSSDPClient.html#GSSDPClient--server-id"/>
+    <keyword type="property" name="The “socket-ttl” property" link="GSSDPClient.html#GSSDPClient--socket-ttl"/>
+    <keyword type="signal" name="The “message-received” signal" link="GSSDPClient.html#GSSDPClient-message-received"/>
+    <keyword type="function" name="gssdp_resource_browser_new ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-new"/>
+    <keyword type="function" name="gssdp_resource_browser_get_client ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-get-client"/>
+    <keyword type="function" name="gssdp_resource_browser_set_target ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-set-target"/>
+    <keyword type="function" name="gssdp_resource_browser_get_target ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-get-target"/>
+    <keyword type="function" name="gssdp_resource_browser_set_mx ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-set-mx"/>
+    <keyword type="function" name="gssdp_resource_browser_get_mx ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-get-mx"/>
+    <keyword type="function" name="gssdp_resource_browser_set_active ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-set-active"/>
+    <keyword type="function" name="gssdp_resource_browser_get_active ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-get-active"/>
+    <keyword type="function" name="gssdp_resource_browser_rescan ()" link="GSSDPResourceBrowser.html#gssdp-resource-browser-rescan"/>
+    <keyword type="struct" name="struct GSSDPResourceBrowser" link="GSSDPResourceBrowser.html#GSSDPResourceBrowser-struct"/>
+    <keyword type="macro" name="GSSDP_ALL_RESOURCES" link="GSSDPResourceBrowser.html#GSSDP-ALL-RESOURCES:CAPS"/>
+    <keyword type="property" name="The “active” property" link="GSSDPResourceBrowser.html#GSSDPResourceBrowser--active"/>
+    <keyword type="property" name="The “client” property" link="GSSDPResourceBrowser.html#GSSDPResourceBrowser--client"/>
+    <keyword type="property" name="The “mx” property" link="GSSDPResourceBrowser.html#GSSDPResourceBrowser--mx"/>
+    <keyword type="property" name="The “target” property" link="GSSDPResourceBrowser.html#GSSDPResourceBrowser--target"/>
+    <keyword type="signal" name="The “resource-available” signal" link="GSSDPResourceBrowser.html#GSSDPResourceBrowser-resource-available"/>
+    <keyword type="signal" name="The “resource-unavailable” signal" link="GSSDPResourceBrowser.html#GSSDPResourceBrowser-resource-unavailable"/>
+    <keyword type="function" name="gssdp_resource_group_new ()" link="GSSDPResourceGroup.html#gssdp-resource-group-new"/>
+    <keyword type="function" name="gssdp_resource_group_get_client ()" link="GSSDPResourceGroup.html#gssdp-resource-group-get-client"/>
+    <keyword type="function" name="gssdp_resource_group_set_max_age ()" link="GSSDPResourceGroup.html#gssdp-resource-group-set-max-age"/>
+    <keyword type="function" name="gssdp_resource_group_get_max_age ()" link="GSSDPResourceGroup.html#gssdp-resource-group-get-max-age"/>
+    <keyword type="function" name="gssdp_resource_group_set_available ()" link="GSSDPResourceGroup.html#gssdp-resource-group-set-available"/>
+    <keyword type="function" name="gssdp_resource_group_get_available ()" link="GSSDPResourceGroup.html#gssdp-resource-group-get-available"/>
+    <keyword type="function" name="gssdp_resource_group_set_message_delay ()" link="GSSDPResourceGroup.html#gssdp-resource-group-set-message-delay"/>
+    <keyword type="function" name="gssdp_resource_group_get_message_delay ()" link="GSSDPResourceGroup.html#gssdp-resource-group-get-message-delay"/>
+    <keyword type="function" name="gssdp_resource_group_add_resource ()" link="GSSDPResourceGroup.html#gssdp-resource-group-add-resource"/>
+    <keyword type="function" name="gssdp_resource_group_add_resource_simple ()" link="GSSDPResourceGroup.html#gssdp-resource-group-add-resource-simple"/>
+    <keyword type="function" name="gssdp_resource_group_remove_resource ()" link="GSSDPResourceGroup.html#gssdp-resource-group-remove-resource"/>
+    <keyword type="struct" name="struct GSSDPResourceGroup" link="GSSDPResourceGroup.html#GSSDPResourceGroup-struct"/>
+    <keyword type="property" name="The “available” property" link="GSSDPResourceGroup.html#GSSDPResourceGroup--available"/>
+    <keyword type="property" name="The “client” property" link="GSSDPResourceGroup.html#GSSDPResourceGroup--client"/>
+    <keyword type="property" name="The “max-age” property" link="GSSDPResourceGroup.html#GSSDPResourceGroup--max-age"/>
+    <keyword type="property" name="The “message-delay” property" link="GSSDPResourceGroup.html#GSSDPResourceGroup--message-delay"/>
+    <keyword type="macro" name="GSSDP_ERROR" link="gssdp-Error-codes.html#GSSDP-ERROR:CAPS"/>
+    <keyword type="enum" name="enum GSSDPError" link="gssdp-Error-codes.html#GSSDPError"/>
+    <keyword type="constant" name="GSSDP_ERROR_NO_IP_ADDRESS" link="gssdp-Error-codes.html#GSSDP-ERROR-NO-IP-ADDRESS:CAPS"/>
+    <keyword type="constant" name="GSSDP_ERROR_FAILED" link="gssdp-Error-codes.html#GSSDP-ERROR-FAILED:CAPS"/>
+  </functions>
+</book>

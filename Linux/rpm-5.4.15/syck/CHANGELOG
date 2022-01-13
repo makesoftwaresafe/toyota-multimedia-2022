@@ -1,0 +1,194 @@
+--- %YAML:1.0
+- version: 0.60
+  date: 2005-09-19
+  changes:
+    lib/emitter.c: get headless documents working.  better quoting of various
+      indicators at end or alone in scalars.
+    lib/token.re: forgive tabs in plain scalars.
+    ext/syck/rubyext.c: headless document always.
+
+- version: 0.56
+  date: 2005-05-16
+  changes:
+    ext/ruby/ext/syck/rubyext.c: 
+    - const_find, now locating class constants correctly.
+    - YAML::Object class for loaded objects which have no corresponding class.
+    - No anchors on simple strings.
+    - Outputing of domain and private types and anchors properly.
+    - Memory leak in mktime.
+
+    lib/emitter.c: scale back seq-in-map on a typed seq.  prevents the shift/reduce
+      problem with the parser.
+
+- version: 0.55
+  date: 2005-04-14
+  changes:
+    lib/emitter.c: 
+    - output inline collections.  ensure proper quoting and no blocks in inline collections.
+    - safe indentation of scalar blocks which include YAML document separators.
+    
+    lib/syck.h: styles for every type of node now.
+
+    lib/gram.y: restructuring, trying to fix problem with typed seq-in-map shortcut nodes.
+    
+    lib/token.re: fixed parsing of inline seq closing char as closing map char and vice versa.
+    
+    ext/ruby/lib/yaml/rubytypes.rb: added styling of collections.  to_yaml_style for
+      every object in Ruby.
+    
+    ext/ruby/ext/syck/rubyext.c: ditto.
+
+- version: 0.54
+  date: 2005-04-07
+  changes:
+    lib/emitter.c: scale back double-quoting of strings.  get empty nulls working.
+
+    lib/gram.y: allowing transfers, anchors on an empty.
+
+    lib/implicit.re: removing 'y' and 'n' again!!
+
+    lib/yaml.rb: repair YAML.transfer to work with taguris.
+
+    lib/yaml/tag.rb:
+    - allow taguri to be set using an accessor.
+    - continue support of Object#to_yaml_type.
+
+    ext/ruby/ext/syck/rubyext.c:
+    - fixing PrivateType and DomainType objects.
+    - new Resolver#tagurize converts type ids to taguris.
+      (for backwards compatibility, since the new stuff uses strictly taguri.)
+    - merging nobu's changes from Ruby trunk.
+
+    ext/ruby/lib/yaml/rubytypes.rb: simplify taguri display.
+
+- version: 0.53
+  date: 2005-03-28
+  changes:
+    README.EXT: more docs.
+
+    ext/ruby/ext/syck/rubyext.c:
+    - moved Object#yaml_new into the node_import and made it the
+      default behavior.
+    - the target_class is always called wih yaml_new, prepended
+      a parameter, which is the klass.
+    - loaded nodes through GenericResolver show their style.
+    - YAML::Syck::Node#transform works.
+    - bug with YAML::Syck::Emitter#level
+
+    ext/ruby/lib/yaml.rb: reworking YAML::Stream to use the new
+      emitter.
+
+    ext/ruby/lib/yaml/stream.rb: ditto.
+
+    ext/ruby/lib/yaml/rubytypes.rb: use of new yaml_new syntax.
+
+    ext/ruby/lib/yaml/tag.rb: the tag_subclasses? method now
+      shows up in the class.
+
+    ext/ruby/yts/yts.rb: moved eval code out of the YAML
+      module.
+    ext/ruby/yts/*.yml: prepend YAML module onto all
+      code that uses Stream, Omap, etc.
+
+    lib/implicit.re: were 'y' and 'n' seriously omitted??
+
+    lib/node.c: added syck_seq_assign.
+
+- version: 0.52
+  date: 2005-03-27
+  changes:
+    README.EXT: added detailed API docs for Syck!!
+
+    ext/ruby/ext/syck/rubyext.c: consolidated all the diaspora of internal 
+      node types into the family below YAML::Syck::Node -- Map, 
+      Seq, Scalar -- all of whom are SyckNode structs pointing to 
+      Ruby data.
+    
+    lib/emitter.c: consolidated redundant block_styles struct into
+      the scalar_style struct.  (this means loaded nodes can now
+      be sent back to emitter and preserve at least its very basic
+      formatting.)
+
+    lib/token.re: ditto.
+
+    lib/node.c: new syck_replace_str methods and syck_empty_*
+      methods for rewriting node contents, while keeping the ID
+      and other setup info.
+
+    lib/syck.h: reflect block_styles and new node functions.
+
+- version: 0.51
+  date: 2005-02-09
+  changes:
+    tests/YTS.c: tests failing due to bad syck_emit_scalar call.
+
+    ext/ruby/lib/yaml/rubytypes.rb: added Object#yaml_new.
+
+    ext/ruby/ext/syck/rubyext.c: both yaml_new and yaml_initialize get
+      called, should they be present.
+    
+- version: 0.50
+  date: 2005-02-08
+  changes:
+    lib/gram.y: freed up parser to accept any structure as a headless
+      document!
+
+    lib/emitter.c: renovated emitter, which allows an initial walk
+      of the tree to check for anchors and tag prefixing.  then, swift
+      emission of nodes with folding routines and shortcut-checking
+      built-in!
+
+   ext/ruby/ext/syck/rubyext.c: added hooks for the new emitter.
+
+- version: 0.45
+  date: 2004-08-18
+  changes:
+    CHANGELOG: Added.
+
+    lib/Makefile.am: re2c compiling with bit vectors now.
+
+    lib/syck.c: clear parser on init. thanks, ts. [ruby-core:02931]
+
+    lib/implicit.re: 
+    - added sexagecimal float#base60.
+
+    lib/token.re: 
+    - using newline_len to handline CR-LFs.  
+      "\000" was showing up on folded blocks which
+      stopped at EOF. 
+
+    - buffer underflow. thanks, ts. [ruby-core:02929]
+
+    - indentation absolutely ignored when processing flow collections.
+
+    - plain scalars are trimmed if indentation follows in an ambiguous
+      flow collection.
+
+    - fixed problem with comments sharing line with opening of block sequence.
+
+    ext/ruby/lib/yaml/compat.rb: moved all ruby 1.6 -> ruby 1.8
+      handling into compat.rb.
+
+    ext/ruby/lib/yaml/baseemitter.rb: 
+    - simpler flow block code.
+
+    - was forcing a mod value of zero at times, which kept 
+      some blocks from getting indentation.
+
+    - double-quoted strings now are handled through the flow block code to
+      increase readability.
+
+    ext/ruby/lib/yaml/rubytypes.rb: 
+    - exceptions were using an older YAML.object_maker. [ruby-core:03080]
+    - subtleties in emitting strings with opening whitespace.
+       
+    ext/ruby/lib/yaml.rb: 
+    - added YAML::load_file, YAML::parse_file.
+    - added rdoc to beginning of lib.
+
+    ext/ruby/ext/syck/rubyext.c: 
+    - set buffer after Data_Wrap_Struct to avoid possible GC. [ruby-talk:104835]
+    - added float#base60 handling.
+
+    ext/ruby/yts/YtsSpecificationExamples.yml: new examples from the 1.0
+      working draft. [http://yaml.org/spec/]

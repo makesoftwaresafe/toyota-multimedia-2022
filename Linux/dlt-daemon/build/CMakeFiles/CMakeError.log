@@ -1,0 +1,150 @@
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make" "cmTC_e8dba/fast"
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make -f CMakeFiles/cmTC_e8dba.dir/build.make CMakeFiles/cmTC_e8dba.dir/build
+make[1]: Entering directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e8dba.dir/TestEndianess.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc    -fPIC -std=gnu99    -o CMakeFiles/cmTC_e8dba.dir/TestEndianess.c.o   -c /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTC_e8dba
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8dba.dir/link.txt --verbose=1
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc  -fPIC -std=gnu99     CMakeFiles/cmTC_e8dba.dir/TestEndianess.c.o  -o cmTC_e8dba  
+make[1]: Leaving directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if files linux/stat.h exist failed with the following output:
+Change Dir: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make" "cmTC_479aa/fast"
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make -f CMakeFiles/cmTC_479aa.dir/build.make CMakeFiles/cmTC_479aa.dir/build
+make[1]: Entering directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_479aa.dir/CheckIncludeFiles.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc    -fPIC -std=gnu99    -o CMakeFiles/cmTC_479aa.dir/CheckIncludeFiles.c.o   -c /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:24: fatal error: linux/stat.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_479aa.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_479aa.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_479aa.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_479aa/fast' failed
+make: *** [cmTC_479aa/fast] Error 2
+
+Source:
+/* */
+#include <linux/stat.h>
+
+
+int main(void){return 0;}
+
+Determining if the function floor exists failed with the following output:
+Change Dir: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make" "cmTC_edd7a/fast"
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make -f CMakeFiles/cmTC_edd7a.dir/build.make CMakeFiles/cmTC_edd7a.dir/build
+make[1]: Entering directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_edd7a.dir/CheckFunctionExists.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc    -fPIC -std=gnu99 -DCHECK_FUNCTION_EXISTS=floor   -o CMakeFiles/cmTC_edd7a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+<command-line>:0:23: warning: conflicting types for built-in function 'floor'
+/usr/share/cmake-3.5/Modules/CheckFunctionExists.c:6:6: note: in expansion of macro 'CHECK_FUNCTION_EXISTS'
+ char CHECK_FUNCTION_EXISTS();
+      ^
+Linking C executable cmTC_edd7a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_edd7a.dir/link.txt --verbose=1
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc  -fPIC -std=gnu99 -DCHECK_FUNCTION_EXISTS=floor    CMakeFiles/cmTC_edd7a.dir/CheckFunctionExists.c.o  -o cmTC_edd7a  
+CMakeFiles/cmTC_edd7a.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `floor'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_edd7a.dir/build.make:97: recipe for target 'cmTC_edd7a' failed
+make[1]: *** [cmTC_edd7a] Error 1
+make[1]: Leaving directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_edd7a/fast' failed
+make: *** [cmTC_edd7a/fast] Error 2
+
+
+Determining if the function gethostbyname exists failed with the following output:
+Change Dir: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make" "cmTC_04931/fast"
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make -f CMakeFiles/cmTC_04931.dir/build.make CMakeFiles/cmTC_04931.dir/build
+make[1]: Entering directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04931.dir/CheckFunctionExists.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc    -fPIC -std=gnu99 -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_04931.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_04931
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04931.dir/link.txt --verbose=1
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc  -fPIC -std=gnu99 -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_04931.dir/CheckFunctionExists.c.o  -o cmTC_04931  
+CMakeFiles/cmTC_04931.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `gethostbyname'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_04931.dir/build.make:97: recipe for target 'cmTC_04931' failed
+make[1]: *** [cmTC_04931] Error 1
+make[1]: Leaving directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_04931/fast' failed
+make: *** [cmTC_04931/fast] Error 2
+
+
+Determining if the function inet_ntoa exists failed with the following output:
+Change Dir: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make" "cmTC_fd407/fast"
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make -f CMakeFiles/cmTC_fd407.dir/build.make CMakeFiles/cmTC_fd407.dir/build
+make[1]: Entering directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fd407.dir/CheckFunctionExists.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc    -fPIC -std=gnu99 -DCHECK_FUNCTION_EXISTS=inet_ntoa   -o CMakeFiles/cmTC_fd407.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fd407
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd407.dir/link.txt --verbose=1
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc  -fPIC -std=gnu99 -DCHECK_FUNCTION_EXISTS=inet_ntoa    CMakeFiles/cmTC_fd407.dir/CheckFunctionExists.c.o  -o cmTC_fd407  
+CMakeFiles/cmTC_fd407.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `inet_ntoa'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_fd407.dir/build.make:97: recipe for target 'cmTC_fd407' failed
+make[1]: *** [cmTC_fd407] Error 1
+make[1]: Leaving directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fd407/fast' failed
+make: *** [cmTC_fd407/fast] Error 2
+
+
+Determining if the function socket exists failed with the following output:
+Change Dir: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make" "cmTC_8ef33/fast"
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/make -f CMakeFiles/cmTC_8ef33.dir/build.make CMakeFiles/cmTC_8ef33.dir/build
+make[1]: Entering directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8ef33.dir/CheckFunctionExists.c.o
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc    -fPIC -std=gnu99 -DCHECK_FUNCTION_EXISTS=socket   -o CMakeFiles/cmTC_8ef33.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8ef33
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ef33.dir/link.txt --verbose=1
+/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc  -fPIC -std=gnu99 -DCHECK_FUNCTION_EXISTS=socket    CMakeFiles/cmTC_8ef33.dir/CheckFunctionExists.c.o  -o cmTC_8ef33  
+CMakeFiles/cmTC_8ef33.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `socket'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8ef33.dir/build.make:97: recipe for target 'cmTC_8ef33' failed
+make[1]: *** [cmTC_8ef33] Error 1
+make[1]: Leaving directory '/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8ef33/fast' failed
+make: *** [cmTC_8ef33/fast] Error 2
+
+

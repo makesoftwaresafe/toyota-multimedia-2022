@@ -1,0 +1,7 @@
+.deps
+.dirstamp
+llocal_lua.c
+.libs
+*.gcda
+*.gcno
+*.lo

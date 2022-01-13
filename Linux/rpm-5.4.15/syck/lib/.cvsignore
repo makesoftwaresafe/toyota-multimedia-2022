@@ -1,0 +1,9 @@
+.deps
+.libs
+*.lo
+*.la
+Makefile
+Makefile.in
+gram.c
+gram.h
+gram.output

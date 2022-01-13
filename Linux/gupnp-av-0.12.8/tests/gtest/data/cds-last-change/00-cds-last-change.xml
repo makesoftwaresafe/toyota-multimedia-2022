@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StateEvent
+xmlns="urn:schemas-upnp-org:av:cds-event"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="urn:schemas-upnp-org:av:cds-event
+http://www.upnp.org/schemas/av/cds-event.xsd">
+</StateEvent>
+

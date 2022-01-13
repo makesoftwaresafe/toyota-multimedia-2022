@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>XMLRPC Support: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch04.html" title="Web Services APIs">
+<link rel="prev" href="libsoup-2.4-HTML-Form-Support.html" title="HTML Form Support">
+<link rel="next" href="libsoup-2.4-WebSockets.html" title="WebSockets">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-XMLRPC-Support.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libsoup-2.4-HTML-Form-Support.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libsoup-2.4-WebSockets.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libsoup-2.4-XMLRPC-Support"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libsoup-2.4-XMLRPC-Support.top_of_page"></a>XMLRPC Support</span></h2>
+<p>XMLRPC Support — XML-RPC support</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libsoup-2.4-XMLRPC-Support.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-build-request" title="soup_xmlrpc_build_request ()">soup_xmlrpc_build_request</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupMessage.html" title="SoupMessage"><span class="returnvalue">SoupMessage</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-message-new" title="soup_xmlrpc_message_new ()">soup_xmlrpc_message_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-parse-response" title="soup_xmlrpc_parse_response ()">soup_xmlrpc_parse_response</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-variant-new-datetime" title="soup_xmlrpc_variant_new_datetime ()">soup_xmlrpc_variant_new_datetime</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-variant-get-datetime" title="soup_xmlrpc_variant_get_datetime ()">soup_xmlrpc_variant_get_datetime</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-params-free" title="soup_xmlrpc_params_free ()">soup_xmlrpc_params_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-params-parse" title="soup_xmlrpc_params_parse ()">soup_xmlrpc_params_parse</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-parse-request" title="soup_xmlrpc_parse_request ()">soup_xmlrpc_parse_request</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-build-response" title="soup_xmlrpc_build_response ()">soup_xmlrpc_build_response</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-build-fault" title="soup_xmlrpc_build_fault ()">soup_xmlrpc_build_fault</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-message-set-response" title="soup_xmlrpc_message_set_response ()">soup_xmlrpc_message_set_response</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-message-set-fault" title="soup_xmlrpc_message_set_fault ()">soup_xmlrpc_message_set_fault</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-XMLRPC-Support.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-XMLRPC-Support.html#SOUP-XMLRPC-ERROR:CAPS" title="SOUP_XMLRPC_ERROR">SOUP_XMLRPC_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCError" title="enum SoupXMLRPCError">SoupXMLRPCError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-XMLRPC-Support.html#SOUP-XMLRPC-FAULT:CAPS" title="SOUP_XMLRPC_FAULT">SOUP_XMLRPC_FAULT</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCFault" title="enum SoupXMLRPCFault">SoupXMLRPCFault</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCParams" title="SoupXMLRPCParams">SoupXMLRPCParams</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-XMLRPC-Support.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-XMLRPC-Support.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-XMLRPC-Support.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-xmlrpc-build-request"></a><h3>soup_xmlrpc_build_request ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_xmlrpc_build_request (<em class="parameter"><code>const <span class="type">char</span> *method_name</code></em>,
+                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *params</code></em>,
+                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>This creates an XML-RPC methodCall and returns it as a string.
+This is the low-level method that <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-message-new" title="soup_xmlrpc_message_new ()"><code class="function">soup_xmlrpc_message_new()</code></a> is
+built on.</p>
+<p><em class="parameter"><code>params</code></em>
+ is a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> tuple representing the method parameters.</p>
+<p>Serialization details:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>"a{s*}" and "{s*}" are serialized as &lt;struct&gt;</p></li>
+<li class="listitem"><p>"ay" is serialized as &lt;base64&gt;</p></li>
+<li class="listitem"><p>Other arrays and tuples are serialized as &lt;array&gt;</p></li>
+<li class="listitem"><p>booleans are serialized as &lt;boolean&gt;</p></li>
+<li class="listitem"><p>byte, int16, uint16 and int32 are serialized as &lt;int&gt;</p></li>
+<li class="listitem"><p>uint32 and int64 are serialized as the nonstandard &lt;i8&gt; type</p></li>
+<li class="listitem"><p>doubles are serialized as &lt;double&gt;</p></li>
+<li class="listitem"><p>Strings are serialized as &lt;string&gt;</p></li>
+<li class="listitem"><p>Variants (i.e. "v" type) are unwrapped and their child is serialized.</p></li>
+<li class="listitem"><p><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariants</span></a> created by <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-variant-new-datetime" title="soup_xmlrpc_variant_new_datetime ()"><code class="function">soup_xmlrpc_variant_new_datetime()</code></a> are serialized as
+&lt;dateTime.iso8601&gt;</p></li>
+<li class="listitem"><p>Other types are not supported and will return <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and set <em class="parameter"><code>error</code></em>
+.
+This notably includes: object-paths, signatures, uint64, handles, maybes
+and dictionaries with non-string keys.</p></li>
+</ul></div>
+<p>If <em class="parameter"><code>params</code></em>
+ is floating, it is consumed.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.2.9"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>method_name</p></td>
+<td class="parameter_description"><p>the name of the XML-RPC method</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> tuple</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.2.10"></a><h4>Returns</h4>
+<p> the text of the methodCall, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error.</p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-message-new"></a><h3>soup_xmlrpc_message_new ()</h3>
+<pre class="programlisting"><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="returnvalue">SoupMessage</span></a> *
+soup_xmlrpc_message_new (<em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                         <em class="parameter"><code>const <span class="type">char</span> *method_name</code></em>,
+                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *params</code></em>,
+                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates an XML-RPC methodCall and returns a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>, ready
+to send, for that method call.</p>
+<p>See <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-build-request" title="soup_xmlrpc_build_request ()"><code class="function">soup_xmlrpc_build_request()</code></a> for serialization details.</p>
+<p>If <em class="parameter"><code>params</code></em>
+ is floating, it is consumed.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.3.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>URI of the XML-RPC service</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>method_name</p></td>
+<td class="parameter_description"><p>the name of the XML-RPC method to invoke at <em class="parameter"><code>uri</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> tuple</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.3.8"></a><h4>Returns</h4>
+<p> a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> encoding the
+indicated XML-RPC request, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-parse-response"></a><h3>soup_xmlrpc_parse_response ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *
+soup_xmlrpc_parse_response (<em class="parameter"><code>const <span class="type">char</span> *method_response</code></em>,
+                            <em class="parameter"><code><span class="type">int</span> length</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *signature</code></em>,
+                            <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parses <em class="parameter"><code>method_response</code></em>
+ and returns the return value. If
+<em class="parameter"><code>method_response</code></em>
+ is a fault, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned, and <em class="parameter"><code>error</code></em>
+
+will be set to an error in the <a class="link" href="libsoup-2.4-XMLRPC-Support.html#SOUP-XMLRPC-FAULT:CAPS" title="SOUP_XMLRPC_FAULT"><code class="literal">SOUP_XMLRPC_FAULT</code></a> domain, with the error
+code containing the fault code, and the error message containing
+the fault string. If <em class="parameter"><code>method_response</code></em>
+ cannot be parsed, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned,
+and <em class="parameter"><code>error</code></em>
+ will be set to an error in the <a class="link" href="libsoup-2.4-XMLRPC-Support.html#SOUP-XMLRPC-ERROR:CAPS" title="SOUP_XMLRPC_ERROR"><code class="literal">SOUP_XMLRPC_ERROR</code></a> domain.</p>
+<p>See <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-params-parse" title="soup_xmlrpc_params_parse ()"><code class="function">soup_xmlrpc_params_parse()</code></a> for deserialization details.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>method_response</p></td>
+<td class="parameter_description"><p>the XML-RPC methodResponse string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>method_response</code></em>
+, or -1 if it is NUL-terminated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>signature</p></td>
+<td class="parameter_description"><p> A valid <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> type string, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.4.7"></a><h4>Returns</h4>
+<p> a new (non-floating) <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-variant-new-datetime"></a><h3>soup_xmlrpc_variant_new_datetime ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *
+soup_xmlrpc_variant_new_datetime (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Construct a special <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> used to serialize a &lt;dateTime.iso8601&gt;
+node. See <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-build-request" title="soup_xmlrpc_build_request ()"><code class="function">soup_xmlrpc_build_request()</code></a>.</p>
+<p>The actual type of the returned <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> is unspecified and "v" or "*"
+should be used in variant format strings. For example:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">args </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#g-variant-new">g_variant_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"(v)"</span><span class="symbol">,</span><span class="normal"> </span><span class="function"><a href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-variant-new-datetime">soup_xmlrpc_variant_new_datetime</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">date</span><span class="symbol">));</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="refsect3">
+<a name="id-1.5.3.7.5.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.5.8"></a><h4>Returns</h4>
+<p> a floating <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>.</p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-variant-get-datetime"></a><h3>soup_xmlrpc_variant_get_datetime ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+soup_xmlrpc_variant_get_datetime (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *variant</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Get the <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> from special <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> created by
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-variant-new-datetime" title="soup_xmlrpc_variant_new_datetime ()"><code class="function">soup_xmlrpc_variant_new_datetime()</code></a> or by parsing a &lt;dateTime.iso8601&gt;
+node. See <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-params-parse" title="soup_xmlrpc_params_parse ()"><code class="function">soup_xmlrpc_params_parse()</code></a>.</p>
+<p>If <em class="parameter"><code>variant</code></em>
+ does not contain a datetime it will return an error but it is not
+considered a programmer error because it generally means parameters received
+are not in the expected type.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.6.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>variant</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.6.7"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error.</p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-params-free"></a><h3>soup_xmlrpc_params_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_xmlrpc_params_free (<em class="parameter"><code><a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCParams" title="SoupXMLRPCParams"><span class="type">SoupXMLRPCParams</span></a> *self</code></em>);</pre>
+<p>Free a <a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCParams" title="SoupXMLRPCParams"><span class="type">SoupXMLRPCParams</span></a> returned by <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-parse-request" title="soup_xmlrpc_parse_request ()"><code class="function">soup_xmlrpc_parse_request()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a SoupXMLRPCParams</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-params-parse"></a><h3>soup_xmlrpc_params_parse ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *
+soup_xmlrpc_params_parse (<em class="parameter"><code><a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCParams" title="SoupXMLRPCParams"><span class="type">SoupXMLRPCParams</span></a> *self</code></em>,
+                          <em class="parameter"><code>const <span class="type">char</span> *signature</code></em>,
+                          <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parse method parameters returned by <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-parse-request" title="soup_xmlrpc_parse_request ()"><code class="function">soup_xmlrpc_parse_request()</code></a>.</p>
+<p>Deserialization details:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>If <em class="parameter"><code>signature</code></em>
+ is provided, &lt;int&gt; and &lt;i4&gt; can be deserialized
+to byte, int16, uint16, int32, uint32, int64 or uint64. Otherwise
+it will be deserialized to int32. If the value is out of range
+for the target type it will return an error.</p></li>
+<li class="listitem"><p>&lt;struct&gt; will be deserialized to "a{sv}". <em class="parameter"><code>signature</code></em>
+ could define
+another value type (e.g. "a{ss}").</p></li>
+<li class="listitem"><p>&lt;array&gt; will be deserialized to "av". <em class="parameter"><code>signature</code></em>
+ could define
+another element type (e.g. "as") or could be a tuple (e.g. "(ss)").</p></li>
+<li class="listitem"><p>&lt;base64&gt; will be deserialized to "ay".</p></li>
+<li class="listitem"><p>&lt;string&gt; will be deserialized to "s".</p></li>
+<li class="listitem"><p>&lt;dateTime.iso8601&gt; will be deserialized to an unspecified variant
+type. If <em class="parameter"><code>signature</code></em>
+ is provided it must have the generic "v" type, which
+means there is no guarantee that it's actually a datetime that has been
+received. <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-variant-get-datetime" title="soup_xmlrpc_variant_get_datetime ()"><code class="function">soup_xmlrpc_variant_get_datetime()</code></a> must be used to parse and
+type check this special variant.</p></li>
+<li class="listitem"><p><em class="parameter"><code>signature</code></em>
+ must not have maybes, otherwise an error is returned.</p></li>
+<li class="listitem"><p>Dictionaries must have string keys, otherwise an error is returned.</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="id-1.5.3.7.8.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCParams" title="SoupXMLRPCParams"><span class="type">SoupXMLRPCParams</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>signature</p></td>
+<td class="parameter_description"><p> A valid <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> type string, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.8.8"></a><h4>Returns</h4>
+<p> a new (non-floating) <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-parse-request"></a><h3>soup_xmlrpc_parse_request ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_xmlrpc_parse_request (<em class="parameter"><code>const <span class="type">char</span> *method_call</code></em>,
+                           <em class="parameter"><code><span class="type">int</span> length</code></em>,
+                           <em class="parameter"><code><a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCParams" title="SoupXMLRPCParams"><span class="type">SoupXMLRPCParams</span></a> **params</code></em>,
+                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Parses <em class="parameter"><code>method_call</code></em>
+ and return the method name. Method parameters can be
+parsed later using <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-params-parse" title="soup_xmlrpc_params_parse ()"><code class="function">soup_xmlrpc_params_parse()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>method_call</p></td>
+<td class="parameter_description"><p>the XML-RPC methodCall string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>method_call</code></em>
+, or -1 if it is NUL-terminated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>params</p></td>
+<td class="parameter_description"><p> on success, a new <a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCParams" title="SoupXMLRPCParams"><span class="type">SoupXMLRPCParams</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.9.6"></a><h4>Returns</h4>
+<p> method's name, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-build-response"></a><h3>soup_xmlrpc_build_response ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_xmlrpc_build_response (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>,
+                            <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>This creates a (successful) XML-RPC methodResponse and returns it
+as a string. To create a fault response, use <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-build-fault" title="soup_xmlrpc_build_fault ()"><code class="function">soup_xmlrpc_build_fault()</code></a>. This
+is the low-level method that <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-message-set-response" title="soup_xmlrpc_message_set_response ()"><code class="function">soup_xmlrpc_message_set_response()</code></a> is built on.</p>
+<p>See <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-build-request" title="soup_xmlrpc_build_request ()"><code class="function">soup_xmlrpc_build_request()</code></a> for serialization details, but note
+that since a method can only have a single return value, <em class="parameter"><code>value</code></em>
+
+should not be a tuple here (unless the return value is an array).</p>
+<p>If <em class="parameter"><code>value</code></em>
+ is floating, it is consumed.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.10.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the return value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.10.8"></a><h4>Returns</h4>
+<p> the text of the methodResponse, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error.</p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-build-fault"></a><h3>soup_xmlrpc_build_fault ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_xmlrpc_build_fault (<em class="parameter"><code><span class="type">int</span> fault_code</code></em>,
+                         <em class="parameter"><code>const <span class="type">char</span> *fault_format</code></em>,
+                         <em class="parameter"><code>...</code></em>);</pre>
+<p>This creates an XML-RPC fault response and returns it as a string.
+(To create a successful response, use
+<code class="function">soup_xmlrpc_build_method_response()</code>.)</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>fault_code</p></td>
+<td class="parameter_description"><p>the fault code</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fault_format</p></td>
+<td class="parameter_description"><p>a <code class="function">printf()</code>-style format string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>the parameters to <em class="parameter"><code>fault_format</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.11.6"></a><h4>Returns</h4>
+<p> the text of the fault</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-message-set-response"></a><h3>soup_xmlrpc_message_set_response ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_xmlrpc_message_set_response (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Sets the status code and response body of <em class="parameter"><code>msg</code></em>
+ to indicate a
+successful XML-RPC call, with a return value given by <em class="parameter"><code>value</code></em>
+. To set a
+fault response, use <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-message-set-fault" title="soup_xmlrpc_message_set_fault ()"><code class="function">soup_xmlrpc_message_set_fault()</code></a>.</p>
+<p>See <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-build-request" title="soup_xmlrpc_build_request ()"><code class="function">soup_xmlrpc_build_request()</code></a> for serialization details.</p>
+<p>If <em class="parameter"><code>value</code></em>
+ is floating, it is consumed.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.12.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>an XML-RPC request</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.7.12.8"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-xmlrpc-message-set-fault"></a><h3>soup_xmlrpc_message_set_fault ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_xmlrpc_message_set_fault (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                               <em class="parameter"><code><span class="type">int</span> fault_code</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *fault_format</code></em>,
+                               <em class="parameter"><code>...</code></em>);</pre>
+<p>Sets the status code and response body of <em class="parameter"><code>msg</code></em>
+ to indicate an
+unsuccessful XML-RPC call, with the error described by <em class="parameter"><code>fault_code</code></em>
+
+and <em class="parameter"><code>fault_format</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.5.3.7.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>an XML-RPC request</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fault_code</p></td>
+<td class="parameter_description"><p>the fault code</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>fault_format</p></td>
+<td class="parameter_description"><p>a <code class="function">printf()</code>-style format string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>the parameters to <em class="parameter"><code>fault_format</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.52</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-XMLRPC-Support.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SOUP-XMLRPC-ERROR:CAPS"></a><h3>SOUP_XMLRPC_ERROR</h3>
+<pre class="programlisting">#define SOUP_XMLRPC_ERROR soup_xmlrpc_error_quark()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupXMLRPCError"></a><h3>enum SoupXMLRPCError</h3>
+<div class="refsect3">
+<a name="id-1.5.3.8.3.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-ERROR-ARGUMENTS:CAPS"></a>SOUP_XMLRPC_ERROR_ARGUMENTS</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-ERROR-RETVAL:CAPS"></a>SOUP_XMLRPC_ERROR_RETVAL</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-XMLRPC-FAULT:CAPS"></a><h3>SOUP_XMLRPC_FAULT</h3>
+<pre class="programlisting">#define SOUP_XMLRPC_FAULT soup_xmlrpc_fault_quark()
+</pre>
+<p>A <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> domain representing an XML-RPC fault code. Used with
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#SoupXMLRPCFault" title="enum SoupXMLRPCFault"><span class="type">SoupXMLRPCFault</span></a> (although servers may also return fault codes not
+in that enumeration).</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupXMLRPCFault"></a><h3>enum SoupXMLRPCFault</h3>
+<p>Pre-defined XML-RPC fault codes from <a class="ulink" href="http://xmlrpc-epi.sourceforge.net/specs/rfc.fault_codes.php" target="_top">http://xmlrpc-epi.sourceforge.net/specs/rfc.fault_codes.php</a>.
+These are an extension, not part of the XML-RPC spec; you can't
+assume servers will use them.</p>
+<div class="refsect3">
+<a name="id-1.5.3.8.5.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-PARSE-ERROR-NOT-WELL-FORMED:CAPS"></a>SOUP_XMLRPC_FAULT_PARSE_ERROR_NOT_WELL_FORMED</p></td>
+<td class="enum_member_description">
+<p>request was not
+  well-formed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-PARSE-ERROR-UNSUPPORTED-ENCODING:CAPS"></a>SOUP_XMLRPC_FAULT_PARSE_ERROR_UNSUPPORTED_ENCODING</p></td>
+<td class="enum_member_description">
+<p>request was in
+  an unsupported encoding</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-PARSE-ERROR-INVALID-CHARACTER-FOR-ENCODING:CAPS"></a>SOUP_XMLRPC_FAULT_PARSE_ERROR_INVALID_CHARACTER_FOR_ENCODING</p></td>
+<td class="enum_member_description">
+<p>  request contained an invalid character</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-SERVER-ERROR-INVALID-XML-RPC:CAPS"></a>SOUP_XMLRPC_FAULT_SERVER_ERROR_INVALID_XML_RPC</p></td>
+<td class="enum_member_description">
+<p>request was not
+  valid XML-RPC</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-SERVER-ERROR-REQUESTED-METHOD-NOT-FOUND:CAPS"></a>SOUP_XMLRPC_FAULT_SERVER_ERROR_REQUESTED_METHOD_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>method
+  not found</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-SERVER-ERROR-INVALID-METHOD-PARAMETERS:CAPS"></a>SOUP_XMLRPC_FAULT_SERVER_ERROR_INVALID_METHOD_PARAMETERS</p></td>
+<td class="enum_member_description">
+<p>invalid
+  parameters</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-SERVER-ERROR-INTERNAL-XML-RPC-ERROR:CAPS"></a>SOUP_XMLRPC_FAULT_SERVER_ERROR_INTERNAL_XML_RPC_ERROR</p></td>
+<td class="enum_member_description">
+<p>internal
+  error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-APPLICATION-ERROR:CAPS"></a>SOUP_XMLRPC_FAULT_APPLICATION_ERROR</p></td>
+<td class="enum_member_description">
+<p>start of reserved range for
+  application error codes</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-SYSTEM-ERROR:CAPS"></a>SOUP_XMLRPC_FAULT_SYSTEM_ERROR</p></td>
+<td class="enum_member_description">
+<p>start of reserved range for
+  system error codes</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-XMLRPC-FAULT-TRANSPORT-ERROR:CAPS"></a>SOUP_XMLRPC_FAULT_TRANSPORT_ERROR</p></td>
+<td class="enum_member_description">
+<p>start of reserved range for
+  transport error codes</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupXMLRPCParams"></a><h3>SoupXMLRPCParams</h3>
+<pre class="programlisting">typedef struct _SoupXMLRPCParams SoupXMLRPCParams;</pre>
+<p>Opaque structure containing XML-RPC methodCall parameter values.
+Can be parsed using <a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-params-parse" title="soup_xmlrpc_params_parse ()"><code class="function">soup_xmlrpc_params_parse()</code></a> and freed with
+<a class="link" href="libsoup-2.4-XMLRPC-Support.html#soup-xmlrpc-params-free" title="soup_xmlrpc_params_free ()"><code class="function">soup_xmlrpc_params_free()</code></a>.</p>
+<p class="since">Since: 2.52</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

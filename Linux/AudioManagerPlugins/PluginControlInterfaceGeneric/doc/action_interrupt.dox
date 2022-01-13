@@ -1,0 +1,131 @@
+/**
+
+ @page actionInterrupt Action Push/Pop
+
+ <b>Name:</b> ACTION_PUSH<BR>
+ <b>Name:</b> ACTION_POP<BR>
+ <b>Description:</b> This action disconnects the connection, but unlike ACTION_DISCONNECT it 
+does not remove the connection from the audio manager database. The connection continues to be 
+visible from the command side in the Disconnected state. Analogous to stack push and pop operation,
+the connection push and pop is performed, hence we named this action as PUSH and POP. The use cases 
+where some connection needs to be disconnected but remembered, and at later some point of time it should 
+be connected again, these actions should be used.
+    Internally ACTION_POP is realized using the ACTION_CONNECT.
+    
+ \code
+
+     <action>
+        <type>ACTION_PUSH</type>
+        <param>
+            <className>CLASS</className> 
+            <!-- OR -->
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName> 
+        </param>
+    </action>
+
+     <action>
+        <type>ACTION_POP</type>
+        <param>
+            <className>CLASS</className> 
+            <!-- OR -->
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName>
+
+            <order>O_NEWEST</order>
+        </param>
+    </action>
+ 
+ \endcode
+ 
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>className</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the class. If the specific className is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the class name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>sourceName</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the source.If the specific sourceName is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the source name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>sinkName</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the sink.If the specific sinkName is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the sink name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>order</td>
+<td>O<sup>1</sup></td>
+<td>gc_Order_e</td>
+<td>This parameter can be used only for POP action, to narrow down the connection which would be 
+POPed. The possible values are <BR>
+O_HIGH_PRIORITY - pop the connection with highest priority.<BR>
+O_LOW_PRIORITY  - pop the connection with lowest priority.<BR>
+O_NEWEST        - pop the newest connection.<BR>
+O_OLDEST        - pop the oldest connection.<BR></td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+O<sup>1</sup> This parameter should only be used with ACTION_POP.
+
+<b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_PUSH</type>
+        <param>
+            <sourceName>"RadioTuner"</sourceName>
+        </param>
+    </action>
+ \endcode
+    This example would push the connections involving the sourceName RadioTuner.  
+
+\code
+    <action>
+        <type>ACTION_PUSH</type>
+        <param>
+            <className>"BASE"</className>
+        </param>
+    </action>
+\endcode
+    This action would push the active connection of the BASE Class.
+\code
+    <action>
+        <type>ACTION_POP</type>
+        <param>
+            <className>"BASE"</className>
+            <order>O_NEWEST</order>
+        </param>
+    </action>
+ \endcode
+    This example would connect the latest connection of the BASE class present in the Queue. 
+
+*/

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+function hook_preconfigure {
+	configure_opts="$configure_opts --prefix=${INSTALL_ROOT_nto}/${cpudir}"
+	configure_opts="$configure_opts --disable-nls"
+}
+
+function hook_premake {
+	unset make_CC
+}
+
+function hook_pinfo {
+    cd sed
+    gen_pinfo -e sed usr/bin DESCRIPTION="Stream Editor" "USE=%1>%C --help"
+}

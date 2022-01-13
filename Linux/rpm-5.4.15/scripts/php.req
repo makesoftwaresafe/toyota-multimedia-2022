@@ -1,0 +1,78 @@
+#!/usr/bin/perl -W
+#####################################################################
+#                                                                   #
+# Check system dependencies between php-pear/php-pecl modules       #
+#                                                                   #
+# Adam Go³êbiowski  <adamg@pld-linux.org>                           #
+#                                                                   #
+# based on previous work by:                                        #
+# Pawe³ Go³aszewski <blues@ds.pg.gda.pl>                            #
+# Micha³ Moskal     <malekith@pld-linux.org>                        #
+#                                                                   #
+# ----------------------------------------------------------------- #
+# ChangeLog:                                                        #
+# 20031201: complete rewrite to use PEAR's package.xml, now handles #
+#           all dependencies, including PHP modules (like php-gmp), #
+#           and PECL extensions   (adamg)                           #
+#####################################################################
+
+@req_arr = ();
+$fname = '/dev/null';
+foreach ( @ARGV ? $ARGV : <> )
+{
+    $fname = $_ if (/package.xml/)
+}
+
+open F, $fname;
+
+while (<F>) {
+	if ( /\s+\<dep\s+type\=\"([a-zA-z]*)\"/ ) {
+	  $type = $1;
+	  die ("ERROR: Unsupported type: $type\n") if ( $type !~ /^(pkg|ext|php|prog|os|sapi|zend)$/i);
+	  # Default relation (as suggested by PEAR manual) is has
+	  $rel = "has";
+	  $rel = $1 if ( /rel="([a-zA-Z]*)"/ );
+	  die ("ERROR: Unsupported relation: $rel\n") if ( $rel !~ /^(has|eq|lt|le|gt|ge)$/ );
+	   
+	  # Check if we don't have some unsupported connection betweend relation and type
+	  die ("ERROR: Cannot use lt/le/gt/ge relation with prog/os/sapi type!\n") if ( $rel =~ /^(lt|le|gt|ge)$/ && $type =~ /^(prog|os|sapi)$/ );
+
+	  # do we have version?
+	  $version = "";
+	  $version = $1 if ( /version="([a-zA-z0-9\.\+]*)"/ );
+
+	  # optional - actually this one is optional ;)
+	  # NOTE: 
+	  # even though this attribute marks dependency as optional,
+	  # we will add it to Requires: 
+	  $optional = "no";
+	  $optional = $1 if ( /optional="([a-zA-Z]*)"/ );
+          die ("ERROR: Ambigous value of optional attribute: $optional\n") if ( $optional !~ /(yes|no)/i );
+
+	  # now, check if we need to pull out package/extension/whatever name
+	  $name = "";
+	  $name = "php" if ( $type =~ /php/ );
+	  $name = "$1"  if ( $type !~ /php/ && /\>([a-zA-Z0-9\_\-]*)\</ );
+	   
+	  $relation = "";
+	  $relation = "<"  if ( $rel eq "lt");
+	  $relation = "<=" if ( $rel eq "le");
+	  $relation = "="  if ( $rel eq "eq");
+	  $relation = ">=" if ( $rel eq "ge");
+	  $relation = ">"  if ( $rel eq "gt");
+	  $relation = "="  if ( $rel eq "has");
+	  # die if we were unable to substitute relations
+	  die "ERROR: Unexpected relation! ($rel)\n" if ( $relation eq "");
+	   
+	  $req = "";
+	  $relver = "";
+	  $relver = "$relation $version" if ( $version !~ /^$/ );
+	  $req = "$name $relver" if ( $type =~ /(php|prog)/ );
+	  $req = "php-$name $relver" if ( $type =~ /ext/ );
+	  $req = "php-pear-$name" if ( $type =~ /pkg/ );
+	   
+	  push @req_arr, $req
+
+    }
+}
+for $r (@req_arr) { print "$r\n"; }

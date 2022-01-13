@@ -1,0 +1,8 @@
+popt-1.14-1.src.rpm:
+    Header V4 DSA signature: OK, key ID 2039b291
+    Header SHA1 digest: OK (d88c31289b4062f6e09095546fae8af4176abece)
+    MD5 digest: OK (a48254fe274efd745c8a5f44ff35b0f1)
+popt-1.14-1.i386.rpm:
+    Header V4 DSA signature: OK, key ID 2039b291
+    Header SHA1 digest: OK (9168777f898ed82d44693778a5cf50e17924a5e1)
+    MD5 digest: OK (daaa360569a683537045a45dda97171a)

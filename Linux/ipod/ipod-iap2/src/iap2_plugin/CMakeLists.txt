@@ -1,0 +1,5 @@
+add_subdirectory( iap2_bluetooth_plugin )
+add_subdirectory( iap2_over_carplay_plugin )
+add_subdirectory( iap2_usb_device_mode_plugin )
+add_subdirectory( iap2_usb_host_mode_plugin )
+add_subdirectory( iap2_usb_multi_host_mode_plugin )

@@ -1,0 +1,123 @@
+/*!
+\page pageusermanual User Manual
+
+    This section is intended for the users who would write the configuration for a product. In 
+order to configure generic controller two files should be prepared
+- <b>customtypes.xsd</b> If the user wants to extend the main sound property, sound property, availability 
+reasons, connection formats, notification configuration, ramp type, add custom definitions 
+in this file.<BR> 
+- <b>configuration.xml</b> This is the configuration containing product specific element definition 
+and the policies.
+
+    After preparing the two file, these files needs to be copied at specific locations. The generic 
+controller expects the custmotypes.xsd to be present at the etc/audiomanager/controller/ directory. The XML 
+configuration file can be copied at any location, the controller by default tries to load the 
+configuration present at /etc/audiomanager/controller/generic.xml. However this can be overridden by 
+defining an environment variable GENERIC_CONTROLLER_CONFIGURATION which should point to the 
+location of the configuration file.
+
+\section sectionxsd2header Generating header file from customtypes.xsd
+
+   A perl script xsd2header.pl can be optionally used to generate a header file from customtypes.xsd. 
+This header file can be shared with application and the routing adapters.<BR>
+<b>Usage:</b> xsd2header.pl <filename.xsd><BR>
+The output is printed on stdout, redirect to desired file.<BR> 
+example: xsd2header.pl customtypes.xsd > customtypes.h<BR>
+
+\section sectioncustomtypes How to write customtypes.xsd
+    Below snippet shows the empty template of customtypes.xsd, any custom data type can be added.
+@code
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="controller" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:c="controller">
+    <xsd:simpleType name="am_CustomAvailabilityReason_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomSoundPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomConnectionFormat_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomNotificationType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomSystemPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomRampType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomMainSoundPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
+@endcode
+
+    Any new custom type can be added by adding the xsd:enumeration tag between the xsd:restriction 
+tag. For example to add the customramp type called <i>RAMP_CUSTOM1</i> and <i>RAMP_CUSTOM2</i> , 
+the change would be
+@code
+<xsd:schema targetNamespace="controller" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:c="controller">
+    <xsd:simpleType name="am_CustomAvailabilityReason_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomSoundPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomConnectionFormat_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomNotificationType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomSystemPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomRampType_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RAMP_CUSTOM1">
+                <xsd:annotation>
+                    <xsd:documentation>5 NICE DESCRIPTION</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RAMP_CUSTOM2">
+                <xsd:annotation>
+                    <xsd:documentation>NICE DESCRIPTION</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomMainSoundPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
+@endcode 
+
+    In the xsd:documentation tag which follows the xsd:enumeration tag of RAMP_CUSTOM1, there is a 
+number followed by some text("5 NICE DESCRIPTION"). The number is the numeric value assigned to 
+RAMP_CUSTOM1 when converted to header file. Any text after the number is ignored by the script. The 
+above schema would translate in the header file as below
+@code
+static const am_CustomRampType_t RAMP_CUSTOM1 = 5; // This is same number which was present in documentation tag
+static const am_CustomRampType_t RAMP_CUSTOM2 = 6; // where did this number '6' come from ? Please read further 
+@endcode
+
+    The logic used by script(xsd2header.pl) to assign a number is similar to C/C++ language enumeration. 
+If number is not specified for the first entry then script starts numbering from 0. If this number is not 
+specified for entry after the first, then it assigns the next number. In the above example the
+RAMP_CUSTOM2 would take a value of 6.
+
+*/

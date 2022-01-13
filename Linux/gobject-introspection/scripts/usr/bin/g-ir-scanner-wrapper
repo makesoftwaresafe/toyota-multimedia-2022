@@ -1,0 +1,5 @@
+#!/bin/sh
+# This prevents g-ir-scanner from writing cache data to /home/svc_bambooagent
+export GI_SCANNER_DISABLE_CACHE=1
+
+g-ir-scanner --use-binary-wrapper=/home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/bin/g-ir-scanner-qemuwrapper --use-ldd-wrapper=/home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/bin/g-ir-scanner-lddwrapper --add-include-path=/home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/share/gir-1.0 "$@"

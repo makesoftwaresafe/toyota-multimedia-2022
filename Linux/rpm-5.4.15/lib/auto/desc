@@ -1,0 +1,131 @@
+<version>
+  5.4.15
+</version>
+ 
+<headers>
+     ../fs.h
+<!-- ../fsm.h -->
+     ../manifest.h
+     ../misc.h
+<!-- ../psm.h -->
+<!-- ../rpm46compat.h -->
+<!-- ../rpm4compat.h -->
+     ../rpmal.h
+     ../rpmcli.h
+     ../rpmds.h
+     ../rpmfc.h
+     ../rpmfi.h
+     ../rpmgi.h
+     ../rpmlib.h
+     ../rpmlock.h
+<!-- ../rpmluaext.h -->
+     ../rpmps.h
+     ../rpmrc.h
+<!-- ../rpmrollback.h -->
+     ../rpmte.h
+     ../rpmts.h
+     ../rpmversion.h
+</headers>
+ 
+<libs>
+  /X/src/wdj54/lib/.libs/librpm.so
+</libs>
+
+<include_paths>
+</include_paths>
+
+<add_include_paths>
+  /X/src/wdj54
+  /X/src/wdj54/lib
+  /X/src/wdj54/rpmdb
+  /X/src/wdj54/rpmio
+</add_include_paths>
+
+<gcc_options>
+  -DHAVE_CONFIG_H
+   -DRPM_OS_LINUX=020632   -I/usr/include/nss3 -I/usr/include/nspr4       -DLTM_DESC -I${prefix}/include/tommath         -I/usr/include/pakchois     -I/usr/include/apr-1 -I/usr/include/subversion-1 -I/usr/include/db61 -I/usr/include/libxml2   -I/usr/lib64/perl5/CORE -I/usr/include/python2.6 -I/usr/include/python2.6 -I/usr/lib64/ruby/1.8/x86_64-linux -I/usr/lib64/ruby/1.8/x86_64-linux -I/usr/java/jdk1.8.0_11/include -I/usr/java/jdk1.8.0_11/include/linux -I/usr/java/jdk1.8.0_11/include -I/usr/java/jdk1.8.0_11/include -I/usr/include/squirrel   -I/usr/include/gpsee -I/usr/include/gpsee -I${prefix}/include/js
+  -g -O2 -fPIC -DPIC -Wall -W -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -Wno-char-subscripts -Wno-unused-parameter -Wformat-security -Wno-override-init -g3 -fno-delete-null-pointer-checks -D_FORTIFY_SOURCE=2 -fstack-protector -fexceptions -fexceptions -Wno-missing-field-initializers -D_GNU_SOURCE -D_REENTRANT                        
+                                               -L/usr/lib64/perl5/CORE -Wl,-rpath,/usr/lib64/perl5/CORE -L/usr/java/jdk1.8.0_11/jre/lib/amd64/server -Wl,-rpath,/usr/java/jdk1.8.0_11/jre/lib/amd64/server    
+</gcc_options>
+
+<include_preamble>
+  stdint.h
+  stdio.h
+  stdlib.h
+  string.h
+  assert.h
+  rpmiotypes.h
+  rpmio.h
+  rpmtypes.h
+  rpmevr.h
+  rpmtag.h
+</include_preamble>
+
+<test_include_preamble>
+  system.h
+  rpmiotypes.h
+  rpmio.h
+  rpmtypes.h
+  rpmevr.h
+  rpmtag.h
+</test_include_preamble>
+
+<libs_depend>
+  /X/src/wdj54/rpmdb/.libs/librpmdb.so
+  /X/src/wdj54/rpmio/.libs/librpmio.so
+  /X/src/wdj54/misc/.libs/librpmmisc.so
+</libs_depend>
+
+<opaque_types>
+</opaque_types>
+
+<skip_symbols>
+<!-- build failures -->
+  rpmalAdd
+  rpmalAddProvides
+  rpmalAllFileSatisfiesDepend
+  rpmalAllSatisfiesDepend
+  rpmalDel
+  rpmalMakeIndex
+  rpmalSatisfiesDepend
+  rpmdsPrint
+  rpmdsPrintClosure
+  rpmdsPrintResults
+  rpmfcPrint
+  rpmpsPrint
+  rpmShowRC
+  rpmtsInitDB
+  rpmtsVerifyDB
+<!-- rpmRC failures -->
+  rpmReadPackageManifest
+  rpmcliImportPubkey
+  rpmgiNext
+  rpmInstallSourcePackage
+<!-- ABRT -->
+  rpmfcClassify
+</skip_symbols>
+
+<skip_headers>
+  /usr/include/rpm/*.h
+</skip_headers>
+
+<skip_libs>
+</skip_libs>
+
+<defines>
+</defines>
+
+<test_defines>
+</test_defines>
+
+<libgroup>
+</libgroup>
+
+<out_params>
+</out_params>
+
+<skip_warnings>
+</skip_warnings>
+
+<skip_interfaces>
+</skip_interfaces>

@@ -1,0 +1,22 @@
+This is RPM, the RPM Package Manager.
+
+The latest releases are always available at:
+
+	http://rpm5.org/files/rpm/
+
+Additional RPM documentation (papers, slides, HOWTOs) as well as
+mailing lists for users and developers can be found at:
+
+	http://rpm5.org/
+
+The RPM Package Manager was originally written in 1997 by:
+
+    Erik Troan <ewt@redhat.com>
+    Marc Ewing <marc@redhat.com>
+
+See the CREDITS file for a list of folks who have helped out
+tremendously.
+
+RPM may be distributed under the terms of the LGPL 2.1 license (see the
+file COPYING.LIB for details).
+

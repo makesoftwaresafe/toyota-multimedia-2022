@@ -1,0 +1,22 @@
+#!/bin/sh
+
+function hook_preconfigure {
+	configure_opts="${configure_opts} -C"
+	configure_opts="${configure_opts} --prefix=${INSTALL_ROOT_nto}/${cpudir}"
+	configure_opts="${configure_opts} --disable-nls"
+	export CFLAGS="${CFLAGS} -std=gnu99"
+
+	# Touch document files to avoid regenerating them
+	touch ../doc/header.texi 
+	touch ../doc/*.info*
+}
+
+function hook_premake {
+	unset make_CC
+	make_defns="${make_defns} LIBS="
+}
+
+function hook_pinfo {
+    cd src
+    gen_pinfo -e tar usr/bin USE="%1>%C --help" "DESCRIPTION=Tape Archiver"
+}

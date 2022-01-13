@@ -1,0 +1,11 @@
+##################################################################################
+## File         : ipod-smoketest                                                ##
+##                                                                              ##
+## Description  : This script execute the iPod simple test                      ##
+##                                                                              ##
+## Author       : M.Shibata                                                     ##
+##                                                                              ##
+##                                                                              ##
+##################################################################################
+
+ipod-smoketest_01 ipod-smoketest_01.sh

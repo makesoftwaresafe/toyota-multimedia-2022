@@ -1,0 +1,46 @@
+make  tdir tfts tget tglob tmire rpmgrep testit.sh
+make[1]: Entering directory `/X/src/wdj/rpmio'
+make[1]: `tdir' is up to date.
+make[1]: `tfts' is up to date.
+make[1]: `tget' is up to date.
+make[1]: `tglob' is up to date.
+make[1]: `tmire' is up to date.
+make[1]: `rpmgrep' is up to date.
+make[1]: Nothing to be done for `testit.sh'.
+make[1]: Leaving directory `/X/src/wdj/rpmio'
+make  check-TESTS
+make[1]: Entering directory `/X/src/wdj/rpmio'
+ 
+Testing pcregrep
+pcregrep version 7.3 2007-08-28
+pcregrep: Failed to open binary: No such file or directory
+--- ./testdata/grepoutput	2008-02-11 16:47:00.000000000 -0500
++++ testtry	2008-02-13 11:41:47.000000000 -0500
+@@ -328,8 +328,6 @@
+ ./testdata/grepinputx
+ RC=0
+ ---------------------------- Test 36 -----------------------------
+-./testdata/grepinput8
+-./testdata/grepinputx
+ RC=0
+ ---------------------------- Test 37 -----------------------------
+ aaaaa0
+@@ -368,10 +366,6 @@
+ 596:zero
+ 597:zero
+ ---------------------------- Test 44 ------------------------------
+-10:pattern
+-595:binary
+-596:binary
+-597:binary
+ ---------------------------- Test 45 ------------------------------
+ pcregrep: Error in 2nd command-line regex at offset 9: missing )
+ ---------------------------- Test 46 ------------------------------
+FAIL: RunGrepTest
+===================================
+1 of 1 tests failed
+Please report to rpm-devel@rpm5.org
+===================================
+make[1]: *** [check-TESTS] Error 1
+make[1]: Leaving directory `/X/src/wdj/rpmio'
+make: *** [check-am] Error 2

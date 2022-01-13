@@ -1,0 +1,109 @@
+/**
+
+@mainpage Generic Controller
+
+<H4>Table of Contents</H4>
+<UL>
+  <LI> \ref overView
+  <LI> \ref components
+  <LI> \ref configuration
+    <UL>
+        <LI> \ref elems
+            <UL>
+                <LI> \ref srcs
+                <LI> \ref snks
+                <LI> \ref gws
+                <LI> \ref clselems
+                <LI> \ref doms
+                <LI> \ref misc
+            </UL>
+        <LI> \ref pagePolicy
+            <UL>
+                <LI> \ref pageTrigger
+                <LI> \ref cond
+                <LI> \ref pageActions
+                    <UL>
+                        <LI> \ref routingActions
+                            <UL>
+                                <LI> \ref actionConnect
+                                <LI> \ref actionDisconnect
+                                <LI> \ref actionInterrupt
+                                <LI> \ref actionSuspend
+                            </UL>
+                        <LI> \ref volumeActions 
+                            <UL>
+                                <LI> \ref actionSetVolume
+                                <LI> \ref actionSetLimit
+                                <LI> \ref actionSetMute
+                            </UL>
+                        <LI> \ref actionSetProperty
+                        <LI> \ref actionSetNotifictionConfiguration
+                        <LI> \ref actionDebug
+                    </UL>
+            </UL>
+        </UL>
+    <LI> \ref pageusermanual
+        <UL>
+            <LI> \ref configurationtools
+            <LI> \ref policyexample
+            <LI> \ref policyhandling
+            <LI> \ref functionTable
+            <LI> \ref clsGrouping
+            <LI> \ref reservedProp
+            <LI> \ref pagePersistence
+            <LI> \ref volHandling
+        </UL>
+</UL>
+
+@page overView Overview
+    Generic controller is the control plug-in for the Genivi AudioManager. AudioManager defines 
+the controller as abstract component, it's implementation is specific to a product. There are 
+multiple ways of achieving the product specific use cases
+- write a new controller for each product, definitely this is not smart thing to do.
+- code generation tools, describe the product specific behavior in form of diagrams and generate code.
+- configurable controller, achieve the product specific behavior by changing the configuration file.<BR> 
+we have followed the latter approach, our controller can be easily configured and used in 
+different products as shown in diagram below
+\image html overview.png
+
+
+
+    In order to use generic controller, it is important to understand the configuration. This 
+document is broadly divided in two parts, the configuration and user manual. The configuration 
+covers the syntax of configuration along with examples, whereas the user manual describes how to 
+use the generic controller and internals of the controller. 
+
+
+@page components High Level Architecture
+
+    Functionality of a controller can be summarized as, on a certain event, depending on 
+the business logic, perform a set of tasks. At this point lets understand few 
+terms which are widely used in the documentation<BR>
+<b>Trigger:</b>  Trigger is an event. In context of the controller triggers are hookXXX functions 
+present in the IAmControlSend interface. The source of trigger could be command side(e.g.  
+connect request), or routing side(e.g. source availability change).<BR>
+<b>Action:</b> In response to a trigger controller is expected to perform tasks, we call it 
+action. Lets say on user connect request controller might be expected to remove existing connection 
+and connect the new connection.<BR> 
+
+     For a given trigger, which set of action(s) would be executed varies from one product to  
+another, but the  method of executing an action is product independent. Hence it was natural to 
+follow the same division in our implementation. we have divided the controller in two,
+ product independent(action framework) and the product dependent part(policy 
+Engine) parts. 
+ 
+    The diagram below shows the component view of the generic controller
+\image html Component.png
+
+<H4>Action Framework</H4>
+    This is the product independent part of the controller. The functions of action 
+framework are
+- Providing the ImControlSend interface used by AudioManager.
+- Execution of Actions by using the IAmControlReceive interface provided by AudioManager.
+
+<H4>Policy Engine</H4>
+    The policy engine is product specific part and main responsibilities of the Policy Engine are
+- Configuration parsing.
+- assigning action to Action framework.
+
+*/

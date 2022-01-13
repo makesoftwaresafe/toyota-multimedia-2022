@@ -1,0 +1,44 @@
+#!/bin/sh
+
+usage () {
+  echo "usage: $0 <directory> <diff-extension>" 1>&2
+  exit 1
+}
+
+: ${DIFF:=diff -p}
+
+[ "$1" = "-p" -a -z "$3" ] && {
+	echo "With -p you need to give the definition of patch (like dummy)"
+	exit 1
+}
+
+[ "$1" = "-p" ] && {
+    DEFAULT_PATCH="$2"
+    shift;
+    shift;
+}
+
+[ -z "$1" ] && usage
+
+[ -z "$PATCH_PREFIX" -a -z "$2" ] && {
+  echo "usage: $0 <directory> <diff-extension>" 1>&2
+  exit 1
+}    
+
+[ -n "$DEFAULT_PATCH" -a "$RPM" ] && {
+    FILEPATCH="$RPM/SOURCES/$(echo $1|sed 's@/@@g')-$DEFAULT_PATCH.patch"
+    [ -f $FILEPATCH ] && mv -f $FILEPATCH $FILEPATCH.old
+}
+
+[ -n "$2" ] && PATCH_PREFIX=$2
+
+find $1 \( -name "*$PATCH_PREFIX" -o -name ".*$PATCH_PREFIX" \) -print | sort |
+while read f; do
+    U=-u
+    [ "`basename $f`" = "ChangeLog$2" ] && U=-U0
+    if [ -z "$DEFAULT_PATCH" ];then
+	${DIFF} ${U} $f `echo $f | sed s/$PATCH_PREFIX\$//`
+    else
+    ${DIFF} ${U} $f `echo $f | sed s/$PATCH_PREFIX\$//`|tee -a $FILEPATCH
+    fi
+done

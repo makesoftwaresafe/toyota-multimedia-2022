@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPServiceIntrospection: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-device-info.html" title="Device Information">
+<link rel="prev" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo">
+<link rel="next" href="api-device-control.html" title="Device Control">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gupnp-gupnp-service-introspection.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#gupnp-gupnp-service-introspection.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#gupnp-gupnp-service-introspection.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-device-info.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPServiceInfo.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-device-control.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gupnp-gupnp-service-introspection"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gupnp-gupnp-service-introspection.top_of_page"></a>GUPnPServiceIntrospection</span></h2>
+<p>GUPnPServiceIntrospection — Service introspection class.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gupnp-gupnp-service-introspection.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gupnp-gupnp-service-introspection.html#gupnp-service-introspection-list-action-names" title="gupnp_service_introspection_list_action_names ()">gupnp_service_introspection_list_action_names</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gupnp-gupnp-service-introspection.html#gupnp-service-introspection-list-actions" title="gupnp_service_introspection_list_actions ()">gupnp_service_introspection_list_actions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceActionInfo" title="GUPnPServiceActionInfo"><span class="returnvalue">GUPnPServiceActionInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gupnp-gupnp-service-introspection.html#gupnp-service-introspection-get-action" title="gupnp_service_introspection_get_action ()">gupnp_service_introspection_get_action</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gupnp-gupnp-service-introspection.html#gupnp-service-introspection-list-state-variable-names" title="gupnp_service_introspection_list_state_variable_names ()">gupnp_service_introspection_list_state_variable_names</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gupnp-gupnp-service-introspection.html#gupnp-service-introspection-list-state-variables" title="gupnp_service_introspection_list_state_variables ()">gupnp_service_introspection_list_state_variables</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceStateVariableInfo" title="GUPnPServiceStateVariableInfo"><span class="returnvalue">GUPnPServiceStateVariableInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gupnp-gupnp-service-introspection.html#gupnp-service-introspection-get-state-variable" title="gupnp_service_introspection_get_state_variable ()">gupnp_service_introspection_get_state_variable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gupnp-gupnp-service-introspection.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection--scpd" title="The “scpd” property">scpd</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<a name="GUPnPServiceIntrospection"></a><div class="refsect1">
+<a name="gupnp-gupnp-service-introspection.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceActionArgDirection" title="enum GUPnPServiceActionArgDirection">GUPnPServiceActionArgDirection</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceActionArgInfo" title="GUPnPServiceActionArgInfo">GUPnPServiceActionArgInfo</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceActionInfo" title="GUPnPServiceActionInfo">GUPnPServiceActionInfo</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceStateVariableInfo" title="GUPnPServiceStateVariableInfo">GUPnPServiceStateVariableInfo</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection-struct" title="struct GUPnPServiceIntrospection">GUPnPServiceIntrospection</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gupnp-gupnp-service-introspection.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPServiceIntrospection
+</pre>
+</div>
+<div class="refsect1">
+<a name="gupnp-gupnp-service-introspection.description"></a><h2>Description</h2>
+<p>The <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> class provides methods for service
+introspection based on information contained in its service description
+document (SCPD). There is no constructor provided for this class, please use
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-introspection" title="gupnp_service_info_get_introspection ()"><span class="type">gupnp_service_info_get_introspection</span></a> or
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-introspection-async" title="gupnp_service_info_get_introspection_async ()"><span class="type">gupnp_service_info_get_introspection_async</span></a> to create an
+<a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> object for a specific service.</p>
+<p>Note that all the introspection information is retreived from the service
+description document (SCPD) provided by the service and hence can not be
+guaranteed to be complete. A UPnP service is required to provide an SCPD but
+unfortunately, many services either do not provide this document or the
+document does not provide any or all of the introspection information.</p>
+<p>This class exposes internals of the UPnP protocol and should not need
+to be used for regular device or control point development.</p>
+</div>
+<div class="refsect1">
+<a name="gupnp-gupnp-service-introspection.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-service-introspection-list-action-names"></a><h3>gupnp_service_introspection_list_action_names ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GList</span> *
+gupnp_service_introspection_list_action_names
+                               (<em class="parameter"><code><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> *introspection</code></em>);</pre>
+<p>Returns a GList of names of all the actions in this service.</p>
+<div class="refsect3">
+<a name="gupnp-service-introspection-list-action-names.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>introspection</p></td>
+<td class="parameter_description"><p>A <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-introspection-list-action-names.returns"></a><h4>Returns</h4>
+<p> (transfer none) (element-type utf8) : A GList of names of all
+the actions or <code class="literal">NULL</code>. Do not modify or free it or its contents.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-introspection-list-actions"></a><h3>gupnp_service_introspection_list_actions ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GList</span> *
+gupnp_service_introspection_list_actions
+                               (<em class="parameter"><code><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> *introspection</code></em>);</pre>
+<p>Returns a <span class="type">GList</span> of all the actions (of type <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceActionInfo" title="GUPnPServiceActionInfo"><span class="type">GUPnPServiceActionInfo</span></a>) in
+this service.</p>
+<div class="refsect3">
+<a name="gupnp-service-introspection-list-actions.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>introspection</p></td>
+<td class="parameter_description"><p>A <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-introspection-list-actions.returns"></a><h4>Returns</h4>
+<p> A
+<span class="type">GList</span> of all the actions or <code class="literal">NULL</code>. Do not modify or free it or its
+contents. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnP.ServiceActionInfo][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-introspection-get-action"></a><h3>gupnp_service_introspection_get_action ()</h3>
+<pre class="programlisting">const <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceActionInfo" title="GUPnPServiceActionInfo"><span class="returnvalue">GUPnPServiceActionInfo</span></a> *
+gupnp_service_introspection_get_action
+                               (<em class="parameter"><code><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> *introspection</code></em>,
+                                <em class="parameter"><code>const <span class="type">gchar</span> *action_name</code></em>);</pre>
+<p>Returns the action by the name <em class="parameter"><code>action_name</code></em>
+ in this service.</p>
+<div class="refsect3">
+<a name="gupnp-service-introspection-get-action.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>introspection</p></td>
+<td class="parameter_description"><p>A <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action_name</p></td>
+<td class="parameter_description"><p>The name of the action to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-introspection-get-action.returns"></a><h4>Returns</h4>
+<p> the action or <code class="literal">NULL</code>. Do not modify or free
+it. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-introspection-list-state-variable-names"></a><h3>gupnp_service_introspection_list_state_variable_names ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GList</span> *
+gupnp_service_introspection_list_state_variable_names
+                               (<em class="parameter"><code><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> *introspection</code></em>);</pre>
+<p>Returns a <span class="type">GList</span> of names of all the state variables in this service.</p>
+<div class="refsect3">
+<a name="gupnp-service-introspection-list-state-variable-names.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>introspection</p></td>
+<td class="parameter_description"><p>A <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-introspection-list-state-variable-names.returns"></a><h4>Returns</h4>
+<p> A <span class="type">GList</span> of names of all
+the state variables or <code class="literal">NULL</code>. Do not modify or free it or its contents. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-introspection-list-state-variables"></a><h3>gupnp_service_introspection_list_state_variables ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GList</span> *
+gupnp_service_introspection_list_state_variables
+                               (<em class="parameter"><code><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> *introspection</code></em>);</pre>
+<p>Returns a GList of all the state variables (of type
+<a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceStateVariableInfo" title="GUPnPServiceStateVariableInfo"><span class="type">GUPnPServiceStateVariableInfo</span></a>) in this service.</p>
+<div class="refsect3">
+<a name="gupnp-service-introspection-list-state-variables.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>introspection</p></td>
+<td class="parameter_description"><p>A <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-introspection-list-state-variables.returns"></a><h4>Returns</h4>
+<p>A <span class="type">GList</span> of all the state variables or <code class="literal">NULL</code>. Do not modify or free it or
+its contents. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnP.ServiceStateVariableInfo][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-introspection-get-state-variable"></a><h3>gupnp_service_introspection_get_state_variable ()</h3>
+<pre class="programlisting">const <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceStateVariableInfo" title="GUPnPServiceStateVariableInfo"><span class="returnvalue">GUPnPServiceStateVariableInfo</span></a> *
+gupnp_service_introspection_get_state_variable
+                               (<em class="parameter"><code><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> *introspection</code></em>,
+                                <em class="parameter"><code>const <span class="type">gchar</span> *variable_name</code></em>);</pre>
+<p>Returns the state variable by the name <em class="parameter"><code>variable_name</code></em>
+ in this service.</p>
+<div class="refsect3">
+<a name="gupnp-service-introspection-get-state-variable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>introspection</p></td>
+<td class="parameter_description"><p>A <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>variable_name</p></td>
+<td class="parameter_description"><p>The name of the variable to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-introspection-get-state-variable.returns"></a><h4>Returns</h4>
+<p> the state variable or <code class="literal">NULL</code>. Do not modify or
+free it. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gupnp-gupnp-service-introspection.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPServiceActionArgDirection"></a><h3>enum GUPnPServiceActionArgDirection</h3>
+<p>Represents the direction of a service state variable.</p>
+<div class="refsect3">
+<a name="GUPnPServiceActionArgDirection.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-SERVICE-ACTION-ARG-DIRECTION-IN:CAPS"></a>GUPNP_SERVICE_ACTION_ARG_DIRECTION_IN</p></td>
+<td class="enum_member_description">
+<p>An "in" variable, to the service.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-SERVICE-ACTION-ARG-DIRECTION-OUT:CAPS"></a>GUPNP_SERVICE_ACTION_ARG_DIRECTION_OUT</p></td>
+<td class="enum_member_description">
+<p>An "out" variable, from the service.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceActionArgInfo"></a><h3>GUPnPServiceActionArgInfo</h3>
+<pre class="programlisting">typedef struct {
+        char                          *name;
+        GUPnPServiceActionArgDirection direction;
+        char                          *related_state_variable;
+        gboolean                       retval;
+} GUPnPServiceActionArgInfo;
+</pre>
+<p>This structure contains information about the argument of service action.</p>
+<div class="refsect3">
+<a name="GUPnPServiceActionArgInfo.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">char</span> *<em class="structfield"><code><a name="GUPnPServiceActionArgInfo.name"></a>name</code></em>;</p></td>
+<td class="struct_member_description"><p>The name of the action argument.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceActionArgDirection" title="enum GUPnPServiceActionArgDirection"><span class="type">GUPnPServiceActionArgDirection</span></a> <em class="structfield"><code><a name="GUPnPServiceActionArgInfo.direction"></a>direction</code></em>;</p></td>
+<td class="struct_member_description"><p>The direction of the action argument.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">char</span> *<em class="structfield"><code><a name="GUPnPServiceActionArgInfo.related-state-variable"></a>related_state_variable</code></em>;</p></td>
+<td class="struct_member_description"><p>The name of the state variable associated with this
+argument.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gboolean</span> <em class="structfield"><code><a name="GUPnPServiceActionArgInfo.retval"></a>retval</code></em>;</p></td>
+<td class="struct_member_description"><p>Whether this argument is the return value of the action.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceActionInfo"></a><h3>GUPnPServiceActionInfo</h3>
+<pre class="programlisting">typedef struct {
+        char  *name;
+        GList *arguments; /* list of #GUPnPServiceActionArgInfo */
+} GUPnPServiceActionInfo;
+</pre>
+<p>This structure contains information about a service action.</p>
+<div class="refsect3">
+<a name="GUPnPServiceActionInfo.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">char</span> *<em class="structfield"><code><a name="GUPnPServiceActionInfo.name"></a>name</code></em>;</p></td>
+<td class="struct_member_description"><p>The name of the action argument.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">GList</span> *<em class="structfield"><code><a name="GUPnPServiceActionInfo.arguments"></a>arguments</code></em>;</p></td>
+<td class="struct_member_description"><p>A GList of all the arguments
+(of type <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceActionArgInfo" title="GUPnPServiceActionArgInfo"><span class="type">GUPnPServiceActionArgInfo</span></a>) of this action. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GList][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnP.ServiceActionArgInfo]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceStateVariableInfo"></a><h3>GUPnPServiceStateVariableInfo</h3>
+<pre class="programlisting">typedef struct {
+        char    *name;
+        gboolean send_events;
+        gboolean is_numeric;
+        GType    type;
+        GValue   default_value;
+        GValue   minimum;
+        GValue   maximum;
+        GValue   step;
+        GList   *allowed_values;
+} GUPnPServiceStateVariableInfo;
+</pre>
+<p>This structure contains information about service state variable.</p>
+<div class="refsect3">
+<a name="GUPnPServiceStateVariableInfo.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">char</span> *<em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.name"></a>name</code></em>;</p></td>
+<td class="struct_member_description"><p>The name of the state variable.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gboolean</span> <em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.send-events"></a>send_events</code></em>;</p></td>
+<td class="struct_member_description"><p>Whether this state variable can source events.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gboolean</span> <em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.is-numeric"></a>is_numeric</code></em>;</p></td>
+<td class="struct_member_description"><p>Wether this state variable is a numeric type (integer and
+float).</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">GType</span> <em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.type"></a>type</code></em>;</p></td>
+<td class="struct_member_description"><p>The GType of this state variable.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">GValue</span> <em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.default-value"></a>default_value</code></em>;</p></td>
+<td class="struct_member_description"><p>The default value of this state variable.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">GValue</span> <em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.minimum"></a>minimum</code></em>;</p></td>
+<td class="struct_member_description"><p>The minimum value of this state variable. Only applies to numeric
+data types.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">GValue</span> <em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.maximum"></a>maximum</code></em>;</p></td>
+<td class="struct_member_description"><p>The maximum value of this state variable. Only applies to numeric
+data types.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">GValue</span> <em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.step"></a>step</code></em>;</p></td>
+<td class="struct_member_description"><p>The step value of this state variable. Only applies to numeric
+data types.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">GList</span> *<em class="structfield"><code><a name="GUPnPServiceStateVariableInfo.allowed-values"></a>allowed_values</code></em>;</p></td>
+<td class="struct_member_description"><p> The allowed values of this state variable. Only applies to
+string data types. Unlike the other fields in this structure, this field
+contains a list of (char *) strings rather than GValues. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceIntrospection-struct"></a><h3>struct GUPnPServiceIntrospection</h3>
+<pre class="programlisting">struct GUPnPServiceIntrospection;</pre>
+<p>This struct contains private data only, and should be accessed using the
+functions below.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="gupnp-gupnp-service-introspection.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPServiceIntrospection--scpd"></a><h3>The <code class="literal">“scpd”</code> property</h3>
+<pre class="programlisting">  “scpd”                     <span class="type">gpointer</span></pre>
+<p>The scpd of the device description file.</p>
+<p>Flags: Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

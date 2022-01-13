@@ -1,0 +1,167 @@
+/**
+
+ @page actionDisconnect Action Disconnect
+
+ <b>Name:</b> ACTION_DISCONNECT<BR>
+ <b>Description:</b> This action disconnects the main connection and removed it from the 
+Audio manager database. All the parameter of this action are optional. This action without any 
+parameter would disconnect all the connection. The parameter are used to narrow down the main 
+connections which would be disconnected. On broad level two types of parameters are there positive 
+and the negative filters, i,e sourceName,sinkName and className are positive filters if specified
+only the connection matching the sourceName, sinkName or className get disconnected. The negative
+filters are the exceptclasses, exceptSinks, exceptSources, these are white space separated names
+of the sources, sinks and classes which should not be disconnected. 
+
+ \code
+
+     <action>
+        <type>ACTION_DISCONNECT</type>
+        <param>
+            <className>CLASS</className> 
+            <!-- OR -->
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName> 
+            <!-- OR -->
+            <connectionState>CS_CONNECTED</connectionState>
+            <!-- OR -->
+            <exceptClasses>"Entertainment" "Announcements"</exceptClasses>
+            <!-- OR -->
+            <exceptSources>"RadioTuner" "Navigation"</exceptSources>
+            <!-- OR -->
+            <exceptSinks>"FrontSpeaker" "CentreSpeaker"</exceptClasses>
+        </param>
+    </action>
+ 
+ \endcode
+ 
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>className</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the class. If the specific className is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the class name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>sourceName</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the source.If the specific sourceName is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the source name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>sinkName</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the sink.If the specific sinkName is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the sink name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>connectionState</td>
+<td>O</td>
+<td>am_ConnectionState_e</td>
+<td>The connection state of the connection to be disconnected.</td>
+</tr>
+
+<tr>
+<td>exceptClasses</td>
+<td>O</td>
+<td>string</td>
+<td>The whitespace separated class names, the connections belonging to these  classes would be 
+not be disconnected.</td>
+</tr>
+
+<tr>
+<td>exceptSources</td>
+<td>O</td>
+<td>string</td>
+<td>The whitespace separated source Names, the connection involving these source names would not be
+disconnected.</td>
+</tr>
+
+<tr>
+<td>exceptSinks</td>
+<td>O</td>
+<td>string</td>
+<td>The whitespace separated sink names, the connection involving these sinks names would not be 
+disconnected.</td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+
+<b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_DISCONNECT</type>
+        <param>
+            <sourceName>"RadioTuner"</sourceName>
+        </param>
+    </action>
+ \endcode
+    This example would disconnect all the connection involving RadioTuner.  
+
+\code
+    <action>
+        <type>ACTION_DISCONNECT</type>
+        <param>
+            <className>"ENTERTAINMENT"</className>
+            <sourceName>"RadioTuner"</sourceName>
+        </param>
+    </action>
+ \endcode
+    This example would disconnect all the connection in class ENTERTAINMENT with source name 
+RadioTuner.  
+
+\code
+    <action>
+        <type>ACTION_DISCONNECT</type>
+        <param>
+            <exceptClasses>"PHONE"</exceptClasses>
+        </param>
+    </action>
+ \endcode
+    This example would disconnect all the connection except the connections belonging to class 
+PHONE.
+
+\code
+    <action>
+        <type>ACTION_DISCONNECT</type>
+        <param>
+            <exceptSinks>"FrontSpeaker"</exceptClasses>
+        </param>
+    </action>
+ \endcode
+    This example would disconnect all the connection except the connections involving sink
+FrontSpeaker.
+
+\code
+    <action>
+        <type>ACTION_DISCONNECT</type>
+        <param>
+        </param>
+    </action>
+ \endcode
+    This example would disconnect all the connections.
+
+*/

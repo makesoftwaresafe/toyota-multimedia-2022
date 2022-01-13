@@ -1,0 +1,84 @@
+-I. -I.. -DHAVE_CONFIG_H -D_GNU_SOURCE -D__STDC__=1
+
++partial
++forcehints
+
+-warnposix
+
++unixlib
+
+-unrecogcomments	# XXX ignore doxygen markings
+
++strict			# lclint level
+
+# --- in progress
+-bounds
+-branchstate
+-bufferoverflowhigh
+
+-compdef		# 21
+-compmempass		# 653
+-internalglobs		# 11
+-noeffect		# 14
+-noeffectuncon		# 1
+-nullderef		# 103
+-nullpass		# 47
+-nullptrarith		# 34
+-nullstate		# 25
+-redecl			# 2
+-redef			# 14
+-retalias		# 5
+-retvalint		# 12
+-shiftimplementation	# 27
+-sizeoftype		# 116
+-type			# 176
+-usereleased		# 13
+
+-dependenttrans		# 2
+-immediatetrans		# 3
+-kepttrans		# 86
+-temptrans		# 17
+
+-ifempty
+
+# --- +partial artifacts
+-declundef
+-exportheader
+-exportheadervar
+-exportlocal
+
+-enummemuse
+-fcnuse
+-typeuse
+-varuse
+
+# --- not-yet at strict level
+-bitwisesigned
+-elseifcomplete
+-exportconst
+-exportfcn
+-exporttype
+-exportvar
+-fielduse
+-forblock
+-ifblock
+-namechecks
+-ptrarith
+
+-compdestroy
+-mustdefine
+-sys-dir-errors
+
+-strictops
+-whileblock
+
+# --- not-yet at checks level
++enumint
+-mustfree
+-predboolptr
+-usedef
+
+# --- not-yet at standard level
+-boolops
++boolint
++ignorequals

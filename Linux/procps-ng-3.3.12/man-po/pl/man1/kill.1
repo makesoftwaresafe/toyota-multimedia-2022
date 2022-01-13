@@ -1,0 +1,80 @@
+'\" t
+.\" (The preceding line is a note to broken versions of man to tell
+.\" them to pre-process this man page with tbl)
+.\" Man page for kill.
+.\" Licensed under version 2 of the GNU General Public License.
+.\" Written by Albert Cahalan; converted to a man page by
+.\" Michael K. Johnson
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH KILL 1 "październik 2011" procps\-ng "Polecenia użytkownika"
+.SH NAZWA
+kill \- wysłanie sygnału do procesu
+.SH SKŁADNIA
+\fBkill\fP [opcje] <pid> [...]
+.SH OPIS
+Domyślny sygnał to TERM. Aby uzyskać listę sygnałów, można użyć opcji \fB\-l\fP
+lub \fB\-L\fP. Przydatne sygnały to w szczególności HUP, INT, KILL, STOP, CONT
+oraz 0. Alternatywny sygnał można podać na trzy sposoby: \fB\-9\fP, \fB\-SIGKILL\fP
+oraz \fB\-KILL\fP. Ujemne wartości PID pozwalają wybrać całe grupy procesów \-
+p. kolumna PGID w wyjściu polecenia ps. PID \fB\-1\fP jest specjalny \- oznacza
+wszystkie procesy z wyjątkiem samego procesu kill oraz inita.
+.SH OPCJE
+.TP 
+\fB<pid> [...]\fP
+Wysłanie sygnału to każdego podanego <pidu>.
+.TP 
+\fB\-<sygnał>\fP
+.TQ
+\fB\-s <sygnał>\fP
+.TQ
+\fB\-\-signal <sygnał>\fP
+Podanie \fBsygnału\fP do wysłania. Sygnał można określić przy użyciu nazwy lub
+numeru. Zachowanie sygnałów jest wyjaśnione na stronie podręcznika
+\fBsignal\fP(7).
+.TP 
+\fB\-l\fP, \fB\-\-list\fP [\fIsygnał\fP]
+Lista nazw sygnałów. Ta opcja ma opcjonalny argument, który pozwala zamienić
+numer sygnału na jego nazwę lub odwrotnie.
+.TP 
+\fB\-L\fP,\fB\ \-\-table\fP
+Lista nazw sygnałów w ładnej tabelce.
+.TP 
+.PD
+.SH UWAGI
+Powłoka (interpreter linii poleceń) może mieć wbudowane polecenie kill. Aby
+uniknąć konfliktu, może zaistnieć potrzeba uruchomienia niniejszego
+polecenia jako /bin/kill.
+.SH PRZYKŁADY
+.TP 
+\fBkill \-9 \-1\fP
+Zabicie wszystkich procesów, do których mamy uprawnienia.
+.TP 
+\fBkill \-l 11\fP
+Zamiana numeru 11 na nazwę sygnału.
+.TP 
+\fBkill \-L\fP
+Lista dostępnych sygnałów w ładnej tabelce.
+.TP 
+\fBkill 123 543 2341 3453\fP
+Wysłanie domyślnego sygnału (SIGTERM) do wszystkich podanych procesów.
+.SH "ZOBACZ TAKŻE"
+\fBkill\fP(2), \fBkillall\fP(1), \fBnice\fP(1), \fBpkill\fP(1), \fBrenice\fP(1),
+\fBsignal\fP(7), \fBskill\fP(1)
+.SH STANDARDY
+To polecenie jest zgodne z odpowiednimi standardami. Flaga \fB\-L\fP jest
+specyficzna dla Linuksa.
+.SH AUTOR
+.UR albert@users.sf.net
+Albert Cahalan
+.UE
+napisał program kill w roku
+1999, aby zastąpić  narzędzie z pakietu bsdutils, które nie było zgodne ze
+standardami. Narzędzie z pakietu util\-linux także może działać poprawnie.
+.SH "ZGŁASZANIE BŁĘDÓW"
+Zgłoszenia błędów prosimy wysyłać na adres
+.UR procps@freelists.org
+.UE

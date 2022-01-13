@@ -1,0 +1,17 @@
+# http://www.gtk.org/gtk-doc/
+*-decl-list.txt
+*-decl.txt
+*-overrides.txt
+*-undeclared.txt
+*-undocumented.txt
+*-unused.txt
+*.args
+*.hierarchy
+*.interfaces
+*.prerequisites
+*.signals
+*.stamp
+html
+version.xml
+tmpl
+xml

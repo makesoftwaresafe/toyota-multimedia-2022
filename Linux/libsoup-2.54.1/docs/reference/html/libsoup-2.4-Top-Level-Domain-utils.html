@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Top Level Domain utils: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch02.html" title="Core API">
+<link rel="prev" href="libsoup-2.4-soup-status.html" title="soup-status">
+<link rel="next" href="SoupURI.html" title="SoupURI">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-Top-Level-Domain-utils.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libsoup-2.4-soup-status.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="SoupURI.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libsoup-2.4-Top-Level-Domain-utils"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libsoup-2.4-Top-Level-Domain-utils.top_of_page"></a>Top Level Domain utils</span></h2>
+<p>Top Level Domain utils — Top-Level Domain Utilities</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libsoup-2.4-Top-Level-Domain-utils.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Top-Level-Domain-utils.html#soup-tld-get-base-domain" title="soup_tld_get_base_domain ()">soup_tld_get_base_domain</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Top-Level-Domain-utils.html#soup-tld-domain-is-public-suffix" title="soup_tld_domain_is_public_suffix ()">soup_tld_domain_is_public_suffix</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Top-Level-Domain-utils.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-Top-Level-Domain-utils.html#SOUP-TLD-ERROR:CAPS" title="SOUP_TLD_ERROR">SOUP_TLD_ERROR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-Top-Level-Domain-utils.html#SoupTLDError" title="enum SoupTLDError">SoupTLDError</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Top-Level-Domain-utils.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Top-Level-Domain-utils.description"></a><h2>Description</h2>
+<p>These functions can be used to parse hostnames to attempt to determine
+what part of the name belongs to the domain owner, and what part is
+simply a "public suffix" such as ".com".</p>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Top-Level-Domain-utils.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-tld-get-base-domain"></a><h3>soup_tld_get_base_domain ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_tld_get_base_domain (<em class="parameter"><code>const <span class="type">char</span> *hostname</code></em>,
+                          <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Finds the base domain for a given <em class="parameter"><code>hostname</code></em>
+. The base domain is
+composed by the top level domain (such as .org, .com, .co.uk, etc)
+plus the second level domain, for example for myhost.mydomain.com
+it will return mydomain.com.</p>
+<p>Note that <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned for private URLs (those not ending
+with any well known TLD) because choosing a base domain for them
+would be totally arbitrary.</p>
+<p>Prior to libsoup 2.46, this function required that <em class="parameter"><code>hostname</code></em>
+ be in
+UTF-8 if it was an IDN. From 2.46 on, the name can be in either
+UTF-8 or ASCII format (and the return value will be in the same
+format).</p>
+<div class="refsect3">
+<a name="id-1.3.25.7.2.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>hostname</p></td>
+<td class="parameter_description"><p>a hostname</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore
+errors. See <a class="link" href="libsoup-2.4-Top-Level-Domain-utils.html#SoupTLDError" title="enum SoupTLDError"><span class="type">SoupTLDError</span></a> for the available error codes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.25.7.2.8"></a><h4>Returns</h4>
+<p> a pointer to the start of the base domain in <em class="parameter"><code>hostname</code></em>
+. If
+an error occurs, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned and <em class="parameter"><code>error</code></em>
+set.</p>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-tld-domain-is-public-suffix"></a><h3>soup_tld_domain_is_public_suffix ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_tld_domain_is_public_suffix (<em class="parameter"><code>const <span class="type">char</span> *domain</code></em>);</pre>
+<p>Looks whether the <em class="parameter"><code>domain</code></em>
+ passed as argument is a public domain
+suffix (.org, .com, .co.uk, etc) or not.</p>
+<p>Prior to libsoup 2.46, this function required that <em class="parameter"><code>domain</code></em>
+ be in
+UTF-8 if it was an IDN. From 2.46 on, the name can be in either
+UTF-8 or ASCII format (and the return value will be in the same
+format).</p>
+<div class="refsect3">
+<a name="id-1.3.25.7.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>domain</p></td>
+<td class="parameter_description"><p>a domain name</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.25.7.3.7"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if it is a public domain, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Top-Level-Domain-utils.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SOUP-TLD-ERROR:CAPS"></a><h3>SOUP_TLD_ERROR</h3>
+<pre class="programlisting">#define SOUP_TLD_ERROR soup_tld_error_quark()
+</pre>
+<p>The <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> domain for soup-tld-related errors.</p>
+<p class="since">Since: 2.40</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupTLDError"></a><h3>enum SoupTLDError</h3>
+<p>Error codes for <a class="link" href="libsoup-2.4-Top-Level-Domain-utils.html#SOUP-TLD-ERROR:CAPS" title="SOUP_TLD_ERROR"><code class="literal">SOUP_TLD_ERROR</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.25.8.3.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-TLD-ERROR-INVALID-HOSTNAME:CAPS"></a>SOUP_TLD_ERROR_INVALID_HOSTNAME</p></td>
+<td class="enum_member_description">
+<p>A hostname was syntactically
+  invalid.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-TLD-ERROR-IS-IP-ADDRESS:CAPS"></a>SOUP_TLD_ERROR_IS_IP_ADDRESS</p></td>
+<td class="enum_member_description">
+<p>The passed-in "hostname" was
+  actually an IP address (and thus has no base domain or
+  public suffix).</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-TLD-ERROR-NOT-ENOUGH-DOMAINS:CAPS"></a>SOUP_TLD_ERROR_NOT_ENOUGH_DOMAINS</p></td>
+<td class="enum_member_description">
+<p>The passed-in hostname
+  did not have enough components. Eg, calling
+  <a class="link" href="libsoup-2.4-Top-Level-Domain-utils.html#soup-tld-get-base-domain" title="soup_tld_get_base_domain ()"><code class="function">soup_tld_get_base_domain()</code></a> on <code class="literal">"co.uk"</code>.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-TLD-ERROR-NO-BASE-DOMAIN:CAPS"></a>SOUP_TLD_ERROR_NO_BASE_DOMAIN</p></td>
+<td class="enum_member_description">
+<p>The passed-in hostname has
+  no recognized public suffix.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

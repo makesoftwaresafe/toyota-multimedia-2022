@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+ ProjectType="Visual C++"
+ Version="9.00"
+ Name="soup"
+ ProjectGUID="{D83A3162-B14C-459C-AF81-15BBFA90240D}"
+ RootNamespace="soup"
+ Keyword="Win32Proj"
+ TargetFrameworkVersion="196613"
+ >
+ <Platforms>
+  <Platform
+   Name="Win32"
+  />
+  <Platform
+   Name="x64"
+  />
+ </Platforms>
+ <ToolFiles>
+ </ToolFiles>
+ <Configurations>
+  <Configuration
+   Name="Debug|Win32"
+   ConfigurationType="2"
+   InheritedPropertySheets=".\soup-dll-build-defines.vsprops"
+   CharacterSet="1"
+   >
+   <Tool
+    Name="VCCLCompilerTool"
+    Optimization="0"
+    PreprocessorDefinitions="_DEBUG;$(SoupBuildDefines)"
+    MinimalRebuild="true"
+    BasicRuntimeChecks="3"
+    RuntimeLibrary="3"
+    UsePrecompiledHeader="0"
+    WarningLevel="3"
+    DebugInformationFormat="4"
+   />
+   <Tool
+    Name="VCLinkerTool"
+    AdditionalDependencies="$(SoupExtraDepLibs)"
+    LinkIncremental="2"
+    GenerateDebugInformation="true"
+    SubSystem="2"
+    TargetMachine="1"
+   />
+  </Configuration>
+  <Configuration
+   Name="Release|Win32"
+   ConfigurationType="2"
+   InheritedPropertySheets=".\soup-dll-build-defines.vsprops"
+   CharacterSet="1"
+   WholeProgramOptimization="1"
+   >
+   <Tool
+    Name="VCCLCompilerTool"
+    Optimization="2"
+    EnableIntrinsicFunctions="true"
+    PreprocessorDefinitions="$(SoupBuildDefines)"
+    RuntimeLibrary="2"
+    EnableFunctionLevelLinking="true"
+    UsePrecompiledHeader="0"
+    WarningLevel="3"
+    DebugInformationFormat="3"
+   />
+   <Tool
+    Name="VCLinkerTool"
+    AdditionalDependencies="$(SoupExtraDepLibs)"
+    LinkIncremental="1"
+    GenerateDebugInformation="true"
+    SubSystem="2"
+    OptimizeReferences="2"
+    EnableCOMDATFolding="2"
+    TargetMachine="1"
+   />
+  </Configuration>
+  <Configuration
+   Name="Debug|x64"
+   ConfigurationType="2"
+   InheritedPropertySheets=".\soup-dll-build-defines.vsprops"
+   CharacterSet="1"
+   >
+   <Tool
+    Name="VCMIDLTool"
+    TargetEnvironment="3"
+   />
+   <Tool
+    Name="VCCLCompilerTool"
+    Optimization="0"
+    PreprocessorDefinitions="_DEBUG;$(SoupBuildDefines)"
+    MinimalRebuild="true"
+    BasicRuntimeChecks="3"
+    RuntimeLibrary="3"
+    UsePrecompiledHeader="0"
+    WarningLevel="3"
+    DebugInformationFormat="3"
+   />
+   <Tool
+    Name="VCLinkerTool"
+    AdditionalDependencies="$(SoupExtraDepLibs)"
+    LinkIncremental="2"
+    GenerateDebugInformation="true"
+    SubSystem="2"
+    TargetMachine="17"
+   />
+  </Configuration>
+  <Configuration
+   Name="Release|x64"
+   ConfigurationType="2"
+   InheritedPropertySheets=".\soup-dll-build-defines.vsprops"
+   CharacterSet="1"
+   WholeProgramOptimization="1"
+   >
+   <Tool
+    Name="VCMIDLTool"
+    TargetEnvironment="3"
+   />
+   <Tool
+    Name="VCCLCompilerTool"
+    Optimization="2"
+    EnableIntrinsicFunctions="true"
+    PreprocessorDefinitions="$(SoupBuildDefines)"
+    RuntimeLibrary="2"
+    EnableFunctionLevelLinking="true"
+    UsePrecompiledHeader="0"
+    WarningLevel="3"
+    DebugInformationFormat="3"
+   />
+   <Tool
+    Name="VCLinkerTool"
+    AdditionalDependencies="$(SoupExtraDepLibs)"
+    LinkIncremental="1"
+    GenerateDebugInformation="true"
+    SubSystem="2"
+    OptimizeReferences="2"
+    EnableCOMDATFolding="2"
+    TargetMachine="17"
+   />
+  </Configuration>
+ </Configurations>
+ <References>
+ </References>
+ <Files>
+  <Filter
+   Name="Sources"
+   Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+   UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+   >
+   <File RelativePath="..\..\..\libsoup\soup-address.c" />
+   <File RelativePath="..\..\..\libsoup\soup-auth.c" />
+   <File RelativePath="..\..\..\libsoup\soup-auth-basic.c" />
+   <File RelativePath="..\..\..\libsoup\soup-auth-digest.c" />
+   <File RelativePath="..\..\..\libsoup\soup-auth-ntlm.c" />
+   <File RelativePath="..\..\..\libsoup\soup-auth-domain.c" />
+   <File RelativePath="..\..\..\libsoup\soup-auth-domain-basic.c" />
+   <File RelativePath="..\..\..\libsoup\soup-auth-domain-digest.c" />
+   <File RelativePath="..\..\..\libsoup\soup-auth-manager.c" />
+   <File RelativePath="..\..\..\libsoup\soup-body-input-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-body-output-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-cache.c" />
+   <File RelativePath="..\..\..\libsoup\soup-cache-client-input-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-cache-input-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-client-input-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-connection.c" />
+   <File RelativePath="..\..\..\libsoup\soup-connection-auth.c" />
+   <File RelativePath="..\..\..\libsoup\soup-content-decoder.c" />
+   <File RelativePath="..\..\..\libsoup\soup-content-processor.c" />
+   <File RelativePath="..\..\..\libsoup\soup-content-sniffer.c" />
+   <File RelativePath="..\..\..\libsoup\soup-content-sniffer-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-converter-wrapper.c" />
+   <File RelativePath="..\..\..\libsoup\soup-cookie.c" />
+   <File RelativePath="..\..\..\libsoup\soup-cookie-jar.c" />
+   <File RelativePath="..\..\..\libsoup\soup-cookie-jar-db.c" />
+   <File RelativePath="..\..\..\libsoup\soup-cookie-jar-text.c" />
+   <File RelativePath="..\..\..\libsoup\soup-date.c" />
+   <File RelativePath="..\..\..\libsoup\soup-directory-input-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-enum-types.c" />
+   <File RelativePath="..\..\..\libsoup\soup-filter-input-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-form.c" />
+   <File RelativePath="..\..\..\libsoup\soup-headers.c" />
+   <File RelativePath="..\..\..\libsoup\soup-init.c" />
+   <File RelativePath="..\..\..\libsoup\soup-io-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-logger.c" />
+   <File RelativePath="..\..\..\libsoup\soup-message.c" />
+   <File RelativePath="..\..\..\libsoup\soup-message-body.c" />
+   <File RelativePath="..\..\..\libsoup\soup-message-client-io.c" />
+   <File RelativePath="..\..\..\libsoup\soup-message-headers.c" />
+   <File RelativePath="..\..\..\libsoup\soup-message-io.c" />
+   <File RelativePath="..\..\..\libsoup\soup-message-queue.c" />
+   <File RelativePath="..\..\..\libsoup\soup-message-server-io.c" />
+   <File RelativePath="..\..\..\libsoup\soup-method.c" />
+   <File RelativePath="..\..\..\libsoup\soup-misc.c" />
+   <File RelativePath="..\..\..\libsoup\soup-multipart.c" />
+   <File RelativePath="..\..\..\libsoup\soup-multipart-input-stream.c" />
+   <File RelativePath="..\..\..\libsoup\soup-password-manager.c" />
+   <File RelativePath="..\..\..\libsoup\soup-path-map.c" />
+   <File RelativePath="..\..\..\libsoup\soup-proxy-resolver.c" />
+   <File RelativePath="..\..\..\libsoup\soup-proxy-resolver-default.c" />
+   <File RelativePath="..\..\..\libsoup\soup-proxy-resolver-wrapper.c" />
+   <File RelativePath="..\..\..\libsoup\soup-proxy-uri-resolver.c" />
+   <File RelativePath="..\..\..\libsoup\soup-request.c" />
+   <File RelativePath="..\..\..\libsoup\soup-request-data.c" />
+   <File RelativePath="..\..\..\libsoup\soup-request-file.c" />
+   <File RelativePath="..\..\..\libsoup\soup-request-http.c" />
+   <File RelativePath="..\..\..\libsoup\soup-requester.c" />
+   <File RelativePath="..\..\..\libsoup\soup-server.c" />
+   <File RelativePath="..\..\..\libsoup\soup-session.c" />
+   <File RelativePath="..\..\..\libsoup\soup-session-async.c" />
+   <File RelativePath="..\..\..\libsoup\soup-session-feature.c" />
+   <File RelativePath="..\..\..\libsoup\soup-session-sync.c" />
+   <File RelativePath="..\..\..\libsoup\soup-socket.c" />
+   <File RelativePath="..\..\..\libsoup\soup-socket-properties.c" />
+   <File RelativePath="..\..\..\libsoup\soup-status.c" />
+   <File RelativePath="..\..\..\libsoup\soup-tld.c" />
+   <File RelativePath="..\..\..\libsoup\soup-uri.c" />
+   <File RelativePath="..\..\..\libsoup\soup-value-utils.c" />
+   <File RelativePath="..\..\..\libsoup\soup-version.c" />
+   <File RelativePath="..\..\..\libsoup\soup-websocket.c" />
+   <File RelativePath="..\..\..\libsoup\soup-websocket-connection.c" />
+   <File RelativePath="..\..\..\libsoup\soup-xmlrpc.c" />
+   <File RelativePath="..\..\..\libsoup\soup-xmlrpc-old.c" />
+  </Filter>
+  <Filter
+   Name="Headers"
+   Filter="h;hpp;hxx;hm;inl;inc;xsd"
+   UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+   >
+  </Filter>
+  <Filter
+   Name="Resource Files"
+   Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+   UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+   >
+   <File RelativePath="..\..\..\config.h.win32">
+    <FileConfiguration Name="Debug|Win32"><Tool Name="VCCustomBuildTool" Description="Copying config.h from config.h.win32..." CommandLine="$(CopyConfigH)" Outputs="..\..\..\config.h" /></FileConfiguration>
+    <FileConfiguration Name="Release|Win32"><Tool Name="VCCustomBuildTool" Description="Copying config.h from config.h.win32..." CommandLine="$(CopyConfigH)" Outputs="..\..\..\config.h" /></FileConfiguration>
+    <FileConfiguration Name="Debug|x64"><Tool Name="VCCustomBuildTool" Description="Copying config.h from config.h.win32..." CommandLine="$(CopyConfigH)" Outputs="..\..\..\config.h" /></FileConfiguration>
+    <FileConfiguration Name="Release|x64"><Tool Name="VCCustomBuildTool" Description="Copying config.h from config.h.win32..." CommandLine="$(CopyConfigH)" Outputs="..\..\..\config.h" /></FileConfiguration>
+   </File>
+   <File RelativePath="..\..\..\data\effective_tld_names.dat">
+    <FileConfiguration Name="Debug|Win32"><Tool Name="VCCustomBuildTool" Description="Generating tld_data.inc..." CommandLine="$(GenTldDataInc)" Outputs="..\..\..\libsoup\tld_data.inc" /></FileConfiguration>
+    <FileConfiguration Name="Release|Win32"><Tool Name="VCCustomBuildTool" Description="Generating tld_data.inc..." CommandLine="$(GenTldDataInc)" Outputs="..\..\..\libsoup\tld_data.inc" /></FileConfiguration>
+    <FileConfiguration Name="Debug|x64"><Tool Name="VCCustomBuildTool" Description="Generating tld_data.inc..." CommandLine="$(GenTldDataInc)" Outputs="..\..\..\libsoup\tld_data.inc" /></FileConfiguration>
+    <FileConfiguration Name="Release|x64"><Tool Name="VCCustomBuildTool" Description="Generating tld_data.inc..." CommandLine="$(GenTldDataInc)" Outputs="..\..\..\libsoup\tld_data.inc" /></FileConfiguration>
+   </File>
+   <File RelativePath="..\..\..\libsoup\soup-version.h.in">
+    <FileConfiguration Name="Debug|Win32"><Tool Name="VCCustomBuildTool" Description="Generating soup-version.h..." CommandLine="$(GenSoupVersionH)" Outputs="..\..\..\libsoup\soup-version.h" /></FileConfiguration>
+    <FileConfiguration Name="Release|Win32"><Tool Name="VCCustomBuildTool" Description="Generating soup-version.h..." CommandLine="$(GenSoupVersionH)" Outputs="..\..\..\libsoup\soup-version.h" /></FileConfiguration>
+    <FileConfiguration Name="Debug|x64"><Tool Name="VCCustomBuildTool" Description="Generating soup-version.h..." CommandLine="$(GenSoupVersionH)" Outputs="..\..\..\libsoup\soup-version.h" /></FileConfiguration>
+    <FileConfiguration Name="Release|x64"><Tool Name="VCCustomBuildTool" Description="Generating soup-version.h..." CommandLine="$(GenSoupVersionH)" Outputs="..\..\..\libsoup\soup-version.h" /></FileConfiguration>
+   </File>
+  </Filter>
+ </Files>
+ <Globals>
+ </Globals>
+</VisualStudioProject>

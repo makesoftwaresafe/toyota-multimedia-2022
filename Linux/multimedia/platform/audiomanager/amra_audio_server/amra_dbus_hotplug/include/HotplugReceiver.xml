@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC
+  "-//freedesktop//DTD D-Bus Object Introspection 1.0//EN"
+  "http://standards.freedesktop.org/dbus/1.0/introspect.dtd">
+
+<node>
+	<interface name="org.adit.kp.routingadapter.hotplugreceive">
+		<method name="confirmHotplugReady">
+			<arg name="handle" type="q" direction="in" />
+			<arg name="error" type="q" direction="in" />
+		</method>
+		<method name="asyncRegisterSink">
+			<arg name="sinkData" type="(qsqinb(ii)nna(in)aia(in)a(iin)a(iin))" direction="in" /> <!-- am_sinkID_t sinkID; std::string name; am_domainID_t domainID; am_sinkClass_t sinkClassID; am_volume_t volume; bool visible; am_Availability_s available; am_MuteState_e muteState;am_mainVolume_t mainVolume; std::vector<am_SoundProperty_s> listSoundProperties; std::vector<am_ConnectionFormat_e> listConnectionFormats;  std::vector<am_MainSoundProperty_s> listMainSoundProperties; -->
+		</method>
+		<method name="asyncDeregisterSink">
+			<arg name="sinkID" type="q" direction="in" />
+		</method>
+		<method name="asyncRegisterSource">
+			 <arg name="sourceData" type="(qqsqinb(ii)qa(in)aia(in)a(iin)a(iin))" direction="in" />  <!-- am_sourceID_t sourceID; am_domainID_t domainID; std::string name; am_sourceClass_t sourceClassID; am_SourceState_e sourceState; am_volume_t volume; bool visible; am_Availability_s available; am_InterruptState_e interruptState; std::vector<am_SoundProperty_s> listSoundProperties; std::vector<am_ConnectionFormat_e> listConnectionFormats; std::vector<am_MainSoundProperty_s> listMainSoundProperties; -->
+		</method>
+		<method name="asyncDeregisterSource">
+			<arg name="sourceID" type="q" direction="in" />
+		</method>
+		<method name="ackSetSinkVolumeChange">
+			<arg name="handle" type="q" direction="in" />
+			<arg name="volume" type="n" direction="in" />
+			<arg name="error" type="q" direction="in" />
+		</method>
+		<method name="ackSetSourceVolumeChange">
+			<arg name="handle" type="q" direction="in" />
+			<arg name="volume" type="n" direction="in" />
+			<arg name="error" type="q" direction="in" />
+		</method>
+		<method name="ackSetSourceState">
+			<arg name="handle" type="q" direction="in" />
+			<arg name="error" type="q" direction="in" />
+		</method>
+		<method name="ackSetSinkSoundProperties">
+			<arg name="handle" type="q" direction="in" />
+			<arg name="error" type="q" direction="in" />
+		</method>
+		<method name="ackSetSinkSoundProperty">
+			<arg name="handle" type="q" direction="in" />
+			<arg name="error" type="q" direction="in" />
+		</method>
+		<method name="ackSetSourceSoundProperties">
+			<arg name="handle" type="q" direction="in" />
+			<arg name="error" type="q" direction="in" />
+		</method>
+		<method name="ackSetSourceSoundProperty">
+			<arg name="handle" type="q" direction="in" />
+			<arg name="error" type="q" direction="in" />
+		</method>
+		<method name="hookInterruptStatusChange">
+			<arg name="sourceID" type="q" direction="in" />
+			<arg name="interruptState" type="q" direction="in" />
+		</method>
+		<method name="hookSinkAvailablityStatusChange">
+			<arg name="sinkID" type="q" direction="in" />
+			<arg name="availability" type="(nn)"  direction="in"/>
+		</method>
+		<method name="hookSourceAvailablityStatusChange">
+			<arg name="sourceID" type="q" direction="in" />
+			<arg name="availability" type="(nn)"  direction="in"/>
+		</method>		
+		<method name="hookSinkNotificationDataChange">
+			<arg name="sinkID" type="q" direction="in" />
+			<arg name="payload" type="(nn)" direction="in" />
+		</method>
+		<method name="hookSourceNotificationDataChange">
+			<arg name="sourceID" type="q" direction="in" />
+			<arg name="payload" type="(nn)" direction="in" />
+		</method>
+		<method name="asyncUpdateSink">
+			<arg name="sinkID" type="q" direction="in" />
+			<arg name="sinkClassID" type="q" direction="in" />
+			<arg name="listSoundProperties" type="a(nn)" direction="in" />
+			<arg name="listConnectionFormats" type="a(q)" direction="in" />
+			<arg name="listMainSoundProperties" type="a(nn)" direction="in" />
+		</method>
+		<method name="asyncUpdateSource">
+			<arg name="sourceID" type="q" direction="in" />
+			<arg name="sourceClassID" type="q" direction="in" />
+			<arg name="listSoundProperties" type="a(nn)" direction="in" />
+			<arg name="listConnectionFormats" type="a(q)" direction="in" />
+			<arg name="listMainSoundProperties" type="a(nn)" direction="in" />
+		</method>
+	</interface>
+</node>

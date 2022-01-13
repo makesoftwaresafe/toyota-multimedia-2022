@@ -1,0 +1,114 @@
+'\" t
+.\" (The preceding line is a note to broken versions of man to tell
+.\" them to pre-process this man page with tbl)
+.\" Man page for skill and snice.
+.\" Licensed under version 2 of the GNU General Public License.
+.\" Written by Albert Cahalan, converted to a man page by
+.\" Michael K. Johnson
+.\"
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH SKILL 1 "październik 2011" procps\-ng "Polecenia użytkownika"
+.SH NAZWA
+skill, snice \- wysłanie sygnału lub informacja o stanie procesu
+.SH SKŁADNIA
+\fBskill\fP [\fIsygnał\fP] [\fIopcje\fP] \fIwyrażenie\fP
+.br
+\fBsnice\fP [\fInowy priorytet\fP] [\fIopcje\fP] \fIwyrażenie\fP
+.SH OPIS
+Niniejsze narzędzia są przestarzałe i nieprzenośne. Składnia poleceń jest
+słabo zdefiniowana. Zamiast nich lepiej używać poleceń killall, pkill oraz
+pgrep.
+.PP
+Domyśli sygnał dla programu skill to TERM. Listę dostępnych sygnałów można
+uzyskać przy użyciu \-l lub \-L. Szczególnie przydatne sygnały to HUP, INT,
+KILL, STOP, CONT oraz 0. Alternatywne sygnały można podać na trzy sposoby:
+\-9 \-SIGKILL \-KILL.
+.PP
+Domyślny priorytet dla programu snice to +4. Numery priorytetów są z
+przedziału +20 (najwolniej) do \-20 (najszybciej). Numery ujemne są
+zastrzeżone dla administratorów.
+.SH OPCJE
+.TP 
+\fB\-f\fP,\fB\ \-\-fast\fP
+Tryb szybki. Ta opcja nie została zaimplementowana.
+.TP 
+\fB\-i\fP,\fB\ \-\-interactive\fP
+Tryb interaktywny. Użytkownik będzie pytany o każdą akcję.
+.TP 
+\fB\-l\fP,\fB\ \-\-list\fP
+Lista wszystkich nazw sygnałów.
+.TP 
+\fB\-L\fP,\fB\ \-\-table\fP
+Lista wszystkich nazw sygnałów w ładnej tabelce.
+.TP 
+\fB\-n\fP,\fB\ \-\-no\-action\fP
+Bez akcji; wykonanie symulacji zdarzeń, które by nastąpiły, ale bez zmian w
+systemie.
+.TP 
+\fB\-v\fP,\fB\ \-\-verbose\fP
+Tryb szczegółowy; wyjaśnianie, co jest wykonywane.
+.TP 
+\fB\-w\fP,\fB\ \-\-warnings\fP
+Włączenie ostrzeżeń. Ta opcja nie została zaimplementowana.
+.TP 
+\fB\-h\fP, \fB\-\-help\fP
+Wyświetlenie tekstu pomocy i zakończenie.
+.TP 
+\fB\-V\fP, \fB\-\-version\fP
+Wyświetlenie informacji o wersji.
+.PD
+.SH "OPCJE WYBORU PROCESÓW"
+Kryterium wyboru może być: terminal, użytkownik, pid, polecenie. W celu
+zapewnienia właściwej interpretacji można użyć poniższych opcji.
+.TP 
+\fB\-t\fP, \fB\-\-tty\fP \fItty\fP
+Następne wyrażenie jest terminalem (tty lub pty).
+.TP 
+\fB\-u\fP, \fB\-\-user\fP \fIużytkownik\fP
+Następne wyrażenie jest nazwą użytkownika.
+.TP 
+\fB\-p\fP, \fB\-\-pid\fP \fIpid\fP
+Następne wyrażenie jest liczbowym identyfikatorem procesu.
+.TP 
+\fB\-c\fP, \fB\-\-command\fP \fIpolecenie\fP
+następne wyrażenie jest nazwą polecenia.
+.TP 
+\fB\-\-ns \fP\fIpid\fP
+Dopasowanie procesów należących do tej samej przestrzeni nazw, co pid.
+.TP 
+\fB\-\-nslist \fP\fIns,...\fP
+lista przestrzeni nazw uwzględnianych w opcji \-\-ns. Dostępne przestrzenie:
+ipc, mnt, net, pid, user, uts.
+.PD
+.SH SYGNAŁY
+Zachowanie sygnałów jest wyjaśnione na stronie podręcznika \fBsignal\fP(7).
+.SH PRZYKŁADY
+.TP 
+\fBsnice \-c seti \-c crack +7\fP
+Spowolnienie poleceń seti oraz crack.
+.TP 
+\fBskill \-KILL \-t /dev/pts/*\fP
+Zabicie użytkowników na urządzeniach PTY.
+.TP 
+\fBskill \-STOP \-u viro \-u lm \-u davem\fP
+Zatrzymanie trzech użytkowników.
+.SH "ZOBACZ TAKŻE"
+\fBkill\fP(1), \fBkill\fP(2), \fBkillall\fP(1), \fBnice\fP(1), \fBpkill\fP(1),
+\fBrenice\fP(1), \fBsignal\fP(7)
+.SH STANDARDY
+Żadne standardy nie dotyczą tych poleceń.
+.SH AUTOR
+.UR albert@users.sf.net
+Albert Cahalan
+.UE
+napisał programy skill i
+snice w roku 1999 jako zamiennik wersji nie będących oprogramowaniem
+wolnodostępnym.
+.SH "ZGŁASZANIE BŁĘDÓW"
+Zgłoszenia błędów prosimy wysyłać na adres
+.UR procps@freelists.org
+.UE

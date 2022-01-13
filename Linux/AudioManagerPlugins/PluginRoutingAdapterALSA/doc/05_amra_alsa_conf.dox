@@ -1,0 +1,306 @@
+/*!
+\page configuration_file Configuration File alsa.xml
+\c alsa.xml file is the XML configuration file which is read by the DB Management component as shown in the \ref architecture_overview.
+The file will be deployed by default to /usr/local/etc/audiomanager/routing. The position can be changed through CMAKE flag <b>CONFIG_PREFIX</b>.
+Please read README.md for further information.
+
+\section overview_xml Overview
+ 
+The content of this file will be parsed and will generate the associated DB Structure for the specified entities along with their properties.\n
+The XML file must follow this tree:
+\image html xml_tree.png
+
+Please see also <a href="http://docs.projects.genivi.org/AudioManager/">http://docs.projects.genivi.org/AudioManager/</a> for a deeper explaination of concepts regarding Domain, Source, Sink, Gateway and SoundProperty. The Proxy idea is instead from the Routing Adapter only and it is the way to interact with the low level audio callings (e.g. ALSA, a customized version, JACK, PulseAudio, etc.) and is already described in detail in the \ref architecture_overview , mainly in the Streaming Control section.
+
+\subsection amra_alsa_tag <amra_alsa>
+This is a mandatory tag, file must start with <amra_alsa> and end with </amra_alsa>\n\n
+\ref example
+
+\subsection domain_tag <tDOMAIN>
+This tag must be child of \c <amra_alsa>\n
+It is possible to configure Domains with such tags.
+<table>
+<caption id="domain_table" align="top">&lt;tDOMAIN&gt; Attributes</caption>
+<tr><th>Attribute<th>Type<th>Default<th>Description
+<tr><td>\c domNam<td>String<td>""<td>The name of the domain
+<tr><td>\c domID<td>uint16_t<td>0<td>The domain ID
+<tr><td>\c busNam<td>String<td>ALSARoutingPlugin<td>The busname. This is equal to a plugin name and is used to dispatch messages to the elements of a plugin
+<tr><td>\c nodNam<td>String<td>""<td>The name of the node
+<tr><td>\c early<td>Bool<td>false<td>Indicates if the domain is independent at startup or not
+<tr><td>\c state<td>Enum<td>DS_CONTROLLED<td>The current domain state. Possible values:
+<ul>
+<li> 0 - DS_UNKNOWN
+<li> 1 - DS_CONTROLLED
+<li> 2 - DS_INDEPENDENT_STARTUP
+<li> 3 - DS_INDEPENDENT_RUNDOWN
+</ul>
+<tr><td>\c pxyNam<td>String<td>""<td>The name of the Proxy to be used by the whole Domain. With default settings, the \c RoutingAdapterALSA will attempt to open \c /usr/lib/audiomanager/streaming/lib[specified_proxy].so . It is possible to change the path with the command line option \c -P and through this XML attribute is possible to specify the name of the proxy shared library
+</table>
+\n\n
+\ref example
+
+\subsection source_tag <tSOURCE>
+This tag must be child of a \c <tDOMAIN>
+\n
+It is possible to configure Sources with such tags.
+<table>
+<caption id="source_table" align="top">&lt;tSOURCE&gt; Attributes</caption>
+<tr><th>Attribute<th>Type<th>Default<th>Description
+<tr><td>\c domNam<td>String<td>Belonging Domain<td>The name of the belonging domain
+<tr><td>\c devTyp<td>Enum<td>DPS_REAL<td>The device type. Possible options:
+<ul>
+<li> 0 - DPS_VIRTUAL
+<li> 1 - DPS_REAL
+</ul>
+<tr><td>\c srcClsNam<td>String<td>""<td>The belonging Class Name
+<tr><td>\c pcmNam<td>String<td>default<td>The name of the pcm device
+<tr><td>\c volNam<td>String<td>""<td>The name of the volume
+<tr><td>\c srcID<td>uint16_t<td>0<td>This is the ID of the source, it is unique in the system. There are 2 ways, ID can be created: either it is assigned during the registration process (in a dynamic context, uniqueness will be ensured by the AudioManagerDaemon), or it is fixed (the project has to ensure the uniqueness of the ID)
+<tr><td>\c domID<td>uint16_t<td>0<td>The belonging domain ID
+<tr><td>\c srcNam<td>String<td>""<td>The source name. Must be unique in the whole system
+<tr><td>\c srcClsID<td>uint16_t<td>1<td>The belonging Class ID. This information can be used by the Controller to implement different behaviours for different classes
+<tr><td>\c scrStat<td>Enum<td>SS_OFF | SS_UNKNNOWN<td>Indicates if the source is actively heard or not. The source can use this information to implement features like automatic spin down of CD's in case the CD is not active, or AF following of a tuner that is not actively heard. The source state is set by the AudioManagerController. Possible options:
+<ul>
+<li> 0 - SS_UNKNNOWN (!)
+<li> 1 - SS_ON
+<li> 2 - SS_OFF
+<li> 3 - SS_PAUSED
+</ul>
+When a source is set to be SS_UNKNNOWN, it will not receive SetSourceState from the Controller.
+<tr><td>\c volume<td>int16_t<td>AM_MUTE<td>The source volume. It is set by the AudioManagerController. It is use to adopt different audiolevels in a system and mixing of sources (e.g. navigation hints & music)
+<tr><td>\c visible<td>Bool<td>true<td>The source visibility to the Command Interface. If the user must have the possibility to choose the source in the HMI, it must be visible. But there are also good reasons for invisible sources, for example if the source is part of a crossfader or gateway. HMI relevant changes in visible sources will be automatically reported by the daemon to the Command Interface
+<tr><td>\c availability<td>Enum<td>A_AVAILABLE<td>The source availability. There are several reasons why a source could be not available for the moment. For example a CD player which has no CD entered in the slot can be unavailable, or a USB player with no or unreadable stick attached. Other scenarios involve the shutdown of a source because of overtemperature or over/under voltage. Possible options:
+<ul>
+<li> 0 - A_UNKNOWN
+<li> 1 - A_AVAILABLE
+<li> 2 - A_UNAVAILABLE
+</ul>
+<tr><td>\c availabilityReason<td>Enum<td>AR_UNKNOWN<td>The source availabilityReason. Possible options:
+<ul>
+<li> 0 - AR_UNKNOWN
+<li> 1 - AR_GENIVI_NEWMEDIA
+<li> 2 - AR_GENIVI_SAMEMEDIA
+<li> 3 - AR_GENIVI_NOMEDIA
+<li> 4 - AR_GENIVI_TEMPERATURE
+<li> 5 - AR_GENIVI_VOLTAGE
+<li> 6 - AR_GENIVI_ERRORMEDIA
+</ul>
+<tr><td>\c interruptState<td>Enum<td>IS_UNKNOWN<td>Some special sources can have special behaviours, so called "Low Level Interrupts". Here the status is documented. The information can be used by the AudioManagerController to react to the changes by for example lowering the volume of the mainSources. Possible options:
+<ul>
+<li> 0 - IS_UNKNOWN
+<li> 1 - IS_OFF
+<li> 2 - IS_INTERRUPTED
+</ul>
+<tr><td>\c lstConFrmt<td>Enum []<td>{CF_GENIVI_STEREO}<td>The list of connection formats which the source is capable of supporting when delivering audio. Possible options:
+<ul>
+<li> 0 - CF_UNKNOWN
+<li> 1 - CF_GENIVI_MONO
+<li> 2 - CF_GENIVI_STEREO
+<li> 3 - CF_GENIVI_ANALOG
+<li> 4 - CF_GENIVI_AUTO
+</ul>
+</table>
+\n\n
+\ref example
+
+\subsection sink_tag <tSINK>
+This tag must be child of a \c <tDOMAIN>
+\n
+It is possible to configure Sinks with such tags.
+<table>
+<caption id="sink_table" align="top">&lt;tSINK&gt; Attributes</caption>
+<tr><th>Attribute<th>Type<th>Default<th>Description
+<tr><td>\c domNam<td>String<td>Belonging Domain<td>The name of the belonging domain
+<tr><td>\c devTyp<td>Enum<td>DPS_REAL<td>The device type. Possible options:
+<ul>
+<li> 0 - DPS_VIRTUAL
+<li> 1 - DPS_REAL
+</ul>
+<tr><td>\c sinkClsNam<td>String<td>""<td>The belonging Class Name
+<tr><td>\c pcmNam<td>String<td>default<td>The name of the pcm device
+<tr><td>\c volNam<td>String<td>""<td>The name of the volume
+<tr><td>\c sinkID<td>uint16_t<td>0<td>This is the ID of the sink, it is unique in the system. There are 2 ways, ID can be created: either it is assigned during the registration process (in a dynamic context, uniqueness will be ensured by the AudioManagerDaemon), or it is fixed (the project has to ensure the uniqueness of the ID)
+<tr><td>\c domID<td>uint16_t<td>0<td>The belonging domain ID
+<tr><td>\c sinkNam<td>String<td>""<td>The sink name. Must be unique in the whole system
+<tr><td>\c sinkClsID<td>uint16_t<td>1<td>The belonging Class ID. This information can be used by the Controller to implement different behaviours for different classes
+<tr><td>\c volume<td>int16_t<td>AM_MUTE<td>The sink volume. It is set by the AudioManagerController
+<tr><td>\c visible<td>Bool<td>true<td>The sink visibility to the Command Interface. If the user must have the possibility to choose the sink in the HMI, it must be visible. But there are also good reasons for invisible sinks, for example if the sink is part of a crossfader or gateway. HMI relevant changes in visible sinks will be automatically reported by the daemon to the Command Interface
+<tr><td>\c availability<td>Enum<td>A_AVAILABLE<td>The sink availability. There are several reasons why a sink could be not available for the moment: for example the shutdown of a sink because of overtemperature or over/under voltage. Possible options:
+<ul>
+<li> 0 - A_UNKNOWN
+<li> 1 - A_AVAILABLE
+<li> 2 - A_UNAVAILABLE
+</ul>
+<tr><td>\c availabilityReason<td>Enum<td>AR_UNKNOWN<td>The sink availabilityReason. Possible options:
+<ul>
+<li> 0 - AR_UNKNOWN
+<li> 1 - AR_GENIVI_NEWMEDIA
+<li> 2 - AR_GENIVI_SAMEMEDIA
+<li> 3 - AR_GENIVI_NOMEDIA
+<li> 4 - AR_GENIVI_TEMPERATURE
+<li> 5 - AR_GENIVI_VOLTAGE
+<li> 6 - AR_GENIVI_ERRORMEDIA
+</ul>
+<tr><td>\c muteState<td>Enum<td>MS_MUTED<td>This attribute reflects the muteState of the sink. The information is not the "real" state of the sink, but the HMI representation for the CommandInterface controlled by the AudioManagerController. Possible options:
+<ul>
+<li> 0 - MS_UNKNOWN
+<li> 1 - MS_MUTED
+<li> 2 - MS_UNMUTED
+</ul>
+<tr><td>\c mainVolume<td>int16_t<td>AM_MUTE<td>This is the representation of the Volume for the CommandInterface. It is used by the HMI to set the volume of a sink, the AudioManagerController has to transform this into real sink volume
+<tr><td>\c lstConFrmt<td>Enum []<td>{CF_GENIVI_STEREO}<td>The list of connection formats which the sink is capable of supporting when delivering audio. Possible options:
+<ul>
+<li> 0 - CF_UNKNOWN
+<li> 1 - CF_GENIVI_MONO
+<li> 2 - CF_GENIVI_STEREO
+<li> 3 - CF_GENIVI_ANALOG
+<li> 4 - CF_GENIVI_AUTO
+</ul>
+</table>
+\n\n
+\ref example
+
+\subsection gateway_tag <tGATEWAY>
+This tag can be child of a \c <tDOMAIN>, \c <tSOURCE>, or \c <tSINK>
+\n
+It is possible to configure Gateways with such tags. Gateways connect different Domains. Gateways follow a Master-Slave pattern: for example, a Gateway from a Sink is addressed to a Source, so it will have a \c srcNam attribute specified as a Sink's child.
+<table>
+<caption id="gateway_table" align="top">&lt;tGATEWAY&gt; Attributes</caption>
+<tr><th>Attribute<th>Type<th>Default<th>Description
+<tr><td>\c ctrlDomNam<td>String<td>Belonging Domain<td>The name of the belonging domain. Taken from the source or from the sink, depending on who is requesting the Gateway
+<tr><td>\c srcNam<td>String<td>SourceName Invoking<td>The name of the source invoking the Gateway
+<tr><td>\c sinkNam<td>String<td>SinkName Invoking<td>The name of the sink invoking the Gateway
+<tr><td>\c srcDomNam<td>String<td>Source's Domain Invoking<td>The name of the source's Domain invoking the Gateway
+<tr><td>\c sinkDomNam<td>String<td>Sink's Domain Invoking<td>The name of the sink's Domain invoking the Gateway
+<tr><td>\c gatewayNam<td>String<td>""<td>The name of the gateway. Must be unique in the whole system
+<tr><td>\c gatewayID<td>uint16_t<td>0<td>This is the ID of the gateway, it is unique in the system. There are 2 ways, ID can be created: either it is assigned during the registration process (in a dynamic context, uniqueness will be ensured by the AudioManagerDaemon), or it is fixed (the project has to ensure the uniqueness of the ID)
+<tr><td>\c lstSrcFrmt<td>Enum []<td>{CF_GENIVI_STEREO}<td>The list of available formats on the source side of the gateway. It is not defined during the gateway registration but copied from the source registration. Possible options:
+<ul>
+<li> 0 - CF_UNKNOWN
+<li> 1 - CF_GENIVI_MONO
+<li> 2 - CF_GENIVI_STEREO
+<li> 3 - CF_GENIVI_ANALOG
+<li> 4 - CF_GENIVI_AUTO
+</ul>
+<tr><td>\c lstSnkFrmt<td>Enum []<td>{CF_GENIVI_STEREO}<td>The list of available formats on the sink side of the gateway. It is not defined during the gateway registration but copied from the sink registration. Possible options:
+<ul>
+<li> 0 - CF_UNKNOWN
+<li> 1 - CF_GENIVI_MONO
+<li> 2 - CF_GENIVI_STEREO
+<li> 3 - CF_GENIVI_ANALOG
+<li> 4 - CF_GENIVI_AUTO
+</ul>
+<tr><td>\c convertionMatrix<td>Bool []<td>{false}<td>This is the vector holding information about the conversion capability of the gateway, its length is defined by the length(listSinkFormats) x length(listSourceFormats). If a SinkFormat can be converted into a SourceFormat, the matrix will hold a 1, if no conversion is possible, a 0. The data is stored row oriented, where the rows are related to the sinksFormats and the columns to the sourcesFromats. The first value will hold the conversion information about the first sourceFormat to the first sinkFormat, for example. The seventh value will hold the conversion information about the 3rd sinkFormat to the 1st sourceFormat in the case we had 3 sourceFormats. The vector<br/>110 011 000 111 001<br/>is
+<table>
+<tr><th>Source<br/>i<br/>n<br/>k<th>1<th>2<th>3
+<tr><th>1<td>1<td>1<td>0
+<tr><th>2<td>0<td>1<td>1
+<tr><th>3<td>0<td>0<td>0
+<tr><th>4<td>1<td>1<td>1
+<tr><th>5<td>0<td>0<td>1
+</table>
+</table>
+\n\n
+\ref example
+
+\subsection proxy_tag <tPROXY>
+This tag can be child of a \c <tDOMAIN>
+\n
+It is possible to configure the Proxy through this node. Such settings will trigger low level interaction with the underlying backend.
+<table>
+<caption id="proxy_table" align="top">&lt;tPROXY&gt; Attributes</caption>
+<tr><th>Attribute<th>Type<th>Default<th>Description
+<tr><td>\c domNam<td>String<td>Belonging Domain<td>The name of the belonging domain 
+<tr><td>\c srcNam<td>String<td>""<td>The name of the source related to the Proxy
+<tr><td>\c sinkNam<td>String<td>""<td>The name of the sink related to the Proxy
+<tr><td>\c pxyNam<td>String<td>""<td>The name of the Proxy to be used for this Proxy instance. With default settings, the \c RoutingAdapterALSA will attempt to open \c /usr/lib/audiomanager/streaming/lib[specified_proxy].so . It is possible to change the path with the command line option \c -P and through this XML attribute is possible to specify the name of the proxy shared library
+<tr><td>\c dftConv<td>uint32_t []<td>{1}<td>The default convertion matrix, see \ref gateway_tag for more details on convertion matrix
+<tr><td>\c lstChannels<td>uint32_t []<td>{2}<td>List of possible channels to be set
+<tr><td>\c lstPcmFmts<td>uint32_t []<td>{SND_PCM_FORMAT_S16_LE}<td>List of possible formats to be set
+<tr><td>\c lstRates<td>uint32_t []<td>{48000}<td>List of possible rates to be set
+<tr><td>\c pcmSrc<td>String<td>""<td>The name of the PCM device associated to source
+<tr><td>\c pcmSink<td>String<td>""<td>The name of the PCM device associated to sink
+<tr><td>\c duplex<td>uint8_t<td>0<td>When different than 0, will try and use ALSA in Full duplex mode
+<tr><td>\c msBuffersize<td>uint16_t<td>0<td>The amount of milliseconds for the desired buffer. Final value can be different due to hardware restrictions
+<tr><td>\c msPrefill<td>uint16_t<td>0<td>The amount of milliseconds for the Prefill buffer. It is a 0 filled buffer injected into the ALSA Ring Buffer in order to align audio streaming, so it's used for example when starting streaming and when recovering from an Xrun
+<tr><td>\c msInitTimeout<td>uint16_t<td>1000<td>The amount of milliseconds for the Initial Timeout parameter. A Proxy can use this value in order to wait for long enough for a connection to be established.
+<tr><td>\c CPUSchedulingPolicy<td>int32_t<td>0 = SCHED_OTHER<td>Parameter used by \c pthread_setschedparam , user will likely assign high priority to the audio processing thread
+<tr><td>\c CPUSchedulingPriority<td>int32_t<td>0<td>Parameter used by \c pthread_setschedparam , user will likely assign high priority to the audio processing thread
+</table>
+\n\n
+\ref example
+
+\subsection property_tag <tPROPERTY>
+This tag can be child of a \c <tSOURCE> or \c <tSINK>
+\n
+It is possible to define different sets of collections of mixers' volume or Enum and then switch among them easily by issuing a SetSoundProperty.
+<table>
+<caption id="property_table" align="top">&lt;tPROPERTY&gt; Attributes</caption>
+<tr><th>Attribute<th>Type<th>Default<th>Description
+<tr><td>\c type<td>uint16_t<td>Progressive Counter<td>The type of the set, that is a number encapsulating the following \ref property_specification_tag
+<tr><td>\c visibility<td>Enum<td>SPV_NONE<td>Sets the visibility for the Sound Property:
+<ul>
+<li> 0 - SPV_NONE
+<li> 1 - SPV_MAIN
+<li> 2 - SPV_BOTH
+</ul>
+When a SoundProperty is only a MainSoundProperty (Application is aware of it), SPV_MAIN should be specified. When a SoundProperty is meant to be used both from Application and RoutingAdapterALSA, then SPV_BOTH has to be specified. If the SoundProperty is for RoutingAdapterALSA only, then SPV_NONE must be specified. 
+</table>
+\n\n
+\ref example
+
+\subsection property_specification_tag <tPROPSPEC>
+This tag must be child of a \c <tPROPERTY>
+\n
+It is possible to define different sets of collections of mixers' volume or Enum and then switch among them easily by issuing a SetSoundProperty.
+<table>
+<caption id="property_specification_table" align="top">&lt;tPROPSPEC&gt; Attributes</caption>
+<tr><th>Attribute<th>Type<th>Default<th>Description
+<tr><td>\c value<td>uint16_t<td>Progressive Counter<td>The value of the set, that is a number encapsulating the following \c namsVals
+<tr><td>\c namsVals<td>struct{string,string}[]<td>"",""<td>The collection of Mixer names, followed by comma, versus volume or Enum, each of these pairs separated by semicolon. The given \ref example is easier to understand
+</table>
+\n\n
+\ref example
+
+\section example Example Configuration File
+File: \c /etc/audiomanager/routing/alsa.xml
+\code
+<amra_alsa>
+
+<!-- Beginning of Domain Applications device info -->
+<tDOMAIN domNam = "Applications" nodNam = "Cpu">
+    <!-- source info -->
+    <tSOURCE srcNam = "MediaPlayer" srcID = "1" srcClsNam = "BASE" pcmNam = "vdev_app_mediaplayer" volNam = "vol_mediaplayer" devTyp = "0">
+        <tPROPERTY type = "1">
+            <tPROPSPEC value = "1" namsVals = "vol_mediaplayer, 50; ADC High-Pass Filter, High Pass;"> </tPROPSPEC>
+            <tPROPSPEC value = "2" namsVals = "vol_mediaplayer, 200; ADC High-Pass Filter, None;"> </tPROPSPEC>
+        </tPROPERTY>
+    </tSOURCE>
+    <tSOURCE srcNam = "Navigation" srcID = "2" srcClsNam = "NAVI" pcmNam = "vdev_app_interrupt" volNam = "vol_interrupt" devTyp = "0" > </tSOURCE>
+    <!-- sink 1 info -->
+    <tSINK sinkNam = "Gateway0" sinkClsNam = "BASE" visible = "0" devTyp = "0">
+        <!-- gateway info -->
+        <tGATEWAY gatewayNam = "Gateway0" srcNam = "Gateway0" srcDomNam = "VirtDSP" lstSrcFrmt = "2" lstSinkFrmt = "2" convertionMatrix = "1"> </tGATEWAY>
+    </tSINK>
+    <!-- sink 2 info -->
+    <tSINK  sinkNam = "Gateway1" sinkClsNam = "NAVI" visible = "0" devTyp = "0">
+        <!-- gateway info -->
+        <tGATEWAY gatewayNam = "Gateway1" srcNam = "Gateway1" srcDomNam = "VirtDSP" lstSrcFrmt = "2" lstSinkFrmt = "2" convertionMatrix = "1"> </tGATEWAY>
+    </tSINK>
+</tDOMAIN> <!-- end of Domain Applications device info -->
+
+<!-- Beginning of Domain VirtDSP device info -->
+<!-- <tDOMAIN domNam = "VirtDSP" nodNam = "Cpu" proxy = "CustomAudioProxy"> -->
+<tDOMAIN domNam = "VirtDSP" nodNam = "Cpu">
+    <!-- source info -->
+    <tSOURCE srcNam = "Gateway0" srcClsNam = "BASE" visible = "0"> </tSOURCE>
+    <tSOURCE srcNam = "Gateway1" srcClsNam = "NAVI" visible = "0"> </tSOURCE>
+    <!-- sink info -->
+    <tSINK  sinkNam = "AMP" sinkID = "1" pcmNam = "vdev_dsp_amp"> </tSINK>
+    <!-- proxy info - for CPUSchedulingPolicy see sched_setscheduler(2) -->
+    <tPROXY srcNam = "Gateway0" sinkNam = "AMP" pcmSrc = "vdev_dsp_gateway_0" pcmSink = "vdev_dsp_amp" lstRates = "48000" msBuffersize = "8" msPrefill = "16" CPUSchedulingPolicy = "1" CPUSchedulingPriority = "80"> </tPROXY>
+    <tPROXY srcNam = "Gateway1" sinkNam = "AMP" pcmSrc = "vdev_dsp_gateway_1" pcmSink = "vdev_dsp_amp" lstRates = "48000" msBuffersize = "8" msPrefill = "16" CPUSchedulingPolicy = "1" CPUSchedulingPriority = "80">	</tPROXY>
+</tDOMAIN> <!-- End of Domain VirtDSP device info -->
+</amra_alsa>
+\endcode
+ */

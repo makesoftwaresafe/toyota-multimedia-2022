@@ -1,0 +1,43 @@
+/**
+@page clsGrouping Reducing the number of Policies
+
+    In modern automotive infotainment systems, the number of Audio sources/sinks have exponentially 
+ increased. As a result, specifying the connection rules using sources/sinks may result in a 
+ a huge matrix. In this section we would like to suggest couple of ideas which can be used to reduce
+ the number of policies.
+ 
+
+<h4>Grouping using classes</h4>  
+    The source and sinks can be grouped in the class. Instead of specifying the policy for each 
+and every source, user can use class names while writing policy. This can be used to reduce the 
+number of Policies. 
+    Consider a system with following sources USBmediaplayer, CDplayer, RadioTuner, a2dpplayer, navigation,  
+reverseparkWarning, lowfuelWarning, HFPvoice etc. If we want to specify the rules for each  
+source connect request,  when already other source is connected it would be a big matrix. Instead 
+we can classify the sources  based on the class, say sources like USBmediaplayer,  CDplayer, 
+RadioTuner and a2dpplayer belong  to class BASE. sources navigation,  reverseparkingWarning and 
+lowfuelWarning belong to class  called as INTERRUPT and HFPvoice belong  to class PHONE. Now 
+instead of a big matrix we can write  the policy in very few lines
+- if connection of class INTERRUPT is requested and BASE is present then reduce the volume
+ of BASE class.
+- if connection of class phone is requested and the connection of INTERRUPT or BASE is 
+ present then disconnect INTERRUPT, push the BASE to queue and connect PHONE. The 
+ BASE is pushed means, the connection of BASE is disconnected but still remembered,
+ later on when PHONE is disconnected BASE can be popped back(or connected)again.
+  
+As seen in the example, the redundancy in the policy can be reduced, this also helps to 
+change/maintain the policies very easily during the product development.
+
+<h4>Use of Priority</h4>
+   Another idea is to assign priority to each source and sink and use the priority for writing the
+policy.
+
+    Consider the above example in addition to defining classes we assign priorities to the sources. 
+Lets say USBmediaplayer, CDplayer, RadioTuner and a2dpplayer have a priority 51. navigation, 
+ reverseparkingWarning and lowfuelWarning have a priority of 50 and HFPVoice has a priority of 49.
+ Now its possible to write the policies like
+- If requesting source priority is equal to the existing then remove existing and connect requesting. 
+- If requesting source priority is less than existing then limit the connection.
+- if priority 49 connection exists then refuse any priority 50 connection.
+
+*/

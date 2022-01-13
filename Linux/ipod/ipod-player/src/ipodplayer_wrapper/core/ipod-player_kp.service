@@ -1,0 +1,15 @@
+[Unit]
+Description=iPodPlayerCore Daemon service
+DefaultDependencies=no
+After=sysinit.target
+Requires=sysinit.target
+
+[Service]
+Type=simple
+StandardOutput=syslog+console
+StandardOutput=tty
+StandardError=tty
+ExecStart=/bin/iPodPlayerCore.out
+
+[Install]
+WantedBy=multi-user.target

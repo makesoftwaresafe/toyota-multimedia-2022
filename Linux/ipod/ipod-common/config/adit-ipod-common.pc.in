@@ -1,0 +1,12 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${exec_prefix}/lib@LIB_INSTALL_SUFFIX@
+includedir=${prefix}/include/adit-components
+
+Name: @PROJECT_NAME@
+Description: @PROJECT_DESCRIPTION@
+Version: @PROJECT_VERSION@
+
+Requires:
+Libs: -L${libdir} -l@IPOD_DLT_LOGGING_COMP_NAME@ -l@IAP2_DLT_LOGGING_COMP_NAME@ -l@PLUG_NAME_AUTHCOM@ -l@AUTH_NAME@ -l@IAP2_USB_ROLE_SWITCH_COMP_NAME@
+Cflags: -I${includedir}

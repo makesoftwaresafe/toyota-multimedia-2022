@@ -1,0 +1,851 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>soup-status: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch02.html" title="Core API">
+<link rel="prev" href="SoupSessionSync.html" title="SoupSessionSync">
+<link rel="next" href="libsoup-2.4-Top-Level-Domain-utils.html" title="Top Level Domain utils">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-soup-status.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="SoupSessionSync.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libsoup-2.4-Top-Level-Domain-utils.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libsoup-2.4-soup-status"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libsoup-2.4-soup-status.top_of_page"></a>soup-status</span></h2>
+<p>soup-status — HTTP (and libsoup) status codes</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libsoup-2.4-soup-status.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-IS-TRANSPORT-ERROR:CAPS" title="SOUP_STATUS_IS_TRANSPORT_ERROR()">SOUP_STATUS_IS_TRANSPORT_ERROR</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-IS-INFORMATIONAL:CAPS" title="SOUP_STATUS_IS_INFORMATIONAL()">SOUP_STATUS_IS_INFORMATIONAL</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-IS-SUCCESSFUL:CAPS" title="SOUP_STATUS_IS_SUCCESSFUL()">SOUP_STATUS_IS_SUCCESSFUL</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-IS-REDIRECTION:CAPS" title="SOUP_STATUS_IS_REDIRECTION()">SOUP_STATUS_IS_REDIRECTION</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-IS-CLIENT-ERROR:CAPS" title="SOUP_STATUS_IS_CLIENT_ERROR()">SOUP_STATUS_IS_CLIENT_ERROR</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-IS-SERVER-ERROR:CAPS" title="SOUP_STATUS_IS_SERVER_ERROR()">SOUP_STATUS_IS_SERVER_ERROR</a><span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-soup-status.html#soup-status-get-phrase" title="soup_status_get_phrase ()">soup_status_get_phrase</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-soup-status.html#soup-status-proxify" title="soup_status_proxify ()">soup_status_proxify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-soup-status.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-soup-status.html#SoupStatus" title="enum SoupStatus">SoupStatus</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-soup-status.html#SOUP-HTTP-ERROR:CAPS" title="SOUP_HTTP_ERROR">SOUP_HTTP_ERROR</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-soup-status.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-soup-status.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-soup-status.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="SOUP-STATUS-IS-TRANSPORT-ERROR:CAPS"></a><h3>SOUP_STATUS_IS_TRANSPORT_ERROR()</h3>
+<pre class="programlisting">#define SOUP_STATUS_IS_TRANSPORT_ERROR(status) ((status) &gt;  0   &amp;&amp; (status) &lt; 100)
+</pre>
+<p>Tests if <em class="parameter"><code>status</code></em>
+ is a libsoup transport error.</p>
+<div class="refsect3">
+<a name="id-1.3.24.7.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>a status code</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.24.7.2.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-STATUS-IS-INFORMATIONAL:CAPS"></a><h3>SOUP_STATUS_IS_INFORMATIONAL()</h3>
+<pre class="programlisting">#define SOUP_STATUS_IS_INFORMATIONAL(status)   ((status) &gt;= 100 &amp;&amp; (status) &lt; 200)
+</pre>
+<p>Tests if <em class="parameter"><code>status</code></em>
+ is an Informational (1xx) response.</p>
+<div class="refsect3">
+<a name="id-1.3.24.7.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>an HTTP status code</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.24.7.3.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-STATUS-IS-SUCCESSFUL:CAPS"></a><h3>SOUP_STATUS_IS_SUCCESSFUL()</h3>
+<pre class="programlisting">#define SOUP_STATUS_IS_SUCCESSFUL(status)      ((status) &gt;= 200 &amp;&amp; (status) &lt; 300)
+</pre>
+<p>Tests if <em class="parameter"><code>status</code></em>
+ is a Successful (2xx) response.</p>
+<div class="refsect3">
+<a name="id-1.3.24.7.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>an HTTP status code</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.24.7.4.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-STATUS-IS-REDIRECTION:CAPS"></a><h3>SOUP_STATUS_IS_REDIRECTION()</h3>
+<pre class="programlisting">#define SOUP_STATUS_IS_REDIRECTION(status)     ((status) &gt;= 300 &amp;&amp; (status) &lt; 400)
+</pre>
+<p>Tests if <em class="parameter"><code>status</code></em>
+ is a Redirection (3xx) response.</p>
+<div class="refsect3">
+<a name="id-1.3.24.7.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>an HTTP status code</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.24.7.5.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-STATUS-IS-CLIENT-ERROR:CAPS"></a><h3>SOUP_STATUS_IS_CLIENT_ERROR()</h3>
+<pre class="programlisting">#define SOUP_STATUS_IS_CLIENT_ERROR(status)    ((status) &gt;= 400 &amp;&amp; (status) &lt; 500)
+</pre>
+<p>Tests if <em class="parameter"><code>status</code></em>
+ is a Client Error (4xx) response.</p>
+<div class="refsect3">
+<a name="id-1.3.24.7.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>an HTTP status code</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.24.7.6.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-STATUS-IS-SERVER-ERROR:CAPS"></a><h3>SOUP_STATUS_IS_SERVER_ERROR()</h3>
+<pre class="programlisting">#define SOUP_STATUS_IS_SERVER_ERROR(status)    ((status) &gt;= 500 &amp;&amp; (status) &lt; 600)
+</pre>
+<p>Tests if <em class="parameter"><code>status</code></em>
+ is a Server Error (5xx) response.</p>
+<div class="refsect3">
+<a name="id-1.3.24.7.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status</p></td>
+<td class="parameter_description"><p>an HTTP status code</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.24.7.7.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-status-get-phrase"></a><h3>soup_status_get_phrase ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_status_get_phrase (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> status_code</code></em>);</pre>
+<p>Looks up the stock HTTP description of <em class="parameter"><code>status_code</code></em>
+. This is used
+by <a class="link" href="SoupMessage.html#soup-message-set-status" title="soup_message_set_status ()"><code class="function">soup_message_set_status()</code></a> to get the correct text to go with a
+given status code.</p>
+<p><span class="emphasis"><em>There is no reason for you to ever use this
+function.</em></span> If you wanted the textual description for the
+<a class="link" href="SoupMessage.html#SoupMessage--status-code" title="The “status-code” property"><span class="type">“status_code”</span></a> of a given <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>, you should just
+look at the message's <a class="link" href="SoupMessage.html#SoupMessage--reason-phrase" title="The “reason-phrase” property"><span class="type">“reason_phrase”</span></a>. However, you
+should only do that for use in debugging messages; HTTP reason
+phrases are not localized, and are not generally very descriptive
+anyway, and so they should never be presented to the user directly.
+Instead, you should create you own error messages based on the
+status code, and on what you were trying to do.</p>
+<div class="refsect3">
+<a name="id-1.3.24.7.8.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status_code</p></td>
+<td class="parameter_description"><p>an HTTP status code</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.24.7.8.7"></a><h4>Returns</h4>
+<p> the (terse, English) description of <em class="parameter"><code>status_code</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-status-proxify"></a><h3>soup_status_proxify ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+soup_status_proxify (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> status_code</code></em>);</pre>
+<p>Turns <a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-CANT-RESOLVE:CAPS"><code class="literal">SOUP_STATUS_CANT_RESOLVE</code></a> into
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-CANT-RESOLVE-PROXY:CAPS"><code class="literal">SOUP_STATUS_CANT_RESOLVE_PROXY</code></a> and <a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-CANT-CONNECT:CAPS"><code class="literal">SOUP_STATUS_CANT_CONNECT</code></a> into
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-CANT-CONNECT-PROXY:CAPS"><code class="literal">SOUP_STATUS_CANT_CONNECT_PROXY</code></a>. Other status codes are passed
+through unchanged.</p>
+<div class="refsect3">
+<a name="id-1.3.24.7.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>status_code</p></td>
+<td class="parameter_description"><p>a status code</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.24.7.9.6"></a><h4>Returns</h4>
+<p> the "proxified" equivalent of <em class="parameter"><code>status_code</code></em>
+.</p>
+</div>
+<p class="since">Since: 2.26</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-soup-status.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupStatus"></a><h3>enum SoupStatus</h3>
+<p>These represent the known HTTP status code values, plus various
+network and internal errors.</p>
+<p>Note that no libsoup functions take or return this type directly;
+any function that works with status codes will accept unrecognized
+status codes as well.</p>
+<p>Prior to 2.44 this type was called
+<code class="literal">SoupKnownStatusCode</code>, but the individual values
+have always had the names they have now.</p>
+<div class="refsect3">
+<a name="id-1.3.24.8.2.6"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NONE:CAPS"></a>SOUP_STATUS_NONE</p></td>
+<td class="enum_member_description">
+<p>No status available. (Eg, the message has not
+been sent yet)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-CANCELLED:CAPS"></a>SOUP_STATUS_CANCELLED</p></td>
+<td class="enum_member_description">
+<p>Message was cancelled locally</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-CANT-RESOLVE:CAPS"></a>SOUP_STATUS_CANT_RESOLVE</p></td>
+<td class="enum_member_description">
+<p>Unable to resolve destination host name</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-CANT-RESOLVE-PROXY:CAPS"></a>SOUP_STATUS_CANT_RESOLVE_PROXY</p></td>
+<td class="enum_member_description">
+<p>Unable to resolve proxy host name</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-CANT-CONNECT:CAPS"></a>SOUP_STATUS_CANT_CONNECT</p></td>
+<td class="enum_member_description">
+<p>Unable to connect to remote host</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-CANT-CONNECT-PROXY:CAPS"></a>SOUP_STATUS_CANT_CONNECT_PROXY</p></td>
+<td class="enum_member_description">
+<p>Unable to connect to proxy</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-SSL-FAILED:CAPS"></a>SOUP_STATUS_SSL_FAILED</p></td>
+<td class="enum_member_description">
+<p>SSL/TLS negotiation failed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-IO-ERROR:CAPS"></a>SOUP_STATUS_IO_ERROR</p></td>
+<td class="enum_member_description">
+<p>A network error occurred, or the other end
+closed the connection unexpectedly</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-MALFORMED:CAPS"></a>SOUP_STATUS_MALFORMED</p></td>
+<td class="enum_member_description">
+<p>Malformed data (usually a programmer error)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-TRY-AGAIN:CAPS"></a>SOUP_STATUS_TRY_AGAIN</p></td>
+<td class="enum_member_description">
+<p>Used internally</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-TOO-MANY-REDIRECTS:CAPS"></a>SOUP_STATUS_TOO_MANY_REDIRECTS</p></td>
+<td class="enum_member_description">
+<p>There were too many redirections</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-TLS-FAILED:CAPS"></a>SOUP_STATUS_TLS_FAILED</p></td>
+<td class="enum_member_description">
+<p>Used internally</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-CONTINUE:CAPS"></a>SOUP_STATUS_CONTINUE</p></td>
+<td class="enum_member_description">
+<p>100 Continue (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-SWITCHING-PROTOCOLS:CAPS"></a>SOUP_STATUS_SWITCHING_PROTOCOLS</p></td>
+<td class="enum_member_description">
+<p>101 Switching Protocols (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-PROCESSING:CAPS"></a>SOUP_STATUS_PROCESSING</p></td>
+<td class="enum_member_description">
+<p>102 Processing (WebDAV)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-OK:CAPS"></a>SOUP_STATUS_OK</p></td>
+<td class="enum_member_description">
+<p>200 Success (HTTP). Also used by many lower-level
+soup routines to indicate success.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-CREATED:CAPS"></a>SOUP_STATUS_CREATED</p></td>
+<td class="enum_member_description">
+<p>201 Created (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-ACCEPTED:CAPS"></a>SOUP_STATUS_ACCEPTED</p></td>
+<td class="enum_member_description">
+<p>202 Accepted (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NON-AUTHORITATIVE:CAPS"></a>SOUP_STATUS_NON_AUTHORITATIVE</p></td>
+<td class="enum_member_description">
+<p>203 Non-Authoritative Information
+(HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NO-CONTENT:CAPS"></a>SOUP_STATUS_NO_CONTENT</p></td>
+<td class="enum_member_description">
+<p>204 No Content (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-RESET-CONTENT:CAPS"></a>SOUP_STATUS_RESET_CONTENT</p></td>
+<td class="enum_member_description">
+<p>205 Reset Content (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-PARTIAL-CONTENT:CAPS"></a>SOUP_STATUS_PARTIAL_CONTENT</p></td>
+<td class="enum_member_description">
+<p>206 Partial Content (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-MULTI-STATUS:CAPS"></a>SOUP_STATUS_MULTI_STATUS</p></td>
+<td class="enum_member_description">
+<p>207 Multi-Status (WebDAV)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-MULTIPLE-CHOICES:CAPS"></a>SOUP_STATUS_MULTIPLE_CHOICES</p></td>
+<td class="enum_member_description">
+<p>300 Multiple Choices (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-MOVED-PERMANENTLY:CAPS"></a>SOUP_STATUS_MOVED_PERMANENTLY</p></td>
+<td class="enum_member_description">
+<p>301 Moved Permanently (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-FOUND:CAPS"></a>SOUP_STATUS_FOUND</p></td>
+<td class="enum_member_description">
+<p>302 Found (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-MOVED-TEMPORARILY:CAPS"></a>SOUP_STATUS_MOVED_TEMPORARILY</p></td>
+<td class="enum_member_description">
+<p>302 Moved Temporarily (old name,
+RFC 2068)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-SEE-OTHER:CAPS"></a>SOUP_STATUS_SEE_OTHER</p></td>
+<td class="enum_member_description">
+<p>303 See Other (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NOT-MODIFIED:CAPS"></a>SOUP_STATUS_NOT_MODIFIED</p></td>
+<td class="enum_member_description">
+<p>304 Not Modified (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-USE-PROXY:CAPS"></a>SOUP_STATUS_USE_PROXY</p></td>
+<td class="enum_member_description">
+<p>305 Use Proxy (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NOT-APPEARING-IN-THIS-PROTOCOL:CAPS"></a>SOUP_STATUS_NOT_APPEARING_IN_THIS_PROTOCOL</p></td>
+<td class="enum_member_description">
+<p>306 [Unused] (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-TEMPORARY-REDIRECT:CAPS"></a>SOUP_STATUS_TEMPORARY_REDIRECT</p></td>
+<td class="enum_member_description">
+<p>307 Temporary Redirect (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-BAD-REQUEST:CAPS"></a>SOUP_STATUS_BAD_REQUEST</p></td>
+<td class="enum_member_description">
+<p>400 Bad Request (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-UNAUTHORIZED:CAPS"></a>SOUP_STATUS_UNAUTHORIZED</p></td>
+<td class="enum_member_description">
+<p>401 Unauthorized (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-PAYMENT-REQUIRED:CAPS"></a>SOUP_STATUS_PAYMENT_REQUIRED</p></td>
+<td class="enum_member_description">
+<p>402 Payment Required (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-FORBIDDEN:CAPS"></a>SOUP_STATUS_FORBIDDEN</p></td>
+<td class="enum_member_description">
+<p>403 Forbidden (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NOT-FOUND:CAPS"></a>SOUP_STATUS_NOT_FOUND</p></td>
+<td class="enum_member_description">
+<p>404 Not Found (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-METHOD-NOT-ALLOWED:CAPS"></a>SOUP_STATUS_METHOD_NOT_ALLOWED</p></td>
+<td class="enum_member_description">
+<p>405 Method Not Allowed (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NOT-ACCEPTABLE:CAPS"></a>SOUP_STATUS_NOT_ACCEPTABLE</p></td>
+<td class="enum_member_description">
+<p>406 Not Acceptable (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-PROXY-AUTHENTICATION-REQUIRED:CAPS"></a>SOUP_STATUS_PROXY_AUTHENTICATION_REQUIRED</p></td>
+<td class="enum_member_description">
+<p>407 Proxy Authentication
+Required (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-PROXY-UNAUTHORIZED:CAPS"></a>SOUP_STATUS_PROXY_UNAUTHORIZED</p></td>
+<td class="enum_member_description">
+<p>shorter alias for
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-PROXY-AUTHENTICATION-REQUIRED:CAPS"><code class="literal">SOUP_STATUS_PROXY_AUTHENTICATION_REQUIRED</code></a></p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-REQUEST-TIMEOUT:CAPS"></a>SOUP_STATUS_REQUEST_TIMEOUT</p></td>
+<td class="enum_member_description">
+<p>408 Request Timeout (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-CONFLICT:CAPS"></a>SOUP_STATUS_CONFLICT</p></td>
+<td class="enum_member_description">
+<p>409 Conflict (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-GONE:CAPS"></a>SOUP_STATUS_GONE</p></td>
+<td class="enum_member_description">
+<p>410 Gone (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-LENGTH-REQUIRED:CAPS"></a>SOUP_STATUS_LENGTH_REQUIRED</p></td>
+<td class="enum_member_description">
+<p>411 Length Required (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-PRECONDITION-FAILED:CAPS"></a>SOUP_STATUS_PRECONDITION_FAILED</p></td>
+<td class="enum_member_description">
+<p>412 Precondition Failed (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-REQUEST-ENTITY-TOO-LARGE:CAPS"></a>SOUP_STATUS_REQUEST_ENTITY_TOO_LARGE</p></td>
+<td class="enum_member_description">
+<p>413 Request Entity Too Large
+(HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-REQUEST-URI-TOO-LONG:CAPS"></a>SOUP_STATUS_REQUEST_URI_TOO_LONG</p></td>
+<td class="enum_member_description">
+<p>414 Request-URI Too Long (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-UNSUPPORTED-MEDIA-TYPE:CAPS"></a>SOUP_STATUS_UNSUPPORTED_MEDIA_TYPE</p></td>
+<td class="enum_member_description">
+<p>415 Unsupported Media Type
+(HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-REQUESTED-RANGE-NOT-SATISFIABLE:CAPS"></a>SOUP_STATUS_REQUESTED_RANGE_NOT_SATISFIABLE</p></td>
+<td class="enum_member_description">
+<p>416 Requested Range
+Not Satisfiable (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-INVALID-RANGE:CAPS"></a>SOUP_STATUS_INVALID_RANGE</p></td>
+<td class="enum_member_description">
+<p>shorter alias for
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-REQUESTED-RANGE-NOT-SATISFIABLE:CAPS"><code class="literal">SOUP_STATUS_REQUESTED_RANGE_NOT_SATISFIABLE</code></a></p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-EXPECTATION-FAILED:CAPS"></a>SOUP_STATUS_EXPECTATION_FAILED</p></td>
+<td class="enum_member_description">
+<p>417 Expectation Failed (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-UNPROCESSABLE-ENTITY:CAPS"></a>SOUP_STATUS_UNPROCESSABLE_ENTITY</p></td>
+<td class="enum_member_description">
+<p>422 Unprocessable Entity
+(WebDAV)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-LOCKED:CAPS"></a>SOUP_STATUS_LOCKED</p></td>
+<td class="enum_member_description">
+<p>423 Locked (WebDAV)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-FAILED-DEPENDENCY:CAPS"></a>SOUP_STATUS_FAILED_DEPENDENCY</p></td>
+<td class="enum_member_description">
+<p>424 Failed Dependency (WebDAV)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-INTERNAL-SERVER-ERROR:CAPS"></a>SOUP_STATUS_INTERNAL_SERVER_ERROR</p></td>
+<td class="enum_member_description">
+<p>500 Internal Server Error
+(HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NOT-IMPLEMENTED:CAPS"></a>SOUP_STATUS_NOT_IMPLEMENTED</p></td>
+<td class="enum_member_description">
+<p>501 Not Implemented (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-BAD-GATEWAY:CAPS"></a>SOUP_STATUS_BAD_GATEWAY</p></td>
+<td class="enum_member_description">
+<p>502 Bad Gateway (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-SERVICE-UNAVAILABLE:CAPS"></a>SOUP_STATUS_SERVICE_UNAVAILABLE</p></td>
+<td class="enum_member_description">
+<p>503 Service Unavailable (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-GATEWAY-TIMEOUT:CAPS"></a>SOUP_STATUS_GATEWAY_TIMEOUT</p></td>
+<td class="enum_member_description">
+<p>504 Gateway Timeout (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-HTTP-VERSION-NOT-SUPPORTED:CAPS"></a>SOUP_STATUS_HTTP_VERSION_NOT_SUPPORTED</p></td>
+<td class="enum_member_description">
+<p>505 HTTP Version Not
+Supported (HTTP)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-INSUFFICIENT-STORAGE:CAPS"></a>SOUP_STATUS_INSUFFICIENT_STORAGE</p></td>
+<td class="enum_member_description">
+<p>507 Insufficient Storage
+(WebDAV)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-STATUS-NOT-EXTENDED:CAPS"></a>SOUP_STATUS_NOT_EXTENDED</p></td>
+<td class="enum_member_description">
+<p>510 Not Extended (RFC 2774)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-HTTP-ERROR:CAPS"></a><h3>SOUP_HTTP_ERROR</h3>
+<pre class="programlisting">#define SOUP_HTTP_ERROR soup_http_error_quark()
+</pre>
+<p>A <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> domain representing an HTTP status. Use a <a class="link" href="libsoup-2.4-soup-status.html#SoupStatus" title="enum SoupStatus"><span class="type">SoupStatus</span></a> for
+the <em class="structfield"><code>code</code></em> value.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

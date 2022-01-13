@@ -1,0 +1,144 @@
+#!/bin/sh
+##
+##  spew -- Emit "documented structured" momgo JSON
+##  Copyright (c) 2001 Ralf S. Engelschall <rse@engelschall.com>
+##  Swiped and renamed to "spew" from top-level "devtool".
+##
+
+#   determine source tree location
+SPEW_SRCDIR=`echo "$0" | sed -e 's;/spew$;;'`
+export SPEW_SRCDIR
+
+#   build environment sanity check
+if [ ! -f ${SPEW_SRCDIR}/spew.conf ]; then
+    echo "spew:ERROR: no spew.conf in current directory" 1>&2
+    exit 1
+fi
+
+#   usage sanity check
+if [ $# -eq 0 ]; then
+    echo "spew:USAGE: spew <command> [<arg> ...]" 1>&2
+    exit 1
+fi
+cmd="$1"
+shift
+cmdline=`grep "^%$cmd" ${SPEW_SRCDIR}/spew.conf`
+if [ ".$cmdline" = . ]; then
+    echo "spew:ERROR: command $cmd not found in spew.conf" 1>&2
+    exit 1
+fi
+
+#   ensure a reasonable temporary directory exists
+if [ ".$TMPDIR" != . ]; then
+    tmpdir="$TMPDIR"
+elif [ ".$TEMPDIR" != . ]; then
+    tmpdir="$TEMPDIR"
+else
+    tmpdir="/tmp"
+fi
+tmpfile="$tmpdir/spew.$$.tmp"
+
+#   generate run-command script
+rm -f $tmpfile
+touch $tmpfile
+( sed <${SPEW_SRCDIR}/spew -e '1,/^##  spew.func {/d' -e '/^##  } spew.func/,$d'
+  sed <${SPEW_SRCDIR}/spew.conf -e "1,/^%common/d" -e '/^%.*/,$d'
+  sed <${SPEW_SRCDIR}/spew.conf -e "1,/^%$cmd/d" -e '/^%.*/,$d' ) |\
+sed -e 's;\([ 	]\)@\([a-zA-Z_][a-zA-Z0-9_-]*\);\1spew_\2;' \
+    -e 's;\([ 	]\)%\([a-zA-Z_][a-zA-Z0-9_-]*\);\1spew_execute \2;' \
+>>$tmpfile
+
+#   execute run-command script
+sh $tmpfile "$@"
+rc=$?
+
+#   cleanup and graceful exit
+rm -f $tmpfile >/dev/null 2>&1 || true
+exit $rc
+
+##  spew.func { # is now embedded. This line used as cutting point. Do not remove.
+
+spew_execute () {
+    sh ${SPEW_SRCDIR}/spew "$@"
+}
+
+spew_source () {
+    _tmpfile="${TMPDIR-/tmp}/spew.$$.tmp.$2"
+    rm -f $_tmpfile
+    sed <${SPEW_SRCDIR}/spew.conf -e "1,/^%$2/d" -e '/^%.*/,$d' |\
+    sed -e 's;\([ 	]\)@\([a-zA-Z_][a-zA-Z0-9_-]*\);\1spew_\2;' \
+        -e 's;\([ 	]\)%\([a-zA-Z_][a-zA-Z0-9_-]*\);\1spew_execute \2;' >$_tmpfile
+    . $_tmpfile
+    rm -f $_tmpfile
+}
+
+spew_require () {
+    t="$1"; o="$2"; p="$3"; e="$4"; a="$5"
+    v=`($t $o | head -1 | awk "{ print \\\$$p; }") 2>/dev/null`
+    if [ ".$v" = . ]; then
+        echo "spew:ERROR: unable to determine version of $t" 1>&2
+        exit 1
+    fi
+    case "$v" in
+        $e )
+            ;;
+        $a )
+            echo "spew:WARNING: $t version $v accepted, but expected $e." 1>&2
+            ;;
+        * )
+            echo "spew:ERROR: $t version $v NOT acceptable, requires $e." 1>&2
+            exit 1
+            ;;
+    esac
+    echo "$v"
+}
+
+spew_autogen () {
+    tool=$1
+    shift
+    case $tool in
+        autoconf )
+            autoconf_version=`spew_require autoconf --version 4 "$1" "$2"`
+            echo "generating (GNU Autoconf $autoconf_version): configure config.h.in"
+            autoconf
+            autoheader 2>&1 | grep -v "is unchanged"
+            rm -rf autom4te.cache >/dev/null 2>&1
+            ;;
+        libtool )
+            libtoolize_version=`spew_require libtoolize --version 4 "$1" "$2"`
+            echo "generating (GNU Libtool $libtoolize_version): ltmain.sh, libtool.m4, config.guess, config.sub"
+            libtoolize --force --copy --install >/dev/null 2>&1
+            cp `libtoolize --force --copy --dry-run --install | grep "add the contents of" |\
+                sed -e 's;^[^\`]*\`;;' -e "s;'.*;;"` libtool.m4
+            ;;
+        shtool )
+            shtoolize_version=`spew_require shtoolize -v 3 "$1" "$2"`
+            echo "generating (GNU Shtool $shtoolize_version): shtool"
+            shift
+            shift
+            shtoolize -q "$@"
+            ;;
+    esac
+}
+
+spew_autoclean () {
+    tool=$1
+    shift
+    case $tool in
+        autoconf )
+            echo "removing: configure config.h.in"
+            rm -f configure config.h.in
+            ;;
+        libtool )
+            echo "removing: ltmain.sh libtool.m4 config.guess config.sub"
+            rm -f ltmain.sh libtool.m4 config.guess config.sub
+            ;;
+        shtool )
+            echo "removing: shtool"
+            rm -f shtool
+            ;;
+    esac
+}
+
+##  } spew.func # is now embedded. This line used as cutting point. Do not remove.
+

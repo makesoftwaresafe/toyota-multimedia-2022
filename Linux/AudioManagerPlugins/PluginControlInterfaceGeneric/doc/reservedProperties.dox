@@ -1,0 +1,92 @@
+/*!
+\page reservedProp Reserved Properties
+Audio Manager allows defining the project specific system properties and the sound 
+properties. In order to manage certain system specific behavior like debug log 
+threshold level, allow unknown element registration etc., generic controller 
+would reserve range system properties. This range of properties would be exclusively 
+used by Generic Controller and no product should define system property in this range. 
+This would allow reusing the existing command side interface to change the behavior of 
+the system even at run time.
+\image html reserved_Properties.png
+
+As shown in the diagram above the higher 4K range of the system properties is selected 
+so as to remain backward compatible with existing products. The reserved system properties 
+would be used to control behavior of system like
+-	Debug log threshold level
+-	Allow only routes present in topology
+-	Allow unknown element registration etc.
+The system properties can be configured in the controller configuration. Most system 
+property would be treated as read only from the command interface; unless controller 
+is started in special mode, let’s call it debug/development mode.
+In order to start the controller in debug mode, controller should be passed a command 
+line switch. The TCLAP library would be used and the details of the switch are as below	
+Switch name	D
+<table>
+<tr>
+<td>Switch name</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Long switch name</td>
+<td>Debug</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Start the controller in debug/development mode. In debug/development mode controller would supports additional features like read write system property etc.</td>
+</tr>
+<tr>
+<td>Default value</td>
+<td>False</td>
+</tr>
+</table>
+
+The same logic would be extended for the source/sink/class properties to store the element 
+specific information in the daemon database. 
+
+<b>Guidelines to use the reserved space</b><BR>
+\image html ReservedProp_Guidelines.png
+The reserved system property occupies the last 4K entries i.e. 61440 to 65535. 12 bit System property is made up of 5 bit use case ID and 7 bit system property.  In other words it can be calculated as 
+61440 + 128*X + Y, where 
+61440 is the reserved system property base,
+X is the use case ID, and
+Y is the system property offset.
+The use case ID are defined as below
+0 -> Global.<BR>
+1 -> Registration/Un-registration use case.<BR>
+2 -> Connect/Disconnect use case.<BR>
+3 -> Set Volume use case.<BR>
+4 -> Set Sound property use case.<BR>
+5 -> Set system property use case.<BR>
+6 -> Update use case.<BR>
+7 -> Notification configuration use case.<BR>
+8 -> Related to action execution.<BR>
+9-31 -> reserved for future use.
+
+<table>
+<tr>
+<td>Reserved Properties Type</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>SYP_GLOBAL_LOG_THRESHOLD</td>
+<td>This is the threshold log level, only logs below this level would be sent to dlt</td>
+</tr>
+<tr>
+<td>SYP_REGISTRATION_ALLOW_UNKNOWN_ELEMENT</td>
+<td>If this property is non zero then the controller would permit the unknown elements. \ref elems </td>
+</tr>
+<tr>
+<td>SYP_REGISTRATION_DOMAIN_TIMEOUT</td>
+<td>This is the timeout value for which the controller would wait for all the domain registration to complete. If
+within this timeout the domain registration is not complete then controller would send error trigger to the policy engine.</td>
+</tr>
+<tr>
+<td>SYP_CONNECTION_ALLOW_ONLY_TOPOLOGY_ROUTE</td>
+<td>If this property is non zero then only routes mentioned in the topology are allowed</td>
+</tr>
+
+</table>
+
+
+
+*/

@@ -1,0 +1,44 @@
+/** \defgroup	rpmts	RPM Transaction Set API (RPMTS)
+ */
+/** \defgroup	rpmte	RPM Transaction Element API (RPMTE)
+ */
+/** \defgroup	rpmds	RPM Dependency Set API (RPMDS)
+ */
+/** \defgroup	rpmio	Internally shared I/O code (RPMIO)
+ */
+/** \defgroup	python	PYTHON API.
+ */
+/** \defgroup	py_c  	PYTHON-C Language Bindings.
+ */
+/** \defgroup	rpmcli	RPMCLI.
+ */
+/** \defgroup	rpmbuild	RPMBUILD.
+ */
+/** \defgroup	rpmrc	RPMRC.
+ */
+/** \defgroup	rpmfi	RPMFI File Info API.
+ */
+/** \defgroup	rpmgi	RPMGI Generalized Iterator API.
+ */
+/** \defgroup	lead	LEAD.
+ */
+/** \defgroup	signature	SIGNATURE.
+ */
+/** \defgroup	header	HEADER.
+ */
+/** \defgroup	payload	PAYLOAD.
+ */
+/** \defgroup	rpmdb	RPMDB Database API.
+ */
+/** \defgroup	dbi	RPMDBI DataBase Index Element API.
+ */
+/** \defgroup	db3	Berkeley DB API.
+ */
+/** \defgroup	rpmlua	RPMLUA Embedded Lua.
+ */
+/** \defgroup	rpmrpc	RPMRPC.
+ */
+/** \defgroup	rpmpgp	RPMPGP.
+ */
+/** \defgroup   rb_c Ruby Bindings
+ */

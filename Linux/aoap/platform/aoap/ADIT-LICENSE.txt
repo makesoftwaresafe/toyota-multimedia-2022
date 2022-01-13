@@ -1,0 +1,5 @@
+This software has been developed by Advanced Driver Information Technology.
+Copyright(c) 2020 Advanced Driver Information Technology GmbH,
+Advanced Driver Information Technology Corporation, Robert Bosch GmbH,
+Robert Bosch Car Multimedia GmbH and DENSO Corporation.
+All rights reserved.

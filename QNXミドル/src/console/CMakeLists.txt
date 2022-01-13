@@ -1,0 +1,60 @@
+#######
+# @licence make begin@
+# SPDX license identifier: MPL-2.0
+#
+# Copyright (C) 2011-2015, BMW AG
+#
+# This file is part of GENIVI Project DLT - Diagnostic Log and Trace.
+#
+# This Source Code Form is subject to the terms of the
+# Mozilla Public License (MPL), v. 2.0.
+# If a copy of the MPL was not distributed with this file,
+# You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# For further information see http://www.genivi.org/.
+# @licence end@
+#######
+
+set(dlt_convert_SRCS dlt-convert.c)
+add_executable(dlt-convert ${dlt_convert_SRCS} ${dlt_most_SRCS})
+target_link_libraries(dlt-convert dlt ${EXPAT_LIBRARIES})
+set_target_properties(dlt-convert PROPERTIES LINKER_LANGUAGE C)
+
+set(dlt_receive_SRCS dlt-receive.c)
+add_executable(dlt-receive ${dlt_receive_SRCS} ${dlt_most_SRCS})
+target_link_libraries(dlt-receive dlt ${EXPAT_LIBRARIES})
+set_target_properties(dlt-receive PROPERTIES LINKER_LANGUAGE C)
+
+set(dlt_control_SRCS dlt-control.c dlt-control-common.c)
+add_executable(dlt-control ${dlt_control_SRCS} ${dlt_most_SRCS})
+target_link_libraries(dlt-control dlt ${EXPAT_LIBRARIES})
+set_target_properties(dlt-control PROPERTIES LINKER_LANGUAGE C)
+
+set(dlt_control_common_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/dlt-control-common.c)
+add_subdirectory( logstorage )
+
+set(dlt_passive_node_ctrl_SRCS dlt-passive-node-ctrl.c dlt-control-common.c)
+add_executable(dlt-passive-node-ctrl ${dlt_passive_node_ctrl_SRCS} ${dlt_most_SRCS})
+target_link_libraries(dlt-passive-node-ctrl dlt ${EXPAT_LIBRARIES})
+
+set(dlt_filter_ctrl_SRCS dlt-filter-ctrl.c dlt-control-common.c)
+add_executable(dlt-filter-ctrl ${dlt_filter_ctrl_SRCS} ${dlt_most_SRCS})
+target_link_libraries(dlt-filter-ctrl dlt ${EXPAT_LIBRARIES})
+
+set(dlt_blockmode_ctrl_SRCS dlt-blockmode-ctrl.c dlt-control-common.c)
+add_executable(dlt-blockmode-ctrl ${dlt_blockmode_ctrl_SRCS} ${dlt_most_SRCS})
+target_link_libraries(dlt-blockmode-ctrl dlt ${EXPAT_LIBRARIES})
+
+if(WITH_DLT_HP_LOG)
+set(dlt_get_hplog_SRCS dlt-get-hplog.c dlt-control-common.c)
+add_executable(dlt-get-hplog ${dlt_get_hplog_SRCS} ${dlt_most_SRCS})
+target_link_libraries(dlt-get-hplog dlt ${EXPAT_LIBRARIES})
+set_target_properties(dlt-get-hplog PROPERTIES LINKER_LANGUAGE C)
+install(TARGETS dlt-get-hplog
+                RUNTIME DESTINATION bin
+                COMPONENT base)
+endif(WITH_DLT_HP_LOG)
+
+install(TARGETS dlt-convert dlt-receive dlt-control dlt-filter-ctrl dlt-passive-node-ctrl dlt-blockmode-ctrl
+	RUNTIME DESTINATION bin
+	COMPONENT base)

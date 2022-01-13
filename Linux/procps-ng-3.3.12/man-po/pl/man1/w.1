@@ -1,0 +1,93 @@
+.\"             -*-Nroff-*-
+.\"
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH W 1 "maj 2012" procps\-ng "Polecenia użytkownika"
+.SH NAZWA
+w \- wyświetlanie informacji, kto jest zalogowany i co robi.
+.SH SKŁADNIA
+\fBw\fP [\fIopcje\fP] \fIużytkownik\fP [...]
+.SH OPIS
+\fBw\fP wyświetla informacje o użytkownikach obecnych na maszynie oraz ich
+procesach. Nagłówek pokazuje, w tej kolejności, aktualny czas, jak długo
+system działa, jak wielu użytkowników jest obecnie zalogowanych oraz średnie
+obciążenie systemu przez ostatnie 1, 5 oraz 15 minut.
+.PP
+Dla każdego użytkownika wyświetlane są następujące wpisy: nazwa terminala
+(tty), host zdalny, czas zalogowania, czas bezczynności, JCPU, PCPU oraz
+linia poleceń bieżącego procesu.
+.PP
+Czas JCPU to czas wykorzystany przez wszystkie procesy podłączone do
+terminala. Nie obejmuje wcześniejszych zadań w tle, ale obejmuje procesy
+obecnie działające w tle.
+.PP
+Czas PCPU to czas wykorzystany przez bieżący proces, uwidoczniony w polu
+"co".
+.SH "OPCJE LINII POLECEŃ"
+.TP 
+\fB\-h\fP, \fB\-\-no\-header\fP
+Bez wypisywania nagłówka.
+.TP 
+\fB\-u\fP, \fB\-\-no\-current\fP
+Ignorowanie nazwy użytkownika przy sprawdzaniu bieżącego procesu i czasów
+procesora. Różnicę można zobaczyć po wykonaniu "su", a następnie "w" oraz "w
+\-u".
+.TP 
+\fB\-s\fP, \fB\-\-short\fP
+Użycie formatu krótkiego \- bez wypisywania czasu zalogowania oraz czasów
+JCPU i PCPU.
+.TP 
+\fB\-f\fP, \fB\-\-from\fP
+Przełączanie wyświetlania pola \fBz\fP (nazwy hosta zdalnego). Domyślnie w
+źródłach pole \fBz\fP nie jest wypisywane, ale administrator systemu lub
+dystrybutor mógł skompilować wersję, która domyślnie pokazuje pole \fBz\fP.
+.TP 
+\fB\-\-help\fP
+Wyświetlenie tekstu pomocy i zakończenie.
+.TP 
+\fB\-i\fP, \fB\-\-ip\-addr\fP
+Wyświetlanie adresu IP zamiast nazwy hosta w polu \fBz\fP.
+.TP 
+\fB\-V\fP, \fB\-\-version\fP
+Wyświetlenie informacji o wersji.
+.TP 
+\fB\-o\fP, \fB\-\-old\-style\fP
+Wyjście w starym stylu. Wypisywanie pustego miejsca dla czasów bezczynności
+poniżej minuty.
+.TP 
+\fBużytkownik \fP
+Wyświetlanie informacji tylko o podanym użytkowniku.
+.SH ŚRODOWISKO
+.TP 
+PROCPS_USERLEN
+Nadpisanie domyślnej szerokości kolumny z nazwą użytkownika. Domyślnie 8.
+.TP 
+PROCPS_FROMLEN
+Nadpisanie domyślnej szerokości kolumny \fBz\fP. Domyślnie 16.
+.SH PLIKI
+.TP 
+\fI/var/run/utmp\fP
+informacja o tym, kto jest obecnie zalogowany
+.TP 
+\fI/proc\fP
+informacje o procesach
+.SH "ZOBACZ TAKŻE"
+\fBfree\fP(1), \fBps\fP(1), \fBtop\fP(1), \fBuptime\fP(1), \fButmp\fP(5), \fBwho\fP(1)
+.SH AUTORZY
+Program \fBw\fP został przepisany prawie w całości przez Charlesa Blake'a w
+oparciu o wersję, którą napisali
+.UR greenfie@\:gauss.\:rutgers.\:edu
+Larry Greenfield
+.UE
+oraz
+.UR johnsonm@\:redhat.\:com
+Michael
+K. Johnson
+.UE
+.SH "ZGŁASZANIE BŁĘDÓW"
+Zgłoszenia błędów prosimy wysyłać na adres
+.UR procps@freelists.org
+.UE

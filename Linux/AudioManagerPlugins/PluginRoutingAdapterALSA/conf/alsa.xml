@@ -1,0 +1,31 @@
+<amra_alsa>
+<!-- Beginning of Domain Applications device info -->
+<tDOMAIN domNam = "Applications" nodNam = "Cpu">
+	<!-- source info -->
+	<tSOURCE srcNam = "MediaPlayer" srcID = "1" srcClsNam = "BASE" devTyp = "0" />
+	<tSOURCE srcNam = "Navigation" srcID = "2" srcClsNam = "NAVI" devTyp = "0" />
+	<!-- sink 1 info -->
+	<tSINK  sinkNam = "Gateway0" sinkClsNam = "BASE" visible = "0" devTyp = "0">
+		<!-- gateway info -->
+		<tGATEWAY gatewayNam = "Gateway0" srcNam = "Gateway0" srcDomNam = "VirtDSP" lstSrcFrmt = "2" lstSinkFrmt = "2" conversionMatrix = "1"> </tGATEWAY>
+	</tSINK>
+	<!-- sink 2 info -->
+	<tSINK  sinkNam = "Gateway1" sinkClsNam = "NAVI" visible = "0" devTyp = "0">
+		<!-- gateway info -->
+		<tGATEWAY gatewayNam = "Gateway1" srcNam = "Gateway1" srcDomNam = "VirtDSP" lstSrcFrmt = "2" lstSinkFrmt = "2" conversionMatrix = "1"> </tGATEWAY>
+	</tSINK>
+</tDOMAIN> <!-- end of Applications device info -->
+
+<!-- Beginning of Domain VirtDSP device info -->
+<tDOMAIN domNam = "VirtDSP" nodNam = "Cpu" pxyNam = "AlsaProxy">
+	<!-- source info -->
+	<tSOURCE srcNam = "Gateway0" srcClsNam = "BASE" visible = "0" pcmNam = "vdev_app_mediaplayer" volNam = "vol_mediaplayer" />
+	<tSOURCE srcNam = "Gateway1" srcClsNam = "NAVI" visible = "0" pcmNam = "vdev_app_interrupt" volNam = "vol_interrupt" />
+	<!-- sink info -->
+	<tSINK  sinkNam = "AMP" sinkID = "1" pcmNam = "vdev_dsp_amp" />
+	<!-- proxy info - for CPUSchedulingPolicy see sched_setscheduler(2) -->
+	<tPROXY srcNam = "Gateway0" sinkNam = "AMP" pcmSrc = "vdev_dsp_gateway_0" pcmSink = "vdev_dsp_amp" lstRates = "48000" msBuffersize = "16" msPrefill = "16" CPUSchedulingPolicy = "1" CPUSchedulingPriority = "80" />
+	<tPROXY srcNam = "Gateway1" sinkNam = "AMP" pcmSrc = "vdev_dsp_gateway_1" pcmSink = "vdev_dsp_amp" lstRates = "48000" msBuffersize = "16" msPrefill = "16" CPUSchedulingPolicy = "1" CPUSchedulingPriority = "80" />
+</tDOMAIN> <!-- End of Domain VirtDSP device info -->
+
+</amra_alsa>

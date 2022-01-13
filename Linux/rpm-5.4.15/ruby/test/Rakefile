@@ -1,0 +1,9 @@
+require 'rake/testtask'
+require 'fileutils'
+
+Rake::TestTask.new do |test|
+    test.libs << File.expand_path(File.dirname(__FILE__) + '/../.libs')
+    test.libs << File.expand_path(File.dirname(__FILE__) + '/..')
+    test.test_files = FileList['unit/test_*.rb']
+    test.verbose = true
+end

@@ -1,0 +1,28 @@
+# Ruby specific macro definitions.
+# To make use of these macros insert the following line into your spec file:
+# %{load:%{_usrlibrpm}/macros.d/cmake}
+
+%__cmake		/usr/bin/cmake
+
+%_cmake_lib_suffix64	-DLIB_SUFFIX=64
+%_cmake_skip_rpath	-DCMAKE_SKIP_RPATH:BOOL=ON
+%_cmake_verbose		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+%_cmake_version		%(%{__cmake} --version|sed -e 's#.* \(\S*\)$#\1#g')
+
+%cmake \
+  CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
+  CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
+  FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ; \
+  %{__cmake} \\\
+	%{_cmake_skip_rpath} \\\
+        %{_cmake_verbose} \\\
+        -DCMAKE_INSTALL_PREFIX:PATH=%{_prefix} \\\
+        -DCMAKE_INSTALL_LIBDIR:PATH=%{_libdir} \\\
+        -DINCLUDE_INSTALL_DIR:PATH=%{_includedir} \\\
+        -DLIB_INSTALL_DIR:PATH=%{_libdir} \\\
+        -DSYSCONF_INSTALL_DIR:PATH=%{_sysconfdir} \\\
+        -DSHARE_INSTALL_PREFIX:PATH=%{_datadir} \\\
+%if "%{?_lib}" == "lib64" \
+        %{?_cmake_lib_suffix64} \\\
+%endif \
+        -DBUILD_SHARED_LIBS:BOOL=ON

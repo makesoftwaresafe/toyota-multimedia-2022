@@ -1,0 +1,89 @@
+/**
+@page cond Conditions
+
+    For a given trigger, a set of processes can be defined in the configuration. A process consist 
+of conditions and actions. Within a process there can be multiple conditions. Only if all the 
+conditions evaluate to true then the set of action which follows the conditions gets executed.
+ 
+    The diagram below shows the structure of a condition.
+\image html Conditions.png
+
+    Condition consists of three parts separated by whitespace(s)
+- Left hand side : Left hand side contains the function. For details of function refer \ref functionTable 
+- operator : The operator between the LHS and RHS, most of the operators are self explanatory, 
+except INC and EXC. Some function outputs a list of values, if such a function is used on LHS then 
+INC and EXC can be used to know if a particular value is included(or present) or excluded(or absent)  
+in the list.
+- Right hand side : Unlike LHS, right hand side can have absolute values and macros. If absolute 
+value is used then it should be inside the double quotes, if no double quotes are used then its 
+treated as a macro like CS_CONNECTED, REQUESTING.
+<BR>
+@section Condition Rules
+    Below are rules for writing condition
+- The function used on the LHS and the value used on RHS should be of the same type. Example if LHS 
+uses a function to get the connection state then RHS should also use the connection state.
+- on RHS side if some value is used then it should be inside a double quote, a macro can be used 
+without the quotes.
+- Operator INC and EXC can only be used, if a function which outputs a list is used on LHS.
+<BR>  
+
+@section examples Examples
+    Below are some example of the conditions
+@code
+    <condition>name(CLASS, REQUESTING) EQ "BASE"</condition>
+@endcode    
+    In this condition LHS is the function which outputs the name of the class which originated this 
+request, operator is EQ, and the RHS is the absolute name if the class since present inside double 
+quotes. This condition checks if the trigger is requested by a BASE class.
+<BR>
+<BR>
+
+@code
+    <condition>connectionState(CONNECTIONOFCLASS, REQUESTING, OTHERS) INC CS_CONNECTED</condition>
+@endcode
+    In this condition LHS is the function which gets the list of connection states of all the 
+connections present in the requesting class, operator is include and the RHS is the macro 
+CS_CONNECTED. REQUESTING means the class which requested the trigger, OTHERS means list of 
+connection would include all the connections except the requesting connection. This condition 
+would check if connection state of any connection of the class which requested the trigger except 
+the requesting connection is in connected state.
+<BR>
+<BR>
+
+@code
+    <condition>connectionState(CONNECTIONOFCLASS,"PHONE") INC CS_CONNECTED</condition>
+@endcode
+    This condition is same as above except, no macro is used in the LHS function, instead the class 
+name is specified directly. This condition checks if any connection belonging to PHONE class is 
+in connected state.
+<BR>
+<BR>
+
+@code
+    <condition>priority(CONNECTIONOFCLASS, REQUESTING, OTHERS) LT priority(CONNECTION, REQUESTING)</condition>
+@endcode 
+In this condition LHS is the function which returns the priorities of all the connections except the
+requesting connection(because OTHERS is used), operator is LT and the RHS is again a function 
+which gives the priority of the requesting connection. This condition checks if priority of all the 
+connection belonging to the requesting class, is less than the priority of the requesting connection.
+<BR>
+<BR>
+
+@section sectionmacroList List of macros
+- ALL : Depending on where it is used, this macro means all(everything). For example if its used inside 
+a function connectionState(CONNECTIONOFCLASS,"PHONE",ALL), it means connection state of all the 
+connection belonging to class PHONE.
+- REQUESTING : This macro can be used to access the trigger parameters(\ref triggerParams). Depending on the usage, 
+meaning of this macro varies. For example consider a case name(SINK,REQUESTING), here it means 
+the name of the sink for which trigger was generated. name(CLASS,REQUESTING), the name of the class 
+for which the trigger was requested. connectionstate(CONNECTIONOFCLASS,REQUESTING,ALL), connection 
+state of all the connection of the class which generated the trigger.
+- OTHERS : This means everything except the requesting. If for a user connection request user wants 
+to know if there is already an active connection belonging to requesting class except the 
+requesting connection then this macro can be used as follows 
+connectionState(CONNECTIONOFCLASS,REQUESTING,OTHERS).
+-  enumerations: All the enumerations defined in the schema files (both audiomanager.xsd and 
+customtypes.xsd) can be used. Example CS_CONNECTED, SS_OFF etc.
+
+
+*/

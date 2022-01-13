@@ -1,0 +1,10 @@
+{
+  "config_appl": "node-health-monitor",
+  "version": "0.1.0",
+  "resources": {
+    "nhm_var": {
+      "size": "4",
+      "data": "40414243"
+    }
+  }
+}

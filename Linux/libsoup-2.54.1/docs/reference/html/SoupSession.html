@@ -1,0 +1,3037 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SoupSession: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch02.html" title="Core API">
+<link rel="prev" href="libsoup-2.4-SoupServer-deprecated-API.html" title="SoupServer deprecated API">
+<link rel="next" href="SoupSessionAsync.html" title="SoupSessionAsync">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#SoupSession.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#SoupSession.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#SoupSession.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#SoupSession.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libsoup-2.4-SoupServer-deprecated-API.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="SoupSessionAsync.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="SoupSession"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="SoupSession.top_of_page"></a>SoupSession</span></h2>
+<p>SoupSession — Soup session state object</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="SoupSession.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupSession.html" title="SoupSession"><span class="returnvalue">SoupSession</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-new" title="soup_session_new ()">soup_session_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupSession.html" title="SoupSession"><span class="returnvalue">SoupSession</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-new-with-options" title="soup_session_new_with_options ()">soup_session_new_with_options</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupRequest.html" title="SoupRequest"><span class="returnvalue">SoupRequest</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-request" title="soup_session_request ()">soup_session_request</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupRequest.html" title="SoupRequest"><span class="returnvalue">SoupRequest</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-request-uri" title="soup_session_request_uri ()">soup_session_request_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupRequestHTTP.html" title="SoupRequestHTTP"><span class="returnvalue">SoupRequestHTTP</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-request-http" title="soup_session_request_http ()">soup_session_request_http</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupRequestHTTP.html" title="SoupRequestHTTP"><span class="returnvalue">SoupRequestHTTP</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-request-http-uri" title="soup_session_request_http_uri ()">soup_session_request_http_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="SoupSession.html#SoupSessionCallback" title="SoupSessionCallback ()">*SoupSessionCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()">soup_session_queue_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-requeue-message" title="soup_session_requeue_message ()">soup_session_requeue_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-send-message" title="soup_session_send_message ()">soup_session_send_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-cancel-message" title="soup_session_cancel_message ()">soup_session_cancel_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="returnvalue">GInputStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-send" title="soup_session_send ()">soup_session_send</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-send-async" title="soup_session_send_async ()">soup_session_send_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="returnvalue">GInputStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-send-finish" title="soup_session_send_finish ()">soup_session_send_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-websocket-connect-async" title="soup_session_websocket_connect_async ()">soup_session_websocket_connect_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="returnvalue">SoupWebsocketConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-websocket-connect-finish" title="soup_session_websocket_connect_finish ()">soup_session_websocket_connect_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-prefetch-dns" title="soup_session_prefetch_dns ()">soup_session_prefetch_dns</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-abort" title="soup_session_abort ()">soup_session_abort</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-would-redirect" title="soup_session_would_redirect ()">soup_session_would_redirect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-redirect-message" title="soup_session_redirect_message ()">soup_session_redirect_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-pause-message" title="soup_session_pause_message ()">soup_session_pause_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-unpause-message" title="soup_session_unpause_message ()">soup_session_unpause_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="returnvalue">GMainContext</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-get-async-context" title="soup_session_get_async_context ()">soup_session_get_async_context</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-add-feature" title="soup_session_add_feature ()">soup_session_add_feature</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-add-feature-by-type" title="soup_session_add_feature_by_type ()">soup_session_add_feature_by_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-remove-feature" title="soup_session_remove_feature ()">soup_session_remove_feature</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-remove-feature-by-type" title="soup_session_remove_feature_by_type ()">soup_session_remove_feature_by_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-get-features" title="soup_session_get_features ()">soup_session_get_features</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="returnvalue">SoupSessionFeature</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-get-feature" title="soup_session_get_feature ()">soup_session_get_feature</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="returnvalue">SoupSessionFeature</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-get-feature-for-message" title="soup_session_get_feature_for_message ()">soup_session_get_feature_for_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-has-feature" title="soup_session_has_feature ()">soup_session_has_feature</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="returnvalue">GIOStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupSession.html#soup-session-steal-connection" title="soup_session_steal_connection ()">soup_session_steal_connection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupSession.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--accept-language" title="The “accept-language” property">accept-language</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--accept-language-auto" title="The “accept-language-auto” property">accept-language-auto</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--add-feature" title="The “add-feature” property">add-feature</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--add-feature-by-type" title="The “add-feature-by-type” property">add-feature-by-type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--async-context" title="The “async-context” property">async-context</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#GStrv"><span class="type">GStrv</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--http-aliases" title="The “http-aliases” property">http-aliases</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#GStrv"><span class="type">GStrv</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--https-aliases" title="The “https-aliases” property">https-aliases</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--idle-timeout" title="The “idle-timeout” property">idle-timeout</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="SoupAddress.html" title="SoupAddress"><span class="type">SoupAddress</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--local-address" title="The “local-address” property">local-address</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--max-conns" title="The “max-conns” property">max-conns</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--max-conns-per-host" title="The “max-conns-per-host” property">max-conns-per-host</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--proxy-resolver" title="The “proxy-resolver” property">proxy-resolver</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--proxy-uri" title="The “proxy-uri” property">proxy-uri</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--remove-feature-by-type" title="The “remove-feature-by-type” property">remove-feature-by-type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--ssl-ca-file" title="The “ssl-ca-file” property">ssl-ca-file</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--ssl-strict" title="The “ssl-strict” property">ssl-strict</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--ssl-use-system-ca-file" title="The “ssl-use-system-ca-file” property">ssl-use-system-ca-file</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--timeout" title="The “timeout” property">timeout</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/gio/unstable/GTlsDatabase.html"><span class="type">GTlsDatabase</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--tls-database" title="The “tls-database” property">tls-database</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html"><span class="type">GTlsInteraction</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--tls-interaction" title="The “tls-interaction” property">tls-interaction</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--use-ntlm" title="The “use-ntlm” property">use-ntlm</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--use-thread-context" title="The “use-thread-context” property">use-thread-context</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupSession.html#SoupSession--user-agent" title="The “user-agent” property">user-agent</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupSession.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="SoupSession.html#SoupSession-authenticate" title="The “authenticate” signal">authenticate</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="SoupSession.html#SoupSession-connection-created" title="The “connection-created” signal">connection-created</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="SoupSession.html#SoupSession-request-queued" title="The “request-queued” signal">request-queued</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="SoupSession.html#SoupSession-request-started" title="The “request-started” signal">request-started</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="SoupSession.html#SoupSession-request-unqueued" title="The “request-unqueued” signal">request-unqueued</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="SoupSession.html#SoupSession-tunneling" title="The “tunneling” signal">tunneling</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupSession.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="SoupSession.html#SoupSession-struct" title="SoupSession">SoupSession</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SoupRequestError" title="enum SoupRequestError">SoupRequestError</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-REQUEST-ERROR:CAPS" title="SOUP_REQUEST_ERROR">SOUP_REQUEST_ERROR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-PROXY-URI:CAPS" title="SOUP_SESSION_PROXY_URI">SOUP_SESSION_PROXY_URI</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-PROXY-RESOLVER:CAPS" title="SOUP_SESSION_PROXY_RESOLVER">SOUP_SESSION_PROXY_RESOLVER</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-MAX-CONNS:CAPS" title="SOUP_SESSION_MAX_CONNS">SOUP_SESSION_MAX_CONNS</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-MAX-CONNS-PER-HOST:CAPS" title="SOUP_SESSION_MAX_CONNS_PER_HOST">SOUP_SESSION_MAX_CONNS_PER_HOST</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-TLS-DATABASE:CAPS" title="SOUP_SESSION_TLS_DATABASE">SOUP_SESSION_TLS_DATABASE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-SSL-USE-SYSTEM-CA-FILE:CAPS" title="SOUP_SESSION_SSL_USE_SYSTEM_CA_FILE">SOUP_SESSION_SSL_USE_SYSTEM_CA_FILE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-SSL-CA-FILE:CAPS" title="SOUP_SESSION_SSL_CA_FILE">SOUP_SESSION_SSL_CA_FILE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-SSL-STRICT:CAPS" title="SOUP_SESSION_SSL_STRICT">SOUP_SESSION_SSL_STRICT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-TLS-INTERACTION:CAPS" title="SOUP_SESSION_TLS_INTERACTION">SOUP_SESSION_TLS_INTERACTION</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-ASYNC-CONTEXT:CAPS" title="SOUP_SESSION_ASYNC_CONTEXT">SOUP_SESSION_ASYNC_CONTEXT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-USE-THREAD-CONTEXT:CAPS" title="SOUP_SESSION_USE_THREAD_CONTEXT">SOUP_SESSION_USE_THREAD_CONTEXT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-TIMEOUT:CAPS" title="SOUP_SESSION_TIMEOUT">SOUP_SESSION_TIMEOUT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-IDLE-TIMEOUT:CAPS" title="SOUP_SESSION_IDLE_TIMEOUT">SOUP_SESSION_IDLE_TIMEOUT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-USER-AGENT:CAPS" title="SOUP_SESSION_USER_AGENT">SOUP_SESSION_USER_AGENT</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-ADD-FEATURE:CAPS" title="SOUP_SESSION_ADD_FEATURE">SOUP_SESSION_ADD_FEATURE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-ADD-FEATURE-BY-TYPE:CAPS" title="SOUP_SESSION_ADD_FEATURE_BY_TYPE">SOUP_SESSION_ADD_FEATURE_BY_TYPE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-REMOVE-FEATURE-BY-TYPE:CAPS" title="SOUP_SESSION_REMOVE_FEATURE_BY_TYPE">SOUP_SESSION_REMOVE_FEATURE_BY_TYPE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-ACCEPT-LANGUAGE:CAPS" title="SOUP_SESSION_ACCEPT_LANGUAGE">SOUP_SESSION_ACCEPT_LANGUAGE</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-ACCEPT-LANGUAGE-AUTO:CAPS" title="SOUP_SESSION_ACCEPT_LANGUAGE_AUTO">SOUP_SESSION_ACCEPT_LANGUAGE_AUTO</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-HTTP-ALIASES:CAPS" title="SOUP_SESSION_HTTP_ALIASES">SOUP_SESSION_HTTP_ALIASES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-HTTPS-ALIASES:CAPS" title="SOUP_SESSION_HTTPS_ALIASES">SOUP_SESSION_HTTPS_ALIASES</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupSession.html#SOUP-SESSION-LOCAL-ADDRESS:CAPS" title="SOUP_SESSION_LOCAL_ADDRESS">SOUP_SESSION_LOCAL_ADDRESS</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupSession.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> SoupSession
+        <span class="lineart">├──</span> <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync">SoupSessionAsync</a>
+        <span class="lineart">╰──</span> <a class="link" href="SoupSessionSync.html" title="SoupSessionSync">SoupSessionSync</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupSession.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupSession.description"></a><h2>Description</h2>
+<p><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> is the object that controls client-side HTTP. A
+<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> encapsulates all of the state that libsoup is keeping
+on behalf of your program; cached HTTP connections, authentication
+information, etc. It also keeps track of various global options
+and features that you are using.</p>
+<p>Most applications will only need a single <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>; the primary
+reason you might need multiple sessions is if you need to have
+multiple independent authentication contexts. (Eg, you are
+connecting to a server and authenticating as two different users at
+different times; the easiest way to ensure that each <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>
+is sent with the authentication information you intended is to use
+one session for the first user, and a second session for the other
+user.)</p>
+<p>In the past, <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> was an abstract class, and users needed
+to choose between <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> (which always uses
+<a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainLoop"><span class="type">GMainLoop</span></a>-based I/O), or <a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a> (which always uses
+blocking I/O and can be used from multiple threads simultaneously).
+This is no longer necessary; you can (and should) use a plain
+<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>, which supports both synchronous and asynchronous use.
+(When using a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>, <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>
+behaves like it traditionally did on a <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a>, and
+<a class="link" href="SoupSession.html#soup-session-send-message" title="soup_session_send_message ()"><code class="function">soup_session_send_message()</code></a> behaves like it traditionally did on a
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>.)</p>
+<p>Additional <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> functionality is provided by
+<a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a> objects, which can be added to a session with
+<a class="link" href="SoupSession.html#soup-session-add-feature" title="soup_session_add_feature ()"><code class="function">soup_session_add_feature()</code></a> or <a class="link" href="SoupSession.html#soup-session-add-feature-by-type" title="soup_session_add_feature_by_type ()"><code class="function">soup_session_add_feature_by_type()</code></a>
+(or at construct time with the <a class="link" href="SoupSession.html#SOUP-SESSION-ADD-FEATURE-BY-TYPE:CAPS" title="SOUP_SESSION_ADD_FEATURE_BY_TYPE"><code class="literal">SOUP_SESSION_ADD_FEATURE_BY_TYPE</code></a>
+pseudo-property). For example, <a class="link" href="SoupLogger.html" title="SoupLogger"><span class="type">SoupLogger</span></a> provides support for
+logging HTTP traffic, <a class="link" href="SoupContentDecoder.html" title="SoupContentDecoder"><span class="type">SoupContentDecoder</span></a> provides support for
+compressed response handling, and <a class="link" href="SoupContentSniffer.html" title="SoupContentSniffer"><span class="type">SoupContentSniffer</span></a> provides
+support for HTML5-style response body content sniffing.
+Additionally, subtypes of <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> and <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a> can be added
+as features, to add support for additional authentication and URI
+types.</p>
+<p>All <a href="SoupSession.html"><span class="type">SoupSessions</span></a> are created with a <a class="link" href="SoupAuthManager.html" title="SoupAuthManager"><span class="type">SoupAuthManager</span></a>, and support
+for <a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-BASIC:CAPS" title="SOUP_TYPE_AUTH_BASIC"><code class="literal">SOUP_TYPE_AUTH_BASIC</code></a> and <a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-DIGEST:CAPS" title="SOUP_TYPE_AUTH_DIGEST"><code class="literal">SOUP_TYPE_AUTH_DIGEST</code></a>. For
+<a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a> types, <a class="link" href="SoupRequestHTTP.html" title="SoupRequestHTTP"><span class="type">SoupRequestHTTP</span></a>, <a class="link" href="SoupRequestFile.html" title="SoupRequestFile"><span class="type">SoupRequestFile</span></a>, and
+<a class="link" href="SoupRequestData.html" title="SoupRequestData"><span class="type">SoupRequestData</span></a> are supported. Additionally, sessions using the
+plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> class (rather than one of its deprecated
+subtypes) have a <a class="link" href="SoupContentDecoder.html" title="SoupContentDecoder"><span class="type">SoupContentDecoder</span></a> by default.</p>
+</div>
+<div class="refsect1">
+<a name="SoupSession.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-session-new"></a><h3>soup_session_new ()</h3>
+<pre class="programlisting"><a class="link" href="SoupSession.html" title="SoupSession"><span class="returnvalue">SoupSession</span></a> *
+soup_session_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> with the default options.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.2.5"></a><h4>Returns</h4>
+<p> the new session.</p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-new-with-options"></a><h3>soup_session_new_with_options ()</h3>
+<pre class="programlisting"><a class="link" href="SoupSession.html" title="SoupSession"><span class="returnvalue">SoupSession</span></a> *
+soup_session_new_with_options (<em class="parameter"><code>const <span class="type">char</span> *optname1</code></em>,
+                               <em class="parameter"><code>...</code></em>);</pre>
+<p>Creates a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> with the specified options.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>optname1</p></td>
+<td class="parameter_description"><p>name of first property to set</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>value of <em class="parameter"><code>optname1</code></em>
+, followed by additional property/value pairs</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.3.6"></a><h4>Returns</h4>
+<p> the new session.</p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-request"></a><h3>soup_session_request ()</h3>
+<pre class="programlisting"><a class="link" href="SoupRequest.html" title="SoupRequest"><span class="returnvalue">SoupRequest</span></a> *
+soup_session_request (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                      <em class="parameter"><code>const <span class="type">char</span> *uri_string</code></em>,
+                      <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a> for retrieving <em class="parameter"><code>uri_string</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri_string</p></td>
+<td class="parameter_description"><p>a URI, in string form</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.4.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a>, or
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-request-uri"></a><h3>soup_session_request_uri ()</h3>
+<pre class="programlisting"><a class="link" href="SoupRequest.html" title="SoupRequest"><span class="returnvalue">SoupRequest</span></a> *
+soup_session_request_uri (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                          <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *uri</code></em>,
+                          <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a> for retrieving <em class="parameter"><code>uri</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> representing the URI to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.5.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a>, or
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-request-http"></a><h3>soup_session_request_http ()</h3>
+<pre class="programlisting"><a class="link" href="SoupRequestHTTP.html" title="SoupRequestHTTP"><span class="returnvalue">SoupRequestHTTP</span></a> *
+soup_session_request_http (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                           <em class="parameter"><code>const <span class="type">char</span> *method</code></em>,
+                           <em class="parameter"><code>const <span class="type">char</span> *uri_string</code></em>,
+                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a> for retrieving <em class="parameter"><code>uri_string</code></em>
+, which must be an
+"http" or "https" URI (or another protocol listed in <em class="parameter"><code>session</code></em>
+'s
+<a class="link" href="SoupSession.html#SoupSession--http-aliases" title="The “http-aliases” property"><span class="type">“http-aliases”</span></a> or <a class="link" href="SoupSession.html#SoupSession--https-aliases" title="The “https-aliases” property"><span class="type">“https-aliases”</span></a>).</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>method</p></td>
+<td class="parameter_description"><p>an HTTP method</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri_string</p></td>
+<td class="parameter_description"><p>a URI, in string form</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.6.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="SoupRequestHTTP.html" title="SoupRequestHTTP"><span class="type">SoupRequestHTTP</span></a>, or
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-request-http-uri"></a><h3>soup_session_request_http_uri ()</h3>
+<pre class="programlisting"><a class="link" href="SoupRequestHTTP.html" title="SoupRequestHTTP"><span class="returnvalue">SoupRequestHTTP</span></a> *
+soup_session_request_http_uri (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *method</code></em>,
+                               <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *uri</code></em>,
+                               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Creates a <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a> for retrieving <em class="parameter"><code>uri</code></em>
+, which must be an
+"http" or "https" URI (or another protocol listed in <em class="parameter"><code>session</code></em>
+'s
+<a class="link" href="SoupSession.html#SoupSession--http-aliases" title="The “http-aliases” property"><span class="type">“http-aliases”</span></a> or <a class="link" href="SoupSession.html#SoupSession--https-aliases" title="The “https-aliases” property"><span class="type">“https-aliases”</span></a>).</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>method</p></td>
+<td class="parameter_description"><p>an HTTP method</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> representing the URI to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.7.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="SoupRequestHTTP.html" title="SoupRequestHTTP"><span class="type">SoupRequestHTTP</span></a>, or
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSessionCallback"></a><h3>SoupSessionCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*SoupSessionCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                        <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                        <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Prototype for the callback passed to <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>,
+qv.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the session</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the message that has finished</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data passed to soup_session_queue_message</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-queue-message"></a><h3>soup_session_queue_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_queue_message (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                            <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                            <em class="parameter"><code><a class="link" href="SoupSession.html#SoupSessionCallback" title="SoupSessionCallback ()"><span class="type">SoupSessionCallback</span></a> callback</code></em>,
+                            <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Queues the message <em class="parameter"><code>msg</code></em>
+ for asynchronously sending the request and
+receiving a response in the current thread-default <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.
+If <em class="parameter"><code>msg</code></em>
+ has been processed before, any resources related to the
+time it was last sent are freed.</p>
+<p>Upon message completion, the callback specified in <em class="parameter"><code>callback</code></em>
+ will
+be invoked. If after returning from this callback the message has not
+been requeued, <em class="parameter"><code>msg</code></em>
+ will be unreffed.</p>
+<p>(The behavior above applies to a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>; if you are
+using <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> or <a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>, then the <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>
+that is used depends on the settings of <a class="link" href="SoupSession.html#SoupSession--async-context" title="The “async-context” property"><span class="type">“async-context”</span></a>
+and <a class="link" href="SoupSession.html#SoupSession--use-thread-context" title="The “use-thread-context” property"><span class="type">“use-thread-context”</span></a>, and for <a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>, the
+message will actually be sent and processed in another thread, with
+only the final callback occurring in the indicated <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.)</p>
+<p>Contrast this method with <a class="link" href="SoupSession.html#soup-session-send-async" title="soup_session_send_async ()"><code class="function">soup_session_send_async()</code></a>, which also
+asynchronously sends a message, but returns before reading the
+response body, and allows you to read the response via a
+<a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.9.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p> the message to queue. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> a <a class="link" href="SoupSession.html#SoupSessionCallback" title="SoupSessionCallback ()"><span class="type">SoupSessionCallback</span></a> which will
+be called after the message completes or when an unrecoverable error occurs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p> a pointer passed to <em class="parameter"><code>callback</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-requeue-message"></a><h3>soup_session_requeue_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_requeue_message (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                              <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>This causes <em class="parameter"><code>msg</code></em>
+ to be placed back on the queue to be attempted
+again.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the message to requeue</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-send-message"></a><h3>soup_session_send_message ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+soup_session_send_message (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                           <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Synchronously send <em class="parameter"><code>msg</code></em>
+. This call will not return until the
+transfer is finished successfully or there is an unrecoverable
+error.</p>
+<p>Unlike with <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>, <em class="parameter"><code>msg</code></em>
+ is not freed upon
+return.</p>
+<p>(Note that if you call this method on a <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a>, it will
+still use asynchronous I/O internally, running the glib main loop
+to process the message, which may also cause other events to be
+processed.)</p>
+<p>Contrast this method with <a class="link" href="SoupSession.html#soup-session-send" title="soup_session_send ()"><code class="function">soup_session_send()</code></a>, which also
+synchronously sends a message, but returns before reading the
+response body, and allows you to read the response via a
+<a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.11.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the message to send</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.11.9"></a><h4>Returns</h4>
+<p> the HTTP status code of the response</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-cancel-message"></a><h3>soup_session_cancel_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_cancel_message (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                             <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                             <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> status_code</code></em>);</pre>
+<p>Causes <em class="parameter"><code>session</code></em>
+ to immediately finish processing <em class="parameter"><code>msg</code></em>
+ (regardless
+of its current state) with a final status_code of <em class="parameter"><code>status_code</code></em>
+. You
+may call this at any time after handing <em class="parameter"><code>msg</code></em>
+ off to <em class="parameter"><code>session</code></em>
+; if
+<em class="parameter"><code>session</code></em>
+ has started sending the request but has not yet received
+the complete response, then it will close the request's connection.
+Note that with requests that have side effects (eg,
+<code class="literal">POST</code>, <code class="literal">PUT</code>,
+<code class="literal">DELETE</code>) it is possible that you might cancel the
+request after the server acts on it, but before it returns a
+response, leaving the remote resource in an unknown state.</p>
+<p>If the message is cancelled while its response body is being read,
+then the response body in <em class="parameter"><code>msg</code></em>
+ will be left partially-filled-in.
+The response headers, on the other hand, will always be either
+empty or complete.</p>
+<p>Beware that with the deprecated <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a>, messages queued
+with <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a> will have their callbacks invoked
+before <a class="link" href="SoupSession.html#soup-session-cancel-message" title="soup_session_cancel_message ()"><code class="function">soup_session_cancel_message()</code></a> returns. The plain
+<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> does not have this behavior; cancelling an
+asynchronous message will merely queue its callback to be run after
+returning to the main loop.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.12.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the message to cancel</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>status_code</p></td>
+<td class="parameter_description"><p>status code to set on <em class="parameter"><code>msg</code></em>
+(generally
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-CANCELLED:CAPS"><code class="literal">SOUP_STATUS_CANCELLED</code></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-send"></a><h3>soup_session_send ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="returnvalue">GInputStream</span></a> *
+soup_session_send (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                   <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                   <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Synchronously sends <em class="parameter"><code>msg</code></em>
+ and waits for the beginning of a response.
+On success, a <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> will be returned which you can use to
+read the response body. ("Success" here means only that an HTTP
+response was received and understood; it does not necessarily mean
+that a 2xx class status code was received.)</p>
+<p>If non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, <em class="parameter"><code>cancellable</code></em>
+ can be used to cancel the request;
+<a class="link" href="SoupSession.html#soup-session-send" title="soup_session_send ()"><code class="function">soup_session_send()</code></a> will return a <code class="literal">G_IO_ERROR_CANCELLED</code> error. Note
+that with requests that have side effects (eg,
+<code class="literal">POST</code>, <code class="literal">PUT</code>,
+<code class="literal">DELETE</code>) it is possible that you might cancel the
+request after the server acts on it, but before it returns a
+response, leaving the remote resource in an unknown state.</p>
+<p>If <em class="parameter"><code>msg</code></em>
+ is requeued due to a redirect or authentication, the
+initial (3xx/401/407) response body will be suppressed, and
+<a class="link" href="SoupSession.html#soup-session-send" title="soup_session_send ()"><code class="function">soup_session_send()</code></a> will only return once a final response has been
+received.</p>
+<p>Contrast this method with <a class="link" href="SoupSession.html#soup-session-send-message" title="soup_session_send_message ()"><code class="function">soup_session_send_message()</code></a>, which also
+synchronously sends a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>, but doesn't return until the
+response has been completely read.</p>
+<p>(Note that this method cannot be called on the deprecated
+<a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> subclass.)</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.13.9"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.13.10"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> for reading the
+response body, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-send-async"></a><h3>soup_session_send_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_send_async (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                         <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                         <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Asynchronously sends <em class="parameter"><code>msg</code></em>
+ and waits for the beginning of a
+response. When <em class="parameter"><code>callback</code></em>
+ is called, then either <em class="parameter"><code>msg</code></em>
+ has been sent,
+and its response headers received, or else an error has occurred.
+Call <a class="link" href="SoupSession.html#soup-session-send-finish" title="soup_session_send_finish ()"><code class="function">soup_session_send_finish()</code></a> to get a <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> for reading
+the response body.</p>
+<p>See <a class="link" href="SoupSession.html#soup-session-send" title="soup_session_send ()"><code class="function">soup_session_send()</code></a> for more details on the general semantics.</p>
+<p>Contrast this method with <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>, which also
+asynchronously sends a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>, but doesn't invoke its
+callback until the response has been completely read.</p>
+<p>(Note that this method cannot be called on the deprecated
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a> subclass, and can only be called on
+<a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> if you have set the
+<a class="link" href="SoupSession.html#SoupSession--use-thread-context" title="The “use-thread-context” property"><span class="type">“use-thread-context”</span></a> property.)</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.14.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the callback to invoke</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-send-finish"></a><h3>soup_session_send_finish ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="returnvalue">GInputStream</span></a> *
+soup_session_send_finish (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                          <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                          <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the response to a <a class="link" href="SoupSession.html#soup-session-send-async" title="soup_session_send_async ()"><code class="function">soup_session_send_async()</code></a> call and (if
+successful), returns a <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> that can be used to read the
+response body.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> passed to your callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.15.6"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> for reading the
+response body, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-websocket-connect-async"></a><h3>soup_session_websocket_connect_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_websocket_connect_async (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                                      <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *origin</code></em>,
+                                      <em class="parameter"><code><span class="type">char</span> **protocols</code></em>,
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Asynchronously creates a <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> to communicate
+with a remote server.</p>
+<p>All necessary WebSocket-related headers will be added to <em class="parameter"><code>msg</code></em>
+, and
+it will then be sent and asynchronously processed normally
+(including handling of redirection and HTTP authentication).</p>
+<p>If the server returns "101 Switching Protocols", then <em class="parameter"><code>msg</code></em>
+'s status
+code and response headers will be updated, and then the WebSocket
+handshake will be completed. On success,
+<code class="function">soup_websocket_connect_finish()</code> will return a new
+<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a>. On failure it will return a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>.</p>
+<p>If the server returns a status other than "101 Switching
+Protocols", then <em class="parameter"><code>msg</code></em>
+ will contain the complete response headers
+and body from the server's response, and
+<code class="function">soup_websocket_connect_finish()</code> will return
+<a class="link" href="libsoup-2.4-WebSockets.html#SOUP-WEBSOCKET-ERROR-NOT-WEBSOCKET:CAPS"><code class="literal">SOUP_WEBSOCKET_ERROR_NOT_WEBSOCKET</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.16.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> indicating the WebSocket server to connect to</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>origin</p></td>
+<td class="parameter_description"><p> origin of the connection. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protocols</p></td>
+<td class="parameter_description"><p> a
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of protocols supported. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the callback to invoke</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-websocket-connect-finish"></a><h3>soup_session_websocket_connect_finish ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="returnvalue">SoupWebsocketConnection</span></a> *
+soup_session_websocket_connect_finish (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Gets the <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> response to a
+<a class="link" href="SoupSession.html#soup-session-websocket-connect-async" title="soup_session_websocket_connect_async ()"><code class="function">soup_session_websocket_connect_async()</code></a> call and (if successful),
+returns a <span class="type">SoupWebsockConnection</span> that can be used to communicate
+with the server.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> passed to your callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.17.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a>, or
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-prefetch-dns"></a><h3>soup_session_prefetch_dns ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_prefetch_dns (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                           <em class="parameter"><code>const <span class="type">char</span> *hostname</code></em>,
+                           <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                           <em class="parameter"><code><a class="link" href="SoupAddress.html#SoupAddressCallback" title="SoupAddressCallback ()"><span class="type">SoupAddressCallback</span></a> callback</code></em>,
+                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Tells <em class="parameter"><code>session</code></em>
+ that an URI from the given <em class="parameter"><code>hostname</code></em>
+ may be requested
+shortly, and so the session can try to prepare by resolving the
+domain name in advance, in order to work more quickly once the URI
+is actually requested.</p>
+<p>If <em class="parameter"><code>cancellable</code></em>
+ is non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, it can be used to cancel the
+resolution. <em class="parameter"><code>callback</code></em>
+ will still be invoked in this case, with a
+status of <a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-CANCELLED:CAPS"><code class="literal">SOUP_STATUS_CANCELLED</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.18.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hostname</p></td>
+<td class="parameter_description"><p>a hostname to be resolved</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> object, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p> callback to call with the
+result, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until first called."><span class="acronym">scope async</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-abort"></a><h3>soup_session_abort ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_abort (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>);</pre>
+<p>Cancels all pending requests in <em class="parameter"><code>session</code></em>
+ and closes all idle
+persistent connections.</p>
+<p>The message cancellation has the same semantics as with
+<a class="link" href="SoupSession.html#soup-session-cancel-message" title="soup_session_cancel_message ()"><code class="function">soup_session_cancel_message()</code></a>; asynchronous requests on a
+<a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> will have their callback called before
+<a class="link" href="SoupSession.html#soup-session-abort" title="soup_session_abort ()"><code class="function">soup_session_abort()</code></a> returns. Requests on a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> will
+not.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.19.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the session</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-would-redirect"></a><h3>soup_session_would_redirect ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_session_would_redirect (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                             <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Checks if <em class="parameter"><code>msg</code></em>
+ contains a response that would cause <em class="parameter"><code>session</code></em>
+ to
+redirect it to a new URL (ignoring <em class="parameter"><code>msg</code></em>
+'s <a class="link" href="SoupMessage.html#SOUP-MESSAGE-NO-REDIRECT:CAPS"><code class="literal">SOUP_MESSAGE_NO_REDIRECT</code></a>
+flag, and the number of times it has already been redirected).</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> that has response headers</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.20.6"></a><h4>Returns</h4>
+<p> whether <em class="parameter"><code>msg</code></em>
+would be redirected</p>
+</div>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-redirect-message"></a><h3>soup_session_redirect_message ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_session_redirect_message (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                               <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Updates <em class="parameter"><code>msg</code></em>
+'s URI according to its status code and "Location"
+header, and requeues it on <em class="parameter"><code>session</code></em>
+. Use this when you have set
+<a class="link" href="SoupMessage.html#SOUP-MESSAGE-NO-REDIRECT:CAPS"><code class="literal">SOUP_MESSAGE_NO_REDIRECT</code></a> on a message, but have decided to allow a
+particular redirection to occur, or if you want to allow a
+redirection that <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> will not perform automatically (eg,
+redirecting a non-safe method such as DELETE).</p>
+<p>If <em class="parameter"><code>msg</code></em>
+'s status code indicates that it should be retried as a GET
+request, then <em class="parameter"><code>msg</code></em>
+ will be modified accordingly.</p>
+<p>If <em class="parameter"><code>msg</code></em>
+ has already been redirected too many times, this will
+cause it to fail with <a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-TOO-MANY-REDIRECTS:CAPS"><code class="literal">SOUP_STATUS_TOO_MANY_REDIRECTS</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.21.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the session</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> that has received a 3xx response</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.21.8"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if a redirection was applied, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if not
+(eg, because there was no Location header, or it could not be
+parsed).</p>
+</div>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-pause-message"></a><h3>soup_session_pause_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_pause_message (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                            <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Pauses HTTP I/O on <em class="parameter"><code>msg</code></em>
+. Call <a class="link" href="SoupSession.html#soup-session-unpause-message" title="soup_session_unpause_message ()"><code class="function">soup_session_unpause_message()</code></a> to
+resume I/O.</p>
+<p>This may only be called for asynchronous messages (those sent on a
+<a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> or using <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>).</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.22.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> currently running on <em class="parameter"><code>session</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-unpause-message"></a><h3>soup_session_unpause_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_unpause_message (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                              <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Resumes HTTP I/O on <em class="parameter"><code>msg</code></em>
+. Use this to resume after calling
+<a class="link" href="SoupSession.html#soup-session-pause-message" title="soup_session_pause_message ()"><code class="function">soup_session_pause_message()</code></a>.</p>
+<p>If <em class="parameter"><code>msg</code></em>
+ is being sent via blocking I/O, this will resume reading or
+writing immediately. If <em class="parameter"><code>msg</code></em>
+ is using non-blocking I/O, then
+reading or writing won't resume until you return to the main loop.</p>
+<p>This may only be called for asynchronous messages (those sent on a
+<a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> or using <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>).</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.23.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> currently running on <em class="parameter"><code>session</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-get-async-context"></a><h3>soup_session_get_async_context ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="returnvalue">GMainContext</span></a> *
+soup_session_get_async_context (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>);</pre>
+<p>Gets <em class="parameter"><code>session</code></em>
+'s <a class="link" href="SoupSession.html#SoupSession--async-context" title="The “async-context” property"><span class="type">“async-context”</span></a>. This does not add a ref
+to the context, so you will need to ref it yourself if you want it
+to outlive its session.</p>
+<p>For a modern <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>, this will always just return the
+thread-default <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>, and so is not especially useful.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.24.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.24.7"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>session</code></em>
+'s <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>,
+which may be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-add-feature"></a><h3>soup_session_add_feature ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_add_feature (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                          <em class="parameter"><code><a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a> *feature</code></em>);</pre>
+<p>Adds <em class="parameter"><code>feature</code></em>
+'s functionality to <em class="parameter"><code>session</code></em>
+. You can also add a
+feature to the session at construct time by using the
+<a class="link" href="SoupSession.html#SOUP-SESSION-ADD-FEATURE:CAPS" title="SOUP_SESSION_ADD_FEATURE"><code class="literal">SOUP_SESSION_ADD_FEATURE</code></a> property.</p>
+<p>See the main <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> documentation for information on what
+features are present in sessions by default.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.25.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature</p></td>
+<td class="parameter_description"><p>an object that implements <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-add-feature-by-type"></a><h3>soup_session_add_feature_by_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_add_feature_by_type (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> feature_type</code></em>);</pre>
+<p>If <em class="parameter"><code>feature_type</code></em>
+ is the type of a class that implements
+<a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a>, this creates a new feature of that type and
+adds it to <em class="parameter"><code>session</code></em>
+ as with <a class="link" href="SoupSession.html#soup-session-add-feature" title="soup_session_add_feature ()"><code class="function">soup_session_add_feature()</code></a>. You can use
+this when you don't need to customize the new feature in any way.</p>
+<p>If <em class="parameter"><code>feature_type</code></em>
+ is not a <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a> type, this gives each
+existing feature on <em class="parameter"><code>session</code></em>
+ the chance to accept <em class="parameter"><code>feature_type</code></em>
+ as
+a "subfeature". This can be used to add new <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> or
+<a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a> types, for instance.</p>
+<p>You can also add a feature to the session at construct time by
+using the <a class="link" href="SoupSession.html#SOUP-SESSION-ADD-FEATURE-BY-TYPE:CAPS" title="SOUP_SESSION_ADD_FEATURE_BY_TYPE"><code class="literal">SOUP_SESSION_ADD_FEATURE_BY_TYPE</code></a> property.</p>
+<p>See the main <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> documentation for information on what
+features are present in sessions by default.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.26.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature_type</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-remove-feature"></a><h3>soup_session_remove_feature ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_remove_feature (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                             <em class="parameter"><code><a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a> *feature</code></em>);</pre>
+<p>Removes <em class="parameter"><code>feature</code></em>
+'s functionality from <em class="parameter"><code>session</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.27.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature</p></td>
+<td class="parameter_description"><p>a feature that has previously been added to <em class="parameter"><code>session</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-remove-feature-by-type"></a><h3>soup_session_remove_feature_by_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_session_remove_feature_by_type (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                                     <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> feature_type</code></em>);</pre>
+<p>Removes all features of type <em class="parameter"><code>feature_type</code></em>
+ (or any subclass of
+<em class="parameter"><code>feature_type</code></em>
+) from <em class="parameter"><code>session</code></em>
+. You can also remove standard features
+from the session at construct time by using the
+<a class="link" href="SoupSession.html#SOUP-SESSION-REMOVE-FEATURE-BY-TYPE:CAPS" title="SOUP_SESSION_REMOVE_FEATURE_BY_TYPE"><code class="literal">SOUP_SESSION_REMOVE_FEATURE_BY_TYPE</code></a> property.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.28.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature_type</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-get-features"></a><h3>soup_session_get_features ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+soup_session_get_features (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                           <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> feature_type</code></em>);</pre>
+<p>Generates a list of <em class="parameter"><code>session</code></em>
+'s features of type <em class="parameter"><code>feature_type</code></em>
+. (If
+you want to see all features, you can pass <code class="literal">SOUP_TYPE_SESSION_FEATURE</code>
+for <em class="parameter"><code>feature_type</code></em>
+.)</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.29.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature_type</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> of the class of features to get</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.29.6"></a><h4>Returns</h4>
+<p>a list of features. You must free the list, but not its contents. </p>
+<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Soup.SessionFeature]</span></p>
+</div>
+<p class="since">Since: 2.26</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-get-feature"></a><h3>soup_session_get_feature ()</h3>
+<pre class="programlisting"><a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="returnvalue">SoupSessionFeature</span></a> *
+soup_session_get_feature (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                          <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> feature_type</code></em>);</pre>
+<p>Gets the first feature in <em class="parameter"><code>session</code></em>
+ of type <em class="parameter"><code>feature_type</code></em>
+. For
+features where there may be more than one feature of a given type,
+use <a class="link" href="SoupSession.html#soup-session-get-features" title="soup_session_get_features ()"><code class="function">soup_session_get_features()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.30.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature_type</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> of the feature to get</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.30.6"></a><h4>Returns</h4>
+<p> a <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a>, or
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. The feature is owned by <em class="parameter"><code>session</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.26</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-get-feature-for-message"></a><h3>soup_session_get_feature_for_message ()</h3>
+<pre class="programlisting"><a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="returnvalue">SoupSessionFeature</span></a> *
+soup_session_get_feature_for_message (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> feature_type</code></em>,
+                                      <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Gets the first feature in <em class="parameter"><code>session</code></em>
+ of type <em class="parameter"><code>feature_type</code></em>
+, provided
+that it is not disabled for <em class="parameter"><code>msg</code></em>
+. As with
+<a class="link" href="SoupSession.html#soup-session-get-feature" title="soup_session_get_feature ()"><code class="function">soup_session_get_feature()</code></a>, this should only be used for features
+where <em class="parameter"><code>feature_type</code></em>
+ is only expected to match a single feature. In
+particular, if there are two matching features, and the first is
+disabled on <em class="parameter"><code>msg</code></em>
+, and the second is not, then this will return
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, not the second feature.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.31.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature_type</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> of the feature to get</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.31.6"></a><h4>Returns</h4>
+<p> a <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. The
+feature is owned by <em class="parameter"><code>session</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.28</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-has-feature"></a><h3>soup_session_has_feature ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_session_has_feature (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                          <em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> feature_type</code></em>);</pre>
+<p>Tests if <em class="parameter"><code>session</code></em>
+ has at a feature of type <em class="parameter"><code>feature_type</code></em>
+ (which can
+be the type of either a <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a>, or else a subtype of
+some class managed by another feature, such as <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> or
+<a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a>).</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.32.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>feature_type</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> of the class of features to check for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.32.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-session-steal-connection"></a><h3>soup_session_steal_connection ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="returnvalue">GIOStream</span></a> *
+soup_session_steal_connection (<em class="parameter"><code><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session</code></em>,
+                               <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>"Steals" the HTTP connection associated with <em class="parameter"><code>msg</code></em>
+ from <em class="parameter"><code>session</code></em>
+.
+This happens immediately, regardless of the current state of the
+connection, and <em class="parameter"><code>msg</code></em>
+'s callback will not be called. You can steal
+the connection from a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> signal handler if you need to
+wait for part or all of the response to be received first.</p>
+<p>Calling this function may cause <em class="parameter"><code>msg</code></em>
+ to be freed if you are not
+holding any other reference to it.</p>
+<div class="refsect3">
+<a name="id-1.3.21.10.33.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the message whose connection is to be stolen</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.10.33.7"></a><h4>Returns</h4>
+<p> the <a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="type">GIOStream</span></a> formerly associated
+with <em class="parameter"><code>msg</code></em>
+(or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>msg</code></em>
+was no longer associated with a
+connection). No guarantees are made about what kind of <a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="type">GIOStream</span></a>
+is returned. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupSession.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupSession-struct"></a><h3>SoupSession</h3>
+<pre class="programlisting">typedef struct _SoupSession SoupSession;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupRequestError"></a><h3>enum SoupRequestError</h3>
+<p>A <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a> error.</p>
+<div class="refsect3">
+<a name="id-1.3.21.11.3.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-REQUEST-ERROR-BAD-URI:CAPS"></a>SOUP_REQUEST_ERROR_BAD_URI</p></td>
+<td class="enum_member_description">
+<p>the URI could not be parsed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-REQUEST-ERROR-UNSUPPORTED-URI-SCHEME:CAPS"></a>SOUP_REQUEST_ERROR_UNSUPPORTED_URI_SCHEME</p></td>
+<td class="enum_member_description">
+<p>the URI scheme is not
+  supported by this <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-REQUEST-ERROR-PARSING:CAPS"></a>SOUP_REQUEST_ERROR_PARSING</p></td>
+<td class="enum_member_description">
+<p>the server's response could not
+  be parsed</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-REQUEST-ERROR-ENCODING:CAPS"></a>SOUP_REQUEST_ERROR_ENCODING</p></td>
+<td class="enum_member_description">
+<p>the server's response was in an
+  unsupported format</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-REQUEST-ERROR:CAPS"></a><h3>SOUP_REQUEST_ERROR</h3>
+<pre class="programlisting">#define SOUP_REQUEST_ERROR soup_request_error_quark ()
+</pre>
+<p>A <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> domain for <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a>-related errors. Used with
+<a class="link" href="SoupSession.html#SoupRequestError" title="enum SoupRequestError"><span class="type">SoupRequestError</span></a>.</p>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-PROXY-URI:CAPS"></a><h3>SOUP_SESSION_PROXY_URI</h3>
+<pre class="programlisting">#define SOUP_SESSION_PROXY_URI              "proxy-uri"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--proxy-uri" title="The “proxy-uri” property"><span class="type">“proxy-uri”</span></a> property, qv.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-PROXY-RESOLVER:CAPS"></a><h3>SOUP_SESSION_PROXY_RESOLVER</h3>
+<pre class="programlisting">#define SOUP_SESSION_PROXY_RESOLVER         "proxy-resolver"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--proxy-resolver" title="The “proxy-resolver” property"><span class="type">“proxy-resolver”</span></a> property, qv.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-MAX-CONNS:CAPS"></a><h3>SOUP_SESSION_MAX_CONNS</h3>
+<pre class="programlisting">#define SOUP_SESSION_MAX_CONNS              "max-conns"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--max-conns" title="The “max-conns” property"><span class="type">“max-conns”</span></a> property, qv.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-MAX-CONNS-PER-HOST:CAPS"></a><h3>SOUP_SESSION_MAX_CONNS_PER_HOST</h3>
+<pre class="programlisting">#define SOUP_SESSION_MAX_CONNS_PER_HOST     "max-conns-per-host"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--max-conns-per-host" title="The “max-conns-per-host” property"><span class="type">“max-conns-per-host”</span></a> property, qv.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-TLS-DATABASE:CAPS"></a><h3>SOUP_SESSION_TLS_DATABASE</h3>
+<pre class="programlisting">#define SOUP_SESSION_TLS_DATABASE           "tls-database"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--tls-database" title="The “tls-database” property"><span class="type">“tls-database”</span></a> property, qv.</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-SSL-USE-SYSTEM-CA-FILE:CAPS"></a><h3>SOUP_SESSION_SSL_USE_SYSTEM_CA_FILE</h3>
+<pre class="programlisting">#define SOUP_SESSION_SSL_USE_SYSTEM_CA_FILE "ssl-use-system-ca-file"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--ssl-use-system-ca-file" title="The “ssl-use-system-ca-file” property"><span class="type">“ssl-use-system-ca-file”</span></a> property,
+qv.</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-SSL-CA-FILE:CAPS"></a><h3>SOUP_SESSION_SSL_CA_FILE</h3>
+<pre class="programlisting">#define SOUP_SESSION_SSL_CA_FILE            "ssl-ca-file"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--ssl-ca-file" title="The “ssl-ca-file” property"><span class="type">“ssl-ca-file”</span></a> property, qv.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-SSL-STRICT:CAPS"></a><h3>SOUP_SESSION_SSL_STRICT</h3>
+<pre class="programlisting">#define SOUP_SESSION_SSL_STRICT             "ssl-strict"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--ssl-strict" title="The “ssl-strict” property"><span class="type">“ssl-strict”</span></a> property, qv.</p>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-TLS-INTERACTION:CAPS"></a><h3>SOUP_SESSION_TLS_INTERACTION</h3>
+<pre class="programlisting">#define SOUP_SESSION_TLS_INTERACTION        "tls-interaction"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--tls-interaction" title="The “tls-interaction” property"><span class="type">“tls-interaction”</span></a> property, qv.</p>
+<p class="since">Since: 2.48</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-ASYNC-CONTEXT:CAPS"></a><h3>SOUP_SESSION_ASYNC_CONTEXT</h3>
+<pre class="programlisting">#define SOUP_SESSION_ASYNC_CONTEXT          "async-context"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--async-context" title="The “async-context” property"><span class="type">“async-context”</span></a> property, qv.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-USE-THREAD-CONTEXT:CAPS"></a><h3>SOUP_SESSION_USE_THREAD_CONTEXT</h3>
+<pre class="programlisting">#define SOUP_SESSION_USE_THREAD_CONTEXT     "use-thread-context"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--use-thread-context" title="The “use-thread-context” property"><span class="type">“use-thread-context”</span></a> property, qv.</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-TIMEOUT:CAPS"></a><h3>SOUP_SESSION_TIMEOUT</h3>
+<pre class="programlisting">#define SOUP_SESSION_TIMEOUT                "timeout"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--timeout" title="The “timeout” property"><span class="type">“timeout”</span></a> property, qv.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-IDLE-TIMEOUT:CAPS"></a><h3>SOUP_SESSION_IDLE_TIMEOUT</h3>
+<pre class="programlisting">#define SOUP_SESSION_IDLE_TIMEOUT           "idle-timeout"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--idle-timeout" title="The “idle-timeout” property"><span class="type">“idle-timeout”</span></a> property, qv.</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-USER-AGENT:CAPS"></a><h3>SOUP_SESSION_USER_AGENT</h3>
+<pre class="programlisting">#define SOUP_SESSION_USER_AGENT             "user-agent"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--user-agent" title="The “user-agent” property"><span class="type">“user-agent”</span></a> property, qv.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-ADD-FEATURE:CAPS"></a><h3>SOUP_SESSION_ADD_FEATURE</h3>
+<pre class="programlisting">#define SOUP_SESSION_ADD_FEATURE            "add-feature"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--add-feature" title="The “add-feature” property"><span class="type">“add-feature”</span></a> property, qv.</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-ADD-FEATURE-BY-TYPE:CAPS"></a><h3>SOUP_SESSION_ADD_FEATURE_BY_TYPE</h3>
+<pre class="programlisting">#define SOUP_SESSION_ADD_FEATURE_BY_TYPE    "add-feature-by-type"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--add-feature-by-type" title="The “add-feature-by-type” property"><span class="type">“add-feature-by-type”</span></a> property, qv.</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-REMOVE-FEATURE-BY-TYPE:CAPS"></a><h3>SOUP_SESSION_REMOVE_FEATURE_BY_TYPE</h3>
+<pre class="programlisting">#define SOUP_SESSION_REMOVE_FEATURE_BY_TYPE "remove-feature-by-type"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--remove-feature-by-type" title="The “remove-feature-by-type” property"><span class="type">“remove-feature-by-type”</span></a> property,
+qv.</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-ACCEPT-LANGUAGE:CAPS"></a><h3>SOUP_SESSION_ACCEPT_LANGUAGE</h3>
+<pre class="programlisting">#define SOUP_SESSION_ACCEPT_LANGUAGE        "accept-language"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--accept-language" title="The “accept-language” property"><span class="type">“accept-language”</span></a> property, qv.</p>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-ACCEPT-LANGUAGE-AUTO:CAPS"></a><h3>SOUP_SESSION_ACCEPT_LANGUAGE_AUTO</h3>
+<pre class="programlisting">#define SOUP_SESSION_ACCEPT_LANGUAGE_AUTO   "accept-language-auto"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--accept-language-auto" title="The “accept-language-auto” property"><span class="type">“accept-language-auto”</span></a> property, qv.</p>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-HTTP-ALIASES:CAPS"></a><h3>SOUP_SESSION_HTTP_ALIASES</h3>
+<pre class="programlisting">#define SOUP_SESSION_HTTP_ALIASES       "http-aliases"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--http-aliases" title="The “http-aliases” property"><span class="type">“http-aliases”</span></a> property, qv.</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-HTTPS-ALIASES:CAPS"></a><h3>SOUP_SESSION_HTTPS_ALIASES</h3>
+<pre class="programlisting">#define SOUP_SESSION_HTTPS_ALIASES      "https-aliases"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--https-aliases" title="The “https-aliases” property"><span class="type">“https-aliases”</span></a> property, qv.</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-SESSION-LOCAL-ADDRESS:CAPS"></a><h3>SOUP_SESSION_LOCAL_ADDRESS</h3>
+<pre class="programlisting">#define SOUP_SESSION_LOCAL_ADDRESS          "local-address"
+</pre>
+<p>Alias for the <a class="link" href="SoupSession.html#SoupSession--local-address" title="The “local-address” property"><span class="type">“local-address”</span></a> property, qv.</p>
+<p class="since">Since: 2.42</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupSession.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="SoupSession--accept-language"></a><h3>The <code class="literal">“accept-language”</code> property</h3>
+<pre class="programlisting">  “accept-language”          <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>If non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the value to use for the "Accept-Language" header
+on <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>s sent from this session.</p>
+<p>Setting this will disable
+<a class="link" href="SoupSession.html#SoupSession--accept-language-auto" title="The “accept-language-auto” property"><span class="type">“accept-language-auto”</span></a>.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--accept-language-auto"></a><h3>The <code class="literal">“accept-language-auto”</code> property</h3>
+<pre class="programlisting">  “accept-language-auto”     <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>If <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> will automatically set the string
+for the "Accept-Language" header on every <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>
+sent, based on the return value of <a href="https://developer.gnome.org/glib/unstable/glib-I18N.html#g-get-language-names"><code class="function">g_get_language_names()</code></a>.</p>
+<p>Setting this will override any previous value of
+<a class="link" href="SoupSession.html#SoupSession--accept-language" title="The “accept-language” property"><span class="type">“accept-language”</span></a>.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--add-feature"></a><h3>The <code class="literal">“add-feature”</code> property</h3>
+<pre class="programlisting">  “add-feature”              <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a> *</pre>
+<p>Add a feature object to the session. (Shortcut for calling
+<a class="link" href="SoupSession.html#soup-session-add-feature" title="soup_session_add_feature ()"><code class="function">soup_session_add_feature()</code></a>.)</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<p>Flags: Read / Write</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--add-feature-by-type"></a><h3>The <code class="literal">“add-feature-by-type”</code> property</h3>
+<pre class="programlisting">  “add-feature-by-type”      <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> *</pre>
+<p>Add a feature object of the given type to the session.
+(Shortcut for calling <a class="link" href="SoupSession.html#soup-session-add-feature-by-type" title="soup_session_add_feature_by_type ()"><code class="function">soup_session_add_feature_by_type()</code></a>.)</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: GObject</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--async-context"></a><h3>The <code class="literal">“async-context”</code> property</h3>
+<pre class="programlisting">  “async-context”            <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>The <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> that miscellaneous session-related
+asynchronous callbacks are invoked on. (Eg, setting
+<a class="link" href="SoupSession.html#SoupSession--idle-timeout" title="The “idle-timeout” property"><span class="type">“idle-timeout”</span></a> will add a timeout source on this
+context.)</p>
+<p>For a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>, this property is always set to
+the <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> that is the thread-default at the time
+the session was created, and cannot be overridden. For the
+deprecated <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> subclasses, the default value is
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, meaning to use the global default <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.</p>
+<p>If <a class="link" href="SoupSession.html#SoupSession--use-thread-context" title="The “use-thread-context” property"><span class="type">“use-thread-context”</span></a> is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, this context
+will also be used for asynchronous HTTP I/O.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--http-aliases"></a><h3>The <code class="literal">“http-aliases”</code> property</h3>
+<pre class="programlisting">  “http-aliases”             <a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#GStrv"><span class="type">GStrv</span></a></pre>
+<p>A <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of URI schemes that should be
+considered to be aliases for "http". Eg, if this included
+<code class="literal">"dav"</code>, than a URI of
+<code class="literal">dav://example.com/path</code> would be treated
+identically to <code class="literal">http://example.com/path</code>.</p>
+<p>In a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>, the default value is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
+meaning that only "http" is recognized as meaning "http".
+In <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> and <a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>, for backward
+compatibility, the default value is an array containing the
+single element <code class="literal">"*"</code>, a special value
+which means that any scheme except "https" is considered to
+be an alias for "http".</p>
+<p>See also <a class="link" href="SoupSession.html#SoupSession--https-aliases" title="The “https-aliases” property"><span class="type">“https-aliases”</span></a>.</p>
+<p>Flags: Read / Write</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--https-aliases"></a><h3>The <code class="literal">“https-aliases”</code> property</h3>
+<pre class="programlisting">  “https-aliases”            <a href="https://developer.gnome.org/glib/unstable/glib-String-Utility-Functions.html#GStrv"><span class="type">GStrv</span></a></pre>
+<p>A comma-delimited list of URI schemes that should be
+considered to be aliases for "https". See
+<a class="link" href="SoupSession.html#SoupSession--http-aliases" title="The “http-aliases” property"><span class="type">“http-aliases”</span></a> for more information.</p>
+<p>The default value is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, meaning that no URI schemes
+are considered aliases for "https".</p>
+<p>Flags: Read / Write</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--idle-timeout"></a><h3>The <code class="literal">“idle-timeout”</code> property</h3>
+<pre class="programlisting">  “idle-timeout”             <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a></pre>
+<p>Connection lifetime (in seconds) when idle. Any connection
+left idle longer than this will be closed.</p>
+<p>Although you can change this property at any time, it will
+only affect newly-created connections, not currently-open
+ones. You can call <a class="link" href="SoupSession.html#soup-session-abort" title="soup_session_abort ()"><code class="function">soup_session_abort()</code></a> after setting this
+if you want to ensure that all future connections will have
+this timeout value.</p>
+<p>Note that the default value of 60 seconds only applies to
+plain <a href="SoupSession.html"><span class="type">SoupSessions</span></a>. If you are using <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> or
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>, the default value is 0 (meaning idle
+connections will never time out).</p>
+<p>Flags: Read / Write</p>
+<p>Default value: 60</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--local-address"></a><h3>The <code class="literal">“local-address”</code> property</h3>
+<pre class="programlisting">  “local-address”            <a class="link" href="SoupAddress.html" title="SoupAddress"><span class="type">SoupAddress</span></a> *</pre>
+<p>Sets the <a class="link" href="SoupAddress.html" title="SoupAddress"><span class="type">SoupAddress</span></a> to use for the client side of
+the connection.</p>
+<p>Use this property if you want for instance to bind the
+local socket to a specific IP address.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--max-conns"></a><h3>The <code class="literal">“max-conns”</code> property</h3>
+<pre class="programlisting">  “max-conns”                <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>The maximum number of connections that the session can open at once.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 10</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--max-conns-per-host"></a><h3>The <code class="literal">“max-conns-per-host”</code> property</h3>
+<pre class="programlisting">  “max-conns-per-host”       <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
+<p>The maximum number of connections that the session can open at once to a given host.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= 1</p>
+<p>Default value: 2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--proxy-resolver"></a><h3>The <code class="literal">“proxy-resolver”</code> property</h3>
+<pre class="programlisting">  “proxy-resolver”           <a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a> *</pre>
+<p>A <a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a> to use with this session. Setting this
+will clear the <a class="link" href="SoupSession.html#SoupSession--proxy-uri" title="The “proxy-uri” property"><span class="type">“proxy-uri”</span></a> property, and remove
+any <span class="type">SoupProxyURIResolver</span> features that have
+been added to the session.</p>
+<p>By default, in a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>, this is set to the
+default <a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a>, but you can set it to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if you
+don't want to use proxies, or set it to your own
+<a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a> if you want to control what proxies get
+used.</p>
+<p>Flags: Read / Write</p>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--proxy-uri"></a><h3>The <code class="literal">“proxy-uri”</code> property</h3>
+<pre class="programlisting">  “proxy-uri”                <a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *</pre>
+<p>A proxy to use for all http and https requests in this
+session. Setting this will clear the
+<a class="link" href="SoupSession.html#SoupSession--proxy-resolver" title="The “proxy-resolver” property"><span class="type">“proxy-resolver”</span></a> property, and remove any</p>
+<span class="type">SoupProxyURIResolver</span> features that have been
+<p>added to the session. Setting this property will also
+cancel all currently pending messages.</p>
+<p>Note that <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> will normally handle looking up the
+user's proxy settings for you; you should only use
+<a class="link" href="SoupSession.html#SoupSession--proxy-uri" title="The “proxy-uri” property"><span class="type">“proxy-uri”</span></a> if you need to override the user's
+normal proxy settings.</p>
+<p>Also note that this proxy will be used for
+<span class="emphasis"><em>all</em></span> requests; even requests to
+<code class="literal">localhost</code>. If you need more control over
+proxies, you can create a <a href="https://developer.gnome.org/gio/unstable/GSimpleProxyResolver.html"><span class="type">GSimpleProxyResolver</span></a> and set the
+<a class="link" href="SoupSession.html#SoupSession--proxy-resolver" title="The “proxy-resolver” property"><span class="type">“proxy-resolver”</span></a> property.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--remove-feature-by-type"></a><h3>The <code class="literal">“remove-feature-by-type”</code> property</h3>
+<pre class="programlisting">  “remove-feature-by-type”   <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> *</pre>
+<p>Remove feature objects from the session. (Shortcut for
+calling <a class="link" href="SoupSession.html#soup-session-remove-feature-by-type" title="soup_session_remove_feature_by_type ()"><code class="function">soup_session_remove_feature_by_type()</code></a>.)</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: GObject</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--ssl-ca-file"></a><h3>The <code class="literal">“ssl-ca-file”</code> property</h3>
+<pre class="programlisting">  “ssl-ca-file”              <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>File containing SSL CA certificates.</p>
+<p>If the specified file does not exist or cannot be read,
+then libsoup will print a warning, and then behave as
+though it had read in a empty CA file, meaning that all SSL
+certificates will be considered invalid.</p>
+<div class="warning">
+<p><code class="literal">SoupSession:ssl-ca-file</code> is deprecated and should not be used in newly-written code.</p>
+<p>use <a class="link" href="SoupSession.html#SoupSession--ssl-use-system-ca-file" title="The “ssl-use-system-ca-file” property"><span class="type">“ssl-use-system-ca-file”</span></a>, or
+else <a class="link" href="SoupSession.html#SoupSession--tls-database" title="The “tls-database” property"><span class="type">“tls-database”</span></a> with a <a href="https://developer.gnome.org/gio/unstable/GTlsFileDatabase.html"><span class="type">GTlsFileDatabase</span></a>
+(which allows you to do explicit error handling).</p>
+</div>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--ssl-strict"></a><h3>The <code class="literal">“ssl-strict”</code> property</h3>
+<pre class="programlisting">  “ssl-strict”               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Normally, if <a class="link" href="SoupSession.html#SoupSession--tls-database" title="The “tls-database” property"><span class="type">“tls-database”</span></a> is set (including if
+it was set via <a class="link" href="SoupSession.html#SoupSession--ssl-use-system-ca-file" title="The “ssl-use-system-ca-file” property"><span class="type">“ssl-use-system-ca-file”</span></a> or
+<a class="link" href="SoupSession.html#SoupSession--ssl-ca-file" title="The “ssl-ca-file” property"><span class="type">“ssl-ca-file”</span></a>), then libsoup will reject any
+certificate that is invalid (ie, expired) or that is not
+signed by one of the given CA certificates, and the
+<a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> will fail with the status
+<a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-SSL-FAILED:CAPS"><code class="literal">SOUP_STATUS_SSL_FAILED</code></a>.</p>
+<p>If you set <a class="link" href="SoupSession.html#SoupSession--ssl-strict" title="The “ssl-strict” property"><span class="type">“ssl-strict”</span></a> to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then all
+certificates will be accepted, and you will need to call
+<a class="link" href="SoupMessage.html#soup-message-get-https-status" title="soup_message_get_https_status ()"><code class="function">soup_message_get_https_status()</code></a> to distinguish valid from
+invalid certificates. (This can be used, eg, if you want to
+accept invalid certificates after giving some sort of
+warning.)</p>
+<p>For a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>, if the session has no CA file or
+TLS database, and this property is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then all
+certificates will be rejected. However, beware that the
+deprecated <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> subclasses (<a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> and
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>) have the opposite behavior: if there is
+no CA file or TLS database, then all certificates are always
+accepted, and this property has no effect.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: TRUE</p>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--ssl-use-system-ca-file"></a><h3>The <code class="literal">“ssl-use-system-ca-file”</code> property</h3>
+<pre class="programlisting">  “ssl-use-system-ca-file”   <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Setting this to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> is equivalent to setting
+<a class="link" href="SoupSession.html#SoupSession--tls-database" title="The “tls-database” property"><span class="type">“tls-database”</span></a> to the default system CA database.
+(and likewise, setting <a class="link" href="SoupSession.html#SoupSession--tls-database" title="The “tls-database” property"><span class="type">“tls-database”</span></a> to the
+default database by hand will cause this property to
+become <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>).</p>
+<p>Setting this to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> (when it was previously <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>) will
+clear the <a class="link" href="SoupSession.html#SoupSession--tls-database" title="The “tls-database” property"><span class="type">“tls-database”</span></a> field.</p>
+<p>See <a class="link" href="SoupSession.html#SoupSession--ssl-strict" title="The “ssl-strict” property"><span class="type">“ssl-strict”</span></a> for more information on how
+https certificate validation is handled.</p>
+<p>Note that the default value of <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> only applies to plain
+<a href="SoupSession.html"><span class="type">SoupSessions</span></a>. If you are using <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> or
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>, the default value is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, for backward
+compatibility.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: TRUE</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--timeout"></a><h3>The <code class="literal">“timeout”</code> property</h3>
+<pre class="programlisting">  “timeout”                  <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a></pre>
+<p>The timeout (in seconds) for socket I/O operations
+(including connecting to a server, and waiting for a reply
+to an HTTP request).</p>
+<p>Although you can change this property at any time, it will
+only affect newly-created connections, not currently-open
+ones. You can call <a class="link" href="SoupSession.html#soup-session-abort" title="soup_session_abort ()"><code class="function">soup_session_abort()</code></a> after setting this
+if you want to ensure that all future connections will have
+this timeout value.</p>
+<p>Note that the default value of 60 seconds only applies to
+plain <a href="SoupSession.html"><span class="type">SoupSessions</span></a>. If you are using <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> or
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>, the default value is 0 (meaning socket I/O
+will not time out).</p>
+<p>Not to be confused with <a class="link" href="SoupSession.html#SoupSession--idle-timeout" title="The “idle-timeout” property"><span class="type">“idle-timeout”</span></a> (which is
+the length of time that idle persistent connections will be
+kept open).</p>
+<p>Flags: Read / Write</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--tls-database"></a><h3>The <code class="literal">“tls-database”</code> property</h3>
+<pre class="programlisting">  “tls-database”             <a href="https://developer.gnome.org/gio/unstable/GTlsDatabase.html"><span class="type">GTlsDatabase</span></a> *</pre>
+<p>Sets the <a href="https://developer.gnome.org/gio/unstable/GTlsDatabase.html"><span class="type">GTlsDatabase</span></a> to use for validating SSL/TLS
+certificates.</p>
+<p>Note that setting the <a class="link" href="SoupSession.html#SoupSession--ssl-ca-file" title="The “ssl-ca-file” property"><span class="type">“ssl-ca-file”</span></a> or
+<a class="link" href="SoupSession.html#SoupSession--ssl-use-system-ca-file" title="The “ssl-use-system-ca-file” property"><span class="type">“ssl-use-system-ca-file”</span></a> property will cause
+this property to be set to a <a href="https://developer.gnome.org/gio/unstable/GTlsDatabase.html"><span class="type">GTlsDatabase</span></a> corresponding to
+the indicated file or system default.</p>
+<p>See <a class="link" href="SoupSession.html#SoupSession--ssl-strict" title="The “ssl-strict” property"><span class="type">“ssl-strict”</span></a> for more information on how
+https certificate validation is handled.</p>
+<p>If you are using a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> then
+<a class="link" href="SoupSession.html#SoupSession--ssl-use-system-ca-file" title="The “ssl-use-system-ca-file” property"><span class="type">“ssl-use-system-ca-file”</span></a> will be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> by
+default, and so this property will be a copy of the system
+CA database. If you are using <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> or
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>, this property will be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> by default.</p>
+<p>Flags: Read / Write</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--tls-interaction"></a><h3>The <code class="literal">“tls-interaction”</code> property</h3>
+<pre class="programlisting">  “tls-interaction”          <a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html"><span class="type">GTlsInteraction</span></a> *</pre>
+<p>A <a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html"><span class="type">GTlsInteraction</span></a> object that will be passed on to any
+<a href="https://developer.gnome.org/gio/unstable/GTlsConnection.html"><span class="type">GTlsConnections</span></a> created by the session. (This can be used to
+provide client-side certificates, for example.)</p>
+<p>Flags: Read / Write</p>
+<p class="since">Since: 2.48</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--use-ntlm"></a><h3>The <code class="literal">“use-ntlm”</code> property</h3>
+<pre class="programlisting">  “use-ntlm”                 <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Whether or not to use NTLM authentication.</p>
+<div class="warning">
+<p><code class="literal">SoupSession:use-ntlm</code> is deprecated and should not be used in newly-written code.</p>
+<p>use <a class="link" href="SoupSession.html#soup-session-add-feature-by-type" title="soup_session_add_feature_by_type ()"><code class="function">soup_session_add_feature_by_type()</code></a> with
+<a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-NTLM:CAPS" title="SOUP_TYPE_AUTH_NTLM"><span class="type">SOUP_TYPE_AUTH_NTLM</span></a>.</p>
+</div>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--use-thread-context"></a><h3>The <code class="literal">“use-thread-context”</code> property</h3>
+<pre class="programlisting">  “use-thread-context”       <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>If <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> (which it always is on a plain <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>),
+asynchronous HTTP requests in this session will run in
+whatever the thread-default <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> is at the time
+they are started, rather than always occurring in
+<a class="link" href="SoupSession.html#SoupSession--async-context" title="The “async-context” property"><span class="type">“async-context”</span></a>.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+<p class="since">Since: 2.38</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession--user-agent"></a><h3>The <code class="literal">“user-agent”</code> property</h3>
+<pre class="programlisting">  “user-agent”               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>If non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the value to use for the "User-Agent" header
+on <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>s sent from this session.</p>
+<p>RFC 2616 says: "The User-Agent request-header field
+contains information about the user agent originating the
+request. This is for statistical purposes, the tracing of
+protocol violations, and automated recognition of user
+agents for the sake of tailoring responses to avoid
+particular user agent limitations. User agents SHOULD
+include this field with requests."</p>
+<p>The User-Agent header contains a list of one or more
+product tokens, separated by whitespace, with the most
+significant product token coming first. The tokens must be
+brief, ASCII, and mostly alphanumeric (although "-", "_",
+and "." are also allowed), and may optionally include a "/"
+followed by a version string. You may also put comments,
+enclosed in parentheses, between or after the tokens.</p>
+<p>If you set a <a class="link" href="SoupSession.html#SoupSession--user-agent" title="The “user-agent” property"><span class="type">“user_agent”</span></a> property that has trailing
+whitespace, <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> will append its own product token
+(eg, "<code class="literal">libsoup/2.3.2</code>") to the end of the
+header for you.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupSession.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="SoupSession-authenticate"></a><h3>The <code class="literal">“authenticate”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session,
+               <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg,
+               <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a>    *auth,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>     retrying,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Emitted when the session requires authentication. If
+credentials are available call <a class="link" href="SoupAuth.html#soup-auth-authenticate" title="soup_auth_authenticate ()"><code class="function">soup_auth_authenticate()</code></a> on
+<em class="parameter"><code>auth</code></em>
+. If these credentials fail, the signal will be
+emitted again, with <em class="parameter"><code>retrying</code></em>
+ set to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, which will
+continue until you return without calling
+<a class="link" href="SoupAuth.html#soup-auth-authenticate" title="soup_auth_authenticate ()"><code class="function">soup_auth_authenticate()</code></a> on <em class="parameter"><code>auth</code></em>
+.</p>
+<p>Note that this may be emitted before <em class="parameter"><code>msg</code></em>
+'s body has been
+fully read.</p>
+<p>If you call <a class="link" href="SoupSession.html#soup-session-pause-message" title="soup_session_pause_message ()"><code class="function">soup_session_pause_message()</code></a> on <em class="parameter"><code>msg</code></em>
+ before
+returning, then you can authenticate <em class="parameter"><code>auth</code></em>
+ asynchronously
+(as long as you <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-ref"><code class="function">g_object_ref()</code></a> it to make sure it doesn't
+get destroyed), and then unpause <em class="parameter"><code>msg</code></em>
+ when you are ready
+for it to continue.</p>
+<div class="refsect3">
+<a name="id-1.3.21.13.2.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the session</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> being sent</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> to authenticate</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>retrying</p></td>
+<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if this is the second (or later) attempt</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession-connection-created"></a><h3>The <code class="literal">“connection-created”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session,
+               <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>     *connection,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Emitted when a new connection is created. This is an
+internal signal intended only to be used for debugging
+purposes, and may go away in the future.</p>
+<div class="refsect3">
+<a name="id-1.3.21.13.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the connection</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession-request-queued"></a><h3>The <code class="literal">“request-queued”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session,
+               <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Emitted when a request is queued on <em class="parameter"><code>session</code></em>
+. (Note that
+"queued" doesn't just mean <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>;
+<a class="link" href="SoupSession.html#soup-session-send-message" title="soup_session_send_message ()"><code class="function">soup_session_send_message()</code></a> implicitly queues the message
+as well.)</p>
+<p>When sending a request, first <a class="link" href="SoupSession.html#SoupSession-request-queued" title="The “request-queued” signal"><span class="type">“request_queued”</span></a>
+is emitted, indicating that the session has become aware of
+the request.</p>
+<p>Once a connection is available to send the request on, the
+session emits <a class="link" href="SoupSession.html#SoupSession-request-started" title="The “request-started” signal"><span class="type">“request_started”</span></a>. Then, various
+<a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> signals are emitted as the message is
+processed. If the message is requeued, it will emit
+<a class="link" href="SoupMessage.html#SoupMessage-restarted" title="The “restarted” signal"><span class="type">“restarted”</span></a>, which will then be followed by
+another <a class="link" href="SoupSession.html#SoupSession-request-started" title="The “request-started” signal"><span class="type">“request_started”</span></a> and another set of
+<a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> signals when the message is re-sent.</p>
+<p>Eventually, the message will emit <a class="link" href="SoupMessage.html#SoupMessage-finished" title="The “finished” signal"><span class="type">“finished”</span></a>.
+Normally, this signals the completion of message
+processing. However, it is possible that the application
+will requeue the message from the "finished" handler (or
+equivalently, from the <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>
+callback). In that case, the process will loop back to
+<a class="link" href="SoupSession.html#SoupSession-request-started" title="The “request-started” signal"><span class="type">“request_started”</span></a>.</p>
+<p>Eventually, a message will reach "finished" and not be
+requeued. At that point, the session will emit
+<a class="link" href="SoupSession.html#SoupSession-request-unqueued" title="The “request-unqueued” signal"><span class="type">“request_unqueued”</span></a> to indicate that it is done
+with the message.</p>
+<p>To sum up: <a class="link" href="SoupSession.html#SoupSession-request-queued" title="The “request-queued” signal"><span class="type">“request_queued”</span></a> and
+<a class="link" href="SoupSession.html#SoupSession-request-unqueued" title="The “request-unqueued” signal"><span class="type">“request_unqueued”</span></a> are guaranteed to be emitted
+exactly once, but <a class="link" href="SoupSession.html#SoupSession-request-started" title="The “request-started” signal"><span class="type">“request_started”</span></a> and
+<a class="link" href="SoupMessage.html#SoupMessage-finished" title="The “finished” signal"><span class="type">“finished”</span></a> (and all of the other <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>
+signals) may be invoked multiple times for a given message.</p>
+<div class="refsect3">
+<a name="id-1.3.21.13.4.10"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the session</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the request that was queued</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession-request-started"></a><h3>The <code class="literal">“request-started”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session,
+               <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg,
+               <a class="link" href="SoupSocket.html" title="SoupSocket"><span class="type">SoupSocket</span></a>  *socket,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Emitted just before a request is sent. See
+<a class="link" href="SoupSession.html#SoupSession-request-queued" title="The “request-queued” signal"><span class="type">“request_queued”</span></a> for a detailed description of
+the message lifecycle within a session.</p>
+<div class="warning">
+<p><code class="literal">SoupSession::request-started</code> has been deprecated since version 2.50. and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="SoupMessage.html#SoupMessage-starting" title="The “starting” signal"><span class="type">“starting”</span></a> instead.</p>
+</div>
+<div class="refsect3">
+<a name="id-1.3.21.13.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the session</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the request being sent</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>socket</p></td>
+<td class="parameter_description"><p>the socket the request is being sent on</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession-request-unqueued"></a><h3>The <code class="literal">“request-unqueued”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session,
+               <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Emitted when a request is removed from <em class="parameter"><code>session</code></em>
+'s queue,
+indicating that <em class="parameter"><code>session</code></em>
+ is done with it. See
+<a class="link" href="SoupSession.html#SoupSession-request-queued" title="The “request-queued” signal"><span class="type">“request_queued”</span></a> for a detailed description of the
+message lifecycle within a session.</p>
+<div class="refsect3">
+<a name="id-1.3.21.13.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the session</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the request that was unqueued</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupSession-tunneling"></a><h3>The <code class="literal">“tunneling”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> *session,
+               <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>     *connection,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Emitted when an SSL tunnel is being created on a proxy
+connection. This is an internal signal intended only to be
+used for debugging purposes, and may go away in the future.</p>
+<div class="refsect3">
+<a name="id-1.3.21.13.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>session</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>connection</p></td>
+<td class="parameter_description"><p>the connection</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="since">Since: 2.30</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

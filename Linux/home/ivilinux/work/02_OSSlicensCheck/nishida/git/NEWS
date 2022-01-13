@@ -1,0 +1,116 @@
+NEW in 1.9.0 - 2014-10-17
+=========================
+
+  * Fixes: GB#722795, tracker should not scatter .mediaartlocal folders across filesystem
+  * Fixes: GB#724879, Add async calls
+
+NOTE:
+
+  This RELEASE COMPLETELY BREAKS API/ABI on nearly all functions and
+  is incompatible with the 1.0 series of releases (the last being
+  0.7.0).
+
+  This unstable release is in preparation for the libmediaart-2.0
+  series of releases. The version being < 2.0 is purely because 2.0
+  will be considered stable.
+
+  From this point on, the API is not expected to change by any large
+  amount from what is defined in these releases.
+
+
+NEW in 0.7 - 2014-09-22
+=======================
+
+  * Fixes: GB#727478, artist, title and prefix arguments in get_file should
+  * Fixes: GB#731681, make check clears user's media-art cache
+  * extract: Fixed gtkdoc warning for return value of media_art_error_quark()
+
+
+NEW in 0.6 - 2014-08-19
+=======================
+
+  * Fixes: GB#734837, media_art_get_path() usage is unclear
+  * build: include m4 dir parsing
+  * tests: Use tap automake testing scripts, fixes output summaries
+  * doap: add <programming-language> and 'core' category
+  * extract: Fixed process_buffer() len check (was inverted) and artist/title
+
+NOTE:
+
+  This RELEASE BREAKS API/ABI from 0.5.0, return value for
+  media_art_get_path() is now a gboolean, not void.
+
+
+NEW in 0.5 - 2014-07-28
+=======================
+
+  * Fixes: GB#731678, Heuristics does not handle uppercase properly
+  * build: Require glib 2.38 for g_assert_true() in unit tests
+  * build: Updated configure.ac from autoscan suggestions
+  * build: Improve warnings used when compiling and test compiler warnings we can use
+  * extract: Switch to initable MediaArtProcess object  from _init/_shutdown()
+  * extract: Split _process() API into  _process_buffer() and _process_file()
+  * extract: Make GFile first parameter for _process_file()
+  * extract: Add _SYMLINK_FAILED error and report symlink() failure in get_heuristic()
+  * extract: Add GError for _NO_TITLE, which is required in some cases
+  * extract: Add GError * reporting right down to the plugins (pixbuf/qt)
+  * extract: Use a more logical ordered heuristic for caching strings
+  * extract: Refactor media_art_process_file() to simplify the function
+  * storage: Make g_message() calls g_debug() calls, output is unnecessary
+  * docs: Fixed Makefile so we don't fail on distcheck with --enable-gtk-doc
+  * tests: Don't expect media art extraction for NULL data buffer for !images
+  * tests: Test for no error with media_art_process_file() with real use case
+
+NOTE:
+
+  This RELEASE BREAKS API/ABI from 0.4.0.
+
+
+NEW in 0.4 - 2014-04-01
+=======================
+
+  * Fixes: GB#727333, Feature request: load album art embedded in music files
+  * build: Don't forget to define LIBMEDIAART_BACKEND for all Qt cases
+  * extract: Incorrect inverse variable check for media_art_set()
+
+
+NEW in 0.3 - 2014-03-07
+=======================
+
+The main changes since 0.2.0 are:
+
+  * build: Don't fail if vapigen isn't available
+  * build: Force automake C linkage when building C only
+  * build: Remove leftover explicit -lm -lz linkage
+  * build: Don't link to both Qt and gdk-pixbuf if both are autodetect
+  * build: Honor NOCONFIGURE=1 in configure
+  * cache: Improve _remove() function and fix crash with NULL passed
+  * cache: Improve _strip_invalid_entites() API
+  * cache: Fix Non-void function should return a value
+  * extract: Fix Qt5 compilation failure, use QCoreApplication instead of 
+  * extract: Don't break on dummy implementation due to incorrect args in 
+
+
+NEW in 0.2 - 2014-02-06
+=======================
+
+The main changes since 0.1.0 are:
+
+  * build: Remove all 'tracker' uses in configure.ac.
+  * build: Fix selection between backends Qt and GdkPixbuf
+  * build: Fix requirement on tracker-0.16 in pkgconfig file
+  * build: Make sure pkgconfig file uses -1.0 to avoid minor ver changes
+  * extract: Port Qt backend to Qt5 and NEMO platform
+  * extract: Fixed Qt(4) backend to compile and removed all Tracker references
+  * libmediaart: Fix include which incorrectly defined _INSIDE in main header
+  * docs: Remove reference to Tracker in reference overview
+
+
+NEW in 0.1 - 2013-11-01
+=======================
+
+First release!
+
+The code for this project has been extracted from Tracker and inserted into
+its own library because there is call for this functionality in other places
+on the desktop.

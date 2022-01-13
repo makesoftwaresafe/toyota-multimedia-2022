@@ -1,0 +1,55 @@
+#!/bin/bash
+
+################################################################################
+# This source code is proprietary of ADIT
+# Copyright (C) Advanced Driver Information Technology Joint Venture GmbH
+# All rights reserved
+################################################################################
+
+PERIOD_SIZE=96
+NUM_PERIODS=2
+# use bigger buffers for virtual machines
+# emulated sound cards do not support low latency audio
+if [ "${SMOKETEST_PRODUCT}" == "vbox" ] || [ "${SMOKETEST_PRODUCT}" == "sim" ]
+then
+	PERIOD_SIZE=768
+	# ALSA application buffer has to be at least double of JACK backend period size
+	# JACK uses 3072 period size therefore front end buffer of at least 6144
+	NUM_PERIODS=8
+fi
+
+
+# define test variables
+TEST_USER="test-adit-multimedia-audio"
+TEST_WAV1="/opt/platform/unit_tests/BigBuckBunny.wav"
+TEST_WAV2="/opt/platform/unit_tests/audio8k16S.wav"
+TEST_CMD1="aplay -v -d5 --period-size=${PERIOD_SIZE} --buffer-size=$((${PERIOD_SIZE} * ${NUM_PERIODS})) -Dentertainment_main ${TEST_WAV1}"
+TEST_CMD2="aplay -v -Dentertainment_main ${TEST_WAV2}"
+################################################################################
+
+FN_check_user "${TEST_USER}"
+FN_audio_start_record
+
+# start first playback in background
+FN_user_execute "${TEST_USER}" "${TEST_CMD1}" "1"
+TEST_APLAY1_PID="${SMOKETEST_EXTRA_PID}"
+
+# wait a little bit with starting the second playback
+# to show possible interruptions of first playback
+sleep 2
+
+# first playback must exists anyway
+FN_check_pid ${TEST_APLAY1_PID}
+
+FN_user_execute "${TEST_USER}" "${TEST_CMD2}"
+
+# first playback should already be finished
+# check if process is running
+CHECK_PROCESS=$(ps --no-heading ${TEST_APLAY1_PID})
+if [ "${CHECK_PROCESS}" != "" ]; then
+  FN_smoketest_error "First playback with PID '${TEST_APLAY1_PID}' takes longer than second playback. Possibly blocking."
+fi
+
+
+FN_audio_stop_record
+

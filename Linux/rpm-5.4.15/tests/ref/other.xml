@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<otherdata xmlns="http://linux.duke.edu/metadata/other" packages="136">
+<package pkgid="faf7b8b5d5321e5b828a63b7c970e6136e94aeb5" name="cAos2-stub" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1-0" date="1264543200">- create.</changelog>
+</package>
+<package pkgid="6838f684778d889af8a8ee2a363c6858d0e00500" name="cAos2-stub" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1-0" date="1264543200">- create.</changelog>
+</package>
+<package pkgid="e209149ebeb644f877c90a2ee5d91021bbdf5c5d" name="cudf-test" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1-0" date="1225836000">- create.</changelog>
+</package>
+<package pkgid="428abbc644dcc861416c226487e3b895f223b4fe" name="battery" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="77dd5ee1d843080ef97d0b291a43bfbdc9be1108" name="bicycle" arch="noarch">
+  <version epoch="0" ver="7" rel="0"/>
+</package>
+<package pkgid="e37dcc0fd9737607f8962b5b215471b52d150c16" name="car" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="074fc2bef9bdad2209b68de189a7eaa6a102ffa2" name="door" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="12a488fae813ce4a5ba8c5c92a37ecadbcc99bed" name="door" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="f145fb6bbf3872483b5a166e9c8b869649e20d1a" name="electric-engine" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="cc276db75d0dd47c94ff047f3b8345ae4c3ccdfa" name="electric-engine" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="0392b39dbb63d48fcc007867e9e95703cf3dfe99" name="gasoline-engine" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="672250dc0ee083c5cc8770597666c67160220e3e" name="gasoline-engine" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="96bf4acc68839927e27ebd9130eeaf332b9a28af" name="glass" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="b8f76e85fae8070e3ad1be7b23d0ef4673aaeb3b" name="glass" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="4403941f000687241236fad6e516176c2c0d4ac5" name="solar-collector" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="e33361425a2b6f441b374a20dd30ee771709e238" name="tire" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="a1805cc2b6afc3c99f16404f5160f86b6f9061ba" name="tire" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="b44f80126cb71fb9b6a1d5b7b5674c72d4ab2b66" name="turbo" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="83cb563d27427bfdf6c48af9bfd3e68ddc0c6a2b" name="wheel" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="80de01e43cb01f2855c42845aa70904afb4fef64" name="wheel" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="048849cafa2546cd02677a6976cea23ae75653be" name="window" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="4136a653c2fe7f1783b690d94520e89f04ed2cd9" name="window" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="1dc52118f7960a2dcac412dac404c8022d417db6" name="window" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="b041a71594a3bf628883ea514861ce0bdec828f1" name="devtool-sanity" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1.0-1" date="1212789600">- add some additional content</changelog>
+</package>
+<package pkgid="f774dfa79ce7dfa9b71871dffd26465d376cb660" name="devtool-sanity" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="567d8380ab37ff1a109df15b9a93e3d08cdbd3be" name="edos-test" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1-0" date="1212876000">- create.</changelog>
+</package>
+<package pkgid="2afc8e65415924659136d2e66f38cd579d3e7c2c" name="car" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="9fe750a2efba33da4a1eeae311e2c6d92fb78890" name="door" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="11405bc9b145042395e87ea3471b11dcffd9013c" name="door" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="4ea909aa31bac052a913bc97176561f911a8aef2" name="engine" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="0633bd3d89847afef58d26f4789ed1b772dc8625" name="engine" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="3f96bc04d5d9997bc718d3d1d19f8274e38c559b" name="glass" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="095a9553df3233ee76e7f59268f2a71697a230e6" name="glass" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="ecb0bbd3d3c8c40a23cc59cce09fc44c5a17a1b8" name="turbo" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="f7492ccb4210910cada4d5b0f286b569eac9e074" name="tyre" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="da6769c84e2cf797d561e7c1e3c7a5f629c82a89" name="tyre" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="e64629982d57cee3b4a6e0080f7f4a08057c5782" name="wheel" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="1784683eceebe00331bbe3035336dd187c0467a2" name="wheel" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="849f7eef8e9e5c2b303f52fbead9261f1e33be75" name="window" arch="noarch">
+  <version epoch="0" ver="0" rel="0"/>
+</package>
+<package pkgid="9d26324fb3292f83c0deb06101cbdf93b0ed6980" name="window" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="89fcbbf2db546eebbbcc877b405a6ab6ab23c4de" name="window" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="26c75af3071d9cd2a8efe9a1d2af9c3518791001" name="popt" arch="i386">
+  <version epoch="0" ver="1.14" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt;" date="1197410400">- release popt-1.13 through rpm5.org.</changelog>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt;" date="1184104800">- release popt-1.12 through rpm5.org.</changelog>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt;" date="1181426400">- release popt-1.11 through rpm5.org.</changelog>
+</package>
+<package pkgid="34d94d448f5cbd4e6caa13f95e6af8f541f2bade" name="popt" arch="i386">
+  <version epoch="0" ver="1.14" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt;" date="1197410400">- release popt-1.13 through rpm5.org.</changelog>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt;" date="1184104800">- release popt-1.12 through rpm5.org.</changelog>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt;" date="1181426400">- release popt-1.11 through rpm5.org.</changelog>
+</package>
+<package pkgid="5551964fdc248e16a08a7f4778d89ac5fecc9164" name="popt" arch="i686">
+  <version epoch="0" ver="1.14" rel="1"/>
+</package>
+<package pkgid="b2e1fd2756b27bcf888c990c02be7912074cd096" name="probes-test" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="36c66d1c4079f46ae44498e76fc71fba8df567db" name="probes" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="698c6a32657883240ddda339b629d434c85a3b9c" name="probes" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="(none)" name="simplestRPMv3" arch="noarch">
+  <version epoch="0" ver="1.0" rel="2"/>
+</package>
+<package pkgid="aa5226fa9740d1a7f878c79111a65264859b3d80" name="engine" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="f2146b8a4f09c3137aa227c8debf3d7294ec2c93" name="turbo" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="18fd84c6eae9cc9027f35bd4950a353ddeec707e" name="door" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="0d180332a95ebb9999364975152201b1acaf491d" name="glass" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="5dcba4383e1cd2cabb598a2c1dac5db9bfb8347e" name="wheel" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="32ff0328acd9cedc849d498b493afb274a07ce19" name="window" arch="noarch">
+  <version epoch="0" ver="0" rel="0"/>
+</package>
+<package pkgid="609265d43766128c6a17cd0a9b6bdfe69535e3e9" name="car" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="16f6bd7757035e54136a197e8541d64d43ec2f56" name="door" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="c96f6e5561a07d16af0ac825df8628f1540da6a1" name="engine" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="3d647e63ff9ea8761b70683557be7452ea272044" name="glass" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="6cbd1886a349a369afea74583854a6dc652f9b86" name="tyre" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="168aba50a3499a057a5623f518462e4be503671f" name="wheel" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="6a7fae93d0c6e8b9ece073aa36f463d46735c6fa" name="window" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="deafb81573d8148d4ca821629364e99b357bfa32" name="car" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="9ca1c85128b3cf37f2fcc5a907033e6593776343" name="door" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="7d2ae452a9696039830af74e787b5b823cd9f72b" name="engine" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="3c0084b419e47af0a5bf07608eb477c2f9ecd033" name="glass" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="86e30ecf7e40ac7c735b31d9c59329defd28f8c4" name="tyre" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="58954be98cdb5ac97cb5bc477ec5c86f7274f047" name="wheel" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="69656413ee0fe6091989c0d97217f0ba317aebe4" name="window" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="bb1f8bb5eedffe42005321a3f570e65e04613dd2" name="devtool-sanity" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="ff580f3ee10550b3fe92dc5e2483ab74473d7702" name="probes" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="0dfdbbda8f2094bfe9b85294876feebffb452d6d" name="triggers-D-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="db1fb2187746fc73cf5b1f8ded1676e5bd06a663" name="triggers-D-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="78f001abcd9cce068a4fa2af77b8cb24282b08b7" name="triggers-DP-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="ffd8852f4bad51a09677280b842c1268d2fd6165" name="triggers-DP-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="3d2bcd3636f0ddef20f67f7bc4c5d2d6de54978f" name="triggers-F-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="8feaea977bbdddc6182a09375bf4d845c377433c" name="triggers-F-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="3d6cc142f8421fcd1b2548ee687ff271f3556dc0" name="triggers-FP-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="e1537c76c6afbc4d2381814937512f70ffdb6404" name="triggers-FP-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="eb6f6cff448ffce29e509a46a289b8af5d429fb1" name="triggers-N-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="51f6d820e335242c4f0e24c0bb7b837c9afc35f8" name="triggers-N-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="8c47d977fd3f8c097c1de8d7e6038dd50ed02f02" name="triggers-NA-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="1f527adf8f1e7d8902046b5a0379dfb39a00a666" name="triggers-NA-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="1e0fb5b23677ac6de96c60b4495861f32bd50f1e" name="triggers-P-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="e6e7c43b16b0ba93405e551eacc404f56b7f0347" name="triggers-P-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="41599bf6253263c545dbe36e8a01e63733ede52b" name="car" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="ce872bc18094db771a27bd73a1021b8f06d041ae" name="door" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="36f9e0247b4def99ad949af1d85e2d168277a2f3" name="engine" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="6a428eb96f6f15ce528082d9591fac80712160fa" name="glass" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="409c41436456e24db5f5c4249d7aac4a45ad2fab" name="tyre" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="e0e8a5dfd1d90767a11dd1c89ad916f1033648c4" name="wheel" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="8ded9a44a9ed464b39a2d80021e1a07db1af0a99" name="window" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="b30bf06f6c1ffd2452dc8dbe353a9d8e5bd0258b" name="battery" arch="noarch">
+  <version epoch="0" ver="3" rel="0"/>
+</package>
+<package pkgid="9b9480af211ba427c56d82f35eaff6b066276533" name="bicycle" arch="noarch">
+  <version epoch="0" ver="7" rel="0"/>
+</package>
+<package pkgid="8289372d29851ae43da507a0dbc899400ef74879" name="electric-engine" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="278590feb364d522df5cfe584ee5029208446e28" name="gasoline-engine" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="ee143518a5d670f327f1a1cc88ccae2fa374aeab" name="solar-collector" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="570cefeb72fab539fcabc2fdf13f43197dd199f0" name="tire" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="9aa3bc7e46d925e429c62d8ec0a9297b9ce19213" name="turbo" arch="noarch">
+  <version epoch="0" ver="1" rel="0"/>
+</package>
+<package pkgid="2fad0cd013111178d26cca02a152d4c3c845c19d" name="popt" arch="i686">
+  <version epoch="0" ver="1.14" rel="1"/>
+</package>
+<package pkgid="174f988394ce745fb246ad32677704913c576d7b" name="probes" arch="noarch">
+  <version epoch="0" ver="2" rel="0"/>
+</package>
+<package pkgid="be5c3384cc843b4ed7adfc16aaaf294b6ccda941" name="devtool-sanity" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="5ab663f63620c3407928ceeba06cb722959c1280" name="triggers-N-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="b109e74adc536afb2a6836b83bb7f1a011c93bb5" name="triggers-N-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="35a5d1d24c2b9615f0845992957fb63d243d6a47" name="triggers-NA-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="2a72d6c1d15c682143d1efe1e0bd6c2d213aa6c0" name="triggers-NA-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="7b2e2f8a6b3877558fec8f76a7e3bf901340fd77" name="triggers-P-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="407d4f3e7d61cabae027e17edee3e7e8708646da" name="triggers-P-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="bb7789353ab222d2b9e9f8152dfc71242bff15d3" name="triggers-F-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="5c0847e14719118572e5e210d57d8c4904a68c57" name="triggers-F-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="9c424886b3c478f3fc8faab6f634ed7f664ac549" name="triggers-FP-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="f65cae527de0c2f5d88cf6564ae07d2b2a657813" name="triggers-FP-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="ba09e593e94c0ba4043186a3fc09fab4b2837463" name="triggers-D-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="0f5d267a2c9b341a572013a4f0a0b79e327f4792" name="triggers-D-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="d4b6c2311234d42fdcb6e7192986d9fc5afaa9b5" name="triggers-DP-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="50d127966d60eff5215614a5fc183735d311f356" name="triggers-DP-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="c2fc0cea2a2f453f20cb80419b2fd33addd2f52a" name="triggers-D" arch="i386">
+  <version epoch="0" ver="1.0" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1.0-1" date="1221948000">- Triggers on D functional tests.</changelog>
+</package>
+<package pkgid="20a185b2fdc73d7ea712d2c6d76b827da898a7f2" name="triggers-D-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="25f4a4393eecaa3c169ad2879f9e90a0739bfc0d" name="triggers-D-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="5a41e48e2ccfc5c5536d14ff404b46b2b228b6cc" name="triggers-DP" arch="i386">
+  <version epoch="0" ver="1.0" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1.0-1" date="1221948000">- Triggers on D pattern functional tests.</changelog>
+</package>
+<package pkgid="2bca0e74c86332c6a1bb2e17da00863c6dd3983a" name="triggers-DP-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="160d9d17ec334088e71b848a829ab23eb5cb8183" name="triggers-DP-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="3295b197089d5e0c4ef7c80ce0833757f1527ad4" name="triggers-F" arch="i386">
+  <version epoch="0" ver="1.0" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1.0-1" date="1221948000">- Triggers on F functional tests.</changelog>
+</package>
+<package pkgid="779445d2aee2689c510c9925ca07ae97fc99a007" name="triggers-F-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="c4a74445a91d0710457162af9b22f730a1d9242d" name="triggers-F-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="fe4b16a2559f3bb282b40a0a951f20b9faefe303" name="triggers-FP" arch="i386">
+  <version epoch="0" ver="1.0" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1.0-1" date="1221948000">- Triggers on F pattern functional tests.</changelog>
+</package>
+<package pkgid="ef364ec0d268a8df20bb60a34bb7efc99d123af4" name="triggers-FP-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="a0b4e8ba87edbf1ad31f8fd02e6f25802ee06a2f" name="triggers-FP-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="6e6849792e60bb2d685cd7051d7e25c9385f2875" name="triggers-N" arch="i386">
+  <version epoch="0" ver="1.0" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1.0-1" date="1221948000">- Triggers on N functional tests.</changelog>
+</package>
+<package pkgid="d3c312da6edbd30d0187c73bd12410bfd3e28b6e" name="triggers-N-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="16400714be112d84b539bf5ece751906f0542711" name="triggers-N-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="32c017be3c279f1c62e89495b1a98b3a6fb60ebd" name="triggers-NA" arch="i386">
+  <version epoch="0" ver="1.0" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1.0-1" date="1221948000">- Triggers on N.A compound functional tests.</changelog>
+</package>
+<package pkgid="0425acfe7391c216f469fcb6230c052c469519ba" name="triggers-NA-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="0a48170302a93bd6e2b251db5ba0b89e9adfb644" name="triggers-NA-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="b02c0c40ed7e14949b4e73b54b08476797c7fffb" name="triggers-P" arch="i386">
+  <version epoch="0" ver="1.0" rel="1"/>
+  <changelog author="Jeff Johnson &lt;jbj@rpm5.org&gt; - 1.0-1" date="1221948000">- Triggers on P functional tests.</changelog>
+</package>
+<package pkgid="3a7a9573dd871dd36afaa9c0372efabae3214cc6" name="triggers-P-a" arch="noarch">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+<package pkgid="e48196feda1ba8222f33d8f7333386ebe4e22c31" name="triggers-P-b" arch="i686">
+  <version epoch="0" ver="1.0" rel="1"/>
+</package>
+</otherdata>

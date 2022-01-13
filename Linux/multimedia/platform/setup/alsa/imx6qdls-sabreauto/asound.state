@@ -1,0 +1,300 @@
+state.imx6qsabreaics4 {
+	control.1 {
+		iface MIXER
+		name 'DAC1 Playback Volume'
+		value.0 255
+		value.1 255
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			dbmin -9999999
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'DAC2 Playback Volume'
+		value.0 255
+		value.1 255
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			dbmin -9999999
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'DAC3 Playback Volume'
+		value.0 255
+		value.1 255
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			dbmin -9999999
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'DAC4 Playback Volume'
+		value.0 255
+		value.1 255
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			dbmin -9999999
+			dbmax 0
+			dbvalue.0 0
+			dbvalue.1 0
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'ADC1 Capture Volume'
+		value.0 160
+		value.1 160
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 176'
+			dbmin -9999999
+			dbmax 2400
+			dbvalue.0 1600
+			dbvalue.1 1600
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'ADC2 Capture Volume'
+		value.0 140
+		value.1 140
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 176'
+			dbmin -9999999
+			dbmax 2400
+			dbvalue.0 600
+			dbvalue.1 600
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'ADC High-Pass Filter Switch'
+		value None
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 None
+			item.1 'High Pass'
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'DAC1 Invert Switch'
+		value.0 Disabled
+		value.1 Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 2
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.9 {
+		iface MIXER
+		name 'DAC2 Invert Switch'
+		value.0 Disabled
+		value.1 Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 2
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.10 {
+		iface MIXER
+		name 'DAC3 Invert Switch'
+		value.0 Disabled
+		value.1 Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 2
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.11 {
+		iface MIXER
+		name 'DAC4 Invert Switch'
+		value.0 Disabled
+		value.1 Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 2
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.12 {
+		iface MIXER
+		name 'ADC1 Invert Switch'
+		value.0 Disabled
+		value.1 Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 2
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.13 {
+		iface MIXER
+		name 'ADC2 Invert Switch'
+		value.0 Disabled
+		value.1 Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 2
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.14 {
+		iface MIXER
+		name 'DAC Auto Mute Switch'
+		value Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Disabled
+			item.1 AutoMute
+		}
+	}
+	control.15 {
+		iface MIXER
+		name 'DAC Single Volume Control Switch'
+		value Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'DAC Soft Ramp and Zero Cross Control Switch'
+		value 'Soft Ramp'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'Immediate Change'
+			item.1 'Zero Cross'
+			item.2 'Soft Ramp'
+			item.3 'Soft Ramp on Zero Cross'
+		}
+	}
+	control.17 {
+		iface MIXER
+		name 'Mute ADC Serial Port Switch'
+		value UnMute
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 UnMute
+			item.1 Mute
+		}
+	}
+	control.18 {
+		iface MIXER
+		name 'ADC Single Volume Control Switch'
+		value Disabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.19 {
+		iface MIXER
+		name 'ADC Soft Ramp and Zero Cross Control Switch'
+		value 'Immediate Change'
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 'Immediate Change'
+			item.1 'Zero Cross'
+			item.2 'Soft Ramp'
+			item.3 'Soft Ramp on Zero Cross'
+		}
+	}
+	control.20 {
+		iface MIXER
+		name 'DAC Deemphasis Switch'
+		value No-De-Emphasis
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 No-De-Emphasis
+			item.1 De-Emphasis
+		}
+	}
+	control.21 {
+		iface MIXER
+		name 'ADC1 Single Ended Mode Switch'
+		value Differential
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Differential
+			item.1 Single-Ended
+		}
+	}
+	control.22 {
+		iface MIXER
+		name 'ADC2 Single Ended Mode Switch'
+		value Differential
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Differential
+			item.1 Single-Ended
+		}
+	}
+}

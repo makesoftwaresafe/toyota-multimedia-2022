@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libmediaart-@LIBMEDIAART_API_VERSION@
+Description: libmediaart - Media art extraction and cache management library
+Version: @VERSION@
+Libs: -L${libdir} -lmediaart-@LIBMEDIAART_API_VERSION@
+Libs.Private: -lz -lm
+Cflags: -I${includedir}/libmediaart-@LIBMEDIAART_API_VERSION@
+Requires: glib-2.0
+Requires.Private: @LIBMEDIAART_BACKEND@

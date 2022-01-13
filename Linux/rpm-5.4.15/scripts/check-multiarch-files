@@ -1,0 +1,91 @@
+#!/usr/bin/perl
+#---------------------------------------------------------------
+# Original author:	Gwenole Beauchesne <gbeauchesne@mandriva.com>
+# Created On:		Mon Jan 24 18:02:21 CET 2005
+#---------------------------------------------------------------
+
+use strict;
+
+my $RPM_BUILD_ROOT = (shift);
+
+if (! -d $RPM_BUILD_ROOT ) {
+    while (<STDIN>) { } # consume all inputs
+    exit 1
+}
+
+while (<STDIN>) {
+    chomp;
+
+    # File must be located in the usual development directories
+    -f $_ or next;
+    m,^\Q$RPM_BUILD_ROOT\E/usr(/X11R6)?/(bin|include)/, or next;
+    m,/multiarch-.+-\w+/, and next;
+    m,/include/asm, and next;
+
+    my $multiarch = 0;
+    my $multiarch_type;
+
+    # Heuristics for binary files
+    if (/bin/) {
+        my $file_magic = `file $_`;
+        $multiarch_type = "binary";
+
+        # check for *-config script files
+        if (/.+[-_]config/ && $file_magic =~ /shell script/) {
+            my $options;
+            foreach (cat_($_)) {
+                foreach my $opt (qw(cflags libs ldflags cppflags libdir libtool)) {
+                    $options .= " --$opt" if /(\[--$opt\]|--$opt\s+([\#\[]|display|print))/;
+                }
+            }
+            # run the script to find out any libdir dependent flags
+            if ($options) {
+                my $output = `$_ $options`;
+                $multiarch = 1 if ($output =~ /(?<!\/include)\/lib(32|64)?/);
+            }
+        }
+    }
+
+    # Heuristics for include files
+    elsif (/include/) {
+        $multiarch_type = "header";
+        my %archdefs;
+        foreach (cat_($_)) {
+            if (/\#\s*define\s+(\w+)\s+(.+)/) {
+                my ($def, $val) = ($1, $2);
+
+                # check for typical arch-dependent macro definitions
+                my @keywords_with_int = qw(SIZEOF_VOID_P SIZEOF_CHAR_P SIZEOF_LONG BYTES_PER_LONG BITS_PER_LONG BITS_PER_WORD);
+                foreach my $pat (@keywords_with_int) {
+                    if ($def =~ /$pat/ && int($val)) {
+                        $archdefs{$def}++;
+                        last;
+                    }
+                }
+
+                # check for libdir references, typically plugins dir
+                # XXX check for /DIR/ in $def ?
+                if ($val =~ /"\/usr(\/X11R6)?\/lib(32|64)?\/(?!(X11|font)\/).*"/) {
+                    $multiarch = 1;
+                }
+            }
+        }
+
+        # ignore multiple definitions of the same macro, assume
+        # arch-dependence is handled in that case
+        if (! $multiarch) {
+            foreach my $e (keys %archdefs) {
+                my $val = $archdefs{$e};
+                $multiarch = 1 if ($val == 1);
+            }
+        }
+    }
+
+    # Multiarch files detected?
+    print "$_\n" if $multiarch;
+}
+
+# Local variables:
+# tab-width: 4
+# indent-tabs-mode: nil
+# End:

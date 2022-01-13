@@ -1,0 +1,106 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+
+INCLUDE(CMakeDependentOption)
+FIND_PACKAGE(PkgConfig)
+
+PROJECT(PluginControlInterfaceGeneric VERSION 7.4.0)
+
+include(CMakeDependentOption)
+find_package(PkgConfig)
+find_package(AudioManager REQUIRED > 7.3.0)  
+find_package(AudioManagerUtilities REQUIRED > 7.3.0)
+   
+
+OPTION (WITH_DOCUMENTATION
+        "build plugins with documentation" OFF )
+OPTION (NSM_IFACE_PRESENT
+        "Node state manager interface present in Generic Controller" OFF )
+OPTION (WITH_ENABLED_AMCO_CONFIG_DEPLOYMENT
+        "build with Generic Controller default configuration file deployed" ON )
+
+SET(PLUGIN_LIB_NAME PluginControlInterfaceGeneric)
+
+SET(INCLUDE_FOLDER "include")
+
+SET(CONF_ROOT "${PLUGINS_CONFIG_PATH}/controller")
+
+IF(NSM_IFACE_PRESENT)
+    FIND_PACKAGE(NSM REQUIRED)
+ENDIF(NSM_IFACE_PRESENT)
+FIND_PACKAGE(LibXml2 REQUIRED)
+
+
+IF (NSM_IFACE_PRESENT)
+INCLUDE_DIRECTORIES(
+	${CMAKE_CURRENT_SOURCE_DIR}/include
+	${CMAKE_SOURCE_DIR} 
+	${CMAKE_CURRENT_BINARY_DIR}
+	${AudioManager_INCLUDE_DIRS}
+	${AudioManagerUtilities_INCLUDE_DIRS}
+	${NSM_INCLUDE_DIR}
+	${LIBXML2_INCLUDE_DIR}
+)
+ELSE ()
+INCLUDE_DIRECTORIES(
+	${CMAKE_CURRENT_SOURCE_DIR}/include
+	${CMAKE_SOURCE_DIR} 
+	${CMAKE_CURRENT_BINARY_DIR}
+	${AudioManager_INCLUDE_DIRS}
+	${AudioManagerUtilities_INCLUDE_DIRS}
+	${LIBXML2_INCLUDE_DIR}
+)
+
+LINK_DIRECTORIES(${AudioManagerUtilities_LIB_DIRECTORIES})
+
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+
+add_definitions(-DGENERIC_CONTROLLER_DEFAULT_CONF_ROOT="${CONF_ROOT}")
+
+ENDIF(NSM_IFACE_PRESENT)
+# all source files go here
+FILE(GLOB PLUGIN_CONTROL_GENERIC_SRCS_CXX "src/*.cpp")
+
+# strip the path prefix from the absolute file path and save in macro __FILENAME__
+# the macro __FILENAME__ shall be used for logging inside generic controller code
+FOREACH(SRC_FILE_ABSOLUTE_PATH IN LISTS PLUGIN_CONTROL_GENERIC_SRCS_CXX)
+    GET_FILENAME_COMPONENT(SRC_FILE_NAME ${SRC_FILE_ABSOLUTE_PATH} NAME)
+IF(NSM_IFACE_PRESENT)
+    SET_PROPERTY(SOURCE ${SRC_FILE_ABSOLUTE_PATH} PROPERTY COMPILE_DEFINITIONS NSM_IFACE_PRESENT "__FILENAME__=\"${SRC_FILE_NAME}\"")
+ELSE()
+    SET_PROPERTY(SOURCE ${SRC_FILE_ABSOLUTE_PATH} PROPERTY COMPILE_DEFINITIONS "__FILENAME__=\"${SRC_FILE_NAME}\"")
+ENDIF(NSM_IFACE_PRESENT)
+ENDFOREACH()
+
+ADD_LIBRARY(${PLUGIN_LIB_NAME} MODULE ${PLUGIN_CONTROL_GENERIC_SRCS_CXX})
+
+TARGET_LINK_LIBRARIES(${PLUGIN_LIB_NAME}
+	${AudioManagerUtilities_LIBRARIES}
+	${LIBXML2_LIBRARIES}
+)
+
+INSTALL(TARGETS ${PLUGIN_LIB_NAME}
+    DESTINATION ${CONTROLLER_PLUGIN_DIR}
+    PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ
+    COMPONENT plugin
+)
+
+IF (WITH_ENABLED_AMCO_CONFIG_DEPLOYMENT)
+    INSTALL(DIRECTORY conf/
+        DESTINATION ${CONF_ROOT}
+        COMPONENT conf
+    )
+ENDIF (WITH_ENABLED_AMCO_CONFIG_DEPLOYMENT)
+
+set(DOXY_FILE ${CMAKE_CURRENT_BINARY_DIR}/PluginControlGeneric.doxyfile)
+set(DOC_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR}/doc
+    CACHE STRINGS "The doxygen documentation will be placed here")  
+
+if(WITH_DOCUMENTATION)
+    find_package(Doxygen)
+    configure_file(${CMAKE_SOURCE_DIR}/PluginControlInterfaceGeneric/doc/PluginControlGeneric.doxyfile ${CMAKE_CURRENT_BINARY_DIR}/doc/Doxyfile)
+    add_custom_target (PluginControlGenericDoku ALL  
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOC_OUTPUT_PATH}/Doxyfile WORKING_DIRECTORY ${DOC_OUTPUT_PATH}
+        SOURCES ${CMAKE_SOURCE_DIR}/PluginControlInterfaceGeneric ${DOC_OUTPUT_PATH}/Doxyfile
+    )
+    file(COPY ${CMAKE_SOURCE_DIR}/PluginControlInterfaceGeneric/doc/images/ DESTINATION ${DOC_OUTPUT_PATH}/images/)    
+endif(WITH_DOCUMENTATION)

@@ -1,0 +1,20 @@
+# Java specific macro definitions.
+# To make use of these macros insert the following line into your spec file:
+# %{load:%{_usrlibrpm}/macros.d/java}
+
+# Path to scripts to autogenerate java package dependencies,
+#
+# Note: Used iff _use_internal_dependency_generator is non-zero. The
+# helpers are also used by %{_rpmhome}/rpmdeps {--provides|--requires}.
+%__java_provides	%{_rpmhome}/javadeps.sh --provides
+%__java_requires	%{_rpmhome}/javadeps.sh --requires
+
+#	The value of CLASSPATH in build scriptlets (iff configured).
+#	
+#%_javaclasspath	all
+
+#	Import packaging conventions from jpackage.org (prefixed with _
+#	to avoid name collisions).
+#	
+%_javadir      %{_datadir}/java
+%_javadocdir   %{_datadir}/javadoc

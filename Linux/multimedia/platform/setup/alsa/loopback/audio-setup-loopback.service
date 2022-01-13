@@ -1,0 +1,20 @@
+[Unit]
+Description=Setup of loopback audio device for Linux containers and AMRA smoke tests
+DefaultDependencies=yes
+
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we start loading the modules here and wait for devices to appear ------
+ExecStart=/bin/kmodule_loader -c /etc/alsa-brd-cfg/loopback/kmodules_loader.conf
+
+
+# TODO mount bind required ALSA configurations to all containers
+# mount -o bind /etc/asound.conf ${CONTAINER}/etc/asound.conf
+# mount -o bind /etc/asound_defaults.conf ${CONTAINER}/etc/asound_defaults.conf
+# mount -o bind /etc/alsa-brd-cfg/loopback/ ${CONTAINER}/etc/alsa-brd-cfg/loopback/
+# ln -s /etc/alsa-brd-cfg/loopback/asound_board1.conf ${CONTAINER}/etc/asound_board.conf

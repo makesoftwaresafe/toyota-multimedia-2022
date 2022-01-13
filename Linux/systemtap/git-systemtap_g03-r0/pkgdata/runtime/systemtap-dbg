@@ -1,0 +1,15 @@
+PN: systemtap
+PV: git-systemtap_g03
+PR: r0
+PKGV: git-systemtap_g03
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION_systemtap-dbg: SystemTap - script-directed dynamic tracing and performance analysis tool for Linux  This package contains ELF symbols and related sources for debugging purposes.
+SUMMARY_systemtap-dbg: systemtap version git-systemtap_g03-r0 - Debugging files
+RRECOMMENDS_systemtap-dbg: libelf-dbg libstdc++-dbg libgcc-external-dbg ncurses-libtinfo-dbg ncurses-libncurses-dbg ncurses-libpanel-dbg glibc-external-dbg json-c-dbg
+SECTION_systemtap-dbg: devel
+PKG_systemtap-dbg: systemtap-dbg
+ALLOW_EMPTY_systemtap-dbg: 1
+FILES_systemtap-dbg: /usr/lib/debug /usr/src/debug
+FILES_INFO: {"/usr/lib/debug/opt/tooling/adit/systemtap/bin/staprun.debug": 990352, "/usr/lib/debug/opt/tooling/adit/systemtap/bin/stap-merge.debug": 19448, "/usr/lib/debug/opt/tooling/adit/systemtap/libexec/systemtap/stapio.debug": 190824, "/usr/lib/debug/opt/tooling/adit/systemtap/bin/stapsh.debug": 42752}
+PKGSIZE_systemtap-dbg: 1243376

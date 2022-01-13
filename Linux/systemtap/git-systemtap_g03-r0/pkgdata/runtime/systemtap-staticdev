@@ -1,0 +1,14 @@
+PN: systemtap
+PV: git-systemtap_g03
+PR: r0
+PKGV: git-systemtap_g03
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION_systemtap-staticdev: SystemTap - script-directed dynamic tracing and performance analysis tool for Linux  This package contains static libraries for software development.
+SUMMARY_systemtap-staticdev: systemtap version git-systemtap_g03-r0 - Development files (Static Libraries)
+RDEPENDS_systemtap-staticdev: systemtap-dev (= git-systemtap_g03-r0)
+SECTION_systemtap-staticdev: devel
+PKG_systemtap-staticdev: systemtap-staticdev
+FILES_systemtap-staticdev: /usr/lib64/*.a /lib64/*.a /usr/lib64/systemtap/*.a
+FILES_INFO: {}
+PKGSIZE_systemtap-staticdev: 0

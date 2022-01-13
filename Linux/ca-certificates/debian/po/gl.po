@@ -1,0 +1,129 @@
+# Galician translation of ca-certificates's debconf templates
+# This file is distributed under the same license as the ca-certificates package.
+#
+# Jacobo Tarrio <jtarrio@debian.org>, 2007.
+# Jorge Barreiro <yortx.barry@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: ca-certificates\n"
+"Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2011-10-02 14:02+0200\n"
+"Last-Translator: Jorge Barreiro <yortx.barry@gmail.com>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr "Configuración dos certificados das entidades de acreditación (EA)"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "yes"
+msgstr "si"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "non"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "preguntar"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid "Trust new certificates from certificate authorities?"
+msgstr "Confiar nos novos certificados das entidades de acreditación?"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+"This package may install new CA (Certificate Authority) certificates when "
+"upgrading. You may want to check such new CA certificates and select only "
+"certificates that you trust."
+msgstr ""
+"Este paquete pode instalar novos certificados de entidades de acreditación "
+"(EA) ao actualizar. Pode querer comprobar eses novos certificados e escoller "
+"só nos que confíe."
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+" - yes: new CA certificates will be trusted and installed;\n"
+" - no : new CA certificates will not be installed by default;\n"
+" - ask: prompt for each new CA certificate."
+msgstr ""
+" - si       : hase confiar e instalar os novos certificados de entidades de "
+"acreditación.\n"
+" - non      : non se han instalar por defecto os novos certificados de "
+"entidades de acreditación.\n"
+" - preguntar: preguntar por cada novo certificado dunha entidade de "
+"acreditación."
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid "New certificates to activate:"
+msgstr "Novos certificados a activar:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid ""
+"During upgrades, new certificates will be added. Please choose those you "
+"trust."
+msgstr ""
+"Durante as anovacións engadiranse novos certificados. Indique os "
+"certificados nos que confía."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid "Certificates to activate:"
+msgstr "Certificados a activar:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"This package installs common CA (Certificate Authority) certificates in /usr/"
+"share/ca-certificates."
+msgstr ""
+"Este paquete instala certificados de entidades de acreditación comúns en /"
+"usr/share/ca-certificates."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"Please select the certificate authorities you trust so that their "
+"certificates are installed into /etc/ssl/certs. They will be compiled into a "
+"single /etc/ssl/certs/ca-certificates.crt file."
+msgstr ""
+"Escolla as entidades de acreditación nas que confía para instalar os seus "
+"certificados en /etc/ssl/certs. Hanse reunir todos nun só ficheiro /etc/ssl/"
+"certs/ca-certificates.crt."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "si, non, preguntar"
+
+#~ msgid "${new_crts}"
+#~ msgstr "${new_crts}"
+
+#~ msgid "${enable_crts}"
+#~ msgstr "${enable_crts}"

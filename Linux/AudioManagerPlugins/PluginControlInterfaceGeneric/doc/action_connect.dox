@@ -1,0 +1,156 @@
+/**
+
+ @page actionConnect Action Connect
+
+ <b>Name:</b> ACTION_CONNECT<BR>
+ <b>Description:</b> As the name suggest this actions establishes the main connection between a 
+source and sink. A main connection may consist of multiple connections(or route elements) depending 
+on the domain topology. A main connection is said to be in established( or active) when the 
+connection state is CS_CONNECTED. The connection state is CS_CONNECETD only if all the route elements
+are connected and the state of the all the source is SS_ON. After the connection is established the 
+controller would set the change state of all the sources to SS_ON except the sources which has state
+SS_UNKNOWN. The direction of the source state change could be from main source towards the source 
+closest to main Sink or vice versa, this depends on the class type of the connection. For the 
+C_PLAYBACK the direction is from main sink to main source and vice versa. For disconnect/suspend\
+push action the state of all the sources would be changed and the direction would be reverse that
+of connect.  
+    Lets first understand, how class manages the connections queue. Class maintains the list of all 
+the connections including the ones not in CS_CONNECTED state. only ACTION_DISCONNECT removes the 
+connection from the class queue as well as the audio manager daemon database.Other actions like 
+ACTION_SUSPEND and ACTION_PUSH just change the state of the main connection to CS_SUSPENDED and 
+CS_DISONNECTED respectively but the connection continues to exist in the class Queue. 
+    This action accepts sourceName, sinkName and className as a parameter to identify the 
+connection(s) to connect, all the parameter are optional, which means this action would function 
+even if no parameter are passed. This means the behavior of this action changes heavily depending 
+on the parameters, it is really important to understand this.
+    This action connects the connection based on the parameter as below,
+    - if only className is specified then this actions connects the connection depending on the 
+    order parameter. The default order parameter if not specified is O_HIGHPRIORITY.
+    - if only sourceName is specified then, all the connection in all the classes belonging to that 
+    source get connected.
+    - if only sinkName is specified then, all the connection in all the classes belonging to that 
+    sink get connected.
+    - if nothing is specified then highest priority connection of all the classes get connected.
+    - if both sourceName and sinkName are specified, then only one connection( possible between 
+    the source and the sink) is established. If such a connection doesn't exists in the class queue, 
+    then first such a connection is established and then connected.
+
+ \code
+     <action>
+        <type>ACTION_CONNECT</type>
+        <param>
+            <className>CLASS</className> 
+            <!-- OR -->
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName>  <!-- None of the above parameter are mandatory-->
+
+            <connectionFormat>CF_GENIVI_STEREO</connectionFormat> <!-- This is an optional parameter -->
+            <order>O_HIGHPRIORITY</order>   <!-- This is an optional parameter -->
+            <timeOut>3000</timeOut>         <!-- This is an optional parameter -->
+        </param>
+    </action>
+ 
+ \endcode
+ 
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>className</td>
+<td>O<sup>1</sup></td>
+<td>string</td>
+<td>The name of the class. If the specific className is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the class name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>sourceName</td>
+<td>O<sup>1</sup></td>
+<td>string</td>
+<td>The name of the source.If the specific sourceName is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the source name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>sinkName</td>
+<td>O<sup>1</sup></td>
+<td>string</td>
+<td>The name of the sink.If the specific sinkName is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the sink name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>connectionFormat</td>
+<td>O</td>
+<td>gc_connectionFomrat_e</td>
+<td>The connection format for the connection.</td>
+</tr>
+
+<tr>
+<td>order</td>
+<td>O</td>
+<td>gc_Order_e</td>
+<td>The order in which the connection would be chosen, it can be 
+    - O_HIGHPRIORITY
+    - O_LOWPRIORITY
+    - O_NEWEST
+    - O_OLDEST
+</td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+O<sup>1</sup> Either className, sourceName or sinkName or sourceName sinkName pair or none can be specified 
+
+<b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_CONNECT</type>
+        <param>
+            <sourceName>"RadioTuner"</sourceName>
+            <sourceName>"RearSpeaker"</sourceName>
+        </param>
+    </action>
+ \endcode
+    The above action connects the RadioTuner to RearSpeaker.  
+
+ \code
+    <action>
+        <type>ACTION_CONNECT</type>
+        <param>
+            <sourceName>REQUESTING</sourceName>
+            <sourceName>REQUESTING</sourceName>
+        </param>
+    </action>
+ \endcode
+    The above action connects the source and sink which were part of the trigger. The source and  
+sink, can only be part of the connect/disconnect trigger from the command side
+
+
+ \code
+    <action>
+        <type>ACTION_CONNECT</type>
+        <param>
+            <className>REQUESTING</className>
+        </param>
+    </action>
+ \endcode
+    The above action connects the highest priority connection of the requesting class. 
+ 
+    
+*/

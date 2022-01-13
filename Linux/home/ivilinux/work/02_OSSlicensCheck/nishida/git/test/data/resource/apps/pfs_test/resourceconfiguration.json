@@ -1,0 +1,186 @@
+{
+  "config_appl": "pfs_test",
+  "version": "0.1.0",
+  "resources": {
+    "file API_Resource_08": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    },
+    "file API_Resource_09": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    },
+    "keyValue_Resource_01": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "241"
+    },
+    "keyValue_Resource_03": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "121"
+    },
+    "keyValue_Resource_02": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "134"
+    },
+    "keyValue_Resource_05": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "14"
+    },
+    "file API_Resource_06": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    },
+    "keyValue_Resource_04": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "15"
+    },
+    "file API_Resource_07": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    },
+    "keyValue_Resource_07": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "13"
+    },
+    "file API_Resource_04": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    },
+    "keyValue_Resource_06": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "14"
+    },
+    "file API_Resource_05": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    },
+    "keyValue_Resource_09": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "11"
+    },
+    "file API_Resource_02": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    },
+    "keyValue_Resource_08": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "12"
+    },
+    "file API_Resource_03": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    },
+    "file API_Resource_01": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "pfs_test",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "11"
+    }
+  }
+}

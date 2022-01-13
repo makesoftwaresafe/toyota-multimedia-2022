@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding="ISO-8859-1"?>
+
+<part id="overview">
+  <title>Overview</title>
+  <partintro>
+    <para>
+      The libmediaart library is the foundation for media art caching,
+      extraction and lookup for applications on the desktop.
+    </para>
+  </partintro>
+
+  <chapter id="overview-compiling">
+    <title>Compiling applications</title>
+
+    <para>
+      To compile applications using libmediaart, you
+      need to tell the compiler where to find the proper header files
+      and libraries. This is done with the
+      <application>pkg-config</application> utility.
+    </para>
+
+    <para>
+      The following interactive shell session demonstrates how
+      <application>pkg-config</application> is used (the actual output on
+      your system may be different):
+<programlisting>
+$ pkg-config --cflags libmediaart-0.2
+
+$ pkg-config --libs libmediaart-0.2
+
+</programlisting>
+    </para>
+    <para>
+      The simplest way to compile a program is to use the "backticks"
+      feature of the shell. If you enclose a command in backticks
+      (<emphasis>not single quotes</emphasis>), then its output will be
+      substituted into the command line before execution:
+<programlisting>
+ $ cc `pkg-config --cflags --libs libmediaart-0.2` hello.c -o hello
+</programlisting>
+    </para>
+
+  </chapter>
+</part>

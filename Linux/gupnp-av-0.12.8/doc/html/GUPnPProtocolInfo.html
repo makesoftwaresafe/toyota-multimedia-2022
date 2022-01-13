@@ -1,0 +1,1148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPProtocolInfo: GUPnP A/V Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP A/V Reference Manual">
+<link rel="up" href="ch01.html" title="GUPnP A/V">
+<link rel="prev" href="GUPnPSearchCriteriaParser.html" title="GUPnPSearchCriteriaParser">
+<link rel="next" href="GUPnPFeature.html" title="GUPnPFeature">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPProtocolInfo.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPProtocolInfo.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPProtocolInfo.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPSearchCriteriaParser.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPFeature.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPProtocolInfo"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPProtocolInfo.top_of_page"></a>GUPnPProtocolInfo</span></h2>
+<p>GUPnPProtocolInfo — UPnP AV ProtocolInfo</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPProtocolInfo.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="returnvalue">GUPnPProtocolInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-new" title="gupnp_protocol_info_new ()">gupnp_protocol_info_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="returnvalue">GUPnPProtocolInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-new-from-string" title="gupnp_protocol_info_new_from_string ()">gupnp_protocol_info_new_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-to-string" title="gupnp_protocol_info_to_string ()">gupnp_protocol_info_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-is-compatible" title="gupnp_protocol_info_is_compatible ()">gupnp_protocol_info_is_compatible</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-set-protocol" title="gupnp_protocol_info_set_protocol ()">gupnp_protocol_info_set_protocol</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-set-network" title="gupnp_protocol_info_set_network ()">gupnp_protocol_info_set_network</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-set-mime-type" title="gupnp_protocol_info_set_mime_type ()">gupnp_protocol_info_set_mime_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-set-dlna-profile" title="gupnp_protocol_info_set_dlna_profile ()">gupnp_protocol_info_set_dlna_profile</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-set-play-speeds" title="gupnp_protocol_info_set_play_speeds ()">gupnp_protocol_info_set_play_speeds</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-set-dlna-conversion" title="gupnp_protocol_info_set_dlna_conversion ()">gupnp_protocol_info_set_dlna_conversion</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-set-dlna-operation" title="gupnp_protocol_info_set_dlna_operation ()">gupnp_protocol_info_set_dlna_operation</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-set-dlna-flags" title="gupnp_protocol_info_set_dlna_flags ()">gupnp_protocol_info_set_dlna_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-get-protocol" title="gupnp_protocol_info_get_protocol ()">gupnp_protocol_info_get_protocol</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-get-network" title="gupnp_protocol_info_get_network ()">gupnp_protocol_info_get_network</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-get-mime-type" title="gupnp_protocol_info_get_mime_type ()">gupnp_protocol_info_get_mime_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-get-dlna-profile" title="gupnp_protocol_info_get_dlna_profile ()">gupnp_protocol_info_get_dlna_profile</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> **
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-get-play-speeds" title="gupnp_protocol_info_get_play_speeds ()">gupnp_protocol_info_get_play_speeds</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAConversion" title="enum GUPnPDLNAConversion"><span class="returnvalue">GUPnPDLNAConversion</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-get-dlna-conversion" title="gupnp_protocol_info_get_dlna_conversion ()">gupnp_protocol_info_get_dlna_conversion</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAOperation" title="enum GUPnPDLNAOperation"><span class="returnvalue">GUPnPDLNAOperation</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-get-dlna-operation" title="gupnp_protocol_info_get_dlna_operation ()">gupnp_protocol_info_get_dlna_operation</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAFlags" title="enum GUPnPDLNAFlags"><span class="returnvalue">GUPnPDLNAFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPProtocolInfo.html#gupnp-protocol-info-get-dlna-flags" title="gupnp_protocol_info_get_dlna_flags ()">gupnp_protocol_info_get_dlna_flags</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPProtocolInfo.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAConversion" title="enum GUPnPDLNAConversion"><span class="type">GUPnPDLNAConversion</span></a></td>
+<td class="property_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo--dlna-conversion" title="The “dlna-conversion” property">dlna-conversion</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAFlags" title="enum GUPnPDLNAFlags"><span class="type">GUPnPDLNAFlags</span></a></td>
+<td class="property_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo--dlna-flags" title="The “dlna-flags” property">dlna-flags</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAOperation" title="enum GUPnPDLNAOperation"><span class="type">GUPnPDLNAOperation</span></a></td>
+<td class="property_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo--dlna-operation" title="The “dlna-operation” property">dlna-operation</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo--dlna-profile" title="The “dlna-profile” property">dlna-profile</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo--mime-type" title="The “mime-type” property">mime-type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo--network" title="The “network” property">network</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">GStrv</span></td>
+<td class="property_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo--play-speeds" title="The “play-speeds” property">play-speeds</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo--protocol" title="The “protocol” property">protocol</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPProtocolInfo.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPProtocolInfo-struct" title="GUPnPProtocolInfo">GUPnPProtocolInfo</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAConversion" title="enum GUPnPDLNAConversion">GUPnPDLNAConversion</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAFlags" title="enum GUPnPDLNAFlags">GUPnPDLNAFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAOperation" title="enum GUPnPDLNAOperation">GUPnPDLNAOperation</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPProtocolInfo.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPProtocolInfo
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPProtocolInfo.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> provides a convenient API to deal with ProtocolInfo
+strings used in UPnP AV specifications.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPProtocolInfo.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-protocol-info-new"></a><h3>gupnp_protocol_info_new ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="returnvalue">GUPnPProtocolInfo</span></a> *
+gupnp_protocol_info_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-protocol-info-new.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> object. Unref after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-new-from-string"></a><h3>gupnp_protocol_info_new_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="returnvalue">GUPnPProtocolInfo</span></a> *
+gupnp_protocol_info_new_from_string (<em class="parameter"><code>const <span class="type">char</span> *protocol_info</code></em>,
+                                     <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Parses the <em class="parameter"><code>protocol_info</code></em>
+ string and creates a new <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> object
+as a result.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-new-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>protocol_info</p></td>
+<td class="parameter_description"><p>The protocol info string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The location where to store any error, or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-new-from-string.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> object. Unref after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-to-string"></a><h3>gupnp_protocol_info_to_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_protocol_info_to_string (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Provides the string representation of <em class="parameter"><code>info</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-to-string.returns"></a><h4>Returns</h4>
+<p> String representation of <em class="parameter"><code>info</code></em>
+. <span class="type">g_free</span> after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-is-compatible"></a><h3>gupnp_protocol_info_is_compatible ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_protocol_info_is_compatible (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info1</code></em>,
+                                   <em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info2</code></em>);</pre>
+<p>Checks if the given protocolInfo string is compatible with <em class="parameter"><code>info</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-is-compatible.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info1</p></td>
+<td class="parameter_description"><p>The first <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>info2</p></td>
+<td class="parameter_description"><p>The second <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-is-compatible.returns"></a><h4>Returns</h4>
+<p> <span class="type">TRUE</span> if <em class="parameter"><code>protocol_info</code></em>
+is compatible with <em class="parameter"><code>info</code></em>
+, otherwise
+<span class="type">FALSE</span>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-set-protocol"></a><h3>gupnp_protocol_info_set_protocol ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_protocol_info_set_protocol (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *protocol</code></em>);</pre>
+<p>Set the protocol of this info.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-set-protocol.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protocol</p></td>
+<td class="parameter_description"><p>The protocol string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-set-network"></a><h3>gupnp_protocol_info_set_network ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_protocol_info_set_network (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>,
+                                 <em class="parameter"><code>const <span class="type">char</span> *network</code></em>);</pre>
+<p>Set the network this info is associated with.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-set-network.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>network</p></td>
+<td class="parameter_description"><p>The network string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-set-mime-type"></a><h3>gupnp_protocol_info_set_mime_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_protocol_info_set_mime_type (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *mime_type</code></em>);</pre>
+<p>Set the MIME-type of this info.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-set-mime-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mime_type</p></td>
+<td class="parameter_description"><p>The MIME-type string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-set-dlna-profile"></a><h3>gupnp_protocol_info_set_dlna_profile ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_protocol_info_set_dlna_profile (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *profile</code></em>);</pre>
+<p>Set the DLNA profile of this info.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-set-dlna-profile.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>profile</p></td>
+<td class="parameter_description"><p>The DLNA profile string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-set-play-speeds"></a><h3>gupnp_protocol_info_set_play_speeds ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_protocol_info_set_play_speeds (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> **speeds</code></em>);</pre>
+<p>Set the allowed play speeds on this info in the form of array of strings.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-set-play-speeds.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>speeds</p></td>
+<td class="parameter_description"><p>The allowed play speeds</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-set-dlna-conversion"></a><h3>gupnp_protocol_info_set_dlna_conversion ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_protocol_info_set_dlna_conversion
+                               (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAConversion" title="enum GUPnPDLNAConversion"><span class="type">GUPnPDLNAConversion</span></a> conversion</code></em>);</pre>
+<p>Set the DLNA conversion flags.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-set-dlna-conversion.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>conversion</p></td>
+<td class="parameter_description"><p>The bitwise OR of one or more DLNA conversion flags</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-set-dlna-operation"></a><h3>gupnp_protocol_info_set_dlna_operation ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_protocol_info_set_dlna_operation
+                               (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAOperation" title="enum GUPnPDLNAOperation"><span class="type">GUPnPDLNAOperation</span></a> operation</code></em>);</pre>
+<p>Set the DLNA operation flags.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-set-dlna-operation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>operation</p></td>
+<td class="parameter_description"><p>The bitwise OR of one or more DLNA operation flags</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-set-dlna-flags"></a><h3>gupnp_protocol_info_set_dlna_flags ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_protocol_info_set_dlna_flags (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>,
+                                    <em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAFlags" title="enum GUPnPDLNAFlags"><span class="type">GUPnPDLNAFlags</span></a> flags</code></em>);</pre>
+<p>Set the gereric DLNA flags.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-set-dlna-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>flags</p></td>
+<td class="parameter_description"><p>The bitwise OR of one or more generic DLNA flags</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-get-protocol"></a><h3>gupnp_protocol_info_get_protocol ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_protocol_info_get_protocol (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Get the protocol of this info.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-protocol.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-protocol.returns"></a><h4>Returns</h4>
+<p> The protocol of this info or <code class="literal">NULL</code>. This string should not
+be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-get-network"></a><h3>gupnp_protocol_info_get_network ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_protocol_info_get_network (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Get the network this info is associated with.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-network.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-network.returns"></a><h4>Returns</h4>
+<p> The network string or <code class="literal">NULL</code>. This string should not be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-get-mime-type"></a><h3>gupnp_protocol_info_get_mime_type ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_protocol_info_get_mime_type (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Get the MIME-type of this info.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-mime-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-mime-type.returns"></a><h4>Returns</h4>
+<p> The MIME-type of this info or <code class="literal">NULL</code>. This string should not
+be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-get-dlna-profile"></a><h3>gupnp_protocol_info_get_dlna_profile ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_protocol_info_get_dlna_profile (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Get the DLNA profile of this info.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-dlna-profile.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-dlna-profile.returns"></a><h4>Returns</h4>
+<p> The DLNA profile of this info or <code class="literal">NULL</code>. This string should
+not be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-get-play-speeds"></a><h3>gupnp_protocol_info_get_play_speeds ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> **
+gupnp_protocol_info_get_play_speeds (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Get the allowed play speeds on this info in the form of array of strings.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-play-speeds.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-play-speeds.returns"></a><h4>Returns</h4>
+<p> The allowed play speeds as array of strings or <code class="literal">NULL</code>. This
+return array and it's content must not be modified or freed. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-get-dlna-conversion"></a><h3>gupnp_protocol_info_get_dlna_conversion ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAConversion" title="enum GUPnPDLNAConversion"><span class="returnvalue">GUPnPDLNAConversion</span></a>
+gupnp_protocol_info_get_dlna_conversion
+                               (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Get the DLNA conversion flags.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-dlna-conversion.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-dlna-conversion.returns"></a><h4>Returns</h4>
+<p> The DLNA conversion flags.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-get-dlna-operation"></a><h3>gupnp_protocol_info_get_dlna_operation ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAOperation" title="enum GUPnPDLNAOperation"><span class="returnvalue">GUPnPDLNAOperation</span></a>
+gupnp_protocol_info_get_dlna_operation
+                               (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Get the DLNA operation flags.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-dlna-operation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-dlna-operation.returns"></a><h4>Returns</h4>
+<p> The DLNA operation flags.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-protocol-info-get-dlna-flags"></a><h3>gupnp_protocol_info_get_dlna_flags ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAFlags" title="enum GUPnPDLNAFlags"><span class="returnvalue">GUPnPDLNAFlags</span></a>
+gupnp_protocol_info_get_dlna_flags (<em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Get the gereric DLNA flags.</p>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-dlna-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-protocol-info-get-dlna-flags.returns"></a><h4>Returns</h4>
+<p> The generic DLNA flags.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPProtocolInfo.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo-struct"></a><h3>GUPnPProtocolInfo</h3>
+<pre class="programlisting">typedef struct _GUPnPProtocolInfo GUPnPProtocolInfo;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDLNAConversion"></a><h3>enum GUPnPDLNAConversion</h3>
+<p>The DLNA conversion flags for a resource.</p>
+<div class="refsect3">
+<a name="GUPnPDLNAConversion.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-CONVERSION-NONE:CAPS"></a>GUPNP_DLNA_CONVERSION_NONE</p></td>
+<td class="enum_member_description">
+<p>Content is in original source format</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-CONVERSION-TRANSCODED:CAPS"></a>GUPNP_DLNA_CONVERSION_TRANSCODED</p></td>
+<td class="enum_member_description">
+<p>Content is transcoded</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDLNAFlags"></a><h3>enum GUPnPDLNAFlags</h3>
+<p>The miscellaneous operations supported by a resource. For details on these
+flags please refer to section 7.3.37.2 of DLNA Networked Device
+Interoperability Guidelines Volume 1, October 2006.</p>
+<p>Updated DTCP Flags based on 2011 Guidelines, section 7.4.1.3.23.2</p>
+<div class="refsect3">
+<a name="GUPnPDLNAFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-NONE:CAPS"></a>GUPNP_DLNA_FLAGS_NONE</p></td>
+<td class="enum_member_description">
+<p>No flags</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-SENDER-PACED:CAPS"></a>GUPNP_DLNA_FLAGS_SENDER_PACED</p></td>
+<td class="enum_member_description">
+<p>Content source is the clock source during
+                                transport</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-TIME-BASED-SEEK:CAPS"></a>GUPNP_DLNA_FLAGS_TIME_BASED_SEEK</p></td>
+<td class="enum_member_description">
+<p>Limited Operation: time-seek supported</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-BYTE-BASED-SEEK:CAPS"></a>GUPNP_DLNA_FLAGS_BYTE_BASED_SEEK</p></td>
+<td class="enum_member_description">
+<p>Limited Operation: byte-seek supported</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-PLAY-CONTAINER:CAPS"></a>GUPNP_DLNA_FLAGS_PLAY_CONTAINER</p></td>
+<td class="enum_member_description">
+<p>Resource supports 'Container Playback'</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-S0-INCREASE:CAPS"></a>GUPNP_DLNA_FLAGS_S0_INCREASE</p></td>
+<td class="enum_member_description">
+<p>Content does not have a fixed beginning</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-SN-INCREASE:CAPS"></a>GUPNP_DLNA_FLAGS_SN_INCREASE</p></td>
+<td class="enum_member_description">
+<p>Content does not have a fixed end</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-RTSP-PAUSE:CAPS"></a>GUPNP_DLNA_FLAGS_RTSP_PAUSE</p></td>
+<td class="enum_member_description">
+<p>RTSP resource supports pausing of media
+                              transfer</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-STREAMING-TRANSFER-MODE:CAPS"></a>GUPNP_DLNA_FLAGS_STREAMING_TRANSFER_MODE</p></td>
+<td class="enum_member_description">
+<p>Streaming transfer mode supported</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-INTERACTIVE-TRANSFER-MODE:CAPS"></a>GUPNP_DLNA_FLAGS_INTERACTIVE_TRANSFER_MODE</p></td>
+<td class="enum_member_description">
+<p>Interactive transfer mode
+                                             supported</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-BACKGROUND-TRANSFER-MODE:CAPS"></a>GUPNP_DLNA_FLAGS_BACKGROUND_TRANSFER_MODE</p></td>
+<td class="enum_member_description">
+<p>Background transfer mode
+                                            supported</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-CONNECTION-STALL:CAPS"></a>GUPNP_DLNA_FLAGS_CONNECTION_STALL</p></td>
+<td class="enum_member_description">
+<p>No content transfer when paused.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-DLNA-V15:CAPS"></a>GUPNP_DLNA_FLAGS_DLNA_V15</p></td>
+<td class="enum_member_description">
+<p>DLNAv1.5 version flag</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-LINK-PROTECTED-CONTENT:CAPS"></a>GUPNP_DLNA_FLAGS_LINK_PROTECTED_CONTENT</p></td>
+<td class="enum_member_description">
+<p>The content is protected.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-CLEAR-TEXT-BYTE-SEEK-FULL:CAPS"></a>GUPNP_DLNA_FLAGS_CLEAR_TEXT_BYTE_SEEK_FULL</p></td>
+<td class="enum_member_description">
+<p>Full byte seek on cleartext
+                                             domain is supported.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-FLAGS-LOP-CLEAR-TEXT-BYTE-SEEK:CAPS"></a>GUPNP_DLNA_FLAGS_LOP_CLEAR_TEXT_BYTE_SEEK</p></td>
+<td class="enum_member_description">
+<p>Limited operations on
+                                             byte seek in cleartext domain.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDLNAOperation"></a><h3>enum GUPnPDLNAOperation</h3>
+<p>The seek operations supported by a resource.</p>
+<div class="refsect3">
+<a name="GUPnPDLNAOperation.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-OPERATION-NONE:CAPS"></a>GUPNP_DLNA_OPERATION_NONE</p></td>
+<td class="enum_member_description">
+<p>Resource does not support seeking of any type</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-OPERATION-RANGE:CAPS"></a>GUPNP_DLNA_OPERATION_RANGE</p></td>
+<td class="enum_member_description">
+<p>Resource supports byte-seek</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DLNA-OPERATION-TIMESEEK:CAPS"></a>GUPNP_DLNA_OPERATION_TIMESEEK</p></td>
+<td class="enum_member_description">
+<p>Resource supports time-seek</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPProtocolInfo.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo--dlna-conversion"></a><h3>The <code class="literal">“dlna-conversion”</code> property</h3>
+<pre class="programlisting">  “dlna-conversion”          <a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAConversion" title="enum GUPnPDLNAConversion"><span class="type">GUPnPDLNAConversion</span></a></pre>
+<p>The DLNA conversion flags.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo--dlna-flags"></a><h3>The <code class="literal">“dlna-flags”</code> property</h3>
+<pre class="programlisting">  “dlna-flags”               <a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAFlags" title="enum GUPnPDLNAFlags"><span class="type">GUPnPDLNAFlags</span></a></pre>
+<p>Various generic DLNA flags.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo--dlna-operation"></a><h3>The <code class="literal">“dlna-operation”</code> property</h3>
+<pre class="programlisting">  “dlna-operation”           <a class="link" href="GUPnPProtocolInfo.html#GUPnPDLNAOperation" title="enum GUPnPDLNAOperation"><span class="type">GUPnPDLNAOperation</span></a></pre>
+<p>The DLNA operation flags.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo--dlna-profile"></a><h3>The <code class="literal">“dlna-profile”</code> property</h3>
+<pre class="programlisting">  “dlna-profile”             <span class="type">gchar</span> *</pre>
+<p>The DLNA profile of this info.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo--mime-type"></a><h3>The <code class="literal">“mime-type”</code> property</h3>
+<pre class="programlisting">  “mime-type”                <span class="type">gchar</span> *</pre>
+<p>The MIME-type of this info.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo--network"></a><h3>The <code class="literal">“network”</code> property</h3>
+<pre class="programlisting">  “network”                  <span class="type">gchar</span> *</pre>
+<p>The network this info is associated with.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo--play-speeds"></a><h3>The <code class="literal">“play-speeds”</code> property</h3>
+<pre class="programlisting">  “play-speeds”              <span class="type">GStrv</span></pre>
+<p>The allowed play speeds on this info in the form of array of
+strings.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPProtocolInfo--protocol"></a><h3>The <code class="literal">“protocol”</code> property</h3>
+<pre class="programlisting">  “protocol”                 <span class="type">gchar</span> *</pre>
+<p>The protocol of this info.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

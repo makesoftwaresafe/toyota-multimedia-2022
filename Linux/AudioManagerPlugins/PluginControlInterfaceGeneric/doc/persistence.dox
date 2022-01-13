@@ -1,0 +1,66 @@
+/*!
+\page pagePersistence Persistence user manual  
+
+Primarily, two types of data are supported for storing and restoring in the persistence area 
+by the generic controller
+
+1.last main connection<BR>	
+2.last class volume 
+
+The main connection is stored in the persistence area as soon as the main connection is connected for the given class
+later,if same main connection is disconnected then it will be removed from the persistence area.
+
+The main connection is stored in the persistence area only if the main source or main sink supports the persistence 
+This is configurable parameter in the controller configuration file
+@code
+  <isPersistencySupported>TRUE</isPersistencySupported>
+@endcode
+The main connection get restored from persistence area after all the domain registration are completed,
+if any of the domain is not registered then possible main connections will be restored on timeout
+
+The domain registration timeout parameter is configurable in the controller configuration file
+@code
+  <systemProperty>
+    <type>SYP_REGISTRATION_DOMAIN_TIMEOUT</type>
+    <value>1000</value> <!-- Time out period is in ms -->
+  </systemProperty>
+@endcode
+All the main connection which are stored in the persistence area will be restored in the disconnected state by default
+later main connections can be activated based on the policy. The new trigger is define in the controller configuration 
+for activation of the connection for e.g.
+@code
+<policy>
+ <trigger>SYSTEM_ALL_DOMAIN_REGISTRATION_COMPLETE</trigger>
+ <process>
+  <condition>error() EQ E_OK </condition>
+  <action>
+   <type>ACTION_POP</type>
+    <param>
+     <className>"BASE"</className>
+     <order>O_NEWEST</order>
+    </param>
+   </action>
+   </process>   
+ </policy>
+@endcode
+ The trigger SYSTEM_ALL_DOMAIN_REGISTRATION_COMPLETE is send to the policy engine with the following error codes
+  a. E_OK : If all domain are registered in stipulated time then this error code is passed with the trigger
+  b. EQ E_DATABASE_ERROR : This error will be issued, if there is any problem with persistence database
+     (e.g read operation failed due to some reason)  
+  c.  EQ E_NOT_POSSIBLE : This error will be issued, if all domain not registered in given time out
+  
+Generic controller defines IAmPeristence implementation for using perisistence. The default Implementation of IAmPersistence would 
+write the persistence data to a file. The default file path is /var/ADIT/persistence/gc_persistence.txt.
+This can be overriden by setting an enviornment variable GENERIC_CONTROLLER_PERISTENCE_FILE_PATH.  
+
+In fact this default peristence implementation can also be overriden by user. The user can to implement 
+own IAmPeristence implementation and provide the library path to the AudioManager in commmand line. 
+
+The details of the command line argument are as below
+Swicth Long Name: -P <BR>
+short Name      : --peristencelibrarypath<BR>
+Description     : This switch allows the user to choose custom persistence implementation.<BR>
+default         : Controller uses internal persistence which would write to the path pointed by environment variable 
+GENERIC_CONTROLLER_PERISTENCE_FILE_PATH.<BR>
+    
+*/

@@ -1,0 +1,65 @@
+# getdents ___________________________________________________
+# long sys_getdents(unsigned int fd, struct linux_dirent __user * dirent, unsigned int count)
+# long compat_sys_getdents(unsigned int fd, struct compat_linux_dirent __user *dirent, unsigned int count)
+# long sys_getdents64(unsigned int fd, struct linux_dirent64 __user * dirent, unsigned int count)
+# long compat_sys_getdents64(unsigned int fd, struct linux_dirent64 __user * dirent, unsigned int count)
+#
+
+@define _SYSCALL_GETDENTS_NAME
+%(
+	name = "getdents"
+%)
+
+@define _SYSCALL_GETDENTS_ARGSTR
+%(
+	argstr = sprintf("%d, %p, %d", fd, dirp_uaddr, count)
+%)
+
+probe syscall.getdents = dw_syscall.getdents !, nd_syscall.getdents ? {}
+probe syscall.getdents.return = dw_syscall.getdents.return !,
+                                nd_syscall.getdents.return ? {}
+
+# dw_getdents _____________________________________________________
+
+probe dw_syscall.getdents = kernel.function("sys_getdents").call ?,
+                         kernel.function("sys_getdents64").call ?,
+                         kernel.function("compat_sys_getdents").call ?,
+                         kernel.function("compat_sys_getdents64").call ?
+{
+	@_SYSCALL_GETDENTS_NAME
+	fd = __int32($fd)
+	dirp_uaddr = $dirent
+	count = __uint32($count)
+	@_SYSCALL_GETDENTS_ARGSTR
+}
+probe dw_syscall.getdents.return = kernel.function("sys_getdents").return ?,
+                                kernel.function("sys_getdents64").return ?,
+                                kernel.function("compat_sys_getdents").return ?,
+                                kernel.function("compat_sys_getdents64").return ?
+{
+	@_SYSCALL_GETDENTS_NAME
+	retstr = return_str(1, $return)
+}
+
+# nd_getdents _____________________________________________________
+
+probe nd_syscall.getdents = kprobe.function("sys_getdents") ?,
+                            kprobe.function("sys_getdents64") ?,
+                            kprobe.function("compat_sys_getdents") ?,
+                            kprobe.function("compat_sys_getdents64") ?
+{
+	@_SYSCALL_GETDENTS_NAME
+	asmlinkage()
+	fd = int_arg(1)
+	dirp_uaddr = pointer_arg(2)
+	count = uint_arg(3)
+	@_SYSCALL_GETDENTS_ARGSTR
+}
+probe nd_syscall.getdents.return = kprobe.function("sys_getdents").return ?,
+                                   kprobe.function("sys_getdents64").return ?,
+                                   kprobe.function("compat_sys_getdents").return ?,
+                                   kprobe.function("compat_sys_getdents64").return ?
+{
+	@_SYSCALL_GETDENTS_NAME
+	retstr = returnstr(1)
+}

@@ -1,0 +1,2 @@
+use-right-libtool.patch -p1
+0001-Add-otv_module_class.patch -p1

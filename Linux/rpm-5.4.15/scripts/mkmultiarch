@@ -1,0 +1,91 @@
+#!/bin/bash
+#---------------------------------------------------------------
+# Original author:	Gwenole Beauchesne <gbeauchesne@mandriva.com>
+# Created On:		Wed Jan 12 10:54:10 CET 2005
+#---------------------------------------------------------------
+
+usage="Usage: $0 <binaries|includes> <file1> [<file2> ...]"
+mplat=`multiarch-platform`
+type=$1
+case $type in
+    binaries|includes) shift;;
+    *) echo $usage; exit 1;;
+esac
+
+function error() {
+    echo ${1+"$@"} 1>&2
+    exit 1
+}
+
+# read link on one level only
+function read_link_1() {
+    perl -e 'print readlink(shift)' $1
+}
+
+function dispatch_binaries() {
+    local file=$1
+    local bindir=`dirname $file`
+    local archbindir=$bindir/$mplat
+    [[ -d $archbindir ]] || mkdir -p $archbindir
+    if [[ -L $file ]]; then
+	link=`read_link_1 $file`
+	case $link in
+	    /*)
+		mv $file $archbindir/
+		;;
+	    ../*)
+		ln -s ../$link $archbindir/${file##*/}
+		rm -f $file
+		;;
+	esac
+    elif [[ -f $file ]]; then
+	mv $file $archbindir/
+    else
+	error "Unsupported file type for $file"
+    fi
+    ln -s `which multiarch-dispatch` $file
+}
+
+function dispatch_includes() {
+    local file=$1
+    local incdir=`dirname $file`
+
+    # handle circular inclusions
+    local tag=$incdir/.multiarch-processing.${file##*/}
+    [[ -f "$tag" ]] && return
+    touch $tag
+
+    # sanity checks, extract path parts
+    echo $file | grep -q '/include/' || error "Unsupported includedir $incdir"
+    local prefix=`echo $incdir | sed -n '/\(.*\/include\)\/.*/s//\1/p'`
+    [[ -z "$prefix" ]] && prefix="$incdir"
+    local suffix=`echo $incdir | sed -n '/.*\/include\/\(.*\)/s//\1/p'`
+    [[ -n "$suffix" ]] && suffix="$suffix/"
+
+    # dispatch nested includes expected in local directory
+    sed -n '/^#[ \t]*include[ \t]*"\([^"][^"]*\)".*/s//\1/p' $file | \
+    while read localfile; do
+	[[ -f "$incdir/$localfile" ]] && dispatch_includes $incdir/$localfile
+    done
+
+    # dispatch selected include file, provided it's not already dispatched
+    grep -q _MULTIARCH_HEADER $file || {
+	local archincdir=$prefix/$mplat/$suffix
+	[[ -d $archincdir ]] || mkdir -p $archincdir
+	mv $file $archincdir/
+	cat > $file << EOF
+#define _MULTIARCH_HEADER $suffix${file##*/}
+#include <multiarch-dispatch.h>
+EOF
+    }
+
+    # done with this file
+    rm -f $tag
+}
+
+while [[ $# -gt 0 ]]; do
+    file=$1
+    shift 1
+    [[ -f $file ]] || error "$file does not exist!"
+    dispatch_$type $file
+done

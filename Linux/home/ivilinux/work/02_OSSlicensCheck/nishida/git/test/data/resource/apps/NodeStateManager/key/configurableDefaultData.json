@@ -1,0 +1,10 @@
+{
+  "config_appl": "NodeStateManager",
+  "version": "0.1.0",
+  "resources": {
+    "NSM_var": {
+      "size": "4",
+      "data": "40414243"
+    }
+  }
+}

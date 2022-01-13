@@ -1,0 +1,23 @@
+/*!
+\mainpage
+
+\copyright Copyright (c) 2016 Advanced Driver Information Technology.
+\n
+ADIT is a joint venture company of
+Robert Bosch GmbH/Robert Bosch Car Multimedia GmbH and DENSO Corporation
+\n
+This file is part of GENIVI Project AudioManager
+
+\par Author:
+Jens Lorenz
+\n
+Mattia Guerra
+\image html genivilogo.png
+
+\par More information
+can be found at <a href="https://collab.genivi.org/wiki/display/genivi/GENIVI+Home">https://collab.genivi.org/wiki/display/genivi/GENIVI+Home</a>
+
+\par About Plugin Routing Adapter ALSA
+This Plugin is providing ALSA Domain implementation to the Audio Manager Project.
+
+ */

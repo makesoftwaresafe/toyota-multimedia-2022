@@ -1,0 +1,8 @@
+{
+  "browser": "PersAdminCfgInstallRules_NewInstall",
+  "concurrency_test": "PersAdminCfgInstallRules_NewInstall",
+  "lt-persistence_client_library_test": "PersAdminCfgInstallRules_NewInstall",
+  "node-health-monitor": "PersAdminCfgInstallRules_NewInstall",
+  "NodeStateManager": "PersAdminCfgInstallRules_NewInstall",
+  "pfs_test": "PersAdminCfgInstallRules_NewInstall"
+}

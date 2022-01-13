@@ -1,0 +1,148 @@
+These are brief notes for those are @rpm5.org developers or for who want 
+to try the latest RPM5 version under development. 
+
+They were originally written by the Maintainer via private comunication,
+but I thought might be useful to a wider audience.
+ 
+Any error or omission are of course only my fault.
+
+Elia
+
+		**********************************
+
+Here's a quick and terse howto check-out and build RPM from CVS.
+
+Because of the number of configure parameters and the fact
+that RPM uses external <-> internal copies of several
+sources, the mechanism is a bit more complex than
+just doing a cvs checkout and running ./autogen.sh
+
+0) Get the configgery in place (feel free to change to taste).
+   The transport is ssh with all the usual rulles. I tend
+   to add this "stuff" in ~/.bashrc
+
+       export MALLOC_CHECK_=3
+       # http://udrepper.livejournal.com/11429.html
+       export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
+
+       # http://mah.everybody.org/docs/ssh
+       SSHAGENT="/usr/bin/ssh-agent"
+
+       if [ -z "$SSH_AUTH_SOCK"  -a -x "$SSHAGENT" ]; then
+           eval `$SSHAGENT -s`
+           trap "kill $SSH_AGENT_PID" 0
+       fi
+
+   and someplace I'm setting CVS_RSH=ssh.
+
+1) Get the sources.
+   I tend to use these cvs options in ~/.cvsrc (because I can never remeber):
+       $ cat ~/.cvsrc
+       cvs     -q -z3
+       diff    -puw
+       rdiff   -u
+       update  -Pd
+
+   A checkout of cvs HEAD then looks like this (I work in a "wdj" sandbox)
+       cvs -d :ext:rpm-cvs@rpm5.org:/v/rpm/cvs get -d wdj rpm
+
+   Branch names look like "rpm-5_2", so the equivalent check out for rpm-5.2.x code is
+       cvs -d :ext:rpm-cvs@rpm5.org:/v/rpm/cvs get -d wdj52 -r rpm-5_2 rpm
+
+   You can see all the tags any time you wish by doing
+       cd wdj  # <-- top of checkout
+       cvs status -v INSTALL
+
+2) Use devtool to check out internal sources and configure:
+
+   Examine devtool.conf (and feel free to add stanzas as you want).
+
+   I build RPM using a maximally configured set of options like
+       ./devtool jbj
+   which checks out 4-5 other trees, and sets about running ./configure
+
+   The other approach commonly used with devtool is the "standalone"
+   target. Ralf & Anders usually use that. I would likely be using "standalone"
+   too, just my RPM habits are peculier to me as a developer, there's lots that
+   is right with the "standalone" devtool target stanza.
+
+3) Type "make".
+
+   On a clear day with a stiff wind, the make will succeed ;-)
+
+   More seriously, most build breakage can be fixed by adjusting
+   AutoFu options passed to configure.
+
+   Hint: Because of the complexity of RPM's configuration, there's
+   a few configuration dependencies that would be (imho) too painful
+   to track through Makefile's precisely. Specifically, watch out
+   for the misc/* "kitchen sink". The -lrpmmisc library is not always
+   rebuilt when the AutoFu changes. So one sometimes has to do
+       make -C misc clean
+   before new configuration takes effect. The 3rd time the issue
+   bites you the fix will be obvious ;-)
+
+   Another hint: RPM has loader maps to control for symbols exposed
+   in libraries. If you find yourself wondering why a symbol that
+   you *know* is present cannot be found, well,  examine the libfoo.vers
+   loader map. Alternatively, just disable loader maps using AutoFu.
+
+
+		**********************************
+
+HOWTO use multiple version of rpm 
+
+I tend to have multiple versions of both rpm and distro
+packaging lying around always, and need to flip between
+versions/distros at a dead-run.
+
+So I work in tree's like /X, /Y, /Z.
+
+I have private configuration as (say) /X/macros:
+================================================
+%_topdir        /X
+%_ntopdir       %{_topdir}/%{name}
+%_builddir      %{_ntopdir}
+%_sourcedir     %{_ntopdir}
+%_specdir       %{_ntopdir}
+%_rpmdir        %{_ntopdir}
+%_srcrpmdir     %{_ntopdir}
+%_rpmfilename   %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm
+
+%_tmppath       %{_topdir}/tmp
+================================================
+
+I have a wrapper in ~/bin/xxxrpm to reconfigure:
+================================================
+#!/bin/sh
+
+macros="/usr/lib/rpm/macros:/usr/lib/rpm/%{_target}/macros:/etc/rpm/macros.specspo:/etc/rpm/macros.sqlite:/etc/rpm/macros.cdb:/etc/rpm/macros:/etc/rpm/%{_target}/macros:~/.rpmmacros:/X/macros"
+
+case $1 in
+-b*)    rpm=/usr/bin/rpmbuild;;
+*)      rpm=/usr/bin/rpm;;
+esac
+
+exec $vg $rpm --macros ${macros} $*
+================================================
+
+When I need to use a different version of rpm, or
+add valgrind/time/strace/whatever, I edit the ~/bin/xxxrpm wrapper.
+Similarly if/when I need to adjust to different macros to
+be loaded, I edit the macros path.
+
+In each tree, packages are installed/built into /X/%{name}.
+
+So my packaging workflow goes something like:
+
+	xxxrpm -i foo*.src.rpm
+	cd /X/foo
+	xxxrpm -ba foo.spec
+	rpm -Uvh *.i386.rpm
+	cd ..
+	rm -rf foo
+
+I find having everything in one directory far more
+convenient than having to chdir all over the place
+just to build a package.
+

@@ -1,0 +1,148 @@
+PREFIX	logio
+
+INCLUDE #include <rpmio.h>
+INCLUDE #include "logio.h"
+INCLUDE #include "debug.h"
+INCLUDE
+
+/*
+ *     awk -f ./logio.awk \
+ *         -v source_file=logio_auto.c         \
+ *         -v header_file=logio_auto.h         \
+ *         -v template_file=logio_template     \
+ *         < logio.src
+ */
+
+/* Creat(2) */
+BEGIN Creat	48	10000
+DBT	path		DBT		s
+ARG	mode		mode_t		o
+DBT	content		DBT		s
+DBT	digest		DBT		s
+ARG	dalgo		uint32_t	lu
+END
+
+/* Unlink(2) */
+BEGIN Unlink	48	10001
+DBT	path		DBT		s
+ARG	mode		mode_t		o
+DBT	content		DBT		s
+DBT	digest		DBT		s
+ARG	dalgo		uint32_t	lu
+END
+
+/* Rename(2) */
+BEGIN Rename	48	10002
+DBT	oldpath		DBT		s
+DBT	newpath		DBT		s
+ARG	mode		mode_t		o
+DBT	content		DBT		s
+DBT	digest		DBT		s
+ARG	dalgo		uint32_t	lu
+END
+
+/* Mkdir(2) */
+BEGIN Mkdir	48	10003
+DBT	path		DBT		s
+ARG	mode		mode_t		o
+END
+
+/* Rmdir(2) */
+BEGIN Rmdir	48	10004
+DBT	path		DBT		s
+ARG	mode		mode_t		o
+END
+
+/* Lsetfilecon(2) */
+BEGIN Lsetfilecon	48	10005
+DBT	path		DBT		s
+DBT	context		DBT		s
+END
+
+/* Chown(2) */
+BEGIN Chown	48	10006
+DBT	path		DBT		s
+ARG	owner		uid_t		lu
+ARG	group		gid_t		lu
+END
+
+/* Lchown(2) */
+BEGIN Lchown	48	10007
+DBT	path		DBT		s
+ARG	owner		uid_t		lu
+ARG	group		gid_t		lu
+END
+
+/* Chmod(2) */
+BEGIN Chmod	48	10008
+DBT	path		DBT		s
+ARG	mode		mode_t		o
+END
+
+/* Utime(2) */
+BEGIN Utime	48	10009
+DBT	path		DBT		s
+TIME	actime		time_t		lu
+TIME	modtime		time_t		lu
+END
+
+/* Symlink(2) */
+BEGIN Symlink	48	10010
+DBT	oldpath		DBT		s
+DBT	newpath		DBT		s
+END
+
+/* Link(2) */
+BEGIN Link	48	10011
+DBT	oldpath		DBT		s
+DBT	newpath		DBT		s
+END
+
+/* Mknod(2) */
+BEGIN Mknod	48	10012
+DBT	path		DBT		s
+ARG	mode		mode_t		o
+ARG	dev		dev_t		lx
+END
+
+/* Mkfifo(2) */
+BEGIN Mkfifo	48	10013
+DBT	path		DBT		s
+ARG	mode		mode_t		o
+END
+
+/* %pretrans */
+BEGIN Pretrans	48	10030
+DBT	cmd		DBT		s
+DBT	script		DBT		s
+END
+
+/* %pre */
+BEGIN Prein	48	10031
+DBT	cmd		DBT		s
+DBT	script		DBT		s
+END
+
+/* %post */
+BEGIN Postin	48	10032
+DBT	cmd		DBT		s
+DBT	script		DBT		s
+END
+
+/* %preun */
+BEGIN Preun	48	10033
+DBT	cmd		DBT		s
+DBT	script		DBT		s
+END
+
+/* %postun */
+BEGIN Postun	48	10034
+DBT	cmd		DBT		s
+DBT	script		DBT		s
+END
+
+/* %posttrans */
+BEGIN Posttrans	48	10035
+DBT	cmd		DBT		s
+DBT	script		DBT		s
+END

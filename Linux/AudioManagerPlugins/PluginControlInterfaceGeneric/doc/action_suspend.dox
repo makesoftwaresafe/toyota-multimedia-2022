@@ -1,0 +1,130 @@
+/**
+
+ @page actionSuspend Action Suspend/Resume
+
+ <b>Name:</b> ACTION_SUSPEND<BR>
+ <b>Name:</b> ACTION_RESUME<BR>
+ <b>Description:</b> This action changes the main connection state to CS_SUSPENDED state. This 
+means the route is still connected only the source state of the main source of main connection is
+changed to SS_OFF. The parameters for this action helps to identify the main connection, which one 
+intends to suspend. The ACTION_RESUME performs reverse of the ACTION_SUSPEND. Internally the 
+ACTION_RESUME is realized using the ACTION_CONNECT.
+
+\code
+     <action>
+        <type>ACTION_SUSPEND</type>
+        <param>
+            <className>CLASS</className> 
+            <!-- OR -->
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName>
+
+            <timeOut>3000</timeOut>         <!-- This is an optional parameter --> 
+        </param>
+    </action>
+
+     <action>
+        <type>ACTION_RESUME</type>
+        <param>
+            <className>CLASS</className> 
+            <!-- OR -->
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName>
+
+            <order>O_NEWEST</order>
+            <timeOut>3000</timeOut>         <!-- This is an optional parameter -->
+        </param>
+    </action>
+\endcode
+ 
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>className</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the class. If the specific className is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the class name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>sourceName</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the source.If the specific sourceName is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the source name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>sinkName</td>
+<td>O</td>
+<td>string</td>
+<td>The name of the sink.If the specific sinkName is needed then the name should be inside 
+double quotes. This can accept a macro REQUESTING, then the sink name which originated the 
+trigger is used.</td>
+</tr>
+
+<tr>
+<td>order</td>
+<td>O<sup>1</sup></td>
+<td>gc_Order_e</td>
+<td>This parameter can be used only for RESUME action, to narrow down the connection which would 
+be resumed. The possible values are <BR>
+O_HIGH_PRIORITY - pop the connection with highest priority.<BR>
+O_LOW_PRIORITY  - pop the connection with lowest priority.<BR>
+O_NEWEST        - pop the newest connection.<BR>
+O_OLDEST        - pop the oldest connection.<BR></td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+O<sup>1</sup> This parameter should only be used with ACTION_RESUME.
+
+<b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_SUSPEND</type>
+        <param>
+            <sourceName>"RadioTuner"</sourceName>
+        </param>
+    </action>
+ \endcode
+    This example would suspend the connections involving the sourceName RadioTuner.  
+
+\code
+    <action>
+        <type>ACTION_SUSPEND</type>
+        <param>
+            <className>"BASE"</className>
+        </param>
+    </action>
+\endcode
+    This action would suspend the active connection of the BASE Class.
+\code
+    <action>
+        <type>ACTION_RESUME</type>
+        <param>
+            <className>"BASE"</className>
+            <order>O_NEWEST</order>
+        </param>
+    </action>
+ \endcode
+    This example resume(i.e in other words establish) the latest connection of BASE class. 
+
+*/

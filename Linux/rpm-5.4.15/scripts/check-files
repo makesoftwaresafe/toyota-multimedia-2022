@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Gets file list on standard input and RPM_BUILD_ROOT as first parameter
+# and searches for omitted files (not counting directories).
+# Returns it's output on standard output.
+#
+# filon@pld.org.pl
+# at@altlinux.org
+
+RPM_BUILD_ROOT="$1"
+if ! cd "${RPM_BUILD_ROOT:?}"; then
+	cat >/dev/null
+	exit 1
+fi
+
+[ "$TMPDIR" ] || TMPDIR=/tmp
+FILES_DISK=`mktemp $TMPDIR/rpmXXXXXX`
+
+find . ! -type d -print | \
+	sed -e 's:^./:/:' -e '/^\/dev\//d' |
+	LC_ALL=C sort > "$FILES_DISK"
+LC_ALL=C sort -u | LC_ALL=C comm -23 "$FILES_DISK" - | sed -e 's:^:	:'
+
+rm -f "$FILES_DISK"

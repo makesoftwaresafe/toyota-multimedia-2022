@@ -1,0 +1,23 @@
+[Unit]
+Description=Setup of WM8962 audio device on imx6q-sabresd
+DefaultDependencies=yes
+ConditionPathExistsGlob=/sys/devices/soc*/sound_wm8962.*
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we start loading the modules here and wait for devices to appear ------
+ExecStart=/bin/kmodule_loader -c /etc/alsa-brd-cfg/imx6q-sabresd/kmodules_loader.conf
+
+#-------------------- we are deploy the common vad configuration -------
+# - this call is ADIT internally used to provide a common set of
+#   virtual devices on all targets 
+ExecStart=/bin/mount --bind /etc/alsa-brd-cfg/imx6q-sabresd/asound_board.conf /etc/asound_board.conf
+
+#-------------------- we are setting up the alsa devices ---------------
+# - adapt this call in a way that loads it the settings from your
+#   expected destination
+ExecStart=/usr/sbin/alsactl restore imx6qsabresdwm8 -f /etc/alsa-brd-cfg/imx6q-sabresd/asound.state

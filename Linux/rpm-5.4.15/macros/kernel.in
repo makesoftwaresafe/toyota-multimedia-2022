@@ -1,0 +1,12 @@
+# Kernel specific macro definitions.
+# To make use of these macros insert the following line into your spec file:
+# %{load:%{_usrlibrpm}/macros.d/kernel}
+
+%__modinfo		@__MODINFO
+
+# Path to scripts to autogenerate gstreamer package dependencies,
+#
+# Note: Used if _use_internal_dependency_generator is non-zero. The
+# helpers are also used by %{_rpmhome}/rpmdeps {--provides|--requires}.
+%__kernel_provides	%{_rpmhome}/kmod-deps.sh --provides --modinfo %__modinfo
+#%__kernel_requires	%{_rpmhome}/kmod-deps.sh --requires --modinfo %__modinfo

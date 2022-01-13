@@ -1,0 +1,83 @@
+/**
+
+ @page actionSetProperty Action Set Property
+
+ <b>Name:</b> ACTION_SET_PROPERTY<BR>
+ <b>Description:</b> This action sets the sound property for source and sinks. The action performs 
+ the conversion from main sound property to sound property.
+
+ \code
+     <action>
+        <type>ACTION_SET_PROPETY</type>
+        <param>
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName>
+
+            <propertyType>45</propertyType>
+            <propertyValue>-10</propertyValue>
+            <timeOut>3000</timeOut> <!-- This is an optional parameter -->
+        </param>
+    </action>
+ \endcode
+
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>sourceName</td>
+<td>M<sup>1</sup></td>
+<td>string</td>
+<td>The name of the source.</td>
+</tr>
+
+<tr>
+<td>sinkName</td>
+<td>M<sup>1</sup></td>
+<td>string</td>
+<td>The name of the sink.</td>
+</tr>
+<tr>
+<td>propertyType</td>
+<td>M</td>
+<td>16 bit integer</td>
+<td>This is the main sound property type</td>
+</tr>
+
+<tr>
+<td>propertyValue</td>
+<td>M</td>
+<td>16 bit integer</td>
+<td>This is the main sound property value</td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+M<sup>1</sup> either sourceName or sinkName should be specified for action to work.<BR>
+ 
+ <BR>
+ <b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_SET_PROPERTY</type>
+        <param>
+            <sinkName>"RadioSink"</sinkName>
+            <propertyType>SP_GENIVI_BASS</propertyType>
+            <propertyValue>5</propertyValue>
+        </param>
+    </action>
+ \endcode
+    The above example sets RadioSink's the main sound property SP_GENIVI_BASS to 5.
+
+*/

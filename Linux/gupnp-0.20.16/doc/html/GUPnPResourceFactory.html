@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPResourceFactory: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-utility.html" title="Utility Functions">
+<link rel="prev" href="GUPnPWhiteList.html" title="GUPnPWhiteList">
+<link rel="next" href="GUPnPXMLDoc.html" title="GUPnPXMLDoc">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPResourceFactory.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPResourceFactory.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-utility.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPWhiteList.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPXMLDoc.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPResourceFactory"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPResourceFactory.top_of_page"></a>GUPnPResourceFactory</span></h2>
+<p>GUPnPResourceFactory — Class for resource and resource proxy object creation.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPResourceFactory.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="returnvalue">GUPnPResourceFactory</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPResourceFactory.html#gupnp-resource-factory-new" title="gupnp_resource_factory_new ()">gupnp_resource_factory_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="returnvalue">GUPnPResourceFactory</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPResourceFactory.html#gupnp-resource-factory-get-default" title="gupnp_resource_factory_get_default ()">gupnp_resource_factory_get_default</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPResourceFactory.html#gupnp-resource-factory-register-resource-type" title="gupnp_resource_factory_register_resource_type ()">gupnp_resource_factory_register_resource_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPResourceFactory.html#gupnp-resource-factory-unregister-resource-type" title="gupnp_resource_factory_unregister_resource_type ()">gupnp_resource_factory_unregister_resource_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPResourceFactory.html#gupnp-resource-factory-register-resource-proxy-type" title="gupnp_resource_factory_register_resource_proxy_type ()">gupnp_resource_factory_register_resource_proxy_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPResourceFactory.html#gupnp-resource-factory-unregister-resource-proxy-type" title="gupnp_resource_factory_unregister_resource_proxy_type ()">gupnp_resource_factory_unregister_resource_proxy_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPResourceFactory.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPResourceFactory.html#GUPnPResourceFactory-struct" title="struct GUPnPResourceFactory">GUPnPResourceFactory</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPResourceFactory.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPResourceFactory
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPResourceFactory.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> objects are used by <a class="link" href="GUPnPControlPoint.html" title="GUPnPControlPoint"><span class="type">GUPnPControlPoint</span></a>,
+<a class="link" href="GUPnPDeviceProxy.html" title="GUPnPDeviceProxy"><span class="type">GUPnPDeviceProxy</span></a> and <a class="link" href="GUPnPDevice.html" title="GUPnPDevice"><span class="type">GUPnPDevice</span></a> to create resource proxy and resource
+objects. Register UPnP type - <span class="type">GType</span> pairs to have resource or resource proxy
+objects created with the specified <span class="type">GType</span> whenever an object for a resource
+of the specified UPnP type is requested. The <span class="type">GType</span>s need
+to be derived from the relevant resource or resource proxy type (e.g.
+a device proxy type needs to be derived from <a class="link" href="GUPnPDeviceProxy.html" title="GUPnPDeviceProxy"><span class="type">GUPnPDeviceProxy</span></a>).</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPResourceFactory.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-resource-factory-new"></a><h3>gupnp_resource_factory_new ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="returnvalue">GUPnPResourceFactory</span></a> *
+gupnp_resource_factory_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Create a new <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> object.</p>
+<div class="refsect3">
+<a name="gupnp-resource-factory-new.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> object.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-resource-factory-get-default"></a><h3>gupnp_resource_factory_get_default ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="returnvalue">GUPnPResourceFactory</span></a> *
+gupnp_resource_factory_get_default (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Get the default singleton <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> object.</p>
+<div class="refsect3">
+<a name="gupnp-resource-factory-get-default.returns"></a><h4>Returns</h4>
+<p> A <em class="parameter"><code>GUPnPResourceFactory</code></em>
+object. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-resource-factory-register-resource-type"></a><h3>gupnp_resource_factory_register_resource_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_resource_factory_register_resource_type
+                               (<em class="parameter"><code><a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> *factory</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *upnp_type</code></em>,
+                                <em class="parameter"><code><span class="type">GType</span> type</code></em>);</pre>
+<p>Registers the GType <em class="parameter"><code>type</code></em>
+ for the resource of UPnP type <em class="parameter"><code>upnp_type</code></em>
+. After
+this call, the factory <em class="parameter"><code>factory</code></em>
+ will create object of GType <em class="parameter"><code>type</code></em>
+ each time
+it is asked to create a resource object for UPnP type <em class="parameter"><code>upnp_type</code></em>
+.</p>
+<p>Note: GType <em class="parameter"><code>type</code></em>
+ must be a derived type of <span class="type">GUPNP_TYPE_DEVICE</span> if resource is
+a device or <span class="type">GUPNP_TYPE_SERVICE</span> if its a service.</p>
+<div class="refsect3">
+<a name="gupnp-resource-factory-register-resource-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>factory</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>upnp_type</p></td>
+<td class="parameter_description"><p>The UPnP type name of the resource.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The requested GType assignment for the resource.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-resource-factory-unregister-resource-type"></a><h3>gupnp_resource_factory_unregister_resource_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_resource_factory_unregister_resource_type
+                               (<em class="parameter"><code><a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> *factory</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *upnp_type</code></em>);</pre>
+<p>Unregisters the GType assignment for the resource of UPnP type <em class="parameter"><code>upnp_type</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-resource-factory-unregister-resource-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>factory</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>upnp_type</p></td>
+<td class="parameter_description"><p>The UPnP type name of the resource.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-resource-factory-unregister-resource-type.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if GType assignment was removed successfully, <code class="literal">FALSE</code>
+otherwise.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-resource-factory-register-resource-proxy-type"></a><h3>gupnp_resource_factory_register_resource_proxy_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_resource_factory_register_resource_proxy_type
+                               (<em class="parameter"><code><a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> *factory</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *upnp_type</code></em>,
+                                <em class="parameter"><code><span class="type">GType</span> type</code></em>);</pre>
+<p>Registers the GType <em class="parameter"><code>type</code></em>
+ for the proxy of resource of UPnP type <em class="parameter"><code>upnp_type</code></em>
+.
+After this call, the factory <em class="parameter"><code>factory</code></em>
+ will create object of GType <em class="parameter"><code>type</code></em>
+ each
+time it is asked to create a resource proxy object for UPnP type <em class="parameter"><code>upnp_type</code></em>
+.</p>
+<p>Note: GType <em class="parameter"><code>type</code></em>
+ must be a derived type of <span class="type">GUPNP_TYPE_DEVICE_PROXY</span> if
+resource is a device or <span class="type">GUPNP_TYPE_SERVICE_PROXY</span> if its a service.</p>
+<div class="refsect3">
+<a name="gupnp-resource-factory-register-resource-proxy-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>factory</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>upnp_type</p></td>
+<td class="parameter_description"><p>The UPnP type name of the resource.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The requested GType assignment for the resource proxy.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-resource-factory-unregister-resource-proxy-type"></a><h3>gupnp_resource_factory_unregister_resource_proxy_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_resource_factory_unregister_resource_proxy_type
+                               (<em class="parameter"><code><a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> *factory</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *upnp_type</code></em>);</pre>
+<p>Unregisters the GType assignment for the proxy of resource of UPnP type
+<em class="parameter"><code>upnp_type</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-resource-factory-unregister-resource-proxy-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>factory</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>upnp_type</p></td>
+<td class="parameter_description"><p>The UPnP type name of the resource.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-resource-factory-unregister-resource-proxy-type.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if GType assignment was removed successfully, <code class="literal">FALSE</code>
+otherwise.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPResourceFactory.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPResourceFactory-struct"></a><h3>struct GUPnPResourceFactory</h3>
+<pre class="programlisting">struct GUPnPResourceFactory;</pre>
+<p>This struct contains private data only, and should be accessed using the
+functions below.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

@@ -1,0 +1,3027 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPDIDLLiteObject: GUPnP A/V Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP A/V Reference Manual">
+<link rel="up" href="ch01.html" title="GUPnP A/V">
+<link rel="prev" href="GUPnPDIDLLiteParser.html" title="GUPnPDIDLLiteParser">
+<link rel="next" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteObject.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteObject.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteObject.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPDIDLLiteParser.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPDIDLLiteContainer.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPDIDLLiteObject"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPDIDLLiteObject.top_of_page"></a>GUPnPDIDLLiteObject</span></h2>
+<p>GUPnPDIDLLiteObject — DIDL-Lite Object</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteObject.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNode</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-xml-node" title="gupnp_didl_lite_object_get_xml_node ()">gupnp_didl_lite_object_get_xml_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNsPtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-upnp-namespace" title="gupnp_didl_lite_object_get_upnp_namespace ()">gupnp_didl_lite_object_get_upnp_namespace</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNsPtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-dc-namespace" title="gupnp_didl_lite_object_get_dc_namespace ()">gupnp_didl_lite_object_get_dc_namespace</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNsPtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-dlna-namespace" title="gupnp_didl_lite_object_get_dlna_namespace ()">gupnp_didl_lite_object_get_dlna_namespace</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNsPtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-pv-namespace" title="gupnp_didl_lite_object_get_pv_namespace ()">gupnp_didl_lite_object_get_pv_namespace</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-properties" title="gupnp_didl_lite_object_get_properties ()">gupnp_didl_lite_object_get_properties</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-id" title="gupnp_didl_lite_object_get_id ()">gupnp_didl_lite_object_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-parent-id" title="gupnp_didl_lite_object_get_parent_id ()">gupnp_didl_lite_object_get_parent_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-restricted" title="gupnp_didl_lite_object_get_restricted ()">gupnp_didl_lite_object_get_restricted</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-title" title="gupnp_didl_lite_object_get_title ()">gupnp_didl_lite_object_get_title</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-creator" title="gupnp_didl_lite_object_get_creator ()">gupnp_didl_lite_object_get_creator</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-artist" title="gupnp_didl_lite_object_get_artist ()">gupnp_didl_lite_object_get_artist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-author" title="gupnp_didl_lite_object_get_author ()">gupnp_didl_lite_object_get_author</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-creators" title="gupnp_didl_lite_object_get_creators ()">gupnp_didl_lite_object_get_creators</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-artists" title="gupnp_didl_lite_object_get_artists ()">gupnp_didl_lite_object_get_artists</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-authors" title="gupnp_didl_lite_object_get_authors ()">gupnp_didl_lite_object_get_authors</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-descriptors" title="gupnp_didl_lite_object_get_descriptors ()">gupnp_didl_lite_object_get_descriptors</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-write-status" title="gupnp_didl_lite_object_get_write_status ()">gupnp_didl_lite_object_get_write_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-genre" title="gupnp_didl_lite_object_get_genre ()">gupnp_didl_lite_object_get_genre</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-upnp-class" title="gupnp_didl_lite_object_get_upnp_class ()">gupnp_didl_lite_object_get_upnp_class</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-album" title="gupnp_didl_lite_object_get_album ()">gupnp_didl_lite_object_get_album</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-album-art" title="gupnp_didl_lite_object_get_album_art ()">gupnp_didl_lite_object_get_album_art</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-description" title="gupnp_didl_lite_object_get_description ()">gupnp_didl_lite_object_get_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-date" title="gupnp_didl_lite_object_get_date ()">gupnp_didl_lite_object_get_date</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-track-number" title="gupnp_didl_lite_object_get_track_number ()">gupnp_didl_lite_object_get_track_number</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteObject.html#GUPnPOCMFlags" title="enum GUPnPOCMFlags"><span class="returnvalue">GUPnPOCMFlags</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-dlna-managed" title="gupnp_didl_lite_object_get_dlna_managed ()">gupnp_didl_lite_object_get_dlna_managed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-resources" title="gupnp_didl_lite_object_get_resources ()">gupnp_didl_lite_object_get_resources</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="returnvalue">GUPnPDIDLLiteResource</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-compat-resource" title="gupnp_didl_lite_object_get_compat_resource ()">gupnp_didl_lite_object_get_compat_resource</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="returnvalue">GUPnPDIDLLiteResource</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-resource" title="gupnp_didl_lite_object_add_resource ()">gupnp_didl_lite_object_add_resource</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteDescriptor.html" title="GUPnPDIDLLiteDescriptor"><span class="returnvalue">GUPnPDIDLLiteDescriptor</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-descriptor" title="gupnp_didl_lite_object_add_descriptor ()">gupnp_didl_lite_object_add_descriptor</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-upnp-class" title="gupnp_didl_lite_object_set_upnp_class ()">gupnp_didl_lite_object_set_upnp_class</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-id" title="gupnp_didl_lite_object_set_id ()">gupnp_didl_lite_object_set_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-parent-id" title="gupnp_didl_lite_object_set_parent_id ()">gupnp_didl_lite_object_set_parent_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-restricted" title="gupnp_didl_lite_object_set_restricted ()">gupnp_didl_lite_object_set_restricted</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-title" title="gupnp_didl_lite_object_set_title ()">gupnp_didl_lite_object_set_title</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-creator" title="gupnp_didl_lite_object_set_creator ()">gupnp_didl_lite_object_set_creator</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-artist" title="gupnp_didl_lite_object_set_artist ()">gupnp_didl_lite_object_set_artist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-author" title="gupnp_didl_lite_object_set_author ()">gupnp_didl_lite_object_set_author</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="returnvalue">GUPnPDIDLLiteContributor</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-creator" title="gupnp_didl_lite_object_add_creator ()">gupnp_didl_lite_object_add_creator</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="returnvalue">GUPnPDIDLLiteContributor</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-artist" title="gupnp_didl_lite_object_add_artist ()">gupnp_didl_lite_object_add_artist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="returnvalue">GUPnPDIDLLiteContributor</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-author" title="gupnp_didl_lite_object_add_author ()">gupnp_didl_lite_object_add_author</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-genre" title="gupnp_didl_lite_object_set_genre ()">gupnp_didl_lite_object_set_genre</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-write-status" title="gupnp_didl_lite_object_set_write_status ()">gupnp_didl_lite_object_set_write_status</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-album" title="gupnp_didl_lite_object_set_album ()">gupnp_didl_lite_object_set_album</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-album-art" title="gupnp_didl_lite_object_set_album_art ()">gupnp_didl_lite_object_set_album_art</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-description" title="gupnp_didl_lite_object_set_description ()">gupnp_didl_lite_object_set_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-date" title="gupnp_didl_lite_object_set_date ()">gupnp_didl_lite_object_set_date</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-track-number" title="gupnp_didl_lite_object_set_track_number ()">gupnp_didl_lite_object_set_track_number</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-dlna-managed" title="gupnp_didl_lite_object_set_dlna_managed ()">gupnp_didl_lite_object_set_dlna_managed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteFragmentResult" title="enum GUPnPDIDLLiteFragmentResult"><span class="returnvalue">GUPnPDIDLLiteFragmentResult</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-apply-fragments" title="gupnp_didl_lite_object_apply_fragments ()">gupnp_didl_lite_object_apply_fragments</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-album-xml-string" title="gupnp_didl_lite_object_get_album_xml_string ()">gupnp_didl_lite_object_get_album_xml_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-artists-xml-string" title="gupnp_didl_lite_object_get_artists_xml_string ()">gupnp_didl_lite_object_get_artists_xml_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-date-xml-string" title="gupnp_didl_lite_object_get_date_xml_string ()">gupnp_didl_lite_object_get_date_xml_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-title-xml-string" title="gupnp_didl_lite_object_get_title_xml_string ()">gupnp_didl_lite_object_get_title_xml_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-track-number-xml-string" title="gupnp_didl_lite_object_get_track_number_xml_string ()">gupnp_didl_lite_object_get_track_number_xml_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-update-id" title="gupnp_didl_lite_object_get_update_id ()">gupnp_didl_lite_object_get_update_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-upnp-class-xml-string" title="gupnp_didl_lite_object_get_upnp_class_xml_string ()">gupnp_didl_lite_object_get_upnp_class_xml_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-xml-string" title="gupnp_didl_lite_object_get_xml_string ()">gupnp_didl_lite_object_get_xml_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-set-update-id" title="gupnp_didl_lite_object_set_update_id ()">gupnp_didl_lite_object_set_update_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-unset-artists" title="gupnp_didl_lite_object_unset_artists ()">gupnp_didl_lite_object_unset_artists</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-unset-update-id" title="gupnp_didl_lite_object_unset_update_id ()">gupnp_didl_lite_object_unset_update_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-update-id-is-set" title="gupnp_didl_lite_object_update_id_is_set ()">gupnp_didl_lite_object_update_id_is_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-is-restricted-set" title="gupnp_didl_lite_object_is_restricted_set ()">gupnp_didl_lite_object_is_restricted_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteObject.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--album" title="The “album” property">album</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--album-art" title="The “album-art” property">album-art</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--artist" title="The “artist” property">artist</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--author" title="The “author” property">author</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--creator" title="The “creator” property">creator</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--date" title="The “date” property">date</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--dc-namespace" title="The “dc-namespace” property">dc-namespace</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--description" title="The “description” property">description</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPOCMFlags" title="enum GUPnPOCMFlags"><span class="type">GUPnPOCMFlags</span></a></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--dlna-managed" title="The “dlna-managed” property">dlna-managed</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--dlna-namespace" title="The “dlna-namespace” property">dlna-namespace</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--genre" title="The “genre” property">genre</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--id" title="The “id” property">id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--parent-id" title="The “parent-id” property">parent-id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--pv-namespace" title="The “pv-namespace” property">pv-namespace</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--restricted" title="The “restricted” property">restricted</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--title" title="The “title” property">title</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--track-number" title="The “track-number” property">track-number</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--update-id" title="The “update-id” property">update-id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--upnp-class" title="The “upnp-class” property">upnp-class</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--upnp-namespace" title="The “upnp-namespace” property">upnp-namespace</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--write-status" title="The “write-status” property">write-status</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/home/jens/jhbuild/install/share/gtk-doc/html/gupnpGUPnPXMLDoc.html#GUPnPXMLDoc-struct"><span class="type">GUPnPXMLDoc</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--xml-doc" title="The “xml-doc” property">xml-doc</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject--xml-node" title="The “xml-node” property">xml-node</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteObject.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteObject-struct" title="GUPnPDIDLLiteObject">GUPnPDIDLLiteObject</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPOCMFlags" title="enum GUPnPOCMFlags">GUPnPOCMFlags</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteFragmentResult" title="enum GUPnPDIDLLiteFragmentResult">GUPnPDIDLLiteFragmentResult</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteObject.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPDIDLLiteObject
+        <span class="lineart">├──</span> <a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer">GUPnPDIDLLiteContainer</a>
+        <span class="lineart">╰──</span> <a class="link" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem">GUPnPDIDLLiteItem</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteObject.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> respresent a DIDL-Lite object element.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteObject.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-xml-node"></a><h3>gupnp_didl_lite_object_get_xml_node ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNode</span> *
+gupnp_didl_lite_object_get_xml_node (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the pointer to object node in XML document.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-xml-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-xml-node.returns"></a><h4>Returns</h4>
+<p> The pointer to object node in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-upnp-namespace"></a><h3>gupnp_didl_lite_object_get_upnp_namespace ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNsPtr</span>
+gupnp_didl_lite_object_get_upnp_namespace
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the pointer to the UPnP namespace registered with the XML document.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-upnp-namespace.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-upnp-namespace.returns"></a><h4>Returns</h4>
+<p> The pointer to UPnP namespace in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-dc-namespace"></a><h3>gupnp_didl_lite_object_get_dc_namespace ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNsPtr</span>
+gupnp_didl_lite_object_get_dc_namespace
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the pointer to the DublinCore namespace registered with the XML document
+containing this object.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-dc-namespace.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-dc-namespace.returns"></a><h4>Returns</h4>
+<p> The pointer to DublinCore namespace in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-dlna-namespace"></a><h3>gupnp_didl_lite_object_get_dlna_namespace ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNsPtr</span>
+gupnp_didl_lite_object_get_dlna_namespace
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the pointer to the DLNA metadata namespace registered with the XML
+document containing this object.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-dlna-namespace.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-dlna-namespace.returns"></a><h4>Returns</h4>
+<p> The pointer to DLNA namespace in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-pv-namespace"></a><h3>gupnp_didl_lite_object_get_pv_namespace ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNsPtr</span>
+gupnp_didl_lite_object_get_pv_namespace
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the pointer to the PV metadata namespace registered with the XML
+document containing this object.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-pv-namespace.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-pv-namespace.returns"></a><h4>Returns</h4>
+<p> The pointer to PV namespace in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-properties"></a><h3>gupnp_didl_lite_object_get_properties ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_object_get_properties (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                       <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>Use this function to retreive property nodes by name.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-properties.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>name of the properties</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-properties.returns"></a><h4>Returns</h4>
+<p> The list of
+property nodes by the name <em class="parameter"><code>property_name</code></em>
+belonging to <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.
+<span class="type">g_list_free</span> the returned list after usage but do not modify the contents. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> xmlNode*][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-id"></a><h3>gupnp_didl_lite_object_get_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_id (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the ID of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-id.returns"></a><h4>Returns</h4>
+<p> The ID of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-parent-id"></a><h3>gupnp_didl_lite_object_get_parent_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_parent_id (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the ID of the parent of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-parent-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-parent-id.returns"></a><h4>Returns</h4>
+<p> The ID of parent of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-restricted"></a><h3>gupnp_didl_lite_object_get_restricted ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_didl_lite_object_get_restricted (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Whether the <em class="parameter"><code>object</code></em>
+ is restricted or not.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-restricted.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-restricted.returns"></a><h4>Returns</h4>
+<p> <span class="type">TRUE</span> if <em class="parameter"><code>object</code></em>
+is restricted.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-title"></a><h3>gupnp_didl_lite_object_get_title ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_title (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the title of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-title.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-title.returns"></a><h4>Returns</h4>
+<p> The title of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-creator"></a><h3>gupnp_didl_lite_object_get_creator ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_creator (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the creator of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-creator.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-creator.returns"></a><h4>Returns</h4>
+<p> The creator of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-artist"></a><h3>gupnp_didl_lite_object_get_artist ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_artist (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_didl_lite_object_get_artist</code> has been deprecated since version 0.5.3 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-artists" title="gupnp_didl_lite_object_get_artists ()"><span class="type">gupnp_didl_lite_object_get_artists</span></a> instead.</p>
+</div>
+<p>Get the artist of the <em class="parameter"><code>object</code></em>
+. If role is not <code class="literal">NULL</code>, it is set to the role
+of the artist if available.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-artist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-artist.returns"></a><h4>Returns</h4>
+<p> The artist of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-author"></a><h3>gupnp_didl_lite_object_get_author ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_author (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_didl_lite_object_get_author</code> has been deprecated since version 0.5.3 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-authors" title="gupnp_didl_lite_object_get_authors ()"><span class="type">gupnp_didl_lite_object_get_authors</span></a> instead.</p>
+</div>
+<p>Get the author of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-author.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-author.returns"></a><h4>Returns</h4>
+<p> The author of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-creators"></a><h3>gupnp_didl_lite_object_get_creators ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_object_get_creators (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<div class="warning"><p><code class="literal">gupnp_didl_lite_object_get_creators</code> is deprecated and should not be used in newly-written code.</p></div>
+<p>Get the creators of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-creators.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-creators.returns"></a><h4>Returns</h4>
+<p> The list
+of creators belonging to <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.
+<span class="type">g_list_free</span> the returned list after usage and unref each object in it. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnPDIDLLiteContributor*][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-artists"></a><h3>gupnp_didl_lite_object_get_artists ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_object_get_artists (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the artists of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-artists.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-artists.returns"></a><h4>Returns</h4>
+<p> The list
+of artists belonging to <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.
+<span class="type">g_list_free</span> the returned list after usage and unref each object in it. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnPDIDLLiteContributor*][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-authors"></a><h3>gupnp_didl_lite_object_get_authors ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_object_get_authors (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the authors of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-authors.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-authors.returns"></a><h4>Returns</h4>
+<p> The list
+of authors belonging to <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.
+<span class="type">g_list_free</span> the returned list after usage and unref each object in it. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnPDIDLLiteContributor*][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-descriptors"></a><h3>gupnp_didl_lite_object_get_descriptors ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_object_get_descriptors
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the descriptors of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-descriptors.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-descriptors.returns"></a><h4>Returns</h4>
+<p> The list of
+descriptors belonging to <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.
+<span class="type">g_list_free</span> the returned list after usage and unref each object in it. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnPDIDLLiteDescriptor*][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-write-status"></a><h3>gupnp_didl_lite_object_get_write_status ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_write_status
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the write status of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-write-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-write-status.returns"></a><h4>Returns</h4>
+<p> The write status of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-genre"></a><h3>gupnp_didl_lite_object_get_genre ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_genre (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the genre of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-genre.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-genre.returns"></a><h4>Returns</h4>
+<p> The genre of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-upnp-class"></a><h3>gupnp_didl_lite_object_get_upnp_class ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_upnp_class (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the UPnP class of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-upnp-class.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-upnp-class.returns"></a><h4>Returns</h4>
+<p> The class of <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-album"></a><h3>gupnp_didl_lite_object_get_album ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_album (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the album of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-album.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-album.returns"></a><h4>Returns</h4>
+<p> The album of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-album-art"></a><h3>gupnp_didl_lite_object_get_album_art ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_album_art (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the URI to album art of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-album-art.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-album-art.returns"></a><h4>Returns</h4>
+<p> The URI to album art of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-description"></a><h3>gupnp_didl_lite_object_get_description ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_description
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the description of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-description.returns"></a><h4>Returns</h4>
+<p> The description of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-date"></a><h3>gupnp_didl_lite_object_get_date ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_date (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the date of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-date.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-date.returns"></a><h4>Returns</h4>
+<p> The date of the <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-track-number"></a><h3>gupnp_didl_lite_object_get_track_number ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gupnp_didl_lite_object_get_track_number
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the original track number of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-track-number.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-track-number.returns"></a><h4>Returns</h4>
+<p> The original track number of the <em class="parameter"><code>object</code></em>
+, or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-dlna-managed"></a><h3>gupnp_didl_lite_object_get_dlna_managed ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPOCMFlags" title="enum GUPnPOCMFlags"><span class="returnvalue">GUPnPOCMFlags</span></a>
+gupnp_didl_lite_object_get_dlna_managed
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the 'dlna:dlnaManaged' attribute of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-dlna-managed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-dlna-managed.returns"></a><h4>Returns</h4>
+<p> The 'dlna:dlnaManaged' attribute of the <em class="parameter"><code>object</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-resources"></a><h3>gupnp_didl_lite_object_get_resources ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_object_get_resources (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Use this function to retreive resources from the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-resources.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-resources.returns"></a><h4>Returns</h4>
+<p> The list
+of resources belonging to  <em class="parameter"><code>object</code></em>
+, or <code class="literal">NULL</code>. <span class="type">g_list_free</span> the
+returned list after usage and unref each resource in it. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnPDIDLLiteResource*][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-compat-resource"></a><h3>gupnp_didl_lite_object_get_compat_resource ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="returnvalue">GUPnPDIDLLiteResource</span></a> *
+gupnp_didl_lite_object_get_compat_resource
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *sink_protocol_info</code></em>,
+                                <em class="parameter"><code><span class="type">gboolean</span> lenient</code></em>);</pre>
+<p>Use this function to get a resource from the <em class="parameter"><code>object</code></em>
+ that is compatible with
+any of the protocols specified in the <em class="parameter"><code>sink_protocol_info</code></em>
+. The value of
+<em class="parameter"><code>sink_protocol_info</code></em>
+ will typically be acquired from 'Sink' argument of
+'GetProtocolInfo' action or 'SinkProtocolInfo' state-variable of a
+ConnectionManager service.</p>
+<p>If <em class="parameter"><code>lenient</code></em>
+ is <span class="type">TRUE</span>, the first resource in the list is returned instead of
+<code class="literal">NULL</code> if none of resources and protocols are found to be compatible.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-compat-resource.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sink_protocol_info</p></td>
+<td class="parameter_description"><p>The SinkProtocolInfo string from MediaRenderer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>lenient</p></td>
+<td class="parameter_description"><p>Enable lenient mode</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-compat-resource.returns"></a><h4>Returns</h4>
+<p> The resource belonging to <em class="parameter"><code>object</code></em>
+that is comaptible with
+any of the protocols specified in <em class="parameter"><code>sink_protocol_info</code></em>
+, or <code class="literal">NULL</code>. Unref after
+usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-add-resource"></a><h3>gupnp_didl_lite_object_add_resource ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="returnvalue">GUPnPDIDLLiteResource</span></a> *
+gupnp_didl_lite_object_add_resource (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Creates a new resource, attaches it to <em class="parameter"><code>object</code></em>
+ and returns it.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-resource.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-resource.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> object. Unref after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-add-descriptor"></a><h3>gupnp_didl_lite_object_add_descriptor ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteDescriptor.html" title="GUPnPDIDLLiteDescriptor"><span class="returnvalue">GUPnPDIDLLiteDescriptor</span></a> *
+gupnp_didl_lite_object_add_descriptor (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Creates a new descriptor, attaches it to <em class="parameter"><code>object</code></em>
+ and returns it.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-descriptor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-descriptor.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteDescriptor.html" title="GUPnPDIDLLiteDescriptor"><span class="type">GUPnPDIDLLiteDescriptor</span></a> object. Unref after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-upnp-class"></a><h3>gupnp_didl_lite_object_set_upnp_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_upnp_class (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                       <em class="parameter"><code>const <span class="type">char</span> *upnp_class</code></em>);</pre>
+<p>Set the UPnP class of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>upnp_class</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-upnp-class.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>upnp_class</p></td>
+<td class="parameter_description"><p>The UPnP class as string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-id"></a><h3>gupnp_didl_lite_object_set_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_id (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
+<p>Set the ID of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>id</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>The ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-parent-id"></a><h3>gupnp_didl_lite_object_set_parent_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_parent_id (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *parent_id</code></em>);</pre>
+<p>Set the ID of the parent of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>parent_id</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-parent-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>parent_id</p></td>
+<td class="parameter_description"><p>The parent ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-restricted"></a><h3>gupnp_didl_lite_object_set_restricted ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_restricted (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                       <em class="parameter"><code><span class="type">gboolean</span> restricted</code></em>);</pre>
+<p>Set the restricted status of <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>restricted</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-restricted.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>restricted</p></td>
+<td class="parameter_description"><p>The restricted status</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-title"></a><h3>gupnp_didl_lite_object_set_title ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_title (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *title</code></em>);</pre>
+<p>Set the title of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>title</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-title.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>title</p></td>
+<td class="parameter_description"><p>The title</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-creator"></a><h3>gupnp_didl_lite_object_set_creator ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_creator (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                    <em class="parameter"><code>const <span class="type">char</span> *creator</code></em>);</pre>
+<p>Set the creator of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>creator</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-creator.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>creator</p></td>
+<td class="parameter_description"><p>The creator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-artist"></a><h3>gupnp_didl_lite_object_set_artist ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_artist (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *artist</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_didl_lite_object_set_artist</code> has been deprecated since version 0.5.3 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-artist" title="gupnp_didl_lite_object_add_artist ()"><span class="type">gupnp_didl_lite_object_add_artist</span></a> instead.</p>
+</div>
+<p>Set the Artist of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>artist</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-artist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>artist</p></td>
+<td class="parameter_description"><p>The Artist</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-author"></a><h3>gupnp_didl_lite_object_set_author ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_author (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *author</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_didl_lite_object_set_author</code> has been deprecated since version 0.5.3 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-author" title="gupnp_didl_lite_object_add_author ()"><span class="type">gupnp_didl_lite_object_add_author</span></a> instead.</p>
+</div>
+<p>Set the Author of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>author</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-author.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>author</p></td>
+<td class="parameter_description"><p>The Author</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-add-creator"></a><h3>gupnp_didl_lite_object_add_creator ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="returnvalue">GUPnPDIDLLiteContributor</span></a> *
+gupnp_didl_lite_object_add_creator (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<div class="warning"><p><code class="literal">gupnp_didl_lite_object_add_creator</code> is deprecated and should not be used in newly-written code.</p></div>
+<p>Add a new creator node to the <em class="parameter"><code>object</code></em>
+ and return the associated
+<a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="type">GUPnPDIDLLiteContributor</span></a> object.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-creator.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-creator.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="type">GUPnPDIDLLiteContributor</span></a> object. Unref after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-add-artist"></a><h3>gupnp_didl_lite_object_add_artist ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="returnvalue">GUPnPDIDLLiteContributor</span></a> *
+gupnp_didl_lite_object_add_artist (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Add a new Artist node to the <em class="parameter"><code>object</code></em>
+ and return the associated
+<a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="type">GUPnPDIDLLiteContributor</span></a> object.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-artist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-artist.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="type">GUPnPDIDLLiteContributor</span></a> object. Unref after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-add-author"></a><h3>gupnp_didl_lite_object_add_author ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="returnvalue">GUPnPDIDLLiteContributor</span></a> *
+gupnp_didl_lite_object_add_author (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Add a new author node to the <em class="parameter"><code>object</code></em>
+ and return the associated
+<a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="type">GUPnPDIDLLiteContributor</span></a> object.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-author.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-add-author.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteContributor.html" title="GUPnPDIDLLiteContributor"><span class="type">GUPnPDIDLLiteContributor</span></a> object. Unref after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-genre"></a><h3>gupnp_didl_lite_object_set_genre ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_genre (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *genre</code></em>);</pre>
+<p>Set the genre of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>genre</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-genre.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>genre</p></td>
+<td class="parameter_description"><p>The Genre</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-write-status"></a><h3>gupnp_didl_lite_object_set_write_status ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_write_status
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *write_status</code></em>);</pre>
+<p>Set the write status of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>write_status</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-write-status.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>write_status</p></td>
+<td class="parameter_description"><p>The write status string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-album"></a><h3>gupnp_didl_lite_object_set_album ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_album (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *album</code></em>);</pre>
+<p>Set the album of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>album</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-album.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>album</p></td>
+<td class="parameter_description"><p>The album string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-album-art"></a><h3>gupnp_didl_lite_object_set_album_art ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_album_art (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                      <em class="parameter"><code>const <span class="type">char</span> *album_art</code></em>);</pre>
+<p>Set the URI to album art of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>album_art</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-album-art.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>album_art</p></td>
+<td class="parameter_description"><p>The URI of album art</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-description"></a><h3>gupnp_didl_lite_object_set_description ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_description
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *description</code></em>);</pre>
+<p>Set the description of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>description</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>description</p></td>
+<td class="parameter_description"><p>The description string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-date"></a><h3>gupnp_didl_lite_object_set_date ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_date (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                 <em class="parameter"><code>const <span class="type">char</span> *date</code></em>);</pre>
+<p>Set the date of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>date</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-date.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>The date string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-track-number"></a><h3>gupnp_didl_lite_object_set_track_number ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_track_number
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> track_number</code></em>);</pre>
+<p>Set the original track number of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>track_number</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-track-number.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>track_number</p></td>
+<td class="parameter_description"><p>The original track number</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-dlna-managed"></a><h3>gupnp_didl_lite_object_set_dlna_managed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_dlna_managed
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPOCMFlags" title="enum GUPnPOCMFlags"><span class="type">GUPnPOCMFlags</span></a> dlna_managed</code></em>);</pre>
+<p>Set the 'dlna:dlnaManaged' attribute of the <em class="parameter"><code>object</code></em>
+ to <em class="parameter"><code>dlna_managed</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-dlna-managed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dlna_managed</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html#GUPnPOCMFlags" title="enum GUPnPOCMFlags"><span class="type">GUPnPOCMFlags</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-apply-fragments"></a><h3>gupnp_didl_lite_object_apply_fragments ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteObject.html#GUPnPDIDLLiteFragmentResult" title="enum GUPnPDIDLLiteFragmentResult"><span class="returnvalue">GUPnPDIDLLiteFragmentResult</span></a>
+gupnp_didl_lite_object_apply_fragments
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                <em class="parameter"><code><span class="type">gchar</span> **current_fragments</code></em>,
+                                <em class="parameter"><code><span class="type">gint</span> current_size</code></em>,
+                                <em class="parameter"><code><span class="type">gchar</span> **new_fragments</code></em>,
+                                <em class="parameter"><code><span class="type">gint</span> new_size</code></em>);</pre>
+<p>Updates object by applying <em class="parameter"><code>new_fragments</code></em>
+ in places of
+<em class="parameter"><code>current_fragments</code></em>
+. For <em class="parameter"><code>current_size</code></em>
+ and <em class="parameter"><code>new_size</code></em>
+ -1 can be
+passed when respectively <em class="parameter"><code>current_fragments</code></em>
+ and <em class="parameter"><code>new_fragments</code></em>
+ are
+NULL terminated.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-apply-fragments.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>current_fragments</p></td>
+<td class="parameter_description"><p> XML
+fragments of <em class="parameter"><code>object</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=current_size][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>current_size</p></td>
+<td class="parameter_description"><p>Size of <em class="parameter"><code>current_fragments</code></em>
+or -1.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_fragments</p></td>
+<td class="parameter_description"><p> Substitutes
+for <em class="parameter"><code>current_fragments</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=new_size][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_size</p></td>
+<td class="parameter_description"><p>Size of <em class="parameter"><code>new_fragments</code></em>
+or -1.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-apply-fragments.returns"></a><h4>Returns</h4>
+<p> Result of operation.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-album-xml-string"></a><h3>gupnp_didl_lite_object_get_album_xml_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_album_xml_string
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Creates a string representation of the DIDL-Lite XML fragment related to the
+object album.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-album-xml-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-album-xml-string.returns"></a><h4>Returns</h4>
+<p> A DIDL-Lite XML fragment string, or <code class="literal">NULL</code>. <span class="type">g_free</span> after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-artists-xml-string"></a><h3>gupnp_didl_lite_object_get_artists_xml_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_artists_xml_string
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Creates a string representation of the DIDL-Lite XML fragments related to the
+object artists.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-artists-xml-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-artists-xml-string.returns"></a><h4>Returns</h4>
+<p> A DIDL-Lite XML fragment string, or <code class="literal">NULL</code>. <span class="type">g_free</span> after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-date-xml-string"></a><h3>gupnp_didl_lite_object_get_date_xml_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_date_xml_string
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Creates a string representation of the DIDL-Lite XML fragment related to the
+object date.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-date-xml-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-date-xml-string.returns"></a><h4>Returns</h4>
+<p> A DIDL-Lite XML fragment string, or <code class="literal">NULL</code>. <span class="type">g_free</span> after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-title-xml-string"></a><h3>gupnp_didl_lite_object_get_title_xml_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_title_xml_string
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Creates a string representation of the DIDL-Lite XML fragment related to the
+object title.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-title-xml-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-title-xml-string.returns"></a><h4>Returns</h4>
+<p> A DIDL-Lite XML fragment string, or <code class="literal">NULL</code>. <span class="type">g_free</span> after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-track-number-xml-string"></a><h3>gupnp_didl_lite_object_get_track_number_xml_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_track_number_xml_string
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Creates a string representation of the DIDL-Lite XML fragment related to the
+object track number.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-track-number-xml-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-track-number-xml-string.returns"></a><h4>Returns</h4>
+<p> A DIDL-Lite XML fragment string, or <code class="literal">NULL</code>. <span class="type">g_free</span> after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-update-id"></a><h3>gupnp_didl_lite_object_get_update_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_didl_lite_object_get_update_id (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the update ID of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-update-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-update-id.returns"></a><h4>Returns</h4>
+<p> The update ID of the <em class="parameter"><code>object</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-upnp-class-xml-string"></a><h3>gupnp_didl_lite_object_get_upnp_class_xml_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_upnp_class_xml_string
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Creates a string representation of the DIDL-Lite XML fragment related to the
+object UPnP class.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-upnp-class-xml-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-upnp-class-xml-string.returns"></a><h4>Returns</h4>
+<p> A DIDL-Lite XML fragment string, or <code class="literal">NULL</code>. <span class="type">g_free</span> after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-get-xml-string"></a><h3>gupnp_didl_lite_object_get_xml_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_didl_lite_object_get_xml_string (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get the representation of this object as an XML string.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-xml-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-get-xml-string.returns"></a><h4>Returns</h4>
+<p> XML representation of this object as string. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-set-update-id"></a><h3>gupnp_didl_lite_object_set_update_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_set_update_id (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>,
+                                      <em class="parameter"><code><span class="type">guint</span> update_id</code></em>);</pre>
+<p>Set the update ID of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-set-update-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>update_id</p></td>
+<td class="parameter_description"><p>Update ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-unset-artists"></a><h3>gupnp_didl_lite_object_unset_artists ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_unset_artists (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Unset the artists properties of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-unset-artists.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-unset-update-id"></a><h3>gupnp_didl_lite_object_unset_update_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_object_unset_update_id
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Unset the update ID property of the <em class="parameter"><code>object</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-unset-update-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-update-id-is-set"></a><h3>gupnp_didl_lite_object_update_id_is_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_didl_lite_object_update_id_is_set
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Get whether the update ID of the <em class="parameter"><code>object</code></em>
+ is set.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-update-id-is-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-update-id-is-set.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if update ID is set, otherwise <code class="literal">FALSE</code></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-object-is-restricted-set"></a><h3>gupnp_didl_lite_object_is_restricted_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_didl_lite_object_is_restricted_set
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a> *object</code></em>);</pre>
+<p>Whehter the restricted attribute exists on <em class="parameter"><code>object</code></em>
+</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-is-restricted-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-object-is-restricted-set.returns"></a><h4>Returns</h4>
+<p> <span class="type">TRUE</span> if restricted exists, <span class="type">FALSE</span> otherwise.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteObject.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject-struct"></a><h3>GUPnPDIDLLiteObject</h3>
+<pre class="programlisting">typedef struct _GUPnPDIDLLiteObject GUPnPDIDLLiteObject;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPOCMFlags"></a><h3>enum GUPnPOCMFlags</h3>
+<p>The DLNA OCM flags supported by a DIDL-Lite Object. For details on these
+flags please refer to section 7.3.118.4 of DLNA Networked Device
+Interoperability Guidelines Volume 1, October 2006.</p>
+<div class="refsect3">
+<a name="GUPnPOCMFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-OCM-FLAGS-NONE:CAPS"></a>GUPNP_OCM_FLAGS_NONE</p></td>
+<td class="enum_member_description">
+<p>No flags</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-OCM-FLAGS-UPLOAD:CAPS"></a>GUPNP_OCM_FLAGS_UPLOAD</p></td>
+<td class="enum_member_description">
+<p>Indicates support for content upload.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-OCM-FLAGS-CREATE-CONTAINER:CAPS"></a>GUPNP_OCM_FLAGS_CREATE_CONTAINER</p></td>
+<td class="enum_member_description">
+<p>Indicates support for creation of child
+                                   container.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-OCM-FLAGS-DESTROYABLE:CAPS"></a>GUPNP_OCM_FLAGS_DESTROYABLE</p></td>
+<td class="enum_member_description">
+<p>This object is destroyable.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-OCM-FLAGS-UPLOAD-DESTROYABLE:CAPS"></a>GUPNP_OCM_FLAGS_UPLOAD_DESTROYABLE</p></td>
+<td class="enum_member_description">
+<p>Indicates support for upload of
+                                     destroyable content.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-OCM-FLAGS-CHANGE-METADATA:CAPS"></a>GUPNP_OCM_FLAGS_CHANGE_METADATA</p></td>
+<td class="enum_member_description">
+<p>Indicates support for changing metadata.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteFragmentResult"></a><h3>enum GUPnPDIDLLiteFragmentResult</h3>
+<p>Possible return values of the <a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-apply-fragments" title="gupnp_didl_lite_object_apply_fragments ()"><code class="function">gupnp_didl_lite_object_apply_fragments()</code></a> call.</p>
+<div class="refsect3">
+<a name="GUPnPDIDLLiteFragmentResult.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-OK:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_OK</p></td>
+<td class="enum_member_description">
+<p>Operation succeeded.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-CURRENT-BAD-XML:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_CURRENT_BAD_XML</p></td>
+<td class="enum_member_description">
+<p>Current set of fragments
+is bad XML</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-NEW-BAD-XML:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_NEW_BAD_XML</p></td>
+<td class="enum_member_description">
+<p>New set of fragments is bad
+XML</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-CURRENT-INVALID:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_CURRENT_INVALID</p></td>
+<td class="enum_member_description">
+<p>Current set of fragments
+is invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-NEW-INVALID:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_NEW_INVALID</p></td>
+<td class="enum_member_description">
+<p>New set of fragments is
+invalid</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-REQUIRED-TAG:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_REQUIRED_TAG</p></td>
+<td class="enum_member_description">
+<p>Trying to remove a required
+tag</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-READONLY-TAG:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_READONLY_TAG</p></td>
+<td class="enum_member_description">
+<p>Trying to modify or remove a
+read-only tag</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-MISMATCH:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_MISMATCH</p></td>
+<td class="enum_member_description">
+<p>Length of the two fragment sets
+does not match</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="GUPNP-DIDL-LITE-FRAGMENT-RESULT-UNKNOWN-ERROR:CAPS"></a>GUPNP_DIDL_LITE_FRAGMENT_RESULT_UNKNOWN_ERROR</p></td>
+<td class="enum_member_description">
+<p>General error sink if none
+of the others applies.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteObject.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--album"></a><h3>The <code class="literal">“album”</code> property</h3>
+<pre class="programlisting">  “album”                    <span class="type">gchar</span> *</pre>
+<p>The album of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--album-art"></a><h3>The <code class="literal">“album-art”</code> property</h3>
+<pre class="programlisting">  “album-art”                <span class="type">gchar</span> *</pre>
+<p>The URI to album art of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--artist"></a><h3>The <code class="literal">“artist”</code> property</h3>
+<pre class="programlisting">  “artist”                   <span class="type">gchar</span> *</pre>
+<p>The artist of this object.</p>
+<div class="warning">
+<p><code class="literal">GUPnPDIDLLiteObject:artist</code> has been deprecated since version 0.5.3 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-artists" title="gupnp_didl_lite_object_get_artists ()"><span class="type">gupnp_didl_lite_object_get_artists</span></a> and
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-artist" title="gupnp_didl_lite_object_add_artist ()"><span class="type">gupnp_didl_lite_object_add_artist</span></a> instead since unlike this
+property, they are capable of dealing with multiple artist nodes.</p>
+</div>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--author"></a><h3>The <code class="literal">“author”</code> property</h3>
+<pre class="programlisting">  “author”                   <span class="type">gchar</span> *</pre>
+<p>The author of this object.</p>
+<div class="warning">
+<p><code class="literal">GUPnPDIDLLiteObject:author</code> has been deprecated since version 0.5.3 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-get-authors" title="gupnp_didl_lite_object_get_authors ()"><span class="type">gupnp_didl_lite_object_get_authors</span></a> and
+<a class="link" href="GUPnPDIDLLiteObject.html#gupnp-didl-lite-object-add-author" title="gupnp_didl_lite_object_add_author ()"><span class="type">gupnp_didl_lite_object_add_author</span></a> instead since unlike this
+property, they are capable of dealing with multiple author nodes.</p>
+</div>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--creator"></a><h3>The <code class="literal">“creator”</code> property</h3>
+<pre class="programlisting">  “creator”                  <span class="type">gchar</span> *</pre>
+<p>The creator of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--date"></a><h3>The <code class="literal">“date”</code> property</h3>
+<pre class="programlisting">  “date”                     <span class="type">gchar</span> *</pre>
+<p>The date of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--dc-namespace"></a><h3>The <code class="literal">“dc-namespace”</code> property</h3>
+<pre class="programlisting">  “dc-namespace”             <span class="type">gpointer</span></pre>
+<p>Pointer to the DublinCore namespace registered with the XML document
+containing this object.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--description"></a><h3>The <code class="literal">“description”</code> property</h3>
+<pre class="programlisting">  “description”              <span class="type">gchar</span> *</pre>
+<p>The description of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--dlna-managed"></a><h3>The <code class="literal">“dlna-managed”</code> property</h3>
+<pre class="programlisting">  “dlna-managed”             <a class="link" href="GUPnPDIDLLiteObject.html#GUPnPOCMFlags" title="enum GUPnPOCMFlags"><span class="type">GUPnPOCMFlags</span></a></pre>
+<p>The 'dlna:dlnaManaged' attribute.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--dlna-namespace"></a><h3>The <code class="literal">“dlna-namespace”</code> property</h3>
+<pre class="programlisting">  “dlna-namespace”           <span class="type">gpointer</span></pre>
+<p>Pointer to the DLNA metadata namespace registered with the XML
+document containing this object.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--genre"></a><h3>The <code class="literal">“genre”</code> property</h3>
+<pre class="programlisting">  “genre”                    <span class="type">gchar</span> *</pre>
+<p>The genre of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--id"></a><h3>The <code class="literal">“id”</code> property</h3>
+<pre class="programlisting">  “id”                       <span class="type">gchar</span> *</pre>
+<p>The ID of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--parent-id"></a><h3>The <code class="literal">“parent-id”</code> property</h3>
+<pre class="programlisting">  “parent-id”                <span class="type">gchar</span> *</pre>
+<p>The ID of the parent container of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--pv-namespace"></a><h3>The <code class="literal">“pv-namespace”</code> property</h3>
+<pre class="programlisting">  “pv-namespace”             <span class="type">gpointer</span></pre>
+<p>Pointer to the PV metadata namespace registered with the XML
+document containing this object.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--restricted"></a><h3>The <code class="literal">“restricted”</code> property</h3>
+<pre class="programlisting">  “restricted”               <span class="type">gboolean</span></pre>
+<p>Whether this object is restricted.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--title"></a><h3>The <code class="literal">“title”</code> property</h3>
+<pre class="programlisting">  “title”                    <span class="type">gchar</span> *</pre>
+<p>The title of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--track-number"></a><h3>The <code class="literal">“track-number”</code> property</h3>
+<pre class="programlisting">  “track-number”             <span class="type">gint</span></pre>
+<p>The original track number of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--update-id"></a><h3>The <code class="literal">“update-id”</code> property</h3>
+<pre class="programlisting">  “update-id”                <span class="type">guint</span></pre>
+<p>Update ID of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--upnp-class"></a><h3>The <code class="literal">“upnp-class”</code> property</h3>
+<pre class="programlisting">  “upnp-class”               <span class="type">gchar</span> *</pre>
+<p>The UPnP class of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--upnp-namespace"></a><h3>The <code class="literal">“upnp-namespace”</code> property</h3>
+<pre class="programlisting">  “upnp-namespace”           <span class="type">gpointer</span></pre>
+<p>Pointer to the UPnP namespace registered with the XML document
+containing this object.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--write-status"></a><h3>The <code class="literal">“write-status”</code> property</h3>
+<pre class="programlisting">  “write-status”             <span class="type">gchar</span> *</pre>
+<p>The write status of this object.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--xml-doc"></a><h3>The <code class="literal">“xml-doc”</code> property</h3>
+<pre class="programlisting">  “xml-doc”                  <a href="/home/jens/jhbuild/install/share/gtk-doc/html/gupnpGUPnPXMLDoc.html#GUPnPXMLDoc-struct"><span class="type">GUPnPXMLDoc</span></a> *</pre>
+<p>The reference to XML document containing this object.</p>
+<p>Internal property.</p>
+<p>Flags: Write / Construct Only</p>
+<p class="stability">Stability Level: <acronym title="An interface that can be used within the GNOME stack itself, but that is not
+documented for end-users.  Such functions should only be used in specified and
+documented ways.
+"><span class="acronym">Private</span></acronym></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteObject--xml-node"></a><h3>The <code class="literal">“xml-node”</code> property</h3>
+<pre class="programlisting">  “xml-node”                 <span class="type">gpointer</span></pre>
+<p>The pointer to object node in XML document.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

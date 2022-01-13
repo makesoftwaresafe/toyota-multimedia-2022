@@ -1,0 +1,8 @@
+# udev rules for audio devices handled in the corresponded audio setup services
+# it is important that coldplug devices set the same access rights as udev rules for these devices
+
+SUBSYSTEM=="sound", GROUP="audio", MODE="660", SYMLINK=""
+
+# TODO use different group for loopback devices
+# which should only be accessible from the Linux container
+DEVPATH=="/devices/platform/snd_aloop.0/sound/card*/pcmC*D1?", GROUP="audio", MODE="660", SYMLINK=""

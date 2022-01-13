@@ -1,0 +1,1376 @@
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>102220</integer>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>2qo2BWmmg1NwRaRd2pcXGg==</base64>
+  </rpmTag>
+  <rpmTag name="Dsaheader">
+	<base64>iEYEABECAAYFAkfzxR0ACgkQuHNkGyA5spF6WgCfajA/r8qecEt+9aCtndKkCuquuxIAoIZ5QPUezNE683lnPZYw01rNt+gl</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>9168777f898ed82d44693778a5cf50e17924a5e1</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>popt</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>1.14</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>1</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>A C library for parsing command line parameters.</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>Popt is a C library for parsing command line parameters. Popt was
+heavily influenced by the getopt() and getopt_long() functions, but it
+improves on them by allowing more powerful argument expansion. Popt
+can parse arbitrary argv[] style arrays and automatically set
+variables based on command line arguments. Popt allows command line
+arguments to be aliased via configuration files and includes utility
+functions for parsing arbitrary strings into argv[] arrays using
+shell-like rules.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1207158035</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>wellfleet.jbj.org</string>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>221078</integer>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>X Consortium</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>System Environment/Libraries</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>i386</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>39880</integer>
+	<integer>782</integer>
+	<integer>16</integer>
+	<integer>16</integer>
+	<integer>101390</integer>
+	<integer>17624</integer>
+	<integer>1752</integer>
+	<integer>1528</integer>
+	<integer>2178</integer>
+	<integer>1537</integer>
+	<integer>2426</integer>
+	<integer>1868</integer>
+	<integer>2060</integer>
+	<integer>1567</integer>
+	<integer>2140</integer>
+	<integer>1740</integer>
+	<integer>1902</integer>
+	<integer>2110</integer>
+	<integer>1857</integer>
+	<integer>1744</integer>
+	<integer>2204</integer>
+	<integer>2116</integer>
+	<integer>1816</integer>
+	<integer>1082</integer>
+	<integer>1890</integer>
+	<integer>553</integer>
+	<integer>557</integer>
+	<integer>2142</integer>
+	<integer>3162</integer>
+	<integer>1541</integer>
+	<integer>547</integer>
+	<integer>2507</integer>
+	<integer>560</integer>
+	<integer>2065</integer>
+	<integer>1700</integer>
+	<integer>10551</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>33188</integer>
+	<integer>33261</integer>
+	<integer>41471</integer>
+	<integer>41471</integer>
+	<integer>33261</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+	<integer>33188</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1207158034</integer>
+	<integer>1207158034</integer>
+	<integer>1207158034</integer>
+	<integer>1207158034</integer>
+	<integer>1207158034</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+	<integer>1207158033</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string>d5bf807db4c4089f36f629e00c071dac</string>
+	<string>c822e9616eb3204200307b4704ebd5e8</string>
+	<string/>
+	<string/>
+	<string>7145f346e52773a8ad9702a3ce5ee7a9</string>
+	<string>ddae259686af7bdf51a8192ca0ecf2af</string>
+	<string>169bb5208404f8a15df65a72723ddcf5</string>
+	<string>822afebec0111c3878c53f3b9d03a9a6</string>
+	<string>a827b3147fa3bbb21356195910bc5a45</string>
+	<string>aea12b16248ed2996ceea72b820180e7</string>
+	<string>82058439e841ecf11c2e9fc411e65ba7</string>
+	<string>8322028224f1b382dd60dbf1f213dfb9</string>
+	<string>11133a3c908df9d3f8cdf51254537ed5</string>
+	<string>08cdab8f0d359ce555d600867bd2f0e6</string>
+	<string>d566c594411e24e0fc67f6d2396341cd</string>
+	<string>084bed685ae47efcc1c0c1e5b56f7c8a</string>
+	<string>7deb2b42d782c782bdea05a224802344</string>
+	<string>2b3b73e4ee5dcfecc05abaf2208774d5</string>
+	<string>bf46d7e01a1480694c06eab58a04bcba</string>
+	<string>a48a22706dbb7f7c799799f9bdf6c035</string>
+	<string>fb546022a3b536bbb3562b5bbdb73132</string>
+	<string>cb020eab16f91f72a2d0d24316a4865a</string>
+	<string>0778c521a54514afa0ae8f226a3893e3</string>
+	<string>5499f07399a656c10a79d74219074197</string>
+	<string>0ad6b54225fb595bf446c02d1d31aa69</string>
+	<string>698a24963516fdabda1b8a0bb0962d1d</string>
+	<string>0e6de04498104295d858692ebe5682eb</string>
+	<string>ec4dfe9d58427074717bbf702447b1e4</string>
+	<string>014be66831bcf20b12cd464f0d4e5990</string>
+	<string>3f23b56d46e20fdeacfac494ae9663a5</string>
+	<string>cdf464f550f0b03e7a8f63b95e6c6835</string>
+	<string>d571c685d0fac81d2f562ca3f971901d</string>
+	<string>d18f2bfbf6cbb23b56fdfedacdf4ceea</string>
+	<string>83c61c74a8c9231eb632de9199507383</string>
+	<string>1e6958b973d9b9f9b810f7a4897ed760</string>
+	<string>1938f2c0842d4f2238478cd4ed1afd95</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+	<string/>
+	<string>libpopt.so.0.0.0</string>
+	<string>libpopt.so.0.0.0</string>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer>2</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+	<string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+	<string>popt-1.14-1.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>226620</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+	<string>libpopt.so.0</string>
+	<string>libpopt.so.0(LIBPOPT_0)</string>
+	<string>libtool(/lib/libpopt.la)</string>
+	<string>popt</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer>16384</integer>
+	<integer>16384</integer>
+	<integer>16384</integer>
+	<integer>16384</integer>
+	<integer>16384</integer>
+	<integer>16384</integer>
+	<integer>16384</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>libc.so.6</string>
+	<string>libc.so.6(GLIBC_2.0)</string>
+	<string>libc.so.6(GLIBC_2.1)</string>
+	<string>libc.so.6(GLIBC_2.1.3)</string>
+	<string>libc.so.6(GLIBC_2.2)</string>
+	<string>libc.so.6(GLIBC_2.3)</string>
+	<string>rtld(GNU_HASH)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>5.1.DEVEL</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1197410400</integer>
+	<integer>1184104800</integer>
+	<integer>1181426400</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>Jeff Johnson &lt;jbj@rpm5.org&gt;</string>
+	<string>Jeff Johnson &lt;jbj@rpm5.org&gt;</string>
+	<string>Jeff Johnson &lt;jbj@rpm5.org&gt;</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- release popt-1.13 through rpm5.org.</string>
+	<string>- release popt-1.12 through rpm5.org.</string>
+	<string>- release popt-1.11 through rpm5.org.</string>
+  </rpmTag>
+  <rpmTag name="Cookie">
+	<string>wellfleet.jbj.org 1207158035</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+	<integer>2050</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>6635885</integer>
+	<integer>6635884</integer>
+	<integer>6635883</integer>
+	<integer>6635882</integer>
+	<integer>6635881</integer>
+	<integer>6586662</integer>
+	<integer>5324905</integer>
+	<integer>5292411</integer>
+	<integer>5292412</integer>
+	<integer>5324934</integer>
+	<integer>5357585</integer>
+	<integer>5391263</integer>
+	<integer>5456041</integer>
+	<integer>5456177</integer>
+	<integer>5489110</integer>
+	<integer>5619937</integer>
+	<integer>5587239</integer>
+	<integer>5587240</integer>
+	<integer>5652507</integer>
+	<integer>5652508</integer>
+	<integer>5685552</integer>
+	<integer>5751711</integer>
+	<integer>5784502</integer>
+	<integer>5816987</integer>
+	<integer>5816992</integer>
+	<integer>5849346</integer>
+	<integer>5915145</integer>
+	<integer>5915146</integer>
+	<integer>6013124</integer>
+	<integer>6046030</integer>
+	<integer>6078562</integer>
+	<integer>6111345</integer>
+	<integer>6520947</integer>
+	<integer>6570357</integer>
+	<integer>6520951</integer>
+	<integer>6619731</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string>cs</string>
+	<string>da</string>
+	<string>de</string>
+	<string>es</string>
+	<string>fi</string>
+	<string>fr</string>
+	<string>ga</string>
+	<string>gl</string>
+	<string>hu</string>
+	<string>is</string>
+	<string>it</string>
+	<string>ja</string>
+	<string>ko</string>
+	<string>nb</string>
+	<string>nl</string>
+	<string>pl</string>
+	<string>pt</string>
+	<string>ro</string>
+	<string>ru</string>
+	<string>sk</string>
+	<string>sl</string>
+	<string>sv</string>
+	<string>th</string>
+	<string>tr</string>
+	<string>uk</string>
+	<string>vi</string>
+	<string>wa</string>
+	<string>zh</string>
+	<string>zh</string>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>32768</integer>
+	<integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+	<string/>
+	<string/>
+	<string/>
+	<string>1.14-1</string>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer>1</integer>
+	<integer>2</integer>
+	<integer>3</integer>
+	<integer>4</integer>
+	<integer>5</integer>
+	<integer>6</integer>
+	<integer>7</integer>
+	<integer>8</integer>
+	<integer>9</integer>
+	<integer>10</integer>
+	<integer>11</integer>
+	<integer>12</integer>
+	<integer>13</integer>
+	<integer>14</integer>
+	<integer>15</integer>
+	<integer>16</integer>
+	<integer>17</integer>
+	<integer>18</integer>
+	<integer>19</integer>
+	<integer>20</integer>
+	<integer>21</integer>
+	<integer>22</integer>
+	<integer>23</integer>
+	<integer>24</integer>
+	<integer>25</integer>
+	<integer>26</integer>
+	<integer>27</integer>
+	<integer>28</integer>
+	<integer>29</integer>
+	<integer>30</integer>
+	<integer>31</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>libpopt.a</string>
+	<string>libpopt.la</string>
+	<string>libpopt.so</string>
+	<string>libpopt.so.0</string>
+	<string>libpopt.so.0.0.0</string>
+	<string>popt.h</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.mo</string>
+	<string>popt.3.gz</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string>/lib/</string>
+	<string>/usr/include/</string>
+	<string>/usr/share/locale/cs/LC_MESSAGES/</string>
+	<string>/usr/share/locale/da/LC_MESSAGES/</string>
+	<string>/usr/share/locale/de/LC_MESSAGES/</string>
+	<string>/usr/share/locale/es/LC_MESSAGES/</string>
+	<string>/usr/share/locale/fi/LC_MESSAGES/</string>
+	<string>/usr/share/locale/fr/LC_MESSAGES/</string>
+	<string>/usr/share/locale/ga/LC_MESSAGES/</string>
+	<string>/usr/share/locale/gl/LC_MESSAGES/</string>
+	<string>/usr/share/locale/hu/LC_MESSAGES/</string>
+	<string>/usr/share/locale/is/LC_MESSAGES/</string>
+	<string>/usr/share/locale/it/LC_MESSAGES/</string>
+	<string>/usr/share/locale/ja/LC_MESSAGES/</string>
+	<string>/usr/share/locale/ko/LC_MESSAGES/</string>
+	<string>/usr/share/locale/nb/LC_MESSAGES/</string>
+	<string>/usr/share/locale/nl/LC_MESSAGES/</string>
+	<string>/usr/share/locale/pl/LC_MESSAGES/</string>
+	<string>/usr/share/locale/pt/LC_MESSAGES/</string>
+	<string>/usr/share/locale/ro/LC_MESSAGES/</string>
+	<string>/usr/share/locale/ru/LC_MESSAGES/</string>
+	<string>/usr/share/locale/sk/LC_MESSAGES/</string>
+	<string>/usr/share/locale/sl/LC_MESSAGES/</string>
+	<string>/usr/share/locale/sv/LC_MESSAGES/</string>
+	<string>/usr/share/locale/th/LC_MESSAGES/</string>
+	<string>/usr/share/locale/tr/LC_MESSAGES/</string>
+	<string>/usr/share/locale/uk/LC_MESSAGES/</string>
+	<string>/usr/share/locale/vi/LC_MESSAGES/</string>
+	<string>/usr/share/locale/wa/LC_MESSAGES/</string>
+	<string>/usr/share/locale/zh_CN/LC_MESSAGES/</string>
+	<string>/usr/share/locale/zh_TW/LC_MESSAGES/</string>
+	<string>/usr/share/man/man3/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+	<string>-O2 -g -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>gzip</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>9</string>
+  </rpmTag>
+  <rpmTag name="Platform">
+	<string>i386-redhat-linux</string>
+  </rpmTag>
+  <rpmTag name="Filecolors">
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer>1</integer>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+	<integer>2</integer>
+	<integer>4</integer>
+	<integer/>
+	<integer/>
+	<integer>1</integer>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+  </rpmTag>
+  <rpmTag name="Classdict">
+	<string/>
+	<string>ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), not stripped</string>
+	<string>current ar archive</string>
+	<string>directory</string>
+	<string>libtool library file</string>
+  </rpmTag>
+  <rpmTag name="Filedependsx">
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer>1</integer>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+  </rpmTag>
+  <rpmTag name="Filedependsn">
+	<integer/>
+	<integer>1</integer>
+	<integer/>
+	<integer/>
+	<integer>9</integer>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+	<integer/>
+  </rpmTag>
+  <rpmTag name="Dependsdict">
+	<integer>1342177282</integer>
+	<integer>1342177280</integer>
+	<integer>1342177281</integer>
+	<integer>1375731712</integer>
+	<integer>1375731713</integer>
+	<integer>1375731714</integer>
+	<integer>1375731715</integer>
+	<integer>1375731716</integer>
+	<integer>1375731717</integer>
+	<integer>1375731718</integer>
+  </rpmTag>
+  <rpmTag name="Sourcepkgid">
+	<base64>pIJU/idO/XRcil9E/zWw8Q==</base64>
+  </rpmTag>
+  <rpmTag name="Filecontexts">
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Filedigestalgos">
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Rpmlibversion">
+	<integer>673185792</integer>
+  </rpmTag>
+  <rpmTag name="Rpmlibtimestamp">
+	<integer>2105540608</integer>
+  </rpmTag>
+  <rpmTag name="Rpmlibvendor">
+	<integer>1380994357</integer>
+  </rpmTag>
+</rpmHeader>
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+	<string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+	<integer>704831</integer>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+	<base64>pIJU/idO/XRcil9E/zWw8Q==</base64>
+  </rpmTag>
+  <rpmTag name="Dsaheader">
+	<base64>iEYEABECAAYFAkfzxR0ACgkQuHNkGyA5spEkIQCfYHJtlLG1qhaNpZcwwIuRYXCqTQsAn302sbTjDiDjwafq3Q5wdu1WVqc6</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+	<string>d88c31289b4062f6e09095546fae8af4176abece</string>
+  </rpmTag>
+  <rpmTag name="Name">
+	<string>popt</string>
+  </rpmTag>
+  <rpmTag name="Version">
+	<string>1.14</string>
+  </rpmTag>
+  <rpmTag name="Release">
+	<string>1</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+	<string>A C library for parsing command line parameters.</string>
+  </rpmTag>
+  <rpmTag name="Description">
+	<string>Popt is a C library for parsing command line parameters. Popt was
+heavily influenced by the getopt() and getopt_long() functions, but it
+improves on them by allowing more powerful argument expansion. Popt
+can parse arbitrary argv[] style arrays and automatically set
+variables based on command line arguments. Popt allows command line
+arguments to be aliased via configuration files and includes utility
+functions for parsing arbitrary strings into argv[] arrays using
+shell-like rules.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+	<integer>1207158035</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+	<string>wellfleet.jbj.org</string>
+  </rpmTag>
+  <rpmTag name="Size">
+	<integer>697372</integer>
+  </rpmTag>
+  <rpmTag name="License">
+	<string>X Consortium</string>
+  </rpmTag>
+  <rpmTag name="Group">
+	<string>System Environment/Libraries</string>
+  </rpmTag>
+  <rpmTag name="Source">
+	<string>popt-1.14.tar.gz</string>
+  </rpmTag>
+  <rpmTag name="Os">
+	<string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+	<string>i386</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+	<integer>695557</integer>
+	<integer>1815</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+	<integer>33204</integer>
+	<integer>33204</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+	<integer/>
+	<integer/>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+	<integer>1207158002</integer>
+	<integer>1207158002</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+	<string>4f90a07316eb825604dd10ae4f9f3f04</string>
+	<string>0e621cd5906e4c5937db856c95550e39</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+	<integer/>
+	<integer>32</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+	<string>jbj</string>
+	<string>jbj</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+	<string>jbj</string>
+	<string>jbj</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+	<integer>4294967295</integer>
+	<integer>4294967295</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+	<integer>697748</integer>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+	<integer/>
+  </rpmTag>
+  <rpmTag name="Requirename">
+	<string>gettext</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+	<string/>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+	<string>5.1.DEVEL</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+	<integer>1197410400</integer>
+	<integer>1184104800</integer>
+	<integer>1181426400</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+	<string>Jeff Johnson &lt;jbj@rpm5.org&gt;</string>
+	<string>Jeff Johnson &lt;jbj@rpm5.org&gt;</string>
+	<string>Jeff Johnson &lt;jbj@rpm5.org&gt;</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+	<string>- release popt-1.13 through rpm5.org.</string>
+	<string>- release popt-1.12 through rpm5.org.</string>
+	<string>- release popt-1.11 through rpm5.org.</string>
+  </rpmTag>
+  <rpmTag name="Cookie">
+	<string>wellfleet.jbj.org 1207158035</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+	<integer>2050</integer>
+	<integer>2050</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+	<integer>7438418</integer>
+	<integer>5963874</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Buildmacros">
+	<string>%___build_args	-e</string>
+	<string>%___build_cmd	%{?_sudo:%{_sudo} }%{?_remsh:%{_remsh} %{_remhost} }%{?_remsudo:%{_remsudo} }%{?_remchroot:%{_remchroot} %{_remroot} }%{___build_shell} %{___build_args}</string>
+	<string>%___build_post	exit 0</string>
+	<string>%___build_pre	
+  RPM_SOURCE_DIR="%{u2p:%{_sourcedir}}"
+  RPM_BUILD_DIR="%{u2p:%{_builddir}}"
+  RPM_OPT_FLAGS="%{optflags}"
+  RPM_ARCH="%{_arch}"
+  RPM_OS="%{_os}"
+  export RPM_SOURCE_DIR RPM_BUILD_DIR RPM_OPT_FLAGS RPM_ARCH RPM_OS
+  RPM_DOC_DIR="%{_docdir}"
+  export RPM_DOC_DIR
+  RPM_PACKAGE_NAME="%{name}"
+  RPM_PACKAGE_VERSION="%{version}"
+  RPM_PACKAGE_RELEASE="%{release}"
+  export RPM_PACKAGE_NAME RPM_PACKAGE_VERSION RPM_PACKAGE_RELEASE
+  %{?buildroot:RPM_BUILD_ROOT="%{u2p:%{buildroot}}"
+  export RPM_BUILD_ROOT}
+  %{?_javaclasspath:CLASSPATH="%{_javaclasspath}"
+  export CLASSPATH}
+  unset PERL_MM_OPT || :
+  LANG=C
+  export LANG
+  unset DISPLAY || :
+  
+  %{verbose:set -x}%{!verbose:exec &gt; /dev/null}
+  umask 022
+  cd "%{u2p:%{_builddir}}"</string>
+	<string>%___build_shell	%{?_buildshell:%{_buildshell}}%{!?_buildshell:/bin/sh}</string>
+	<string>%__arch_install_post	%{nil}</string>
+	<string>%__chgrp	/bin/chgrp</string>
+	<string>%__chgrp_Rhf	%{__chgrp} -Rhf</string>
+	<string>%__chmod	/bin/chmod</string>
+	<string>%__chown	/bin/chown</string>
+	<string>%__chown_Rhf	%{__chown} -Rhf</string>
+	<string>%__dbi_btconfig	
+  btree		
+  %{__dbi_other}
+  %{__dbi_perms}
+%{nil}</string>
+	<string>%__dbi_btconfig_current	%{__dbi_btconfig}</string>
+	<string>%__dbi_other	%{?_tmppath:tmpdir=%{_tmppath}} %{?__dbi_cdb}</string>
+	<string>%__dbi_perms	perms=0644</string>
+	<string>%__gzip	/bin/gzip</string>
+	<string>%__id	/usr/bin/id</string>
+	<string>%__id_u	%{__id} -u</string>
+	<string>%__mkdir_p	/bin/mkdir -p</string>
+	<string>%__os_install_post	
+    /usr/lib/rpm/brp-compress 
+    /usr/lib/rpm/brp-strip 
+    /usr/lib/rpm/brp-strip-static-archive 
+    /usr/lib/rpm/brp-strip-comment-note 
+%{nil}</string>
+	<string>%__perl	/usr/bin/perl</string>
+	<string>%__rm	/bin/rm</string>
+	<string>%__spec_build_cmd	%{___build_cmd}</string>
+	<string>%__spec_build_post	%{___build_post}</string>
+	<string>%__spec_build_pre	%{___build_pre}</string>
+	<string>%__spec_build_shell	%{___build_shell}</string>
+	<string>%__spec_build_template	#!%{__spec_build_shell}
+%{__spec_build_pre}
+%{nil}</string>
+	<string>%__spec_install_cmd	%{___build_cmd}</string>
+	<string>%__spec_install_post	
+    %{?__debug_package:%{__debug_install_post}}
+    %{__arch_install_post}
+    %{__os_install_post}
+%{nil}</string>
+	<string>%__spec_install_pre	%{___build_pre}
+%{?buildroot:%{__rm} -rf '%{buildroot}'; %{__mkdir_p} '%{buildroot}'}</string>
+	<string>%__spec_install_shell	%{___build_shell}</string>
+	<string>%__spec_install_template	#!%{__spec_install_shell}
+%{__spec_install_pre}
+%{nil}</string>
+	<string>%__spec_prep_cmd	%{___build_cmd}</string>
+	<string>%__spec_prep_post	%{___build_post}</string>
+	<string>%__spec_prep_pre	%{___build_pre}</string>
+	<string>%__spec_prep_shell	%{___build_shell}</string>
+	<string>%__spec_prep_template	#!%{__spec_prep_shell}
+%{__spec_prep_pre}
+%{nil}</string>
+	<string>%__tar	/bin/tar</string>
+	<string>%__vsflags	0xf0000</string>
+	<string>%_arch	i386</string>
+	<string>%_bindir	%{_exec_prefix}/bin</string>
+	<string>%_build	%{_host}</string>
+	<string>%_build_file_digest_algo	1</string>
+	<string>%_builddir	%{_ntopdir}</string>
+	<string>%_buildshell	/bin/sh</string>
+	<string>%_datadir	%{_prefix}/share</string>
+	<string>%_dbapi	3</string>
+	<string>%_dbapi_rebuild	3</string>
+	<string>%_dbapi_used	%{?_rpmdb_rebuild:%{_dbapi_rebuild}}%{!?_rpmdb_rebuild:%{_dbapi}}</string>
+	<string>%_dbi_btconfig	
+  %{?_rpmdb_rebuild:%{__dbi_btconfig_rebuild}}
+  %{!?_rpmdb_rebuild:%{__dbi_btconfig_current}}
+%{nil}</string>
+	<string>%_dbi_config_3_Packages	%{_dbi_btconfig} lockdbfd</string>
+	<string>%_dbi_config_3_Providename	%{_dbi_btconfig}</string>
+	<string>%_dbi_config_Packages	%{expand:%%{_dbi_config_%{_dbapi_used}_Packages}}</string>
+	<string>%_dbi_config_Providename	%{expand:%%{_dbi_config_%{_dbapi_used}_Providename}}</string>
+	<string>%_dbi_tags_3	Packages:Name:Basenames:Group:Requirename:Providename:Conflictname:Triggername:Dirnames:Requireversion:Provideversion:Installtid:Sigmd5:Sha1header:Filedigests:Pubkeys:Packagecolor:Nvra:Sourcepkgid</string>
+	<string>%_defaultdocdir	%{_usr}/share/doc</string>
+	<string>%_docdir	%{_defaultdocdir}</string>
+	<string>%_etcrpm	/etc/rpm</string>
+	<string>%_exec_prefix	%{_prefix}</string>
+	<string>%_fixgroup	[ `%{__id_u}` = '0' ] &amp;&amp; %{__chgrp_Rhf} root</string>
+	<string>%_fixowner	[ `%{__id_u}` = '0' ] &amp;&amp; %{__chown_Rhf} root</string>
+	<string>%_fixperms	%{__chmod} -Rf a+rX,u+w,g-w,o-w</string>
+	<string>%_host	i686-pc-linux-gnu</string>
+	<string>%_icondir	%{_sourcedir}</string>
+	<string>%_includedir	%{_prefix}/include</string>
+	<string>%_infodir	/usr/share/info</string>
+	<string>%_javadocdir	%{_datadir}/javadoc</string>
+	<string>%_legion	popt</string>
+	<string>%_lib	lib</string>
+	<string>%_libdir	/%{_lib}</string>
+	<string>%_libexecdir	%{_exec_prefix}/libexec</string>
+	<string>%_localstatedir	/var</string>
+	<string>%_mandir	/usr/share/man</string>
+	<string>%_ntopdir	%{_topdir}/%{_legion}</string>
+	<string>%_os	linux</string>
+	<string>%_patchdir	%{_sourcedir}</string>
+	<string>%_prefix	/usr</string>
+	<string>%_rpmhome	%{_usrlibrpm}</string>
+	<string>%_sbindir	%{_exec_prefix}/sbin</string>
+	<string>%_sharedstatedir	%{_prefix}/com</string>
+	<string>%_sourcedir	%{_ntopdir}</string>
+	<string>%_specdir	%{_ntopdir}</string>
+	<string>%_sysconfdir	/etc</string>
+	<string>%_target_cpu	i386</string>
+	<string>%_target_os	linux</string>
+	<string>%_target_platform	%{_target_cpu}-%{_vendor}-%{_target_os}</string>
+	<string>%_tmppath	%{_topdir}/tmp</string>
+	<string>%_topdir	/X</string>
+	<string>%_usr	/usr</string>
+	<string>%_usrlibrpm	/usr/lib/rpm</string>
+	<string>%_var	/var</string>
+	<string>%_vendor	redhat</string>
+	<string>%_vsflags_build	%{__vsflags}</string>
+	<string>%buildroot	%{_tmppath}/%{name}-root</string>
+	<string>%configure	
+  CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; 
+  CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; 
+  FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ; 
+  ./configure --host=%{_host} --build=%{_build} \
+	--target=%{_target_platform} \
+	--program-prefix=%{?_program_prefix} \
+ 	--prefix=%{_prefix} \
+	--exec-prefix=%{_exec_prefix} \
+	--bindir=%{_bindir} \
+	--sbindir=%{_sbindir} \
+	--sysconfdir=%{_sysconfdir} \
+	--datadir=%{_datadir} \
+	--includedir=%{_includedir} \
+	--libdir=%{_libdir} \
+	--libexecdir=%{_libexecdir} \
+	--localstatedir=%{_localstatedir} \
+	--sharedstatedir=%{_sharedstatedir} \
+	--mandir=%{_mandir} \
+	--infodir=%{_infodir}</string>
+	<string>%find_lang	%{_rpmhome}/find-lang.sh %{buildroot}</string>
+	<string>%name	popt</string>
+	<string>%nil	%{!?nil}</string>
+	<string>%optflags	-O2 -g -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables</string>
+	<string>%release	1</string>
+	<string>%version	1.14</string>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+	<integer/>
+	<integer/>
+  </rpmTag>
+  <rpmTag name="Basenames">
+	<string>popt-1.14.tar.gz</string>
+	<string>popt.spec</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+	<string/>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+	<string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+	<string>gzip</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+	<string>9</string>
+  </rpmTag>
+  <rpmTag name="Filecontexts">
+	<string/>
+	<string/>
+  </rpmTag>
+  <rpmTag name="Filedigestalgos">
+	<integer>1</integer>
+	<integer>1</integer>
+  </rpmTag>
+  <rpmTag name="Rpmlibversion">
+	<integer>673185792</integer>
+  </rpmTag>
+  <rpmTag name="Rpmlibtimestamp">
+	<integer>2105540608</integer>
+  </rpmTag>
+  <rpmTag name="Rpmlibvendor">
+	<integer>1380994357</integer>
+  </rpmTag>
+  <rpmTag name="Tag_0x46c39442">
+	<string>/usr/bin/perl /usr/lib/rpm/vcheck</string>
+  </rpmTag>
+  <rpmTag name="Tag_0x6d479aed">
+	<string>prog popt = {
+    version   = 1.14
+    url       = http://rpm5.org/popt
+    regex     = popt-(\d+\.\d+\.\d+)\.tar\.gz
+}
+
+</string>
+  </rpmTag>
+</rpmHeader>

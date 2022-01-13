@@ -1,0 +1,73 @@
+/**
+
+ @page actionDebug Action Debug
+
+ <b>Name:</b> ACTION_DEBUG<BR>
+ <b>Description:</b> This action can be used for debugging purpose. At present it only supports 
+ changing the dlt log message threshold level.
+
+ \code
+     <action>
+        <type>ACTION_DEBUG</type>
+        <param>
+            <debugType>SYP_DEBUG_LOG</propertyType>
+            <debugValue>1</propertyValue>
+            <timeOut>3000</timeOut> <!-- This is an optional parameter -->
+        </param>
+    </action>
+ \endcode
+
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>debugType</td>
+<td>M</td>
+<td>string</td>
+<td>This is the debug type. currently only SYP_DEBUG_LOG is supported</td>
+</tr>
+
+<tr>
+<td>debugValue</td>
+<td>M</td>
+<td>16 bit integer.</td>
+<td>This is the value that needs to be set for the debug log level threshold.
+    0 -> Log level off<br>
+    1 -> Fatal system error<br>
+    2 -> error with impact to correct functionality<br>
+    3 -> warning, correct behavior could not be ensured<br>
+    4 -> informational<br>
+    5 -> debug <br>
+    6 -> verbose<br>
+</td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+  
+  
+ <b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_DEBUG</type>
+        <param>
+            <debugType>SYP_DEBUG_LOG</propertyType>
+            <debugValue>4</propertyValue>
+        </param>
+    </action>
+ \endcode
+    The above example sets the debug threshold value to 4 i.e only the dlt log messages with level 
+below info would be sent.
+
+*/

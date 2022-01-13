@@ -1,0 +1,6 @@
+To build the source code in this package, you should first configure a stage
+directory.  One way to do this is to run the included "./stage-sh" script and
+work inside the shell it creates.
+
+With your stage configured, simply run "make hinstall install"; when it
+completes, you'll find the new binaries inside your stage directory.

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StateEvent
+xmlns="urn:schemas-upnp-org:av:cds-event"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="urn:schemas-upnp-org:av:cds-event
+http://www.upnp.org/schemas/av/cds-event.xsd">
+<objAdd objID="Album001" updateID="101" objParentID="0"
+objClass="object.container.album.musicAlbum" stUpdate="0"/>
+<objMod objID="0" updateID="102" stUpdate="0"/>
+</StateEvent>
+

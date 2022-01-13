@@ -1,0 +1,5011 @@
+# translation of smart.po to Hungarian
+# translation of new.po to
+# translation of smart.po to
+# translation of smart.hu.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kalman Kemenczy <kkemenczy@novell.com>, 2006, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: smart\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-31 01:00+0100\n"
+"PO-Revision-Date: 2008-02-02 15:41+0100\n"
+"Last-Translator: Kalman Kemenczy <kkemenczy@novell.com>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: smart.py:37
+msgid "smart command [options] [arguments]"
+msgstr "smart command [kapcsolók] [paraméterek]"
+
+#: smart.py:39
+#, fuzzy
+msgid ""
+"\n"
+"Action commands:\n"
+"    update\n"
+"    install\n"
+"    reinstall\n"
+"    upgrade\n"
+"    remove\n"
+"    check\n"
+"    fix\n"
+"    download\n"
+"    clean\n"
+"\n"
+"Query commands:\n"
+"    search\n"
+"    query\n"
+"    newer\n"
+"    info\n"
+"    stats\n"
+"\n"
+"Setup commands:\n"
+"    config\n"
+"    channel\n"
+"    priority\n"
+"    mirror\n"
+"    flag\n"
+"\n"
+"Run \"smart command --help\" for more information.\n"
+msgstr ""
+"\n"
+"Műveleti utasítások:\n"
+"    update\n"
+"    install\n"
+"    reinstall\n"
+"    upgrade\n"
+"    remove\n"
+"    check\n"
+"    fix\n"
+"    download\n"
+"    clean\n"
+"\n"
+"Lekérdező utasítások:\n"
+"    search\n"
+"    query\n"
+"    info\n"
+"    stats\n"
+"\n"
+"Beállító utasítások:\n"
+"    channel\n"
+"    priority\n"
+"    mirror\n"
+"    flag\n"
+"\n"
+"További információért futtassa a \"smart parancs --help\" utasítást.\n"
+
+#: smart.py:68
+msgid ""
+"\n"
+"smart install --help\n"
+"smart install pkgname\n"
+"smart --gui\n"
+"smart --gui install pkgname\n"
+"smart --shell\n"
+msgstr ""
+"\n"
+"smart install --help\n"
+"smart install csomagnév\n"
+"smart --gui\n"
+"smart --gui install csomagnév\n"
+"smart --shell\n"
+
+#: smart.py:83
+msgid "FILE"
+msgstr "FILE"
+
+#: smart.py:84
+msgid "configuration file (default is <data-dir>/config)"
+msgstr "konfigurációs fájl (alapértelmezés: <data-dir>/config)"
+
+#: smart.py:86
+msgid "DIR"
+msgstr "DIR"
+
+#: smart.py:87
+#, python-format
+msgid "data directory (default is %s)"
+msgstr "adatkönyvtár (alapértelmezett: %s)"
+
+#: smart.py:88
+msgid "LEVEL"
+msgstr "LEVEL"
+
+#: smart.py:89
+msgid "set the log level to LEVEL (debug, info, warning, error)"
+msgstr "állítsa be a naplózási szintet: LEVEL (debug, info, warning, error)"
+
+#: smart.py:92
+msgid "use the default graphic interface"
+msgstr "alapértelmezett grafikus felület használata"
+
+#: smart.py:94
+msgid "use the default shell interface"
+msgstr "alapértelmezett shell használata"
+
+#: smart.py:96
+#, fuzzy
+msgid "use the quiet interface"
+msgstr "az adott felület használata"
+
+#: smart.py:97
+msgid "NAME"
+msgstr "NAME"
+
+#: smart.py:98
+msgid "use the given interface"
+msgstr "az adott felület használata"
+
+#: smart.py:100
+msgid "don't respect locking"
+msgstr "zárolás figyelmen kívül hagyása"
+
+#: smart.py:102
+msgid "OPT"
+msgstr "OPT"
+
+#: smart.py:103
+msgid "set the option given by a name=value pair"
+msgstr "állítsa be a paramétert név=érték pár szerint"
+
+#: smart.py:113 smart/option.py:161 smart/util/optparse.py:1402
+#: smart/util/optparse.py:1556
+#, python-format
+msgid "no such option: %s"
+msgstr "nincs ilyen kapcsoló: %s"
+
+#: smart.py:139
+#, python-format
+msgid "Invalid option: %s"
+msgstr "Érvénytelen paraméter: %s"
+
+#: smart.py:184
+#, python-format
+msgid "error: %s\n"
+msgstr "hiba: %s\n"
+
+#: smart.py:193 smart/interfaces/text/interactive.py:200
+msgid ""
+"\n"
+"Interrupted\n"
+msgstr ""
+"\n"
+"Megszakított\n"
+
+#: smart/__init__.py:38
+msgid "Unknown error"
+msgstr "Ismeretlen hiba"
+
+#: smart/__init__.py:119
+msgid "Unknown log level"
+msgstr "Ismeretlen naplózási szint"
+
+#: smart/__init__.py:130
+msgid "Can't use commands with shell interfaces"
+msgstr "A parancs nem használható parancsértelmező-felületekkel"
+
+#: smart/backends/arch/loader.py:241 smart/backends/slack/loader.py:176
+#, python-format
+msgid "Invalid package name: %s"
+msgstr "Érvénytelen csomagnév: %s"
+
+#: smart/backends/arch/pm.py:63 smart/backends/deb/pm.py:185
+#: smart/backends/rpm/pm.py:55 smart/backends/slack/pm.py:33
+msgid "Committing transaction..."
+msgstr "Tranzakció véglegesítése..."
+
+#: smart/backends/arch/pm.py:72 smart/backends/slack/pm.py:76
+#, python-format
+msgid "Upgrading %s"
+msgstr "%s frissítése"
+
+#: smart/backends/arch/pm.py:80 smart/backends/slack/pm.py:84
+#, python-format
+msgid "Got status %d upgrading %s:"
+msgstr "%d állapot a(z) %s frissítése közben"
+
+#: smart/backends/arch/pm.py:83 smart/backends/slack/pm.py:87
+#, python-format
+msgid "Upgrading %s:"
+msgstr "%s frissítése:"
+
+#: smart/backends/arch/pm.py:86 smart/backends/rpm/pm.py:316
+#: smart/backends/slack/pm.py:62
+#, python-format
+msgid "Installing %s"
+msgstr "%s telepítése"
+
+#: smart/backends/arch/pm.py:94 smart/backends/slack/pm.py:70
+#, python-format
+msgid "Got status %d installing %s:"
+msgstr "%d állapot a(z) %s telepítése közben"
+
+#: smart/backends/arch/pm.py:97 smart/backends/slack/pm.py:73
+#, python-format
+msgid "Installing %s:"
+msgstr "%s telepítése:"
+
+#: smart/backends/arch/pm.py:100 smart/backends/rpm/pm.py:343
+#: smart/backends/rpm/pm.py:357 smart/backends/slack/pm.py:90
+#, python-format
+msgid "Removing %s"
+msgstr "%s eltávolítása"
+
+#: smart/backends/arch/pm.py:108 smart/backends/slack/pm.py:98
+#, python-format
+msgid "Got status %d removing %s:"
+msgstr "%d állapot a(z) %s eltávolítása közben"
+
+#: smart/backends/arch/pm.py:111 smart/backends/slack/pm.py:101
+#, python-format
+msgid "Removing %s:"
+msgstr "%s eltávolítása:"
+
+#: smart/backends/arch/pm.py:114
+#, python-format
+msgid "Operation ( %s ) not handled on package ( %s )"
+msgstr ""
+
+#: smart/backends/deb/pm.py:312
+#, python-format
+msgid "Sub-process %s has received a segmentation fault"
+msgstr "A(z) %s alfolyamat szegmentáció hibát kapott"
+
+#: smart/backends/deb/pm.py:315
+#, python-format
+msgid "Sub-process %s returned an error code (%d)"
+msgstr "A(z) %s alfolyamat hibakódot kapott (%d)"
+
+#: smart/backends/deb/pm.py:318
+#, python-format
+msgid "Sub-process %s exited unexpectedly"
+msgstr "A(z) %s alfolyamat váratlanul kilépett"
+
+#: smart/backends/rpm/base.py:42
+msgid "'rpm' python module is not available"
+msgstr "az 'rpm' python modul nem elérhető"
+
+#: smart/backends/rpm/base.py:65
+#, python-format
+msgid "Could not create rpm-root at %s: %s"
+msgstr "Az rpm-root létrehozása nem lehetséges a következő helyen: %s: %s"
+
+#: smart/backends/rpm/base.py:71
+#, python-format
+msgid "Couldn't initizalize rpm database at %s"
+msgstr "Az RPM adatbázis nem inicializálható: %s"
+
+#: smart/backends/rpm/base.py:74
+#, python-format
+msgid "Initialized new rpm database at %s"
+msgstr "Új RPM adatbázis inicializálása befejeződött: %s"
+
+#: smart/backends/rpm/header.py:457
+msgid ""
+"Your rpm module has no support for readHeaderFromFD()!\n"
+"As a consequence, Smart will consume extra memory."
+msgstr ""
+"Az rpm modul nem támogatja readHeaderFromFD() hívást!\n"
+"Ezért a Smartnak további memóriára van szüksége."
+
+#: smart/backends/rpm/header.py:556 smart/backends/rpm/header.py:595
+msgid "Package list with no CRPMTAG_FILENAME tag"
+msgstr "CRPMTAG_FILENAME mezőt nem tartalmazó csomaglista"
+
+#: smart/backends/rpm/pm.py:140
+msgid "Found unbreakable loops:"
+msgstr "Megszakíthatatlan ciklus:"
+
+#: smart/backends/rpm/pm.py:145
+msgid "Will ask RPM to order it."
+msgstr "Rendezési kéréssel fordul az RPM-hez."
+
+#: smart/backends/rpm/pm.py:210
+#, python-format
+msgid "%s requires %s"
+msgstr "%s megköveteli a(z) %s csomagot"
+
+#: smart/backends/rpm/pm.py:212
+#, python-format
+msgid "%s conflicts with %s"
+msgstr "A(z) %s csomag ütközik a következővel: %s."
+
+#: smart/backends/rpm/pm.py:300
+#, python-format
+msgid "Processing %s in %s"
+msgstr "%s feldolgozás alatt (%s)"
+
+#: smart/backends/rpm/pm.py:301 smart/backends/rpm/pm.py:336
+#, python-format
+msgid "Output from %s:"
+msgstr "%s kimenete:"
+
+#: smart/backends/rpm/pm.py:327
+msgid "Preparing..."
+msgstr "Előkészítés..."
+
+#: smart/backends/rpm/pm.py:341 smart/backends/rpm/pm.py:355
+#, python-format
+msgid "Cleaning %s"
+msgstr "%s forrás törlése"
+
+#: smart/backends/rpm/redcarpet.py:309
+#, python-format
+msgid "Error parsing %s: %s"
+msgstr "Feldolgozási hiba %s: %s"
+
+#: smart/backends/rpm/synthesis.py:180 smart/channels/rpm_md.py:143
+#, fuzzy, python-format
+msgid ""
+"Invalid XML file:\n"
+"  %s\n"
+"  %s"
+msgstr ""
+"Érvénytelen XML fájl:\n"
+"  %s\n"
+"  %s\n"
+"  %s"
+
+#: smart/cache.py:200 smart/fetcher.py:1305 smart/fetcher.py:1578
+#: smart/fetcher.py:1621
+msgid "File not found"
+msgstr "A fájl nem található"
+
+#: smart/cache.py:206 smart/fetcher.py:368
+#, python-format
+msgid "Unexpected size (expected %d, got %d)"
+msgstr "Váratlan méret (várt méret: %d, kapott méret: %d)"
+
+#: smart/cache.py:223 smart/fetcher.py:385
+#, python-format
+msgid "Invalid MD5 (expected %s, got %s)"
+msgstr "Érvénytelen MD5 (várt érték: %s, kapott érték: %s)"
+
+#: smart/cache.py:240 smart/fetcher.py:402
+#, fuzzy, python-format
+msgid "Invalid SHA256 (expected %s, got %s)"
+msgstr "Érvénytelen SHA (várt: %s, kapott: %s)"
+
+#: smart/cache.py:257 smart/fetcher.py:419
+#, python-format
+msgid "Invalid SHA (expected %s, got %s)"
+msgstr "Érvénytelen SHA (várt: %s, kapott: %s)"
+
+#: smart/cache.py:669
+msgid "Updating cache..."
+msgstr "Gyorsítótár frissítése..."
+
+#: smart/channel.py:115 smart/commands/channel.py:198
+#: smart/commands/mirror.py:134 smart/interfaces/gtk/channels.py:213
+#: smart/interfaces/qt/channels.py:193 smart/interfaces/qt4/channels.py:206
+#: smart/sysconfig.py:71
+#, python-format
+msgid "File not found: %s"
+msgstr "A következő fájl nam található: %s"
+
+#: smart/channel.py:133 smart/interfaces/gtk/channels.py:86
+#: smart/interfaces/gtk/channels.py:367 smart/interfaces/qt/channels.py:82
+#: smart/interfaces/qt/channels.py:337 smart/interfaces/qt4/channels.py:88
+#: smart/interfaces/qt4/channels.py:358
+msgid "Alias"
+msgstr "Elnevezés"
+
+#: smart/channel.py:134
+msgid "Unique identification for the channel."
+msgstr "A csatorna egyedi azonosítója."
+
+#: smart/channel.py:135 smart/interfaces/gtk/channels.py:88
+#: smart/interfaces/gtk/channels.py:369 smart/interfaces/qt/channels.py:83
+#: smart/interfaces/qt/channels.py:338 smart/interfaces/qt4/channels.py:88
+#: smart/interfaces/qt4/channels.py:358
+msgid "Type"
+msgstr "Típus"
+
+#: smart/channel.py:136
+msgid "Channel type"
+msgstr "Csatornatipus"
+
+#: smart/channel.py:137 smart/interfaces/gtk/channels.py:90
+#: smart/interfaces/gtk/channels.py:371 smart/interfaces/qt/channels.py:84
+#: smart/interfaces/qt/channels.py:339 smart/interfaces/qt4/channels.py:88
+#: smart/interfaces/qt4/channels.py:358
+msgid "Name"
+msgstr "Név"
+
+#: smart/channel.py:138
+msgid "Channel name"
+msgstr "Csatornanév"
+
+#: smart/channel.py:139
+msgid "Manual updates"
+msgstr "Manuális frissítés"
+
+#: smart/channel.py:140
+msgid ""
+"If set to a true value, the given channel will only be updated when manually "
+"selected."
+msgstr "Bekapcsoláskor, a csatorna csak annak kiválasztásakor fog frissülni."
+
+#: smart/channel.py:142
+msgid "Disabled"
+msgstr "Letiltott"
+
+#: smart/channel.py:143
+msgid "If set to a true value, the given channel won't be used."
+msgstr "Bekapcsoláskor, a csatorna letiltásra kerül."
+
+#: smart/channel.py:145
+msgid "Removable"
+msgstr "Eltávolítható"
+
+#: smart/channel.py:146
+msgid ""
+"If set to a true value, the given channel will be considered as being "
+"available in a removable media (cdrom, etc)."
+msgstr ""
+"Bekapcsolásakor a csatorna eltávolítható médiának lesz beállítva (dvd stb.)."
+
+#: smart/channel.py:151 smart/commands/priority.py:104
+#: smart/interfaces/gtk/interactive.py:813
+#: smart/interfaces/gtk/priorities.py:83
+#: smart/interfaces/qt/interactive.py:755 smart/interfaces/qt/priorities.py:72
+#: smart/interfaces/qt4/interactive.py:753
+msgid "Priority"
+msgstr "Prioritás"
+
+#: smart/channel.py:152
+msgid ""
+"Default priority assigned to all packages available in this channel (0 if "
+"not set). If the exact same package is available in more than one channel, "
+"the highest priority is used."
+msgstr ""
+"Az alapértelmezett prioritás a csatornához tartozó összes csomag "
+"alapprioritása (0, ha nincs beállítva semmi). Amennyiben ugyanaz a csomag "
+"több csatornában is szerepel, akkor a legmagasabb prioritás jut érvényre."
+
+#: smart/channel.py:169
+#, python-format
+msgid "Unable to create channel of type '%s'"
+msgstr "Ilyen típusú csatorna létrehozása sikertelen: '%s'"
+
+#: smart/channel.py:182 smart/channel.py:208
+msgid "Channel has no type"
+msgstr "A csatornának nincsen típusa"
+
+#: smart/channel.py:185 smart/channel.py:211
+#, python-format
+msgid "Unknown channel type: %s"
+msgstr "Ismeretlen csatornatípus: %s"
+
+#: smart/channel.py:195 smart/channel.py:223
+#, python-format
+msgid "%s (%s) is a needed field for '%s' channels"
+msgstr "A(z) %s (%s) mező szükséges a(z) '%s' csatornákhoz"
+
+#: smart/channel.py:230 smart/util/strtools.py:105
+msgid "true"
+msgstr "true"
+
+#: smart/channel.py:230 smart/util/strtools.py:105
+msgid "y"
+msgstr "y"
+
+#: smart/channel.py:230 smart/interfaces/text/interface.py:71
+#: smart/util/strtools.py:105
+msgid "yes"
+msgstr "igen"
+
+#: smart/channel.py:233 smart/util/strtools.py:107
+msgid "false"
+msgstr "false"
+
+#: smart/channel.py:233 smart/util/strtools.py:107
+msgid "n"
+msgstr "n"
+
+#: smart/channel.py:233 smart/interfaces/text/interface.py:72
+#: smart/util/strtools.py:107
+msgid "no"
+msgstr "nem"
+
+#: smart/channel.py:236 smart/channel.py:242 smart/channel.py:245
+#, python-format
+msgid "Invalid value for '%s' (%s) field: %s"
+msgstr "Érvénytelen érték '%s' (%s) ebben a mezőben: %s"
+
+#: smart/channel.py:262
+#, python-format
+msgid "Channel '%s' has no type"
+msgstr "A megadott csatornának nincsen típusa: '%s'"
+
+#: smart/channel.py:284
+#, python-format
+msgid "Invalid channel type '%s'"
+msgstr "Érvénytelen csatornatípus '%s'"
+
+#: smart/channels/apt_deb.py:91
+#, fuzzy, python-format
+msgid "Download of Release failed for channel '%s': %s"
+msgstr "A komponens '%s' nem található a(z) '%s' csatorna Release fájljában."
+
+#: smart/channels/apt_deb.py:98
+#, fuzzy, python-format
+msgid "Download of Release.gpg failed for secure channel '%s': %s"
+msgstr "A komponens '%s' nem található a(z) '%s' csatorna Release fájljában."
+
+#: smart/channels/apt_deb.py:132 smart/channels/apt_rpm.py:131
+#: smart/channels/rpm_md.py:237 smart/channels/slack_site.py:108
+#, python-format
+msgid "Channel '%s' has bad signature"
+msgstr "A következő csatorna hibás aláírással rendelkezik: '%s'"
+
+#: smart/channels/apt_deb.py:135 smart/channels/apt_rpm.py:133
+#: smart/channels/rpm_md.py:240 smart/channels/slack_site.py:110
+#, python-format
+msgid "Channel '%s' signed with unknown key"
+msgstr "A következő csatorna ismeretlen kulccsal lett titkosítva: '%s'"
+
+#: smart/channels/apt_deb.py:272
+#, python-format
+msgid "Component '%s' is not in Release file for channel '%s'"
+msgstr "A komponens '%s' nem található a(z) '%s' csatorna Release fájljában."
+
+#: smart/channels/apt_deb.py:290 smart/channels/apt_rpm.py:62
+#: smart/channels/apt_rpm.py:212 smart/channels/arch_site.py:78
+#: smart/channels/mirrors.py:58 smart/channels/red_carpet.py:64
+#: smart/channels/rpm_hdl.py:60 smart/channels/rpm_md.py:319
+#: smart/channels/slack_site.py:124 smart/channels/up2date_mirrors.py:61
+#: smart/channels/urpmi.py:185 smart/channels/urpmi.py:256
+#: smart/channels/yast2.py:53
+#, python-format
+msgid "Failed acquiring information for '%s':"
+msgstr "Nem sikerült információt begyűjteni a következő helyről: '%s'."
+
+#: smart/channels/apt_deb_info.py:26
+msgid "APT-DEB Repository"
+msgstr "APT-DEB csomagtár"
+
+#: smart/channels/apt_deb_info.py:28
+msgid ""
+"\n"
+"Repositories created for APT-DEB.\n"
+msgstr ""
+"\n"
+"APT-DEB csomagtár.\n"
+
+#: smart/channels/apt_deb_info.py:32 smart/channels/apt_rpm_info.py:32
+#: smart/channels/arch_site_info.py:34 smart/channels/rpm_md_info.py:32
+#: smart/channels/slack_site_info.py:32 smart/channels/urpmi_info.py:32
+#: smart/channels/yast2_info.py:32
+msgid "Base URL"
+msgstr "Kezdő URL"
+
+#: smart/channels/apt_deb_info.py:33
+msgid "Base URL of repository, where dists/ is located."
+msgstr "A csomagtár URL-je, ahol a dists/ található."
+
+#: smart/channels/apt_deb_info.py:34
+msgid "Distribution"
+msgstr "Disztribúció"
+
+#: smart/channels/apt_deb_info.py:35
+msgid "Distribution to use."
+msgstr "Felhasznált disztribúció."
+
+#: smart/channels/apt_deb_info.py:36 smart/channels/apt_rpm_info.py:34
+msgid "Components"
+msgstr "Komponensek"
+
+#: smart/channels/apt_deb_info.py:37 smart/channels/apt_rpm_info.py:35
+msgid "Space separated list of components."
+msgstr "A szóköz választja el a komponensek listáját."
+
+#: smart/channels/apt_deb_info.py:38 smart/channels/apt_rpm_info.py:36
+#: smart/channels/rpm_md_info.py:36 smart/channels/slack_site_info.py:36
+msgid "Fingerprint"
+msgstr "Ujjlenyomat"
+
+#: smart/channels/apt_deb_info.py:39 smart/channels/apt_rpm_info.py:37
+#: smart/channels/rpm_md_info.py:37 smart/channels/slack_site_info.py:37
+msgid "GPG fingerprint of key signing the channel."
+msgstr "A kulcs GFG ujjlenyomata írja alá a csatornát."
+
+#: smart/channels/apt_deb_info.py:40
+msgid "Keyring"
+msgstr ""
+
+#: smart/channels/apt_deb_info.py:41
+msgid ""
+"If provided, channel must necessarily be signed by a key in the GPG keyring "
+"at the given path."
+msgstr ""
+
+#: smart/channels/apt_deb_info.py:43
+msgid "Trustdb"
+msgstr ""
+
+#: smart/channels/apt_deb_info.py:44
+msgid ""
+"If provided, channel will be checked for a key in the GPG trust database at "
+"the given path."
+msgstr ""
+
+#: smart/channels/apt_rpm.py:102
+#, python-format
+msgid "Channel '%s' has fingerprint but is not signed"
+msgstr "A(z) '%s' csatorna ujjlenyomata nincs aláírva"
+
+#: smart/channels/apt_rpm.py:165
+#, python-format
+msgid "Component '%s' is not in release file for channel '%s'"
+msgstr "A(z) '%s' komponens nem biztosít fájlt a(z) '%s' csatornához"
+
+#: smart/channels/apt_rpm_info.py:26
+msgid "APT-RPM Repository"
+msgstr "APT-RPM csomagtár"
+
+#: smart/channels/apt_rpm_info.py:28
+msgid ""
+"\n"
+"Repositories created for APT-RPM.\n"
+msgstr ""
+"\n"
+"APT-RPM csomagtár.\n"
+
+#: smart/channels/apt_rpm_info.py:33
+msgid "Base URL of APT-RPM repository, where base/ is located."
+msgstr "Az APT-RPM csomagtár URL-je, ahol a base/ található."
+
+#: smart/channels/arch_dir.py:37 smart/channels/deb_dir.py:37
+#: smart/channels/rpm_dir.py:37 smart/channels/slack_dir.py:37
+#, python-format
+msgid "Channel '%s' has invalid directory: %s"
+msgstr "A(z) '%s' csatornának érvénytelen könyvtára van: %s"
+
+#: smart/channels/arch_dir.py:57 smart/channels/arch_sys.py:50
+#: smart/channels/deb_dir.py:57 smart/channels/deb_sys.py:55
+#: smart/channels/rpm_dir.py:57 smart/channels/rpm_sys.py:50
+#: smart/channels/slack_dir.py:57 smart/channels/slack_sys.py:48
+#, python-format
+msgid "%s channels cannot be removable"
+msgstr "ezek a csatornák nem távolíthatók el: %s"
+
+#: smart/channels/arch_dir_info.py:26
+#, fuzzy
+msgid "Archlinux Directory"
+msgstr "DEB könyvtár"
+
+#: smart/channels/arch_dir_info.py:28
+#, fuzzy
+msgid ""
+"\n"
+"Local directory with Archlinux packages.\n"
+msgstr ""
+"\n"
+"DEB csomagok helyi könyvtára.\n"
+
+#: smart/channels/arch_dir_info.py:32 smart/channels/deb_dir_info.py:32
+#: smart/channels/rpm_dir_info.py:32 smart/channels/slack_dir_info.py:32
+msgid "Directory Path"
+msgstr "Könyvtár elérési útvonal"
+
+#: smart/channels/arch_dir_info.py:33
+#, fuzzy
+msgid "Path of directory containing *.pkg.tar.gz packages."
+msgstr "DEB csomagokat tartalmazó könyvtár útvonala"
+
+#: smart/channels/arch_dir_info.py:34 smart/channels/deb_dir_info.py:34
+#: smart/channels/rpm_dir_info.py:34 smart/channels/slack_dir_info.py:34
+msgid "Recursive"
+msgstr "Rekurzív"
+
+#: smart/channels/arch_dir_info.py:35 smart/channels/deb_dir_info.py:35
+#: smart/channels/rpm_dir_info.py:35 smart/channels/slack_dir_info.py:35
+msgid "Search for files recursively."
+msgstr "Fájlok rekurzív keresése."
+
+#: smart/channels/arch_site.py:68 smart/channels/rpm_md.py:309
+#, python-format
+msgid ""
+"Failed to download. You must fetch channel information to acquire needed "
+"filelists.\n"
+"%s: %s"
+msgstr ""
+"A letöltés sikertelen. Be kell tölteni a csatornainformációt a szükséges "
+"fájllista letöltéséhez.\n"
+"%s: %s"
+
+#: smart/channels/arch_site_info.py:28
+#, fuzzy
+msgid "Archlinux Repository"
+msgstr "APT-DEB csomagtár"
+
+#: smart/channels/arch_site_info.py:30
+#, fuzzy
+msgid ""
+"\n"
+"Remote repository with archlinux packages.\n"
+msgstr ""
+"\n"
+"Távoli Slackware csomagtár.\n"
+
+#: smart/channels/arch_site_info.py:35
+#, fuzzy
+msgid "Base URL where *.db.tar.gz is located"
+msgstr "Kezdő URL, ahol a PACKAGES.TXT található"
+
+#: smart/channels/arch_site_info.py:36
+#, fuzzy
+msgid "Tree name"
+msgstr "_Fastruktúra"
+
+#: smart/channels/arch_site_info.py:37
+msgid "The name of the <tree>.db.tar.gz file"
+msgstr ""
+
+#: smart/channels/arch_sys_info.py:28
+#, fuzzy
+msgid "Archlinux Installed Packages"
+msgstr "Telepített csomagok:"
+
+#: smart/channels/arch_sys_info.py:30
+#, fuzzy
+msgid ""
+"\n"
+"Installed packages in a Archlinux system.\n"
+msgstr ""
+"\n"
+"Slackware-re telepített csomagok.\n"
+
+#: smart/channels/deb_dir_info.py:26
+msgid "DEB Directory"
+msgstr "DEB könyvtár"
+
+#: smart/channels/deb_dir_info.py:28
+msgid ""
+"\n"
+"Local directory with DEB packages.\n"
+msgstr ""
+"\n"
+"DEB csomagok helyi könyvtára.\n"
+
+#: smart/channels/deb_dir_info.py:33
+msgid "Path of directory containing DEB packages."
+msgstr "DEB csomagokat tartalmazó könyvtár útvonala"
+
+#: smart/channels/deb_sys_info.py:26
+msgid "DPKG Installed Packages"
+msgstr "DPKG telepített csomagok"
+
+#: smart/channels/deb_sys_info.py:28
+msgid ""
+"\n"
+"Installed packages from dpkg status.\n"
+msgstr ""
+"\n"
+"Dpkg állapotból telepített csomagok.\n"
+
+#: smart/channels/mirrors_info.py:26
+msgid "Mirror Information"
+msgstr "Másodlagos kiszolgáló információk"
+
+#: smart/channels/mirrors_info.py:28
+msgid ""
+"\n"
+"Mirror information file.\n"
+msgstr ""
+"\n"
+"Másodlagos kiszolgáló információs fájl.\n"
+
+#: smart/channels/mirrors_info.py:32 smart/channels/up2date_mirrors_info.py:32
+msgid "Mirror File URL"
+msgstr "Másodlagos kiszolgáló URL:"
+
+#: smart/channels/mirrors_info.py:33 smart/channels/up2date_mirrors_info.py:33
+msgid "URL for the mirror information file"
+msgstr "Másodlagos kiszolgálót tartalmazó fájl URL-je:"
+
+#: smart/channels/red_carpet_info.py:26
+msgid "Red Carpet Channel"
+msgstr "Red Carpet csatorna"
+
+#: smart/channels/red_carpet_info.py:28
+msgid ""
+"\n"
+"Channel for the Red Carpet package tool.\n"
+msgstr ""
+"\n"
+"Red Carpet csomagkezelő csatorna.\n"
+
+#: smart/channels/red_carpet_info.py:32 smart/channels/rpm_hdl_info.py:32
+msgid "Base URL for packages"
+msgstr "Csomagok kiinduló URL-je"
+
+#: smart/channels/red_carpet_info.py:33
+msgid "URL where packages are found"
+msgstr "URL, ahol a csomagok találhatók"
+
+#: smart/channels/red_carpet_info.py:34
+msgid "URL for packageinfo XML"
+msgstr "A csomagleíró XML URL-je"
+
+#: smart/channels/red_carpet_info.py:35
+msgid ""
+"URL for packageinfo.xml.gz including filename (option may be ommitted if "
+"file is named packageinfo.xml.gz and is inside the base url)"
+msgstr ""
+"Az packageinfo.xml.gz URL-je tartalmazza a fájlnevet is (amennyiben a "
+"fájlnév a packageinfo.xml.gz és ezt tartalmazza az alap URL, akkor ez "
+"figyelmen kívül marad)"
+
+#: smart/channels/rpm_dir_info.py:26
+msgid "RPM Directory"
+msgstr "RPM könyvtár"
+
+#: smart/channels/rpm_dir_info.py:28
+msgid ""
+"\n"
+"Local directory with RPM packages.\n"
+msgstr ""
+"\n"
+"RPM csomagok helyi könyvtára.\n"
+
+#: smart/channels/rpm_dir_info.py:33
+msgid "Path of directory containing RPM packages."
+msgstr "RPM csomagokat tartalmazó könyvtár."
+
+#: smart/channels/rpm_hdl_info.py:26
+msgid "RPM Header List"
+msgstr "RPM fejléclista"
+
+#: smart/channels/rpm_hdl_info.py:28
+msgid ""
+"\n"
+"Packages from an RPM Header List.\n"
+msgstr ""
+"\n"
+"Csomagok az RPM fejléclistából.\n"
+
+#: smart/channels/rpm_hdl_info.py:33
+msgid "Base URL where package files are found"
+msgstr "Csomagok kiinduló URL-je, ahol a csomagok találhatók"
+
+#: smart/channels/rpm_hdl_info.py:34 smart/channels/urpmi_info.py:37
+msgid "Header List URL"
+msgstr "Fejléclista URL"
+
+#: smart/channels/rpm_hdl_info.py:35
+msgid "URL for the header list"
+msgstr "URL, ahol a fejléclista található"
+
+#: smart/channels/rpm_md.py:85
+msgid "Could not load meta link. Continuing with base URL only."
+msgstr ""
+
+#: smart/channels/rpm_md.py:121 smart/channels/rpm_md.py:181
+#: smart/channels/urpmi.py:96
+msgid "Could not load mirror list. Continuing with base URL only."
+msgstr ""
+
+#: smart/channels/rpm_md.py:208
+#, python-format
+msgid "Failed acquiring release file for '%s':"
+msgstr "A(z) '%s' csatornához tartozó release fájl letöltése sikertelen."
+
+#: smart/channels/rpm_md.py:216
+#, fuzzy, python-format
+msgid "Download of repomd.xml.asc failed for secure channel '%s': %s"
+msgstr "A komponens '%s' nem található a(z) '%s' csatorna Release fájljában."
+
+#: smart/channels/rpm_md.py:251
+#, python-format
+msgid "Primary information not found in repository metadata for '%s'"
+msgstr ""
+"A csomagtár metaadatai között nem találhatók az elsődleges információk a(z) "
+"'%s' csatornához"
+
+#: smart/channels/rpm_md.py:303
+#, fuzzy, python-format
+msgid ""
+"Failed to download. You must fetch channel information to acquire needed "
+"update information.\n"
+"%s: %s"
+msgstr ""
+"A letöltés sikertelen. Be kell tölteni a csatornainformációt a szükséges "
+"fájllista letöltéséhez.\n"
+"%s: %s"
+
+#: smart/channels/rpm_md_info.py:26
+msgid "RPM MetaData"
+msgstr "RPM Metaadat"
+
+#: smart/channels/rpm_md_info.py:28
+msgid ""
+"\n"
+"Repository created with the rpm-metadata project.\n"
+msgstr ""
+"\n"
+"RPM Metaadat projekttel létrehozott csomagtár.\n"
+
+#: smart/channels/rpm_md_info.py:33
+msgid "URL where repodata/ subdirectory is found"
+msgstr "URL, ahol a repodata/ alkönyvtár található"
+
+#: smart/channels/rpm_md_info.py:34
+#, fuzzy
+msgid "Mirror list URL"
+msgstr "Másodlagos kiszolgáló URL:"
+
+#: smart/channels/rpm_md_info.py:35
+msgid "URL which provides list of mirrors for baseurl"
+msgstr ""
+
+#: smart/channels/rpm_sys_info.py:26
+msgid "RPM Installed Packages"
+msgstr "RPM telepített csomagok"
+
+#: smart/channels/rpm_sys_info.py:28
+msgid ""
+"\n"
+"Installed packages from the local RPM database.\n"
+msgstr ""
+"\n"
+"Telepített csomagok a helyi RPM adatbázisban.\n"
+
+#: smart/channels/slack_dir_info.py:26
+#, fuzzy
+msgid "Slackware Directory"
+msgstr "Slackware csomagtár"
+
+#: smart/channels/slack_dir_info.py:28
+#, fuzzy
+msgid ""
+"\n"
+"Local directory with Slackware packages.\n"
+msgstr ""
+"\n"
+"DEB csomagok helyi könyvtára.\n"
+
+#: smart/channels/slack_dir_info.py:33
+#, fuzzy
+msgid "Path of directory containing Slackware packages."
+msgstr "DEB csomagokat tartalmazó könyvtár útvonala"
+
+#: smart/channels/slack_site_info.py:26
+msgid "Slackware Repository"
+msgstr "Slackware csomagtár"
+
+#: smart/channels/slack_site_info.py:28
+msgid ""
+"\n"
+"Remote repository with slackware packages.\n"
+msgstr ""
+"\n"
+"Távoli Slackware csomagtár.\n"
+
+#: smart/channels/slack_site_info.py:33
+msgid "Base URL where PACKAGES.TXT is located"
+msgstr "Kezdő URL, ahol a PACKAGES.TXT található"
+
+#: smart/channels/slack_site_info.py:34
+#, fuzzy
+msgid "Compressed"
+msgstr "Komponensek"
+
+#: smart/channels/slack_site_info.py:35
+#, fuzzy
+msgid "Whether PACKAGES.TXT is gzip compressed"
+msgstr "Kezdő URL, ahol a PACKAGES.TXT található"
+
+#: smart/channels/slack_sys_info.py:26
+msgid "Slackware Installed Packages"
+msgstr "Telepített Slackware csomagok"
+
+#: smart/channels/slack_sys_info.py:28
+msgid ""
+"\n"
+"Installed packages in a slackware system.\n"
+msgstr ""
+"\n"
+"Slackware-re telepített csomagok.\n"
+
+#: smart/channels/up2date_mirrors_info.py:26
+msgid "Mirror Information (up2date format)"
+msgstr "Másodlagos kiszolgálók információja (up2date format)"
+
+#: smart/channels/up2date_mirrors_info.py:28
+msgid ""
+"\n"
+"Mirror information file, in up2date format.\n"
+msgstr ""
+"\n"
+"Másodlagos kiszolgáló információs fájl, up2date formátumban.\n"
+
+#: smart/channels/urpmi_info.py:26
+msgid "URPMI Repository"
+msgstr "URPMI csomagtár"
+
+#: smart/channels/urpmi_info.py:28
+msgid ""
+"\n"
+"Repository created for Mandriva's URPMI package manager.\n"
+msgstr ""
+"\n"
+"Mandriva URPMI csomagtár.\n"
+
+#: smart/channels/urpmi_info.py:33
+msgid ""
+"Base URL where packages or the 'list' file are found under. Using ' with "
+"<hdlurl>' pattern is also supported."
+msgstr ""
+"Az alap URL az, amely alatt a csomagok vagy a 'list' fájl található. A ' "
+"with <hdlurl>' minta is használható."
+
+#: smart/channels/urpmi_info.py:35
+#, fuzzy
+msgid "With directory"
+msgstr "DEB könyvtár"
+
+#: smart/channels/urpmi_info.py:36
+#, fuzzy
+msgid "Directory path for Base URL"
+msgstr "A következő könyvtár nem található: %s"
+
+#: smart/channels/urpmi_info.py:38
+msgid ""
+"URL for header list (hdlist or synthesis). If it's hdlist.cz inside the "
+"given base URL, may be left empty. URLs relative to the Base URL are "
+"supported"
+msgstr ""
+"A fejléclista (hdlist vagy synthesis) URL-je. Amennyiben a hdlist.cz "
+"tartalmazza a megadott alap URL-, akkor ez valószínűleg üres. Az alap URL-"
+"ekhez képesti relatív URL-ek használata támogatott."
+
+#: smart/channels/urpmi_info.py:41
+#, fuzzy
+msgid "Mirror List URL"
+msgstr "Másodlagos kiszolgáló URL:"
+
+#: smart/channels/urpmi_info.py:42
+#, fuzzy
+msgid "URL for mirror list)..."
+msgstr "URL, ahol a fejléclista található"
+
+#: smart/channels/urpmi_info.py:49
+msgid "Base URL has 'with', but Header List URL was provided"
+msgstr "Az alap URL tartalmaz 'with' részt, de a fejléc lista URL meg van adva"
+
+#: smart/channels/urpmi_info.py:53
+msgid "Base URL has invalid 'with' pattern"
+msgstr "Az alap URL érvénytelen 'with' mintát tartalmaz"
+
+#: smart/channels/yast2.py:132
+#, fuzzy, python-format
+msgid "Invalid package file header (%s)"
+msgstr "Érvénytelen csomagnév: %s"
+
+#: smart/channels/yast2_info.py:26
+msgid "YaST2 Repository"
+msgstr "YaST2 csomagtár"
+
+#: smart/channels/yast2_info.py:28
+msgid ""
+"\n"
+"Repositories created for YaST2.\n"
+msgstr ""
+"\n"
+"YaST2 csomagtár.\n"
+
+#: smart/channels/yast2_info.py:33
+msgid "Base URL of YaST2 repository, where the 'content' file is located."
+msgstr "A YaST2 csomagtár URL-je, ahol a tartalomfájl található."
+
+#: smart/channels/yast2_info.py:34
+msgid "Compressed SuSETags"
+msgstr ""
+
+#: smart/channels/yast2_info.py:35
+msgid "Use compressed SuSETags metadata."
+msgstr ""
+
+#: smart/commands/channel.py:32
+msgid "smart channel [options]"
+msgstr "smart channel [kapcsolók]"
+
+#: smart/commands/channel.py:34
+#, python-format
+msgid ""
+"\n"
+"This command allows one to manipulate channels. Channels are\n"
+"used as sources of information about installed and available\n"
+"packages. Depending on the channel type, a different backend\n"
+"is used to handle interactions with the operating system and\n"
+"extraction of information from the given channel.\n"
+"\n"
+"The following channel types are available:\n"
+"\n"
+"%(types)s\n"
+"\n"
+"Use --help-type <type> for more information.\n"
+msgstr ""
+"\n"
+"Ez a parancs lehetővé teszi egy vagy több csatorna módosítását.\n"
+"A csatornák a telepített és elérhető csomagokat tartalmazó információ "
+"forrásai.\n"
+"A csatorna típusától függően a különböző háttérfolyamatok kezelik a "
+"kommunikációt az operációs rendszer és a csatornából kiolvasott információ "
+"között.\n"
+"\n"
+"A következő csatornatípusok léteznek::\n"
+"\n"
+"%(types)s\n"
+"\n"
+"Használja a --help-type <típus> parancsot a további információhoz.\n"
+
+#: smart/commands/channel.py:48
+msgid ""
+"\n"
+"smart channel --help-type apt-rpm\n"
+"smart channel --add mydb type=rpm-sys name=\"RPM Database\"\n"
+"smart channel --add mychannel type=apt-rpm name=\"Some repository\" \\\n"
+"                  baseurl=http://somewhere.com/pub/repos components=extra\n"
+"smart channel --set mychannel priority=-100\n"
+"smart channel --disable mychannel\n"
+"smart channel --remove mychannel\n"
+"smart channel --show\n"
+"smart channel --show mychannel > mychannel.txt\n"
+"smart channel --add ./mychannel.txt\n"
+"smart channel --add http://some.url/mychannel.txt\n"
+"smart channel --add /mnt/cdrom\n"
+msgstr ""
+"\n"
+"smart channel --help-type apt-rpm\n"
+"smart channel --add adatbázis type=rpm-sys name=\"RPM adatbázis\"\n"
+"smart channel --add csatorna type=apt-rpm name=\"Néhány csomagtár\" \\\n"
+"                  baseurl=http://somewhere.com/pub/repos components=extra\n"
+"smart channel --set csatorna priority=-100\n"
+"smart channel --disable csatorna\n"
+"smart channel --remove csatorna\n"
+"smart channel --show\n"
+"smart channel --show csatorna > csatorna.txt\n"
+"smart channel --add ./mychannel.txt\n"
+"smart channel --add http://some.url/csatorna.txt\n"
+"smart channel --add /mnt/cdrom\n"
+
+#: smart/commands/channel.py:103
+msgid ""
+"argument is an alias and one or more key=value pairs defining a channel, or "
+"a filename/url pointing to a channel description in the same format used by "
+"--show, or a directory path where autodetection will be tried"
+msgstr ""
+"a paraméter egy elnevezés, amely egy vagy több key=pairs definiál egy "
+"csatornát, vagy egy fájl/url egy csatornaleírásra mutat, amely a --shpw "
+"parancsnak megfelelő formátumban van, vagy egy könyvtárútvonal, ahol "
+"automatikus felismerés végezhető"
+
+#: smart/commands/channel.py:110
+msgid ""
+"argument is an alias, and one or more key=value pairs modifying a channel"
+msgstr ""
+"a paraméter egy elnevezés és egy vagy több key=value módosítja a csatornát"
+
+#: smart/commands/channel.py:113
+msgid "arguments are channel aliases to be removed"
+msgstr "a paraméter eltávolítandó csatornalenevezés"
+
+#: smart/commands/channel.py:115
+msgid "remove all existent channels"
+msgstr "az összes létező csatorna eltávolítása"
+
+#: smart/commands/channel.py:117
+#, fuzzy
+msgid "list all known channel aliases"
+msgstr "megadott elnevezéssel rendelkező csatornák tiltása"
+
+#: smart/commands/channel.py:119
+msgid ""
+"show channels with given aliases, or all channels if no arguments were given"
+msgstr ""
+"a megadott elnevezésű csatorna megjelenítése, paraméter nélkül az összes "
+"csatorna megjelenítése"
+
+#: smart/commands/channel.py:122
+#, fuzzy
+msgid "show given channels in YAML format"
+msgstr "Csatornainformációk megadása"
+
+#: smart/commands/channel.py:124
+msgid "edit channels in editor set by $EDITOR"
+msgstr "csatorna szerkesztése a $EDITOR változóban beállított szerkesztővel"
+
+#: smart/commands/channel.py:126
+msgid "enable channels with given aliases"
+msgstr "a megadott elnevezésű csatornák engedélyezése"
+
+#: smart/commands/channel.py:128
+msgid "disable channels with given aliases"
+msgstr "megadott elnevezéssel rendelkező csatornák tiltása"
+
+#: smart/commands/channel.py:130
+msgid "execute without asking"
+msgstr "jóváhagyás nélküli futtatás"
+
+#: smart/commands/channel.py:132
+msgid "show further information about given type"
+msgstr "a megadott típussal kapcsolatos további információk megjelenítése"
+
+#: smart/commands/channel.py:145 smart/interfaces/gtk/channels.py:633
+#: smart/interfaces/qt/channels.py:569 smart/interfaces/qt4/channels.py:626
+msgid "Type:"
+msgstr "Típus:"
+
+#: smart/commands/channel.py:149
+msgid "Fields:"
+msgstr "Mezők:"
+
+#: smart/commands/channel.py:152
+msgid "(*) These fields are necessary for this type."
+msgstr "(*) Ezen mezők kitöltése szükséges ehhez a típushoz."
+
+#: smart/commands/channel.py:158
+#, fuzzy
+msgid "Can't edit channels information."
+msgstr "Csatornainformációk frissítése"
+
+#: smart/commands/channel.py:159 smart/sysconfig.py:66
+msgid "Configuration is in readonly mode."
+msgstr "A konfiguráció csak olvasható módban van."
+
+#: smart/commands/channel.py:186 smart/interfaces/gtk/channels.py:225
+#: smart/interfaces/qt/channels.py:205 smart/interfaces/qt4/channels.py:218
+#, python-format
+msgid "Unable to fetch channel description: %s"
+msgstr "A csatornainformáció bekérése sikertelen: %s"
+
+#: smart/commands/channel.py:202
+msgid "Channel has no alias"
+msgstr "A csatornának nincs elnevezése"
+
+#: smart/commands/channel.py:206 smart/commands/channel.py:268
+#, python-format
+msgid "Argument '%s' has no '='"
+msgstr "A(z) %s paraméterben nincs '='"
+
+#: smart/commands/channel.py:213
+msgid "Channel information needed"
+msgstr "Csatornainformáció szükséges"
+
+#: smart/commands/channel.py:225
+msgid "Include this channel?"
+msgstr "Hozzáadja a csatornát?"
+
+#: smart/commands/channel.py:235
+#, python-format
+msgid "Channel alias '%s' is already in use."
+msgstr "A megadott csatornaleírás már létezik: '%s'."
+
+#: smart/commands/channel.py:237
+msgid "Channel alias: "
+msgstr "Csatornaelnevezés: "
+
+#: smart/commands/channel.py:248
+msgid "Updating removable channels..."
+msgstr "Eltávolítható csatornák frissítése..."
+
+#: smart/commands/channel.py:256 smart/commands/flag.py:110
+#: smart/commands/priority.py:85 smart/commands/priority.py:99
+#: smart/interfaces/text/interactive.py:246
+msgid "Invalid arguments"
+msgstr "Érvénytelen paraméter"
+
+#: smart/commands/channel.py:260
+msgid "First argument must be the channel alias"
+msgstr "Az első paraméternek a csatorna elnevezésének kell lennie"
+
+#: smart/commands/channel.py:264
+#, python-format
+msgid "Channel with alias '%s' not found"
+msgstr "'%s' elnevezésű csatorna nem található"
+
+#: smart/commands/channel.py:272
+msgid "Can't change the channel type"
+msgstr "A csatorna típusa nem változtatható meg"
+
+#: smart/commands/channel.py:274
+msgid "Can't change the channel alias"
+msgstr "A csatorna elnevezése nem változtatható meg"
+
+#: smart/commands/channel.py:288
+#, python-format
+msgid "Remove channel '%s'?"
+msgstr "Eltávolítja a csatornát: '%s'?"
+
+#: smart/commands/channel.py:290 smart/commands/channel.py:300
+#: smart/commands/channel.py:307 smart/commands/channel.py:315
+#: smart/commands/channel.py:323 smart/commands/channel.py:337
+#, python-format
+msgid "Channel '%s' not found."
+msgstr "A következő csatorna nem található: '%s'"
+
+#: smart/commands/channel.py:294
+msgid "Remove ALL channels?"
+msgstr "Az összes csatornát eltávolítja?"
+
+#: smart/commands/channel.py:370 smart/commands/channel.py:383
+#: smart/commands/mirror.py:254 smart/interfaces/text/interface.py:138
+msgid "Continue?"
+msgstr "Folytatja?"
+
+#: smart/commands/channel.py:380
+#, python-format
+msgid "Error in '%s' channel: %s"
+msgstr "Hiba a következő helyen: '%s', csatorna: %s"
+
+#: smart/commands/check.py:29
+msgid "smart check [options] [package] ..."
+msgstr "smart check [kapcsolók] [csomag] ..."
+
+#: smart/commands/check.py:31
+msgid ""
+"\n"
+"This command will check relations between packages. If no\n"
+"packages are explicitly given, all packages in the selected\n"
+"channels will be checked. Relations of the checked packages\n"
+"will only match packages inside the selected channels.\n"
+"\n"
+"Use the 'fix' command to fix broken relations of\n"
+"installed packages.\n"
+msgstr ""
+"\n"
+"Ez a parancs lehetővé teszi két csomag közötti kapcsolat\n"
+"ellenőrzését. Amennyiben nincs csomag megadva,\n"
+"a megadott csatorna minden csomagja kiválasztásra kerül.\n"
+"A kiválasztott csomagok kapcsolatát kizárólag a kiválasztott\n"
+"csatornán belül ellenőrzi.\n"
+"\n"
+"Használja a fix parancsot, ha sérült kapcsolatot talál\n"
+"a telepített csomagok között.\n"
+
+#: smart/commands/check.py:41
+msgid ""
+"\n"
+"smart check\n"
+"smart check pkgname\n"
+"smart check '*kgna*'\n"
+"smart check pkgname-1.0\n"
+"smart check pkgname-1.0-1\n"
+"smart check pkgname1 pkgname2\n"
+msgstr ""
+"\n"
+"smart check\n"
+"smart check csomagnév\n"
+"smart check '*omag*'\n"
+"smart check csomagnév-1.0\n"
+"smart check csomagnév-1.0-1\n"
+"smart check csomagnév1 csomagnév2\n"
+
+#: smart/commands/check.py:55
+msgid "check packages in all channels"
+msgstr "csomagok ellenőrzése az össze csatornában"
+
+#: smart/commands/check.py:57
+msgid "check packages which are in at least one installed channel (default)"
+msgstr ""
+"csomagok ellenőrzése, amelyek legalább egy telepített csatornában "
+"szerepelnek (alapértelmezett)"
+
+#: smart/commands/check.py:60
+msgid "check packages which are in at least one non-installed channel"
+msgstr ""
+"csomagok ellenőrzése, amelyek legalább egy nem telepített csatornában "
+"szerepelnek"
+
+#: smart/commands/check.py:63
+msgid ""
+"check packages which are inside the given channels (comma separated aliases)"
+msgstr ""
+"megadott csatornában szereplő csomagok ellenőrzése (elnevezések vesszővel "
+"elválasztva)"
+
+#: smart/commands/check.py:110
+#, python-format
+msgid "Channels not found: %s"
+msgstr "A következő csatornák nem találhatók: %s"
+
+#: smart/commands/check.py:112
+#, python-format
+msgid "Channels are disabled: %s"
+msgstr "Letiltott csatornák: %s"
+
+#: smart/commands/check.py:138 smart/commands/download.py:106
+#: smart/commands/fix.py:98 smart/commands/info.py:84
+#: smart/commands/install.py:128 smart/commands/query.py:175
+#: smart/commands/reinstall.py:101 smart/commands/remove.py:113
+#: smart/commands/upgrade.py:135 smart/interfaces/text/interactive.py:155
+#: smart/interfaces/text/interactive.py:586
+#, python-format
+msgid ""
+"'%s' matches no packages. Suggestions:\n"
+"%s"
+msgstr ""
+"'%s' csomag nem található. Javaslat:\n"
+"%s"
+
+#: smart/commands/check.py:142 smart/commands/download.py:110
+#: smart/commands/fix.py:102 smart/commands/info.py:88
+#: smart/commands/install.py:132 smart/commands/query.py:179
+#: smart/commands/reinstall.py:105 smart/commands/remove.py:117
+#: smart/commands/upgrade.py:139 smart/interfaces/text/interactive.py:159
+#: smart/interfaces/text/interactive.py:591
+#, python-format
+msgid "'%s' matches no packages"
+msgstr "'%s' csomag nem található"
+
+#: smart/commands/clean.py:27
+msgid "smart clean [options]"
+msgstr "smart clean [kapcsolók]"
+
+#: smart/commands/clean.py:29
+msgid ""
+"\n"
+"This command cleans the package cache. You can use it to\n"
+"delete old unused files that were left behind because of\n"
+"an incomplete transaction.\n"
+msgstr ""
+"\n"
+"Ez a parancs kiüríti a csomagokat tartalmazó gyorsítótárat.\n"
+"Ez régi fájlok törlésére alkalmas, amelyek nem befejezett\n"
+"tranzakciók hagytak hátra.\n"
+
+#: smart/commands/clean.py:39
+#, fuzzy
+msgid "remove packages not in other channels"
+msgstr "csak a telepített csomagok figyelembe vétele"
+
+#: smart/commands/clean.py:53 smart/interfaces/gtk/channels.py:268
+#: smart/interfaces/qt/channels.py:238 smart/interfaces/qt4/channels.py:251
+#, python-format
+msgid "Directory not found: %s"
+msgstr "A következő könyvtár nem található: %s"
+
+#: smart/commands/clean.py:55
+msgid "Removing cached package files..."
+msgstr "Gyorsítótárban lévő csomagfájlok eltávolítása..."
+
+#: smart/commands/clean.py:76
+#, python-format
+msgid "Removed %s"
+msgstr "Eltávolításra került: %s"
+
+#: smart/commands/clean.py:78
+#, python-format
+msgid "Can't remove cached package %s: %s"
+msgstr "A gyorsítótárban lévő %s csomag nem távolítható el: %s"
+
+#: smart/commands/config.py:28
+msgid "smart config [options]"
+msgstr "smart config [kapcsolók]"
+
+#: smart/commands/config.py:30
+msgid ""
+"\n"
+"This command allows changing the internal configuration\n"
+"representation arbitrarily. This is supposed to be used\n"
+"by advanced users only, and is generally not needed.\n"
+msgstr ""
+"\n"
+"Ez a parancs lehetővé teszi a belső beállítások önkényes\n"
+"megváltoztatását. Ennek használata csak gyakorlott\n"
+"felhasználóknak javasolt és általában nem szükséges.\n"
+
+#: smart/commands/config.py:36
+msgid ""
+"\n"
+"smart config --set someoption.suboption=10\n"
+"smart config --remove someoption\n"
+"smart config --show someoption\n"
+"smart config --show\n"
+msgstr ""
+"\n"
+"smart config --set kapcsolók.kapcsolók=10\n"
+"smart config --remove someoption\n"
+"smart config --show someoption\n"
+"smart config --show\n"
+
+#: smart/commands/config.py:52
+msgid "set given key=value options"
+msgstr "a megadott key=value beállítása"
+
+#: smart/commands/config.py:54
+msgid "show given options"
+msgstr "beállítások megjelenítése"
+
+#: smart/commands/config.py:56
+#, fuzzy
+msgid "show given options in YAML format"
+msgstr "beállítások megjelenítése"
+
+#: smart/commands/config.py:58
+msgid "remove given options"
+msgstr "megadott beállítások eltávolítása"
+
+#: smart/commands/config.py:60 smart/commands/flag.py:89
+#: smart/commands/priority.py:67
+msgid "ignore problems"
+msgstr "problémák figyelmen kívül hagyása"
+
+#: smart/commands/config.py:87
+#, python-format
+msgid "Invalid --set argument: %s"
+msgstr "Érvénytelen paraméter a -set parancshoz: %s"
+
+#: smart/commands/config.py:105
+#, python-format
+msgid "Invalid --remove argument: %s"
+msgstr "Érvénytelen paraméter a -remove parancshoz: %s"
+
+#: smart/commands/config.py:119 smart/commands/config.py:127
+#: smart/commands/config.py:140
+#, python-format
+msgid "Option '%s' not found."
+msgstr "A következő kapcsoló nem található: '%s'."
+
+#: smart/commands/download.py:31
+msgid "smart download [options] package ..."
+msgstr "smart download [kapcsolók] csomag ..."
+
+#: smart/commands/download.py:33
+msgid ""
+"\n"
+"This command allows downloading one or more given packages.\n"
+msgstr ""
+"\n"
+"Ez a csomag lehetővé teszi egy vagy több megadott csomag telepítését.\n"
+
+#: smart/commands/download.py:37
+#, fuzzy
+msgid ""
+"\n"
+"smart download pkgname\n"
+"smart download '*kgna*'\n"
+"smart download pkgname-1.0\n"
+"smart download pkgname-1.0-1\n"
+"smart download pkgname1 pkgname2\n"
+"smart download pkgname --urls 2> pkgname-url.txt\n"
+"smart download pkgname --metalink 2> pkgname.metalink\n"
+"smart download --from-urls pkgname-url.txt\n"
+"smart download --from-urls http://some.url/some/path/somefile\n"
+"smart download --from-metalink pkgname.metalink\n"
+msgstr ""
+"\n"
+"smart download csomagnév\n"
+"smart download '*omag*'\n"
+"smart download csomagnév-1.0\n"
+"smart download csomagnév-1.0-1\n"
+"smart download csomagnév1 csomagnév2\n"
+"smart download csomagnév --urls 2> csomagnév-url.txt\n"
+"smart download --from-urls csomagnév-url.txt\n"
+"smart download --from-urls http://some.url/some/path/somefile\n"
+
+#: smart/commands/download.py:58
+msgid "packages will be saved in given directory"
+msgstr "a csomagok a megadott könyvtárba kerülnek."
+
+#: smart/commands/download.py:60
+msgid "pack all downloaded packages in a tarball"
+msgstr ""
+
+#: smart/commands/download.py:62
+#, fuzzy
+msgid "redirect tarball output to given filename"
+msgstr "a kimenet átirányítása a megadott fájlba"
+
+#: smart/commands/download.py:64
+msgid "dump needed urls and don't download packages"
+msgstr "szükséges URL-ek kiolvasása és a letöltés kihagyása"
+
+#: smart/commands/download.py:66
+#, fuzzy
+msgid "dump metalink xml and don't download packages"
+msgstr "szükséges URL-ek kiolvasása és a letöltés kihagyása"
+
+#: smart/commands/download.py:68
+msgid ""
+"download files from the given urls and/or from the given files with lists of "
+"urls"
+msgstr ""
+"fájlok letöltése a megadott url-ről és/vagy url listát tartalmazó fájl "
+"megadása"
+
+#: smart/commands/download.py:71
+#, fuzzy
+msgid "download files from the given metalink file"
+msgstr ""
+"fájlok letöltése a megadott url-ről és/vagy url listát tartalmazó fájl "
+"megadása"
+
+#: smart/commands/download.py:79
+msgid "Directory not found:"
+msgstr "A könyvtár nem található:"
+
+#: smart/commands/download.py:124 smart/commands/install.py:146
+#, python-format
+msgid "%s (for %s) is already installed"
+msgstr "A(z) %s (%s számára) már telepítve van"
+
+#: smart/commands/download.py:137 smart/commands/install.py:166
+#, python-format
+msgid ""
+"There are multiple matches for '%s':\n"
+"%s"
+msgstr ""
+"A(z) '%s' keresés több találatot adott vissza :\n"
+"%s"
+
+#: smart/commands/download.py:169 smart/commands/download.py:178
+msgid "Metalink"
+msgstr ""
+
+#: smart/commands/download.py:173
+#, python-format
+msgid "Argument is not a file nor url: %s"
+msgstr "A paraméter nem fájl vagy url: %s"
+
+#: smart/commands/download.py:175 smart/interfaces/gtk/packageinfo.py:280
+#: smart/interfaces/qt/packageinfo.py:141
+#: smart/interfaces/qt4/packageinfo.py:156
+msgid "URLs"
+msgstr "URL-ek"
+
+#: smart/commands/fix.py:29
+msgid "smart fix [options] [package] ..."
+msgstr "smart fix [kapcsolók] [csomag] ..."
+
+#: smart/commands/fix.py:31
+msgid ""
+"\n"
+"This command will try to fix dependencies of installed packages\n"
+"which are related to the given packages. Notice that the given\n"
+"packages may be currently installed or not. If no packages are\n"
+"given, all installed packages will be checked.\n"
+msgstr ""
+"\n"
+"Ez a parancs megpróbálja a telepített csomagok függőségi\n"
+"problémáit kijavítani, amelyek az adott csomagokkal kapcsolatosak.\n"
+"Vegye figyelembe, hogy a megadott csomagok lehetnek telepítve,\n"
+"vagy nem. Amennyiben nincs csomagnév megadva,\n"
+"az összes telepített csomag ellenőrzésre kerül.\n"
+
+#: smart/commands/fix.py:38
+msgid ""
+"\n"
+"smart fix\n"
+"smart fix pkgname\n"
+"smart fix '*kgna*'\n"
+"smart fix pkgname-1.0\n"
+"smart fix pkgname-1.0-1\n"
+"smart fix pkgname1 pkgname2\n"
+msgstr ""
+"\n"
+"smart fix\n"
+"smart fix csomagnév\n"
+"smart fix '*omag*'\n"
+"smart fix csomagnév-1.0\n"
+"smart fix csomagnév-1.0-1\n"
+"smart fix csomagnév1 csomagnév2\n"
+
+#: smart/commands/fix.py:52 smart/commands/install.py:54
+#: smart/commands/reinstall.py:50 smart/commands/remove.py:49
+#: smart/commands/upgrade.py:59
+msgid "split operation in steps"
+msgstr "külön műveletek lépésenként"
+
+#: smart/commands/fix.py:54 smart/commands/install.py:56
+#: smart/commands/reinstall.py:52 smart/commands/remove.py:51
+#: smart/commands/upgrade.py:61
+msgid "dump needed urls and don't commit operation"
+msgstr "szükséges URL-ek kiolvasása és a véglegesítés kihagyása"
+
+#: smart/commands/fix.py:56 smart/commands/install.py:58
+#: smart/commands/reinstall.py:54 smart/commands/remove.py:53
+#: smart/commands/upgrade.py:63
+#, fuzzy
+msgid "dump metalink xml and don't commit operation"
+msgstr "szükséges URL-ek kiolvasása és a véglegesítés kihagyása"
+
+#: smart/commands/fix.py:58 smart/commands/install.py:60
+#: smart/commands/reinstall.py:56 smart/commands/remove.py:55
+#: smart/commands/upgrade.py:65
+msgid "download packages and don't commit operation"
+msgstr "csomagok letöltése és a műveletek el nem indítása"
+
+#: smart/commands/fix.py:60 smart/commands/install.py:62
+#: smart/commands/reinstall.py:58 smart/commands/remove.py:57
+#: smart/commands/upgrade.py:75
+msgid "include additional information about changes,when possible"
+msgstr "a csatornával kapcsolatos további információk hozzáadása"
+
+#: smart/commands/fix.py:63 smart/commands/install.py:65
+#: smart/commands/reinstall.py:61 smart/commands/remove.py:60
+#: smart/commands/upgrade.py:80
+msgid "do not ask for confirmation"
+msgstr "ne kérjen jóváhagyást"
+
+#: smart/commands/fix.py:116 smart/commands/install.py:182
+#: smart/commands/reinstall.py:132 smart/commands/remove.py:140
+#: smart/commands/upgrade.py:164
+msgid "Computing transaction..."
+msgstr "Tranzakció feldolgozása..."
+
+#: smart/commands/fix.py:119 smart/interfaces/text/interactive.py:484
+msgid "No problems to resolve!"
+msgstr "Nincs megoldandó probléma!"
+
+#: smart/commands/flag.py:27
+msgid "smart flag [options]"
+msgstr "smart flag [kapcsolók]"
+
+#: smart/commands/flag.py:29
+#, fuzzy
+msgid ""
+"\n"
+"This command allows one to set, remove, and show package flags.\n"
+"Package flags are used to tune the behavior of some algorithms\n"
+"when dealing with the given packages.\n"
+"\n"
+"Currently known flags are:\n"
+"\n"
+"  lock          - Flagged packages will not be removed, if they\n"
+"                  are currently installed, nor installed, if they\n"
+"                  are currently available.\n"
+"  new           - Flagged packages were considered new packages\n"
+"                  in the repository when the last update was done.\n"
+"                  This flag is automatically manipulated by the\n"
+"                  system.\n"
+"  auto          - Flagged packages were automatically installed\n"
+"                  to satisfy dependencies.\n"
+"                  This flag is automatically manipulated by the\n"
+"                  system.\n"
+"  multi-version - Flagged packages may have more than one version\n"
+"                  installed in the system at the same time\n"
+"                  (backend dependent).\n"
+"\n"
+"  security      - Flagged packages are updates for security errata.\n"
+"  bugfix        - Flagged packages are updates for bugfix errata.\n"
+"  enhancement   - Flagged packages are updates for enhancement errata.\n"
+msgstr ""
+"\n"
+"Ez a parancs lehetővé teszi a csomagok jelzőinek beállítását és "
+"eltávolítását.\n"
+"A csomagjelzők segítségével lehet állítani egyes algoritmusok viselkedését\n"
+"a csomagok kezelésével kapcsolatban.\n"
+"\n"
+"Jelenleg ismert jelzők:\n"
+"\n"
+"  lock          - Olyan csomagokat jelölnek, amelyek nem távolíthatóak el,\n"
+"                  ha már telepítve vannak, vagy nem telepíthetők ha már\n"
+"                  telepítve vannak.\n"
+"  new           - Olyan csomagokat jelölnek, amelyek az utolsó frissítést "
+"követően kerültek a csomagtárba.\n"
+"                  új telepítések.\n"
+"                  Ezt automatikusan állítja a rendszer\n"
+"  multi-version - Olyan csomagokat jelölnek, amelyek egyszerre több verziót\n"
+"                  telepítenek a rendszerre.\n"
+"                  (háttérfüggő).\n"
+
+#: smart/commands/flag.py:56
+msgid ""
+"\n"
+"smart flag --show\n"
+"smart flag --show new\n"
+"smart flag --set lock pkgname\n"
+"smart flag --remove lock pkgname\n"
+"smart flag --set lock 'pkgname >= 1.0'\n"
+"smart flag --remove lock 'pkgname >= 1.0'\n"
+msgstr ""
+"\n"
+"smart flag --show\n"
+"smart flag --show new\n"
+"smart flag --set lock csomagnév\n"
+"smart flag --remove lock csomagnév\n"
+"smart flag --set lock 'csomagnév >= 1.0'\n"
+"smart flag --remove lock 'csomagnév >= 1.0'\n"
+
+#: smart/commands/flag.py:74
+msgid ""
+"set flags given in pairs of flag name/target, where targets may use just the "
+"package name, or the package name, relation, and version, such as: lock "
+"'python > 1.0'"
+msgstr ""
+"jelzők beállítása név/cél párokra, ahol a cél csak a csomagnevet tartalmazza "
+"vagy csomagnevet, relációt és verziót, mint pl. 'python > 1.0'"
+
+#: smart/commands/flag.py:79
+msgid ""
+"remove flags given in pairs of flag name/target, where targets may use just "
+"the package name, or the package name, relation, and version, such as: lock "
+"'python > 1.0'"
+msgstr ""
+"jelzők eltávolítása név/cél párokról, ahol a cél csak a csomagnevet "
+"tartalmazza vagy csomagnevet, relációt és verziót, mint pl. 'python > 1.0'"
+
+#: smart/commands/flag.py:84
+msgid ""
+"show packages with the flags given as arguments or all flags if no argument "
+"was given"
+msgstr ""
+"azon csomagok megjelenítése, amelyek a megadott jelzővel vannak ellátva vagy "
+"az összes jelző, ha nincs megadva paraméter"
+
+#: smart/commands/flag.py:87
+msgid "show given flags in YAML format"
+msgstr ""
+
+#: smart/commands/flag.py:115
+#, python-format
+msgid "Invalid target: %s"
+msgstr "Érvénytelen cél: %s"
+
+#: smart/commands/info.py:29
+msgid "smart info [options] [package] ..."
+msgstr "smart info [kapcsolók] [csomag] ..."
+
+#: smart/commands/info.py:31
+msgid ""
+"\n"
+"This command will show information about the given packages.\n"
+msgstr ""
+"\n"
+"Ez a parancs megjeleníti a csomaginformációt.\n"
+
+#: smart/commands/info.py:35
+msgid ""
+"\n"
+"smart info pkgname\n"
+"smart info pkgname-1.0\n"
+"smart info pkgname --urls --paths\n"
+msgstr ""
+"\n"
+"smart info csomagnév\n"
+"smart info csomagnév-1.0\n"
+"smart info csomagnév --url-ek --elérési utak\n"
+
+#: smart/commands/info.py:46
+msgid "show URLs"
+msgstr "URL-ek megjelenítése"
+
+#: smart/commands/info.py:48
+msgid "show path list"
+msgstr "útvonallista megjelenítése"
+
+#: smart/commands/info.py:50
+#, fuzzy
+msgid "show change log"
+msgstr "a csomagok prioritásának megjelenítése"
+
+#: smart/commands/info.py:116 smart/interfaces/gtk/flags.py:314
+#: smart/interfaces/qt/flags.py:272 smart/interfaces/qt4/flags.py:303
+msgid "Name:"
+msgstr "Név:"
+
+#: smart/commands/info.py:117
+msgid "Version:"
+msgstr "Verzió:"
+
+#: smart/commands/info.py:118 smart/interfaces/gtk/packageinfo.py:87
+#: smart/interfaces/gtk/priorities.py:242
+#: smart/interfaces/qt/packageinfo.py:68 smart/interfaces/qt/priorities.py:220
+#: smart/interfaces/qt4/packageinfo.py:70
+#: smart/interfaces/qt4/priorities.py:236
+msgid "Priority:"
+msgstr "Prioritás:"
+
+#: smart/commands/info.py:119
+msgid "Source:"
+msgstr ""
+
+#: smart/commands/info.py:120 smart/interfaces/gtk/packageinfo.py:88
+#: smart/interfaces/qt/packageinfo.py:69
+#: smart/interfaces/qt4/packageinfo.py:71
+msgid "Group:"
+msgstr "Csoport:"
+
+#: smart/commands/info.py:121
+msgid "License:"
+msgstr ""
+
+#: smart/commands/info.py:122 smart/interfaces/gtk/packageinfo.py:89
+#: smart/interfaces/qt/packageinfo.py:70
+#: smart/interfaces/qt4/packageinfo.py:72
+msgid "Installed Size:"
+msgstr "Telepített méret:"
+
+#: smart/commands/info.py:123 smart/interfaces/gtk/packageinfo.py:91
+#: smart/interfaces/qt/packageinfo.py:72
+#: smart/interfaces/qt4/packageinfo.py:74
+msgid "Reference URLs:"
+msgstr "URL hivatkozások:"
+
+#: smart/commands/info.py:132
+msgid "Flags:"
+msgstr "Jelölések:"
+
+#: smart/commands/info.py:134 smart/interfaces/gtk/packageinfo.py:90
+#: smart/interfaces/qt/packageinfo.py:71
+#: smart/interfaces/qt4/packageinfo.py:73
+msgid "Channels:"
+msgstr "Csatornák:"
+
+#: smart/commands/info.py:139
+msgid "Summary:"
+msgstr "Összegzés:"
+
+#: smart/commands/info.py:140
+msgid "Description:"
+msgstr "Leírás:"
+
+#: smart/commands/info.py:148
+msgid "URLs:"
+msgstr "URL-ek:"
+
+#: smart/commands/info.py:172
+msgid "Paths:"
+msgstr "Elérési útvonalak:"
+
+#: smart/commands/info.py:179
+#, fuzzy
+msgid "Changelog:"
+msgstr "Csatornák:"
+
+#: smart/commands/install.py:31
+msgid "smart install [options] package ..."
+msgstr "smart install [kapcsolók] csomag ..."
+
+#: smart/commands/install.py:33
+msgid ""
+"\n"
+"This command will install one or more packages in the\n"
+"system. If a new version of an already installed package\n"
+"is available, it will be selected for installation.\n"
+msgstr ""
+"\n"
+"Ennek a parancsnak a segítségével a rendszerre egy vagy több\n"
+"csomag telepíthető, amennyiben egy már telepített csomag\n"
+"új verziója elérhető, akkor az kiválasztásra kerül a telepítéshez.\n"
+
+#: smart/commands/install.py:39
+msgid ""
+"\n"
+"smart install pkgname\n"
+"smart install '*kgna*'\n"
+"smart install pkgname-1.0\n"
+"smart install pkgname-1.0-1\n"
+"smart install pkgname1 pkgname2\n"
+"smart install ./somepackage.file\n"
+"smart install http://some.url/some/path/somepackage.file\n"
+msgstr ""
+"\n"
+"smart install csomagnév\n"
+"smart install '*omag*'\n"
+"smart install csomagnév-1.0\n"
+"smart install csomagnév-1.0-1\n"
+"smart install csomagnév1 csomagnév2\n"
+"smart install ./somepackage.file\n"
+"smart install http://some.url/some/path/somepackage.file\n"
+
+#: smart/commands/install.py:67 smart/commands/remove.py:65
+#: smart/commands/upgrade.py:82
+msgid "dump package names and versions to stderr but don't commit operation"
+msgstr ""
+"csomagnevek és verziók betöltése a stderr-be, de nem hajtja végre a műveletet"
+
+#: smart/commands/install.py:91 smart/control.py:840
+msgid "packages"
+msgstr "csomagok"
+
+#: smart/commands/install.py:94 smart/control.py:844
+msgid "Failed to download packages:\n"
+msgstr "A következő csomagok letöltése sikertelen:\n"
+
+#: smart/commands/install.py:112 smart/commands/install.py:178
+#: smart/interfaces/text/interactive.py:281
+#, python-format
+msgid "%s is already installed"
+msgstr "a(z) %s csomag már telepítve van"
+
+#: smart/commands/mirror.py:30
+msgid "smart mirror [options]"
+msgstr "smart mirror [kapcsolók]"
+
+#: smart/commands/mirror.py:32
+msgid ""
+"\n"
+"This command allows one to manipulate mirrors. Mirrors are URLs\n"
+"that supposedly provide the same contents as are available in\n"
+"other URLs, named origins in this help text. There is no internal\n"
+"restriction on the kind of information which is mirrored. Once\n"
+"an origin URL is provided, and one or more mirror URLs are\n"
+"provided, these mirrors will be considered for any file which\n"
+"is going to be fetched from an URL starting with the origin URL.\n"
+"Whether the mirror will be chosen or not will depend on the\n"
+"history of downloads from this mirror and from other mirrors for\n"
+"the same URL, since mirrors are automatically balanced so that\n"
+"the fastest mirror and with less errors is chosen. When errors\n"
+"occur, the next mirror is tried.\n"
+"\n"
+"For instance, if a mirror \"http://mirror.url/path/\" is provided\n"
+"for the origin \"ftp://origin.url/other/path/\", and a file in\n"
+"\"ftp://origin.url/other/path/subpath/somefile\" is going to be\n"
+"fetched, the mirror will be considered for being used, and the\n"
+"URL \"http://mirror.url/path/subpath/somefile\" will be used if\n"
+"the mirror is chosen. Notice that strings are compared and\n"
+"replaced without any pre-processing, so that it's possible to\n"
+"use URLs ending in prefixes of directory entries.\n"
+msgstr ""
+"\n"
+"Ez a parancs lehetővé teszi többfajta másodlagos (mirror) kiszolgáló\n"
+"módosítását. A másodlagos kiszolgálók olyan URL-ek, amelyek\n"
+"ugyanazon információt tartalmazzák, mint más (elsődleges) URL-ek.\n"
+"Nincs semmilyen korlátozás arra vonatkozóan hogy milyen\n"
+"adatok jelenhetnek meg másodlagos kiszolgálón. Amikor\n"
+"van egy elsődleges kiszolgáló és létezik egy vagy több\n"
+"másodlagos, akkor ezek a másodlagos kiszolgálók ugyanazzal\n"
+" az információval rendelkeznek, mint az elsődleges kiszolgálók.\n"
+"A kiszolgáló kiválasztásra, nem függ az eddigi letöltések előzményeitől,\n"
+"mivel a másodlagos kiszolgálók kiosztása egyenletesen\n"
+"elosztottan történik a sebesség és az előforduló hibák számának\n"
+"megfelelően. Hiba esetén automatikusan a következő \n"
+"másodlagos kiszolgálóval próbálja meg felvenni a kapcsolatot.\n"
+
+#: smart/commands/mirror.py:56
+msgid ""
+"\n"
+"smart mirror --show\n"
+"smart mirror --add ftp://origin.url/some/path/ http://mirror.url/path/\n"
+"smart mirror --remove ftp://origin.url/some/path/ http://mirror.url/path/\n"
+"smart mirror --add http://some.url/path/to/mirrors.txt\n"
+"smart mirror --sync http://some.url/path/to/mirrors.txt\n"
+"smart mirror --clear-history ftp://origin.url/some/path/\n"
+"smart mirror --clear-history ftp://mirror.url/path/\n"
+"smart mirror --clear-history\n"
+msgstr ""
+"\n"
+"smart mirror --show\n"
+"smart mirror --add ftp://origin.url/some/path/ http://mirror.url/path/\n"
+"smart mirror --remove ftp://origin.url/some/path/ http://mirror.url/path/\n"
+"smart mirror --add http://some.url/path/to/mirrors.txt\n"
+"smart mirror --sync http://some.url/path/to/mirrors.txt\n"
+"smart mirror --clear-history ftp://origin.url/some/path/\n"
+"smart mirror --clear-history ftp://mirror.url/path/\n"
+"smart mirror --clear-history\n"
+
+#: smart/commands/mirror.py:67
+msgid ""
+"#\n"
+"# Example:\n"
+"#\n"
+"# http://origin.url/some/path/\n"
+"#     http://mirror.url/another/path/\n"
+"#     http://some.mirror.url/to/the/same/content/\n"
+"#\n"
+"# http://another.origin.url/another/path/\n"
+"#     http://another.mirror.url/yet/another/path/\n"
+"#\n"
+msgstr ""
+"#\n"
+"# Például:\n"
+"#\n"
+"# http://origin.url/some/path/\n"
+"#     http://mirror.url/another/path/\n"
+"#     http://some.mirror.url/to/the/same/content/\n"
+"#\n"
+"# http://another.origin.url/another/path/\n"
+"#     http://another.mirror.url/yet/another/path/\n"
+"#\n"
+
+#: smart/commands/mirror.py:89
+msgid "show current mirrors"
+msgstr "másodlagos szolgáltatók megjelenítése"
+
+#: smart/commands/mirror.py:91
+#, fuzzy
+msgid "show current mirrors in YAML format"
+msgstr "másodlagos szolgáltatók megjelenítése"
+
+#: smart/commands/mirror.py:93
+msgid ""
+"add to the given origin URL the given mirror URL, provided either in pairs, "
+"or in a given file/url in the format used by --show"
+msgstr ""
+"az elsődleges és a másodlagos URl párban történő megadása, vagy a megadott "
+"fájl/URL a --show kapcsoló által használt formában"
+
+#: smart/commands/mirror.py:97
+msgid ""
+"remove from the given origin URL the given mirror URL, provided either in "
+"pairs, or in a given file/url in the format used by --show"
+msgstr ""
+"az elsődleges és a másodlagos URl párban történő törlése, vagy a megadott "
+"fájl/URL a --show kapcsoló által használt formában"
+
+#: smart/commands/mirror.py:101
+msgid "remove all mirrors for the given origin URLs"
+msgstr ""
+"a megadott elsődleges csatornához tartozó összes másodlagos URL eltávolítása"
+
+#: smart/commands/mirror.py:103
+msgid ""
+"synchronize mirrors from the given file/url, so that origins in the given "
+"file will have exactly the specified mirrors"
+msgstr ""
+"másodlagos kiszolgálók szinkronizálása a megadott fájl/URL-ből, tehát a "
+"megadott fájlban a pontosan megadott másodlagos kiszolgálók találhatók"
+
+#: smart/commands/mirror.py:107
+msgid "edit mirrors in editor set by $EDITOR"
+msgstr ""
+"másodlagos kiszolgáló szerkesztése a $EDITOR változóban beállított "
+"szerkesztővel"
+
+#: smart/commands/mirror.py:109
+msgid "clear history for the given origins/mirrors, or for all mirrors"
+msgstr ""
+"a megadott elsődleges vagy másodlagos kiszolgálóval kapcsolatos előzmények "
+"törlése, vagy az összes másodlagos kiszolgálóval kapcsolatos előzmények "
+"törlése"
+
+#: smart/commands/mirror.py:112
+msgid ""
+"show current penalities for origins/mirrors, based on the history information"
+msgstr ""
+"az elsődleges és másodlagos kiszolgálók hibaszámai az előzmények alapján"
+
+#: smart/commands/mirror.py:126
+msgid "mirror descriptions"
+msgstr "másodlagos kiszolgáló leírása"
+
+#: smart/commands/mirror.py:128
+msgid "Failed to download mirror descriptions:\n"
+msgstr "A másodlagos kiszolgáló adatinak letöltése sikertelen:\n"
+
+#: smart/commands/mirror.py:153
+msgid "Invalid mirrors file"
+msgstr "Érvénytelen másodlagos kiszolgáló fájl"
+
+#: smart/commands/mirror.py:170
+msgid "Invalid arguments for --add"
+msgstr "Érvénytelen paraméter az -add parancshoz"
+
+#: smart/commands/mirror.py:180
+msgid "Invalid arguments for --remove"
+msgstr "Érvénytelen paraméter az -remove parancshoz"
+
+#: smart/commands/mirror.py:184 smart/commands/mirror.py:191
+#, python-format
+msgid "Origin not found: %s"
+msgstr "Az elsődleges kiszolgáló nem található: %s"
+
+#: smart/commands/mirror.py:186
+#, python-format
+msgid "Mirror not found: %s"
+msgstr "Másodlagos kiszolgáló nem található: %s"
+
+#: smart/commands/newer.py:33
+msgid "smart newer"
+msgstr ""
+
+#: smart/commands/newer.py:35
+msgid ""
+"\n"
+"This command shows packages that have available upgrades.\n"
+msgstr ""
+
+#: smart/commands/newer.py:39
+msgid ""
+"\n"
+"smart newer\n"
+msgstr ""
+
+#: smart/commands/newer.py:77 smart/commands/newer.py:89
+#: smart/commands/upgrade.py:185 smart/commands/upgrade.py:196
+msgid "No interesting upgrades available."
+msgstr "Nincs érdemleges elérhető frissítés."
+
+#: smart/commands/newer.py:85 smart/commands/upgrade.py:192
+msgid "There are pending upgrades!"
+msgstr "Frissítések folyamatban!"
+
+#: smart/commands/newer.py:87 smart/commands/upgrade.py:194
+msgid "There are new upgrades available!"
+msgstr "Nincs új frissítés!"
+
+#: smart/commands/newer.py:124
+#, fuzzy
+msgid "(not installed)"
+msgstr "(telepített)"
+
+#: smart/commands/newer.py:137 smart/commands/priority.py:104
+#: smart/interfaces/gtk/packageinfo.py:272
+#: smart/interfaces/qt/packageinfo.py:137
+#: smart/interfaces/qt4/packageinfo.py:154
+msgid "Channel"
+msgstr "Csatorna"
+
+#: smart/commands/newer.py:137 smart/interfaces/gtk/legend.py:72
+#: smart/interfaces/gtk/packageinfo.py:425 smart/interfaces/qt/legend.py:59
+#: smart/interfaces/qt/packageinfo.py:204 smart/interfaces/qt4/legend.py:66
+#: smart/interfaces/qt4/packageinfo.py:219
+msgid "Installed"
+msgstr "Telepített"
+
+#: smart/commands/newer.py:137 smart/interfaces/gtk/priorities.py:67
+#: smart/interfaces/qt/priorities.py:70
+msgid "Package Name"
+msgstr "Csomagnév"
+
+#: smart/commands/newer.py:137 smart/interfaces/gtk/packageinfo.py:274
+#: smart/interfaces/gtk/packageview.py:149
+#: smart/interfaces/qt/packageinfo.py:138
+#: smart/interfaces/qt4/packageinfo.py:154
+msgid "Size"
+msgstr "Méret"
+
+#: smart/commands/newer.py:137 smart/interfaces/gtk/changes.py:98
+#: smart/interfaces/qt/changes.py:81 smart/interfaces/qt4/changes.py:84
+msgid "Upgrade"
+msgstr "Frissítés"
+
+#: smart/commands/nothing.py:26
+msgid "smart test [options]"
+msgstr "smart test [kapcsolók]"
+
+#: smart/commands/priority.py:27
+msgid "smart priority [options]"
+msgstr "smart priority [kapcsolók]"
+
+#: smart/commands/priority.py:29
+msgid ""
+"\n"
+"This command allows changing the priority of given packages.\n"
+"Packages with higher priorities are considered a better option\n"
+"even when package versions state otherwise. Using priorities\n"
+"one may avoid unwanted upgrades, force downgrades, select\n"
+"packages in given channels as preferential, and other kinds\n"
+"of interesting setups. When a package has no explicit priority,\n"
+"the channel priority is used. The channel priority may be\n"
+"changed using the 'channel' command, and defaults to 0 when\n"
+"not set.\n"
+"\n"
+"Notice that negatives priorities must be preceded by '--' in\n"
+"the command line, otherwise they'll be interpreted as command\n"
+"line options.\n"
+msgstr ""
+"\n"
+"Ez a csomag lehetővé teszi a kiválasztott csomag prioritásának\n"
+"megváltoztatását. Magasabb prioritással rendelkező csomagok\n"
+"elsőbbséget élveznek más csomagokkal szemben, függetlenül\n"
+"azok verziójától vagy egyéb tulajdonságaitól. A prioritások\n"
+"használatával kiküszöbölhetők a nem kívánatos frissítések\n"
+"vagy visszafejlesztések, az adott csatornában kiválaszthatók\n"
+" az előnyben részesített csomagok, és más hasonló érdekes\n"
+"beállítás végezhető el. Amennyiben a csomag nem rendelkezik\n"
+"prioritással, akkor számára a csatorna prioritása az alapértelmezett.\n"
+"A csatorna prioritása megváltoztatható a a 'channel' parancs\n"
+"segítségével és amennyiben ez nincs beállítva, ennek az alapértéke: 0.\n"
+"\n"
+"Negatív prioritások prioritások '--' előtaggal adhatók meg, ellenkező "
+"esetben\n"
+"parancssori kapcsolónak értelmezi a program.\n"
+
+#: smart/commands/priority.py:45
+msgid ""
+"\n"
+"smart priority --set pkgname 100\n"
+"smart priority --set pkgname mychannel -- -200\n"
+"smart priority --remove pkgname\n"
+"smart priority --remove pkgname mychannel\n"
+"smart priority --show\n"
+"smart priority --show pkgname\n"
+msgstr ""
+"\n"
+"smart priority --set csomagnév 100\n"
+"smart priority --set csomagnév csatorna -- -200\n"
+"smart priority --remove csomagnév\n"
+"smart priority --remove csomagnév csatorna\n"
+"smart priority --show\n"
+"smart priority --show csomagnév\n"
+
+#: smart/commands/priority.py:59
+msgid "set priority"
+msgstr "prioritás beállítása"
+
+#: smart/commands/priority.py:61
+msgid "unset priority"
+msgstr "nem beállított prioritás"
+
+#: smart/commands/priority.py:63
+msgid "show priorities"
+msgstr "prioritás megjelenítése"
+
+#: smart/commands/priority.py:65
+#, fuzzy
+msgid "show priorities in YAML format"
+msgstr "prioritás megjelenítése"
+
+#: smart/commands/priority.py:89
+msgid "Invalid priority"
+msgstr "Érvénytelen prioritás"
+
+#: smart/commands/priority.py:101
+msgid "Priority not found"
+msgstr "Prioritás nem található"
+
+#: smart/commands/priority.py:104 smart/interfaces/gtk/packageview.py:133
+#: smart/interfaces/qt/packageview.py:56
+#: smart/interfaces/qt4/packageview.py:59
+msgid "Package"
+msgstr "Csomag"
+
+#: smart/commands/query.py:33
+msgid "smart query [options] [package] ..."
+msgstr "smart query [kapcsolók] [csomag] ..."
+
+#: smart/commands/query.py:35
+msgid ""
+"\n"
+"This command allows querying the known packages in many\n"
+"different ways. Check also the 'search' command.\n"
+msgstr ""
+"\n"
+"Ez a parancs számos módon teszi lehetővé a keresést a csomagok között.\n"
+"Nézze meg a 'search' parancsot is.\n"
+
+#: smart/commands/query.py:40
+#, fuzzy
+msgid ""
+"\n"
+"smart query pkgname\n"
+"smart query '*kgnam*'\n"
+"smart query pkgname-1.0\n"
+"smart query pkgname --show-requires\n"
+"smart query --requires libpkg.so --show-providedby\n"
+"smart query --installed\n"
+"smart query --summary ldap\n"
+"smart query --show-format='Name: $name\tVersion: $version\n"
+"'\n"
+msgstr ""
+"\n"
+"smart query csomagnév\n"
+"smart query '*omag*'\n"
+"smart query csomagnév-1.0\n"
+"smart query csomagnév --show-requires\n"
+"smart query --requires libpkg.so --show-providedby\n"
+"smart query --installed\n"
+"smart query --summary ldap\n"
+
+#: smart/commands/query.py:59
+msgid "consider only installed packages"
+msgstr "csak a telepített csomagok figyelembe vétele"
+
+#: smart/commands/query.py:61
+#, fuzzy
+msgid "consider only the newest package"
+msgstr "csak a telepített csomagok figyelembe vétele"
+
+#: smart/commands/query.py:63
+#, fuzzy
+msgid "consider only installed packages that are duplicated"
+msgstr "csak a telepített csomagok figyelembe vétele"
+
+#: smart/commands/query.py:65
+#, fuzzy
+msgid "consider only installed packages not required by others"
+msgstr "csak a telepített csomagok figyelembe vétele"
+
+#: smart/commands/query.py:67
+#, fuzzy
+msgid "consider only installed packages not in other channels"
+msgstr "csak a telepített csomagok figyelembe vétele"
+
+#: smart/commands/query.py:69
+msgid "show only packages providing the given dependency"
+msgstr "csak a megadott függőséget biztosító csomagok megjelenítése"
+
+#: smart/commands/query.py:72
+msgid "show only packages requiring the given dependency"
+msgstr "csak a megadott függőséget megkövetelő csomagok megjelenítése"
+
+#: smart/commands/query.py:75
+msgid "show only packages conflicting with the given dependency"
+msgstr "csak a megadott függőséggel ütköző csomagok megjelenítése"
+
+#: smart/commands/query.py:78
+msgid "show only packages upgrading the given dependency"
+msgstr "csak a megadott függőséget frissítő csomagok megjelenítése"
+
+#: smart/commands/query.py:81
+msgid "show only packages which match given name"
+msgstr "csak a megadott névvel egyező csomagon megjelenítése"
+
+#: smart/commands/query.py:83
+#, fuzzy
+msgid "show only packages which match given group"
+msgstr "csak a megadott névvel egyező csomagon megjelenítése"
+
+#: smart/commands/query.py:85
+#, fuzzy
+msgid "show only packages from the given channel"
+msgstr "csak a megadott névvel egyező csomagon megjelenítése"
+
+#: smart/commands/query.py:87
+#, fuzzy
+msgid "show only packages with the given flag set"
+msgstr "csak a megadott névvel egyező csomagon megjelenítése"
+
+#: smart/commands/query.py:89
+msgid "show only packages which match given summary"
+msgstr "csak a megadott csomagleírással egyező csomagok megjelenítése"
+
+#: smart/commands/query.py:91
+msgid "show only packages which match given description"
+msgstr "csak a megadott csomagleírással egyező csomagok megjelenítése"
+
+#: smart/commands/query.py:94
+msgid ""
+"show only packages which include the given path in the available meta "
+"information"
+msgstr ""
+"csak a megadott metaadatoknak szereplő útvonalon található csomagok "
+"megjelenítése"
+
+#: smart/commands/query.py:97
+msgid ""
+"show only packages which include the given reference url in the available "
+"meta information"
+msgstr ""
+"csak a megadott metaadatoknak szereplő referencia url-en található csomagok "
+"megjelenítése"
+
+#: smart/commands/query.py:101
+msgid "hide package version"
+msgstr "csomagverziók elrejtése"
+
+#: smart/commands/query.py:103
+msgid "show package summaries"
+msgstr "rövid csomagleírás megjelenítése"
+
+#: smart/commands/query.py:105
+msgid "show provides for the given packages"
+msgstr "a csomag által biztosított komponensek megjelenítése"
+
+#: smart/commands/query.py:107
+msgid "show requires for the given packages"
+msgstr "a csomagok számára szükséges komponensek megjelenítése"
+
+#: smart/commands/query.py:109
+msgid "show requires selecting only pre-dependencies"
+msgstr "a függőségek számára szükséges komponensek megjelenítése"
+
+#: smart/commands/query.py:111
+msgid "show upgrades for the given packages"
+msgstr "a csomagokhoz tartozó frissítéseinek megjelenítése"
+
+#: smart/commands/query.py:113
+msgid "show conflicts for the given packages"
+msgstr "a csomagokhoz tartozó ütközések megjelenítése"
+
+#: smart/commands/query.py:115
+msgid "show packages providing dependencies"
+msgstr "a csomagok által biztosított függőségek"
+
+#: smart/commands/query.py:117
+msgid "show packages requiring provided information"
+msgstr "azon csomagok megjelenítése, amelyeknek szükséges a megadott komponens"
+
+#: smart/commands/query.py:119
+msgid "show packages upgrading provided information"
+msgstr "azon csomagok megjelenítése, amelyek frissítik a megadott komponenst"
+
+#: smart/commands/query.py:121
+msgid "show packages conflicting with provided information"
+msgstr "azon csomagok megjelenítése, amelyek ütköznek a megadott komponenst"
+
+#: smart/commands/query.py:124
+msgid "show package priority"
+msgstr "a csomagok prioritásának megjelenítése"
+
+#: smart/commands/query.py:126
+msgid "show channels that include this package"
+msgstr "mutassa azokat a csomagokat, amelyek tartalmazza ezt a csomagok"
+
+#: smart/commands/query.py:128
+msgid "enable all --show-* options"
+msgstr "enable all --show-* beállítások"
+
+#: smart/commands/query.py:130
+msgid "show using string template"
+msgstr ""
+
+#: smart/commands/query.py:132
+msgid "change output format"
+msgstr "kimeneti formátum megváltoztatása"
+
+#: smart/commands/query.py:134
+msgid "redirect output to given filename"
+msgstr "a kimenet átirányítása a megadott fájlba"
+
+#: smart/commands/query.py:658
+msgid "Provides:"
+msgstr "Biztosít:"
+
+#: smart/commands/query.py:664 smart/interfaces/text/interface.py:188
+msgid "Required By:"
+msgstr "Megkövetel:"
+
+#: smart/commands/query.py:667 smart/commands/query.py:700
+msgid "pre"
+msgstr "pre"
+
+#: smart/commands/query.py:678
+msgid "Upgraded By:"
+msgstr "Frissített:"
+
+#: smart/commands/query.py:688
+msgid "Conflicted By:"
+msgstr "Ütközés ezzel:"
+
+#: smart/commands/query.py:698 smart/interfaces/text/interface.py:184
+msgid "Requires:"
+msgstr "Megkövetelt:"
+
+#: smart/commands/query.py:707 smart/commands/query.py:723
+#: smart/commands/query.py:739
+msgid "Provided By:"
+msgstr "Biztosít:"
+
+#: smart/commands/query.py:717 smart/interfaces/text/interface.py:176
+msgid "Upgrades:"
+msgstr "Frissítések:"
+
+#: smart/commands/query.py:733 smart/interfaces/text/interface.py:192
+msgid "Conflicts:"
+msgstr "Ütközések:"
+
+#: smart/commands/reinstall.py:30
+msgid "smart reinstall [options] package ..."
+msgstr "smart reinstall [kapcsolók] csomag ..."
+
+#: smart/commands/reinstall.py:32
+msgid ""
+"\n"
+"This command will reinstall one or more packages which\n"
+"are already installed in the system.\n"
+msgstr ""
+"\n"
+"Ez a parancs újratelepít egy vagy több csomagot, amelyek\n"
+"telepítve vannak a rendszerre.\n"
+
+#: smart/commands/reinstall.py:37
+msgid ""
+"\n"
+"smart reinstall pkgname\n"
+"smart reinstall '*kgnam*'\n"
+"smart reinstall pkgname-1.0\n"
+"smart reinstall pkgname-1.0-1\n"
+"smart reinstall pkgname1 pkgname2\n"
+msgstr ""
+"\n"
+"smart reinstall csomagnév\n"
+"smart reinstall '*omag*'\n"
+"smart reinstall csomagnév-1.0\n"
+"smart reinstall csomagnév-1.0-1\n"
+"smart reinstall csomagnév1 csomagnév2\n"
+
+#: smart/commands/reinstall.py:127
+#, python-format
+msgid "'%s' is not available for reinstallation"
+msgstr "a(z) %s nem telepíthető újra"
+
+#: smart/commands/reinstall.py:130 smart/commands/remove.py:138
+#: smart/commands/upgrade.py:158 smart/interfaces/text/interactive.py:319
+#: smart/interfaces/text/interactive.py:365
+#: smart/interfaces/text/interactive.py:409
+#, python-format
+msgid "'%s' matches no installed packages"
+msgstr "nem található telepített '%s' csomag"
+
+#: smart/commands/remove.py:29
+msgid "smart remove [options] package ..."
+msgstr "smart remove [kapcsolók] csomag ..."
+
+#: smart/commands/remove.py:31
+msgid ""
+"\n"
+"This command will remove one or more packages which\n"
+"are currently installed in the system.\n"
+msgstr ""
+"\n"
+"Ez a parancs eltávolít egy vagy több csomagot, amelyek\n"
+"telepítve vannak a rendszerre.\n"
+
+#: smart/commands/remove.py:36
+msgid ""
+"\n"
+"smart remove pkgname\n"
+"smart remove '*kgnam*'\n"
+"smart remove pkgname-1.0\n"
+"smart remove pkgname-1.0-1\n"
+"smart remove pkgname1 pkgname2\n"
+msgstr ""
+"\n"
+"smart remove csomagnév\n"
+"smart remove '*omag*'\n"
+"smart remove csomagnév-1.0\n"
+"smart remove csomagnév-1.0-1\n"
+"smart remove csomagnév1 csomagnév2\n"
+
+#: smart/commands/remove.py:62
+msgid "use the auto-install information to remove stuff."
+msgstr ""
+
+#: smart/commands/search.py:25
+#, fuzzy
+msgid "smart search expression ..."
+msgstr "Használat: search <karakterlánc> ..."
+
+#: smart/commands/search.py:27
+msgid ""
+"\n"
+"This command allows searching for the given expressions\n"
+"in the name, summary, and description of known packages.\n"
+msgstr ""
+
+#: smart/commands/search.py:32
+msgid ""
+"\n"
+"smart search ldap\n"
+"smart search kernel module\n"
+"smart search rpm 'package manager'\n"
+"smart search pkgname\n"
+"smart search 'pkgn*e'\n"
+msgstr ""
+
+#: smart/commands/stats.py:27
+msgid "smart stats"
+msgstr "smart stats"
+
+#: smart/commands/stats.py:29
+msgid ""
+"\n"
+"This command will show some statistics.\n"
+msgstr ""
+"\n"
+"Ez a parancs néhány statisztikát jelenít meg.\n"
+
+#: smart/commands/stats.py:33
+msgid ""
+"\n"
+"smart stats \n"
+msgstr ""
+"\n"
+"smart stats \n"
+
+#: smart/commands/stats.py:56
+msgid "Installed Packages:"
+msgstr "Telepített csomagok:"
+
+#: smart/commands/stats.py:58
+msgid "Total Packages:"
+msgstr "Összes csomag:"
+
+#: smart/commands/stats.py:59
+msgid "Total Provides:"
+msgstr "Összes biztosított:"
+
+#: smart/commands/stats.py:60
+msgid "Total Requires:"
+msgstr "Összes megkövetelt:"
+
+#: smart/commands/stats.py:61
+msgid "Total Upgrades:"
+msgstr "Összes frissítés:"
+
+#: smart/commands/stats.py:62
+msgid "Total Conflicts:"
+msgstr "Összes ütközés:"
+
+#: smart/commands/update.py:29
+msgid "smart update [options] [channelalias] ..."
+msgstr "smart update [kapcsolók] [csatorna] ..."
+
+#: smart/commands/update.py:31
+msgid ""
+"\n"
+"This command will update the known information about the\n"
+"given channels. If no channels are given, all channels\n"
+"which are not disabled or setup for manual updates will\n"
+"be updated.\n"
+msgstr ""
+"\n"
+"Ez a parancs lehetővé teszi a megadott csatorna információinak\n"
+"frissítését. Amennyiben nincs megadva semmilyen csatorna,\n"
+"minden csatorna, amely nincs letiltva vagy nem kézi frissítésre\n"
+"van állítva frissítésre kerül.\n"
+
+#: smart/commands/update.py:38
+msgid ""
+"\n"
+"smart update\n"
+"smart update mychannel\n"
+"smart update mychannel1 mychannel2\n"
+msgstr ""
+"\n"
+"smart update\n"
+"smart update csatorna\n"
+"smart update csatorna1 csatorna2\n"
+
+#: smart/commands/update.py:49
+msgid ""
+"only update if the last successful update happened before the given delay"
+msgstr ""
+"csak akkor frissít, ha az utolsó sikeres frissítés befejeződött az adott "
+"késleltetési időn belül"
+
+#: smart/commands/update.py:77
+#, python-format
+msgid "Argument '%s' is not a channel alias."
+msgstr "A(z) '%s' paraméter nem csatornaelnevezés."
+
+#: smart/commands/update.py:86 smart/interfaces/text/interactive.py:678
+msgid "Channels have no new packages."
+msgstr "A csatorna nem rendelkezik új csomagokkal."
+
+#: smart/commands/update.py:95 smart/interfaces/text/interactive.py:687
+#, python-format
+msgid "Channels have %d new packages%s"
+msgstr "A csatornában %d új csomag található %s"
+
+#: smart/commands/upgrade.py:32
+msgid "smart upgrade [options] [package] ..."
+msgstr "smart upgrade [kapcsolók] [csomag] ..."
+
+#: smart/commands/upgrade.py:34
+#, fuzzy
+msgid ""
+"\n"
+"This command will upgrade one or more packages which\n"
+"are currently installed in the system. If no packages\n"
+"are given, all installed packages will be checked.\n"
+"\n"
+"If pkgname is prefixed by a '+', it will be installed\n"
+"even if it was not currently installed in the system.\n"
+"If pkgname is prefixed with a '-', it will be removed.\n"
+msgstr ""
+"\n"
+"Ez a parancs a rendszerre telepített egy vagy több csomag\n"
+"frissítését végzi. Amennyiben nincs csomagnév megadva,\n"
+"az összes csomag kijelölésre kerül.\n"
+
+#: smart/commands/upgrade.py:44
+msgid ""
+"\n"
+"smart upgrade\n"
+"smart upgrade pkgname\n"
+"smart upgrade '*kgnam*'\n"
+"smart upgrade pkgname-1.0\n"
+"smart upgrade pkgname-1.0-1\n"
+"smart upgrade pkgname1 pkgname2\n"
+msgstr ""
+"\n"
+"smart upgrade\n"
+"smart upgrade csomagnév\n"
+"smart upgrade '*omag*'\n"
+"smart upgrade csomagnév-1.0\n"
+"smart upgrade csomagnév-1.0-1\n"
+"smart upgrade csomagnév1 csomagnév2\n"
+
+#: smart/commands/upgrade.py:67
+msgid "update channel information before trying to upgrade"
+msgstr "csomaginformációk frissítése a csomagok frissítése előtt"
+
+#: smart/commands/upgrade.py:70
+msgid "just check if there are upgrades to be done"
+msgstr "ellenőrzés a frissítések befejezése után"
+
+#: smart/commands/upgrade.py:72
+msgid "check if there are upgrades to be done, and update the known upgrades"
+msgstr "ellenőrzi, hogy létezik-e frissítés és elindítja a frissítést"
+
+#: smart/commands/upgrade.py:78
+#, fuzzy
+msgid "check only upgrades with the given flag set"
+msgstr "a csomagokhoz tartozó frissítéseinek megjelenítése"
+
+#: smart/control.py:102 smart/control.py:310
+#, python-format
+msgid "There's another channel with alias '%s'"
+msgstr "Már létezik csatorna ilyen elnevezéssel: '%s'"
+
+#: smart/control.py:124
+#, python-format
+msgid "Unable to create channel for file: %s"
+msgstr "Csatorna létrehozása sikertelen ehhez a fájlhoz: %s"
+
+#: smart/control.py:134
+#, python-format
+msgid "Channel not found for '%s'"
+msgstr "A következő csatorna nem található: '%s'"
+
+#: smart/control.py:167
+#, python-format
+msgid "Configuration file not found: %s"
+msgstr "A konfigurációs fájl nem található: %s"
+
+#: smart/control.py:182
+#, python-format
+msgid "Can't create datadir at %s"
+msgstr "Nem hozható létre adatkönyvtár: %s"
+
+#: smart/control.py:202
+msgid "Saving cache..."
+msgstr "Gyorsítótár mentése..."
+
+#: smart/control.py:254
+msgid "Loading cache..."
+msgstr "Gyorsítótár betöltése..."
+
+#: smart/control.py:335
+msgid "Unable to create channel directory."
+msgstr "Nem hozható létre könyvtár a csatornának."
+
+#: smart/control.py:338
+msgid "The Smart library is already in use by another process."
+msgstr ""
+
+#: smart/control.py:340
+msgid "Configuration is in readonly mode!"
+msgstr "A konfiguráció csak olvasható módban van!"
+
+#: smart/control.py:342
+msgid "Channel information is locked for writing."
+msgstr "A csatornainformáció csak olvasható"
+
+#: smart/control.py:344
+msgid "Can't update channels in readonly mode."
+msgstr "A csatornák nem frissíthetők csak olvasható módban."
+
+#: smart/control.py:346
+msgid "Can't update channels with active readers."
+msgstr "A csatorna nem frissíthető aktív olvasóval."
+
+#: smart/control.py:382
+#, python-format
+msgid "Fetching information for '%s'..."
+msgstr "Adatok letöltése: %s..."
+
+#: smart/control.py:389 smart/control.py:393
+#, python-format
+msgid "Failed fetching channel '%s'"
+msgstr "A csatorna elérése sikertelen: '%s'"
+
+#: smart/control.py:484 smart/control.py:503 smart/control.py:507
+#, python-format
+msgid "Package %s is not available for downloading"
+msgstr "A következő csomag nem tölthető le: %s"
+
+#: smart/control.py:631
+#, fuzzy
+msgid "Creating pack..."
+msgstr "Gyorsítótár frissítése..."
+
+#: smart/control.py:826
+#, python-format
+msgid "No channel available for package %s"
+msgstr "Nincs elérhető csatorna a megadott csomaghoz: %s"
+
+#: smart/control.py:1021
+#, python-format
+msgid "%s is not available for downloading"
+msgstr "A(z) %s csomag letölthető"
+
+#: smart/fetcher.py:168
+#, python-format
+msgid "%s is already in the queue"
+msgstr "a(z) %s csomag már várakozik"
+
+#: smart/fetcher.py:203 smart/fetcher.py:210
+#, python-format
+msgid "Fetching %s..."
+msgstr "%s letöltése..."
+
+#: smart/fetcher.py:212
+msgid "Fetching information..."
+msgstr "Adatok letöltése..."
+
+#: smart/fetcher.py:290 smart/fetcher.py:597
+msgid "Cancelled"
+msgstr "Megszakított"
+
+#: smart/fetcher.py:330
+#, python-format
+msgid "Unsupported scheme: %s"
+msgstr "Nem támogatott téma: %s"
+
+#: smart/fetcher.py:347
+msgid "File not found for validation"
+msgstr "A fájl nem található az érvényesítéshez"
+
+#: smart/fetcher.py:622
+#, python-format
+msgid "Invalid URL: %s"
+msgstr "Érvénytelen URL: %s"
+
+#: smart/fetcher.py:901
+msgid "Media not found"
+msgstr "Adathordozó nem található"
+
+#: smart/fetcher.py:1029 smart/fetcher.py:1238 smart/fetcher.py:1846
+msgid "Server reports unexpected size"
+msgstr "A kiszolgáló váratlan méretet jelez"
+
+#: smart/interface.py:51
+#, python-format
+msgid "Invalid command '%s'"
+msgstr "Érvénytelen parancs '%s'"
+
+#: smart/interface.py:98
+msgid "Password"
+msgstr "Jelszó"
+
+#: smart/interface.py:99
+#, python-format
+msgid "A password is needed for '%s'."
+msgstr "Jelszó szükséges a következő eléréséhez: '%s'."
+
+#: smart/interface.py:140 smart/interfaces/gtk/log.py:122
+#: smart/interfaces/qt/log.py:103 smart/interfaces/qt4/log.py:114
+msgid "error"
+msgstr "hiba"
+
+#: smart/interface.py:140 smart/interfaces/gtk/log.py:122
+#: smart/interfaces/qt/log.py:103 smart/interfaces/qt4/log.py:114
+msgid "warning"
+msgstr "figyelmeztetés"
+
+#: smart/interface.py:141 smart/interfaces/gtk/log.py:123
+#: smart/interfaces/qt/log.py:104 smart/interfaces/qt4/log.py:115
+msgid "debug"
+msgstr "hibakeresés"
+
+#: smart/interface.py:176
+#, python-format
+msgid "Interface '%s' not available"
+msgstr "Interface '%s' not available"
+
+#: smart/interfaces/gtk/__init__.py:36
+msgid "System has no support for gtk python interface"
+msgstr "A rendszer nem támogatja a gtk python felületet"
+
+#: smart/interfaces/gtk/__init__.py:61 smart/interfaces/qt/__init__.py:54
+#: smart/interfaces/qt4/__init__.py:54
+#, python-format
+msgid "Image '%s' not found"
+msgstr "A(z) '%s' nem található"
+
+#: smart/interfaces/gtk/changes.py:36 smart/interfaces/qt/changes.py:35
+#: smart/interfaces/qt4/changes.py:36
+msgid "Change Summary"
+msgstr "Változások összesítése"
+
+#: smart/interfaces/gtk/changes.py:97 smart/interfaces/qt/changes.py:80
+#: smart/interfaces/qt4/changes.py:83
+msgid "Downgrade"
+msgstr "Visszafejlesztés"
+
+#: smart/interfaces/gtk/changes.py:97 smart/interfaces/gtk/interactive.py:705
+#: smart/interfaces/qt/changes.py:80 smart/interfaces/qt/interactive.py:667
+#: smart/interfaces/qt4/changes.py:83 smart/interfaces/qt4/interactive.py:659
+msgid "Reinstall"
+msgstr "Újratelepítés"
+
+#: smart/interfaces/gtk/changes.py:97 smart/interfaces/gtk/interactive.py:715
+#: smart/interfaces/qt/changes.py:80 smart/interfaces/qt/interactive.py:673
+#: smart/interfaces/qt4/changes.py:83 smart/interfaces/qt4/interactive.py:667
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: smart/interfaces/gtk/changes.py:98 smart/interfaces/gtk/interactive.py:696
+#: smart/interfaces/qt/changes.py:81 smart/interfaces/qt/interactive.py:661
+#: smart/interfaces/qt4/changes.py:84 smart/interfaces/qt4/interactive.py:651
+msgid "Install"
+msgstr "Telepítés"
+
+#: smart/interfaces/gtk/changes.py:125 smart/interfaces/gtk/packageinfo.py:572
+#: smart/interfaces/gtk/packageinfo.py:624 smart/interfaces/qt/changes.py:108
+#: smart/interfaces/qt/packageinfo.py:336
+#: smart/interfaces/qt/packageinfo.py:388 smart/interfaces/qt4/changes.py:111
+#: smart/interfaces/qt4/packageinfo.py:352
+#: smart/interfaces/qt4/packageinfo.py:404
+msgid "Upgrades"
+msgstr "Frissítések"
+
+#: smart/interfaces/gtk/changes.py:129 smart/interfaces/qt/changes.py:112
+#: smart/interfaces/qt4/changes.py:115
+msgid "Downgrades"
+msgstr "Visszafejlesztettek"
+
+#: smart/interfaces/gtk/changes.py:133 smart/interfaces/gtk/changes.py:170
+#: smart/interfaces/gtk/packageinfo.py:573
+#: smart/interfaces/gtk/packageinfo.py:615 smart/interfaces/qt/changes.py:116
+#: smart/interfaces/qt/changes.py:153 smart/interfaces/qt/packageinfo.py:337
+#: smart/interfaces/qt/packageinfo.py:379 smart/interfaces/qt4/changes.py:119
+#: smart/interfaces/qt4/changes.py:156 smart/interfaces/qt4/packageinfo.py:353
+#: smart/interfaces/qt4/packageinfo.py:395
+msgid "Requires"
+msgstr "Megkövetelt"
+
+#: smart/interfaces/gtk/changes.py:136 smart/interfaces/gtk/changes.py:173
+#: smart/interfaces/gtk/packageinfo.py:590 smart/interfaces/qt/changes.py:119
+#: smart/interfaces/qt/changes.py:156 smart/interfaces/qt/packageinfo.py:354
+#: smart/interfaces/qt4/changes.py:122 smart/interfaces/qt4/changes.py:159
+#: smart/interfaces/qt4/packageinfo.py:370
+msgid "Required By"
+msgstr "Megkövetel"
+
+#: smart/interfaces/gtk/changes.py:141 smart/interfaces/gtk/changes.py:178
+#: smart/interfaces/gtk/packageinfo.py:573
+#: smart/interfaces/gtk/packageinfo.py:633 smart/interfaces/qt/changes.py:124
+#: smart/interfaces/qt/changes.py:161 smart/interfaces/qt/packageinfo.py:337
+#: smart/interfaces/qt/packageinfo.py:397 smart/interfaces/qt4/changes.py:127
+#: smart/interfaces/qt4/changes.py:164 smart/interfaces/qt4/packageinfo.py:353
+#: smart/interfaces/qt4/packageinfo.py:413
+msgid "Conflicts"
+msgstr "Ütközések"
+
+#: smart/interfaces/gtk/changes.py:151 smart/interfaces/qt/changes.py:134
+#: smart/interfaces/qt4/changes.py:137
+#, python-format
+msgid "Reinstall (%d)"
+msgstr "Újratelepítés (%d)"
+
+#: smart/interfaces/gtk/changes.py:154 smart/interfaces/qt/changes.py:137
+#: smart/interfaces/qt4/changes.py:140
+#, python-format
+msgid "Install (%d)"
+msgstr "Telepítés (%d)"
+
+#: smart/interfaces/gtk/changes.py:156 smart/interfaces/qt/changes.py:139
+#: smart/interfaces/qt4/changes.py:142
+#, python-format
+msgid "Upgrade (%d)"
+msgstr "%d csomag frissítése"
+
+#: smart/interfaces/gtk/changes.py:158 smart/interfaces/qt/changes.py:141
+#: smart/interfaces/qt4/changes.py:144
+#, python-format
+msgid "Downgrade (%d)"
+msgstr "Visszafejlesztés (%d)"
+
+#: smart/interfaces/gtk/changes.py:181 smart/interfaces/qt/changes.py:164
+#: smart/interfaces/qt4/changes.py:167
+#, python-format
+msgid "Remove (%d)"
+msgstr "Eltávolítás (%d)"
+
+#: smart/interfaces/gtk/changes.py:185 smart/interfaces/qt/changes.py:168
+#: smart/interfaces/qt4/changes.py:171
+#, python-format
+msgid "Keep (%d)"
+msgstr "Megtart (%d)"
+
+#: smart/interfaces/gtk/changes.py:191 smart/interfaces/qt/changes.py:174
+#: smart/interfaces/qt4/changes.py:177 smart/interfaces/text/interface.py:225
+#, python-format
+msgid "%s of package files are needed. "
+msgstr "Telepítésre váró csomagok mérete: %s "
+
+#: smart/interfaces/gtk/changes.py:193 smart/interfaces/qt/changes.py:176
+#: smart/interfaces/qt4/changes.py:179 smart/interfaces/text/interface.py:228
+#, python-format
+msgid "%s will be used."
+msgstr "felhasznált hely: %s."
+
+#: smart/interfaces/gtk/changes.py:196 smart/interfaces/qt/changes.py:179
+#: smart/interfaces/qt4/changes.py:182 smart/interfaces/text/interface.py:231
+#, python-format
+msgid "%s will be freed."
+msgstr "felszabaduló hely: %s."
+
+#: smart/interfaces/gtk/channels.py:39 smart/interfaces/gtk/interactive.py:251
+#: smart/interfaces/qt/channels.py:56 smart/interfaces/qt/interactive.py:325
+#: smart/interfaces/qt4/channels.py:57 smart/interfaces/qt4/interactive.py:312
+msgid "Channels"
+msgstr "Csatornák"
+
+#: smart/interfaces/gtk/channels.py:84 smart/interfaces/qt/channels.py:81
+#: smart/interfaces/qt4/channels.py:88
+msgid "Pri"
+msgstr "Pri"
+
+#: smart/interfaces/gtk/channels.py:205 smart/interfaces/qt/channels.py:189
+#: smart/interfaces/qt4/channels.py:202
+msgid "Select Channel Description"
+msgstr "Csatornaleírás kiválasztása"
+
+#: smart/interfaces/gtk/channels.py:219 smart/interfaces/qt/channels.py:199
+#: smart/interfaces/qt4/channels.py:212
+msgid "Description URL"
+msgstr "URL leírása"
+
+#: smart/interfaces/gtk/channels.py:223 smart/interfaces/qt/channels.py:203
+#: smart/interfaces/qt4/channels.py:216
+msgid "channel description"
+msgstr "csatornaleírás"
+
+#: smart/interfaces/gtk/channels.py:260 smart/interfaces/qt/channels.py:234
+#: smart/interfaces/qt4/channels.py:247
+msgid "Select Path"
+msgstr "Útvonal kiválasztása"
+
+#: smart/interfaces/gtk/channels.py:287 smart/interfaces/qt/channels.py:257
+#: smart/interfaces/qt4/channels.py:270
+msgid "No channels detected!"
+msgstr "Nem található csatorna!"
+
+#: smart/interfaces/gtk/channels.py:324 smart/interfaces/qt/channels.py:316
+#: smart/interfaces/qt4/channels.py:332
+msgid "Select Channels"
+msgstr "Csatornák kiválasztása"
+
+#: smart/interfaces/gtk/channels.py:432 smart/interfaces/qt/channels.py:397
+#: smart/interfaces/qt4/channels.py:431
+msgid "Edit Channel"
+msgstr "Csatorna szerkesztése"
+
+#: smart/interfaces/gtk/channels.py:518 smart/interfaces/gtk/channels.py:575
+#: smart/interfaces/qt/channels.py:461 smart/interfaces/qt/channels.py:523
+#: smart/interfaces/qt4/channels.py:509 smart/interfaces/qt4/channels.py:572
+#, python-format
+msgid "Don't know how to handle %s fields"
+msgstr "A(z) %s mező kezelésének módja ismeretlen"
+
+#: smart/interfaces/gtk/channels.py:581 smart/interfaces/qt/channels.py:529
+#: smart/interfaces/qt4/channels.py:578
+msgid "Invalid alias!"
+msgstr "Érvénytelen elnevezés!"
+
+#: smart/interfaces/gtk/channels.py:584 smart/interfaces/qt/channels.py:532
+#: smart/interfaces/qt4/channels.py:581
+msgid "Alias already in use!"
+msgstr "Ilyen elnevezés már létezik!"
+
+#: smart/interfaces/gtk/channels.py:607 smart/interfaces/gtk/channels.py:709
+#: smart/interfaces/gtk/channels.py:810 smart/interfaces/qt/channels.py:555
+#: smart/interfaces/qt/channels.py:644 smart/interfaces/qt/channels.py:731
+#: smart/interfaces/qt4/channels.py:604 smart/interfaces/qt4/channels.py:712
+#: smart/interfaces/qt4/channels.py:814
+msgid "New Channel"
+msgstr "Új csatorna"
+
+#: smart/interfaces/gtk/channels.py:729 smart/interfaces/qt/channels.py:656
+#: smart/interfaces/qt4/channels.py:727
+msgid "Method:"
+msgstr "Metódus:"
+
+#: smart/interfaces/gtk/channels.py:768 smart/interfaces/qt/channels.py:682
+#: smart/interfaces/qt4/channels.py:762
+msgid "Provide channel information"
+msgstr "Csatornainformációk megadása"
+
+#: smart/interfaces/gtk/channels.py:770 smart/interfaces/qt/channels.py:684
+#: smart/interfaces/qt4/channels.py:764
+msgid "Read channel description from local path"
+msgstr "Csatorna leírásának beolvasása helyi könyvtárból"
+
+#: smart/interfaces/gtk/channels.py:772 smart/interfaces/qt/channels.py:686
+#: smart/interfaces/qt4/channels.py:766
+msgid "Read channel description from URL"
+msgstr "Csatorna leírásának beolvasása az URL-ből"
+
+#: smart/interfaces/gtk/channels.py:774 smart/interfaces/qt/channels.py:688
+#: smart/interfaces/qt4/channels.py:768
+msgid "Detect channel in media (CDROM, DVD, etc)"
+msgstr "Csatornainformáció kiolvasása adathordozóról (CD-ROM, DVD stb.)"
+
+#: smart/interfaces/gtk/channels.py:776 smart/interfaces/qt/channels.py:690
+#: smart/interfaces/qt4/channels.py:770
+msgid "Detect channel in local path"
+msgstr "Csatornainformáció kiolvasása helyi útvonalból"
+
+#: smart/interfaces/gtk/channels.py:831 smart/interfaces/qt/channels.py:743
+#: smart/interfaces/qt4/channels.py:827
+msgid "Media path:"
+msgstr "Adathordozó elérési útvonala:"
+
+#: smart/interfaces/gtk/channels.py:885 smart/interfaces/qt/channels.py:787
+#: smart/interfaces/qt4/channels.py:875
+msgid "No local media found!"
+msgstr "Nem található helyi adathordozó!"
+
+#: smart/interfaces/gtk/command.py:58 smart/interfaces/qt/command.py:58
+#: smart/interfaces/qt4/command.py:58
+msgid "Status"
+msgstr "Állapot"
+
+#: smart/interfaces/gtk/flags.py:35 smart/interfaces/gtk/flags.py:81
+#: smart/interfaces/qt/flags.py:35 smart/interfaces/qt/flags.py:64
+#: smart/interfaces/qt4/flags.py:36 smart/interfaces/qt4/flags.py:72
+msgid "Flags"
+msgstr "Jelölések"
+
+#: smart/interfaces/gtk/flags.py:127 smart/interfaces/qt/flags.py:95
+#: smart/interfaces/qt4/flags.py:113
+msgid "Targets"
+msgstr "Célok"
+
+#: smart/interfaces/gtk/flags.py:199 smart/interfaces/gtk/flags.py:243
+#: smart/interfaces/qt/flags.py:167 smart/interfaces/qt/flags.py:209
+#: smart/interfaces/qt4/flags.py:196 smart/interfaces/qt4/flags.py:238
+msgid "Flag already exists!"
+msgstr "A jelölés már létezik!"
+
+#: smart/interfaces/gtk/flags.py:228 smart/interfaces/gtk/flags.py:255
+#: smart/interfaces/gtk/flags.py:260 smart/interfaces/gtk/flags.py:449
+#: smart/interfaces/qt/flags.py:194 smart/interfaces/qt/flags.py:221
+#: smart/interfaces/qt/flags.py:226 smart/interfaces/qt/flags.py:383
+#: smart/interfaces/qt4/flags.py:223 smart/interfaces/qt4/flags.py:250
+#: smart/interfaces/qt4/flags.py:255 smart/interfaces/qt4/flags.py:418
+msgid "Invalid target!"
+msgstr "Érvénytelen cél!"
+
+#: smart/interfaces/gtk/flags.py:293 smart/interfaces/qt/flags.py:259
+#: smart/interfaces/qt4/flags.py:288
+msgid "New Flag"
+msgstr "Új jelző"
+
+#: smart/interfaces/gtk/flags.py:358 smart/interfaces/qt/flags.py:308
+#: smart/interfaces/qt4/flags.py:340
+msgid "No flag name provided!"
+msgstr "Nincs megadva jelzőnév!"
+
+#: smart/interfaces/gtk/flags.py:374 smart/interfaces/qt/flags.py:324
+#: smart/interfaces/qt4/flags.py:356
+msgid "New Target"
+msgstr "Új cél"
+
+#: smart/interfaces/gtk/flags.py:395 smart/interfaces/qt/flags.py:338
+#: smart/interfaces/qt4/flags.py:372
+msgid "Target:"
+msgstr "Cél:"
+
+#: smart/interfaces/gtk/flags.py:405 smart/interfaces/qt/flags.py:346
+#: smart/interfaces/qt4/flags.py:380
+msgid "Examples: \"pkgname\", \"pkgname = 1.0\" or \"pkgname <= 1.0\""
+msgstr "Például: \"pkgname\", \"pkgname = 1.0\" or \"pkgname <= 1.0\""
+
+#: smart/interfaces/gtk/flags.py:445 smart/interfaces/qt/flags.py:379
+#: smart/interfaces/qt4/flags.py:414
+msgid "No target provided!"
+msgstr "Nincs cél megadva!"
+
+#: smart/interfaces/gtk/interactive.py:125
+#: smart/interfaces/qt/interactive.py:123
+#: smart/interfaces/qt4/interactive.py:124
+msgid "_File"
+msgstr "_Fájl"
+
+#: smart/interfaces/gtk/interactive.py:126
+#: smart/interfaces/qt/interactive.py:124
+#: smart/interfaces/qt4/interactive.py:125
+msgid "Update _Selected Channels..."
+msgstr "_Kiválasztott csatornák frissítése..."
+
+#: smart/interfaces/gtk/interactive.py:127
+#: smart/interfaces/qt/interactive.py:125
+#: smart/interfaces/qt4/interactive.py:126
+msgid "Update given channels"
+msgstr "Megadott csatornák frissítése"
+
+#: smart/interfaces/gtk/interactive.py:128
+#: smart/interfaces/qt/interactive.py:126
+#: smart/interfaces/qt4/interactive.py:127
+msgid "_Update Channels"
+msgstr "_Csatornák frissítése"
+
+#: smart/interfaces/gtk/interactive.py:129
+#: smart/interfaces/qt/interactive.py:127
+#: smart/interfaces/qt4/interactive.py:128
+msgid "Update channels"
+msgstr "Csatornák frissítése"
+
+#: smart/interfaces/gtk/interactive.py:130
+#: smart/interfaces/qt/interactive.py:128
+#: smart/interfaces/qt4/interactive.py:129
+msgid "_Rebuild Cache"
+msgstr "_Gyorsítótár újraépítése"
+
+#: smart/interfaces/gtk/interactive.py:131
+#: smart/interfaces/qt/interactive.py:129
+#: smart/interfaces/qt4/interactive.py:130
+msgid "Reload package information"
+msgstr "Csomaginformációk újratöltése"
+
+#: smart/interfaces/gtk/interactive.py:132
+#: smart/interfaces/qt/interactive.py:130
+#: smart/interfaces/qt4/interactive.py:131
+msgid "_Execute Changes..."
+msgstr "_Változások végrehajtása..."
+
+#: smart/interfaces/gtk/interactive.py:133
+#: smart/interfaces/qt/interactive.py:131
+#: smart/interfaces/qt4/interactive.py:132
+msgid "Apply marked changes"
+msgstr "Kijelölt változások alkalmazása"
+
+#: smart/interfaces/gtk/interactive.py:134
+#: smart/interfaces/qt/interactive.py:132
+#: smart/interfaces/qt4/interactive.py:133
+msgid "_Quit"
+msgstr "_Kilépés"
+
+#: smart/interfaces/gtk/interactive.py:135
+#: smart/interfaces/qt/interactive.py:133
+#: smart/interfaces/qt4/interactive.py:134
+msgid "Quit application"
+msgstr "Kilépés a programból"
+
+#: smart/interfaces/gtk/interactive.py:137
+#: smart/interfaces/qt/interactive.py:135
+#: smart/interfaces/qt4/interactive.py:136
+msgid "_Edit"
+msgstr "_Szerkesztés"
+
+#: smart/interfaces/gtk/interactive.py:138
+#: smart/interfaces/qt/interactive.py:136
+#: smart/interfaces/qt4/interactive.py:137
+msgid "_Undo"
+msgstr "_Visszavonás"
+
+#: smart/interfaces/gtk/interactive.py:139
+#: smart/interfaces/qt/interactive.py:137
+#: smart/interfaces/qt4/interactive.py:138
+msgid "Undo last change"
+msgstr "Utolsó változás visszavonása"
+
+#: smart/interfaces/gtk/interactive.py:140
+#: smart/interfaces/qt/interactive.py:138
+#: smart/interfaces/qt4/interactive.py:139
+msgid "_Redo"
+msgstr "Ú_jra"
+
+#: smart/interfaces/gtk/interactive.py:141
+#: smart/interfaces/qt/interactive.py:139
+#: smart/interfaces/qt4/interactive.py:140
+msgid "Redo last undone change"
+msgstr "Az utoljára visszavont művelet újraindítása"
+
+#: smart/interfaces/gtk/interactive.py:142
+#: smart/interfaces/qt/interactive.py:140
+#: smart/interfaces/qt4/interactive.py:141
+msgid "Clear Marked Changes"
+msgstr "Megjelölt változások törlése"
+
+#: smart/interfaces/gtk/interactive.py:143
+#: smart/interfaces/qt/interactive.py:141
+#: smart/interfaces/qt4/interactive.py:142
+msgid "Clear all changes"
+msgstr "Összes változás törlése"
+
+#: smart/interfaces/gtk/interactive.py:144
+#: smart/interfaces/qt/interactive.py:142
+#: smart/interfaces/qt4/interactive.py:143
+msgid "Check Installed Packages..."
+msgstr "Telepített csomagok ellenőrzése..."
+
+#: smart/interfaces/gtk/interactive.py:145
+#: smart/interfaces/qt/interactive.py:143
+#: smart/interfaces/qt4/interactive.py:144
+msgid "Check installed packages"
+msgstr "Telepített csomagok ellenőrzése"
+
+#: smart/interfaces/gtk/interactive.py:146
+#: smart/interfaces/qt/interactive.py:144
+#: smart/interfaces/qt4/interactive.py:145
+msgid "Check Uninstalled Packages..."
+msgstr "Nem telepített csomagok ellenőrzése..."
+
+#: smart/interfaces/gtk/interactive.py:147
+#: smart/interfaces/qt/interactive.py:145
+#: smart/interfaces/qt4/interactive.py:146
+msgid "Check uninstalled packages"
+msgstr "Nem telepített csomagok ellenőrzése"
+
+#: smart/interfaces/gtk/interactive.py:148
+#: smart/interfaces/qt/interactive.py:146
+#: smart/interfaces/qt4/interactive.py:147
+msgid "Check All Packages..."
+msgstr "Összes csomag ellenőrzése..."
+
+#: smart/interfaces/gtk/interactive.py:149
+#: smart/interfaces/qt/interactive.py:147
+#: smart/interfaces/qt4/interactive.py:148
+msgid "Check all packages"
+msgstr "Összes csomag ellenőrzése"
+
+#: smart/interfaces/gtk/interactive.py:150
+#: smart/interfaces/qt/interactive.py:148
+#: smart/interfaces/qt4/interactive.py:149
+msgid "Upgrade _All..."
+msgstr "Összes csomag _frissítése"
+
+#: smart/interfaces/gtk/interactive.py:151
+#: smart/interfaces/qt/interactive.py:149
+#: smart/interfaces/qt4/interactive.py:150
+msgid "Upgrade all packages"
+msgstr "Az összes csomag frissítése"
+
+#: smart/interfaces/gtk/interactive.py:152
+#: smart/interfaces/qt/interactive.py:150
+#: smart/interfaces/qt4/interactive.py:151
+msgid "Fix All _Problems..."
+msgstr "Összes _hiba javítása..."
+
+#: smart/interfaces/gtk/interactive.py:153
+#: smart/interfaces/qt/interactive.py:151
+#: smart/interfaces/qt4/interactive.py:152
+msgid "Fix all problems"
+msgstr "Összes hiba javítása"
+
+#: smart/interfaces/gtk/interactive.py:154
+#, fuzzy
+msgid "Remove Automatic..."
+msgstr "Automatikus"
+
+#: smart/interfaces/gtk/interactive.py:155
+#, fuzzy
+msgid "Remove packages installed as dependencies"
+msgstr "a csomagok által biztosított függőségek"
+
+#: smart/interfaces/gtk/interactive.py:156
+#: smart/interfaces/qt/interactive.py:152
+#: smart/interfaces/qt4/interactive.py:153
+msgid "_Find..."
+msgstr "_Keresés..."
+
+#: smart/interfaces/gtk/interactive.py:157
+#: smart/interfaces/qt/interactive.py:153
+#: smart/interfaces/qt4/interactive.py:154
+msgid "Find packages"
+msgstr "Csomagok keresése"
+
+#: smart/interfaces/gtk/interactive.py:158
+#: smart/interfaces/qt/interactive.py:154
+#: smart/interfaces/qt4/interactive.py:155
+msgid "_Channels"
+msgstr "_Csatornák"
+
+#: smart/interfaces/gtk/interactive.py:159
+#: smart/interfaces/qt/interactive.py:155
+#: smart/interfaces/qt4/interactive.py:156
+msgid "Edit channels"
+msgstr "Csatornák szerkesztése"
+
+#: smart/interfaces/gtk/interactive.py:160
+#: smart/interfaces/qt/interactive.py:156
+#: smart/interfaces/qt4/interactive.py:157
+msgid "_Mirrors"
+msgstr "_Másodlagos kiszolgálók"
+
+#: smart/interfaces/gtk/interactive.py:161
+#: smart/interfaces/qt/interactive.py:157
+#: smart/interfaces/qt4/interactive.py:158
+msgid "Edit mirrors"
+msgstr "Másodlagos kiszolgálók szerkesztése"
+
+#: smart/interfaces/gtk/interactive.py:162
+#: smart/interfaces/qt/interactive.py:158
+#: smart/interfaces/qt4/interactive.py:159
+msgid "_Flags"
+msgstr "_Jelölések"
+
+#: smart/interfaces/gtk/interactive.py:163
+#: smart/interfaces/qt/interactive.py:159
+#: smart/interfaces/qt4/interactive.py:160
+msgid "Edit package flags"
+msgstr "Csomagjelző szerkesztése"
+
+#: smart/interfaces/gtk/interactive.py:164
+#: smart/interfaces/qt/interactive.py:160
+#: smart/interfaces/qt4/interactive.py:161
+msgid "_Priorities"
+msgstr "_Prioritások"
+
+#: smart/interfaces/gtk/interactive.py:165
+#: smart/interfaces/qt/interactive.py:161
+#: smart/interfaces/qt4/interactive.py:162
+msgid "Edit package priorities"
+msgstr "Csomagok prioritásának szerkesztése"
+
+#: smart/interfaces/gtk/interactive.py:167
+#: smart/interfaces/qt/interactive.py:163
+#: smart/interfaces/qt4/interactive.py:164
+msgid "_View"
+msgstr "_Nézet"
+
+#: smart/interfaces/gtk/interactive.py:168
+#: smart/interfaces/qt/interactive.py:164
+#: smart/interfaces/qt4/interactive.py:165
+msgid "_Tree Style"
+msgstr "_Fastruktúra"
+
+#: smart/interfaces/gtk/interactive.py:169
+#: smart/interfaces/qt/interactive.py:165
+#: smart/interfaces/qt4/interactive.py:166
+msgid "_Expand All"
+msgstr "Összes _kibontása"
+
+#: smart/interfaces/gtk/interactive.py:170
+#: smart/interfaces/qt/interactive.py:166
+#: smart/interfaces/qt4/interactive.py:167
+msgid "Expand all items in the tree"
+msgstr "Összes elem kibontása a fában"
+
+#: smart/interfaces/gtk/interactive.py:171
+#: smart/interfaces/qt/interactive.py:167
+#: smart/interfaces/qt4/interactive.py:168
+msgid "_Collapse All"
+msgstr "Összes _bezárása"
+
+#: smart/interfaces/gtk/interactive.py:172
+#: smart/interfaces/qt/interactive.py:168
+#: smart/interfaces/qt4/interactive.py:169
+msgid "Collapse all items in the tree"
+msgstr "Az összes elem bezárása a fában"
+
+#: smart/interfaces/gtk/interactive.py:173
+#: smart/interfaces/qt/interactive.py:169
+#: smart/interfaces/qt4/interactive.py:170
+msgid "_Summary Window"
+msgstr "Összegzés"
+
+#: smart/interfaces/gtk/interactive.py:174
+#: smart/interfaces/qt/interactive.py:170
+#: smart/interfaces/qt4/interactive.py:171
+msgid "Show summary window"
+msgstr "Összegzőablak megjelenítése"
+
+#: smart/interfaces/gtk/interactive.py:175
+#: smart/interfaces/qt/interactive.py:171
+#: smart/interfaces/qt4/interactive.py:172
+msgid "_Log Window"
+msgstr "_Napló megtekintése"
+
+#: smart/interfaces/gtk/interactive.py:176
+#: smart/interfaces/qt/interactive.py:172
+#: smart/interfaces/qt4/interactive.py:173
+msgid "Show log window"
+msgstr "Napló megjelenítése"
+
+#: smart/interfaces/gtk/interactive.py:178
+#: smart/interfaces/qt/interactive.py:174
+#: smart/interfaces/qt4/interactive.py:175
+msgid "_Help"
+msgstr "_Segítség"
+
+#: smart/interfaces/gtk/interactive.py:179
+#: smart/interfaces/qt/interactive.py:175
+#: smart/interfaces/qt4/interactive.py:176
+msgid "_Icon Legend"
+msgstr ""
+
+#: smart/interfaces/gtk/interactive.py:180
+#: smart/interfaces/qt/interactive.py:176
+#: smart/interfaces/qt4/interactive.py:177
+msgid "Show icon legend"
+msgstr ""
+
+#: smart/interfaces/gtk/interactive.py:181
+#: smart/interfaces/qt/interactive.py:177
+#: smart/interfaces/qt4/interactive.py:178
+msgid "_About"
+msgstr "_Névjegy"
+
+#: smart/interfaces/gtk/interactive.py:182
+#: smart/interfaces/qt/interactive.py:178
+#: smart/interfaces/qt4/interactive.py:179
+msgid "Show about window"
+msgstr "Névjegy megjelenítése"
+
+#: smart/interfaces/gtk/interactive.py:235
+#: smart/interfaces/qt/interactive.py:312
+#: smart/interfaces/qt4/interactive.py:299
+msgid "Hide Non-upgrades"
+msgstr "Nem frissített csomagok elrejtése"
+
+#: smart/interfaces/gtk/interactive.py:236
+#, fuzzy
+msgid "Hide Non-newest"
+msgstr "Nem frissített csomagok elrejtése"
+
+#: smart/interfaces/gtk/interactive.py:237
+#: smart/interfaces/qt/interactive.py:313
+#: smart/interfaces/qt4/interactive.py:300
+msgid "Hide Installed"
+msgstr "Telepített csomagok elrejtése"
+
+#: smart/interfaces/gtk/interactive.py:238
+#: smart/interfaces/qt/interactive.py:314
+#: smart/interfaces/qt4/interactive.py:301
+msgid "Hide Uninstalled"
+msgstr "Nem telepített csomagok elrejtése"
+
+#: smart/interfaces/gtk/interactive.py:239
+#: smart/interfaces/qt/interactive.py:315
+#: smart/interfaces/qt4/interactive.py:302
+msgid "Hide Unmarked"
+msgstr "Ki nem jelölt csomagok elrejtése"
+
+#: smart/interfaces/gtk/interactive.py:240
+#: smart/interfaces/qt/interactive.py:316
+#: smart/interfaces/qt4/interactive.py:303
+#, fuzzy
+msgid "Hide Unlocked"
+msgstr "Ki nem jelölt csomagok elrejtése"
+
+#: smart/interfaces/gtk/interactive.py:241
+#: smart/interfaces/qt/interactive.py:317
+#: smart/interfaces/qt4/interactive.py:304
+#, fuzzy
+msgid "Hide Requested"
+msgstr "Telepített csomagok elrejtése"
+
+#: smart/interfaces/gtk/interactive.py:242
+#: smart/interfaces/qt/interactive.py:318
+#: smart/interfaces/qt4/interactive.py:305
+msgid "Hide Old"
+msgstr "Régi csomagok elrejtése"
+
+#: smart/interfaces/gtk/interactive.py:249
+#: smart/interfaces/qt/interactive.py:324
+#: smart/interfaces/qt4/interactive.py:311
+msgid "Groups"
+msgstr "Csoportok"
+
+#: smart/interfaces/gtk/interactive.py:250
+msgid "Separate Groups"
+msgstr ""
+
+#: smart/interfaces/gtk/interactive.py:252
+#: smart/interfaces/qt/interactive.py:326
+#: smart/interfaces/qt4/interactive.py:313
+msgid "Channels & Groups"
+msgstr "Csatornák és csoportok"
+
+#: smart/interfaces/gtk/interactive.py:253
+#: smart/interfaces/qt/interactive.py:327
+#: smart/interfaces/qt4/interactive.py:314 smart/plugins/channelsync.py:139
+msgid "None"
+msgstr "Nincs"
+
+#: smart/interfaces/gtk/interactive.py:338
+#: smart/interfaces/gtk/interactive.py:415
+#: smart/interfaces/qt/interactive.py:404
+#: smart/interfaces/qt4/interactive.py:396
+msgid "Automatic"
+msgstr "Automatikus"
+
+#: smart/interfaces/gtk/interactive.py:347
+#: smart/interfaces/gtk/interactive.py:420
+#: smart/interfaces/gtk/packageinfo.py:133
+#: smart/interfaces/gtk/packageview.py:152
+#: smart/interfaces/gtk/progress.py:148 smart/interfaces/qt/interactive.py:409
+#: smart/interfaces/qt/packageinfo.py:96 smart/interfaces/qt/progress.py:86
+#: smart/interfaces/qt4/interactive.py:402
+#: smart/interfaces/qt4/packageinfo.py:102 smart/interfaces/qt4/progress.py:92
+msgid "Description"
+msgstr "Leírás"
+
+#: smart/interfaces/gtk/interactive.py:374
+#: smart/interfaces/qt/interactive.py:388
+#: smart/interfaces/qt4/interactive.py:377
+msgid "Search:"
+msgstr "Keresés:"
+
+#: smart/interfaces/gtk/interactive.py:447
+#, fuzzy
+msgid "Group"
+msgstr "Csoport:"
+
+#: smart/interfaces/gtk/interactive.py:604
+#: smart/interfaces/qt/interactive.py:555
+#: smart/interfaces/qt4/interactive.py:550
+msgid "Apply marked changes now?"
+msgstr "A kijelölt változtatásokat most jussanak érvényre?"
+
+#: smart/interfaces/gtk/interactive.py:607
+#: smart/interfaces/qt/interactive.py:558
+#: smart/interfaces/qt4/interactive.py:553
+#: smart/interfaces/text/interactive.py:370
+msgid "No interesting upgrades available!"
+msgstr "Nincs érdemleges elérhető frissítés!"
+
+#: smart/interfaces/gtk/interactive.py:618
+msgid "No automatic removals possible!"
+msgstr ""
+
+#: smart/interfaces/gtk/interactive.py:727
+#: smart/interfaces/qt/interactive.py:682
+#: smart/interfaces/qt4/interactive.py:678
+msgid "Keep"
+msgstr "Megtart"
+
+#: smart/interfaces/gtk/interactive.py:736
+#: smart/interfaces/qt/interactive.py:688
+#: smart/interfaces/qt4/interactive.py:686
+msgid "Fix problems"
+msgstr "Hibák javítása"
+
+#: smart/interfaces/gtk/interactive.py:767
+#: smart/interfaces/qt/interactive.py:722
+#: smart/interfaces/qt4/interactive.py:720
+msgid "Unlock this version"
+msgstr "Verzió zárolásának feloldása"
+
+#: smart/interfaces/gtk/interactive.py:776
+#: smart/interfaces/qt/interactive.py:729
+#: smart/interfaces/qt4/interactive.py:727
+msgid "Lock this version"
+msgstr "Verzió zárolása"
+
+#: smart/interfaces/gtk/interactive.py:791
+#: smart/interfaces/qt/interactive.py:741
+#: smart/interfaces/qt4/interactive.py:739
+msgid "Unlock all versions"
+msgstr "Összes verzió zárolásának feloldása"
+
+#: smart/interfaces/gtk/interactive.py:800
+#: smart/interfaces/qt/interactive.py:748
+#: smart/interfaces/qt4/interactive.py:746
+msgid "Lock all versions"
+msgstr "Összes verzió zárolása"
+
+#: smart/interfaces/gtk/interactive.py:828
+#: smart/interfaces/qt/interactive.py:775
+#: smart/interfaces/qt4/interactive.py:764
+msgid "Checking relations..."
+msgstr "Kapcsolatok ellenőrzése..."
+
+#: smart/interfaces/gtk/interactive.py:831
+#: smart/interfaces/qt/interactive.py:778
+#: smart/interfaces/qt4/interactive.py:767
+msgid "All checked packages have correct relations."
+msgstr "Minden ellenőrzött csomag kapcsolata megfelelő."
+
+#: smart/interfaces/gtk/interactive.py:939
+msgid "All"
+msgstr ""
+
+#: smart/interfaces/gtk/interactive.py:1121
+#, fuzzy, python-format
+msgid "%d packages, %d installed"
+msgstr "a(z) %s csomag már telepítve van"
+
+#: smart/interfaces/gtk/interface.py:89
+msgid " Continue?"
+msgstr " Folytatja?"
+
+#: smart/interfaces/gtk/interface.py:110 smart/interfaces/qt/interface.py:136
+#: smart/interfaces/qt4/interface.py:129
+msgid "Input"
+msgstr "Bemenet"
+
+#: smart/interfaces/gtk/interface.py:150 smart/interfaces/qt/interface.py:144
+#: smart/interfaces/qt4/interface.py:137
+msgid "Insert one or more of the following removable channels:\n"
+msgstr "Az alábbi eltávolítható csatornákból adjon meg legalább egyet:\n"
+
+#: smart/interfaces/gtk/legend.py:33 smart/interfaces/qt/legend.py:32
+#: smart/interfaces/qt4/legend.py:33
+msgid "Icon Legend"
+msgstr ""
+
+#: smart/interfaces/gtk/legend.py:50 smart/interfaces/qt/legend.py:42
+#: smart/interfaces/qt4/legend.py:44
+msgid ""
+"The following icons are used to indicate\n"
+"the current status of a package:"
+msgstr ""
+
+#: smart/interfaces/gtk/legend.py:64 smart/interfaces/qt/legend.py:51
+#: smart/interfaces/qt4/legend.py:58
+#, fuzzy
+msgid "Marked for installation"
+msgstr "A(z) %s csomag egyszerűsített telepítése"
+
+#: smart/interfaces/gtk/legend.py:65 smart/interfaces/qt/legend.py:52
+#: smart/interfaces/qt4/legend.py:59
+#, fuzzy
+msgid "Marked for re-installation"
+msgstr "a(z) %s nem telepíthető újra"
+
+#: smart/interfaces/gtk/legend.py:66 smart/interfaces/qt/legend.py:53
+#: smart/interfaces/qt4/legend.py:60
+msgid "Marked for upgrade"
+msgstr ""
+
+#: smart/interfaces/gtk/legend.py:67 smart/interfaces/qt/legend.py:54
+#: smart/interfaces/qt4/legend.py:61
+msgid "Marked for downgrade"
+msgstr ""
+
+#: smart/interfaces/gtk/legend.py:68 smart/interfaces/qt/legend.py:55
+#: smart/interfaces/qt4/legend.py:62
+msgid "Marked for removal"
+msgstr ""
+
+#: smart/interfaces/gtk/legend.py:69 smart/interfaces/qt/legend.py:56
+#: smart/interfaces/qt4/legend.py:63
+#, fuzzy
+msgid "Not installed"
+msgstr "(telepített)"
+
+#: smart/interfaces/gtk/legend.py:70 smart/interfaces/qt/legend.py:57
+#: smart/interfaces/qt4/legend.py:64
+#, fuzzy
+msgid "Not installed (new)"
+msgstr "(telepített)"
+
+#: smart/interfaces/gtk/legend.py:71 smart/interfaces/qt/legend.py:58
+#: smart/interfaces/qt4/legend.py:65
+#, fuzzy
+msgid "Not installed (locked)"
+msgstr "(telepített)"
+
+#: smart/interfaces/gtk/legend.py:73 smart/interfaces/qt/legend.py:60
+#: smart/interfaces/qt4/legend.py:67
+#, fuzzy
+msgid "Installed (upgradable)"
+msgstr "Telepítés (%d)"
+
+#: smart/interfaces/gtk/legend.py:74 smart/interfaces/qt/legend.py:61
+#: smart/interfaces/qt4/legend.py:68
+#, fuzzy
+msgid "Installed (locked)"
+msgstr "Telepítés (%d)"
+
+#: smart/interfaces/gtk/legend.py:75 smart/interfaces/qt/legend.py:62
+#: smart/interfaces/qt4/legend.py:69
+msgid "Broken"
+msgstr ""
+
+#: smart/interfaces/gtk/log.py:77 smart/interfaces/qt/log.py:54
+#: smart/interfaces/qt4/log.py:55
+msgid "Log"
+msgstr "Napló"
+
+#: smart/interfaces/gtk/mirrors.py:32 smart/interfaces/qt/mirrors.py:47
+#: smart/interfaces/qt4/mirrors.py:48
+msgid "Mirrors"
+msgstr "Másodlagos kiszolgálók"
+
+#: smart/interfaces/gtk/mirrors.py:65 smart/interfaces/qt/mirrors.py:66
+#: smart/interfaces/qt4/mirrors.py:70
+msgid "Mirror"
+msgstr "Másodlagos kiszolgáló"
+
+#: smart/interfaces/gtk/mirrors.py:145 smart/interfaces/qt/mirrors.py:154
+#: smart/interfaces/qt4/mirrors.py:166
+msgid "Origin already exists!"
+msgstr "Az elsődleges kiszolgáló már létezik!"
+
+#: smart/interfaces/gtk/mirrors.py:152 smart/interfaces/qt/mirrors.py:161
+#: smart/interfaces/qt4/mirrors.py:173
+msgid "Mirror already exists!"
+msgstr "A másodlagos kiszolgáló már létezik!"
+
+#: smart/interfaces/gtk/mirrors.py:164 smart/interfaces/qt/mirrors.py:173
+#: smart/interfaces/qt4/mirrors.py:185
+msgid "New Mirror"
+msgstr "Új másodlagos kiszolgáló"
+
+#: smart/interfaces/gtk/mirrors.py:185 smart/interfaces/qt/mirrors.py:187
+#: smart/interfaces/qt4/mirrors.py:202
+msgid "Origin URL:"
+msgstr "Elsődleges kiszolgáló URL:"
+
+#: smart/interfaces/gtk/mirrors.py:195 smart/interfaces/qt/mirrors.py:194
+#: smart/interfaces/qt4/mirrors.py:211
+msgid "Mirror URL:"
+msgstr "Másodlagos kiszolgáló URL:"
+
+#: smart/interfaces/gtk/mirrors.py:243 smart/interfaces/qt/mirrors.py:233
+#: smart/interfaces/qt4/mirrors.py:257
+msgid "No origin provided!"
+msgstr "Nincs elsődleges kiszolgáló megadva!"
+
+#: smart/interfaces/gtk/mirrors.py:247 smart/interfaces/qt/mirrors.py:237
+#: smart/interfaces/qt4/mirrors.py:261
+msgid "No mirror provided!"
+msgstr "Nincs másodlagos kiszolgáló megadva!"
+
+#: smart/interfaces/gtk/packageinfo.py:86
+#: smart/interfaces/qt/packageinfo.py:67
+#: smart/interfaces/qt4/packageinfo.py:69
+msgid "Status:"
+msgstr "Állapot:"
+
+#: smart/interfaces/gtk/packageinfo.py:112
+#: smart/interfaces/qt/packageinfo.py:84
+#: smart/interfaces/qt4/packageinfo.py:88
+msgid "General"
+msgstr "Általános"
+
+#: smart/interfaces/gtk/packageinfo.py:146
+msgid "Filter:"
+msgstr ""
+
+#: smart/interfaces/gtk/packageinfo.py:226
+#: smart/interfaces/qt/packageinfo.py:110
+#: smart/interfaces/qt4/packageinfo.py:120
+msgid "Content"
+msgstr "Tartalom"
+
+#: smart/interfaces/gtk/packageinfo.py:246
+#: smart/interfaces/qt/packageinfo.py:124
+#: smart/interfaces/qt4/packageinfo.py:138
+#, fuzzy
+msgid "Changelog"
+msgstr "Csatorna"
+
+#: smart/interfaces/gtk/packageinfo.py:254
+#: smart/interfaces/qt/packageinfo.py:130
+#: smart/interfaces/qt4/packageinfo.py:144
+msgid "Relations"
+msgstr "Kapcsolatok"
+
+#: smart/interfaces/gtk/packageinfo.py:276
+#: smart/interfaces/qt/packageinfo.py:139
+#: smart/interfaces/qt4/packageinfo.py:154
+msgid "URL"
+msgstr "URL"
+
+#: smart/interfaces/gtk/packageinfo.py:425
+#: smart/interfaces/qt/packageinfo.py:204
+#: smart/interfaces/qt4/packageinfo.py:219
+msgid "Available"
+msgstr "Elérhető"
+
+#: smart/interfaces/gtk/packageinfo.py:427
+#: smart/interfaces/qt/packageinfo.py:206
+#: smart/interfaces/qt4/packageinfo.py:221 smart/util/strtools.py:55
+#: smart/util/strtools.py:75
+msgid "Unknown"
+msgstr "Ismeretlen"
+
+#: smart/interfaces/gtk/packageinfo.py:572
+#: smart/interfaces/gtk/packageinfo.py:605
+#: smart/interfaces/qt/packageinfo.py:336
+#: smart/interfaces/qt/packageinfo.py:369
+#: smart/interfaces/qt4/packageinfo.py:352
+#: smart/interfaces/qt4/packageinfo.py:385
+msgid "Provides"
+msgstr "Biztosít"
+
+#: smart/interfaces/gtk/packageinfo.py:596
+#: smart/interfaces/qt/packageinfo.py:360
+#: smart/interfaces/qt4/packageinfo.py:376
+msgid "Upgraded By"
+msgstr "Frissített"
+
+#: smart/interfaces/gtk/packageinfo.py:602
+#: smart/interfaces/qt/packageinfo.py:366
+#: smart/interfaces/qt4/packageinfo.py:382
+msgid "Conflicted By"
+msgstr "Ütközés"
+
+#: smart/interfaces/gtk/packageview.py:146
+#: smart/interfaces/qt/packageview.py:57
+#: smart/interfaces/qt4/packageview.py:59
+msgid "Version"
+msgstr "Verzió"
+
+#: smart/interfaces/gtk/priorities.py:33 smart/interfaces/qt/priorities.py:48
+#: smart/interfaces/qt4/priorities.py:49
+msgid "Priorities"
+msgstr "Prioritások"
+
+#: smart/interfaces/gtk/priorities.py:75 smart/interfaces/qt/priorities.py:71
+msgid "Channel Alias"
+msgstr "Csatornaelnevezés"
+
+#: smart/interfaces/gtk/priorities.py:129
+#: smart/interfaces/gtk/priorities.py:167
+#: smart/interfaces/gtk/priorities.py:177
+#: smart/interfaces/qt/priorities.py:128 smart/interfaces/qt/priorities.py:162
+#: smart/interfaces/qt/priorities.py:171
+#: smart/interfaces/qt4/priorities.py:136
+#: smart/interfaces/qt4/priorities.py:171
+#: smart/interfaces/qt4/priorities.py:180
+msgid "Name/alias pair already exists!"
+msgstr "Név/elnevezés párosítás már létezik!"
+
+#: smart/interfaces/gtk/priorities.py:192
+#: smart/interfaces/qt/priorities.py:187
+#: smart/interfaces/qt4/priorities.py:196
+msgid "Invalid priority!"
+msgstr "Érvénytelen prioritás!"
+
+#: smart/interfaces/gtk/priorities.py:202
+#: smart/interfaces/qt/priorities.py:195
+#: smart/interfaces/qt4/priorities.py:204
+msgid "New Package Priority"
+msgstr "Új csomagprioritás"
+
+#: smart/interfaces/gtk/priorities.py:223
+#: smart/interfaces/qt/priorities.py:209
+#: smart/interfaces/qt4/priorities.py:221
+msgid "Package Name:"
+msgstr "Csomagnév:"
+
+#: smart/interfaces/gtk/priorities.py:232
+#: smart/interfaces/qt/priorities.py:214
+#: smart/interfaces/qt4/priorities.py:228
+msgid "Channel Alias:"
+msgstr "Csatornaelnevezés:"
+
+#: smart/interfaces/gtk/priorities.py:292
+#: smart/interfaces/qt/priorities.py:258
+#: smart/interfaces/qt4/priorities.py:281
+msgid "No name provided!"
+msgstr "Nincs név megadva!"
+
+#: smart/interfaces/gtk/priorities.py:312
+#: smart/interfaces/qt/priorities.py:278
+#: smart/interfaces/qt4/priorities.py:301
+msgid "Package Priority"
+msgstr "Csomagprioritások"
+
+#: smart/interfaces/gtk/priorities.py:352
+#: smart/interfaces/qt/priorities.py:312
+#: smart/interfaces/qt4/priorities.py:341
+msgid "Package:"
+msgstr "Csomag:"
+
+#: smart/interfaces/gtk/priorities.py:375
+#: smart/interfaces/qt/priorities.py:352
+#: smart/interfaces/qt4/priorities.py:383
+msgid "Default priority:"
+msgstr "Alapértelmezett prioritás:"
+
+#: smart/interfaces/gtk/priorities.py:385
+#: smart/interfaces/qt/priorities.py:359
+#: smart/interfaces/qt4/priorities.py:393
+msgid "Channel default"
+msgstr "Csatorna-alapértelmezés"
+
+#: smart/interfaces/gtk/priorities.py:390
+#: smart/interfaces/qt/priorities.py:363
+#: smart/interfaces/qt4/priorities.py:398
+msgid "Set to"
+msgstr "Beállítás"
+
+#: smart/interfaces/gtk/priorities.py:406
+#: smart/interfaces/qt/priorities.py:372
+#: smart/interfaces/qt4/priorities.py:409
+msgid "Channel priority:"
+msgstr "Csatornaprioritás:"
+
+#: smart/interfaces/gtk/progress.py:61 smart/interfaces/qt/progress.py:53
+#: smart/interfaces/qt4/progress.py:54
+msgid "Operation Progress"
+msgstr "Feldolgozás"
+
+#: smart/interfaces/gtk/progress.py:112 smart/interfaces/gtk/progress.py:117
+#: smart/interfaces/qt/progress.py:75 smart/interfaces/qt4/progress.py:91
+msgid "Progress"
+msgstr "Folyamat"
+
+#: smart/interfaces/gtk/progress.py:124 smart/interfaces/qt/progress.py:78
+#: smart/interfaces/qt4/progress.py:92
+msgid "Current"
+msgstr "Jelenlegi"
+
+#: smart/interfaces/gtk/progress.py:130 smart/interfaces/qt/progress.py:80
+#: smart/interfaces/qt4/progress.py:92
+msgid "Total"
+msgstr "Teljes"
+
+#: smart/interfaces/gtk/progress.py:136 smart/interfaces/qt/progress.py:82
+#: smart/interfaces/qt4/progress.py:92
+msgid "Speed"
+msgstr "Sebesség"
+
+#: smart/interfaces/gtk/progress.py:142 smart/interfaces/qt/progress.py:84
+#: smart/interfaces/qt4/progress.py:92
+msgid "ETA"
+msgstr "Kész"
+
+#: smart/interfaces/gtk/progress.py:248 smart/interfaces/gtk/progress.py:249
+#, fuzzy
+msgid "Done"
+msgstr "Nincs"
+
+#: smart/interfaces/qt/__init__.py:34 smart/interfaces/qt4/__init__.py:34
+#, fuzzy
+msgid "System has no support for qt python interface"
+msgstr "A rendszer nem támogatja a gtk python felületet"
+
+#: smart/interfaces/qt/changes.py:61 smart/interfaces/qt/channels.py:346
+#: smart/interfaces/qt/channels.py:425 smart/interfaces/qt/channels.py:585
+#: smart/interfaces/qt/channels.py:671 smart/interfaces/qt/channels.py:762
+#: smart/interfaces/qt/interface.py:99 smart/interfaces/qt/mirrors.py:213
+#: smart/interfaces/qt/priorities.py:237 smart/interfaces/qt/progress.py:99
+#: smart/interfaces/qt4/changes.py:63 smart/interfaces/qt4/channels.py:367
+#: smart/interfaces/qt4/channels.py:468 smart/interfaces/qt4/channels.py:649
+#: smart/interfaces/qt4/channels.py:748 smart/interfaces/qt4/channels.py:849
+#: smart/interfaces/qt4/interface.py:92 smart/interfaces/qt4/mirrors.py:236
+#: smart/interfaces/qt4/priorities.py:258 smart/interfaces/qt4/progress.py:103
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: smart/interfaces/qt/changes.py:63 smart/interfaces/qt/channels.py:349
+#: smart/interfaces/qt/channels.py:428 smart/interfaces/qt/channels.py:588
+#: smart/interfaces/qt/channels.py:674 smart/interfaces/qt/channels.py:759
+#: smart/interfaces/qt/mirrors.py:210 smart/interfaces/qt/priorities.py:240
+#: smart/interfaces/qt4/changes.py:65 smart/interfaces/qt4/channels.py:371
+#: smart/interfaces/qt4/channels.py:472 smart/interfaces/qt4/channels.py:653
+#: smart/interfaces/qt4/channels.py:752 smart/interfaces/qt4/channels.py:845
+#: smart/interfaces/qt4/mirrors.py:232 smart/interfaces/qt4/priorities.py:262
+msgid "OK"
+msgstr ""
+
+#: smart/interfaces/qt/changes.py:71 smart/interfaces/qt/channels.py:111
+#: smart/interfaces/qt/flags.py:128 smart/interfaces/qt/legend.py:75
+#: smart/interfaces/qt/log.py:90 smart/interfaces/qt/mirrors.py:89
+#: smart/interfaces/qt/priorities.py:93 smart/interfaces/qt/priorities.py:299
+#: smart/interfaces/qt4/changes.py:74 smart/interfaces/qt4/channels.py:121
+#: smart/interfaces/qt4/flags.py:154 smart/interfaces/qt4/legend.py:87
+#: smart/interfaces/qt4/log.py:100 smart/interfaces/qt4/mirrors.py:97
+#: smart/interfaces/qt4/priorities.py:100
+#: smart/interfaces/qt4/priorities.py:327
+#, fuzzy
+msgid "Close"
+msgstr "false"
+
+#: smart/interfaces/qt/channels.py:91 smart/interfaces/qt/flags.py:71
+#: smart/interfaces/qt/flags.py:102 smart/interfaces/qt/mirrors.py:75
+#: smart/interfaces/qt/priorities.py:79 smart/interfaces/qt4/channels.py:98
+#: smart/interfaces/qt4/flags.py:83 smart/interfaces/qt4/flags.py:123
+#: smart/interfaces/qt4/mirrors.py:81 smart/interfaces/qt4/priorities.py:84
+msgid "New"
+msgstr ""
+
+#: smart/interfaces/qt/channels.py:97 smart/interfaces/qt/flags.py:78
+#: smart/interfaces/qt/flags.py:109 smart/interfaces/qt/mirrors.py:82
+#: smart/interfaces/qt/priorities.py:86 smart/interfaces/qt4/channels.py:105
+#: smart/interfaces/qt4/flags.py:91 smart/interfaces/qt4/flags.py:131
+#: smart/interfaces/qt4/mirrors.py:89 smart/interfaces/qt4/priorities.py:92
+msgid "Delete"
+msgstr ""
+
+#: smart/interfaces/qt/channels.py:104 smart/interfaces/qt4/channels.py:113
+#, fuzzy
+msgid "Edit"
+msgstr "_Szerkesztés"
+
+#: smart/interfaces/qt/interface.py:81 smart/interfaces/qt/interface.py:96
+#: smart/interfaces/qt/interface.py:113 smart/interfaces/qt4/interface.py:74
+#: smart/interfaces/qt4/interface.py:89 smart/interfaces/qt4/interface.py:106
+msgid "Question..."
+msgstr "Kérdés..."
+
+#: smart/interfaces/qt/interface.py:98 smart/interfaces/qt4/interface.py:91
+msgid "Continue"
+msgstr "Folytatás"
+
+#: smart/interfaces/qt/log.py:86 smart/interfaces/qt4/log.py:95
+msgid "Clear"
+msgstr ""
+
+#: smart/interfaces/text/interactive.py:72
+msgid "Documented commands (type help <topic>):"
+msgstr "Dokumentált parancsok (help <témakör>):"
+
+#: smart/interfaces/text/interactive.py:73
+msgid "Undocumented commands:"
+msgstr "Nem dokumentált parancsok:"
+
+#: smart/interfaces/text/interactive.py:74
+msgid "Miscelaneous help topics:"
+msgstr "Egyéb súgótémakörök:"
+
+#: smart/interfaces/text/interactive.py:75
+#, python-format
+msgid "*** No help on %s"
+msgstr "*** Nincs súgó ebben a témában: %s"
+
+#: smart/interfaces/text/interactive.py:215
+msgid "What would you expect!? ;-)"
+msgstr "Mire gondoltál? ;-)"
+
+#: smart/interfaces/text/interactive.py:218
+msgid "The exit/quit/EOF command returns to the system."
+msgstr "Exit/quit/EOF parancs érkezett vissza a rendszerhez."
+
+#: smart/interfaces/text/interactive.py:229
+msgid "The shell command offers execution of system commands."
+msgstr "A shell parancs segítségével rendszerparancsos futtathatók."
+
+#: smart/interfaces/text/interactive.py:231
+msgid "Usage: shell [<cmd>]"
+msgstr "Használat: shell [<parancs>]"
+
+#: smart/interfaces/text/interactive.py:232
+msgid "       ![<cmd>]"
+msgstr "       ![<parancs>]"
+
+#: smart/interfaces/text/interactive.py:240
+msgid "The status command shows currently marked changes."
+msgstr "A status parancs megjeleníti a kijelölt változásokat."
+
+#: smart/interfaces/text/interactive.py:242
+msgid "Usage: status"
+msgstr "Használat: status"
+
+#: smart/interfaces/text/interactive.py:248
+msgid "There are no marked changes."
+msgstr "Nincs megjelölt változás."
+
+#: smart/interfaces/text/interactive.py:253
+msgid "The install command marks packages for installation."
+msgstr "Az install parancs kijelöli telepítéshez a csomagokat."
+
+#: smart/interfaces/text/interactive.py:255
+#: smart/interfaces/text/interactive.py:299
+#: smart/interfaces/text/interactive.py:335
+#: smart/interfaces/text/interactive.py:380
+#: smart/interfaces/text/interactive.py:422
+#: smart/interfaces/text/interactive.py:459
+#: smart/interfaces/text/interactive.py:556
+msgid "Options:"
+msgstr "Beállítások:"
+
+#: smart/interfaces/text/interactive.py:256
+#: smart/interfaces/text/interactive.py:300
+#: smart/interfaces/text/interactive.py:336
+#: smart/interfaces/text/interactive.py:381
+#: smart/interfaces/text/interactive.py:423
+#: smart/interfaces/text/interactive.py:460
+msgid ""
+"   --explain  Include additional information about\n"
+"              changes, when possible"
+msgstr ""
+"   --explain  További információkat tartalmaz a\n"
+"              változásokról, amennyiben lehetséges"
+
+#: smart/interfaces/text/interactive.py:259
+msgid "Usage: install <pkgname> ..."
+msgstr "Használat: install <csomagnév>"
+
+#: smart/interfaces/text/interactive.py:286
+#, python-format
+msgid "No uninstalled packages matched '%s'"
+msgstr "Nem található telepítetlen '%s' csomag"
+
+#: smart/interfaces/text/interactive.py:297
+msgid "The reinstall command marks packages for reinstallation."
+msgstr "A reinstall parancs megjelöli az újratelepítendő csomagokat."
+
+#: smart/interfaces/text/interactive.py:303
+msgid "Usage: reinstall <pkgname> ..."
+msgstr "Használat: reinstall <csomagnév>"
+
+#: smart/interfaces/text/interactive.py:321
+#, python-format
+msgid "'%s' matches multiple installed packages"
+msgstr "több telepített '%s' csomag található"
+
+#: smart/interfaces/text/interactive.py:333
+msgid "The upgrade command marks packages for upgrading."
+msgstr "Az upgrade parancs megjelöli a csomagokat a frissítéshez."
+
+#: smart/interfaces/text/interactive.py:339
+msgid "Usage: upgrade <pkgname> ..."
+msgstr "Használat: upgrade <csomagnév> ..."
+
+#: smart/interfaces/text/interactive.py:378
+msgid "The remove command marks packages for being removed."
+msgstr "A remove parancs megjelöli az eltávolítandó csomagokat."
+
+#: smart/interfaces/text/interactive.py:384
+msgid "Usage: remove <pkgname> ..."
+msgstr "Használat: remove <csomagnév> ..."
+
+#: smart/interfaces/text/interactive.py:420
+msgid "The keep command unmarks currently marked packages."
+msgstr "A keep parancs jelöletlenné teszi a jelenleg jelölt csomagokat."
+
+#: smart/interfaces/text/interactive.py:426
+msgid "Usage: keep <pkgname> ..."
+msgstr "Használat: keep <csomagnév> ..."
+
+#: smart/interfaces/text/interactive.py:443
+#, python-format
+msgid "'%s' matches no marked packages"
+msgstr "nem található megjelölt '%s' csomag"
+
+#: smart/interfaces/text/interactive.py:456
+msgid ""
+"The fix command verifies relations of given packages\n"
+"and marks the necessary changes for fixing them."
+msgstr ""
+"A fix parancs ellenőrzi a kapcsolatokat a megadott csomagok között\n"
+"és megjelöli a szükséges változásokat a javításhoz."
+
+#: smart/interfaces/text/interactive.py:463
+msgid "Usage: fix <pkgname> ..."
+msgstr "Használat: fix <csomagnév> ..."
+
+#: smart/interfaces/text/interactive.py:492
+msgid ""
+"The download command fetches the given packages\n"
+"to the local filesystem."
+msgstr ""
+"A download parancs letölti a megadott csomagokat\n"
+"a helyi fájlrendszerre."
+
+#: smart/interfaces/text/interactive.py:495
+msgid "Usage: download <pkgname> ..."
+msgstr "Használat: download <csomagnév> ..."
+
+#: smart/interfaces/text/interactive.py:502
+#, python-format
+msgid "'%s' matches multiple packages, selecting: %s"
+msgstr "több '%s' csomag található, válasszon: %s"
+
+#: smart/interfaces/text/interactive.py:509
+msgid "The commit command applies marked changes in the system."
+msgstr "A commit parancs végrehajtja a kijelölt változásokat a rendszeren."
+
+#: smart/interfaces/text/interactive.py:511
+msgid "Usage: commit"
+msgstr "Használat: commit"
+
+#: smart/interfaces/text/interactive.py:523
+msgid "The undo command reverts marked changes."
+msgstr "Az undo parancs visszavonja a kijelölt változásokat."
+
+#: smart/interfaces/text/interactive.py:525
+msgid "Usage: undo"
+msgstr "Használat: undo"
+
+#: smart/interfaces/text/interactive.py:538
+msgid "The redo command reapplies undone changes."
+msgstr "A redo parancs érvényesíti a visszavont változásokat."
+
+#: smart/interfaces/text/interactive.py:540
+msgid "Usage: redo"
+msgstr "Használat: redo"
+
+#: smart/interfaces/text/interactive.py:553
+msgid ""
+"The ls command lists packages by name. Wildcards\n"
+"are accepted."
+msgstr ""
+"Az ls parancs név szerint listázza a csomagneveket. A vezérlőkarakterek\n"
+"használata elfogadott."
+
+#: smart/interfaces/text/interactive.py:557
+msgid "   -i  List only installed packages"
+msgstr "   -i  Csak a telepített csomagok listázása"
+
+#: smart/interfaces/text/interactive.py:558
+msgid "   -n  List only new packages"
+msgstr "   -n  Csak az új csomagokat listázza"
+
+#: smart/interfaces/text/interactive.py:559
+msgid "   -v  Show versions"
+msgstr "   -v  Verziók megjelenítése"
+
+#: smart/interfaces/text/interactive.py:560
+msgid "   -s  Show summaries"
+msgstr "   -s  Összegzés megjelenítése"
+
+#: smart/interfaces/text/interactive.py:562
+msgid "Usage: ls [options] [<string>] ..."
+msgstr "Használat: ls [kapcsolók] [<karakterlánc>] ..."
+
+#: smart/interfaces/text/interactive.py:653
+msgid "The update command will update channel information."
+msgstr "Az update parancs frissíti a csatornainformációkat."
+
+#: smart/interfaces/text/interactive.py:655
+msgid "Usage: update [<alias>] ..."
+msgstr "Használat: update [<alias>] ..."
+
+#: smart/interfaces/text/interactive.py:692
+msgid ""
+"The flag command allows configuring, removing and\n"
+"verifying package flags, and accepts the same options\n"
+"available in the command line interface."
+msgstr ""
+"A flag parancs segítségével beállítható, eltávolítható és\n"
+"ellenőrizhetők a csomagok jelzései és elfogad a parancssori\n"
+"utasításnak megfelelő kapcsolókat."
+
+#: smart/interfaces/text/interactive.py:696
+msgid "Usage: flag [options]"
+msgstr "Használat: flag [kapcsolók]"
+
+#: smart/interfaces/text/interactive.py:711
+msgid ""
+"The query command allows querying package information,\n"
+"and accepts the same options available in the command\n"
+"line interface."
+msgstr ""
+"A query parancs segítségével lekérdezhetők a\n"
+"csomaginformációk, és elfogad a parancssori\n"
+"utasításnak megfelelő kapcsolókat."
+
+#: smart/interfaces/text/interactive.py:715
+msgid "Usage: query [options] [<pkgname>] ..."
+msgstr "Használat: query [kapcsolók] [<csomagnév>] ..."
+
+#: smart/interfaces/text/interactive.py:730
+msgid "The search command allows searching for packages."
+msgstr "A search parancs segítségével kereshetők a csomagok."
+
+#: smart/interfaces/text/interactive.py:732
+msgid "Usage: search <string> ..."
+msgstr "Használat: search <karakterlánc> ..."
+
+#: smart/interfaces/text/interactive.py:747
+msgid "The info command shows information about packages."
+msgstr "Az info parancs információkat jelenít meg a csomagról."
+
+#: smart/interfaces/text/interactive.py:749
+msgid "Usage: info <pkgname> ..."
+msgstr "Használat: info <csomagnév> ..."
+
+#: smart/interfaces/text/interactive.py:764
+msgid "The stats command shows some statistics."
+msgstr "A stat parancs néhány statisztikát jelenít meg."
+
+#: smart/interfaces/text/interactive.py:766
+msgid "Usage: stats"
+msgstr "Használat: stats"
+
+#: smart/interfaces/text/interactive.py:780
+msgid ""
+"The check command verifies relations between packages,\n"
+"and accepts the same options available in the command\n"
+"line interface."
+msgstr ""
+"A check parancs ellenőrzi a csomagok közötti\n"
+"kapcsolatokat és elfogad a parancssori utasításnak\n"
+"megfelelő kapcsolókat."
+
+#: smart/interfaces/text/interactive.py:784
+msgid "Usage: check [options] [<pkgname>] ..."
+msgstr "Használat: check [kapcsolók] [<csomagnév>] ..."
+
+#: smart/interfaces/text/interface.py:63
+#, python-format
+msgid "%s (Y/n): "
+msgstr "%s (Y/n): "
+
+#: smart/interfaces/text/interface.py:63
+#, python-format
+msgid "%s (y/N): "
+msgstr "%s (y/N): "
+
+#: smart/interfaces/text/interface.py:78
+#, python-format
+msgid "%s (Continue/cancel): "
+msgstr "%s (Continue/cancel): "
+
+#: smart/interfaces/text/interface.py:80
+#, python-format
+msgid "%s (continue/Cancel): "
+msgstr "%s (continue/Cancel): "
+
+#: smart/interfaces/text/interface.py:88
+msgid "continue"
+msgstr "folytatás"
+
+#: smart/interfaces/text/interface.py:89
+#: smart/interfaces/text/interface.py:103
+msgid "cancel"
+msgstr "mégsem"
+
+#: smart/interfaces/text/interface.py:94
+#, python-format
+msgid "%s (Ok/cancel): "
+msgstr "%s (Ok/cancel): "
+
+#: smart/interfaces/text/interface.py:94
+#, python-format
+msgid "%s (ok/Cancel): "
+msgstr "%s (ok/Cancel): "
+
+#: smart/interfaces/text/interface.py:102
+msgid "ok"
+msgstr "ok"
+
+#: smart/interfaces/text/interface.py:133
+msgid "Insert one or more of the following removable channels:"
+msgstr "Az alábbi eltávolítható csatornákból adjon meg legalább egyet:"
+
+#: smart/interfaces/text/interface.py:161
+msgid "(installed)"
+msgstr "(telepített)"
+
+#: smart/interfaces/text/interface.py:163
+msgid "(upgraded)"
+msgstr "(frissített)"
+
+#: smart/interfaces/text/interface.py:165
+msgid "(removed)"
+msgstr "(eltávolított)"
+
+#: smart/interfaces/text/interface.py:167
+msgid "(downgraded)"
+msgstr "(visszafejlesztett)"
+
+#: smart/interfaces/text/interface.py:180
+msgid "Downgrades:"
+msgstr "Visszafejlesztettek:"
+
+#: smart/interfaces/text/interface.py:198
+#, python-format
+msgid "Kept packages (%d):"
+msgstr "Megtartott csomagok (%d)"
+
+#: smart/interfaces/text/interface.py:203
+#, python-format
+msgid "Upgrading packages (%d):"
+msgstr "Csomagok frissítése (%d):"
+
+#: smart/interfaces/text/interface.py:208
+#, python-format
+msgid "Downgrading packages (%d):"
+msgstr "Csomagok visszafejlesztése (%d):"
+
+#: smart/interfaces/text/interface.py:213
+#, python-format
+msgid "Installing packages (%d):"
+msgstr "Telepített csomagok: (%d):"
+
+#: smart/interfaces/text/interface.py:218
+#, python-format
+msgid "Removing packages (%d):"
+msgstr "Csomagok eltávolítása (%d):"
+
+#: smart/interfaces/text/interface.py:235
+msgid "Confirm changes?"
+msgstr "Jóváhagyja a változásokat?"
+
+#: smart/media.py:190
+msgid "/proc/mounts not found"
+msgstr "a /proc/mounts nem található"
+
+#: smart/option.py:35 smart/util/optparse.py:1136
+msgid "show this help message and exit"
+msgstr "ennek a súgónak a megjelenítése és kilépés"
+
+#: smart/option.py:37 smart/util/optparse.py:1141
+msgid "show program's version number and exit"
+msgstr "program verziójának megjelenítése és kilépés"
+
+#: smart/option.py:49
+#, python-format
+msgid "Usage: %s\n"
+msgstr "Használat: %s\n"
+
+#: smart/option.py:54 smart/util/optparse.py:1502
+msgid "options"
+msgstr "beállítások"
+
+#: smart/option.py:89
+msgid "examples"
+msgstr "példák"
+
+#: smart/option.py:172 smart/util/optparse.py:1374 smart/util/optparse.py:1413
+#, python-format
+msgid "%s option requires an argument"
+msgstr "%s kapcsolóhoz paraméter megadása szükséges"
+
+#: smart/option.py:174 smart/util/optparse.py:1376 smart/util/optparse.py:1415
+#, python-format
+msgid "%s option requires %d arguments"
+msgstr "%s kapcsolóhoz %d paraméter megadása szükséges"
+
+#: smart/plugins/aptchannelsync.py:98 smart/plugins/channelsync.py:52
+#: smart/plugins/channelsync.py:88 smart/plugins/channelsync.py:119
+#: smart/plugins/channelsync.py:145 smart/plugins/urpmichannelsync.py:222
+#: smart/plugins/yumchannelsync.py:178 smart/plugins/zyppchannelsync.py:170
+#, python-format
+msgid "While using %s: %s"
+msgstr "A(z) %s használata közben: %s"
+
+#: smart/plugins/channelsync.py:83
+#, python-format
+msgid ""
+"New channel '%s' detected.\n"
+"Include it?"
+msgstr ""
+"Új csatorna érhető el: '%s'.\n"
+"Hozza kívánja adni a csatornalistához?"
+
+#: smart/plugins/channelsync.py:102
+#, python-format
+msgid "Channel in %s has no type."
+msgstr "A(z) %s csatornának nincsen típusa."
+
+#: smart/plugins/channelsync.py:106
+#, python-format
+msgid ""
+"Change in channel '%s' detected.\n"
+"Old channel:\n"
+"\n"
+"%s\n"
+"\n"
+"New channel:\n"
+"\n"
+"%s\n"
+"\n"
+"Do you want to replace it?"
+msgstr ""
+"A '%s' csatorna megváltozott.\n"
+"Régi csatorna:\n"
+"\n"
+"%s\n"
+"\n"
+"Új csatorna:\n"
+"\n"
+"%s\n"
+"\n"
+"Kívánja lecserélni?"
+
+#: smart/plugins/channelsync.py:137
+msgid "No"
+msgstr "Nem"
+
+#: smart/plugins/channelsync.py:137
+msgid "Yes"
+msgstr "Igen"
+
+#: smart/plugins/channelsync.py:157
+#, python-format
+msgid ""
+"Change in field '%(label)s' of channel '%(name)s' detected.\n"
+"Old value: %(curvalue)s\n"
+"New value: %(newvalue)s\n"
+"Replace current value?"
+msgstr ""
+"Változás történt a(z) '%(name)s' csatorna '%(label)s' mezőjében.\n"
+"Jelenlegi érték: %(curvalue)s\n"
+"Új érték: %(newvalue)s\n"
+"Kívánja felülírni a jelenlegi értéket?"
+
+#: smart/plugins/channelsync.py:194
+#, python-format
+msgid ""
+"Removing channel '%s' was suggested.\n"
+"Do you want to remove it?"
+msgstr ""
+"A '%s' csatorna eltávolítása javasolt.\n"
+"Kívánja őket eltávolítani?"
+
+#: smart/plugins/debdir.py:33
+msgid "Dynamic DEB Directory"
+msgstr "Dinamikus DEB könyvtár"
+
+#: smart/plugins/rpmdir.py:33
+msgid "Dynamic RPM Directory"
+msgstr "Dinamikus RPM könyvtár"
+
+#: smart/plugins/urpmichannelsync.py:253
+msgid "Trying to sync urpmi channels..."
+msgstr ""
+
+#: smart/plugins/yumchannelsync.py:158
+#, python-format
+msgid ""
+"Yum channel %s does not contain baseurl or mirrorlist addresses. Not syncing."
+msgstr ""
+
+#: smart/plugins/zyppchannelsync.py:139
+#, python-format
+msgid ""
+"ZYpp channel %s does not contain baseurl or mirrorlist addresses. Not "
+"syncing."
+msgstr ""
+
+#: smart/searcher.py:179
+msgid "Invalid string"
+msgstr "Érvénytelen karakterlánc"
+
+#: smart/sysconfig.py:82 smart/sysconfig.py:89 smart/sysconfig.py:92
+#, python-format
+msgid "Broken configuration file at %s"
+msgstr "Hibás konfigurációs fájl: %s"
+
+#: smart/sysconfig.py:83
+#, python-format
+msgid "Trying backup at %s"
+msgstr "%s mentésének megkísérlése."
+
+#: smart/transaction.py:541
+#, python-format
+msgid "Can't install %s: conflicted package %s is locked"
+msgstr "A(z) %s csomag nem telepíthető: ütközés van a zárolt %s csomaggal"
+
+#: smart/transaction.py:556
+#, python-format
+msgid "Can't install %s: it's conflicted by the locked package %s"
+msgstr "A(z) %s csomag nem telepíthető: ütközés van a zárolt %s csomaggal"
+
+#: smart/transaction.py:571
+#, python-format
+msgid "Can't install %s: it can't coexist with %s"
+msgstr "A(z) %s csomag nem telepíthető: nem működik együtt a(z) %s csomaggal"
+
+#: smart/transaction.py:599 smart/transaction.py:804
+#, python-format
+msgid "Can't install %s: no package provides %s"
+msgstr ""
+"A(z) %s csomag nem telepíthető: semelyik csomag sem biztosítja a(z) %s "
+"komponenst"
+
+#: smart/transaction.py:620
+#, python-format
+msgid "Can't remove %s: it's an essential package"
+msgstr "A(z) %s csomag nem távolítható el, mert alapcsomag"
+
+#: smart/transaction.py:675
+#, python-format
+msgid "Can't remove %s: %s is locked"
+msgstr "A(z) %s csomag nem távolítható el: %s zárolt"
+
+#: smart/transaction.py:828 smart/transaction.py:925
+#, python-format
+msgid ""
+"Can't install %s: all packages providing %s failed to install:\n"
+"%s"
+msgstr ""
+"A(z) %s csomag nem telepíthető: minden csomag telepítése, amely biztosítja a"
+"(z) %s komponenst sikertelen:\n"
+"%s"
+
+#: smart/transaction.py:888 smart/transaction.py:897
+#, fuzzy, python-format
+msgid "Can't remove %s: requiring package %s is locked"
+msgstr "A(z) %s csomag nem távolítható el: %s zárolt"
+
+#: smart/transaction.py:912 smart/transaction.py:917
+#, python-format
+msgid "%s is locked"
+msgstr "a(z) %s csomag zárolt"
+
+#: smart/transaction.py:1023 smart/transaction.py:1794
+#, python-format
+msgid "Unsatisfied dependency: %s requires %s"
+msgstr "Nem megfelelő függőség: a(z) %s csomaghoz szükséges a(z) %s csomag"
+
+#: smart/transaction.py:1032 smart/transaction.py:1042
+#: smart/transaction.py:1809
+#, python-format
+msgid "Unsatisfied dependency: %s conflicts with %s"
+msgstr "Nem megfelelő függőség: a(z) %s csomag ütközik a(z) %s csomaggal"
+
+#: smart/transaction.py:1052 smart/transaction.py:1823
+#, python-format
+msgid "Package %s can't coexist with %s"
+msgstr "A(z) %s csomag nem tud együttműködni a(z) %s csomaggal"
+
+#: smart/transaction.py:1088
+#, python-format
+msgid ""
+"Can't fix %s:\n"
+"%s"
+msgstr ""
+"A(z) %s nem javítható:\n"
+"%s"
+
+#: smart/transaction.py:1142
+#, python-format
+msgid "Can't install %s: it's locked"
+msgstr "A(z) %s csomag nem telepíthető: zárolt"
+
+#: smart/transaction.py:1147
+#, python-format
+msgid "Can't remove %s: it's locked"
+msgstr "A(z) %s csomag nem távolítható el: zárolt"
+
+#: smart/transaction.py:1152
+#, python-format
+msgid "Can't reinstall %s: it's locked"
+msgstr "A(z) %s csomag nem telepíthető újra: zárolt"
+
+#: smart/transaction.py:1329 smart/transaction.py:1429
+#, python-format
+msgid "No providers for '%s', required by '%s'"
+msgstr ""
+"A(z) %s komponenst egyetlen komponens sem biztosítja, pedig ez szükséges a"
+"(z) '%s' csomaghoz"
+
+#: smart/transaction.py:1346 smart/transaction.py:1355
+#: smart/transaction.py:1466 smart/transaction.py:1475
+#: smart/transaction.py:1493 smart/transaction.py:1524
+#, python-format
+msgid "Package '%s' is locked"
+msgstr "A következő csomag zárolva: '%s'"
+
+#: smart/transaction.py:1445
+#, python-format
+msgid "Can't remove %s, which conflicts with %s"
+msgstr "A(z) %s csomag nem távolítható el, mert ütközik a(z) %s csomaggal"
+
+#: smart/transaction.py:1491 smart/transaction.py:1522
+#, python-format
+msgid "Package '%s' is not in changeset"
+msgstr "A(z) '%s' csomag nem található a változások között"
+
+#: smart/uncompress.py:46
+#, python-format
+msgid "Unknown compressed file: %s"
+msgstr "Ismeretlen tömörített fájl: %s"
+
+#: smart/uncompress.py:57
+msgid "Unsupported file type"
+msgstr "Nem támogatott fájltípus"
+
+#: smart/util/optparse.py:329
+#, python-format
+msgid "usage: %s\n"
+msgstr "használat: %s\n"
+
+#: smart/util/optparse.py:348
+msgid "Usage"
+msgstr "Használat"
+
+#: smart/util/optparse.py:354
+msgid "integer"
+msgstr "integer"
+
+#: smart/util/optparse.py:355
+msgid "long integer"
+msgstr "long integer"
+
+#: smart/util/optparse.py:356
+msgid "floating-point"
+msgstr "lebegőpont"
+
+#: smart/util/optparse.py:357
+msgid "complex"
+msgstr "komplex"
+
+#: smart/util/optparse.py:365
+#, python-format
+msgid "option %s: invalid %s value: %r"
+msgstr "A(z) %s kapcsoló: érvénytelen %s érték: %r"
+
+#: smart/util/optparse.py:373
+#, python-format
+msgid "option %s: invalid choice: %r (choose from %s)"
+msgstr "A(z) %s kapcsoló: érvénytelen: %r (ezek közül válasszon: %s)"
+
+#: smart/util/optparse.py:1164
+msgid "%prog [options]"
+msgstr "%prog [kapcsolók]"
+
+#: smart/util/optparse.py:1385
+#, python-format
+msgid "%s option does not take a value"
+msgstr "A(z) %s kapcsoló nem ad értéket"
+
+#: smart/util/optparse.py:1559
+#, python-format
+msgid "ambiguous option: %s (%s?)"
+msgstr "bizonytalan kapcsoló: %s (%s?)"
+
+#: smart/util/ssh.py:53
+msgid "SSH asked for password, but no password is available"
+msgstr "Az SSH jelszót kér, de nincs elérhető jelszó"
+
+#: smart/util/strtools.py:65 smart/util/strtools.py:84
+msgid "Stalled"
+msgstr "Kész"
+
+#~ msgid ""
+#~ "\n"
+#~ "Usage: smart search expression ...\n"
+#~ "\n"
+#~ "This command allows searching for the given expressions\n"
+#~ "in the name, summary, and description of known packages.\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "  -h, --help  Show this help message and exit\n"
+#~ "\n"
+#~ "Examples:\n"
+#~ "  smart search ldap\n"
+#~ "  smart search kernel module\n"
+#~ "  smart search rpm 'package manager'\n"
+#~ "  smart search pkgname\n"
+#~ "  smart search 'pkgn*e'\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Használat: smart search kifejezés ...\n"
+#~ "\n"
+#~ "Ez a parancs lehetővé teszi megadott kifejezések keresést\n"
+#~ "az ismert csomag nevében, rövid és hosszú leírásában.\n"
+#~ "\n"
+#~ "Kapcsolók:\n"
+#~ "  -h, --help  Ezt a súgót jeleníti meg és kilép\n"
+#~ "\n"
+#~ "Például:\n"
+#~ "  smart search ldap\n"
+#~ "  smart search kernel module\n"
+#~ "  smart search rpm 'package manager'\n"
+#~ "  smart search csomagnév\n"
+#~ "  smart search 'csom*név'\n"
+
+#~ msgid "Unbreakable loops found while sorting"
+#~ msgstr "Rendezés közben megszakíthatatlan ciklust "
+
+#~ msgid "Internal error: there are still loops (%d != %d)!"
+#~ msgstr "Belső hiba: végtelen ciklus (%d != %d)!"
+
+#~ msgid "Pruned removal of %s"
+#~ msgstr "A(z) %s csomag egyszerűsített eltávolítása"
+
+#~ msgid "Can't get rid of %s"
+#~ msgstr "A(z) %s nem távolítható el"
+
+#~ msgid "Channel '%s' has fingerprint but download of Release.gpg failed: %s"
+#~ msgstr ""
+#~ "A(z) '%s' csatorna rendelkezik ujjlenyomattal, de a Release.gpg letöltése "
+#~ "sikertelen: %s"
+
+#~ msgid "test.py [options] [<test filename>, ...]"
+#~ msgstr "test.py [kapcsolók] [<próbafájl>, ...]"
+
+#~ msgid ""
+#~ "You are using the package manager.\n"
+#~ "This tool allow you to install, update and remove the software.\n"
+#~ "Is recommended that the channels informations are updated.\n"
+#~ "Do you want to update them automatically now?"
+#~ msgstr ""
+#~ "Ön egy csomagkezelőt használ,\n"
+#~ "amelynek segítségével programokat telepíthet, frissíthet vagy "
+#~ "eltávolíthat.\n"
+#~ "Javasolt a csatornainformációk frissítése.\n"
+#~ "Kívánja őket most automatikusan frissíteni?"
+
+#~ msgid ""
+#~ "You are updating the entire system.\n"
+#~ "Is recommended that the channels informations are updated.\n"
+#~ "Do you want to update automatically now?"
+#~ msgstr ""
+#~ "Ön az egész rendszert frissíti.\n"
+#~ "Javasolt a csatornainformációk frissítése.\n"
+#~ "Kívánja őket most automatikusan frissíteni?"
+
+#~ msgid "Invalid package file format. Invalid header found."
+#~ msgstr "Érvénytelen csomagfájl formátum. Érvénytelen fejléc."
+
+#~ msgid ""
+#~ "You need PyQt installed in your system, please install with your package "
+#~ "manager."
+#~ msgstr ""
+#~ "A program használatához szükség van a PyQt telepítésére. telepítse fel a "
+#~ "programot a rendszer csomagkezelőjével."

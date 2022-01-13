@@ -1,0 +1,23 @@
+file(GLOB ipod_auth_plugin_i2c_lib_src *.[hc])
+
+add_library(${PLUG_NAME_AUTHCOM} SHARED ${ipod_auth_plugin_i2c_lib_src})
+
+target_link_libraries(${PLUG_NAME_AUTHCOM} PUBLIC
+		${IPOD_DLT_LOGGING_COMP_NAME}
+		${IAP2_DLT_LOGGING_COMP_NAME})
+
+install(TARGETS ${PLUG_NAME_AUTHCOM}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	COMPONENT runtime)
+
+install(FILES ipodauth.h
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/adit-components
+	COMPONENT devel)
+
+install(FILES ipod-auth.target
+	DESTINATION ${SYSTEMD_CONFIGURATIONS_FILES_DIR}
+	PERMISSIONS
+		OWNER_WRITE OWNER_READ
+		GROUP_READ
+		WORLD_READ
+	COMPONENT runtime)

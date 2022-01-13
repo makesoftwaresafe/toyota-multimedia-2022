@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection>
+
+<spec_type>
+  <kind> common_env </kind>
+  <global_code>
+    #include <rpmcli.h>
+    #include <assert.h>
+    static struct poptOption optionsTable[] = {
+      { NULL, '\0', POPT_ARG_INCLUDE_TABLE, rpmcliAllPoptTable, 0,
+           "Common options for all rpmio executables:", NULL },
+      POPT_AUTOHELP
+      POPT_TABLEEND
+    };
+  </global_code>
+  <init_code>
+    poptContext con = rpmcliInit(argc, argv, optionsTable);
+  </init_code>
+  <final_code>
+    con = rpmcliFini(con);
+  </final_code>
+</spec_type>
+
+<!-- rpmio/argv.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ARGint_t </data_type>
+  <value> 0xdeadbeef </value>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ARGI_t </data_type>
+  <value> NULL </value>
+  <init_code>
+    assert(argiAdd(&$0, -1, 1) == 0 && $0 != NULL && argiCount($0) == 1);
+  </init_code>
+  <final_code>
+    $0 = argiFree($0);
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> ARGI_t </data_type>
+  <value> NULL </value>
+  <init_code>
+    assert(argiAdd(&$0, -1, 1) == 0 && $0 != NULL && argiCount($0) == 1);
+  </init_code>
+  <associating>
+    <interfaces> argiFree </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ARGstr_t </data_type>
+  <value> "foo" </value>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ARGV_t </data_type>
+  <value> NULL </value>
+  <init_code>
+    assert(argvAdd(&$0, "/foo") == 0 && $0 != NULL && !strcmp($0[0], "/foo"));
+  </init_code>
+  <final_code>
+    $0 = argvFree($0);
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> ARGV_t </data_type>
+  <value> NULL </value>
+  <init_code>
+    assert(argvAdd(&$0, "/foo") == 0 && $0 != NULL && !strcmp($0[0], "/foo"));
+  </init_code>
+  <associating>
+    <interfaces> argvFree </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> ARGV_t * </data_type>
+  <value> NULL </value>
+
+  <global_code>
+    static ARGV_t _av;
+  </global_code>
+  <init_code>
+    $0 = &_av;
+    assert(argvAdd($0, "foo") == 0 && *$0 != NULL && !strcmp((*$0)[0], "foo"));
+  </init_code>
+  <final_code>
+    if ($0) *$0 = argvFree(*$0);
+  </final_code>
+  <associating>
+    <interfaces>
+      argvAdd
+      argvAppend
+      argvSplit
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmio/rpmhash.h XXX DELETE?
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> hashTable </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmio.h>	/* XXX rpmioItem */
+  </global_code>
+  <init_code>
+    $0 = htCreate(1000, 0, 1, NULL, NULL);
+  </init_code>
+  <final_code>
+#ifdef	NOTYET	/* XXX double free here */
+    $0 = htFree($0);
+#endif
+  </final_code>
+</spec_type>
+-->
+
+<!-- rpmio/rpmio.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> FD_t </data_type>
+  <value> fdDup(fileno(tmpfile())) </value>
+  <final_code>
+    (void) Fclose($0);
+  </final_code>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> FD_t </data_type>
+  <value> fdDup(fileno(tmpfile())) </value>
+  <associating>
+    <interfaces>
+      Fclose
+      ufdGetFile
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> mode_t </data_type>
+  <value> 0700 </value>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> &__pglob </value>
+  <global_code>
+    #include <glob.h>
+    static glob_t __pglob;
+  </global_code>
+  <init_code>
+    (void) Glob("*", 0, Glob_error, $0);
+  </init_code>
+  <associating>
+    <interfaces> Globfree </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> char * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> Realpath </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmio/rpmiotypes.h -->
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmRC </data_type>
+  <constraint> $0 == RPMRC_OK </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> DIGEST_CTX </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmio.h>	/* XXX rpmioItem */
+    static pgpHashAlgo _algo = PGPHASHALGO_MD5;
+    static rpmDigestFlags _flags = RPMDIGEST_NONE;
+  </global_code>
+  <init_code>
+    $0 = rpmDigestInit(_algo, _flags);
+  </init_code>
+  <final_code>
+    (void) rpmDigestFinal($0, NULL, NULL, 0);
+  </final_code>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> DIGEST_CTX </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmio.h>	/* XXX rpmioItem */
+    static pgpHashAlgo _algo = PGPHASHALGO_MD5;
+    static rpmDigestFlags _flags = RPMDIGEST_NONE;
+  </global_code>
+  <init_code>
+    $0 = rpmDigestInit(_algo, _flags);
+  </init_code>
+  <associating>
+    <interfaces> rpmDigestFinal </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> NULL </value>
+  <init_code>
+    $0 = strdup("foo");
+  </init_code>
+  <associating>
+    <interfaces> xstrtolocale </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmioP </data_type>
+  <value> NULL </value>
+  <init_code>
+    (void) rpmioParse(&$0, "bing bang boom");
+  </init_code>
+  <associating>
+    <interfaces> rpmioPFree </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmio/rpmmacro.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> MacroContext </data_type>
+  <value> NULL </value>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> expandMacros </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmio/rpmsw.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmsw </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmio.h>	/* XXX rpmioItem */
+  </global_code>
+  <init_code>
+    $0 = calloc(1, sizeof(*$0));
+  </init_code>
+  <final_code>
+    if ($0)
+      free($0);
+  </final_code>
+</spec_type>
+
+<!-- rpmio/yarn.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> yarnThread </data_type>
+  <value> NULL </value>
+  <global_code>
+    static unsigned int _seconds = 10;
+    static void _snooze (void * _uip) {
+      unsigned int * uip = _uip;
+      if (uip)
+        sleep(*uip);
+    }
+  </global_code>
+  <init_code>
+    $0 = yarnLaunch(_snooze, &_seconds);
+  </init_code>
+  <final_code>
+  </final_code>
+</spec_type>
+
+<!-- rpmdb/rpmtag.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> Header </data_type>
+  <value> headerNew() </value>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> HE_t </data_type>
+  <value> &_he </value>
+  <global_code>
+    static struct _HE_s _he = { .tag = RPMTAG_NVRA };
+  </global_code>
+</spec_type>
+
+<!-- filetriggers.h -->
+<!-- fs.h -->
+<!-- fsm.h -->
+<!-- manifest.h -->
+<!-- misc.h -->
+<!-- psm.h -->
+<!-- rpm46compat.h -->
+<!-- rpm4compat.h -->
+<!-- rpmal.h -->
+
+<!-- rpmcli.h -->
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> fdDup(fileno(tmpfile())) </value>
+  <final_code>
+    (void) Fclose($0);
+  </final_code>
+  <associating>
+    <interfaces> rpmVerifySignatures </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmds.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmds </data_type>
+  <value> NULL </value>
+  <init_code>
+    $0 = rpmdsSingle(RPMTAG_REQUIRENAME, "foo", "0:1.2-3", RPMSENSE_EQUAL);
+  </init_code>
+  <final_code>
+    $0 = rpmdsFree($0);
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmPRCO </data_type>
+  <value> rpmdsNewPRCO(NULL) </value>
+  <final_code>
+    $0 = rpmdsFreePRCO($0);
+  </final_code>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmPRCO </data_type>
+  <value> rpmdsNewPRCO(NULL) </value>
+  <associating>
+    <interfaces> rpmdsFreePRCO </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> NULL </value>
+  <init_code>
+    $0 = rpmdsNewPRCO(NULL);
+  </init_code>
+  <final_code>
+    $0 = rpmdsFreePRCO($0);
+  </final_code>
+  <associating>
+    <interfaces> rpmdsMergePRCO </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> rpmdsSysinfo </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmds * </data_type>
+  <value> &_ds </value>
+  <global_code>
+    static rpmds _ds;
+  </global_code>
+  <associating>
+    <interfaces> rpmdsRpmlib </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> rpmdsRpmlib </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmfc.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmfc </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmfc.h>
+  </global_code>
+  <init_code>
+    $0 = rpmfcNew();
+  </init_code>
+  <final_code>
+    $0 = rpmfcFree($0);
+  </final_code>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char ** </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmfc.h>
+  </global_code>
+  <init_code>
+    assert(argvAdd(&$0, "/foo") == 0 && $0 != NULL && !strcmp($0[0], "/foo"));
+  </init_code>
+  <final_code>
+    $0 = argvFree($0);
+  </final_code>
+  <associating>
+    <interfaces> rpmfcClassify </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmfi.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmfi </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmfi.h>
+    #include <rpmts.h>
+    static rpmts _ts;
+    static Header _h;
+  </global_code>
+  <init_code>
+    if (_ts == NULL)	_ts = rpmtsCreate();
+    if (_h == NULL)	_h = headerNew();
+    $0 = rpmfiNew(_ts, _h, RPMTAG_BASENAMES, 0);
+  </init_code>
+  <final_code>
+    $0 = rpmfiFree($0);
+    if (_h)	_h = headerFree(_h);
+    if (_ts)	_ts = rpmtsFree(_ts);
+  </final_code>
+</spec_type>
+
+<!-- rpmgi.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmgi </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmgi.h>
+    #include <rpmts.h>
+    static rpmts _ts;
+  </global_code>
+  <init_code>
+    if (_ts == NULL)	_ts = rpmtsCreate();
+    $0 = rpmgiNew(_ts, RPMDBI_ARGLIST, NULL, 0);
+  </init_code>
+  <final_code>
+    $0 = rpmgiFree($0);
+    if (_ts) _ts = rpmtsFree(_ts);
+  </final_code>
+</spec_type>
+
+<!-- rpmlib.h -->
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> fdDup(fileno(tmpfile())) </value>
+  <final_code>
+    (void) Fclose($0);
+  </final_code>
+  <associating>
+    <interfaces> rpmInstallSourcePackage </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char ** </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> rpmInstallSourcePackage </interfaces>
+    <links>
+      param3
+      param4
+   </links>
+  </associating>
+</spec_type>
+
+<!-- rpmlock.h -->
+<!-- rpmluaext.h -->
+
+<!-- rpmps.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmps </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmps.h>
+  </global_code>
+  <init_code>
+    $0 = rpmpsCreate();
+    rpmpsAppend($0, 2, "pkg-1.2-3", NULL, "/dn/", "bn", "alt-4.5-6", 789UL);
+  </init_code>
+  <final_code>
+    $0 = rpmpsFree($0);
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmProblem </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmps.h>
+    static rpmps _ps;
+  </global_code>
+  <init_code>
+    if (_ps == NULL)	_ps = rpmpsCreate();
+    rpmpsAppend(_ps, 2, "pkg-1.2-3", NULL, "/dn/", "bn", "alt-4.5-6", 789UL);
+    $0 = rpmpsGetProblem(_ps, 0);
+  </init_code>
+  <final_code>
+    if (_ps)	_ps = rpmpsFree(_ps);
+  </final_code>
+</spec_type>
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> fnpyKey </data_type>
+  <value> NULL </value>
+  <init_code>
+    $0 = (fnpyKey) "fnpyKey";
+  </init_code>
+</spec_type>
+
+<!-- rpmrc.h -->
+<!-- rpmrollback.h -->
+<!-- rpmte.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmte </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmts.h>
+    static rpmts _ts;
+    static Header _h;
+    static fnpyKey _key = (fnpyKey)"fnpyKey";
+  </global_code>
+  <init_code>
+    if (_ts == NULL)	_ts = rpmtsCreate();
+    if (_h == NULL)	_h = headerNew();
+    $0 = rpmteNew(_ts, _h, TR_ADDED, _key, NULL, 0, (alKey)NULL);
+  </init_code>
+  <final_code>
+    $0 = rpmteFree($0);
+    if (_h)	_h = headerFree(_h);
+    if (_ts)	_ts = rpmtsFree(_ts);
+  </final_code>
+</spec_type>
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmtsi </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmts.h>
+    static rpmts _ts;
+  </global_code>
+  <init_code>
+    if (_ts == NULL)	_ts = rpmtsCreate();
+    $0 = rpmtsiInit(_ts);
+  </init_code>
+  <final_code>
+    $0 = rpmtsiFree($0);
+    if (_ts)	_ts = rpmtsFree(_ts);
+  </final_code>
+</spec_type>
+
+<!-- rpmts.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmts </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmds.h>
+    #include <rpmte.h>
+    #include <rpmts.h>
+  </global_code>
+  <init_code>
+    $0 = rpmtsCreate();
+  </init_code>
+  <final_code>
+    $0 = rpmtsFree($0);
+  </final_code>
+</spec_type>
+
+<!-- rpmversion.h -->
+
+</collection>
+

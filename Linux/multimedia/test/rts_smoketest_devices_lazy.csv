@@ -1,0 +1,15 @@
+
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#definitions of ALSA devices and streams to be used with real time streaming test daemon
+#
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#20ms period, init timeout set to 100ms, as default (period-time + 20 =40ms) sometimes fails..
+ADEV;handsfree_in;IN;48000;1152;200;
+ADEV;handsfree_out;OUT;48000;1152;200;
+
+STREAM;0;0
+STREAM;0;1
+STREAM;1;0
+STREAM;1;1
+

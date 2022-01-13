@@ -1,0 +1,1465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WebSockets: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch04.html" title="Web Services APIs">
+<link rel="prev" href="libsoup-2.4-XMLRPC-Support.html" title="XMLRPC Support">
+<link rel="next" href="ch05.html" title="Low-level Networking API">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-WebSockets.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-WebSockets.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-WebSockets.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-WebSockets.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libsoup-2.4-XMLRPC-Support.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch05.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libsoup-2.4-WebSockets"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libsoup-2.4-WebSockets.top_of_page"></a>WebSockets</span></h2>
+<p>WebSockets — The WebSocket Protocol</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-client-prepare-handshake" title="soup_websocket_client_prepare_handshake ()">soup_websocket_client_prepare_handshake</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-client-verify-handshake" title="soup_websocket_client_verify_handshake ()">soup_websocket_client_verify_handshake</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-server-check-handshake" title="soup_websocket_server_check_handshake ()">soup_websocket_server_check_handshake</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-server-process-handshake" title="soup_websocket_server_process_handshake ()">soup_websocket_server_process_handshake</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="returnvalue">SoupWebsocketConnection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-new" title="soup_websocket_connection_new ()">soup_websocket_connection_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="returnvalue">GIOStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-io-stream" title="soup_websocket_connection_get_io_stream ()">soup_websocket_connection_get_io_stream</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnectionType" title="enum SoupWebsocketConnectionType"><span class="returnvalue">SoupWebsocketConnectionType</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-connection-type" title="soup_websocket_connection_get_connection_type ()">soup_websocket_connection_get_connection_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupURI.html" title="SoupURI"><span class="returnvalue">SoupURI</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-uri" title="soup_websocket_connection_get_uri ()">soup_websocket_connection_get_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-origin" title="soup_websocket_connection_get_origin ()">soup_websocket_connection_get_origin</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-protocol" title="soup_websocket_connection_get_protocol ()">soup_websocket_connection_get_protocol</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketState" title="enum SoupWebsocketState"><span class="returnvalue">SoupWebsocketState</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-state" title="soup_websocket_connection_get_state ()">soup_websocket_connection_get_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-send-text" title="soup_websocket_connection_send_text ()">soup_websocket_connection_send_text</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-send-binary" title="soup_websocket_connection_send_binary ()">soup_websocket_connection_send_binary</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-close" title="soup_websocket_connection_close ()">soup_websocket_connection_close</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gushort"><span class="returnvalue">gushort</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-close-code" title="soup_websocket_connection_get_close_code ()">soup_websocket_connection_get_close_code</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-close-data" title="soup_websocket_connection_get_close_data ()">soup_websocket_connection_get_close_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-WebSockets.html#SOUP-WEBSOCKET-ERROR:CAPS" title="SOUP_WEBSOCKET_ERROR">SOUP_WEBSOCKET_ERROR</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnectionType" title="enum SoupWebsocketConnectionType"><span class="type">SoupWebsocketConnectionType</span></a></td>
+<td class="property_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection--connection-type" title="The “connection-type” property">connection-type</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="type">GIOStream</span></a> *</td>
+<td class="property_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection--io-stream" title="The “io-stream” property">io-stream</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection--origin" title="The “origin” property">origin</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection--protocol" title="The “protocol” property">protocol</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketState" title="enum SoupWebsocketState"><span class="type">SoupWebsocketState</span></a></td>
+<td class="property_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection--state" title="The “state” property">state</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *</td>
+<td class="property_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection--uri" title="The “uri” property">uri</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-closed" title="The “closed” signal">closed</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-closing" title="The “closing” signal">closing</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-error" title="The “error” signal">error</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-message" title="The “message” signal">message</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="SoupWebsocketConnection"></a><div class="refsect1">
+<a name="libsoup-2.4-WebSockets.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-struct" title="SoupWebsocketConnection">SoupWebsocketConnection</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnectionType" title="enum SoupWebsocketConnectionType">SoupWebsocketConnectionType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketState" title="enum SoupWebsocketState">SoupWebsocketState</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketDataType" title="enum SoupWebsocketDataType">SoupWebsocketDataType</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketCloseCode" title="enum SoupWebsocketCloseCode">SoupWebsocketCloseCode</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketError" title="enum SoupWebsocketError">SoupWebsocketError</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> SoupWebsocketConnection
+</pre>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.description"></a><h2>Description</h2>
+<p><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> provides support for the <a class="ulink" href="http://tools.ietf.org/html/rfc6455" target="_top">WebSocket</a> protocol.</p>
+<p>To connect to a WebSocket server, create a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> and call
+<a class="link" href="SoupSession.html#soup-session-websocket-connect-async" title="soup_session_websocket_connect_async ()"><code class="function">soup_session_websocket_connect_async()</code></a>. To accept WebSocket
+connections, create a <a class="link" href="SoupServer.html" title="SoupServer"><span class="type">SoupServer</span></a> and add a handler to it with
+<a class="link" href="SoupServer.html#soup-server-add-websocket-handler" title="soup_server_add_websocket_handler ()"><code class="function">soup_server_add_websocket_handler()</code></a>.</p>
+<p>(Lower-level support is available via
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-client-prepare-handshake" title="soup_websocket_client_prepare_handshake ()"><code class="function">soup_websocket_client_prepare_handshake()</code></a> and
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-client-verify-handshake" title="soup_websocket_client_verify_handshake ()"><code class="function">soup_websocket_client_verify_handshake()</code></a>, for handling the client
+side of the WebSocket handshake, and
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-server-process-handshake" title="soup_websocket_server_process_handshake ()"><code class="function">soup_websocket_server_process_handshake()</code></a> for handling the server
+side.)</p>
+<p><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> handles the details of WebSocket
+communication. You can use <a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-send-text" title="soup_websocket_connection_send_text ()"><code class="function">soup_websocket_connection_send_text()</code></a>
+and <a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-send-binary" title="soup_websocket_connection_send_binary ()"><code class="function">soup_websocket_connection_send_binary()</code></a> to send data, and the
+<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-message" title="The “message” signal"><span class="type">“message”</span></a> signal to receive data.
+(<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> currently only supports asynchronous
+I/O.)</p>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-websocket-client-prepare-handshake"></a><h3>soup_websocket_client_prepare_handshake ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_websocket_client_prepare_handshake
+                               (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *origin</code></em>,
+                                <em class="parameter"><code><span class="type">char</span> **protocols</code></em>);</pre>
+<p>Adds the necessary headers to <em class="parameter"><code>msg</code></em>
+ to request a WebSocket
+handshake. The message body and non-WebSocket-related headers are
+not modified.</p>
+<p>This is a low-level function; if you use
+<a class="link" href="SoupSession.html#soup-session-websocket-connect-async" title="soup_session_websocket_connect_async ()"><code class="function">soup_session_websocket_connect_async()</code></a> to create a WebSocket
+connection, it will call this for you.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.2.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>origin</p></td>
+<td class="parameter_description"><p> the "Origin" header to set. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protocols</p></td>
+<td class="parameter_description"><p> list of
+protocols to offer. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-client-verify-handshake"></a><h3>soup_websocket_client_verify_handshake ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_websocket_client_verify_handshake
+                               (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Looks at the response status code and headers in <em class="parameter"><code>msg</code></em>
+ and
+determines if they contain a valid WebSocket handshake response
+(given the handshake request in <em class="parameter"><code>msg</code></em>
+'s request headers).</p>
+<p>This is a low-level function; if you use
+<a class="link" href="SoupSession.html#soup-session-websocket-connect-async" title="soup_session_websocket_connect_async ()"><code class="function">soup_session_websocket_connect_async()</code></a> to create a WebSocket
+connection, it will call this for you.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> containing both client and server sides of a
+WebSocket handshake</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.3.7"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>msg</code></em>
+contains a completed valid WebSocket
+handshake, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and an error if not.</p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-server-check-handshake"></a><h3>soup_websocket_server_check_handshake ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_websocket_server_check_handshake (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                       <em class="parameter"><code>const <span class="type">char</span> *origin</code></em>,
+                                       <em class="parameter"><code><span class="type">char</span> **protocols</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Examines the method and request headers in <em class="parameter"><code>msg</code></em>
+ and determines
+whether <em class="parameter"><code>msg</code></em>
+ contains a valid handshake request.</p>
+<p>If <em class="parameter"><code>origin</code></em>
+ is non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then only requests containing a matching
+"Origin" header will be accepted. If <em class="parameter"><code>protocols</code></em>
+ is non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then
+only requests containing a compatible "Sec-WebSocket-Protocols"
+header will be accepted.</p>
+<p>Normally <a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-server-process-handshake" title="soup_websocket_server_process_handshake ()"><code class="function">soup_websocket_server_process_handshake()</code></a> will take care
+of this for you, and if you use <a class="link" href="SoupServer.html#soup-server-add-websocket-handler" title="soup_server_add_websocket_handler ()"><code class="function">soup_server_add_websocket_handler()</code></a>
+to handle accepting WebSocket connections, it will call that for
+you. However, this function may be useful if you need to perform
+more complicated validation; eg, accepting multiple different Origins,
+or handling different protocols depending on the path.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.4.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> containing the client side of a WebSocket handshake</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>origin</p></td>
+<td class="parameter_description"><p> expected Origin header. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protocols</p></td>
+<td class="parameter_description"><p> allowed WebSocket
+protocols. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.4.8"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>msg</code></em>
+contained a valid WebSocket handshake,
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and an error if not.</p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-server-process-handshake"></a><h3>soup_websocket_server_process_handshake ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_websocket_server_process_handshake
+                               (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *expected_origin</code></em>,
+                                <em class="parameter"><code><span class="type">char</span> **protocols</code></em>);</pre>
+<p>Examines the method and request headers in <em class="parameter"><code>msg</code></em>
+ and (assuming <em class="parameter"><code>msg</code></em>
+
+contains a valid handshake request), fills in the handshake
+response.</p>
+<p>If <em class="parameter"><code>expected_origin</code></em>
+ is non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then only requests containing a matching
+"Origin" header will be accepted. If <em class="parameter"><code>protocols</code></em>
+ is non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then
+only requests containing a compatible "Sec-WebSocket-Protocols"
+header will be accepted.</p>
+<p>This is a low-level function; if you use
+<a class="link" href="SoupServer.html#soup-server-add-websocket-handler" title="soup_server_add_websocket_handler ()"><code class="function">soup_server_add_websocket_handler()</code></a> to handle accepting WebSocket
+connections, it will call this for you.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.5.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> containing the client side of a WebSocket handshake</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>expected_origin</p></td>
+<td class="parameter_description"><p> expected Origin header. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protocols</p></td>
+<td class="parameter_description"><p> allowed WebSocket
+protocols. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.5.8"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>msg</code></em>
+contained a valid WebSocket handshake
+request and was updated to contain a handshake response. <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if not.</p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-new"></a><h3>soup_websocket_connection_new ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="returnvalue">SoupWebsocketConnection</span></a> *
+soup_websocket_connection_new (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="type">GIOStream</span></a> *stream</code></em>,
+                               <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *uri</code></em>,
+                               <em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnectionType" title="enum SoupWebsocketConnectionType"><span class="type">SoupWebsocketConnectionType</span></a> type</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *origin</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *protocol</code></em>);</pre>
+<p>Creates a <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> on <em class="parameter"><code>stream</code></em>
+. This should be
+called after completing the handshake to begin using the WebSocket
+protocol.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>stream</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="type">GIOStream</span></a> connected to the WebSocket server</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>the URI of the connection</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of connection (client/side)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>origin</p></td>
+<td class="parameter_description"><p> the Origin of the client. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protocol</p></td>
+<td class="parameter_description"><p> the subprotocol in use. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.6.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a></p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-get-io-stream"></a><h3>soup_websocket_connection_get_io_stream ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="returnvalue">GIOStream</span></a> *
+soup_websocket_connection_get_io_stream
+                               (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>);</pre>
+<p>Get the I/O stream the WebSocket is communicating over.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.7.6"></a><h4>Returns</h4>
+<p> the WebSocket's I/O stream. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-get-connection-type"></a><h3>soup_websocket_connection_get_connection_type ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnectionType" title="enum SoupWebsocketConnectionType"><span class="returnvalue">SoupWebsocketConnectionType</span></a>
+soup_websocket_connection_get_connection_type
+                               (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>);</pre>
+<p>Get the connection type (client/server) of the connection.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.8.6"></a><h4>Returns</h4>
+<p> the connection type</p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-get-uri"></a><h3>soup_websocket_connection_get_uri ()</h3>
+<pre class="programlisting"><a class="link" href="SoupURI.html" title="SoupURI"><span class="returnvalue">SoupURI</span></a> *
+soup_websocket_connection_get_uri (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>);</pre>
+<p>Get the URI of the WebSocket.</p>
+<p>For servers this represents the address of the WebSocket, and
+for clients it is the address connected to.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.9.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.9.7"></a><h4>Returns</h4>
+<p> the URI. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-get-origin"></a><h3>soup_websocket_connection_get_origin ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_websocket_connection_get_origin (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>);</pre>
+<p>Get the origin of the WebSocket.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.10.6"></a><h4>Returns</h4>
+<p> the origin, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-get-protocol"></a><h3>soup_websocket_connection_get_protocol ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_websocket_connection_get_protocol
+                               (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>);</pre>
+<p>Get the protocol chosen via negotiation with the peer.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.11.6"></a><h4>Returns</h4>
+<p> the chosen protocol, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-get-state"></a><h3>soup_websocket_connection_get_state ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketState" title="enum SoupWebsocketState"><span class="returnvalue">SoupWebsocketState</span></a>
+soup_websocket_connection_get_state (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>);</pre>
+<p>Get the current state of the WebSocket.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.12.6"></a><h4>Returns</h4>
+<p> the state</p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-send-text"></a><h3>soup_websocket_connection_send_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_websocket_connection_send_text (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *text</code></em>);</pre>
+<p>Send a text (UTF-8) message to the peer.</p>
+<p>The message is queued to be sent and will be sent when the main loop
+is run.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.13.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>text</p></td>
+<td class="parameter_description"><p>the message contents</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-send-binary"></a><h3>soup_websocket_connection_send_binary ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_websocket_connection_send_binary (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> length</code></em>);</pre>
+<p>Send a binary message to the peer.</p>
+<p>The message is queued to be sent and will be sent when the main loop
+is run.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.14.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p> the message contents. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> guint8]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>the length of <em class="parameter"><code>data</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-close"></a><h3>soup_websocket_connection_close ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_websocket_connection_close (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> code</code></em>,
+                                 <em class="parameter"><code>const <span class="type">char</span> *data</code></em>);</pre>
+<p>Close the connection in an orderly fashion.</p>
+<p>Note that until the <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-closed" title="The “closed” signal"><span class="type">“closed”</span></a> signal fires, the connection
+is not yet completely closed. The close message is not even sent until the
+main loop runs.</p>
+<p>The <em class="parameter"><code>code</code></em>
+ and <em class="parameter"><code>data</code></em>
+ are sent to the peer along with the close request.
+Note that the <em class="parameter"><code>data</code></em>
+ must be UTF-8 valid.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.15.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>code</p></td>
+<td class="parameter_description"><p>close code</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p> close data. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-get-close-code"></a><h3>soup_websocket_connection_get_close_code ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gushort"><span class="returnvalue">gushort</span></a>
+soup_websocket_connection_get_close_code
+                               (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>);</pre>
+<p>Get the close code received from the WebSocket peer.</p>
+<p>This only becomes valid once the WebSocket is in the
+<a class="link" href="libsoup-2.4-WebSockets.html#SOUP-WEBSOCKET-STATE-CLOSED:CAPS"><code class="literal">SOUP_WEBSOCKET_STATE_CLOSED</code></a> state. The value will often be in the
+<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketCloseCode" title="enum SoupWebsocketCloseCode"><span class="type">SoupWebsocketCloseCode</span></a> enumeration, but may also be an application
+defined close code.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.16.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.16.7"></a><h4>Returns</h4>
+<p> the close code or zero.</p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-websocket-connection-get-close-data"></a><h3>soup_websocket_connection_get_close_data ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_websocket_connection_get_close_data
+                               (<em class="parameter"><code><a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self</code></em>);</pre>
+<p>Get the close data received from the WebSocket peer.</p>
+<p>This only becomes valid once the WebSocket is in the
+<a class="link" href="libsoup-2.4-WebSockets.html#SOUP-WEBSOCKET-STATE-CLOSED:CAPS"><code class="literal">SOUP_WEBSOCKET_STATE_CLOSED</code></a> state. The data may be freed once
+the main loop is run, so copy it if you need to keep it around.</p>
+<div class="refsect3">
+<a name="id-1.5.4.11.17.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.5.4.11.17.7"></a><h4>Returns</h4>
+<p> the close data or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-WEBSOCKET-ERROR:CAPS"></a><h3>SOUP_WEBSOCKET_ERROR</h3>
+<pre class="programlisting">#define SOUP_WEBSOCKET_ERROR (soup_websocket_error_get_quark ())
+</pre>
+<p>A <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> domain for WebSocket-related errors. Used with
+<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketError" title="enum SoupWebsocketError"><span class="type">SoupWebsocketError</span></a>.</p>
+<p class="since">Since: 2.50</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupWebsocketConnection-struct"></a><h3>SoupWebsocketConnection</h3>
+<pre class="programlisting">typedef struct _SoupWebsocketConnection SoupWebsocketConnection;</pre>
+<p>A class representing a WebSocket connection.</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnectionType"></a><h3>enum SoupWebsocketConnectionType</h3>
+<p>The type of a <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.5.4.12.3.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CONNECTION-UNKNOWN:CAPS"></a>SOUP_WEBSOCKET_CONNECTION_UNKNOWN</p></td>
+<td class="enum_member_description">
+<p>unknown/invalid connection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CONNECTION-CLIENT:CAPS"></a>SOUP_WEBSOCKET_CONNECTION_CLIENT</p></td>
+<td class="enum_member_description">
+<p>a client-side connection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CONNECTION-SERVER:CAPS"></a>SOUP_WEBSOCKET_CONNECTION_SERVER</p></td>
+<td class="enum_member_description">
+<p>a server-side connection</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketState"></a><h3>enum SoupWebsocketState</h3>
+<p>The state of the WebSocket connection.</p>
+<div class="refsect3">
+<a name="id-1.5.4.12.4.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-STATE-OPEN:CAPS"></a>SOUP_WEBSOCKET_STATE_OPEN</p></td>
+<td class="enum_member_description">
+<p>the connection is ready to send messages</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-STATE-CLOSING:CAPS"></a>SOUP_WEBSOCKET_STATE_CLOSING</p></td>
+<td class="enum_member_description">
+<p>the connection is in the process of
+  closing down; messages may be received, but not sent</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-STATE-CLOSED:CAPS"></a>SOUP_WEBSOCKET_STATE_CLOSED</p></td>
+<td class="enum_member_description">
+<p>the connection is completely closed down</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketDataType"></a><h3>enum SoupWebsocketDataType</h3>
+<p>The type of data contained in a <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-message" title="The “message” signal"><span class="type">“message”</span></a>
+signal.</p>
+<div class="refsect3">
+<a name="id-1.5.4.12.5.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-DATA-TEXT:CAPS"></a>SOUP_WEBSOCKET_DATA_TEXT</p></td>
+<td class="enum_member_description">
+<p>UTF-8 text</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-DATA-BINARY:CAPS"></a>SOUP_WEBSOCKET_DATA_BINARY</p></td>
+<td class="enum_member_description">
+<p>binary data</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketCloseCode"></a><h3>enum SoupWebsocketCloseCode</h3>
+<p>Pre-defined close codes that can be passed to
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-close" title="soup_websocket_connection_close ()"><code class="function">soup_websocket_connection_close()</code></a> or received from
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-get-close-code" title="soup_websocket_connection_get_close_code ()"><code class="function">soup_websocket_connection_get_close_code()</code></a>. (However, other codes
+are also allowed.)</p>
+<div class="refsect3">
+<a name="id-1.5.4.12.6.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-NORMAL:CAPS"></a>SOUP_WEBSOCKET_CLOSE_NORMAL</p></td>
+<td class="enum_member_description">
+<p>a normal, non-error close</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-GOING-AWAY:CAPS"></a>SOUP_WEBSOCKET_CLOSE_GOING_AWAY</p></td>
+<td class="enum_member_description">
+<p>the client/server is going away</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-PROTOCOL-ERROR:CAPS"></a>SOUP_WEBSOCKET_CLOSE_PROTOCOL_ERROR</p></td>
+<td class="enum_member_description">
+<p>a protocol error occurred</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-UNSUPPORTED-DATA:CAPS"></a>SOUP_WEBSOCKET_CLOSE_UNSUPPORTED_DATA</p></td>
+<td class="enum_member_description">
+<p>the endpoint received data
+  of a type that it does not support.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-NO-STATUS:CAPS"></a>SOUP_WEBSOCKET_CLOSE_NO_STATUS</p></td>
+<td class="enum_member_description">
+<p>reserved value indicating that
+  no close code was present; must not be sent.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-ABNORMAL:CAPS"></a>SOUP_WEBSOCKET_CLOSE_ABNORMAL</p></td>
+<td class="enum_member_description">
+<p>reserved value indicating that
+  the connection was closed abnormally; must not be sent.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-BAD-DATA:CAPS"></a>SOUP_WEBSOCKET_CLOSE_BAD_DATA</p></td>
+<td class="enum_member_description">
+<p>the endpoint received data that
+  was invalid (eg, non-UTF-8 data in a text message).</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-POLICY-VIOLATION:CAPS"></a>SOUP_WEBSOCKET_CLOSE_POLICY_VIOLATION</p></td>
+<td class="enum_member_description">
+<p>generic error code
+  indicating some sort of policy violation.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-TOO-BIG:CAPS"></a>SOUP_WEBSOCKET_CLOSE_TOO_BIG</p></td>
+<td class="enum_member_description">
+<p>the endpoint received a message
+  that is too big to process.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-NO-EXTENSION:CAPS"></a>SOUP_WEBSOCKET_CLOSE_NO_EXTENSION</p></td>
+<td class="enum_member_description">
+<p>the client is closing the
+  connection because the server failed to negotiate a required
+  extension.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-SERVER-ERROR:CAPS"></a>SOUP_WEBSOCKET_CLOSE_SERVER_ERROR</p></td>
+<td class="enum_member_description">
+<p>the server is closing the
+  connection because it was unable to fulfill the request.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-CLOSE-TLS-HANDSHAKE:CAPS"></a>SOUP_WEBSOCKET_CLOSE_TLS_HANDSHAKE</p></td>
+<td class="enum_member_description">
+<p>reserved value indicating that
+  the TLS handshake failed; must not be sent.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketError"></a><h3>enum SoupWebsocketError</h3>
+<p>WebSocket-related errors.</p>
+<div class="refsect3">
+<a name="id-1.5.4.12.7.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-ERROR-FAILED:CAPS"></a>SOUP_WEBSOCKET_ERROR_FAILED</p></td>
+<td class="enum_member_description">
+<p>a generic error</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-ERROR-NOT-WEBSOCKET:CAPS"></a>SOUP_WEBSOCKET_ERROR_NOT_WEBSOCKET</p></td>
+<td class="enum_member_description">
+<p>attempted to handshake with a
+  server that does not appear to understand WebSockets.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-ERROR-BAD-HANDSHAKE:CAPS"></a>SOUP_WEBSOCKET_ERROR_BAD_HANDSHAKE</p></td>
+<td class="enum_member_description">
+<p>the WebSocket handshake failed
+  because some detail was invalid (eg, incorrect accept key).</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-WEBSOCKET-ERROR-BAD-ORIGIN:CAPS"></a>SOUP_WEBSOCKET_ERROR_BAD_ORIGIN</p></td>
+<td class="enum_member_description">
+<p>the WebSocket handshake failed
+  because the "Origin" header was not an allowed value.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.50</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="SoupWebsocketConnection--connection-type"></a><h3>The <code class="literal">“connection-type”</code> property</h3>
+<pre class="programlisting">  “connection-type”          <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnectionType" title="enum SoupWebsocketConnectionType"><span class="type">SoupWebsocketConnectionType</span></a></pre>
+<p>The type of connection (client/server).</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: SOUP_WEBSOCKET_CONNECTION_UNKNOWN</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnection--io-stream"></a><h3>The <code class="literal">“io-stream”</code> property</h3>
+<pre class="programlisting">  “io-stream”                <a href="https://developer.gnome.org/gio/unstable/GIOStream.html"><span class="type">GIOStream</span></a> *</pre>
+<p>The underlying IO stream the WebSocket is communicating
+over.</p>
+<p>The input and output streams must be pollable streams.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnection--origin"></a><h3>The <code class="literal">“origin”</code> property</h3>
+<pre class="programlisting">  “origin”                   <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>The client's Origin.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnection--protocol"></a><h3>The <code class="literal">“protocol”</code> property</h3>
+<pre class="programlisting">  “protocol”                 <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>The chosen protocol, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if a protocol was not agreed
+upon.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnection--state"></a><h3>The <code class="literal">“state”</code> property</h3>
+<pre class="programlisting">  “state”                    <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketState" title="enum SoupWebsocketState"><span class="type">SoupWebsocketState</span></a></pre>
+<p>The current state of the WebSocket.</p>
+<p>Flags: Read</p>
+<p>Default value: SOUP_WEBSOCKET_STATE_OPEN</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnection--uri"></a><h3>The <code class="literal">“uri”</code> property</h3>
+<pre class="programlisting">  “uri”                      <a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *</pre>
+<p>The URI of the WebSocket.</p>
+<p>For servers this represents the address of the WebSocket,
+and for clients it is the address connected to.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p class="since">Since: 2.50</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="SoupWebsocketConnection-closed"></a><h3>The <code class="literal">“closed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>                 user_data)</pre>
+<p>Emitted when the connection has completely closed, either
+due to an orderly close from the peer, one initiated via
+<a class="link" href="libsoup-2.4-WebSockets.html#soup-websocket-connection-close" title="soup_websocket_connection_close ()"><code class="function">soup_websocket_connection_close()</code></a> or a fatal error
+condition that caused a close.</p>
+<p>This signal will be emitted once.</p>
+<div class="refsect3">
+<a name="id-1.5.4.14.2.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnection-closing"></a><h3>The <code class="literal">“closing”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>                 user_data)</pre>
+<p>This signal will be emitted during an orderly close.</p>
+<div class="refsect3">
+<a name="id-1.5.4.14.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnection-error"></a><h3>The <code class="literal">“error”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>                  *error,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>                 user_data)</pre>
+<p>Emitted when an error occurred on the WebSocket. This may
+be fired multiple times. Fatal errors will be followed by
+the <a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection-closed" title="The “closed” signal"><span class="type">“closed”</span></a> signal being emitted.</p>
+<div class="refsect3">
+<a name="id-1.5.4.14.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>the error that occured</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="since">Since: 2.50</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupWebsocketConnection-message"></a><h3>The <code class="literal">“message”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="libsoup-2.4-WebSockets.html#SoupWebsocketConnection"><span class="type">SoupWebsocketConnection</span></a> *self,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a>                     type,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>                  *message,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>                 user_data)</pre>
+<p>Emitted when we receive a message from the peer.</p>
+<p>As a convenience, the <em class="parameter"><code>message</code></em>
+ data will always be
+NUL-terminated, but the NUL byte will not be included in
+the length count.</p>
+<div class="refsect3">
+<a name="id-1.5.4.14.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the WebSocket</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of message contents</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>message</p></td>
+<td class="parameter_description"><p>the message data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+<p class="since">Since: 2.50</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-WebSockets.see-also"></a><h2>See Also</h2>
+<p>soup_session_websocket_connect_async(),
+  <a class="link" href="SoupServer.html#soup-server-add-websocket-handler" title="soup_server_add_websocket_handler ()"><code class="function">soup_server_add_websocket_handler()</code></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

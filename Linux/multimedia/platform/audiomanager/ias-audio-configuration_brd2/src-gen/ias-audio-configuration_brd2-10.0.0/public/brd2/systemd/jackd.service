@@ -1,0 +1,12 @@
+[Unit]
+Description=Start jack daemon
+Wants=sys-devices-platform-byt_bin_ak4614-sound-card0.device
+After=sys-devices-platform-byt_bin_ak4614-sound-card0.device
+DefaultDependencies=false
+
+[Service]
+Type=simple
+User=pulse
+LimitRTPRIO=25
+ExecStart=/usr/bin/jackd -S -P 25 -dalsa -s -P -ddmixer -o8 -p192 -r48000 -n4 &
+

@@ -1,0 +1,1318 @@
+        -:    0:Source:./getdate.y
+        -:    0:Graph:/home/jbj/X/src/wdj54/lua/shadow/.libs/liblua_la-strtoday.gcno
+        -:    0:Data:/home/jbj/X/src/wdj54/lua/shadow/.libs/liblua_la-strtoday.gcda
+        -:    0:Runs:433
+        -:    0:Programs:1
+        -:    1:/*EOF*/
+        -:    2:/*EOF*/
+        -:    3:/*EOF*/
+        -:    4:/*EOF*/
+        -:    5:/*EOF*/
+        -:    6:/*EOF*/
+        -:    7:/*EOF*/
+        -:    8:/*EOF*/
+        -:    9:/*EOF*/
+        -:   10:/*EOF*/
+        -:   11:/*EOF*/
+        -:   12:/*EOF*/
+        -:   13:/*EOF*/
+        -:   14:/*EOF*/
+        -:   15:/*EOF*/
+        -:   16:/*EOF*/
+        -:   17:/*EOF*/
+        -:   18:/*EOF*/
+        -:   19:/*EOF*/
+        -:   20:/*EOF*/
+        -:   21:/*EOF*/
+        -:   22:/*EOF*/
+        -:   23:/*EOF*/
+        -:   24:/*EOF*/
+        -:   25:/*EOF*/
+        -:   26:/*EOF*/
+        -:   27:/*EOF*/
+        -:   28:/*EOF*/
+        -:   29:/*EOF*/
+        -:   30:/*EOF*/
+        -:   31:/*EOF*/
+        -:   32:/*EOF*/
+        -:   33:/*EOF*/
+        -:   34:/*EOF*/
+        -:   35:/*EOF*/
+        -:   36:/*EOF*/
+        -:   37:/*EOF*/
+        -:   38:/*EOF*/
+        -:   39:/*EOF*/
+        -:   40:/*EOF*/
+        -:   41:/*EOF*/
+        -:   42:/*EOF*/
+        -:   43:/*EOF*/
+        -:   44:/*EOF*/
+        -:   45:/*EOF*/
+        -:   46:/*EOF*/
+        -:   47:/*EOF*/
+        -:   48:/*EOF*/
+        -:   49:/*EOF*/
+        -:   50:/*EOF*/
+        -:   51:/*EOF*/
+        -:   52:/*EOF*/
+        -:   53:/*EOF*/
+        -:   54:/*EOF*/
+        -:   55:/*EOF*/
+        -:   56:/*EOF*/
+        -:   57:/*EOF*/
+        -:   58:/*EOF*/
+        -:   59:/*EOF*/
+        -:   60:/*EOF*/
+        -:   61:/*EOF*/
+        -:   62:/*EOF*/
+        -:   63:/*EOF*/
+        -:   64:/*EOF*/
+        -:   65:/*EOF*/
+        -:   66:/*EOF*/
+        -:   67:/*EOF*/
+        -:   68:/*EOF*/
+        -:   69:/*EOF*/
+        -:   70:/*EOF*/
+        -:   71:/*EOF*/
+        -:   72:/*EOF*/
+        -:   73:/*EOF*/
+        -:   74:/*EOF*/
+        -:   75:/*EOF*/
+        -:   76:/*EOF*/
+        -:   77:/*EOF*/
+        -:   78:/*EOF*/
+        -:   79:/*EOF*/
+        -:   80:/*EOF*/
+        -:   81:/*EOF*/
+        -:   82:/*EOF*/
+        -:   83:/*EOF*/
+        -:   84:/*EOF*/
+        -:   85:/*EOF*/
+        -:   86:/*EOF*/
+        -:   87:/*EOF*/
+        -:   88:/*EOF*/
+        -:   89:/*EOF*/
+        -:   90:/*EOF*/
+        -:   91:/*EOF*/
+        -:   92:/*EOF*/
+        -:   93:/*EOF*/
+        -:   94:/*EOF*/
+        -:   95:/*EOF*/
+        -:   96:/*EOF*/
+        -:   97:/*EOF*/
+        -:   98:/*EOF*/
+        -:   99:/*EOF*/
+        -:  100:/*EOF*/
+        -:  101:/*EOF*/
+        -:  102:/*EOF*/
+        -:  103:/*EOF*/
+        -:  104:/*EOF*/
+        -:  105:/*EOF*/
+        -:  106:/*EOF*/
+        -:  107:/*EOF*/
+        -:  108:/*EOF*/
+        -:  109:/*EOF*/
+        -:  110:/*EOF*/
+        -:  111:/*EOF*/
+        -:  112:/*EOF*/
+        -:  113:/*EOF*/
+        -:  114:/*EOF*/
+        -:  115:/*EOF*/
+        -:  116:/*EOF*/
+        -:  117:/*EOF*/
+        -:  118:/*EOF*/
+        -:  119:/*EOF*/
+        -:  120:/*EOF*/
+        -:  121:/*EOF*/
+        -:  122:/*EOF*/
+        -:  123:/*EOF*/
+        -:  124:/*EOF*/
+        -:  125:/*EOF*/
+        -:  126:/*EOF*/
+        -:  127:/*EOF*/
+        -:  128:/*EOF*/
+        -:  129:/*EOF*/
+        -:  130:/*EOF*/
+        -:  131:/*EOF*/
+        -:  132:/*EOF*/
+        -:  133:/*EOF*/
+        -:  134:/*EOF*/
+        -:  135:/*EOF*/
+        -:  136:/*EOF*/
+        -:  137:/*EOF*/
+        -:  138:/*EOF*/
+        -:  139:/*EOF*/
+        -:  140:/*EOF*/
+        -:  141:/*EOF*/
+        -:  142:/*EOF*/
+        -:  143:/*EOF*/
+        -:  144:/*EOF*/
+        -:  145:/*EOF*/
+        -:  146:/*EOF*/
+        -:  147:/*EOF*/
+        -:  148:/*EOF*/
+        -:  149:/*EOF*/
+        -:  150:/*EOF*/
+        -:  151:/*EOF*/
+        -:  152:/*EOF*/
+        -:  153:/*EOF*/
+        -:  154:/*EOF*/
+        -:  155:/*EOF*/
+        -:  156:/*EOF*/
+        -:  157:/*EOF*/
+        -:  158:/*EOF*/
+        -:  159:/*EOF*/
+        -:  160:/*EOF*/
+        -:  161:/*EOF*/
+        -:  162:/*EOF*/
+        -:  163:/*EOF*/
+        -:  164:/*EOF*/
+        -:  165:/*EOF*/
+        -:  166:/*EOF*/
+        -:  167:/*EOF*/
+        -:  168:/*EOF*/
+        -:  169:/*EOF*/
+        -:  170:/*EOF*/
+        -:  171:/*EOF*/
+        -:  172:/*EOF*/
+        -:  173:/*EOF*/
+        -:  174:/*EOF*/
+        -:  175:/*EOF*/
+        -:  176:/*EOF*/
+        -:  177:/*EOF*/
+        -:  178:/*EOF*/
+        -:  179:/*EOF*/
+        -:  180:/*EOF*/
+        -:  181:/*EOF*/
+        -:  182:/*EOF*/
+        -:  183:/*EOF*/
+        -:  184:/*EOF*/
+        -:  185:/*EOF*/
+        -:  186:/*EOF*/
+        -:  187:/*EOF*/
+        -:  188:/*EOF*/
+        -:  189:/*EOF*/
+        -:  190:/*EOF*/
+        -:  191:/*EOF*/
+        -:  192:/*EOF*/
+        -:  193:/*EOF*/
+        -:  194:/*EOF*/
+        -:  195:/*EOF*/
+        -:  196:/*EOF*/
+        -:  197:/*EOF*/
+        -:  198:/*EOF*/
+        -:  199:/*EOF*/
+        -:  200:/*EOF*/
+        -:  201:/*EOF*/
+        -:  202:/*EOF*/
+        -:  203:/*EOF*/
+        -:  204:/*EOF*/
+        -:  205:/*EOF*/
+        -:  206:/*EOF*/
+        -:  207:/*EOF*/
+        -:  208:/*EOF*/
+        -:  209:/*EOF*/
+        -:  210:/*EOF*/
+        -:  211:/*EOF*/
+        -:  212:/*EOF*/
+        -:  213:/*EOF*/
+        -:  214:/*EOF*/
+        -:  215:/*EOF*/
+        -:  216:/*EOF*/
+        -:  217:/*EOF*/
+        -:  218:/*EOF*/
+        -:  219:/*EOF*/
+        -:  220:/*EOF*/
+        -:  221:/*EOF*/
+        -:  222:/*EOF*/
+        -:  223:/*EOF*/
+        -:  224:/*EOF*/
+    #####:  225:/*EOF*/
+        -:  226:/*EOF*/
+    #####:  227:/*EOF*/
+    #####:  228:/*EOF*/
+        -:  229:/*EOF*/
+    #####:  230:/*EOF*/
+    #####:  231:/*EOF*/
+        -:  232:/*EOF*/
+    #####:  233:/*EOF*/
+    #####:  234:/*EOF*/
+        -:  235:/*EOF*/
+    #####:  236:/*EOF*/
+    #####:  237:/*EOF*/
+        -:  238:/*EOF*/
+    #####:  239:/*EOF*/
+        -:  240:/*EOF*/
+        -:  241:/*EOF*/
+        -:  242:/*EOF*/
+    #####:  243:/*EOF*/
+    #####:  244:/*EOF*/
+    #####:  245:/*EOF*/
+    #####:  246:/*EOF*/
+        -:  247:/*EOF*/
+    #####:  248:/*EOF*/
+    #####:  249:/*EOF*/
+    #####:  250:/*EOF*/
+    #####:  251:/*EOF*/
+    #####:  252:/*EOF*/
+        -:  253:/*EOF*/
+    #####:  254:/*EOF*/
+    #####:  255:/*EOF*/
+    #####:  256:/*EOF*/
+    #####:  257:/*EOF*/
+    #####:  258:/*EOF*/
+    #####:  259:/*EOF*/
+        -:  260:/*EOF*/
+    #####:  261:/*EOF*/
+    #####:  262:/*EOF*/
+    #####:  263:/*EOF*/
+    #####:  264:/*EOF*/
+    #####:  265:/*EOF*/
+        -:  266:/*EOF*/
+    #####:  267:/*EOF*/
+    #####:  268:/*EOF*/
+    #####:  269:/*EOF*/
+    #####:  270:/*EOF*/
+    #####:  271:/*EOF*/
+    #####:  272:/*EOF*/
+    #####:  273:/*EOF*/
+        -:  274:/*EOF*/
+    #####:  275:/*EOF*/
+        -:  276:/*EOF*/
+        -:  277:/*EOF*/
+    #####:  278:/*EOF*/
+    #####:  279:/*EOF*/
+        -:  280:/*EOF*/
+    #####:  281:/*EOF*/
+    #####:  282:/*EOF*/
+    #####:  283:/*EOF*/
+        -:  284:/*EOF*/
+    #####:  285:/*EOF*/
+        -:  286:/*EOF*/
+    #####:  287:/*EOF*/
+    #####:  288:/*EOF*/
+        -:  289:/*EOF*/
+    #####:  290:/*EOF*/
+        -:  291:/*EOF*/
+        -:  292:/*EOF*/
+    #####:  293:/*EOF*/
+    #####:  294:/*EOF*/
+        -:  295:/*EOF*/
+    #####:  296:/*EOF*/
+    #####:  297:/*EOF*/
+    #####:  298:/*EOF*/
+        -:  299:/*EOF*/
+    #####:  300:/*EOF*/
+    #####:  301:/*EOF*/
+    #####:  302:/*EOF*/
+        -:  303:/*EOF*/
+    #####:  304:/*EOF*/
+        -:  305:/*EOF*/
+        -:  306:/*EOF*/
+    #####:  307:/*EOF*/
+    #####:  308:/*EOF*/
+        -:  309:/*EOF*/
+    #####:  310:/*EOF*/
+    #####:  311:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  312:/*EOF*/
+    #####:  313:/*EOF*/
+    #####:  314:/*EOF*/
+        -:  315:/*EOF*/
+    #####:  316:/*EOF*/
+    #####:  317:/*EOF*/
+    #####:  318:/*EOF*/
+        -:  319:/*EOF*/
+        -:  320:/*EOF*/
+        -:  321:/*EOF*/
+        -:  322:/*EOF*/
+    #####:  323:/*EOF*/
+    #####:  324:/*EOF*/
+    #####:  325:/*EOF*/
+        -:  326:/*EOF*/
+    #####:  327:/*EOF*/
+        -:  328:/*EOF*/
+    #####:  329:/*EOF*/
+    #####:  330:/*EOF*/
+    #####:  331:/*EOF*/
+        -:  332:/*EOF*/
+    #####:  333:/*EOF*/
+    #####:  334:/*EOF*/
+    #####:  335:/*EOF*/
+        -:  336:/*EOF*/
+    #####:  337:/*EOF*/
+    #####:  338:/*EOF*/
+    #####:  339:/*EOF*/
+    #####:  340:/*EOF*/
+        -:  341:/*EOF*/
+    #####:  342:/*EOF*/
+    #####:  343:/*EOF*/
+    #####:  344:/*EOF*/
+        -:  345:/*EOF*/
+    #####:  346:/*EOF*/
+    #####:  347:/*EOF*/
+    #####:  348:/*EOF*/
+    #####:  349:/*EOF*/
+        -:  350:/*EOF*/
+    #####:  351:/*EOF*/
+        -:  352:/*EOF*/
+        -:  353:/*EOF*/
+    #####:  354:/*EOF*/
+    #####:  355:/*EOF*/
+        -:  356:/*EOF*/
+    #####:  357:/*EOF*/
+        -:  358:/*EOF*/
+        -:  359:/*EOF*/
+        -:  360:/*EOF*/
+    #####:  361:/*EOF*/
+        -:  362:/*EOF*/
+    #####:  363:/*EOF*/
+    #####:  364:/*EOF*/
+        -:  365:/*EOF*/
+    #####:  366:/*EOF*/
+    #####:  367:/*EOF*/
+        -:  368:/*EOF*/
+    #####:  369:/*EOF*/
+    #####:  370:/*EOF*/
+        -:  371:/*EOF*/
+    #####:  372:/*EOF*/
+    #####:  373:/*EOF*/
+        -:  374:/*EOF*/
+    #####:  375:/*EOF*/
+    #####:  376:/*EOF*/
+        -:  377:/*EOF*/
+    #####:  378:/*EOF*/
+    #####:  379:/*EOF*/
+        -:  380:/*EOF*/
+    #####:  381:/*EOF*/
+    #####:  382:/*EOF*/
+        -:  383:/*EOF*/
+    #####:  384:/*EOF*/
+    #####:  385:/*EOF*/
+        -:  386:/*EOF*/
+    #####:  387:/*EOF*/
+        -:  388:/*EOF*/
+        -:  389:/*EOF*/
+    #####:  390:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  391:/*EOF*/
+        -:  392:/*EOF*/
+    #####:  393:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  394:/*EOF*/
+    #####:  395:/*EOF*/
+    #####:  396:/*EOF*/
+    #####:  397:/*EOF*/
+        -:  398:/*EOF*/
+        -:  399:/*EOF*/
+    #####:  400:/*EOF*/
+    #####:  401:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  402:/*EOF*/
+    #####:  403:/*EOF*/
+        -:  404:/*EOF*/
+        -:  405:/*EOF*/
+    #####:  406:/*EOF*/
+    #####:  407:/*EOF*/
+        -:  408:/*EOF*/
+    #####:  409:/*EOF*/
+    #####:  410:/*EOF*/
+        -:  411:/*EOF*/
+        -:  412:/*EOF*/
+        -:  413:/*EOF*/
+        -:  414:/*EOF*/
+        -:  415:/*EOF*/
+        -:  416:/*EOF*/
+    #####:  417:/*EOF*/
+        -:  418:/*EOF*/
+    #####:  419:/*EOF*/
+    #####:  420:/*EOF*/
+        -:  421:/*EOF*/
+        -:  422:/*EOF*/
+        -:  423:/*EOF*/
+        -:  424:/*EOF*/
+        -:  425:/*EOF*/
+        -:  426:/*EOF*/
+        -:  427:/*EOF*/
+        -:  428:/*EOF*/
+        -:  429:/*EOF*/
+        -:  430:/*EOF*/
+        -:  431:/*EOF*/
+        -:  432:/*EOF*/
+        -:  433:/*EOF*/
+        -:  434:/*EOF*/
+        -:  435:/*EOF*/
+        -:  436:/*EOF*/
+        -:  437:/*EOF*/
+        -:  438:/*EOF*/
+        -:  439:/*EOF*/
+        -:  440:/*EOF*/
+        -:  441:/*EOF*/
+        -:  442:/*EOF*/
+        -:  443:/*EOF*/
+        -:  444:/*EOF*/
+        -:  445:/*EOF*/
+        -:  446:/*EOF*/
+        -:  447:/*EOF*/
+        -:  448:/*EOF*/
+        -:  449:/*EOF*/
+        -:  450:/*EOF*/
+        -:  451:/*EOF*/
+        -:  452:/*EOF*/
+        -:  453:/*EOF*/
+        -:  454:/*EOF*/
+        -:  455:/*EOF*/
+        -:  456:/*EOF*/
+        -:  457:/*EOF*/
+        -:  458:/*EOF*/
+        -:  459:/*EOF*/
+        -:  460:/*EOF*/
+        -:  461:/*EOF*/
+        -:  462:/*EOF*/
+        -:  463:/*EOF*/
+        -:  464:/*EOF*/
+        -:  465:/*EOF*/
+        -:  466:/*EOF*/
+        -:  467:/*EOF*/
+        -:  468:/*EOF*/
+        -:  469:/*EOF*/
+        -:  470:/*EOF*/
+        -:  471:/*EOF*/
+        -:  472:/*EOF*/
+        -:  473:/*EOF*/
+        -:  474:/*EOF*/
+        -:  475:/*EOF*/
+        -:  476:/*EOF*/
+        -:  477:/*EOF*/
+        -:  478:/*EOF*/
+        -:  479:/*EOF*/
+        -:  480:/*EOF*/
+        -:  481:/*EOF*/
+        -:  482:/*EOF*/
+        -:  483:/*EOF*/
+        -:  484:/*EOF*/
+        -:  485:/*EOF*/
+        -:  486:/*EOF*/
+        -:  487:/*EOF*/
+        -:  488:/*EOF*/
+        -:  489:/*EOF*/
+        -:  490:/*EOF*/
+        -:  491:/*EOF*/
+        -:  492:/*EOF*/
+        -:  493:/*EOF*/
+        -:  494:/*EOF*/
+        -:  495:/*EOF*/
+        -:  496:/*EOF*/
+        -:  497:/*EOF*/
+        -:  498:/*EOF*/
+        -:  499:/*EOF*/
+        -:  500:/*EOF*/
+        -:  501:/*EOF*/
+        -:  502:/*EOF*/
+        -:  503:/*EOF*/
+        -:  504:/*EOF*/
+        -:  505:/*EOF*/
+        -:  506:/*EOF*/
+        -:  507:/*EOF*/
+        -:  508:/*EOF*/
+        -:  509:/*EOF*/
+        -:  510:/*EOF*/
+        -:  511:/*EOF*/
+        -:  512:/*EOF*/
+        -:  513:/*EOF*/
+        -:  514:/*EOF*/
+        -:  515:/*EOF*/
+        -:  516:/*EOF*/
+        -:  517:/*EOF*/
+        -:  518:/*EOF*/
+        -:  519:/*EOF*/
+        -:  520:/*EOF*/
+        -:  521:/*EOF*/
+        -:  522:/*EOF*/
+        -:  523:/*EOF*/
+        -:  524:/*EOF*/
+        -:  525:/*EOF*/
+        -:  526:/*EOF*/
+        -:  527:/*EOF*/
+        -:  528:/*EOF*/
+        -:  529:/*EOF*/
+        -:  530:/*EOF*/
+        -:  531:/*EOF*/
+        -:  532:/*EOF*/
+        -:  533:/*EOF*/
+        -:  534:/*EOF*/
+        -:  535:/*EOF*/
+        -:  536:/*EOF*/
+        -:  537:/*EOF*/
+        -:  538:/*EOF*/
+        -:  539:/*EOF*/
+        -:  540:/*EOF*/
+        -:  541:/*EOF*/
+        -:  542:/*EOF*/
+        -:  543:/*EOF*/
+        -:  544:/*EOF*/
+        -:  545:/*EOF*/
+        -:  546:/*EOF*/
+        -:  547:/*EOF*/
+        -:  548:/*EOF*/
+        -:  549:/*EOF*/
+        -:  550:/*EOF*/
+        -:  551:/*EOF*/
+        -:  552:/*EOF*/
+        -:  553:/*EOF*/
+        -:  554:/*EOF*/
+        -:  555:/*EOF*/
+        -:  556:/*EOF*/
+        -:  557:/*EOF*/
+        -:  558:/*EOF*/
+        -:  559:/*EOF*/
+        -:  560:/*EOF*/
+        -:  561:/*EOF*/
+        -:  562:/*EOF*/
+        -:  563:/*EOF*/
+        -:  564:/*EOF*/
+        -:  565:/*EOF*/
+        -:  566:/*EOF*/
+        -:  567:/*EOF*/
+        -:  568:/*EOF*/
+        -:  569:/*EOF*/
+        -:  570:/*EOF*/
+        -:  571:/*EOF*/
+        -:  572:/*EOF*/
+        -:  573:/*EOF*/
+        -:  574:/*EOF*/
+        -:  575:/*EOF*/
+        -:  576:/*EOF*/
+        -:  577:/*EOF*/
+        -:  578:/*EOF*/
+        -:  579:/*EOF*/
+        -:  580:/*EOF*/
+        -:  581:/*EOF*/
+        -:  582:/*EOF*/
+        -:  583:/*EOF*/
+        -:  584:/*EOF*/
+        -:  585:/*EOF*/
+        -:  586:/*EOF*/
+        -:  587:/*EOF*/
+        -:  588:/*EOF*/
+        -:  589:/*EOF*/
+        -:  590:/*EOF*/
+        -:  591:/*EOF*/
+        -:  592:/*EOF*/
+        -:  593:/*EOF*/
+        -:  594:/*EOF*/
+        -:  595:/*EOF*/
+        -:  596:/*EOF*/
+        -:  597:/*EOF*/
+        -:  598:/*EOF*/
+        -:  599:/*EOF*/
+        -:  600:/*EOF*/
+        -:  601:/*EOF*/
+        -:  602:/*EOF*/
+        -:  603:/*EOF*/
+        -:  604:/*EOF*/
+        -:  605:/*EOF*/
+        -:  606:/*EOF*/
+        -:  607:/*EOF*/
+        -:  608:/*EOF*/
+        -:  609:/*EOF*/
+        -:  610:/*EOF*/
+        -:  611:/*EOF*/
+        -:  612:/*EOF*/
+        -:  613:/*EOF*/
+        -:  614:/*EOF*/
+        -:  615:/*EOF*/
+        -:  616:/*EOF*/
+        -:  617:/*EOF*/
+        -:  618:/*EOF*/
+        -:  619:/*EOF*/
+        -:  620:/*EOF*/
+        -:  621:/*EOF*/
+    #####:  622:/*EOF*/
+    #####:  623:/*EOF*/
+        -:  624:/*EOF*/
+        -:  625:/*EOF*/
+        -:  626:/*EOF*/
+        -:  627:/*EOF*/
+        -:  628:/*EOF*/
+        -:  629:/*EOF*/
+        -:  630:/*EOF*/
+    #####:  631:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  632:/*EOF*/
+    #####:  633:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  634:/*EOF*/
+    #####:  635:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  636:/*EOF*/
+    #####:  637:/*EOF*/
+        -:  638:/*EOF*/
+    #####:  639:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  640:/*EOF*/
+    #####:  641:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  642:/*EOF*/
+    #####:  643:/*EOF*/
+        -:  644:/*EOF*/
+    #####:  645:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  646:/*EOF*/
+    #####:  647:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  648:/*EOF*/
+    #####:  649:/*EOF*/
+        -:  650:/*EOF*/
+    #####:  651:/*EOF*/
+call    0 never executed
+        -:  652:/*EOF*/
+        -:  653:/*EOF*/
+        -:  654:/*EOF*/
+        -:  655:/*EOF*/
+        -:  656:/*EOF*/
+        -:  657:/*EOF*/
+        -:  658:/*EOF*/
+        -:  659:/*EOF*/
+        -:  660:/*EOF*/
+        -:  661:/*EOF*/
+function Convert called 0 returned 0% blocks executed 0%
+    #####:  662:/*EOF*/
+        -:  663:/*EOF*/
+        -:  664:/*EOF*/
+        -:  665:/*EOF*/
+        -:  666:/*EOF*/
+        -:  667:/*EOF*/
+        -:  668:/*EOF*/
+        -:  669:/*EOF*/
+        -:  670:/*EOF*/
+        -:  671:/*EOF*/
+        -:  672:/*EOF*/
+        -:  673:/*EOF*/
+    #####:  674:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  675:/*EOF*/
+    #####:  676:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  677:/*EOF*/
+    #####:  678:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  679:/*EOF*/
+    #####:  680:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  681:/*EOF*/
+        -:  682:/*EOF*/
+        -:  683:/*EOF*/
+    #####:  684:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  685:/*EOF*/
+        -:  686:/*EOF*/
+    #####:  687:/*EOF*/
+    #####:  688:/*EOF*/
+        -:  689:/*EOF*/
+    #####:  690:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  691:/*EOF*/
+    #####:  692:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  693:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  694:/*EOF*/
+    #####:  695:/*EOF*/
+    #####:  696:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  697:/*EOF*/
+    #####:  698:/*EOF*/
+    #####:  699:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  700:/*EOF*/
+call    0 never executed
+    #####:  701:/*EOF*/
+    #####:  702:/*EOF*/
+        -:  703:/*EOF*/
+        -:  704:/*EOF*/
+        -:  705:/*EOF*/
+        -:  706:/*EOF*/
+function DSTcorrect called 0 returned 0% blocks executed 0%
+    #####:  707:/*EOF*/
+        -:  708:/*EOF*/
+        -:  709:/*EOF*/
+        -:  710:/*EOF*/
+        -:  711:/*EOF*/
+        -:  712:/*EOF*/
+    #####:  713:/*EOF*/
+call    0 never executed
+    #####:  714:/*EOF*/
+call    0 never executed
+    #####:  715:/*EOF*/
+        -:  716:/*EOF*/
+        -:  717:/*EOF*/
+        -:  718:/*EOF*/
+        -:  719:/*EOF*/
+        -:  720:/*EOF*/
+        -:  721:/*EOF*/
+        -:  722:/*EOF*/
+        -:  723:/*EOF*/
+        -:  724:/*EOF*/
+        -:  725:/*EOF*/
+    #####:  726:/*EOF*/
+    #####:  727:/*EOF*/
+call    0 never executed
+    #####:  728:/*EOF*/
+    #####:  729:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  730:/*EOF*/
+call    0 never executed
+        -:  731:/*EOF*/
+        -:  732:/*EOF*/
+        -:  733:/*EOF*/
+        -:  734:/*EOF*/
+        -:  735:/*EOF*/
+        -:  736:/*EOF*/
+        -:  737:/*EOF*/
+        -:  738:/*EOF*/
+        -:  739:/*EOF*/
+        -:  740:/*EOF*/
+        -:  741:/*EOF*/
+    #####:  742:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  743:/*EOF*/
+    #####:  744:/*EOF*/
+call    0 never executed
+    #####:  745:/*EOF*/
+    #####:  746:/*EOF*/
+    #####:  747:/*EOF*/
+    #####:  748:/*EOF*/
+call    0 never executed
+call    1 never executed
+        -:  749:/*EOF*/
+        -:  750:/*EOF*/
+        -:  751:/*EOF*/
+        -:  752:/*EOF*/
+        -:  753:/*EOF*/
+        -:  754:/*EOF*/
+        -:  755:/*EOF*/
+function LookupWord called 0 returned 0% blocks executed 0%
+    #####:  756:/*EOF*/
+        -:  757:/*EOF*/
+        -:  758:/*EOF*/
+        -:  759:/*EOF*/
+        -:  760:/*EOF*/
+        -:  761:/*EOF*/
+        -:  762:/*EOF*/
+        -:  763:/*EOF*/
+        -:  764:/*EOF*/
+        -:  765:/*EOF*/
+        -:  766:/*EOF*/
+    #####:  767:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  768:/*EOF*/
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  769:/*EOF*/
+call    0 never executed
+        -:  770:/*EOF*/
+    #####:  771:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+branch 18 never executed
+branch 19 never executed
+    #####:  772:/*EOF*/
+    #####:  773:/*EOF*/
+        -:  774:/*EOF*/
+    #####:  775:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+branch 18 never executed
+branch 19 never executed
+    #####:  776:/*EOF*/
+    #####:  777:/*EOF*/
+        -:  778:/*EOF*/
+        -:  779:/*EOF*/
+        -:  780:/*EOF*/
+    #####:  781:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  782:/*EOF*/
+    #####:  783:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  784:/*EOF*/
+    #####:  785:/*EOF*/
+        -:  786:/*EOF*/
+        -:  787:/*EOF*/
+    #####:  788:/*EOF*/
+        -:  789:/*EOF*/
+    #####:  790:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  791:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  792:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  793:/*EOF*/
+    #####:  794:/*EOF*/
+        -:  795:/*EOF*/
+        -:  796:/*EOF*/
+    #####:  797:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  798:/*EOF*/
+    #####:  799:/*EOF*/
+        -:  800:/*EOF*/
+        -:  801:/*EOF*/
+        -:  802:/*EOF*/
+    #####:  803:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  804:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  805:/*EOF*/
+    #####:  806:/*EOF*/
+        -:  807:/*EOF*/
+        -:  808:/*EOF*/
+    #####:  809:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:  810:/*EOF*/
+        -:  811:/*EOF*/
+    #####:  812:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  813:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  814:/*EOF*/
+    #####:  815:/*EOF*/
+        -:  816:/*EOF*/
+        -:  817:/*EOF*/
+        -:  818:/*EOF*/
+    #####:  819:/*EOF*/
+    #####:  820:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  821:/*EOF*/
+    #####:  822:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  823:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  824:/*EOF*/
+    #####:  825:/*EOF*/
+        -:  826:/*EOF*/
+    #####:  827:/*EOF*/
+        -:  828:/*EOF*/
+        -:  829:/*EOF*/
+    #####:  830:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  831:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  832:/*EOF*/
+    #####:  833:/*EOF*/
+        -:  834:/*EOF*/
+        -:  835:/*EOF*/
+        -:  836:/*EOF*/
+    #####:  837:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  838:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  839:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  840:/*EOF*/
+    #####:  841:/*EOF*/
+        -:  842:/*EOF*/
+        -:  843:/*EOF*/
+        -:  844:/*EOF*/
+        -:  845:/*EOF*/
+    #####:  846:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  847:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  848:/*EOF*/
+        -:  849:/*EOF*/
+    #####:  850:/*EOF*/
+    #####:  851:/*EOF*/
+    #####:  852:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  853:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  854:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  855:/*EOF*/
+    #####:  856:/*EOF*/
+        -:  857:/*EOF*/
+        -:  858:/*EOF*/
+    #####:  859:/*EOF*/
+        -:  860:/*EOF*/
+        -:  861:/*EOF*/
+        -:  862:/*EOF*/
+        -:  863:/*EOF*/
+        -:  864:/*EOF*/
+function getdate_yylex called 0 returned 0% blocks executed 0%
+    #####:  865:/*EOF*/
+        -:  866:/*EOF*/
+        -:  867:/*EOF*/
+        -:  868:/*EOF*/
+        -:  869:/*EOF*/
+        -:  870:/*EOF*/
+        -:  871:/*EOF*/
+        -:  872:/*EOF*/
+        -:  873:/*EOF*/
+        -:  874:/*EOF*/
+        -:  875:/*EOF*/
+    #####:  876:/*EOF*/
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  877:/*EOF*/
+        -:  878:/*EOF*/
+    #####:  879:/*EOF*/
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  880:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  881:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  882:/*EOF*/
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  883:/*EOF*/
+    #####:  884:/*EOF*/
+        -:  885:/*EOF*/
+        -:  886:/*EOF*/
+    #####:  887:/*EOF*/
+    #####:  888:/*EOF*/
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  889:/*EOF*/
+    #####:  890:/*EOF*/
+    #####:  891:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  892:/*EOF*/
+    #####:  893:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+        -:  894:/*EOF*/
+    #####:  895:/*EOF*/
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  896:/*EOF*/
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  897:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  898:/*EOF*/
+    #####:  899:/*EOF*/
+    #####:  900:/*EOF*/
+    #####:  901:/*EOF*/
+call    0 never executed
+        -:  902:/*EOF*/
+    #####:  903:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  904:/*EOF*/
+    #####:  905:/*EOF*/
+        -:  906:/*EOF*/
+    #####:  907:/*EOF*/
+    #####:  908:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  909:/*EOF*/
+    #####:  910:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  911:/*EOF*/
+    #####:  912:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  913:/*EOF*/
+    #####:  914:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+        -:  915:/*EOF*/
+        -:  916:/*EOF*/
+        -:  917:/*EOF*/
+        -:  918:/*EOF*/
+        -:  919:/*EOF*/
+        -:  920:/*EOF*/
+        -:  921:/*EOF*/
+        -:  922:/*EOF*/
+        -:  923:/*EOF*/
+        -:  924:/*EOF*/
+        -:  925:/*EOF*/
+        -:  926:/*EOF*/
+        -:  927:/*EOF*/
+    #####:  928:/*EOF*/
+    #####:  929:/*EOF*/
+        -:  930:/*EOF*/
+        -:  931:/*EOF*/
+        -:  932:/*EOF*/
+        -:  933:/*EOF*/
+    #####:  934:/*EOF*/
+    #####:  935:/*EOF*/
+    #####:  936:/*EOF*/
+        -:  937:/*EOF*/
+    #####:  938:/*EOF*/
+    #####:  939:/*EOF*/
+    #####:  940:/*EOF*/
+    #####:  941:/*EOF*/
+    #####:  942:/*EOF*/
+        -:  943:/*EOF*/
+        -:  944:/*EOF*/
+        -:  945:/*EOF*/
+function shadow_get_date called 0 returned 0% blocks executed 0%
+    #####:  946:/*EOF*/
+        -:  947:/*EOF*/
+        -:  948:/*EOF*/
+        -:  949:/*EOF*/
+        -:  950:/*EOF*/
+        -:  951:/*EOF*/
+        -:  952:/*EOF*/
+        -:  953:/*EOF*/
+    #####:  954:/*EOF*/
+        -:  955:/*EOF*/
+    #####:  956:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+        -:  957:/*EOF*/
+        -:  958:/*EOF*/
+    #####:  959:/*EOF*/
+    #####:  960:/*EOF*/
+call    0 never executed
+        -:  961:/*EOF*/
+    #####:  962:/*EOF*/
+call    0 never executed
+    #####:  963:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+        -:  964:/*EOF*/
+        -:  965:/*EOF*/
+        -:  966:/*EOF*/
+        -:  967:/*EOF*/
+        -:  968:/*EOF*/
+    #####:  969:/*EOF*/
+        -:  970:/*EOF*/
+        -:  971:/*EOF*/
+    #####:  972:/*EOF*/
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  973:/*EOF*/
+        -:  974:/*EOF*/
+    #####:  975:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+        -:  976:/*EOF*/
+    #####:  977:/*EOF*/
+        -:  978:/*EOF*/
+        -:  979:/*EOF*/
+        -:  980:/*EOF*/
+        -:  981:/*EOF*/
+        -:  982:/*EOF*/
+        -:  983:/*EOF*/
+        -:  984:/*EOF*/
+    #####:  985:/*EOF*/
+        -:  986:/*EOF*/
+    #####:  987:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####:  988:/*EOF*/
+        -:  989:/*EOF*/
+        -:  990:/*EOF*/
+        -:  991:/*EOF*/
+    #####:  992:/*EOF*/
+        -:  993:/*EOF*/
+        -:  994:/*EOF*/
+    #####:  995:/*EOF*/
+call    0 never executed
+    #####:  996:/*EOF*/
+    #####:  997:/*EOF*/
+    #####:  998:/*EOF*/
+    #####:  999:/*EOF*/
+    #####: 1000:/*EOF*/
+    #####: 1001:/*EOF*/
+    #####: 1002:/*EOF*/
+    #####: 1003:/*EOF*/
+    #####: 1004:/*EOF*/
+    #####: 1005:/*EOF*/
+    #####: 1006:/*EOF*/
+    #####: 1007:/*EOF*/
+    #####: 1008:/*EOF*/
+    #####: 1009:/*EOF*/
+    #####: 1010:/*EOF*/
+    #####: 1011:/*EOF*/
+        -: 1012:/*EOF*/
+        -: 1013:/*EOF*/
+    #####: 1014:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####: 1015:/*EOF*/
+call    0 never executed
+    #####: 1016:/*EOF*/
+        -: 1017:/*EOF*/
+        -: 1018:/*EOF*/
+    #####: 1019:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1020:/*EOF*/
+call    0 never executed
+        -: 1021:/*EOF*/
+    #####: 1022:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####: 1023:/*EOF*/
+        -: 1024:/*EOF*/
+        -: 1025:/*EOF*/
+    #####: 1026:/*EOF*/
+    #####: 1027:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+    #####: 1028:/*EOF*/
+        -: 1029:/*EOF*/
+        -: 1030:/*EOF*/
+    #####: 1031:/*EOF*/
+    #####: 1032:/*EOF*/
+        -: 1033:/*EOF*/
+    #####: 1034:/*EOF*/
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####: 1035:/*EOF*/
+    #####: 1036:/*EOF*/
+        -: 1037:/*EOF*/
+        -: 1038:/*EOF*/
+        -: 1039:/*EOF*/
+        -: 1040:/*EOF*/
+    #####: 1041:/*EOF*/
+branch  0 never executed
+branch  1 never executed

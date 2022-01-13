@@ -1,0 +1,12 @@
+# Gstreamer specific macro definitions.
+# To make use of these macros insert the following line into your spec file:
+# %{load:%{_usrlibrpm}/macros.d/gstreamer}
+
+%__gst_inspect		@__GST_INSPECT
+
+# Path to scripts to autogenerate gstreamer package dependencies,
+#
+# Note: Used if _use_internal_dependency_generator is non-zero. The
+# helpers are also used by %{_rpmhome}/rpmdeps {--provides|--requires}.
+%__gstreamer_provides	%{_rpmhome}/gstreamer.sh --provides --gst-inspect %__gst_inspect
+#%__gstreamer_requires	%{_rpmhome}/gstreamer.sh --requires

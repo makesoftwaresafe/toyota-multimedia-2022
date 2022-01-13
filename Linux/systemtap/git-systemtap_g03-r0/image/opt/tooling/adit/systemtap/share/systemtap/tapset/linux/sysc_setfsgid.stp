@@ -1,0 +1,51 @@
+# setfsgid ___________________________________________________
+# long sys_setfsgid(gid_t gid)
+# long sys_setfsgid16(old_gid_t gid)
+#
+
+@define _SYSCALL_SETFSGID_NAME
+%(
+	name = "setfsgid"
+%)
+
+@define _SYSCALL_SETFSGID_ARGSTR
+%(
+	argstr = sprint(fsgid)
+%)
+
+probe syscall.setfsgid = dw_syscall.setfsgid !, nd_syscall.setfsgid ? {}
+probe syscall.setfsgid.return = dw_syscall.setfsgid.return !,
+                                nd_syscall.setfsgid.return ? {}
+
+# dw_setfsgid _____________________________________________________
+
+probe dw_syscall.setfsgid = kernel.function("sys_setfsgid16").call ?,
+                         kernel.function("sys_setfsgid").call ?
+{
+	@_SYSCALL_SETFSGID_NAME
+	fsgid = __int32($gid)
+	@_SYSCALL_SETFSGID_ARGSTR
+}
+probe dw_syscall.setfsgid.return = kernel.function("sys_setfsgid16").return ?,
+                                kernel.function("sys_setfsgid").return ?
+{
+	@_SYSCALL_SETFSGID_NAME
+	retstr = return_str(1, $return)
+}
+
+# nd_setfsgid _____________________________________________________
+
+probe nd_syscall.setfsgid = kprobe.function("sys_setfsgid16") ?,
+                            kprobe.function("sys_setfsgid") ?
+{
+	@_SYSCALL_SETFSGID_NAME
+	asmlinkage()
+	fsgid = int_arg(1)
+	@_SYSCALL_SETFSGID_ARGSTR
+}
+probe nd_syscall.setfsgid.return = kprobe.function("sys_setfsgid16").return ?,
+                                   kprobe.function("sys_setfsgid").return ?
+{
+	@_SYSCALL_SETFSGID_NAME
+	retstr = returnstr(1)
+}

@@ -1,0 +1,16 @@
+{
+  "config_appl": "node-health-monitor",
+  "version": "0.1.0",
+  "resources": {
+    "nhm_var": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "node-health-monitor",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "14bfa6bb14875e45bba028a21ed38046"
+    }
+  }
+}

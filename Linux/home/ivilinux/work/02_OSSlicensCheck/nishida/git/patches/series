@@ -1,0 +1,14 @@
+smart-recommends.patch -p1
+smart-channelsdir.patch -p1
+smart-rpm-transaction-failure-check.patch -p1
+smart-attempt.patch -p1
+smart-attempt-fix.patch -p1
+smart-add-for-rpm-ignoresize-check.patch -p1
+smart-already-installed-message.patch -p1
+smart-set-noprogress-for-pycurl.patch -p1
+smart-cache.py-getPackages-matches-name-version.patch -p1
+smart-channel-remove-all.patch -p1
+smart-locale.patch -p1
+smartpm-rpm5-support-check-signatures.patch -p1
+smart-add-deugging-when-targetpath-is-empty.patch -p1
+channels-rpm_sys-use-md5sum-instead-of-mtime-as-the-.patch -p1

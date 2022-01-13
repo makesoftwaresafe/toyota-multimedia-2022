@@ -1,0 +1,69 @@
+# compat_sys_sysctl ________________________________________
+#
+# long compat_sys_sysctl(struct __sysctl_args32 __user *args)
+#
+# To match the ia64/s390/x86_64 versions (and to match the syscall variant of
+# this probe), the 'syscall.compat_sysctl' probe name is deprecated and
+# 'syscall.sysctl32' should be used instead.  To use the old name without
+# changing your script, use the '--compatible 2.8' stap option.
+#
+
+@define _SYSCALL_SYSCTL32_NAME
+%(
+	name = "sysctl"
+%)
+
+@define _SYSCALL_SYSCTL32_ARGSTR
+%(
+	argstr = sprintf("%p", args)
+%)
+
+probe
+%( systemtap_v <= "2.8"
+		%? syscall.compat_sysctl %: syscall.sysctl32
+		%) = dw_syscall.sysctl32 !, nd_syscall.sysctl32 ? {}
+probe
+%( systemtap_v <= "2.8"
+		%? syscall.compat_sysctl.return %: syscall.sysctl32.return
+		%) = dw_syscall.sysctl32.return !, nd_syscall.sysctl32.return ? {}
+
+# dw_compat_sys_sysctl ________________________________________
+
+probe
+%( systemtap_v <= "2.8"
+		%? dw_syscall.compat_sysctl %: dw_syscall.sysctl32
+		%) = kernel.function("compat_sys_sysctl") ?
+{
+	@_SYSCALL_SYSCTL32_NAME
+	args = $args
+	@_SYSCALL_SYSCTL32_ARGSTR
+}
+probe
+%( systemtap_v <= "2.8"
+		%? dw_syscall.compat_sysctl.return %: dw_syscall.sysctl32.return
+		%) = kernel.function("compat_sys_sysctl").return ?
+{
+	@_SYSCALL_SYSCTL32_NAME
+	retstr = return_str(1, $return)
+}
+
+# nd_compat_sys_sysctl ________________________________________
+
+probe
+%( systemtap_v <= "2.8"
+		%? nd_syscall.compat_sysctl %: nd_syscall.sysctl32
+		%) = kprobe.function("compat_sys_sysctl") ?
+{
+	@_SYSCALL_SYSCTL32_NAME
+	asmlinkage()
+	args = pointer_arg(1)
+	@_SYSCALL_SYSCTL32_ARGSTR
+}
+probe
+%( systemtap_v <= "2.8"
+		%? nd_syscall.compat_sysctl.return %: nd_syscall.sysctl32.return
+		%) = kprobe.function("compat_sys_sysctl").return ?
+{
+	@_SYSCALL_SYSCTL32_NAME
+	retstr = returnstr(1)
+}

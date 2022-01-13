@@ -1,0 +1,984 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPDIDLLiteContainer: GUPnP A/V Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP A/V Reference Manual">
+<link rel="up" href="ch01.html" title="GUPnP A/V">
+<link rel="prev" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject">
+<link rel="next" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteContainer.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteContainer.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteContainer.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPDIDLLiteObject.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPDIDLLiteItem.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPDIDLLiteContainer"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPDIDLLiteContainer.top_of_page"></a>GUPnPDIDLLiteContainer</span></h2>
+<p>GUPnPDIDLLiteContainer — DIDL-Lite Container</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteContainer.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-get-searchable" title="gupnp_didl_lite_container_get_searchable ()">gupnp_didl_lite_container_get_searchable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-get-child-count" title="gupnp_didl_lite_container_get_child_count ()">gupnp_didl_lite_container_get_child_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-get-create-classes" title="gupnp_didl_lite_container_get_create_classes ()">gupnp_didl_lite_container_get_create_classes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-get-search-classes" title="gupnp_didl_lite_container_get_search_classes ()">gupnp_didl_lite_container_get_search_classes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-get-storage-used" title="gupnp_didl_lite_container_get_storage_used ()">gupnp_didl_lite_container_get_storage_used</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-set-searchable" title="gupnp_didl_lite_container_set_searchable ()">gupnp_didl_lite_container_set_searchable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-set-child-count" title="gupnp_didl_lite_container_set_child_count ()">gupnp_didl_lite_container_set_child_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-set-storage-used" title="gupnp_didl_lite_container_set_storage_used ()">gupnp_didl_lite_container_set_storage_used</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-add-create-class" title="gupnp_didl_lite_container_add_create_class ()">gupnp_didl_lite_container_add_create_class</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-add-create-class-full" title="gupnp_didl_lite_container_add_create_class_full ()">gupnp_didl_lite_container_add_create_class_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-add-search-class" title="gupnp_didl_lite_container_add_search_class ()">gupnp_didl_lite_container_add_search_class</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-add-search-class-full" title="gupnp_didl_lite_container_add_search_class_full ()">gupnp_didl_lite_container_add_search_class_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-container-update-id-is-set" title="gupnp_didl_lite_container_container_update_id_is_set ()">gupnp_didl_lite_container_container_update_id_is_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-get-container-update-id" title="gupnp_didl_lite_container_get_container_update_id ()">gupnp_didl_lite_container_get_container_update_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-get-create-classes-full" title="gupnp_didl_lite_container_get_create_classes_full ()">gupnp_didl_lite_container_get_create_classes_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-get-total-deleted-child-count" title="gupnp_didl_lite_container_get_total_deleted_child_count ()">gupnp_didl_lite_container_get_total_deleted_child_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-set-container-update-id" title="gupnp_didl_lite_container_set_container_update_id ()">gupnp_didl_lite_container_set_container_update_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-set-total-deleted-child-count" title="gupnp_didl_lite_container_set_total_deleted_child_count ()">gupnp_didl_lite_container_set_total_deleted_child_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-total-deleted-child-count-is-set" title="gupnp_didl_lite_container_total_deleted_child_count_is_set ()">gupnp_didl_lite_container_total_deleted_child_count_is_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-unset-container-update-id" title="gupnp_didl_lite_container_unset_container_update_id ()">gupnp_didl_lite_container_unset_container_update_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteContainer.html#gupnp-didl-lite-container-unset-total-deleted-child-count" title="gupnp_didl_lite_container_unset_total_deleted_child_count ()">gupnp_didl_lite_container_unset_total_deleted_child_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteContainer.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteContainer.html#GUPnPDIDLLiteContainer--child-count" title="The “child-count” property">child-count</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteContainer.html#GUPnPDIDLLiteContainer--container-update-id" title="The “container-update-id” property">container-update-id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteContainer.html#GUPnPDIDLLiteContainer--searchable" title="The “searchable” property">searchable</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint64</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteContainer.html#GUPnPDIDLLiteContainer--storage-used" title="The “storage-used” property">storage-used</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteContainer.html#GUPnPDIDLLiteContainer--total-deleted-child-count" title="The “total-deleted-child-count” property">total-deleted-child-count</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteContainer.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GUPnPDIDLLiteContainer.html#GUPnPDIDLLiteContainer-struct" title="GUPnPDIDLLiteContainer">GUPnPDIDLLiteContainer</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteContainer.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject">GUPnPDIDLLiteObject</a>
+        <span class="lineart">╰──</span> GUPnPDIDLLiteContainer
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteContainer.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> respresents a DIDL-Lite container element.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteContainer.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-get-searchable"></a><h3>gupnp_didl_lite_container_get_searchable ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_didl_lite_container_get_searchable
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Checks whether <em class="parameter"><code>container</code></em>
+ is searchable.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-searchable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-searchable.returns"></a><h4>Returns</h4>
+<p> <span class="type">TRUE</span> if <em class="parameter"><code>container</code></em>
+is searchable.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-get-child-count"></a><h3>gupnp_didl_lite_container_get_child_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+gupnp_didl_lite_container_get_child_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Get the child count of the <em class="parameter"><code>container</code></em>
+.  If the child count is unknown, -1 is
+returned.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-child-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-child-count.returns"></a><h4>Returns</h4>
+<p> The child count of the <em class="parameter"><code>container</code></em>
+, or -1 if it is unknown.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-get-create-classes"></a><h3>gupnp_didl_lite_container_get_create_classes ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_container_get_create_classes
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Gets the list of create classes of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-create-classes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-create-classes.returns"></a><h4>Returns</h4>
+<p> The list of create classes
+belonging to <em class="parameter"><code>container</code></em>
+, or <code class="literal">NULL</code>.
+<span class="type">g_list_free</span> the returned list after usage and <span class="type">g_free</span> each string in it. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-get-search-classes"></a><h3>gupnp_didl_lite_container_get_search_classes ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_container_get_search_classes
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Gets the list of search classes of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-search-classes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-search-classes.returns"></a><h4>Returns</h4>
+<p> The list of search classes
+belonging to <em class="parameter"><code>container</code></em>
+, or <code class="literal">NULL</code>. <span class="type">g_list_free</span> the returned list after usage
+and <span class="type">g_free</span> each string in it. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-get-storage-used"></a><h3>gupnp_didl_lite_container_get_storage_used ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint64</span>
+gupnp_didl_lite_container_get_storage_used
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Get the number of bytes used by all child items of the <em class="parameter"><code>container</code></em>
+.
+If storage used is unknown, -1 is returned.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-storage-used.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-storage-used.returns"></a><h4>Returns</h4>
+<p> The number of bytes used by all children of the <em class="parameter"><code>container</code></em>
+,
+or -1 if it is unknown.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-set-searchable"></a><h3>gupnp_didl_lite_container_set_searchable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_set_searchable
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code><span class="type">gboolean</span> searchable</code></em>);</pre>
+<p>(Un)set the searchibility of <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-set-searchable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>searchable</p></td>
+<td class="parameter_description"><p>The searchibility</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-set-child-count"></a><h3>gupnp_didl_lite_container_set_child_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_set_child_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code><span class="type">gint</span> child_count</code></em>);</pre>
+<p>Set the child count of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-set-child-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>child_count</p></td>
+<td class="parameter_description"><p>The child count</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-set-storage-used"></a><h3>gupnp_didl_lite_container_set_storage_used ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_set_storage_used
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code><span class="type">gint64</span> storage_used</code></em>);</pre>
+<p>Set the number of bytes used by all child items of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-set-storage-used.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>storage_used</p></td>
+<td class="parameter_description"><p>The number of bytes used by all child items of the
+<em class="parameter"><code>container</code></em>
+or -1 if unknown.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-add-create-class"></a><h3>gupnp_didl_lite_container_add_create_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_add_create_class
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *create_class</code></em>);</pre>
+<p>Add a new create class to the <em class="parameter"><code>container</code></em>
+. includeDerived defaults to "0".</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-add-create-class.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>create_class</p></td>
+<td class="parameter_description"><p>The createClass to add.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-add-create-class-full"></a><h3>gupnp_didl_lite_container_add_create_class_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_add_create_class_full
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *create_class</code></em>,
+                                <em class="parameter"><code><span class="type">gboolean</span> include_derived</code></em>);</pre>
+<p>Add a new create class to the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-add-create-class-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>create_class</p></td>
+<td class="parameter_description"><p>The createClass to add.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>include_derived</p></td>
+<td class="parameter_description"><p>Whether object with dervied classes may be created in
+this container or not.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-add-search-class"></a><h3>gupnp_didl_lite_container_add_search_class ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_add_search_class
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *search_class</code></em>);</pre>
+<p>Add a new search class to the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-add-search-class.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>search_class</p></td>
+<td class="parameter_description"><p>The searchClass to add.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-add-search-class-full"></a><h3>gupnp_didl_lite_container_add_search_class_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_add_search_class_full
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *search_class</code></em>,
+                                <em class="parameter"><code><span class="type">gboolean</span> include_derived</code></em>);</pre>
+<p>Add a new search class to the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-add-search-class-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>search_class</p></td>
+<td class="parameter_description"><p>The searchClass to add.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>include_derived</p></td>
+<td class="parameter_description"><p>includeDerived attribute of the DIDL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-container-update-id-is-set"></a><h3>gupnp_didl_lite_container_container_update_id_is_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_didl_lite_container_container_update_id_is_set
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Get whether the container update ID of the <em class="parameter"><code>container</code></em>
+ is set.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-container-update-id-is-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-container-update-id-is-set.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if update ID is set, otherwise <code class="literal">FALSE</code></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-get-container-update-id"></a><h3>gupnp_didl_lite_container_get_container_update_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_didl_lite_container_get_container_update_id
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Get the container update ID of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-container-update-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-container-update-id.returns"></a><h4>Returns</h4>
+<p> The container update ID of the <em class="parameter"><code>container</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-get-create-classes-full"></a><h3>gupnp_didl_lite_container_get_create_classes_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_didl_lite_container_get_create_classes_full
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Gets the list of create classes of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-create-classes-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-create-classes-full.returns"></a><h4>Returns</h4>
+<p> The list
+of create classes belonging to <em class="parameter"><code>container</code></em>
+, or <code class="literal">NULL</code>.
+<span class="type">g_list_free</span> the returned list after usage and unref each object in it. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnPDIDLLiteCreateClass*][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-get-total-deleted-child-count"></a><h3>gupnp_didl_lite_container_get_total_deleted_child_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_didl_lite_container_get_total_deleted_child_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Get the total deleted child count of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-total-deleted-child-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-get-total-deleted-child-count.returns"></a><h4>Returns</h4>
+<p> The total deleted child count of the <em class="parameter"><code>container</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-set-container-update-id"></a><h3>gupnp_didl_lite_container_set_container_update_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_set_container_update_id
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> update_id</code></em>);</pre>
+<p>Set the container update ID of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-set-container-update-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>update_id</p></td>
+<td class="parameter_description"><p>The container update ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-set-total-deleted-child-count"></a><h3>gupnp_didl_lite_container_set_total_deleted_child_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_set_total_deleted_child_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> count</code></em>);</pre>
+<p>Set the container update ID of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-set-total-deleted-child-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>count</p></td>
+<td class="parameter_description"><p>The container update ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-total-deleted-child-count-is-set"></a><h3>gupnp_didl_lite_container_total_deleted_child_count_is_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_didl_lite_container_total_deleted_child_count_is_set
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Get whether the total deleted child conut of the <em class="parameter"><code>container</code></em>
+ is set.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-total-deleted-child-count-is-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-total-deleted-child-count-is-set.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if property is set, otherwise <code class="literal">FALSE</code></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-unset-container-update-id"></a><h3>gupnp_didl_lite_container_unset_container_update_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_unset_container_update_id
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Unset the container update ID property of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-unset-container-update-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-container-unset-total-deleted-child-count"></a><h3>gupnp_didl_lite_container_unset_total_deleted_child_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_container_unset_total_deleted_child_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> *container</code></em>);</pre>
+<p>Unset the total deleted child count property of the <em class="parameter"><code>container</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-container-unset-total-deleted-child-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>container</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteContainer.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteContainer-struct"></a><h3>GUPnPDIDLLiteContainer</h3>
+<pre class="programlisting">typedef struct _GUPnPDIDLLiteContainer GUPnPDIDLLiteContainer;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteContainer.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteContainer--child-count"></a><h3>The <code class="literal">“child-count”</code> property</h3>
+<pre class="programlisting">  “child-count”              <span class="type">gint</span></pre>
+<p>The child count of this container.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteContainer--container-update-id"></a><h3>The <code class="literal">“container-update-id”</code> property</h3>
+<pre class="programlisting">  “container-update-id”      <span class="type">guint</span></pre>
+<p>Update ID of this container.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteContainer--searchable"></a><h3>The <code class="literal">“searchable”</code> property</h3>
+<pre class="programlisting">  “searchable”               <span class="type">gboolean</span></pre>
+<p>Whether this container is searchable.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteContainer--storage-used"></a><h3>The <code class="literal">“storage-used”</code> property</h3>
+<pre class="programlisting">  “storage-used”             <span class="type">gint64</span></pre>
+<p>The number of bytes used by all child items of this container.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteContainer--total-deleted-child-count"></a><h3>The <code class="literal">“total-deleted-child-count”</code> property</h3>
+<pre class="programlisting">  “total-deleted-child-count” <span class="type">guint</span></pre>
+<p>Total deleted child count of this container.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

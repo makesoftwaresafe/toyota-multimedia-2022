@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPContextManager: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-context.html" title="Network context handling">
+<link rel="prev" href="GUPnPContext.html" title="GUPnPContext">
+<link rel="next" href="api-utility.html" title="Utility Functions">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPContextManager.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPContextManager.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPContextManager.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GUPnPContextManager.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-context.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPContext.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-utility.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPContextManager"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPContextManager.top_of_page"></a>GUPnPContextManager</span></h2>
+<p>GUPnPContextManager — Manages GUPnPContext objects.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPContextManager.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="returnvalue">GUPnPContextManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContextManager.html#gupnp-context-manager-new" title="gupnp_context_manager_new ()">gupnp_context_manager_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="returnvalue">GUPnPContextManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContextManager.html#gupnp-context-manager-create" title="gupnp_context_manager_create ()">gupnp_context_manager_create</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContextManager.html#gupnp-context-manager-rescan-control-points" title="gupnp_context_manager_rescan_control_points ()">gupnp_context_manager_rescan_control_points</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContextManager.html#gupnp-context-manager-manage-control-point" title="gupnp_context_manager_manage_control_point ()">gupnp_context_manager_manage_control_point</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContextManager.html#gupnp-context-manager-manage-root-device" title="gupnp_context_manager_manage_root_device ()">gupnp_context_manager_manage_root_device</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContextManager.html#gupnp-context-manager-get-port" title="gupnp_context_manager_get_port ()">gupnp_context_manager_get_port</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPWhiteList.html" title="GUPnPWhiteList"><span class="returnvalue">GUPnPWhiteList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContextManager.html#gupnp-context-manager-get-white-list" title="gupnp_context_manager_get_white_list ()">gupnp_context_manager_get_white_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPContextManager.html#GUPnPContextManager--main-context" title="The “main-context” property">main-context</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GUPnPContextManager.html#GUPnPContextManager--port" title="The “port” property">port</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GUPnPWhiteList.html" title="GUPnPWhiteList"><span class="type">GUPnPWhiteList</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPContextManager.html#GUPnPContextManager--white-list" title="The “white-list” property">white-list</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GUPnPContextManager.html#GUPnPContextManager-context-available" title="The “context-available” signal">context-available</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GUPnPContextManager.html#GUPnPContextManager-context-unavailable" title="The “context-unavailable” signal">context-unavailable</a></td>
+<td class="signal_flags">Run First</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPContextManager.html#GUPnPContextManager-struct" title="struct GUPnPContextManager">GUPnPContextManager</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPContextManager
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.description"></a><h2>Description</h2>
+<p>A Utility class that takes care of creation and destruction of
+<a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> objects for all available network interfaces as they go up
+(connect) and down (disconnect), respectively.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-context-manager-new"></a><h3>gupnp_context_manager_new ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="returnvalue">GUPnPContextManager</span></a> *
+gupnp_context_manager_new (<em class="parameter"><code><span class="type">GMainContext</span> *main_context</code></em>,
+                           <em class="parameter"><code><span class="type">guint</span> port</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_context_manager_new</code> has been deprecated since version 0.17.2 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPContextManager.html#gupnp-context-manager-create" title="gupnp_context_manager_create ()"><code class="function">gupnp_context_manager_create()</code></a>.</p>
+</div>
+<p>Same as <a class="link" href="GUPnPContextManager.html#gupnp-context-manager-create" title="gupnp_context_manager_create ()"><code class="function">gupnp_context_manager_create()</code></a>.</p>
+<div class="refsect3">
+<a name="gupnp-context-manager-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>main_context</p></td>
+<td class="parameter_description"><p> Deprecated: 0.17.2: <code class="literal">NULL</code>. If you want to use
+a different main context use
+<code class="function">g_main_context_push_thread_default()</code> instead. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>port</p></td>
+<td class="parameter_description"><p>Port to create contexts for, or 0 if you don't care what port is used.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-manager-new.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.13.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-manager-create"></a><h3>gupnp_context_manager_create ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="returnvalue">GUPnPContextManager</span></a> *
+gupnp_context_manager_create (<em class="parameter"><code><span class="type">guint</span> port</code></em>);</pre>
+<p>Factory-method to create a new <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a>. The final type of the
+<a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> depends on the compile-time selection or - in case of
+NetworkManager - on its availability during runtime. If it is not available,
+the implementation falls back to the basic Unix context manager instead.</p>
+<div class="refsect3">
+<a name="gupnp-context-manager-create.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>port</p></td>
+<td class="parameter_description"><p>Port to create contexts for, or 0 if you don't care what port is used.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-manager-create.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> object. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.17.2</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-manager-rescan-control-points"></a><h3>gupnp_context_manager_rescan_control_points ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_manager_rescan_control_points
+                               (<em class="parameter"><code><a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> *manager</code></em>);</pre>
+<p>This function starts a rescan on every control point managed by <em class="parameter"><code>manager</code></em>
+.
+Only the active control points send discovery messages.
+This function should be called when servers are suspected to have
+disappeared.</p>
+<div class="refsect3">
+<a name="gupnp-context-manager-rescan-control-points.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-manager-manage-control-point"></a><h3>gupnp_context_manager_manage_control_point ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_manager_manage_control_point
+                               (<em class="parameter"><code><a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> *manager</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPControlPoint.html" title="GUPnPControlPoint"><span class="type">GUPnPControlPoint</span></a> *control_point</code></em>);</pre>
+<p>By calling this function, you are asking <em class="parameter"><code>manager</code></em>
+ to keep a reference to
+<em class="parameter"><code>control_point</code></em>
+ until its associated <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> is no longer available.
+You usually want to call this function from
+<a class="link" href="GUPnPContextManager.html#GUPnPContextManager-context-available" title="The “context-available” signal"><span class="type">“context-available”</span></a> handler after you create a
+<a class="link" href="GUPnPControlPoint.html" title="GUPnPControlPoint"><span class="type">GUPnPControlPoint</span></a> object for the newly available context.</p>
+<div class="refsect3">
+<a name="gupnp-context-manager-manage-control-point.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>control_point</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPControlPoint.html" title="GUPnPControlPoint"><span class="type">GUPnPControlPoint</span></a> to be taken care of</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.13.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-manager-manage-root-device"></a><h3>gupnp_context_manager_manage_root_device ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_manager_manage_root_device
+                               (<em class="parameter"><code><a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> *manager</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPRootDevice.html" title="GUPnPRootDevice"><span class="type">GUPnPRootDevice</span></a> *root_device</code></em>);</pre>
+<p>By calling this function, you are asking <em class="parameter"><code>manager</code></em>
+ to keep a reference to
+<em class="parameter"><code>root_device</code></em>
+ when its associated <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> is no longer available. You
+usually want to call this function from
+<a class="link" href="GUPnPContextManager.html#GUPnPContextManager-context-available" title="The “context-available” signal"><span class="type">“context-available”</span></a> handler after you create a
+<a class="link" href="GUPnPRootDevice.html" title="GUPnPRootDevice"><span class="type">GUPnPRootDevice</span></a> object for the newly available context.</p>
+<div class="refsect3">
+<a name="gupnp-context-manager-manage-root-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>root_device</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPRootDevice.html" title="GUPnPRootDevice"><span class="type">GUPnPRootDevice</span></a> to be taken care of</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.13.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-manager-get-port"></a><h3>gupnp_context_manager_get_port ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_context_manager_get_port (<em class="parameter"><code><a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> *manager</code></em>);</pre>
+<p>Get the network port associated with this context manager.</p>
+<div class="refsect3">
+<a name="gupnp-context-manager-get-port.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-manager-get-port.returns"></a><h4>Returns</h4>
+<p> The network port asssociated with this context manager.</p>
+</div>
+<p class="since">Since: 0.19.1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-manager-get-white-list"></a><h3>gupnp_context_manager_get_white_list ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPWhiteList.html" title="GUPnPWhiteList"><span class="returnvalue">GUPnPWhiteList</span></a> *
+gupnp_context_manager_get_white_list (<em class="parameter"><code><a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> *manager</code></em>);</pre>
+<p>Get the <a class="link" href="GUPnPWhiteList.html" title="GUPnPWhiteList"><span class="type">GUPnPWhiteList</span></a> associated with <em class="parameter"><code>manager</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-context-manager-get-white-list.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>manager</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-manager-get-white-list.returns"></a><h4>Returns</h4>
+<p>  The <a class="link" href="GUPnPWhiteList.html" title="GUPnPWhiteList"><span class="type">GUPnPWhiteList</span></a> asssociated with this
+context manager. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPContextManager-struct"></a><h3>struct GUPnPContextManager</h3>
+<pre class="programlisting">struct GUPnPContextManager;</pre>
+<p>This struct contains private data only, and should be accessed using the
+functions below.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPContextManager--main-context"></a><h3>The <code class="literal">“main-context”</code> property</h3>
+<pre class="programlisting">  “main-context”             <span class="type">gpointer</span></pre>
+<p>GMainContext to pass to created GUPnPContext objects.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPContextManager--port"></a><h3>The <code class="literal">“port”</code> property</h3>
+<pre class="programlisting">  “port”                     <span class="type">guint</span></pre>
+<p>Port the contexts listen on, or 0 if you don't care what
+port is used by <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> objects created by this object.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPContextManager--white-list"></a><h3>The <code class="literal">“white-list”</code> property</h3>
+<pre class="programlisting">  “white-list”               <a class="link" href="GUPnPWhiteList.html" title="GUPnPWhiteList"><span class="type">GUPnPWhiteList</span></a> *</pre>
+<p>The white list to use.</p>
+<p>Flags: Read</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContextManager.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GUPnPContextManager-context-available"></a><h3>The <code class="literal">“context-available”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> *context_manager,
+               <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>        *context,
+               <span class="type">gpointer</span>             user_data)</pre>
+<p>Signals the availability of new <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>.</p>
+<div class="refsect3">
+<a name="GUPnPContextManager-context-available.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context_manager</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>The now available <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPContextManager-context-unavailable"></a><h3>The <code class="literal">“context-unavailable”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> *context_manager,
+               <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>        *context,
+               <span class="type">gpointer</span>             user_data)</pre>
+<p>Signals the unavailability of a <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>.</p>
+<div class="refsect3">
+<a name="GUPnPContextManager-context-unavailable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context_manager</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPContextManager.html" title="GUPnPContextManager"><span class="type">GUPnPContextManager</span></a> that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>The now unavailable <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

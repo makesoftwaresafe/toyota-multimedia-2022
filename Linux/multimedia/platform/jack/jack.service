@@ -1,0 +1,42 @@
+# This source code is proprietary of ADIT
+# Copyright (C) Advanced Driver Information Technology Joint Venture GmbH
+# All rights reserved
+
+[Unit]
+Description=JACK audio connection kit
+Requires=audio-setup.target
+After=audio-setup.target
+
+[Service]
+# service file do not wait for start up of jack
+# because jack do not provide a feedback via sd_notify
+# only via dbus
+Type=simple
+
+# TODO execute not with root when jack has multi user support integrated
+#User=test-adit-multimedia-audio
+# TODO set ulimits rtprio, memlock and nice correctly via systemd configuration when using the test user
+
+# TODO remove when jack has multi user support integrated
+UMask=0000
+
+# use one server for all users (shm names without user id)
+Environment=JACK_PROMISCUOUS_SERVER=1
+
+ExecStart=/usr/bin/jackd \
+	-R \
+	-P 99 \
+	-C /etc/jackd-session.conf \
+	-d alsa \
+		-P jack_be_out \
+		-C jack_be_in \
+		-p 96 \
+		-n 2
+
+Restart=always
+RestartSec=5
+TimeoutSec=5
+
+[Install]
+WantedBy=multi-user.target
+

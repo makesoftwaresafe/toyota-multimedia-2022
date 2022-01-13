@@ -1,0 +1,18 @@
+[Unit]
+Description=Setup of MASCA audio device on imx6q-sabreauto
+DefaultDependencies=yes
+ConditionPathExistsGlob=/sys/devices/soc*/sound_masca.*
+After=pretty-early.target audio-setup-imx6qdls-sabreauto.service
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we start loading the modules here and wait for devices to appear ------
+ExecStart=/bin/kmodule_loader -c /etc/alsa-brd-cfg/imx6q-sabreauto-masca/kmodules_loader.conf
+
+#-------------------- we are setting up the alsa devices ---------------
+# - adapt this call in a way that loads it the settings from your
+#   expected destination
+ExecStart=/usr/sbin/alsactl restore MASCA -f /etc/alsa-brd-cfg/imx6q-sabreauto-masca/asound.state

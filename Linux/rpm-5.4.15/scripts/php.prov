@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+#####################################################################
+#                                                                   #
+# Small script to generate provides for php-pear/php-pecl           #
+#                                                                   #
+# Adam Go³êbiowski <adamg@pld-linux.org>                            #
+#                                                                   #
+# Somehow based on previous work by:                                #
+# Pawe³ Go³aszewski <blues@pld-linux.org>                           #
+# Micha³ Moskal <malekith@pld-linux.org>                            #
+#####################################################################
+
+# Contest: shrink this one to oneliner 
+# Bonus  : and fit in 80 columns ;)
+
+/package.xml/ and open(F, $_) foreach (@ARGV ? @ARGV : <> );
+/^\s+\<name\>([a-zA-Z0-9\_]+)\<\/name\>$/ and print "php-pear-$1" while (<F>);

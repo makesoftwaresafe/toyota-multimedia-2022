@@ -1,0 +1,150 @@
+# ================ Environment
+#add_data_dir .
+#set_blob_dir .
+#set_blob_threshold u u
+set_create_dir .
+set_data_dir .
+#set_data_len u
+#set_intermediate_dir_mode s
+#set_intermediate_dir i
+set_lg_dir ./log
+#set_memory_max u u
+#set_metadata_dir s
+#set_shm_key s
+# -- thread_count must be >= 8
+set_thread_count 64
+set_tmp_dir ./tmp
+
+#set_tx_max u
+#set_txn_timeout u
+
+#set_verbose DB_VERB_DEADLOCK
+#set_verbose DB_VERB_FILEOPS
+#set_verbose DB_VERB_FILEOPS_ALL
+#set_verbose DB_VERB_RECOVERY
+#set_verbose DB_VERB_REGISTER
+#set_verbose DB_VERB_REPLICATION
+#set_verbose DB_VERB_REP_ELECT
+#set_verbose DB_VERB_REP_LEASE
+#set_verbose DB_VERB_REP_MISC
+#set_verbose DB_VERB_REP_MSGS
+#set_verbose DB_VERB_REP_SYNC
+#set_verbose DB_VERB_REP_TEST
+#set_verbose DB_VERB_REPMGR_CONNFAIL
+#set_verbose DB_VERB_REPMGR_MISC
+#set_verbose DB_VERB_WAITSFOR
+
+#set_flags DB_AUTO_COMMIT on
+#set_flags DB_CDB_ALLDB on
+# XXX http://forums.oracle.com/forums/thread.jspa?messageID=3421463
+# XXX http://www.openldap.org/lists/openldap-devel/200701/msg00018.html
+#set_flags DB_DIRECT_DB on
+#set_flags DB_DSYNC_DB on
+#set_flags DB_MULTIVERSION on
+#set_flags DB_NOLOCKING on
+#set_flags DB_NOMMAP on
+#set_flags DB_NOPANIC on
+#set_flags DB_OVERWRITE on
+#set_flags DB_REGION_INIT on
+set_flags DB_TXN_NOSYNC on
+#set_flags DB_TXN_NOWAIT on
+#set_flags DB_TXN_SNAPSHOT on
+#set_flags DB_TXN_WRITE_NOSYNC on
+#set_flags DB_YIELDCPU         on
+
+## XXX same as set_log_config with similar names
+#set_flags db_log_inmemory on
+#set_flags db_direct_log on
+#set_flags db_dsync_log on
+#set_flags db_log_autoremove on
+
+# ================ Logging
+#set_log_config DB_LOG_AUTO_REMOVE  on
+#set_log_config DB_LOG_DIRECT on
+#set_log_config DB_LOG_DSYNC on
+#set_log_config DB_LOG_BLOB on
+#set_log_config DB_LOG_IN_MEMORY on
+#set_log_config DB_LOG_ZERO on
+#set_log_config DB_LOG_NOSYNC on
+
+# 32Kb on disk, 1Mb in memory
+#set_lg_bsize 268435456
+#set_lg_filemode i
+# 10Mb on disk, 256Kb in memory
+#set_lg_max 268435456
+#set_lg_regionmax 131072
+
+# ================ Locking
+#set_lk_detect DB_LOCK_DEFAULT
+#set_lk_detect DB_LOCK_EXPIRE
+#set_lk_detect DB_LOCK_MAXLOCKS
+#set_lk_detect DB_LOCK_MAXWRITE
+#set_lk_detect DB_LOCK_MINLOCKS
+#set_lk_detect DB_LOCK_MINWRITE
+#set_lk_detect DB_LOCK_OLDEST
+#set_lk_detect DB_LOCK_RANDOM
+#set_lk_detect DB_LOCK_YOUNGEST
+
+set_lk_max_locks 16000
+set_lk_max_lockers 16000
+set_lk_max_objects 16000
+# 10 * ncpus (or 1 for non-SMP)
+#set_lk_partitions u
+#set_lk_tablesize u
+
+#set_lock_timeout u
+#mutex_set_align u
+#mutex_set_increment u
+#mutex_set_init u
+mutex_set_max 200000
+#mutex_set_tas_spins u
+#set_tas_spins i XXX legacy
+
+#set_region_init i
+#set_reg_timeout i
+#set_shm_key i
+
+# ================ Memory Pool
+#XXX initializing dbenv with set_cachesize has unimplemented prerequsites
+set_cachesize 0 67108864 1
+
+#set_cache_max u u
+#set_mp_max_openfd i
+#set_mp_max_write i i
+set_mp_mmapsize 67108864
+#set_mp_mmapsize 268435456
+#set_mp_mmapsize 536870912
+#set_mp_pagesize u
+
+# ================ Replication
+#rep_set_clockskew u u
+
+#rep_set_config DB_REP_CONF_AUTOINIT on
+#rep_set_config DB_REP_CONF_BULK on
+#rep_set_config DB_REP_CONF_DELAYCLIENT on
+#rep_set_config DB_REP_CONF_LEASE on
+#rep_set_config DB_REP_CONF_NOWAIT on
+#rep_set_config DB_REP_CONF_2SITE_STRICT on
+#rep_set_config DB_REP_CONF_ELECTIONS on
+
+#rep_set_limit u u
+#rep_set_nsites u
+#rep_set_priority u
+#rep_set_request u u
+
+#rep_set_timeout DB_REP_ACK_TIMEOUT u
+#rep_set_timeout DB_REP_CHECKPOINT_DELAY u
+#rep_set_timeout DB_REP_CONNECTION_RETRY u
+#rep_set_timeout DB_REP_ELECTION_TIMEOUT u
+#rep_set_timeout DB_REP_ELECTION_RETRY u
+#rep_set_timeout DB_REP_FULL_ELECTION_TIMEOUT u
+#rep_set_timeout DB_REP_HEARTBEAT_MONITOR u
+#rep_set_timeout DB_REP_HEARTBEAT_SEND u
+#rep_set_timeout DB_REP_LEASE_TIMEOUT u
+
+#repmgr_set_ack_policy DB_REPMGR_ACKS_ALL
+#repmgr_set_ack_policy DB_REPMGR_ACKS_ALL_PEERS
+#repmgr_set_ack_policy DB_REPMGR_ACKS_NONE
+#repmgr_set_ack_policy DB_REPMGR_ACKS_ONE
+#repmgr_set_ack_policy DB_REPMGR_ACKS_ONE_PEER
+#repmgr_set_ack_policy DB_REPMGR_ACKS_QUORUM

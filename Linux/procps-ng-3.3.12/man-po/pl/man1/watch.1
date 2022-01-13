@@ -1,0 +1,154 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH WATCH 1 2016\-06\-03 procps\-ng "Polecenia użytkownika"
+.SH NAZWA
+watch \- regularne uruchamianie programu z wyświetlaniem wyjścia na pełnym
+ekranie
+.SH SKŁADNIA
+\fBwatch\fP [\fIopcje\fP] \fIpolecenie\fP
+.SH OPIS
+\fBwatch\fP runs \fIcommand\fP repeatedly, displaying its output and errors (the
+first screenfull).  This allows you to watch the program output change over
+time.  By default, \fIcommand\fP is run every 2 seconds and \fBwatch\fP will run
+until interrupted.
+.SH OPCJE
+.TP 
+\fB\-d\fP, \fB\-\-differences\fP [\fItrwale\fP]
+Podświetlanie różnic między kolejnymi uaktualnieniami. Opcja może mieć
+opcjonalny argument, który zmienia podświetlenie na trwałe, pozwalające
+zobaczyć, co zmieniło się przynajmniej raz od pierwszej iteracji.
+.TP 
+\fB\-n\fP, \fB\-\-interval\fP \fIsekundy\fP
+Specify update interval.  The command will not allow quicker than 0.1 second
+interval, in which the smaller values are converted. Both '.' and ',' work
+for any locales.
+.TP 
+\fB\-p\fP, \fB\-\-precise\fP
+Próba uruchamiania \fIpolecenia\fP co podaną liczbę \fIsekund\fP. Można wypróbować
+tę opcję z poleceniem \fBntptime\fP i obserwować, jak ułamki sekund pozostają
+(prawie) takie same, w przeciwieństwie do trybu zwykłego, gdzie stale się
+zwiększają.
+.TP 
+\fB\-t\fP, \fB\-\-no\-title\fP
+Wyłączenie nagłówka pokazującego okres, polecenie oraz czas bieżący na górze
+ekranu, a także następującej po nim pustej linii.
+.TP 
+\fB\-b\fP, \fB\-\-beep\fP
+Sygnał dźwiękowy w przypadku niezerowego kodu wyjścia polecenia.
+.TP 
+\fB\-e\fP, \fB\-\-errexit\fP
+Zamrożenie uaktualnień po błędzie polecenia, zakończenie pracy po
+naciśnięciu klawisza.
+.TP 
+\fB\-g\fP, \fB\-\-chgexit\fP
+Zakończenie, gdy wyjście \fIpolecenia\fP się zmieni.
+.TP 
+\fB\-c\fP, \fB\-\-color\fP
+Interpretowanie sekwencji kolorów i stylów ANSI
+.TP 
+\fB\-x\fP, \fB\-\-exec\fP
+\fIpolecenei\fP jest przekazywane do \fBsh \-c\fP, co oznacza, że może być potrzeba
+użycia dodatkowego cytowania do osiągnięcia pożądanego efektu. Z opcją
+\-\-exec polecenie jest natomiast przekazywane do funkcji \fBexec\fP(2).
+.TP 
+\fB\-h\fP, \fB\-\-help\fP
+Wyświetlenie tekstu pomocy i zakończenie.
+.TP 
+\fB\-v\fP, \fB\-\-version\fP
+Wyświetlenie informacji o wersji i zakończenie.
+.SH "KOD WYJŚCIA"
+.PP
+.RS
+.PD 0
+.TP 
+\fB0\fP
+Sukces.
+.TP 
+\fB1\fP
+Różne niepowodzenia.
+.TP 
+\fB2\fP
+Nie udało się odgałęzić procesu do obserwacji.
+.TP 
+\fB3\fP
+Nie udało się zastąpić standardowego wyjścia procesu potomnego stroną
+piszącą potoku.
+.TP 
+\fB4\fP
+Nie udało się uruchomić polecenia.
+.TP 
+\fB5\fP
+Nie udało się zamknąć potoku piszącego procesu potomnego.
+.TP 
+\fB7\fP
+Nie udało się utworzyć potoku IPC.
+.TP 
+\fB8\fP
+Nie udało się uzyskać kodu powrotu procesu potomnego przez \fBwaitpid\fP(2) lub
+polecenie zakończyło się błędem.
+.TP 
+\fBinne\fP
+Program watch propaguje kod wyjścia polecenia jako kod wyjścia potomka.
+.SH UWAGI
+POSIX option processing is used (i.e., option processing stops at the first
+non\-option argument).  This means that flags after \fIcommand\fP don't get
+interpreted by \fBwatch\fP itself.
+.SH BŁĘDY
+Przy zmianie rozmiaru terminala ekran nie zostanie poprawnie odrysowany aż
+do następnego uaktualnienia. Przy tym uaktualnieniu wszystkie podświetlenia
+\fB\-\-differences\fP zostaną utracone.
+
+Znaki niedrukowalne są usuwane z wyjścia programu. Aby je zobaczyć, można
+użyć "cat \-v" jako części potoku polecenia.
+
+Znaki dołączane, które mają być wyświetlane na znaku w ostatniej kolumnie
+ekranu, mogą wyświetlać się o jedną kolumnę za wcześnie albo wcale.
+
+Znaki dołączane nigdy nie liczą się jako różne w trybie
+\fI\-\-differences\fP. Liczy się tylko znak podstawowy.
+
+Puste wiersze bezpośrednio po wierszu kończącym się w ostatniej kolumnie,
+nie są wyświetlane.
+
+Tryb \fI\-\-precise\fP nie ma jeszcze zaawansowanej technologii zakrzywienia
+czasoprzestrzeni w celu skompensowania przypadku wykonywania \fIpolecenia\fP
+dłużej niż \fIokres\fP. \fBwatch\fP może też wejść w stan, w którym szybko
+uruchamia wiele instancji \fIpolecenia\fP, aby dogonić poprzednie działające
+więcej niż \fIokres\fP (np. \fBnetstat\fP trwający wieki przez wyszukiwania DNS).
+.SH PRZYKŁADY
+.PP
+Aby obserwować pocztę, można wykonać
+.IP
+watch \-n 60 from
+.PP
+Aby obserwować zmiany zawartości katalogu, można użyć
+.IP
+watch \-d ls \-l
+.PP
+Jeżeli interesujące są tylko pliki, których właścicielem jest użytkownik
+joe, można użyć
+.IP
+watch \-d 'ls \-l | fgrep joe'
+.PP
+Aby zobaczyć efekty cytowania, można wypróbować
+.IP
+watch echo $$
+.br
+watch echo '$$'
+.br
+watch echo "'"'$$'"'"
+.PP
+Aby zobaczyć efekt precyzyjnej obsługi czasu, można spróbować dodać \fI\-p\fP do
+.IP
+watch \-n 10 sleep 1
+.PP
+Można obserwować, jak administrator instaluje najnowsze jądro, przy użyciu
+.IP
+watch uname \-r
+.PP
+(Uwaga: \fI\-p\fP nie daje gwarancji działania między restartami systemu,
+szczególnie w obliczu \fBntpdate\fP czy innych mechanizmów zmieniających czas w
+trakcie rozruchu)

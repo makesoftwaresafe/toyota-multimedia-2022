@@ -1,0 +1,81 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	# Add here commands to configure the package.
+	touch configure-stamp
+
+build: build-arch build-indep
+
+build-arch: build-stamp
+
+build-indep: build-stamp
+
+build-stamp: configure-stamp 
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp debian/config
+	# Add here commands to clean up after the build process.
+	[ ! -f Makefile ] || $(MAKE) clean
+
+	debconf-updatepo
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	# Add here commands to install the package into debian/ca-certificates.
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/ca-certificates
+	(cd $(CURDIR)/debian/ca-certificates/usr/share/ca-certificates; \
+	 crts=""; \
+	 for crt in $$(find . -type f -name '*.crt' -print | LC_ALL=C sort); \
+	 do \
+	   crt=$$(echo $$crt | sed -e 's/\.\///'); \
+	   if test "$$crts" = ""; then \
+	     crts="$$crt"; \
+	   else \
+	     crts="$$crts, $$crt"; \
+	   fi; \
+	 done; \
+	 cd $(CURDIR)/debian; \
+	 sed -e "s|#INITIAL_CERTS#|$$crts|" \
+		config.in > config)
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installdebconf -n
+	dh_installdocs
+	dh_installexamples
+	dh_installman sbin/update-ca-certificates.8
+	dh_installchangelogs 
+	dh_compress -X examples
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+# Build architecture-dependent files here.
+binary-arch: build install
+# We have nothing to do by default.
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

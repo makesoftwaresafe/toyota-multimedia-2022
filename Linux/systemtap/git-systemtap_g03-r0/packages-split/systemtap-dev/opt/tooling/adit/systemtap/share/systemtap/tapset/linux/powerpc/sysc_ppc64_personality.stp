@@ -1,0 +1,48 @@
+# ppc64_personality ________________________________________
+#
+# long ppc64_personality(unsigned long personality)
+#
+
+@define _SYSCALL_PPC64_PERSONALITY_NAME
+%(
+	name = "ppc64_personality"
+%)
+
+@define _SYSCALL_PPC64_PERSONALITY_ARGSTR
+%(
+	argstr = sprint(persona)
+%)
+
+probe syscall.ppc64_personality = dw_syscall.ppc64_personality !,
+                                  nd_syscall.ppc64_personality ? {}
+probe syscall.ppc64_personality.return = dw_syscall.ppc64_personality.return !,
+                                         nd_syscall.ppc64_personality.return ? {}
+
+# dw_ppc64_personality _____________________________________________________
+
+probe dw_syscall.ppc64_personality = kernel.function("ppc64_personality")
+{
+	@_SYSCALL_PPC64_PERSONALITY_NAME
+	persona = $personality
+	@_SYSCALL_PPC64_PERSONALITY_ARGSTR
+}
+probe dw_syscall.ppc64_personality.return = kernel.function("ppc64_personality").return
+{
+	@_SYSCALL_PPC64_PERSONALITY_NAME
+	retstr = return_str(1, $return)
+}
+
+# nd_ppc64_personality _____________________________________________________
+
+probe nd_syscall.ppc64_personality = kprobe.function("ppc64_personality")
+{
+	@_SYSCALL_PPC64_PERSONALITY_NAME
+	asmlinkage()
+	persona = ulong_arg(1)
+	@_SYSCALL_PPC64_PERSONALITY_ARGSTR
+}
+probe nd_syscall.ppc64_personality.return = kprobe.function("ppc64_personality").return
+{
+	@_SYSCALL_PPC64_PERSONALITY_NAME
+	retstr = returnstr(1)
+}

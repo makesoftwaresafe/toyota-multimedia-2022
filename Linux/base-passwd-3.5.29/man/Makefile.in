@@ -1,0 +1,27 @@
+INSTALL		= @INSTALL@
+INSTALL_DATA	= @INSTALL_DATA@
+prefix		= @prefix@
+mandir		= @mandir@
+
+LANGS := de es fr ja ru
+RAW_LANGS := pl
+MANFILES := $(foreach ll,$(LANGS),update-passwd.$(ll).8)
+
+all: $(MANFILES)
+
+install: all
+	mkdir -p $(DESTDIR)$(mandir)/man8
+	$(INSTALL_DATA) update-passwd.8 $(DESTDIR)$(mandir)/man8/
+	set -e; for lang in $(LANGS) $(RAW_LANGS); do \
+		mkdir -p $(DESTDIR)$(mandir)/$$lang/man8; \
+		$(INSTALL_DATA) update-passwd.$$lang.8 \
+			$(DESTDIR)$(mandir)/$$lang/man8/update-passwd.8; \
+	done
+
+update: po4a/po/base-passwd.pot
+
+clean:
+	rm -f $(MANFILES)
+
+po4a/po/base-passwd.pot $(MANFILES): update-passwd.8
+	cd po4a && po4a po4a.cfg

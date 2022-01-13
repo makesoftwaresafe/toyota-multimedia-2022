@@ -1,0 +1,704 @@
+Version 4.43 -  9 June 2012, by Per Øyvind Karlsen
+
+- add a simple detectXZ() function for reading the magic ourself in situations
+  where we ie. cannot rely on ie. libmagic
+
+Version 4.42 - 16 May 2012, by Per Øyvind Karlsen
+
+- make URPM::DB::info use berkeley db api rather than using rpmdb functions
+  that's not part of the public api, thus making things less fragile
+- fix building with rpm >= 5.4.9 where BDB data types are hidden
+
+Version 4.41 - 12 April 2012, by Per Øyvind Karlsen
+
+- revert change in previous version, it resulted in unsupported rpms being
+  installed, better to properly handle this conversion in rpm itself now.
+
+Version 4.40 - 29 March 2012, by Per Øyvind Karlsen
+
+- handle rpms using old format with missing version, which would result in
+  crash with ie. Oracle Java rpm package (#65443)
+
+Version 4.39 -  7 March 2012, by Per Øyvind Karlsen
+
+- link against berkeley db as we're accessing it's API directly
+- workaround fts.h incompatibility with _FILE_OFFSET_BITS=64 to fix build with
+  perl 5.14.2 (from Bernhard Rosenkraenzer)
+- ~fix filesize computation
+- add support for bzip2 compressed synthesis (by using Fopen() from rpmio)
+- export rpmtag_from_string()
+
+Version 4.38 - 19 October 2011, by Per Øyvind Karlsen
+
+- fix api breakage with rpm 5.4
+
+Version 4.37 - 24 July 2011, by Per Øyvind Karlsen
+
+- fix URPM::Resolve::fullname_parts() to also work without disttag & distepoch
+
+Version 4.36 -  6 July 2011, by Per Øyvind Karlsen
+
+- document URPM::DB::convert() in API
+- fix a segfault happening when URPM::DB::convert() is run without arguments
+ 
+Version 4.35 -  5 July 2011, by Per Øyvind Karlsen
+
+- fix a regression breaking promotion of dependencies on conflicts
+
+Version 4.34 - 23 June 2011, by Per Øyvind Karlsen
+
+- add a workaround for handling upgrade from older berkeley db versions which
+  might not support new configuration in DB_CONFIG, causing it to break during
+  upgrade
+- add support for specifying tag name to match with URPM::Transaction->remove()
+- add some regression tests for parsing disttag & distepoch from synthesis
+- extract disttag & distepoch from new fields in @info@ of synthesis
+
+Version 4.33 - 31 May 2011, by Per Øyvind Karlsen
+
+- add disttag & distepoch to $state->{rejected} for assisting parsing of
+  fullname with regex
+- add URPM::Resolve::fullname_parts() as a function parsing fullname with a
+  regex assisted by provided disttag & distepoch
+
+Version 4.32 - 31 May 2011, by Per Øyvind Karlsen
+
+- *really* fix URPM::Package->sourcerpm
+
+Version 4.31 - 31 May 2011, by Per Øyvind Karlsen
+
+- fix URPM::Package->sourcerpm returning summary in stead of source rpm
+- fix slow matching of individual regexes for skipping dependencies by creating
+  a large regex to match them all at once (#61389, patch contributed by
+  Shlomi Fish \o/)
+
+Version 4.30 - 12 May 2011, by Per Øyvind Karlsen
+
+- fix Resolve.pm/_choose_required() breakage after DUDF merge, causing ie.
+  'urpmq -d' to break (#63250, with big thanks to Funda\o/)
+
+Version 4.29 -  7 May 2011, by Per Øyvind Karlsen
+
+- fix segfault when trying to get EVR of a src.rpm from synthesis, as
+  @provides@ are omitted for these
+
+Version 4.28 -  5 May 2011, by Per Øyvind Karlsen
+
+- revert attempt at refactorizing Trans_run() which turned out to give code
+  harder to read and introduced bugs of options not being parsed (#63205)
+- fix an invalid free() that would've happened if package summary were to be
+  missing and the "" string constant were attempted to be freed
+- fix odd problems caused by attempt at translating correct tag names for
+  query table into rpm tags
+- use newSVpvs() for pushing empty strings as constants in stead
+
+Version 4.27 -  4 May 2011, by Per Øyvind Karlsen
+
+- get the correct package filesize from header
+- fix proper return of 'src' as arch for src.rpms
+- fix confusion between %{sourcerpm} & %{sourcepackage} tags
+
+Version 4.26 -  3 May 2011, by Per Øyvind Karlsen
+
+- fix really odd issue with recognizing src.rpms
+
+Version 4.25 -  3 May 2011, by Per Øyvind Karlsen
+
+- start using gnu99
+- fix some invalid free()s
+
+Version 4.24 -  3 May 2011, by Per Øyvind Karlsen
+
+- fix segfault caused by attempting to assign arch of wrong package
+
+Version 4.23 -  3 May 2011, by Per Øyvind Karlsen
+
+- check for termination signals so ie. that installs can be aborted with ^C
+- fix remaining memleaks
+- check that rpmdb was properly opened in read/write mode to prevent segfault
+  if no write permissions
+
+Version 4.22 - 26 April 2011, by Per Øyvind Karlsen
+
+- add support for notriggers
+- add support for nofdigests
+- fix getting expected NVRA tag
+- fix possible breakage when trying to load non-existant dependency flags
+- fix provide flags not being loaded for headers read from rpm files
+
+Version 4.21 - 23 April 2011, by Per Øyvind Karlsen
+
+- fix a missing null terminator at end of @info@ string regression, causing
+  random data to be appended at end of line
+
+Version 4.20 - 22 April 2011, by Per Øyvind Karlsen
+
+- merge in some DUDF changes from Alexandre Lissy
+- add disttag & distepoch to @info@ in synthesis for easier parsing
+
+Version 4.19 - 31 March 2011, by Per Øyvind Karlsen
+
+- fix regression caused by memleak fix in previous release
+
+Version 4.18 - 31 March 2011, by Per Øyvind Karlsen
+
+- fix memleak in URPM::Pkg->evr()
+- drop URPM::DB::close() and teardown properly by calling rpmcliFini() at exit
+- fix odd i586 specific bug triggering segfault with -fstack-protector (#61690)
+
+Version 4.17 - 30 March 2011, by Per Øyvind Karlsen
+
+- fix conversion to older hash database format resulting in "missing" package
+  from rpmdb
+
+Version 4.16 - 29 March 2011, by Per Øyvind Karlsen
+
+- add setInternalVariable() for changing various variables for debugging etc.
+  within rpmlib
+- support translate_message & raw_message options for URPM::Transaction->check()
+- support versioned suggests
+
+Version 4.15 - 19 Feb 2011, by Per Øyvind Karlsen
+
+- fix segfault when there's no provides in synthesis (ie. with src.rpm)
+
+Version 4.14 - 14 Feb 2011, by Per Øyvind Karlsen
+
+- use specified arch for packages to be removed, don't strip it away and
+  remove every package if having multiple packages with same name and
+  different arch
+- fix segfault when trying to open non-existing synthesis
+
+Version 4.13 - 24 Jan 2011, by Per Øyvind Karlsen
+
+- move disttag/distepoch pattern matching breakage hack into rpm
+- fix fetching EVR from rpm headers
+- fix evr extraction which broke for some packages with i586 synthesis
+- fix parsing of disttag from synthesis
+- add regression tests for tags extracted from synthesis & rpmdb
+
+Version 4.12 - 23 Jan 2011, by Per Øyvind Karlsen
+
+- order of %PROVIDEVERSION isn't always the same for all rpm versions synthesis
+  is generated with, so locate it based on name, rather than hardcoding
+  location assumption
+- enable automatic Berkeley DB log removal for URPM::DB::open() by default (#62271)
+
+Version 4.11 - 22 Jan 2011, by Per Øyvind Karlsen
+
+- fix URPM::Resolve::*_overlap() for packages having disttag
+- look for EVR of package at the first element of @provides@ rather than the last
+- replace incorrect usage of URPM::rpmvercmp on NVRA with rpmEVRcompare in
+  URPM::Resolve::provided_version_that_overlaps() &
+  URPM::Resolve::_find_required_package__sort()
+
+Version 4.10 - 21 Jan 2011, by Per Øyvind Karlsen
+
+- fix distepoch detection breakage with proper synthesis
+
+Version 4.9 - 21 Jan 2011, by Per Øyvind Karlsen
+
+- make URPM::Package::get_tag() handle NVRA tag for synthesis (fixing
+  regression in previous version)
+
+Version 4.8 - 21 Jan 2011, by Per Øyvind Karlsen
+
+- fix a bug causing segfault when trying open a non-existing segfault which
+  for some reaallly odd reason didn't get triggered before now
+- remove a last couple of remaining leftovers after db conversion
+- really include the workaround for removal issue that was accidentally omitted
+  in the previous release
+- remove all indices for old rpmdb after conversion also when not doing rebuild
+
+Version 4.7 - 19 Jan 2011, by Per Øyvind Karlsen
+
+- work around package removal issue, resulting in "error: Invalid number of
+  transaction elements." when using urpme on packages with distepoch.
+- add URPM::DB::archive() for transaction log cleaning
+- add URPM::DB::convert() for database conversion
+- add URPM::DB::info() to return berkeley db type & endianness
+
+Version 4.6 - 11 Jan 2011, by Per Øyvind Karlsen
+
+- revert missing db environment hack, proper fix has been done in rpm now
+- drop deprecated URPM::Pkg->header_filename
+- make URPM::Pkg->filename properly return the filename in synthesis, rather
+  than trying to generate it from NVRA
+- add URPM::DB::close()
+
+Version 4.5 -  9 Jan 2011, by Per Øyvind Karlsen
+
+- ensure that a db environment with config & required directories exists for
+  chroots before opening the rpmdb
+
+Version 4.4 -  6 Jan 2011, by Per Øyvind Karlsen
+
+- check URPM::Transactin::add() for errors and return them if any (#61746)
+- make URPM::Package::get_tag() & URPM::Package::get_tag_modifiers() accept
+  string name of tags
+- URPM::DB::traverse_tag() & URPM::DB::traverse_tag_find() will now accept
+  all available rpm tags
+
+Version 4.3 - 11 Dec 2010, by Per Øyvind Karlsen
+
+- fix issue with packages added to synthesis having disttag/disttag, but without
+  those added to NVRA, leading to segfault
+- fix broken support for parsing hdlists, use rpmgi iterator from rpmlib to
+  simplify code and get packages ordered as an extra benefit in the process.
+- URPM::Package::fullname will now always return six items for array in stead
+  of four to make room for disttag & distepoch, arch will still be returned as
+  last item (ie. array[5] in stead of array[3]) (#61702)
+- URPM::Package::files_md5sum() has been renamed to URPM::Package::files_digest()
+- fix NEVRA parsing of 'gpg-pubkey'
+
+Version 4.2 -  3 Dec 2010, by Per Øyvind Karlsen
+
+- fix URPM::Package::files()
+
+Version 4.1 - 19 Nov 2010, by Per Øyvind Karlsen
+
+- improve return value checking on headerGet() usage
+- fix update_provides_files with RPMTAG_OLDFILENAMES
+- ditch legacy compatibility use of headerPut() on FILENAME_TAG
+ 
+Version 4.0 - 11 Nov 2010, by Per Øyvind Karlsen
+
+- add support for uncompressed & xz/lzma compressed synthesis
+- fix URPM::DB::open() to work properly with relative paths
+- ditch legacy behaviour compatibility for packages without epoch, always promote
+  epoch
+- pick up package name format from %_build_name_fmt rather than hardcoding it
+- add URPM::Package::evr()
+- add URPM::rpmEVRcmp() & URPM::rpmEVRcompare()
+- add regression tests for resolving
+- use rpmEVRcompare() from rpmlib everywhere
+- add full support for %distepoch/%disttag
+- refactorize code
+- rewrite for native rpm5 API (ditching rpm.org compatibility)
+
+Version 3.38 - 16 November 2010, by Joao Victor Martins
+
+- fix the key parsing to handle PEM encapsulated header portion (bug
+#61636)
+
+Version 3.37 - 20 October 2010
+
+- fix crashing on undefined packages (#54521)
+
+Version 3.36 - 23 July 2010
+
+- Fix wrong deferencement on HASH (warning triggered by perl 5.12)
+
+Version 3.35 - 23 April 2010
+
+- when using auto-select, honour search-medias if some were specified
+
+Version 3.34.1 - 23 March 2010
+
+- check selected packages for unsatisfied requires when a promoted package is
+  backtracked and no replacement is found (#57224, Anssi Hannula)
+
+Version 3.34 - 24 February 2010
+
+- check for conflicting selected packages before selecting a package (#57224)
+  (by Anssi Hannula)
+
+Version 3.33 - 5 October 2009, by Christophe Fergeau
+
+- fix lookup of existing pubkeys (#53710) (by Pascal Terjan)
+
+Version 3.32 - 10 August 2009, by Christophe Fergeau
+
+- backtrack_selected: use set_rejected_and_compute_diff_provides for package
+  removal (Anssi Hannula)
+- obey options (keep, nodeps) when unselecting current package in the case
+  that was added in 3.31 (Anssi Hannula)
+
+Version 3.31 - 28 July 2009, by Christophe Fergeau
+
+- add support for querying %disttag & %distepoch (by Per Øyvind Karlsen)
+- clean up and bring back rpm5.org support (by Per Øyvind Karlsen)
+- keep track of sources for obsoleted/removed levels (#50666) Anssi Hannula)
+- keep psel/promote info and remove deadlocked pkg instead of aborting upgrade
+  (#52105, Anssi Hannula)
+- _handle_conflicts: check all provides for conflicts, not just package name
+  (#52135, Anssi Hannula)
+- unselect current package if an avoided package is already selected (#52145,
+  Anssi Hannula)
+- do not try to promote to an older package (#52460, Anssi Hannula)
+- add a backtrack entry "conflicts" for avoided packages in backtrack_selected
+  (#52153, Anssi Hannula)
+
+Version 3.30 - 11 May 2009, by Christophe Fergeau
+
+- rework public key handling since librpm behaviour has changed. It's no longer
+  possible to tell it to add the same key multiple times which was causing
+  weird "unable to import pubkey" messages when a mirror contains different
+  pubkeys for the same key, fixes #50383
+
+Version 3.29 - 27 March 2009, by Christophe Fergeau
+
+- fix regression introduced by fix for bug #47803 (fix by Anssi Hannula).
+  Without this patch, urpmi got stuck in an infinite loop when trying 
+  to upgrade from 2008.1.
+
+Version 3.28 - 25 March 2009, by Christophe Fergeau
+
+- postpone user choices as much as possible to avoid asking the user
+  unnecessary questions, (bug #48100, Anssi Hannula)
+
+Version 3.27 - 24 March 2009, by Christophe Fergeau
+
+- don't silently install suggests (bug #47934)
+- fix _handle_diff_provides in case of impossible-to-satisfy selected 
+  packages (bug #48223, Anssi Hannula)
+- check rep for another pkg providing X if the prev pkg gets removed 
+  due to a conflict (bug #47803, Anssi Hannula)
+
+Version 3.26 - 5 March 2009, by Thierry Vignaud
+
+- verify_signature: enable to check signatures against a chrooted rpmdb
+  (especially important for installer where there's no rpmdb in / and thus no
+  keys to check against)
+
+Version 3.25 - 16 January 2009, by Christophe Fergeau
+
+- previous fix for bug #46874 was bogus, really fix it this time
+
+Version 3.24 - 13 January 2009, by Christophe Fergeau
+
+- fix sorting choices on provided version (feature introduced in 3.08, 
+  but was not working if packages were coming from different repository)
+- when a "Requires:" can be fullfilled by several different packages and
+  one of those packages is explicitly required by another package which
+  is also being installed, silently choose this package instead of letting
+  the choice up to perl-URPM user (fixes bug #46874)
+
+Version 3.23 - 12 December 2008, by Pascal "Pixel" Rigaux
+
+- fix bad free() (thanks to glibc for detecting it)
+
+Version 3.22 - 12 December 2008, by Pascal "Pixel" Rigaux
+
+- fix scriptlet failing:
+  adapt to librpm4.6, rpmtsSetRootDir(ts, "") is forbidden 
+
+Version 3.21 - 9 December 2008, by Pascal "Pixel" Rigaux
+
+- adapt to librpm4.6
+- drop list_rpm_tag()
+
+Version 3.20 - 14 October 2008, by Pascal "Pixel" Rigaux
+
+- $trans->run can now return both the translated errors, and some parsable
+  errors (useful for example to detect diskspace issues)
+ 
+Version 3.19 - 7 October 2008, by Pascal "Pixel" Rigaux
+
+- handle flag "replacefiles"
+
+Version 3.18 - 7 July 2008, by Pascal "Pixel" Rigaux
+
+- revert change introduced in 3.16 (it breaks too much, eg
+  superuser--priority-upgrade.t test case), and introduce
+  $state->{rejected_already_installed} instead
+
+Version 3.17 - 4 July 2008, by Pascal "Pixel" Rigaux
+
+- add traverse_tag_find(), removed_or_obsoleted_packages()
+- handle $state->{orphans_to_remove} in selected_size() and
+  build_transaction_set()
+
+Version 3.16 - 26 June 2008, by Pascal "Pixel" Rigaux
+
+- when not selecting a package because already installed,
+  put it in $state->{rejected} with flags {installed}
+
+Version 3.15 - 23 June 2008, by Pascal "Pixel" Rigaux
+
+- fix urpmi wrongly considering epochless conflicts to match any epoch in a
+  case when urpmi should upgrade a conflicting package to an actually
+  non-conflicting version (cf epochless-conflict-with-promotion urpmi test)
+  (Anssi)
+
+Version 3.14 - 23 May 2008, by Pascal "Pixel" Rigaux
+
+- add is_package_installed() in URPM/Resolve.pm
+  (to be used in urpmi 5.20)
+
+Version 3.13 - 20 May 2008, by Pascal "Pixel" Rigaux
+
+- do not ignore dropped provide from updated package (mdvbz#40842)
+
+Version 3.12 - 7 March 2008, by Pascal "Pixel" Rigaux
+
+- do allow to promoting a pkg even if it has unsatisfied require (since the
+  code will then fix the unsatisfied require). fixes "big transaction" 
+  (cf urpmi split-transactions--strict-require.t test_efgh())
+- rpm5.org port done (by Per Øyvind Karlsen)
+
+Version 3.11 - 26 February 2008, by Pascal "Pixel" Rigaux
+
+- restore FILENAME_TAG in generated hdlist (to be compatible with older
+  distros where ->filename can rely on it) (thanks to Nanar)
+
+Version 3.10 - 26 February 2008, by Pascal "Pixel" Rigaux
+
+- add filesize to synthesis, add ->filesize to get it, and add
+  selected_size_filesize() to compute the sum
+- allow urpmi to know a package was not selected because a newer version is
+  installed (#29838)
+- handle new package providing xxx which conflicts with an installed package (#17106)
+- fix sort choices changed in perl-URPM 3.08
+- allow fixing "using one big transaction" that occurs when using --keep 
+  (#30198)
+- do not add FILENAME_TAG and FILESIZE_TAG to hdlist anymore,
+  deprecate ->header_filename,
+  deprecate URPM::Build::parse_rpms_build_headers
+
+Version 3.08 - 25 February 2008, by Pascal "Pixel" Rigaux
+
+- sort choices on virtual package by provided version (#12645)
+
+Version 3.07 - 11 January 2008, by Pascal "Pixel" Rigaux
+
+- add URPM::Package->changelogs, a wrapper around ->changelog_time, ->changelog_name, ->changelog_text
+- resolve kmod requires even if first choice is a source dkms
+
+Version 3.05 - 8 January 2008, by Pascal "Pixel" Rigaux
+
+- fix regression in ->parse_rpm (introduced in 3.00) 
+  (was breaking genhdlist2 and mkcd)
+
+Version 3.04 - 20 December 2007, by Pascal "Pixel" Rigaux
+
+- fix regression in parse_pubkeys() (introduced in 3.00) (#36121)
+
+Version 3.03 - 14 December 2007, by Pascal "Pixel" Rigaux
+
+- suggests: 
+  handle both RPMTAG_SUGGESTSNAME (as done in SuSE and in Mandriva > 2008.0)
+  and RPMTAG_REQUIRENAME + RPMSENSE_MISSINGOK (as done in Mandriva 2008.0)
+
+Version 3.02 - 14 December 2007, by Pascal "Pixel" Rigaux
+
+- fix "make test" on rpm 4.4.2.2
+- fix rpm 4.5 support
+
+Version 3.01 - 11 December 2007, by Pascal "Pixel" Rigaux
+
+- add URPM::DB::verify()
+
+Version 3.00 - 11 December 2007, by Pascal "Pixel" Rigaux
+
+- replace ->import_needed_pubkeys and ->import_pubkey in favor of
+  import_needed_pubkeys_from_file() and ->import_pubkey_file
+  (! this breaks API !)
+- drop $package->upgrade_files() (unused for a long time afaik)
+- rpm.org HEAD support
+
+Version 2.10 - 22 November 2007, by Pascal "Pixel" Rigaux
+
+- much simpler --auto-select algorithm 
+  (fixes #35718, ie auto-selecting with strict-arch)
+  (!! DANGEROUS CHANGE !!)
+- rpm 4.5 support (thanks to peroyvind) (#35323)
+
+Version 2.09 - 8 November 2007, by Pascal "Pixel" Rigaux
+
+- use a simple function to return simple string list from header 
+  (fixes getting >4096 long rpm changelogs)
+  (!! static buffer size limitation in callback_list_str_xpush() should be fixed !!)
+
+Version 2.08 - 24 October 2007, by Pascal "Pixel" Rigaux
+
+- fix build on rpm 4.4.2.2
+
+Version 2.07 - 1 October 2007, by Pascal "Pixel" Rigaux
+
+- prefer precompiled kmod packages corresponding to installed kernels
+- don't resolve suggested virtual packages if already installed (#34376)
+
+Version 2.06 - 28 September 2007, by Pascal "Pixel" Rigaux
+
+- also handle promotion via obsolete for conflicts
+
+Version 2.05 - 28 September 2007, by Pascal "Pixel" Rigaux
+
+- package promotion must respect strict_arch
+- enhance sorted graph by better taking into account conflicts from state->{rejected}
+  (fixes "big transaction" in urpmi split-transactions--strict-require.t test)
+
+Version 2.04 - 27 September 2007, by Pascal "Pixel" Rigaux
+
+- handle promotion via obsolete, not only provides
+
+Version 2.03 - 20 September 2007, by Pascal "Pixel" Rigaux
+
+- fix bug doing "urpmi kernel-source"
+
+Version 2.02 - 18 September 2007, by Pascal "Pixel" Rigaux
+
+- prefer every kernel-<flavor>-devel-<version> packages for which
+  kernel-<flavor>-<version> is selected
+- fix regression in 2.00: we can't cache the platform, cache the result of
+  is_arch_compat instead
+
+Version 2.01 - 14 September 2007, by Pascal "Pixel" Rigaux
+
+- fix bug occurring with --keep
+- fix regression in 2.00: keep_unrequested_dependencies is still used by
+  installer. restore it, but must now be set trough
+  $urpm->{keep_unrequested_dependencies}
+
+Version 2.00 - 13 September 2007, by Pascal "Pixel" Rigaux
+
+- speedup is_arch_compat (7 times faster) by keeping the platform in a cache
+- do not propose packages for non installed locales
+- pass the prefered choices to {callback_choices}: this allows urpmi to select
+  all the prefered packages according to installed locales
+- handle promote for conflict from installed package 
+  (fixes test_gh() from urpmi split-transactions--promote test case)
+- handle promote from installed package which require a unselected package,
+  whereas new package does not require it anymore 
+  (cf test_d & test_e from split-transactions--conflict urpmi test case)
+
+Version 1.80 - 3 September 2007, by Pascal "Pixel" Rigaux
+
+- fix bug in sort_graph (used by build_transaction_set)
+
+Version 1.78 - 31 August 2007, by Pascal "Pixel" Rigaux
+
+- fix dead-loop in build_transaction_set (#33020)
+
+Version 1.77 - 29 August 2007, by Pascal "Pixel" Rigaux
+
+- disable "dropping tags from rpm header" until we can safely use it
+
+Version 1.76 - 28 August 2007, by Pascal "Pixel" Rigaux
+
+- build_transaction_set: new sort algorithm which allow returning sets of
+  circular dependent packages, taking into account obsoleted packages
+  (fixes #31969). It may still fail in presence of conflicts
+- allow running transaction with justdb option
+- fix split_length > 1 
+  (eg: "urpmi --split-length 2 a b c" will only install 2 pkgs)
+- spec2srcheader: workaround parseSpec returning a header where ->arch is set
+  to %{_target_cpu} whereas we really want a header similar to .src.rpm
+  (see #32824)
+
+Version 1.75 - 12 August 2007, by Pascal "Pixel" Rigaux
+
+- fix dropping tags from rpm header.
+  it hasn't work since MDK8.1 and rpm 4.0. 
+  it may break urpmi!! but potentially allows a much smaller hdlist.cz :)
+
+Version 1.74 - 12 August 2007, by Pascal "Pixel" Rigaux
+
+- sort choices per media, then per version
+
+Version 1.73 - 11 August 2007, by Pascal "Pixel" Rigaux
+
+- allow running transaction with replagekgs option
+
+Version 1.72 - 10 August 2007, by Pascal "Pixel" Rigaux
+
+- modify parse_hdlist so that partial hdlist reading can be used
+  (needed when some stuff is already done in the callback)
+
+Version 1.71 - 9 August 2007, by Pascal "Pixel" Rigaux
+
+- compilation fixes on rpm < 4.4.8
+
+Version 1.69 - 9 August 2007, by Pascal "Pixel" Rigaux
+
+- "suggests" are no more handled as "requires"
+- resolve_requested support "suggests": a newly suggested package is installed
+  as if required (can be disabled with option no_suggests)
+
+Version 1.68 - 3 August 2007, by Pascal "Pixel" Rigaux
+
+- add $trans->Element_version and $trans->Element_release
+
+Version 1.67 - 22 June 2007, by Olivier "Nanar" Thauvin
+
+- add osscore, archscore and platformscore function to URPM
+- is_platform_compat function to Pkg object
+- fix call to rpm function in spec2header()
+- fix some compilation warnings
+
+Version 1.66 - 2 July 2007, by Pascal "Pixel" Rigaux
+
+- fix --auto-select skipping some packages because of other packages providing
+  a more recent version, but no obsolete between those packages.
+  the fix is to revert commit from Aug 2002:
+    "fixed propable old package (according provides) requested by
+     request_packages_to_upgrade."
+
+Version 1.65 - 22 June 2007, by Olivier Thauvin
+
+- really fix arch_score evaluation
+
+Version 1.64 - 12 June 2007, by Pascal "Pixel" Rigaux
+
+- hack on $pkg->is_arch_compat to make it return true for noarch packages
+  when using rpm 4.4.8 (#31314)
+
+Version 1.63 - 9 May 2007, by Pascal "Pixel" Rigaux
+
+- add $trans->Element_fullname
+
+Version 1.62 - 3 May 2007, by Pascal "Pixel" Rigaux
+
+- pass the virtual package name as a parameter to {callback_choices} in
+  ->resolve_requested
+- add $trans->NElements and $trans->Element_name
+  to be able to display name of uninstalled package in callback_uninst
+- fix b--obsoletes-->a and c--conflicts-->a prompting for upgrading a
+  (need a fix in urpmi which rely on the $state->{rejected} 
+   to upgrade (-U) b instead of installing (-i) it)
+
+Version 1.60 - 8 March 2007, by Pascal "Pixel" Rigaux
+
+- more debugging hooks
+- create $urpm->packages_providing($name) and use it
+- create $urpm->packages_by_name($name)
+
+Version 1.59 - 1 March 2007, by Olivier Thauvin
+
+- rpm 4.4.8 adaptions
+- load rpm config files at module load, improve the mechanism
+
+Version 1.58 - 14 February 2007, by Pascal "Pixel" Rigaux
+
+- don't check signature and digest in ->traverse and ->traverse_tag
+  (=> x15 speedup, ie 2.5 speedup on urpmi --auto-select and rpmdrake)
+
+Version 1.57 - 9 February 2007, by Pascal "Pixel" Rigaux
+
+- allow upgrading from noarch to x86_64 even if strict-arch
+
+Version 1.56 - 19 January 2007, by Pascal "Pixel" Rigaux
+
+- tell perl that strings from rpm headers are utf8
+- add URPM::bind_rpm_textdomain_codeset() to set encoding of messages returned
+  by rpmlib, and tell perl that those strings are utf8
+- really use strict-arch by default on x86_64
+
+Version 1.55 - 10 January 2007, by Pascal "Pixel" Rigaux
+
+- bug fix release
+- fix "not selecting foo-1 since the more recent foo-1 is installed" causing
+  urpmi to try to remove the package it wants to install (#28076)
+
+Version 1.54 - 9 January 2007, by Pascal "Pixel" Rigaux
+
+- if we have a choice between foo-1 and bar-1 and foo-2 is installed,
+  prefering bar-1 instead of foo-1
+  (otherwise we can hit: "the more recent foo-2 is installed, but does not
+  provide xxx whereas foo-1 does", cf bug #27991)
+- bar is needed, foo-1 does provide bar, installed foo-2 does not provide bar:
+  do not let the algorithm use foo-2 as if it also provides bar
+- allow understanding what ->resolve_requested is doing through a callback ($urpm->{debug_URPM})
+- cleanup some code in ->resolve_requested
+- make the documentation for ->is_arch_compat more clear

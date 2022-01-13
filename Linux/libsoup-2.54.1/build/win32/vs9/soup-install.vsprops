@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+ ProjectType="Visual C++"
+ Version="8.00"
+ Name="pangoinstallprops"
+ InheritedPropertySheets=".\soup-build-defines.vsprops"
+ >
+ <UserMacro
+  Name="SoupDoInstall"
+  Value="
+mkdir $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\$(SoupDllPrefix)soup$(SoupDllSuffix).dll $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\$(SoupDllPrefix)soup$(SoupDllSuffix).pdb $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\$(SoupDllPrefix)soup-gnome$(SoupDllSuffix).dll $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\$(SoupDllPrefix)soup-gnome$(SoupDllSuffix).pdb $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\get.exe $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\get.pdb $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\simple-httpd.exe $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\simple-httpd.pdb $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\simple-proxy.exe $(CopyDir)\bin&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\simple-proxy.pdb $(CopyDir)\bin&#x0D;&#x0A;
+mkdir $(CopyDir)\lib&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\soup-$(ApiVersion).lib $(CopyDir)\lib&#x0D;&#x0A;
+copy $(SolutionDir)\$(ConfigurationName)\$(PlatformName)\bin\soup-gnome-$(ApiVersion).lib $(CopyDir)\lib&#x0D;&#x0A;
+mkdir $(CopyDir)\include\libsoup-$(ApiVersion)\libsoup&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup.h $(CopyDir)\include\libsoup-2.4\libsoup\soup.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-address.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-address.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-auth.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-auth.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-auth-domain.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-auth-domain.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-auth-domain-basic.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-auth-domain-basic.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-auth-domain-digest.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-auth-domain-digest.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-auth-manager.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-auth-manager.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-autocleanups.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-autocleanups.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-cache.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-cache.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-content-decoder.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-content-decoder.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-content-sniffer.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-content-sniffer.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-cookie.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-cookie.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-cookie-jar.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-cookie-jar.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-cookie-jar-db.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-cookie-jar-db.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-cookie-jar-text.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-cookie-jar-text.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-date.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-date.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-form.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-form.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-headers.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-headers.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-logger.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-logger.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-message.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-message.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-message-body.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-message-body.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-message-headers.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-message-headers.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-method.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-method.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-misc.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-misc.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-multipart.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-multipart.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-multipart-input-stream.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-multipart-input-stream.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-password-manager.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-password-manager.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-portability.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-portability.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-proxy-resolver.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-proxy-resolver.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-proxy-resolver-default.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-proxy-resolver-default.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-proxy-uri-resolver.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-proxy-uri-resolver.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-request.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-request.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-request-data.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-request-data.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-request-file.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-request-file.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-request-http.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-request-http.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-requester.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-requester.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-server.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-server.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-session.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-session.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-session-async.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-session-async.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-session-feature.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-session-feature.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-session-sync.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-session-sync.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-socket.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-socket.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-status.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-status.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-tld.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-tld.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-types.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-types.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-uri.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-uri.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-value-utils.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-value-utils.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-websocket.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-websocket.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-websocket-connection.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-websocket-connection.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-xmlrpc.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-xmlrpc.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-xmlrpc-old.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-xmlrpc-old.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-enum-types.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-enum-types.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-version.h $(CopyDir)\include\libsoup-2.4\libsoup\soup-version.h&#x0D;&#x0A;
+mkdir $(CopyDir)\include\libsoup-gnome-$(ApiVersion)\libsoup&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-cookie-jar-sqlite.h $(CopyDir)\include\libsoup-gnome-2.4\libsoup\soup-cookie-jar-sqlite.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-gnome.h $(CopyDir)\include\libsoup-gnome-2.4\libsoup\soup-gnome.h&#x0D;&#x0A;
+copy ..\..\..\libsoup\soup-gnome-features.h $(CopyDir)\include\libsoup-gnome-2.4\libsoup\soup-gnome-features.h&#x0D;&#x0A;
+       "
+ />
+</VisualStudioPropertySheet>

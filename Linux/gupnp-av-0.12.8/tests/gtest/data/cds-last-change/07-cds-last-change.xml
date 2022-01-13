@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StateEvent
+xmlns="urn:schemas-upnp-org:av:cds-event"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="urn:schemas-upnp-org:av:cds-event
+http://www.upnp.org/schemas/av/cds-event.xsd">
+<objAdd objID="Song003" updateID="234" objParentID="Album001"
+objClass="object.item.audioItem" stUpdate="1"/>
+<objMod objID="Album001" updateID="235" stUpdate="1"/>
+<objMod objID="Song001" updateID="236" stUpdate="1"/>
+<objDel objID="Song002" updateID="237" stUpdate="1"/>
+<objMod objID="Album001" updateID="238" stUpdate="1"/>
+<stDone objID="Album001" updateID="238"/>
+</StateEvent>
+

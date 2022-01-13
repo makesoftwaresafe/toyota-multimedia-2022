@@ -1,0 +1,1118 @@
+2016-07-14  Werner Koch  <wk@gnupg.org>
+
+	Release 1.24.
+
+2016-07-13  Werner Koch  <wk@gnupg.org>
+
+	build: Update config.{guess,sub} to {2016-05-15,2016-06-20}.
+	* build-aux/config.guess: Update.
+	* build-aux/config.sub: Update.
+
+2016-07-12  Yann E. MORIN  <yann.morin.1998@free.fr>
+
+	Add an option to disable tests.
+	* configure.ac: add an option to enable/disable building tests
+	* Makefile.am: conditionally build tests
+
+	Fix build without threads.
+	* src/gen-posix-lock-obj.c: properly guard inclusioin of pthread.h
+	* tests/t-lock.c: likewise
+	* tests/t-poll.c: likewise
+
+2016-07-05  Andre Heinecke  <aheinecke@intevation.de>
+
+	Define EWOULDBLOCK in case it is not defined.
+	* src/estream.c (EWOULDBLOCK): Define fallback.
+
+2016-07-02  Werner Koch  <wk@gnupg.org>
+
+	yat2m: Fix table formatting.
+	* doc/yat2m.c (proc_texi_cmd): Use .TQ for @itemx.  Print a .P at the
+	end of a level 0 table.
+
+2016-06-27  Werner Koch  <wk@gnupg.org>
+
+	estream: Fix bug es_fclose_snatch if a seek has been used.
+	* src/estream.c (func_mem_ioctl): Set LEN from DATA_LEN.
+
+2016-06-25  Werner Koch  <wk@gnupg.org>
+
+	w32: Silence compiler warnings about redefined macros.
+	* src/estream.c (S_IRGRP) [W32]: Protect against redefinition.
+
+	doc: Update yat2m.c.
+	* doc/yat2m.c: Update from gnupg.
+
+2016-06-24  Werner Koch  <wk@gnupg.org>
+
+	estream: Remove two compiler warning.
+	* src/estream.c (func_file_create): Remove dead assignment.
+	(doreadline): Do not decrement SPACE_LEFT before breaking the loop.
+	Add an extra block to limit the scope of that variable.
+
+2016-06-15  Werner Koch  <wk@gnupg.org>
+
+	Release 1.23.
+
+	po: Update German translation.
+
+2016-06-15  Jakub Bogusz  <qboosh@pld-linux.org>
+
+	po: Update Polish translation.
+
+2016-06-15  Werner Koch  <wk@gnupg.org>
+
+	tests: Fix rare deadlock condition in t-poll.
+	* tests/t-poll.c (launch_thread): Use es_fileno before starting the
+	thread.
+
+2016-06-15  NIIBE Yutaka  <gniibe@fsij.org>
+
+	estream: Fix assertion failure due to es_flush.
+	* src/estream.c (es_writen): Set writing flag even if no data was
+	written.
+
+2016-06-15  Werner Koch  <wk@gnupg.org>
+
+	Adjust memory limit of es_fopenmem to the block size.
+	* src/estream.c (func_mem_create): Round up memory limit.
+
+2016-05-17  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_SUBKEYS_EXP_OR_REV.
+
+2016-05-07  Werner Koch  <wk@gnupg.org>
+
+	syscfg: Add a powerpc and a tilgegx architecture.
+	* src/syscfg/lock-obj-pub.powerpc-unknown-linux-gnuspe.h: New.
+	* src/syscfg/lock-obj-pub.tilegx-unknown-linux-gnu.h: New.
+	* src/Makefile.am (lock_obj_pub): Add them.
+
+2016-04-25  Werner Koch  <wk@gnupg.org>
+
+	Release 1.22.
+	* configure.ac: Set LT version to C18/A18/R0.
+
+	build: Update config.{guess,sub} to 2016-04-02 and 2016-03-30.
+	* build-aux/config.guess: Update.
+	* build-aux/config.sub: Update.
+
+2016-04-25  NIIBE Yutaka  <gniibe@fsij.org>
+
+	Fix for HPPA.
+	* configure.ac (HAVE_GCC_ATTRIBUTE_ALIGNED): Revert.
+	* src/gen-posix-lock-obj.c (USE_16BYTE_ALIGNMENT): Revert.
+	* src/syscfg/lock-obj-pub.hppa-unknown-linux-gnu.h: Revert.
+
+2016-04-21  Werner Koch  <wk@gnupg.org>
+
+	w32: Add iconv functions.
+	* src/w32-add.h (gpgrt_w32_iconv_t): New.
+	(gpgrt_w32_iconv_open, gpgrt_w32_iconv_close, gpgrt_w32_iconv): New.
+	( GPGRT_ENABLE_W32_ICONV_MACROS): New
+	* src/w32-iconv.c: Change license to LGPLv2.1+.  Dispable mlang
+	feature.  Remove external DLL loading.  Simplify iconv functions.  Use
+	cleaner context struct pattern.  Use gpgrt namespace.
+	* src/gpg-error.def.in: Add new functions.
+
+2016-04-05  Werner Koch  <wk@gnupg.org>
+
+	estream,w32: Temporary fix for gpgrt_poll.
+	* src/estream.c (_gpgrt_poll) [W32]: Do not use FD_ISSET.
+
+2016-03-29  Werner Koch  <wk@gnupg.org>
+
+	estream: Prepare for new mode flag "sysopen".
+	* src/estream.c (parse_mode): Add arg "sysopen".  Adjust all callers.
+
+	estream: Use simpler names for static functions.
+	* src/estream.c: Replace all es_func_* to just func_*.
+
+	estream: Remove strange macro for better readability.
+	* src/estream.c (SET_UNLESS_NONZERO): Remove macro.
+	(es_deinitialize): Replace that macro by direct code.
+
+2016-03-24  Peter Wu  <peter@lekensteyn.nl>
+
+	Add function gpgrt_annotate_leaked_object.
+	* src/gpg-error.h.in: add gpgrt_annotate_leaked_object to support
+	  marking memory as non-leaked for Clang and GCC.
+
+2016-03-14  Kylie McClain  <somasis@exherbo.org>
+
+	syscfg: Add lock-obj-pub files for {armv5, armv6, x86_64}-musl targets.
+	* src/syscfg/lock-obj-pub.armv5-unknown-linux-musleabi.h: New.
+	* src/syscfg/lock-obj-pub.armv6-unknown-linux-musleabihf.h New.
+	* src/syscfg/lock-obj-pub.x86_64-pc-linux-musl.h: New.
+	* src/Makefile.am (lock_obj_pub): Add files.
+
+2016-03-04  NIIBE Yutaka  <gniibe@fsij.org>
+
+	Fix detecting Solaris operating system.
+	* src/gen-posix-lock-obj.c (USE_DOUBLE_FOR_ALIGNMENT): Check for
+	the macro __sun.
+
+	For Solaris, add -lrt correctly.
+	* configure.ac (LIB_SCHED_YIELD): Not avoiding defining LIB.
+
+2016-03-01  NIIBE Yutaka  <gniibe@fsij.org>
+
+	Fix for Solaris.
+	* src/gen-posix-lock-obj.c (USE_DOUBLE_FOR_ALIGNMENT): Check LP64.
+
+2016-02-26  NIIBE Yutaka  <gniibe@fsij.org>
+
+	po: Update Japanese translation.
+
+	Add support for Solaris, fixing HPPA.
+	* configure.ac (HAVE_GCC_ATTRIBUTE_ALIGNED): Remove.
+	(LIB_SCHED_YIELD): New. Check sched_yield in -lrt.
+	* src/gen-posix-lock-obj.c (USE_16BYTE_ALIGNMENT): Remove.
+	(USE_DOUBLE_FOR_ALIGNMENT, USE_LONG_DOUBLE_FOR_ALIGNMENT): New.
+	* src/syscfg/lock-obj-pub.hppa-unknown-linux-gnu.h: Update.
+
+2016-02-08  Werner Koch  <wk@gnupg.org>
+
+	build: Create an SWDB file during "make distcheck"
+	* Makefile.am (distcheck-hook): New.
+
+2016-01-19  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_DB_CORRUPTED.
+
+2016-01-13  Marek Vasut  <marex@denx.de>
+
+	Add new lock-obj-pub for NIOS2.
+	src/syscfg/lock-obj-pub.nios2-unknown-linux-gnu.h: New.
+
+2015-12-14  NIIBE Yutaka  <gniibe@fsij.org>
+
+	po: Update Japanese translation.
+
+2015-12-12  Werner Koch  <wk@gnupg.org>
+
+	Release 1.21.
+	* configure.ac: Set LT version to C17/A17/Ro.
+
+2015-12-07  Andre Heinecke  <aheinecke@intevation.de>
+
+	Fix windows 8bit encoding conversion.
+	* src/w32-gettext.c (wchar_to_native): Convert to ConsoleOutputCP.
+
+2015-12-03  Justus Winter  <justus@g10code.com>
+
+	tests: Fix read past buffer.
+	* tests/t-poll.c (test_poll): Fix read past buffer.
+
+2015-11-19  Justus Winter  <justus@g10code.com>
+
+	Avoid 'malloc' corner case.
+	* src/init.c (_gpgrt_realloc): Avoid calling 'malloc(0)'.
+
+2015-10-21  Werner Koch  <wk@gnupg.org>
+
+	Add error codes NO_NAME, NO_KEY, and SERVER_FAILURE.
+
+2015-10-18  Werner Koch  <wk@gnupg.org>
+
+	estream: Avoid calling write(fd,NULL,n).
+	* src/estream.c (es_func_fd_write): Take care of a flush requests.
+	(es_func_w32_write): Ditto.
+	(es_func_fp_write): Ditto.
+
+2015-09-28  Werner Koch  <wk@gnupg.org>
+
+	estream: Keep track of EPIPE.
+	* src/estream.c (_gpgrt_stream_internal): Add indicators.hup.
+	(init_stream_obj): Init it.
+	(es_fill, es_flush, es_seek): Set that.
+	(_gpgrt_poll): Set event.
+
+	Add GPG_ERR_FALSE and GPG_ERR_TRUE error codes.
+
+2015-09-25  Werner Koch  <wk@gnupg.org>
+
+	estream: Add gpgrt_set_nonblock and gpgrt_poll.
+	* configure.ac (AC_CHECK_HEADERS): Add sys/select.h and sys/time.h.
+	* src/estream.c: Include both header if available.
+	(COOKIE_IOCTL_NONBLOCK): New.
+	(struct estream_cookie_fd): Add field nonblock.
+	(func_fd_create): Set nonblock from MODEFLAGS.
+	(es_func_fd_ioctl): New.
+	(parse_mode): Add modeflag "nonblock".
+	(es_fill): Map EWOULDBLOCK to EAGAIN.  Do not set error indicator for
+	EAGAIN.
+	(es_flush, es_seek, es_write_nbf): Map EWOULDBLOCK to EAGAIN.
+	(do_fdopen): Call COOKIE_IOCTL_NONBLOCK.
+	(_gpgrt_set_nonblock): New.
+	(_gpgrt_get_nonblock): New.
+	(_gpgrt_poll): New.
+
+	* src/gpg-error.h.in (struct _gpgrt_poll_s): New.
+	(gpgrt_poll_t, es_poll_t): New.
+	(es_set_nonblock, es_get_nonblock, es_poll): New.
+
+	* src/gpg-error.vers, src/gpg-error.def.in: Add gpgrt_set_nonblock,
+	gpgrt_get_nonblock, and gpgrt_poll.
+	* src/visibility.c (gpgrt_set_nonblock, gpgrt_get_nonblock): New.
+	(gpgrt_poll): New.
+
+	* tests/t-common.h (DIM): New.
+	* tests/t-poll.c: New.
+	* tests/Makefile.am (TESTS): Add t-poll.
+	(t_poll_LDADD): New.
+
+2015-09-24  Werner Koch  <wk@gnupg.org>
+
+	estream: Replace indicator help functions to ease code reading.
+	* src/estream.c (es_set_indicators, es_get_indicator): Remove and
+	change callers to set/get indicators directly.
+
+2015-09-17  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Support i[456]86-pc{,-linux,-kfreebsd}-gnu.h.
+	* src/mkheader (canon_host_triplet): Add new entries.
+	* src/syscfg/lock-obj-pub.i486-pc-gnu.h: Rename to ...
+	* src/syscfg/lock-obj-pub.i686-pc-gnu.h: this.
+	* src/syscfg/lock-obj-pub.i486-pc-kfreebsd-gnu.h: Rename to ...
+	* src/syscfg/lock-obj-pub.i686-pc-kfreebsd-gnu.h: this.
+	* src/syscfg/lock-obj-pub.i486-pc-linux-gnu.h: Remove.
+	* src/Makefile.am (lock_obj_pub): Update.
+
+2015-08-26  Werner Koch  <wk@gnupg.org>
+
+	Release 1.20.
+	* configure.ac: Set LT version to C16/A16/R0.
+
+	Add new version macros.
+	* src/gpg-error.h.in (GPGRT_VERSION): New.
+	(GPGRT_VERSION_NUMBER): New.
+	(GPG_ERROR_VERSION, GPG_ERROR_VERSION_NUMBER): Move to top of file.
+
+	Add macro GPGRT_INLINE and avoid -Wundef warnings.
+	* src/gpg-error.h.in (GPG_ERR_INLINE): Use #if defined for possible
+	undefined macros to avoid warnign with GCC's -Wundef option.
+	(GPGRT_INLINE): New.
+
+2015-08-26  Yuri Chornoivan  <yurchor@ukr.net>
+
+	Update Ukrainian translation.
+
+2015-08-25  Werner Koch  <wk@gnupg.org>
+
+	Make configure option --disable-build-timestamp the default.
+	* configure.ac (BUILD_TIMESTAMP): Set to "<none>" by default.
+
+	w32: Make sure the setmode is called.
+	* src/estream.c (HAVE_DOSISH_SYSTEM): Define if needed.
+
+2015-07-27  Werner Koch  <wk@gnupg.org>
+
+	Add option --lib-version to the gpg-error tool.
+	* src/gpg-error.c (main): Add new option.
+
+2015-07-24  Werner Koch  <wk@gnupg.org>
+
+	Add new public macros for GCC attributes.
+	* src/gpg-error.h.in (GPGRT_GCC_VERSION): New.
+	(GPGRT_ATTR_NORETURN, GPGRT_ATTR_PRINTF, GPGRT_ATTR_NR_PRINTF): New.
+	(GPGRT_ATTR_FORMAT_ARG, GPGRT_ATTR_SENTINEL): New.
+	(GPGRT_ATTR_USED, GPGRT_ATTR_UNUSED, GPGRT_ATTR_DEPRECATED): New.
+	(GPGRT_ATTR_PURE, GPGRT_ATTR_MALLOC): New.
+	(GPGRT_HAVE_MACRO_FUNCTION, GPGRT_HAVE_PRAGMA_GCC_PUSH): New.
+	(_GPGRT_GCC_A_PRINTF): Replace GPGRT_ATTR_PRINTF.
+
+2015-06-15  Werner Koch  <wk@gnupg.org>
+
+	Allow building with --disable-threads.
+	* src/posix-lock-obj.h (LOCK_ABI_NOT_AVAILABLE): New.
+	(LOCK_ABI_VERSION): Define depending on USE_POSIX_THREADS.
+	(_gpgrt_lock_t) [!USE_POSIX_THREADS]: Do not define the union.
+	* src/gen-posix-lock-obj.c: Take care of USE_POSIX_THREADS.
+	* src/posix-lock.c (_gpgrt_lock_init, _gpgrt_lock_lock)
+	(_gpgrt_lock_trylock, _gpgrt_lock_unlock)
+	(_gpgrt_lock_destroy): Return success for a no-threads version.
+	* tests/t-lock.c: Disable tests if threads are not available.
+	* src/mkheader.c (main): Add NO-THREADS to the printed comment.
+	* configure.ac: Show NO-TRHEADS in the final summary.
+
+2015-04-14  NIIBE Yutaka  <gniibe@fsij.org>
+
+	po: Update Japanese translation.
+
+2015-04-10  Werner Koch  <wk@gnupg.org>
+
+	Release 1.19.
+
+	po: Update German translation.
+
+	w32: Remove compiler warnings.
+	* src/Makefile.am (pre_mkheader_cmds): Avoid make diagnostic about
+	failed but ignored command.  This confuses Emacs' compiler job parser.
+	* tests/t-lock.c [W32]: Include time.h.
+	* src/init.c: Reorganize Windows only code.
+	(wchar_to_utf8, utf8_to_wchar): Remove unused functions.
+	(_gpg_err_set_errno): Use only one copy for all platforms.
+
+2015-03-24  Werner Koch  <wk@gnupg.org>
+
+	Use assert to print diagnosicts before calling abort.
+	* src/posix-lock.c: Add assert calls.
+
+2015-03-24  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Avoid breakage with gcc 5.
+	* src/Makefile.am: Add -P to the C preprocessor when building
+	mkerrcodes.h, to avoid a noisy intermediate pipeline.
+
+2015-03-19  Werner Koch  <wk@gnupg.org>
+
+	Add option --defines to gpg-error.
+	* src/gpg-error.c (main): Add option --help and --defines.
+
+	Add GPG_ERR_LDAP_* error codes.
+	* src/err-codes.h.in: Add error codes.
+	* doc/ldap2gpgerr.c: New.
+
+2015-03-16  Werner Koch  <wk@gnupg.org>
+
+	Remove useless conditions.
+	* src/estream.c (fname_set_internal): Remove useless condition.
+	* src/mkheader.c (main): Ditto.
+
+2015-03-06  Werner Koch  <wk@gnupg.org>
+
+	Add host-triplet aliasing feature to mkheader.
+	* src/Makefile.am (lock_obj_pub): Rename i586-pc-linux-gnu to
+	i686-pc-linux-gnu.  Remove i486-pc-linux-gnu.
+	* src/mkheader.c (canon_host_triplet): New.
+	(main): Use it.
+
+	w32: Add a manifest to libgpg-error.
+	* src/gpg-error.w32-manifest.in: New.
+	* src/Makefile.am (EXTRA_DIST): Add it.
+	(versioninfo.lo): Depend on it.
+	* src/versioninfo.rc.in: Add it.
+	* configure.ac (AC_CONFIG_FILES): Add it.
+	(BUILD_VERSION): New.
+
+2015-02-18  Neal H. Walfield  <neal@gnu.org>
+
+	Correct URL.
+
+2015-01-30  Werner Koch  <wk@gnupg.org>
+
+	w32: Use -static-libgcc to avoid linking to libgcc_s_sjlj-1.dll.
+	* src/Makefile.am (extra_ltoptions): New.
+	(libgpg_error_la_LDFLAGS): Use it.
+
+2015-01-26  Werner Koch  <wk@gnupg.org>
+
+	Release 1.18.
+	* configure.ac: Set LT version to C14/A14/R0.
+
+	po: Update German translation.
+
+2015-01-22  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_LEGACY_KEY.
+
+2015-01-05  Werner Koch  <wk@gnupg.org>
+
+	Avoid false warning about uninitialized var.
+	* src/gpg-error.c (get_err_from_str): Init SAVED_CHAR.
+
+	build: Update to gettext 0.19.
+	* po/Makefile.in.in (MSGMERGE): Remove --previous.
+	* po/Makevars (MSGMERGE_OPTIONS): Add --previous.
+
+	build: Require automake 1.14.
+	* configure.ac (AM_INIT_AUTOMAKE): Add serial-tests.
+	* tests/Makefile.am (INCLUDES): Replace by AM_CPPFLAGS.
+
+2014-12-28  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_REQUEST_TOO_SHORT and GPG_ERR_REQUEST_TOO_LONG.
+
+2014-12-15  Werner Koch  <wk@gnupg.org>
+
+	Fix commit 754a987.
+	* Makefile.am (DISTCHECK_CONFIGURE_FLAGS): New.
+	(AUTOMAKE_OPTIONS): Move options to ...
+	* configure.ac (AM_INIT_AUTOMAKE): .. here.
+	(BUILD_DOC): Fix commit 754a987.
+
+	Add configure option --disable-doc.
+	* Makefile.am (doc) [!BUILD_DOC]: Do not recurse into doc/.
+	* configure.ac (BUILD_DOC): New am_conditional and new option.
+
+	Add GPG_ERR_OBJ_TERM_STATE.
+
+2014-12-03  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_FORBIDDEN.
+
+2014-11-26  Мирослав Николић  <miroslavnikolic@rocketmail.com>
+
+	po: Add Serbian translation.
+
+2014-10-25  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Add new lock-obj-pub for mips64el-unknown-linux-gnuabi64.
+	* src/syscfg/lock-obj-pub.mips64el-unknown-linux-gnuabi64.h: New.
+	* src/Makefile.am (lock_obj_pub): Add.
+
+2014-10-23  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	add lock-obj header for or1k-unknown-linux-gnu.
+	* src/syscfg/lock-obj-pub.or1k-unknown-linux-gnu.h: new
+
+	add lock-obj for new arch triplet for x86.
+	* src/sysconfig/lock-obj-pub.i586-pc-linux-gnu.h: New.
+
+2014-10-15  Werner Koch  <wk@gnupg.org>
+
+	Release 1.17.
+	* configure.ac: Set LT version to C13/A13/R0.
+
+	doc: Add a man page for gpg-error-config.
+	* doc/gpgrt.texi: New.  Just a start for now.
+	* doc/gpl.texi, doc/lgpl.texi: New.  Take from Libgcrypt.
+	* doc/yat2m.c: New.  Take from GnuPG master.
+	* doc/Makefile.am: New.
+	* configure.ac (AC_CONFIG_FILES): Add doc/Makefile.
+	* Makefile.am (SUBDIRS): Add doc/.
+	* build-aux/mdate-sh, build-aux/texinfo.tex: New.
+
+	Fix to help building native on Windows.
+	* configure.ac (FORCE_USE_SYSCFG): New am_conditional.
+	* src/Makefile.am: Use new conditional to decide whether to build the
+	native lock object header.
+
+2014-10-03  Werner Koch  <wk@gnupg.org>
+
+	Change gpgrt_pending{,_unlocked} to macros.
+	* src/gpg-error.h.in (gpgrt_pending): Change to a macro.
+	(gpgrt_pending_unlocked): Change to a macro.
+	(_gpgrt_pending, _gpgrt_pending_unlocked): New private functions.
+	* src/visibility.c, src/visibility.h: Change accordingly.
+	* src/gpg-error.vers, src/gpg-error.def.in: Ditto.
+	* src/estream.c (_gpgrt_pending_unlocked): Rename to
+	_gpgrt__pending_unlocked.
+	(_gpgrt_pending): Rename to _gpgrt__pending.
+
+2014-10-02  Werner Koch  <wk@gnupg.org>
+
+	w32: Make it build again.
+	* src/estream.c (es_func_w32_read): Fix var name.
+
+	build: Support SYSROOT based config script finding.
+	* src/gpg-error.m4: Add support for SYSROOT and set
+	gpg_config_script_warn.  Use AC_PATH_PROG instead of AC_PATH_TOOL
+	because the config script is not expected to be installed with a
+	prefix for its name.
+
+	Add GPG_ERR_BOGUS_STRING and an experimental gpgrt_pending.
+	* src/visibility.c (gpgrt_pending, gpgrt_pending_unlocked): New.
+	* src/estream.c (_gpgrt_pending, _gpgrt_pending_unlocked): New.
+	(check_pending): new.
+	(check_pending_fbf, check_pending_nbf): New.
+	(es_func_mem_read, es_func_fd_read, es_func_w32_read)
+	(es_func_fp_read, es_fill): Take care of the special 0 value for SIZE.
+
+2014-09-29  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	GNU calls little-endian powerpc64 powerpc64le, not powerpc64el.
+	* src/Makefile.am (lock_obj_pub): fix powerpc64el to powerpc64le
+	* src/sysconfig/lock-obj-pub.powerpc64el-unknown-linux-gnu.h : move to
+	  src/sysconfig/lock-obj-pub.powerpc64le-unknown-linux-gnu.h
+
+2014-09-29  Werner Koch  <wk@gnupg.org>
+
+	Add error codes for use by a TLS library.
+
+2014-09-24  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Allow ./configure to explicitly set libgpg-error's build timestamp.
+	* configure.ac: add --enable-build-timestamp
+
+2014-09-24  Werner Koch  <wk@gnupg.org>
+
+	Add new error source GPG_ERR_SOURCE_TLS.
+
+2014-09-23  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Add new lock-obj-pub for sparc64-unknown-linux-gnu.
+	* src/syscfg/lock-obj-pub.sparc64-unknown-linux-gnu.h: New.
+	* src/Makefile.am (lock_obj_pub): Add.
+
+	Add new lock-obj-pub for powerpc64el-unknown-linux-gnu.
+	* src/syscfg/lock-obj-pub.powerpc64el-unknown-linux-gnu.h: New.
+	* src/Makefile.am (lock_obj_pub): Add.
+
+2014-09-18  Werner Koch  <wk@gnupg.org>
+
+	Release 1.16.
+	* configure.ac: Set LT version to C12/A12/R2.
+
+	Add new lock-obj-pub for Apple iOS.
+	* src/syscfg/lock-obj-pub.aarch64-apple-darwin.h: New.
+	* src/syscfg/lock-obj-pub.arm-apple-darwin.h: New.
+
+2014-09-12  Werner Koch  <wk@gnupg.org>
+
+	Fix es_fclose for streams opened with "samethread".
+	* src/estream.c (destroy_stream_lock): New.
+	(es_create, do_close): Use new wrapper function.
+
+	Fix a prototype.
+	* src/gpgrt-int.h: s/off_t/gpgrt_off_t/.
+
+2014-09-11  Werner Koch  <wk@gnupg.org>
+
+	Release 1.15.
+	* configure.ac: Set LT version to C12/A12/R1.
+
+	Fix build problems with non-gmake (ie. AIX).
+	* src/Makefile.am: Do not distribute gpg-error.h.
+	(lock-obj-pub.native.h): Prepend a "./" to match the dependency.
+
+	Fix problems with ssize_t and off_t.
+	* configure.ac (AC_SYS_LARGEFILE): New.
+	(AC_CHECK_HEADERS): Check for stdint.h.
+	(AC_CHECK_SIZEOF): Add for int, long and long long.
+	(REPLACEMENT_FOR_OFF_T): New ac_define.
+	* src/mkheader.c (have_stdint_h, have_w32_system, have_w64_system)
+	(replacement_for_off_type, stdint_h_included): New.
+	(xfree, xstrdup): New.
+	(parse_config_h): New.
+	(write_special): Support "define:gpgrt_off_t", "define:gpgrt_ssize_t",
+	"api_ssize_t" tags.
+	(main): Add config.h arg.  Call parse_config_h.  Fix substitute code.
+	* src/Makefile.am (gpg-error.h): Pass config.h to mkheader.
+
+	* src/gpg-error.h.in: Include definitions for gpgrt_ssize_t and
+	gpgrt_off_t.  Let mkheader insert ssize_t keywords.  Chnage all off_t
+	to gpgrt_off_t.
+	* src/estream.c: Change all off_t to gpgrt_off_t.  Chnage all ssize_t
+	to gpgrt_ssize_t.
+	* src/visibility.c (gpgrt_fseeko): Use gpgrt_off_t.
+	(gpgrt_ftello): Ditto.
+	(gpgrt_getline): Use gpgrt_ssize_t.
+	(gpgrt_read_line): Ditto.
+
+	Fix compiler warning for w32.
+	* src/syscfg/lock-obj-pub.mingw32.h (GPGRT_LOCK_INITIALIZER): Add
+	mssing braces.
+
+2014-09-08  Werner Koch  <wk@gnupg.org>
+
+	Release 1.14.
+	* configure.ac: Set LT version to C12/A12/R0.
+
+	po: Update de.po.
+
+2014-08-26  Werner Koch  <wk@gnupg.org>
+
+	Add gpgrt_set_alloc_func.
+	* src/visibility.c (gpgrt_set_alloc_func): New.
+	* configure.ac (_ESTREAM_PRINTF_REALLOC): Define.
+	(_ESTREAM_PRINTF_EXTRA_INCLUDE): Define.
+	* src/estream.c (mem_alloc, mem_realloc, mem_free): Simplify.
+	(_gpgrt_free): Remove.
+	* src/init.c (custom_realloc): New var.
+	(_gpgrt_set_alloc_func): New.
+	(_gpgrt_realloc, _gpgrt_malloc, _gpgrt_free): New.
+
+	* src/visibility.h (gpg_err_deinit): Mark as visible.
+
+	Export missing init functions.
+	* src/gpg-error.h.in (gpgrt_init): New macro.
+	(gpgrt_check_version): New prototype.
+	* src/init.c (_gpg_err_init): Rename from gpg_err_init.
+	(_gpg_err_deinit): Rename from gpg_err_deinit.
+	* src/visibility.c (gpg_err_init): New.
+	(gpg_err_deinit): New.
+	(gpgrt_check_version): New.
+	* src/gpg-error.vers (gpg_err_init, gpg_err_deinit): Add missing
+	symbols.
+	(gpgrt_check_version): New.
+	* src/gpg-error.def.in (gpg_err_init, gpg_err_deinit): Add missing
+	symbols.
+	(gpgrt_check_version): New.
+	* src/gpg-error.c (main): Use gpgrt_init macro.
+
+	Include required headers into gpg-error.h.
+	* src/gpg-error.h.in: Include stdarg.h.
+
+2014-08-25  Werner Koch  <wk@gnupg.org>
+
+	Replace locking code in estream functions.
+	* src/posix-lock.c: Add weak program for pthread_mutex_trylock.
+	(_gpgrt_lock_trylock): New.
+	* src/w32-lock.c (_gpgrt_lock_init): Add missing return statement.
+	(_gpgrt_lock_trylock): New.
+	* src/visibility.c (gpgrt_set_syscall_clamp): New.
+	(gpgrt_lock_trylock): New.
+	(gpgrt_vsnprintf): Fix symbol name.
+	* src/init.c (DllMain): Mark unused arg.
+	* src/estream.c: Replace npth mutexes by our own locks.  Replace yeild
+	macro by _gpgrt_yield.
+	(pre_syscall_func, post_syscall_func): New.
+	(do_deinit): Clear both new vars.
+	(es_func_fd_read, es_func_fd_write): Call pre and post syscall
+	functions instead of the former SYSCALL macros.
+	(es_func_w32_read, es_func_w32_write): Ditto.
+	(es_func_fd_seek, es_func_w32_seek, es_func_fp_read)
+	(es_func_fp_write, es_func_fp_seek, es_func_fp_destroy): Bracket
+	syscalls with the pre- and post-syscall fucntions.
+	(do_npth_read, do_npth_write): Remove.
+	(_gpgrt_es_init): Remove call to mutex init.  It is now statically
+	initialized.
+	(_gpgrt_set_syscall_clamp): New.
+	(es_create): Destroy stream lock on error.
+	(do_close): Destroy stream lock.
+
+	Remove GnuPG specific code.
+	* src/estream.c (es_write_sanitized_utf8_buffer): Remove.
+
+	Add test for the estream printf functions.
+	* tests/t-printf.c: New.
+	* configure.ac: Check for vasprintf.
+
+	Add gpgrt_snprintf and gpgrt_vsnprintf.
+
+	Finish inclusion of estream into the API.
+
+	Implement symbol visibility.
+	* configure.ac: New option --enable-ld-version-script.
+	(GPGRT_USE_VISIBILITY): New ac_define.
+	(HAVE_LD_VERSION_SCRIPT): New am_conditional.
+	* src/gpg-error.vers: New.
+	* src/gpgrt-int.h: New.
+	* src/visibility.c, src/visibility.h: New.  Lot of changes to symbold
+	names.
+
+	First set of changes to include estream into the API.
+	* configure.ac (AH_BOTTOM): Define GPGRT_ENABLE_ES_MACROS.
+	* src/gpg-error.h.in: include stdio.h.  Include most of the estream
+	functions and rename structures and types.
+	* src/estream.h: Rewrite. Include only gpg-error.h and local
+	prototypes.
+	* src/estream.c: Rename types and macros.
+	* src/estream-printf.c (_gpgrt_estream_snprintf): Prefix public
+	functions with _gpgrt_.
+
+	Fix some minor estream things.
+	* m4/estream.m4: Check for memrchr.
+	* src/estream.c (memrchr) [!HAVE_MEMRCHR]: New.
+	* src/init.c: Include estream.h
+	(real_init): Init estream.
+
+	Add missing redefine macros to cleanup the external symbols.
+
+	Add estream code from GnuPG.
+	* src/estream-printf.c, src/estream-printf.h: New.
+	* src/estream.c, src/estream.h: New.
+	* m4/estream.m4: New.
+	* src/Makefile.am (libgpg_error_la_SOURCES): Add new files.
+	* configure.ac (AH_BOTTOM): Define estream prefix.
+	<gcc>: Add useful gcc warning options.
+	(estream_INIT): Call.
+
+2014-08-12  Joe Hansen  <joedalton2@yahoo.dk>
+
+	Update Danish translation.
+	* po/da.po: Update.
+
+2014-08-10  Werner Koch  <wk@gnupg.org>
+
+	tests: Fix compiler warning.
+	* tests/t-lock.c: Include header vor getpid.
+	(revision_thread): Init "i" to avoid compiler warning.
+
+2014-08-06  NIIBE Yutaka  <gniibe@fsij.org>
+
+	Update ja.po.
+
+2014-08-05  Werner Koch  <wk@gnupg.org>
+
+	Use 16 byte alignment for hppa-unknown-linux-gnu.
+	* configure.ac (HAVE_GCC_ATTRIBUTE_ALIGNED): New.
+	* src/gen-posix-lock-obj.c (USE_16BYTE_ALIGNMENT): Set for HPPA-Linux.
+	(main): Enforce alignment if needed.
+	* src/syscfg/lock-obj-pub.hppa-unknown-linux-gnu.h: Use 16 byte
+	alignment.
+
+2014-07-27  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Add new lock-obj-pub.*.h from debian buildds.
+	* src/syscfg/lock-obj-pub.aarch64-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.alpha-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.arm-unknown-linux-gnueabi.h: New.
+	* src/syscfg/lock-obj-pub.arm-unknown-linux-gnueabihf.h: New.
+	* src/syscfg/lock-obj-pub.hppa-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.i486-pc-gnu.h: New.
+	* src/syscfg/lock-obj-pub.i486-pc-kfreebsd-gnu.h: New.
+	* src/syscfg/lock-obj-pub.i486-pc-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.m68k-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.mips-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.mipsel-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.powerpc-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.powerpc64-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.s390x-ibm-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.sh4-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.sparc-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.x86_64-pc-kfreebsd-gnu.h: New.
+	* src/syscfg/lock-obj-pub.x86_64-pc-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.x86_64-pc-linux-gnux32.h: New.
+	* src/Makefile.am (lock_obj_pub): Add new files.
+
+2014-06-30  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Improve logging in a test module.
+	* tests/t-version.c (main): Print program name.
+
+2014-06-25  Werner Koch  <wk@gnupg.org>
+
+	Add missing prototype for build tool.
+	* src/gen-posix-lock-obj.c: Include string.h.
+
+2014-06-10  Werner Koch  <wk@gnupg.org>
+
+	New error code GPG_ERR_KEY_DISABLED.
+
+2014-04-15  Werner Koch  <wk@gnupg.org>
+
+	Release 1.13.
+	* configure.ac: Set LT version to C11/A11/R0.
+
+	Update pl.po.
+
+	Add code GPG_ERR_KEY_ON_CARD.
+
+2014-01-29  Werner Koch  <wk@gnupg.org>
+
+	Fix a syscfg/ file name.
+	* src/syscfg/lock-obj.arm-unknown-linux-androideabi.h: Rename to ...
+	* src/syscfg/lock-obj-pub.arm-unknown-linux-androideabi.h: this.
+	* src/Makefile.am (lock_obj_pub): Fix file name.
+
+2014-01-28  Werner Koch  <wk@gnupg.org>
+
+	Fix the name of the file in the comment of the output.
+	* src/gen-posix-lock-obj.c (main): Chnage comment in created file.
+
+2014-01-25  Werner Koch  <wk@gnupg.org>
+
+	Add lock info for arm-unknown-linux-androideabi.
+	* src/syscfg/lock-obj.arm-unknown-linux-androideabi.h: New.  Provided
+	by Hans-Christoph Steiner.
+	* src/Makefile.am (lock_obj_pub): Add file.
+
+2014-01-24  Werner Koch  <wk@gnupg.org>
+
+	tests: Call srand for each thread under Windows.
+	* tests/t-lock.c (accountant_thread) [W32]: Call srand.
+
+	Do not use the threadlib macros for Windows.
+	* configure.ac: Move platform detection before gl_THREADLIB_EARLY.  Do
+	not use gl_THREADLIB for Windows.
+
+	Make multi-threading flags available via gpg-error-config.
+	* m4/threadlib.m4: Set THREADLIB_CPPFLAGS.
+	* src/gpg-error-config.in: Add option --mt.
+	* configure.ac: Add support for the --mt option.
+	* src/gpg-error.m4: Add ac_subst GPG_ERROR_MT_CFLAGS and
+	GPG_ERROR_MT_LIBS.
+
+	Allow using gpgrt_lock_init on an unitialized variable.
+	* src/posix-lock.c (gpgrt_lock_init): Detect unitialized lock var.
+	* src/w32-lock.c (gpgrt_lock_init): Ditto.
+
+2014-01-17  Werner Koch  <wk@gnupg.org>
+
+	Move version number first in the Posix lock-obj.
+	* src/posix-lock-obj.h (_gpgrt_lock_t): Swap VERS and MTX and put MTX
+	into a union.
+	* src/posix-lock.c (gpgrt_lock_lock): Adjust for this change.
+	* src/gen-posix-lock-obj.c (main): Change output accordingly.
+
+	Extend the platform dependent build rules.
+	* src/mkheader.c (mk_include_name): New.
+	(include_file): Implement '&' substitution.
+	(try_include_file): New.
+	(write_special): Use try_include_file and syscfg/.
+	(main): Add a new arg.
+	* configure.ac (CROSS_COMPILING): New am_conditional.
+	(HOST_TRIPLET_STRING): New ac_define.
+	* src/gen-posix-lock-obj.c (main): Print the host triplet.
+	* src/w32-lock-obj-pub.in: Move to ...
+	* src/syscfg/lock-obj-pub.mingw32.h: here.
+	* src/Makefile.am (lock_obj_pub): New.
+	(pre_mkheader_cmds): New.
+	(gpg-error.h): Run pre_mkheader_cmds.
+	(parts_of_gpg_error_h, lock-obj-pub.native.h): Do not use when
+	cross-compiling.
+
+2014-01-16  Werner Koch  <wk@gnupg.org>
+
+	Fix linking for last change on non-ELF platforms.
+	* src/Makefile.am (libgpg_error_la_LIBADD): Add LIBTHREAD.
+
+	Add gpgrt_lock_ functions.
+	* src/gpg-error.h.in (GPGRT_LOCK_DEFINE): New.
+	(gpgrt_lock_init): New.
+	(gpgrt_lock_lock): New.
+	(gpgrt_lock_unlock): New.
+	(gpgrt_lock_destroy): New.
+	(gpgrt_yield): New.
+	* src/gpg-error.def.in: Add new functions.
+	* m4/lock.m4, m4/threadlib.m4: New. Taken from current gnulib.
+	* configure.ac: Call gl_LOCK.  Check size of pthread_mutex_t. Add
+	LIBTHREAD to GPG_ERROR_CONFIG_LIBS.
+	* src/err-codes.h.in (GPG_ERR_INV_LOCK_OBJ): New.
+	* src/gen-posix-lock-obj.c: New.
+	* src/gen-w32-lock-obj.c: New.
+	* src/lock.h, src/thread.h: New.
+	* src/posix-lock-obj.h, src/w32-lock-obj.h: New.
+	* src/posix-lock.c, src/w32-lock.c: New.
+	* src/posix-thread.c, src/w32-thread.c:
+	* src/w32-lock-obj-pub.in: New.
+	* src/mkheader.c (include_file): Support build time include files.
+	(write_special): Add keyword "include:lock-obj".
+	* src/Makefile.am:
+	(posix-lock-obj-pub.in): New rule.
+	(noinst_PROGRAMS): Add gen-*-lock-obj helpers.
+
+	* tests/t-common.h: New.
+	* tests/t-lock.c: New.
+	* tests/Makefile.am (t_lock_LDADD): Add new test.
+
+2014-01-14  Werner Koch  <wk@gnupg.org>
+
+	Improve maintainability by rewriting the mkheader helper.
+	* src/mkheader.c: New.  Based on the mkheader from Libassuan.
+	* src/mkheader.awk: Remove.
+	* src/errnos.in: Add trailing linefeed.
+	* src/gpg-error.h.in: Change meta include directives for use with
+	mkheader.c.
+	* src/Makefile.am (EXTRA_DIST): Replace mkheader.awk by mkheader.c
+	(BUILT_SOURCES): Remove extra-h.in.
+	(CLEANFILES): Remove extra-h.in.  Add mkheader.c.
+	(parts_of_gpg_error_h): New.
+	(extra-h.in): Remove rule.
+	(mkheader): Add rule.
+	(gpg-error.h): Change rule to use mkheader.
+
+2014-01-10  Werner Koch  <wk@gnupg.org>
+
+	po: Update de.po.
+
+	Use the generic autogen.sh script.
+	* Makefile.am (EXTRA_DIST): Add autogen.rc remove config.rpath.
+	* autogen.rc: New.
+	* autogen.sh: Update from current GnuPG.
+
+	Move helper scripts to build-aux.
+	* compile, config.guess, config.rpath, config.sub
+	* depcomp, install-sh, ltmain.sh, missing: Move to build-aux/.
+	* configure.ac (AC_CONFIG_AUX_DIR): New.
+
+2013-12-09  Werner Koch  <wk@gnupg.org>
+
+	Add build support for ppc64le.
+	* config.guess, config.sub: Update to latest version (2013-11-29).
+	* m4/libtool.m4: Add patches for ppc64le.
+
+2013-12-09  David 'Digit' Turner  <digit@google.com>
+
+	Update libtool to support Android.
+	* m4/libtool.m4: Add "linux*android*" case.  Taken from the libtool
+	repository.
+
+2013-11-17  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_MAC_ALGO.
+
+2013-07-15  Werner Koch  <wk@gnupg.org>
+
+	w32: Fix corrupted string output.
+	* src/w32-gettext.c (get_string): Pass the nul of the utf-8 string to
+	the conversion function but keep TRANSLEN without the nul.
+
+2013-06-24  Werner Koch  <wk@gnupg.org>
+
+	Release 1.12.
+	* configure.ac: Set LT version to C10/A10/R0.
+
+	Update German translation.
+
+2013-06-17  Werner Koch  <wk@gnupg.org>
+
+	Add hack to have different names for 64 bit Windows DLLs.
+	* ltmain.sh: Prefix the SO number for W64 with a "6".
+
+	Support building for w64.
+
+2013-05-23  Werner Koch  <wk@gnupg.org>
+
+	w32: Fix installing of .def file.
+	* src/Makefile.am (install-def-file): Create libdir first.
+
+	Fix libtool 2.4.2 to correctly detect .def files.
+	* ltmain.sh (sed_uncomment_deffile): New.
+	(orig_export_symbols): Uncomment def file before testing for EXPORTS.
+	* m4/libtool.m4: Do the same for the generated code.
+
+2013-04-11  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_*CRYPT_CTX* and GPG_ERR_BROKEN_*KEY.
+	* src/err-codes.h.in (GPG_ERR_NO_CRYPT_CTX): New.
+	(GPG_ERR_WRONG_CRYPT_CTX, GPG_ERR_BAD_CRYPT_CTX): New.
+	(GPG_ERR_CRYPT_CTX_CONFLICT): New.
+	(GPG_ERR_BROKEN_PUBKEY, GPG_ERR_BROKEN_SECKEY): New.
+
+2013-02-25  Werner Koch  <wk@gnupg.org>
+
+	Release 1.11.
+	* configure.ac: Set LT version to C9/A9/R0.
+
+	* Makefile.am (GITLOG_TO_CHANGELOG): New.
+	(gen-ChangeLog): Use --tear-off.
+	* build-aux/gitlog-to-changelog: Remove.
+
+	Update helper scripts.
+	* compile, config.guess, config.rpath, config.sub, depcomp,
+	* install-sh, mkinstalldirs: Update to current versions from gnulib.
+
+2013-02-23  Werner Koch  <wk@gnupg.org>
+
+	Add translation to Ukrainian.
+	* po/uk.po: New.
+	* po/LINGUAS: Add uk.po
+
+	Add translation to Esperanto.
+	* po/eo.po: New.
+	* po/LINGUAS: Add eo.po.
+
+	Add version macros and check function.
+	* configure.ac (VERSION_NUMBER): New ac_subst.
+	(BUILD_FILEVERSION): Build on all platforms
+	(BUILD_TIMESTAMP): Try to use an ISO string.
+	* src/Makefile.am (extra-h.in): Add new version numbers.
+	* src/versioninfo.rc.in: Update copyright year.
+	* src/version.c: New.
+	(gpg_error_check_version): New API.
+	* src/gpg-error.h.in: Add gpg_error_check_version prototype.
+	* src/gpg-error.def.in: Add gpg_error_check_version
+	* tests/t-version.c: New.
+	* tests/Makefile.am (TESTS): Add t-version.c
+
+	* src/gpg-error-config.in: s/VERSION/PACKAGE_VERSION/.
+
+2013-02-22  Werner Koch  <wk@gnupg.org>
+
+	Fix the alias mechanism for --with-libgpg-error-prefix.
+	* src/gpg-error.m4: Do not use the no-action branch in AC_ARG_WITH.
+
+2012-11-16  Werner Koch  <wk@gnupg.org>
+
+	Switch to the new automagic beta numbering scheme.
+	* configure.ac: Change to a git only revision id setup.
+	(BUILD_FILEVERSION): Use revision id for this.
+	* src/versioninfo.rc.in (FileVersion): Use LT version.
+
+	Update to libtool 2.4.2.
+
+	Add new source id for Libassuan.
+	* src/err-sources.h.in (GPG_ERR_SOURCE_ASSUAN): New.
+
+	Improve parsing of the GIT revision number.
+	* configure.ac (git_revision): Use git rev-parse.
+
+	Fix non-portable use of chmod in autogen.sh.
+	* autogen.sh: Remove option -c from chmod.
+
+2012-08-09  Werner Koch  <wk@gnupg.org>
+
+	Update Italian translation.
+
+2012-08-09  Jordy Provost  <jordy.provost@free.fr>
+
+	Typo fix.
+	* src/err-codes.h.in: Unify uppercase.
+
+2012-08-09  Freek de Kruijf  <f.de.kruijf@gmail.com>
+
+	Update Dutch translation.
+	* po/nl.po: Update.
+
+2012-08-09  Petr Pisar  <petr.pisar@atlas.cz>
+
+	Update Czech translation.
+	* po/cs.po: Update.
+
+2012-08-09  Joe Hansen  <joedalton2@yahoo.dk>
+
+	Add Danish translation.
+	* po/da.po: New.
+	* po/LINGUAS: Add da.po.
+
+2012-08-09  David Prévot  <taffit@debian.org>
+
+	Update French translation.
+	* po/fr.po: Update, proofread by Jordy Provost
+
+	Keep previous msgids of translated messages.
+	* po/Makefile.in.in: Add --previous option to msgmerge.
+
+2012-08-07  Werner Koch  <wk@gnupg.org>
+
+	Add Japanese translation.
+	* po/ja.po: New.
+	* po/LINGUAS: Add ja.po.
+
+	Update German translation.
+	* po/de.po: Update.
+
+2012-06-20  Rafaël Carré  <funman@videolan.org>
+
+	Use CPPFLAGS when generating mkerrcodes.h.
+	 * src/Makefile.am (mkerrcodes.h): Use CPPFLAGS.
+
+2011-12-01  Werner Koch  <wk@gnupg.org>
+
+	Remove non-source file from the repo.
+	* po/remove-potcdate.sed: Remove.
+
+	Fix for newer autoconf version.
+	* Makefile.am (EXTRA_DIST): Fix filename.
+	* configure.ac (my_full_version): New.
+	(AC_INIT):  Use new macro.  Change bug address to the bug tracker URL.
+
+	Generate the ChangeLog from commit logs.
+	* build-aux/gitlog-to-changelog: New script.  Taken from gnulib.
+	* build-aux/git-log-fix: New file.
+	* build-aux/git-log-footer: New file.
+	* doc/HACKING: New file.
+	* ChangeLog: New file.
+	* Makefile.am (EXTRA_DIST): Add new files.
+	(gen-ChangeLog): New.
+	(dist-hook): Run gen-ChangeLog.
+
+	Rename all ChangeLog files to ChangeLog-2011.
+
+2011-12-01  Werner Koch  <wk@gnupg.org>
+
+	NB: Changes done before December 1st, 2011 are described in
+	per directory files named ChangeLog-2011.  See doc/HACKING for
+	details.
+
+        -----
+	Copyright (C) 2011 Free Software Foundation, Inc.
+
+	Copying and distribution of this file and/or the original GIT
+	commit log messages, with or without modification, are
+	permitted provided the copyright notice and this notice are
+	preserved.

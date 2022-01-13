@@ -1,0 +1,16 @@
+{
+  "config_appl": "NodeStateManager",
+  "version": "0.1.0",
+  "resources": {
+    "NSM_var": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "NodeStateManager",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "14bfa6bb14875e45bba028a21ed38046"
+    }
+  }
+}

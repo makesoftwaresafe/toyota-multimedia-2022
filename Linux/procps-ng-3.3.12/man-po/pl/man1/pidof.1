@@ -1,0 +1,58 @@
+'\" -*- coding: UTF-8 -*-
+.\" Copyright (C) 1998 Miquel van Smoorenburg.
+.\"
+.\" This program is free software; you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation; either version 2 of the License, or
+.\" (at your option) any later version.
+.\"
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software
+.\" Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+.\"
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH PIDOF 1 "24 lip 2013" "" "Polecenia użytkownika"
+.SH NAZWA
+pidof \- wyszukiwanie identyfikatora procesu działającego programu.
+.SH SKŁADNIA
+\fBpidof\fP [\fB\-s\fP] [\fB\-c\fP] [\fB\-x\fP] [\fB\-o\fP \fIpid_wykl[,pid_wykl..]\fP] [\fB\-o\fP
+\fIpid_wykl[,pid_wykl..]..\fP] \fBprogram\fP [\fBprogram..\fP]
+.SH OPIS
+\fBPidof\fP znajduje identyfikatory procesów (pidy) programów o podanych
+nazwach i wypisuje je na standardowym wyjściu.
+.SH OPCJE
+.IP \-s
+Tryb pojedynczy \- program zwróci tylko jeden \fIpid\fP.
+.IP \-c
+Zwrócenie tylko identyfikatorów procesów działających z tym samym katalogiem
+głównym. Ta opcja jest ignorowana dla użytkowników innych niż root, ponieważ
+wtedy nie można sprawdzić katalogu głównego procesów, których nie jest się
+właścicielem.
+.IP \-x
+Także skrypty \- program zwróci także identyfikatory procesów powłok
+wykonujących skrypty o podanych nazwach.
+.IP "\-o \fIpid_wykl\fP"
+Pominięcie procesów o podanym identyfikatorze. Specjalny pid \fB%PPID\fP
+oznacza rodzica procesu programu \fIpidof\fP, czyli powłokę lub skrypt go
+uruchamiający.
+.SH "KOD WYJŚCIA"
+.TP 
+\fB0\fP
+Znaleziono przynajmniej jeden program o żądanej nazwie.
+.TP 
+\fB1\fP
+Nie znaleziono żadnego programu o żądanej nazwie.
+
+.SH "ZOBACZ TAKŻE"
+\fBpgrep\fP(1), \fBpkill\fP(1)
+.SH AUTOR
+Jaromir Capik <jcapik@redhat.com>

@@ -1,0 +1,4 @@
+This source code is proprietary of ADIT
+Copyright (C) Advanced Driver Information Technology Joint Venture GmbH
+All rights reserved
+

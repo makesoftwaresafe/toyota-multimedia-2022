@@ -1,0 +1,1825 @@
+# Hungarian translation for kbd.
+# Copyright (C) 2014 Free Software Foundation, Inc.
+# This file is distributed under the same license as the kbd package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kbd 2.0.2-rc2\n"
+"Report-Msgid-Bugs-To: Alexey Gladkov <gladkov.alexey@gmail.com>\n"
+"POT-Creation-Date: 2015-06-30 23:46+0300\n"
+"PO-Revision-Date: 2014-07-10 19:14+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: src/chvt.c:30
+#, c-format
+msgid "usage: chvt N\n"
+msgstr "használat: chvt N\n"
+
+#: src/deallocvt.c:35
+#, c-format
+msgid "%s: unknown option\n"
+msgstr "%s: ismeretlen kapcsoló\n"
+
+#: src/deallocvt.c:50
+#, fuzzy
+msgid "0: illegal VT number\n"
+msgstr "%s: 0: szabálytalan VT szám\n"
+
+#: src/deallocvt.c:52
+#, fuzzy
+msgid "VT 1 is the console and cannot be deallocated\n"
+msgstr "%s: VT 1 a konzol és nem sikerült felszabadítani\n"
+
+#: src/deallocvt.c:54
+#, fuzzy, c-format
+msgid "could not deallocate console %d: ioctl VT_DISALLOCATE"
+msgstr "%s: nem sikerült felszabadítani a(z) %d. konzolt\n"
+
+#: src/dumpkeys.c:27
+#, c-format
+msgid "dumpkeys version %s"
+msgstr "dumpkeys verzió: %s"
+
+#: src/dumpkeys.c:28
+#, c-format
+msgid ""
+"\n"
+"usage: dumpkeys [options...]\n"
+"\n"
+"valid options are:\n"
+"\n"
+"\t-h --help\t    display this help text\n"
+"\t-i --short-info\t    display information about keyboard driver\n"
+"\t-l --long-info\t    display above and symbols known to loadkeys\n"
+"\t-n --numeric\t    display keytable in hexadecimal notation\n"
+"\t-f --full-table\t    don't use short-hand notations, one row per keycode\n"
+"\t-1 --separate-lines one line per (modifier,keycode) pair\n"
+"\t   --funcs-only\t    display only the function key strings\n"
+"\t   --keys-only\t    display only key bindings\n"
+"\t   --compose-only   display only compose key combinations\n"
+"\t-c --charset="
+msgstr ""
+"\n"
+"használat: dumpkeys [kapcsolók…]\n"
+"\n"
+"az érvényes kapcsolók:\n"
+"\n"
+"\t-h --help\t    ezen súgószöveg megjelenítése\n"
+"\t-i --short-info\t    információk megjelenítése a billentyűzet-meghajtóról\n"
+"\t-l --long-info\t    a fenti és a loadkeys ismert szimbólumai "
+"megjelenítése\n"
+"\t-n --numeric\t    billentyűtáblázat megjelenítése hexadecimális "
+"jelöléssel\n"
+"\t-f --full-table\t    ne használjon gyorsírás jelölést, egy sor\n"
+"\t\t\tbillentyűkódonként\n"
+"\t-1 --separate-lines egy sor (módosító, billentyűkód) páronként\n"
+"\t   --funcs-only\t    csak a funkcióbillentyű szövegek megjelenítése\n"
+"\t   --keys-only\t    csak a billentyűkötések megjelenítése\n"
+"\t   --compose-only   csak az összeállító billentyűkombinációk "
+"megjelenítése\n"
+"\t-c --charset="
+
+#: src/dumpkeys.c:45
+#, c-format
+msgid ""
+"\t\t\t    interpret character action codes to be from the\n"
+"\t\t\t    specified character set\n"
+msgstr ""
+"\t\t\t    karakter műveleti kódok értelmezése a megadott\n"
+"\t\t\t    karakterkészletből\n"
+
+#: src/dumpkeys.c:131
+#, c-format
+msgid "unknown charset %s - ignoring charset request\n"
+msgstr "ismeretlen karakterkészlet: %s - a karakterkészlet-kérés mellőzése\n"
+
+#: src/dumpkeys.c:152 src/loadkeys.c:182
+#, c-format
+msgid "%s: error reading keyboard mode: %m\n"
+msgstr "%s: hiba a billentyűzetmód olvasásakor: %m\n"
+
+#: src/dumpkeys.c:168
+#, c-format
+msgid ""
+"Symbols recognized by %s:\n"
+"(numeric value, symbol)\n"
+"\n"
+msgstr ""
+"A(z) %s által felismert szimbólumok:\n"
+"(számérték, szimbólum)\n"
+"\n"
+
+#: src/fgconsole.c:19
+#, c-format
+msgid ""
+"%s version %s\n"
+"\n"
+"Usage: %s [options]\n"
+"\n"
+"Valid options are:\n"
+"\n"
+"\t-h --help            display this help text\n"
+"\t-V --version         display program version\n"
+"\t-n --next-available  display number of next unallocated VT\n"
+msgstr ""
+"%s verzió: %s\n"
+"\n"
+"Használat: %s [kapcsolók]\n"
+"\n"
+"Az érvényes kapcsolók:\n"
+"\n"
+"\t-h --help            ezen súgószöveg megjelenítése\n"
+"\t-V --version         programverzió megjelenítése\n"
+"\t-n --next-available  a következő nem lefoglalt VT számának megjelenítése\n"
+
+#: src/fgconsole.c:68
+msgid "Couldn't read VTNO: "
+msgstr "A VTNO olvasása nem sikerült: "
+
+#: src/getfd.c:67
+#, c-format
+msgid "Couldn't open %s\n"
+msgstr "A(z) %s megnyitása nem sikerült\n"
+
+#: src/getfd.c:84
+#, c-format
+msgid "Couldn't get a file descriptor referring to the console\n"
+msgstr "Nem sikerült a konzolra hivatkozó fájlleíró beszerzése\n"
+
+#: src/getkeycodes.c:19
+#, c-format
+msgid "usage: getkeycodes\n"
+msgstr "használat: getkeycodes\n"
+
+#: src/getkeycodes.c:55
+#, c-format
+msgid "Plain scancodes xx (hex) versus keycodes (dec)\n"
+msgstr "Egyszerű xx (hex) vizsgálókód a (dec) billentyűkód ellen\n"
+
+#: src/getkeycodes.c:58
+#, c-format
+msgid "0 is an error; for 1-88 (0x01-0x58) scancode equals keycode\n"
+msgstr ""
+"A 0 hiba; az 1-88 (0x01-0x58) vizsgálókódnál egyenlő a billentyűkóddal\n"
+
+#: src/getkeycodes.c:61
+#, c-format
+msgid "for 1-%d (0x01-0x%02x) scancode equals keycode\n"
+msgstr "az 1-%d (0x01-0x%02x) vizsgálókódnál egyenlő a billentyűkóddal\n"
+
+#: src/getkeycodes.c:67
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Escaped scancodes e0 xx (hex)\n"
+msgstr ""
+"\n"
+"\n"
+"Elfedett vizsgálókódok: e0 xx (hex)\n"
+
+#: src/getkeycodes.c:90
+#, fuzzy, c-format
+msgid "failed to get keycode for scancode 0x%x: ioctl KDGETKEYCODE"
+msgstr "nem sikerült a billentyűkód lekérése a 0x%x vizsgálókódhoz\n"
+
+#: src/getunimap.c:29
+#, c-format
+msgid ""
+"Usage:\n"
+"\t%s [-s] [-C console]\n"
+msgstr ""
+"Használat:\n"
+"\t%s [-s] [-C konzol]\n"
+
+#: src/kbdinfo.c:18
+#, c-format
+msgid ""
+"Usage: %1$s [-C DEVICE] getmode [text|graphics]\n"
+"   or: %1$s [-C DEVICE] gkbmode [raw|xlate|mediumraw|unicode]\n"
+"   or: %1$s [-C DEVICE] gkbmeta [metabit|escprefix]\n"
+"   or: %1$s [-C DEVICE] gkbled  [scrolllock|numlock|capslock]\n"
+msgstr ""
+"Használat: %1$s [-C ESZKÖZ] getmode [text|graphics]\n"
+"   vagy: %1$s [-C ESZKÖZ] gkbmode [raw|xlate|mediumraw|unicode]\n"
+"   vagy: %1$s [-C ESZKÖZ] gkbmeta [metabit|escprefix]\n"
+"   vagy: %1$s [-C ESZKÖZ] gkbled  [scrolllock|numlock|capslock]\n"
+
+#: src/kbdinfo.c:65
+msgid "Error: Not enough arguments.\n"
+msgstr "Hiba: nincs elég argumentum.\n"
+
+#: src/kbdinfo.c:123
+#, c-format
+msgid "Error: Unrecognized action: %s\n"
+msgstr "Hiba: azonosítatlan művelet: %s\n"
+
+#: src/kbd_mode.c:22
+#, c-format
+msgid "usage: kbd_mode [-a|-u|-k|-s] [-C device]\n"
+msgstr "használat: kbd_mode [-a|-u|-k|-s] [-C eszköz]\n"
+
+#: src/kbd_mode.c:85
+#, c-format
+msgid "The keyboard is in raw (scancode) mode\n"
+msgstr "A billentyűzet nyers (vizsgálómód) módban van\n"
+
+#: src/kbd_mode.c:88
+#, c-format
+msgid "The keyboard is in mediumraw (keycode) mode\n"
+msgstr "A billentyűzet közepes nyers (billentyűmód) módban van\n"
+
+#: src/kbd_mode.c:91
+#, c-format
+msgid "The keyboard is in the default (ASCII) mode\n"
+msgstr "A billentyűzet az alapértelmezett (ASCII) módban van\n"
+
+#: src/kbd_mode.c:94
+#, c-format
+msgid "The keyboard is in Unicode (UTF-8) mode\n"
+msgstr "A billentyűzet Unicode (UTF-8) módban van\n"
+
+#: src/kbd_mode.c:97
+#, c-format
+msgid "The keyboard is in some unknown mode\n"
+msgstr "A billentyűzet valamilyen ismeretlen módban van\n"
+
+#: src/kbdrate.c:155 src/kbdrate.c:173 src/kbdrate.c:330
+#, c-format
+msgid "Typematic Rate set to %.1f cps (delay = %d ms)\n"
+msgstr ""
+"A leütési gyakoriság beállítva %.1f cps értékre (késleltetés = %d ms)\n"
+
+#: src/kbdrate.c:263
+#, c-format
+msgid "Usage: kbdrate [-V] [-s] [-r rate] [-d delay]\n"
+msgstr "Használat: kbdrate [-V] [-s] [-r gyakoriság] [-d késleltetés]\n"
+
+#: src/kbdrate.c:293
+msgid "Cannot open /dev/port"
+msgstr "Nem sikerült a /dev/port megnyitása"
+
+#: src/kdfontop.c:94
+#, c-format
+msgid "bug: getfont called with count<256\n"
+msgstr "hiba: a getfont szám<256 értékkel lett meghívva\n"
+
+#: src/kdfontop.c:98
+#, c-format
+msgid "bug: getfont using GIO_FONT needs buf.\n"
+msgstr "hiba: a GIO_FONT-ot használó getfont ezt igényli: buf.\n"
+
+#: src/kdfontop.c:155 src/kdmapop.c:150 src/xmalloc.c:15
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: nincs elég memória\n"
+
+#: src/kdmapop.c:159
+#, c-format
+msgid "strange... ct changed from %d to %d\n"
+msgstr "furcsa… ct megváltozott: %d -> %d\n"
+
+#: src/kdmapop.c:185
+#, c-format
+msgid ""
+"It seems this kernel is older than 1.1.92\n"
+"No Unicode mapping table loaded.\n"
+msgstr ""
+"Úgy tűnik, hogy ez a kernel 1.1.92-nél régebbi.\n"
+"Nincs betöltve Unicode leképezési táblázat.\n"
+
+#: src/libkeymap/common.c:126 src/libkeymap/kmap.c:60 src/libkeymap/kmap.c:68
+#: src/libkeymap/loadkeys.c:118
+msgid "out of memory"
+msgstr "nincs elég memória"
+
+#: src/libkeymap/common.c:132
+#, c-format
+msgid "unable to initialize array: %s"
+msgstr "nem sikerült előkészíteni a tömböt: %s"
+
+#: src/libkeymap/dump.c:82
+msgid "Error writing map to file"
+msgstr "Hiba a térkép fájlba írásakor"
+
+#: src/libkeymap/dump.c:525
+#, c-format
+msgid "impossible: not meta?\n"
+msgstr "lehetetlen: nem meta?\n"
+
+#: src/libkeymap/kernel.c:31
+#, c-format
+msgid "KDGKBENT: %s: error at index %d in table %d"
+msgstr "KDGKBENT: %s: hiba a(z) %d indexnél a(z) %d táblázatban"
+
+#: src/libkeymap/kernel.c:57
+#, c-format
+msgid "KDGKBSENT: %s: Unable to get function key string"
+msgstr "KDGKBSENT: %s: nem sikerült lekérni a függvény kulcs szöveget"
+
+#: src/libkeymap/kernel.c:88
+#, c-format
+msgid "KDGKBDIACR(UC): %s: Unable to get accent table"
+msgstr "KDGKBDIACR(UC): %s: nem sikerült lekérni az ékezet táblázatot"
+
+#: src/libkeymap/kmap.c:83 src/libkeymap/kmap.c:102
+#, c-format
+msgid "unable to get keymap %d"
+msgstr "nem sikerült lekérni a(z) %d billentyűtérképet"
+
+#: src/libkeymap/kmap.c:110
+#, c-format
+msgid "unable to unset key %d for table %d"
+msgstr "nem sikerült felszabadítani a(z) %d billentyűt a(z) %d táblázatnál"
+
+#: src/libkeymap/kmap.c:127
+#, c-format
+msgid "lk_add_key called with bad keycode %d"
+msgstr "az lk_add_key rossz billentyűkóddal (%d) lett meghívva"
+
+#: src/libkeymap/kmap.c:137
+#, c-format
+msgid "adding map %d violates explicit keymaps line"
+msgstr "a(z) %d térkép hozzáadása megsérti az explicit billentyűtérképek sorát"
+
+#: src/libkeymap/kmap.c:153
+#, c-format
+msgid "unable to set key %d for table %d"
+msgstr "nem sikerült beállítani a(z) %d billentyűt a(z) %d táblázatnál"
+
+#: src/libkeymap/kmap.c:245
+msgid "impossible error in lk_add_constants"
+msgstr "lehetetlen hiba ebben: lk_add_constants"
+
+#: src/libkeymap/ksyms.c:147
+#, c-format
+msgid "unable to get symbol by wrong type: %d"
+msgstr "nem sikerült lekérni a szimbólumot a rossz típus alapján: %d"
+
+#: src/libkeymap/ksyms.c:161
+#, c-format
+msgid "unable to get symbol of %d type by wrong index: %d"
+msgstr ""
+"nem sikerült lekérni a(z) %d típus szimbólumát a rossz index alapján: %d"
+
+#: src/libkeymap/ksyms.c:348
+#, c-format
+msgid "assuming iso-8859-1 %s"
+msgstr "iso-8859-1 %s feltételezve"
+
+#: src/libkeymap/ksyms.c:354
+#, c-format
+msgid "assuming iso-8859-15 %s"
+msgstr "iso-8859-15 %s feltételezve"
+
+#: src/libkeymap/ksyms.c:360
+#, c-format
+msgid "assuming iso-8859-2 %s"
+msgstr "iso-8859-2 %s feltételezve"
+
+#: src/libkeymap/ksyms.c:366
+#, c-format
+msgid "assuming iso-8859-3 %s"
+msgstr "iso-8859-3 %s feltételezve"
+
+#: src/libkeymap/ksyms.c:372
+#, c-format
+msgid "assuming iso-8859-4 %s"
+msgstr "iso-8859-4 %s feltételezve"
+
+#: src/libkeymap/ksyms.c:377
+#, c-format
+msgid "unknown keysym '%s'\n"
+msgstr "ismeretlen billentyűszimbólum: „%s”\n"
+
+#: src/libkeymap/loadkeys.c:26
+#, c-format
+msgid "KDSKBMODE: %s: could not switch to Unicode mode"
+msgstr "KDSKBMODE: %s: nem sikerült átváltani Unicode módra"
+
+#: src/libkeymap/loadkeys.c:48
+#, c-format
+msgid "Keymap %d: Permission denied"
+msgstr "%d billentyűtérkép: hozzáférés megtagadva"
+
+#: src/libkeymap/loadkeys.c:56
+#, c-format
+msgid "keycode %d, table %d = %d%s"
+msgstr "%d billentyűkód, %d táblázat = %d%s"
+
+#: src/libkeymap/loadkeys.c:57
+msgid "    FAILED"
+msgstr "    SIKERTELEN"
+
+#: src/libkeymap/loadkeys.c:60
+#, c-format
+msgid "failed to bind key %d to value %d"
+msgstr "nem sikerült a(z) %d billentyű kötése a(z) %d értékhez"
+
+#: src/libkeymap/loadkeys.c:70
+#, c-format
+msgid "deallocate keymap %d"
+msgstr "a(z) %d billentyűtérkép felszabadítása"
+
+#: src/libkeymap/loadkeys.c:74
+#, c-format
+msgid "KDSKBENT: %s: could not deallocate keymap %d"
+msgstr "KDSKBENT: %s: nem sikerült felszabadítani a(z) %d billentyűtérképet"
+
+#: src/libkeymap/loadkeys.c:89
+#, c-format
+msgid "KDSKBENT: %s: cannot deallocate or clear keymap"
+msgstr ""
+"KDSKBENT: %s: nem sikerült felszabadítani vagy törölni a billentyűtérképet"
+
+#: src/libkeymap/loadkeys.c:99
+#, c-format
+msgid "KDSKBMODE: %s: could not return to original keyboard mode"
+msgstr "KDSKBMODE: %s: nem sikerült visszatérni az eredeti billentyűzet módra"
+
+#: src/libkeymap/loadkeys.c:161
+#, c-format
+msgid "failed to bind string '%s' to function %s"
+msgstr "nem sikerült a(z) „%s” szöveg kötése a(z) %s függvényhez"
+
+#: src/libkeymap/loadkeys.c:171
+#, c-format
+msgid "failed to clear string %s"
+msgstr "nem sikerült a(z) %s szöveg törlése"
+
+#: src/libkeymap/loadkeys.c:190
+msgid "too many compose definitions"
+msgstr "túl sok összeállítási meghatározás"
+
+#: src/libkeymap/loadkeys.c:251
+#, c-format
+msgid ""
+"\n"
+"Changed %d key"
+msgid_plural ""
+"\n"
+"Changed %d keys"
+msgstr[0] ""
+"\n"
+"%d billentyű változott"
+msgstr[1] ""
+"\n"
+"%d billentyű változott"
+
+#: src/libkeymap/loadkeys.c:252
+#, c-format
+msgid "Changed %d string"
+msgid_plural "Changed %d strings"
+msgstr[0] "%d szöveg változott"
+msgstr[1] "%d szöveg változott"
+
+#: src/libkeymap/loadkeys.c:260
+#, c-format
+msgid "Loaded %d compose definition"
+msgid_plural "Loaded %d compose definitions"
+msgstr[0] "%d összeállítási meghatározás betöltve"
+msgstr[1] "%d összeállítási meghatározás betöltve"
+
+#: src/libkeymap/loadkeys.c:264
+msgid "(No change in compose definitions)"
+msgstr "(Nincs változás az összeállítási meghatározásokban)"
+
+#: src/libkeymap/summary.c:97
+#, c-format
+msgid "keycode range supported by kernel:           1 - %d\n"
+msgstr "kernel által támogatott billentyűkód tartomány: 1 - %d\n"
+
+#: src/libkeymap/summary.c:99
+#, c-format
+msgid "max number of actions bindable to a key:         %d\n"
+msgstr "a billentyűhöz köthető műveletek legnagyobb száma: %d\n"
+
+#: src/libkeymap/summary.c:101
+#, c-format
+msgid "number of keymaps in actual use:                 %u\n"
+msgstr "tényleges használatban lévő billentyűtérképek száma: %u\n"
+
+#: src/libkeymap/summary.c:104
+#, c-format
+msgid "of which %u dynamically allocated\n"
+msgstr "amelyből %u dinamikusan van lefoglalva\n"
+
+#: src/libkeymap/summary.c:107
+#, c-format
+msgid "ranges of action codes supported by kernel:\n"
+msgstr "a kernel által támogatott műveleti kódok tartományai:\n"
+
+#: src/libkeymap/summary.c:113
+#, c-format
+msgid "number of function keys supported by kernel: %d\n"
+msgstr "a kernel által támogatott funkcióbillentyűk száma: %d\n"
+
+#: src/libkeymap/summary.c:115
+#, c-format
+msgid "max nr of compose definitions: %d\n"
+msgstr "az összeállítási meghatározások legnagyobb száma: %d\n"
+
+#: src/libkeymap/summary.c:117
+#, c-format
+msgid "nr of compose definitions in actual use: %u\n"
+msgstr "tényleges használatban lévő összeállítási meghatározások száma: %u\n"
+
+#: src/libkeymap/summary.c:142
+#, c-format
+msgid ""
+"\n"
+"The following synonyms are recognized:\n"
+"\n"
+msgstr ""
+"\n"
+"A következő szinonimák vannak felismerve:\n"
+"\n"
+
+#: src/libkeymap/summary.c:145
+#, c-format
+msgid "%-15s for %s\n"
+msgstr "%-15s ehhez: %s\n"
+
+#: src/libkeymap/summary.c:149
+#, c-format
+msgid ""
+"\n"
+"Recognized modifier names and their column numbers:\n"
+msgstr ""
+"\n"
+"Felismert módosító nevek és az oszlopszámaik:\n"
+
+#: src/loadkeys.c:35
+#, fuzzy, c-format
+msgid ""
+"loadkeys version %s\n"
+"\n"
+"Usage: %s [option...] [mapfile...]\n"
+"\n"
+"Valid options are:\n"
+"\n"
+"  -a --ascii         force conversion to ASCII\n"
+"  -b --bkeymap       output a binary keymap to stdout\n"
+"  -c --clearcompose  clear kernel compose table\n"
+"  -C --console=file\n"
+"                     the console device to be used\n"
+"  -d --default       load \"%s\"\n"
+"  -h --help          display this help text\n"
+"  -m --mktable       output a \"defkeymap.c\" to stdout\n"
+"  -p --parse         search and parse keymap without action\n"
+"  -q --quiet         suppress all normal output\n"
+"  -s --clearstrings  clear kernel string table\n"
+"  -u --unicode       force conversion to Unicode\n"
+"  -v --verbose       report the changes\n"
+msgstr ""
+"loadkeys %s verzió\n"
+"\n"
+"Használat: %s [kapcsoló…] [térképfájl…]\n"
+"\n"
+"Az érvényes kapcsolók:\n"
+"\n"
+"  -a --ascii         átalakítás kényszerítése ASCII-ra\n"
+"  -b --bkeymap       bináris billentyűtérkép kiírása a szabványos kimenetre\n"
+"  -c --clearcompose  a kernel összeállítási táblázat törlése\n"
+"  -C --console=file\n"
+"                     a használandó konzoleszköz\n"
+"  -d --default       „%s” betöltése\n"
+"  -h --help          ezen súgószöveg megjelenítése\n"
+"  -m --mktable       egy „defkeymap.c” fájl kiírása a szabványos kimenetre\n"
+"  -q --quiet         minden normál kimenet elnyomása\n"
+"  -s --clearstrings  kernel szövegtáblázat törlése\n"
+"  -u --unicode       átalakítás kényszerítése Unicode-ra\n"
+"  -v --verbose       módosítások jelentése\n"
+
+#: src/loadkeys.c:160 src/version.h:20
+#, c-format
+msgid "%s from %s\n"
+msgstr "%s innen: %s\n"
+
+#: src/loadkeys.c:170
+#, c-format
+msgid "%s: Options --unicode and --ascii are mutually exclusive\n"
+msgstr "%s: A --unicode és az --ascii kapcsolók kölcsönösen kizárják egymást\n"
+
+#: src/loadkeys.c:190
+#, c-format
+msgid ""
+"%s: warning: loading non-Unicode keymap on Unicode console\n"
+"    (perhaps you want to do `kbd_mode -a'?)\n"
+msgstr ""
+"%s: figyelmeztetés: nem Unicode billentyűtérkép betöltése Unicode konzolon\n"
+"    (talán ezt akarta: „kbd_mode -a”?)\n"
+
+#: src/loadkeys.c:202
+#, c-format
+msgid ""
+"%s: warning: loading Unicode keymap on non-Unicode console\n"
+"    (perhaps you want to do `kbd_mode -u'?)\n"
+msgstr ""
+"%s: figyelmeztetés: Unicode billentyűtérkép betöltése nem Unicode konzolon\n"
+"    (talán ezt akarta: „kbd_mode -u”?)\n"
+
+#: src/loadkeys.c:220
+#, c-format
+msgid "Cannot find %s\n"
+msgstr "Nem található: %s\n"
+
+#: src/loadkeys.c:242
+#, c-format
+msgid "cannot open file %s\n"
+msgstr "nem sikerült megnyitni a(z) %s fájlt\n"
+
+#: src/loadunimap.c:43
+#, c-format
+msgid ""
+"Usage:\n"
+"\t%s [-C console] [-o map.orig]\n"
+msgstr ""
+"Használat:\n"
+"\t%s [-C konzol] [-o map.orig]\n"
+
+#: src/loadunimap.c:175 src/loadunimap.c:186
+#, c-format
+msgid "Bad input line: %s\n"
+msgstr "Rossz bemeneti sor: %s\n"
+
+#: src/loadunimap.c:195
+#, c-format
+msgid "%s: Glyph number (0x%x) larger than font length\n"
+msgstr "%s: a szimbólum szám (0x%x) nagyobb mint a betűhossz\n"
+
+#: src/loadunimap.c:201
+#, c-format
+msgid "%s: Bad end of range (0x%x)\n"
+msgstr "%s: a tartomány vége rossz (0x%x)\n"
+
+#: src/loadunimap.c:231 src/psfxtable.c:175
+#, c-format
+msgid "%s: Bad Unicode range corresponding to font position range 0x%x-0x%x\n"
+msgstr ""
+"%s: rossz Unicode tartomány a megfelelő 0x%x-0x%x betűpozíció tartományhoz\n"
+
+#: src/loadunimap.c:238 src/psfxtable.c:182
+#, c-format
+msgid ""
+"%s: Unicode range U+%x-U+%x not of the same length as font position range 0x"
+"%x-0x%x\n"
+msgstr ""
+"%s: az U+%x-U+%x Unicode tartomány nem ugyanolyan hosszú mint a 0x%x-0x%x "
+"betűpozíció tartomány\n"
+
+#: src/loadunimap.c:257 src/psfxtable.c:203
+#, c-format
+msgid "%s: trailing junk (%s) ignored\n"
+msgstr "%s: a záró szemét (%s) mellőzve\n"
+
+#: src/loadunimap.c:273
+#, c-format
+msgid "Loading unicode map from file %s\n"
+msgstr "Unicode térkép betöltése a(z) %s fájlból\n"
+
+#: src/loadunimap.c:279
+#, c-format
+msgid "%s: %s: Warning: line too long\n"
+msgstr "%s: %s: Figyelmeztetés: a sor túl hosszú\n"
+
+#: src/loadunimap.c:289
+#, c-format
+msgid ""
+"%s: not loading empty unimap\n"
+"(if you insist: use option -f to override)\n"
+msgstr ""
+"%s: nincs betöltve üres unimap\n"
+"(ha ragaszkodik hozzá: használja a -f kapcsolót a felülbíráláshoz)\n"
+
+#: src/loadunimap.c:310
+msgid "entry"
+msgstr "bejegyzés"
+
+#: src/loadunimap.c:310
+msgid "entries"
+msgstr "bejegyzések"
+
+#: src/loadunimap.c:336
+#, c-format
+msgid "Saved unicode map on `%s'\n"
+msgstr "Mentett Unicode térkép ezen: „%s”\n"
+
+#: src/loadunimap.c:372
+#, c-format
+msgid "Appended Unicode map\n"
+msgstr "Hozzáfűzött Unicode térkép\n"
+
+#: src/mapscrn.c:68
+#, c-format
+msgid "usage: %s [-v] [-o map.orig] map-file\n"
+msgstr "használat: %s [-v] [-o map.orig] map-file\n"
+
+#: src/mapscrn.c:133
+#, c-format
+msgid "mapscrn: cannot open map file _%s_\n"
+msgstr "mapscrn: nem sikerült megnyitni a(z) _%s_ térképfájlt\n"
+
+#: src/mapscrn.c:139
+#, c-format
+msgid "Cannot stat map file"
+msgstr "Nem sikerült elérni a térképfájlt"
+
+#: src/mapscrn.c:144
+#, c-format
+msgid "Loading binary direct-to-font screen map from file %s\n"
+msgstr ""
+"Bináris, közvetlenül betűbe képernyő térkép betöltése a(z) %s fájlból\n"
+
+#: src/mapscrn.c:149 src/mapscrn.c:160
+#, c-format
+msgid "Error reading map from file `%s'\n"
+msgstr "Hiba a térkép olvasásakor a(z) „%s” fájlból\n"
+
+#: src/mapscrn.c:155
+#, c-format
+msgid "Loading binary unicode screen map from file %s\n"
+msgstr "Bináris Unicode képernyő térkép betöltése a(z) %s fájlból\n"
+
+#: src/mapscrn.c:167
+#, c-format
+msgid "Loading symbolic screen map from file %s\n"
+msgstr "Szimbolikus képernyő térkép betöltése a(z) %s fájlból\n"
+
+#: src/mapscrn.c:171
+#, c-format
+msgid "Error parsing symbolic map from `%s', line %d\n"
+msgstr "Hiba a szimbolikus térkép feldolgozásakor a(z) „%s” fájl %d. soránál\n"
+
+#: src/mapscrn.c:275 src/mapscrn.c:280
+#, c-format
+msgid "Error writing map to file\n"
+msgstr "Hiba a térkép fájlba írásakor\n"
+
+#: src/mapscrn.c:284
+#, c-format
+msgid "Cannot read console map\n"
+msgstr "Nem olvasható a konzol térkép\n"
+
+#: src/mapscrn.c:290
+#, c-format
+msgid "Saved screen map in `%s'\n"
+msgstr "Mentett képernyő térkép ebbe: „%s”\n"
+
+#: src/openvt.c:47
+#, c-format
+msgid ""
+"Usage: %s [OPTIONS] -- command\n"
+"\n"
+"This utility help you to start a program on a new virtual terminal (VT).\n"
+"\n"
+"Options:\n"
+"  -c, --console=NUM   use the given VT number;\n"
+"  -e, --exec          execute the command, without forking;\n"
+"  -f, --force         force opening a VT without checking;\n"
+"  -l, --login         make the command a login shell;\n"
+"  -u, --user          figure out the owner of the current VT;\n"
+"  -s, --switch        switch to the new VT;\n"
+"  -w, --wait          wait for command to complete;\n"
+"  -v, --verbose       print a message for each action;\n"
+"  -V, --version       print program version and exit;\n"
+"  -h, --help          output a brief help message.\n"
+"\n"
+msgstr ""
+"Használat: %s [KAPCSOLÓK] -- parancs\n"
+"\n"
+"Ez a segédprogram segít egy program indításában egy új\n"
+"virtuális terminálon (VT).\n"
+"\n"
+"Kapcsolók:\n"
+"  -c, --console=NUM   a megadott VT szám használata;\n"
+"  -e, --exec          a parancs végrehajtása elágazás nélkül;\n"
+"  -f, --force         egy VT nyitásának erőltetése ellenőrzés nélkül;\n"
+"  -l, --login         bejelentkező parancsértelmezővé teszi a programot;\n"
+"  -u, --user          a jelenlegi VT tulajdonosának kitalálása;\n"
+"  -s, --switch        átváltás egy új VT-re;\n"
+"  -w, --wait          várakozás a program befejeződésére;\n"
+"  -v, --verbose       üzenet kiírása minden művelethez;\n"
+"  -V, --version       programverzió kiírása és kilépés;\n"
+"  -h, --help          rövid súgóüzenet kiírása.\n"
+"\n"
+
+#: src/openvt.c:138
+msgid "Couldn't find owner of current tty!"
+msgstr "Nem található a jelenlegi tty tulajdonosa!"
+
+#: src/openvt.c:208
+#, c-format
+msgid "%s: Illegal vt number"
+msgstr "%s: szabálytalan vt szám"
+
+#: src/openvt.c:234
+msgid "Only root can use the -u flag."
+msgstr "Csak a rendszergazda használhatja a -u jelzőt."
+
+#: src/openvt.c:256
+msgid "Couldn't get a file descriptor referring to the console"
+msgstr "Nem sikerült a konzolra hivatkozó fájlleíró beszerzése"
+
+#: src/openvt.c:263
+msgid "Cannot find a free vt"
+msgstr "Nem található szabad vt"
+
+#: src/openvt.c:267
+#, c-format
+msgid "Cannot check whether vt %d is free; use `%s -f' to force."
+msgstr ""
+"Nem ellenőrizhető, hogy a(z) %d. vt szabad-e. Használja a „%s -f” parancsot "
+"a kényszerítéshez."
+
+#: src/openvt.c:271
+#, c-format
+msgid "vt %d is in use; command aborted; use `%s -f' to force."
+msgstr ""
+"A %d. vt használatban van. A parancs megszakítva. Használja a „%s -f” "
+"parancsot a kényszerítéshez."
+
+#: src/openvt.c:281
+msgid "Unable to find command."
+msgstr "Nem található parancs."
+
+#: src/openvt.c:313
+msgid "Unable to set new session"
+msgstr "Nem állítható be új munkamenet"
+
+#: src/openvt.c:337
+#, c-format
+msgid "Unable to open %s"
+msgstr "A(z) „%s” nem nyitható meg"
+
+#: src/openvt.c:341
+#, c-format
+msgid "Using VT %s"
+msgstr "%s VT használata"
+
+#: src/openvt.c:347
+#, c-format
+msgid "Cannot open %s read/write"
+msgstr "Nem sikerült a(z) %s megnyitása olvasásra/írásra"
+
+#: src/openvt.c:358
+#, c-format
+msgid "Couldn't activate vt %d"
+msgstr "Nem sikerült a(z) %d. vt aktiválása"
+
+#: src/openvt.c:361
+msgid "Activation interrupted?"
+msgstr "Aktiválás megszakítva?"
+
+#: src/openvt.c:401
+#, c-format
+msgid "Couldn't deallocate console %d"
+msgstr "Nem sikerült a(z) %d. konzol felszabadítása"
+
+#: src/psffontop.c:69
+#, c-format
+msgid "%s: short ucs2 unicode table\n"
+msgstr "%s: rövid ucs2 unicode táblázat\n"
+
+#: src/psffontop.c:90
+#, c-format
+msgid "%s: short utf8 unicode table\n"
+msgstr "%s: rövid utf8 unicode táblázat\n"
+
+#: src/psffontop.c:93
+#, c-format
+msgid "%s: bad utf8\n"
+msgstr "%s: rossz utf8\n"
+
+#: src/psffontop.c:96
+#, c-format
+msgid "%s: unknown utf8 error\n"
+msgstr "%s: ismeretlen utf8 hiba\n"
+
+#: src/psffontop.c:126
+#, c-format
+msgid "%s: short unicode table\n"
+msgstr "%s: rövid unicode táblázat\n"
+
+#: src/psffontop.c:206
+#, c-format
+msgid "%s: Error reading input font"
+msgstr "%s: hiba a bemeneti betűkészlet olvasásakor"
+
+#: src/psffontop.c:220
+#, c-format
+msgid "%s: Bad call of readpsffont\n"
+msgstr "%s: rossz readpsffont hívás\n"
+
+#: src/psffontop.c:235
+#, c-format
+msgid "%s: Unsupported psf file mode (%d)\n"
+msgstr "%s: nem támogatott psf fájl mód (%d)\n"
+
+#: src/psffontop.c:253
+#, c-format
+msgid "%s: Unsupported psf version (%d)\n"
+msgstr "%s: nem támogatott psf verzió (%d)\n"
+
+#: src/psffontop.c:269
+#, c-format
+msgid "%s: zero input font length?\n"
+msgstr "%s: nulla bemeneti betűkészlet hossz?\n"
+
+#: src/psffontop.c:274
+#, c-format
+msgid "%s: zero input character size?\n"
+msgstr "%s: nulla bemeneti karakterméret?\n"
+
+#: src/psffontop.c:280
+#, c-format
+msgid "%s: Input file: bad input length (%d)\n"
+msgstr "%s: bemeneti fájl: rossz bemeneti hossz (%d)\n"
+
+#: src/psffontop.c:312
+#, c-format
+msgid "%s: Input file: trailing garbage\n"
+msgstr "%s: bemeneti fájl: záró szemét\n"
+
+#: src/psffontop.c:350
+#, c-format
+msgid "appendunicode: illegal unicode %u\n"
+msgstr "appendunicode: szabálytalan unicode: %u\n"
+
+#: src/psffontop.c:443
+#, c-format
+msgid "Cannot write font file header"
+msgstr "Nem sikerült a betűkészletfájl fejlécének írása"
+
+#: src/psffontop.c:469 src/setfont.c:679
+#, c-format
+msgid "Cannot write font file"
+msgstr "Nem sikerült a betűkészletfájl írása"
+
+#: src/psfxtable.c:109
+#, c-format
+msgid "%s: Warning: line too long\n"
+msgstr "%s: figyelmeztetés: a sor túl hosszú\n"
+
+#: src/psfxtable.c:123 src/psfxtable.c:133
+#, c-format
+msgid "%s: Bad input line: %s\n"
+msgstr "%s: rossz bemeneti sor: %s\n"
+
+#: src/psfxtable.c:142
+#, c-format
+msgid "%s: Glyph number (0x%lx) past end of font\n"
+msgstr "%s: a szimbólum szám (0x%lx) a betűkészlet vége után\n"
+
+#: src/psfxtable.c:147
+#, c-format
+msgid "%s: Bad end of range (0x%lx)\n"
+msgstr "%s: rossz tartományvég (0x%lx)\n"
+
+#: src/psfxtable.c:166
+#, c-format
+msgid ""
+"%s: Corresponding to a range of font positions, there should be a Unicode "
+"range\n"
+msgstr ""
+"%s: a betűkészlet pozíciói tartományának megfelelően Unicode tartománynak "
+"kellene lennie\n"
+
+#: src/psfxtable.c:257
+#, c-format
+msgid ""
+"Usage:\n"
+"\t%s infont intable outfont\n"
+msgstr ""
+"Használat:\n"
+"\t%s infont intable outfont\n"
+
+#: src/psfxtable.c:266
+#, c-format
+msgid ""
+"Usage:\n"
+"\t%s infont [outtable]\n"
+msgstr ""
+"Használat:\n"
+"\t%s infont [outtable]\n"
+
+#: src/psfxtable.c:275
+#, c-format
+msgid ""
+"Usage:\n"
+"\t%s infont outfont\n"
+msgstr ""
+"Használat:\n"
+"\t%s infont outfont\n"
+
+#: src/psfxtable.c:300
+#, c-format
+msgid ""
+"Usage:\n"
+"\t%s [-i infont] [-o outfont] [-it intable] [-ot outtable] [-nt]\n"
+msgstr ""
+"Használat:\n"
+"\t%s [-i infont] [-o outfont] [-it intable] [-ot outtable] [-nt]\n"
+
+#: src/psfxtable.c:360
+#, c-format
+msgid "%s: Bad magic number on %s\n"
+msgstr "%s: rossz varázsszám ezen: %s\n"
+
+#: src/psfxtable.c:379
+#, c-format
+msgid "%s: psf file with unknown magic\n"
+msgstr "%s: psf fájl ismeretlen varázslattal\n"
+
+#: src/psfxtable.c:395
+#, c-format
+msgid "%s: input font does not have an index\n"
+msgstr "%s: a bemeneti betűkészletnek nincs indexe\n"
+
+#: src/resizecons.c:148
+#, c-format
+msgid "resizecons: cannot find videomode file %s\n"
+msgstr "resizecons: nem található a videomód fájl: %s\n"
+
+#: src/resizecons.c:164
+msgid "Invalid number of lines\n"
+msgstr "A sorok száma érvénytelen\n"
+
+#: src/resizecons.c:227
+#, c-format
+msgid "Old mode: %dx%d  New mode: %dx%d\n"
+msgstr "Régi mód: %dx%d  Új mód: %dx%d\n"
+
+#: src/resizecons.c:229
+#, c-format
+msgid "Old #scanlines: %d  New #scanlines: %d  Character height: %d\n"
+msgstr "Régi #scanlines: %d  Új #scanlines: %d  Karaktermagasság: %d\n"
+
+#: src/resizecons.c:240
+#, c-format
+msgid "resizecons: the command `%s' failed\n"
+msgstr "resizecons: a(z) „%s” parancs meghiúsult\n"
+
+#: src/resizecons.c:313
+#, c-format
+msgid ""
+"resizecons: don't forget to change TERM (maybe to con%dx%d or linux-%dx%d)\n"
+msgstr ""
+"resizecons: ne felejtse el a TERM megváltoztatását (talán erre: con%dx%d "
+"vagy linux-%dx%d)\n"
+
+#: src/resizecons.c:326
+#, c-format
+msgid ""
+"resizecons:\n"
+"call is:  resizecons COLSxROWS  or:  resizecons COLS ROWS\n"
+"or: resizecons -lines ROWS, with ROWS one of 25, 28, 30, 34, 36, 40, 44, 50, "
+"60\n"
+msgstr ""
+"resizecons:\n"
+"hívás:  resizecons OSZLOPxSOR  vagy:  resizecons OSZLOP SOR\n"
+"vagy: resizecons -lines SOR, a 25, 28, 30, 34, 36, 40, 44, 50, 60 SOR "
+"egyikével\n"
+
+#: src/resizecons.c:364
+#, c-format
+msgid "resizecons: cannot get I/O permissions.\n"
+msgstr "resizecons: nem sikerült megszerezni az I/O jogosultságokat.\n"
+
+#: src/screendump.c:50
+#, c-format
+msgid "usage: screendump [n]\n"
+msgstr "használat: screendump [n]\n"
+
+#: src/screendump.c:80
+#, fuzzy, c-format
+msgid "Error reading %s"
+msgstr "Hiba a(z) „%s” olvasásakor\n"
+
+#: src/screendump.c:126
+#, c-format
+msgid "couldn't read %s, and cannot ioctl dump\n"
+msgstr "nem sikerült a(z) %s olvasása, és az ioctl kiírás sikertelen\n"
+
+#: src/screendump.c:132
+#, c-format
+msgid "couldn't read %s\n"
+msgstr "nem sikerült a(z) %s olvasása\n"
+
+#: src/screendump.c:141
+#, c-format
+msgid "Strange ... screen is both %dx%d and %dx%d ??\n"
+msgstr "Különös… a képernyő %dx%d és %dx%d is?\n"
+
+#: src/screendump.c:158
+msgid "Error writing screendump\n"
+msgstr "Hiba a screendump írásakor\n"
+
+#: src/setfont.c:74
+#, c-format
+msgid ""
+"Usage: setfont [write-options] [-<N>] [newfont..] [-m consolemap] [-u "
+"unicodemap]\n"
+"  write-options (take place before file loading):\n"
+"    -o  <filename>  Write current font to <filename>\n"
+"    -O  <filename>  Write current font and unicode map to <filename>\n"
+"    -om <filename>  Write current consolemap to <filename>\n"
+"    -ou <filename>  Write current unicodemap to <filename>\n"
+"If no newfont and no -[o|O|om|ou|m|u] option is given,\n"
+"a default font is loaded:\n"
+"    setfont         Load font \"default[.gz]\"\n"
+"    setfont -<N>    Load font \"default8x<N>[.gz]\"\n"
+"The -<N> option selects a font from a codepage that contains three fonts:\n"
+"    setfont -{8|14|16} codepage.cp[.gz]   Load 8x<N> font from codepage.cp\n"
+"Explicitly (with -m or -u) or implicitly (in the fontfile) given mappings\n"
+"will be loaded and, in the case of consolemaps, activated.\n"
+"    -h<N>      (no space) Override font height.\n"
+"    -m <fn>    Load console screen map.\n"
+"    -u <fn>    Load font unicode map.\n"
+"    -m none    Suppress loading and activation of a screen map.\n"
+"    -u none    Suppress loading of a unicode map.\n"
+"    -v         Be verbose.\n"
+"    -C <cons>  Indicate console device to be used.\n"
+"    -V         Print version and exit.\n"
+"Files are loaded from the current directory or %s/*/.\n"
+msgstr ""
+"Használat: setfont [írási-kapcsolók] [-<N>] [új-betű…] [-m konzoltérkép] [-u "
+"unicode-térkép]\n"
+"  írási kapcsolók (a fájlbetöltés előtt történik):\n"
+"    -o  <fájlnév>  Jelenlegi betűkészlet írása <fájlnévbe>\n"
+"    -O  <fájlnév>  Jelenlegi betűkészlet és Unicode térkép írása "
+"<fájlnévbe>\n"
+"    -om <fájlnév>  Jelenlegi konzoltérkép írása <fájlnévbe>\n"
+"    -ou <fájlnév>  Jelenlegi Unicode térkép írása <fájlnévbe>\n"
+"Ha nincs új-betű és nincs megadva -[o|O|om|ou|m|u] kapcsoló,\n"
+"akkor az alapértelmezett betűkészlet lesz betöltve:\n"
+"    setfont         „default[.gz]” betűkészlet betöltése\n"
+"    setfont -<N>    „default8x<N>[.gz]” betűkészlet betöltése\n"
+"A -<N> kapcsoló kiválaszt egy betűkészletet a kódlapról, amely három\n"
+"betűkészletet tartalmaz:\n"
+"    setfont -{8|14|16} codepage.cp[.gz]   a codepage.cp 8x<N> betű "
+"betöltése\n"
+"Explicit (-m vagy -u kapcsolóval) vagy implicit (a betűfájlban) megadott\n"
+"leképezések lesznek betöltve, és - a konzoltérképek esetében - alkalmazva.\n"
+"    -h<N>      (nincs szóköz) Betűkészlet magasságának felülbírálása.\n"
+"    -m <fn>    Konzolképernyő térkép betöltése.\n"
+"    -u <fn>    Betűkészlet Unicode térkép betöltése.\n"
+"    -m none    A képernyőtérkép betöltésének és aktiválásának elnyomása.\n"
+"    -u none    Egy Unicode térkép betöltésének elnyomása.\n"
+"    -v         Legyen bőbeszédű.\n"
+"    -C <cons>  A használandó konzoleszköz jelzése.\n"
+"    -V         Verzió kiírása és kilépés.\n"
+"A fájlok az aktuális könyvtárból vagy a(z) %s/*/ helyről vannak betöltve.\n"
+
+#: src/setfont.c:177
+#, c-format
+msgid "setfont: too many input files\n"
+msgstr "setfont: túl sok bemeneti fájl\n"
+
+#: src/setfont.c:185
+#, c-format
+msgid ""
+"setfont: cannot both restore from character ROM and from file. Font "
+"unchanged.\n"
+msgstr ""
+"setfont: nem lehet karaktert visszaállítani ROM-ból és fájlból is. A "
+"betűkészlet nem változott.\n"
+
+#: src/setfont.c:259
+#, c-format
+msgid "Bad character height %d\n"
+msgstr "Rossz karaktermagasság: %d\n"
+
+#: src/setfont.c:263
+#, c-format
+msgid "Bad character width %d\n"
+msgstr "Rossz karakterszélesség: %d\n"
+
+#: src/setfont.c:288
+#, c-format
+msgid "%s: font position 32 is nonblank\n"
+msgstr "%s: a 32. betűkészlet pozíció nem üres\n"
+
+#: src/setfont.c:296
+#, c-format
+msgid "%s: wiped it\n"
+msgstr "%s: letörölte\n"
+
+#: src/setfont.c:300
+#, c-format
+msgid "%s: background will look funny\n"
+msgstr "%s: a háttér viccesen fog kinézni\n"
+
+#: src/setfont.c:310
+#, c-format
+msgid "Loading %d-char %dx%d font from file %s\n"
+msgstr "%d-char %dx%d betűkészlet betöltése a(z) %s fájlból\n"
+
+#: src/setfont.c:313
+#, c-format
+msgid "Loading %d-char %dx%d font\n"
+msgstr "%d-char %dx%d betűkészlet betöltése\n"
+
+#: src/setfont.c:316
+#, c-format
+msgid "Loading %d-char %dx%d (%d) font from file %s\n"
+msgstr "%d-char %dx%d (%d) betűkészlet betöltése a(z) %s fájlból\n"
+
+#: src/setfont.c:319
+#, c-format
+msgid "Loading %d-char %dx%d (%d) font\n"
+msgstr "%d-char %dx%d (%d) betűkészlet betöltése\n"
+
+#: src/setfont.c:372
+#, c-format
+msgid "%s: bug in do_loadtable\n"
+msgstr "%s: hiba ebben: do_loadtable\n"
+
+#: src/setfont.c:378
+#, c-format
+msgid "Loading Unicode mapping table...\n"
+msgstr "Unicode leképezési táblázat betöltése…\n"
+
+#: src/setfont.c:414 src/setfont.c:502
+#, c-format
+msgid "Cannot open font file %s\n"
+msgstr "Nem sikerült megnyitni a(z) %s betűkészletfájlt\n"
+
+#: src/setfont.c:425
+#, c-format
+msgid "When loading several fonts, all must be psf fonts - %s isn't\n"
+msgstr ""
+"Különböző betűkészletek betöltésekor mindegyiknek psf betűkészletnek kell "
+"lennie - %s nem az\n"
+
+#: src/setfont.c:435
+#, c-format
+msgid "Read %d-char %dx%d font from file %s\n"
+msgstr "%d-char %dx%d betűkészlet beolvasása a(z) %s fájlból\n"
+
+#: src/setfont.c:441
+#, c-format
+msgid "When loading several fonts, all must have the same height\n"
+msgstr ""
+"Különböző betűkészletek betöltésekor mindegyiknek ugyanolyan magasnak kell "
+"lennie\n"
+
+#: src/setfont.c:448
+#, c-format
+msgid "When loading several fonts, all must have the same width\n"
+msgstr ""
+"Különböző betűkészletek betöltésekor mindegyiknek ugyanolyan szélesnek kell "
+"lennie\n"
+
+#: src/setfont.c:489
+#, c-format
+msgid "Cannot find default font\n"
+msgstr "Nem található alapértelmezett betűkészlet\n"
+
+#: src/setfont.c:496
+#, c-format
+msgid "Cannot find %s font\n"
+msgstr "Nem található %s betűkészlet\n"
+
+#: src/setfont.c:508
+#, c-format
+msgid "Reading font file %s\n"
+msgstr "A(z) %s betűkészletfájl olvasása\n"
+
+#: src/setfont.c:548
+#, c-format
+msgid "No final newline in combine file\n"
+msgstr "Nincs végső új sor az egyesített fájlban\n"
+
+#: src/setfont.c:554
+#, c-format
+msgid "Too many files to combine\n"
+msgstr "Túl sok egyesítendő fájl\n"
+
+#: src/setfont.c:578
+#, c-format
+msgid "Hmm - a font from restorefont? Using the first half.\n"
+msgstr "Hmm - egy betűkészlet ebből: restorefont? Az első fél használata.\n"
+
+#: src/setfont.c:595
+#, c-format
+msgid "Bad input file size\n"
+msgstr "Rossz bemeneti fájlméret\n"
+
+#: src/setfont.c:616
+#, c-format
+msgid ""
+"This file contains 3 fonts: 8x8, 8x14 and 8x16. Please indicate\n"
+"using an option -8 or -14 or -16 which one you want loaded.\n"
+msgstr ""
+"Ez a fájl 3 betűkészletet tartalmaz: 8x8, 8x14 és 8x16. Jelölje meg a -8\n"
+"vagy -14 vagy -16 kapcsoló használatával, hogy melyiket szeretné betölteni.\n"
+
+#: src/setfont.c:630
+#, c-format
+msgid "You asked for font size %d, but only 8, 14, 16 are possible here.\n"
+msgstr "%d betűméretet kért, de csak 8, 14, 16 lehetséges itt.\n"
+
+#: src/setfont.c:675
+#, c-format
+msgid "Found nothing to save\n"
+msgstr "Nincs mit menteni\n"
+
+#: src/setfont.c:684
+#, c-format
+msgid "Saved %d-char %dx%d font file on %s\n"
+msgstr "A(z) %d-char %dx%d betűkészletfájl elmentve ekkor: %s\n"
+
+#: src/setkeycodes.c:23
+#, c-format
+msgid ""
+"usage: setkeycode scancode keycode ...\n"
+" (where scancode is either xx or e0xx, given in hexadecimal,\n"
+"  and keycode is given in decimal)\n"
+msgstr ""
+"használat: setkeycode vizsgálókód billentyűkód …\n"
+" (ahol a vizsgálókód xx vagy e0xx hexadecimálisként megadva,\n"
+"  és a billentyűkód decimálisként megadva)\n"
+
+#: src/setkeycodes.c:45
+msgid "even number of arguments expected"
+msgstr "páros számú argumentumot kell megadni"
+
+#: src/setkeycodes.c:52
+msgid "error reading scancode"
+msgstr "hiba a vizsgálókód olvasásakor"
+
+#: src/setkeycodes.c:60
+msgid "code outside bounds"
+msgstr "külső kódhatárok"
+
+#: src/setkeycodes.c:69
+#, fuzzy, c-format
+msgid "failed to set scancode %x to keycode %d: ioctl KDSETKEYCODE"
+msgstr "nem sikerült a(z) %x vizsgálókód beállítása a(z) %d billentyűkódra\n"
+
+#: src/setleds.c:24
+#, c-format
+msgid ""
+"Usage:\n"
+"\tsetleds [-v] [-L] [-D] [-F] [[+|-][ num | caps | scroll %s]]\n"
+"Thus,\n"
+"\tsetleds +caps -num\n"
+"will set CapsLock, clear NumLock and leave ScrollLock unchanged.\n"
+"The settings before and after the change (if any) are reported\n"
+"when the -v option is given or when no change is requested.\n"
+"Normally, setleds influences the vt flag settings\n"
+"(and these are usually reflected in the leds).\n"
+"With -L, setleds only sets the leds, and leaves the flags alone.\n"
+"With -D, setleds sets both the flags and the default flags, so\n"
+"that a subsequent reset will not change the flags.\n"
+msgstr ""
+"Használat:\n"
+"\tsetleds [-v] [-L] [-D] [-F] [[+|-][ num | caps | scroll %s]]\n"
+"Így a,\n"
+"\tsetleds +caps -num\n"
+"be fogja állítani CapsLock-ot, törli a NumLock-ot és változatlanul hagyja\n"
+"a ScrollLock-ot.\n"
+"A módosítás előtti és utáni beállítások (ha vannak) jelentve lesznek,\n"
+"amikor a -v kapcsoló meg van adva, vagy ha nem kértek módosítást.\n"
+"Normális esetben a setleds befolyásolja a vt jelző beállításokat\n"
+"(és ezek általában visszaköszönnek a LED-eken).\n"
+"A -L kapcsolóval csak beállítja a LED-eket, és békén hagyja a jelzőket.\n"
+"A -D kapcsolóval beállítja a jelzőket és az alapértelmezett jelzőket is, "
+"így\n"
+"a következő újraindításkor nem fogja módosítani a jelzőket.\n"
+
+#: src/setleds.c:46
+msgid "on "
+msgstr "be "
+
+#: src/setleds.c:46
+msgid "off"
+msgstr "ki "
+
+#: src/setleds.c:87
+#, fuzzy
+msgid ""
+"Error reading current led setting. Maybe stdin is not a VT?: ioctl KDGETLED"
+msgstr ""
+"Hiba a jelenlegi LED-beállítás olvasásakor. Talán a szabványos bemenet nem a "
+"VT?\n"
+
+#: src/setleds.c:105
+#, fuzzy
+msgid ""
+"Error reading current flags setting. Maybe you are not on the console?: "
+"ioctl KDGKBLED"
+msgstr ""
+"Hiba a jelenlegi jelzőbeállítások olvasásakor. Talán nem a konzolon van?\n"
+
+#: src/setleds.c:123
+#, fuzzy
+msgid "Error reading current led setting from /dev/kbd: ioctl KIOCGLED"
+msgstr "Hiba a jelenlegi LED-beállítás olvasásakor a /dev/kbd fájlból.\n"
+
+#: src/setleds.c:127
+msgid "KIOCGLED unavailable?\n"
+msgstr "KIOCGLED nem érhető el?\n"
+
+#: src/setleds.c:141
+#, fuzzy
+msgid "Error reading current led setting from /dev/kbd: ioctl KIOCSLED"
+msgstr "Hiba a jelenlegi LED-beállítás olvasásakor a /dev/kbd fájlból.\n"
+
+#: src/setleds.c:145
+msgid "KIOCSLED unavailable?\n"
+msgstr "KIOCSLED nem érhető el?\n"
+
+#: src/setleds.c:201
+msgid "Error resetting ledmode\n"
+msgstr "Hiba a LED-mód visszaállításakor\n"
+
+#: src/setleds.c:209
+#, c-format
+msgid "Current default flags:  "
+msgstr "Jelenlegi alapértelmezett jelzők: "
+
+#: src/setleds.c:213
+#, c-format
+msgid "Current flags:          "
+msgstr "Jelenlegi jelzők:                 "
+
+#: src/setleds.c:217
+#, c-format
+msgid "Current leds:           "
+msgstr "Jelenlegi LED-ek:                 "
+
+#: src/setleds.c:253 src/setmetamode.c:95
+#, c-format
+msgid ""
+"unrecognized argument: _%s_\n"
+"\n"
+msgstr ""
+"azonosítatlan argumentum: _%s_\n"
+"\n"
+
+#: src/setleds.c:262
+#, c-format
+msgid "Old default flags:    "
+msgstr "Régi alapértelmezett jelzők: "
+
+#: src/setleds.c:264
+#, c-format
+msgid "New default flags:    "
+msgstr "Új alapértelmezett jelzők:   "
+
+#: src/setleds.c:271
+#, c-format
+msgid "Old flags:            "
+msgstr "Régi jelzők:                 "
+
+#: src/setleds.c:273
+#, c-format
+msgid "New flags:            "
+msgstr "Új jelzők:                   "
+
+#: src/setleds.c:286 src/setleds.c:295
+#, c-format
+msgid "Old leds:             "
+msgstr "Régi LED-ek:                 "
+
+#: src/setleds.c:288 src/setleds.c:297
+#, c-format
+msgid "New leds:             "
+msgstr "Új LED-ek:                   "
+
+#: src/setmetamode.c:23
+#, c-format
+msgid ""
+"Usage:\n"
+"\tsetmetamode [ metabit | meta | bit | escprefix | esc | prefix ]\n"
+"Each vt has his own copy of this bit. Use\n"
+"\tsetmetamode [arg] < /dev/ttyn\n"
+"to change the settings of another vt.\n"
+"The setting before and after the change are reported.\n"
+msgstr ""
+"Használat:\n"
+"\tsetmetamode [ metabit | meta | bit | escprefix | esc | prefix ]\n"
+"Minden vt saját másolattal rendelkezik erről a bitről. Így használja:\n"
+"\tsetmetamode [arg] < /dev/ttyn\n"
+"egy másik vt beállításainak módosításához.\n"
+"A módosítás előtti és utáni beállítás jelentve lesz.\n"
+
+#: src/setmetamode.c:39
+msgid "Meta key sets high order bit\n"
+msgstr "A Meta billentyű magas sorrendbitet állít be\n"
+
+#: src/setmetamode.c:42
+msgid "Meta key gives Esc prefix\n"
+msgstr "A Meta billentyű Esc előtagot ad\n"
+
+#: src/setmetamode.c:45
+msgid "Strange mode for Meta key?\n"
+msgstr "Különös mód a Meta billentyűnél?\n"
+
+#: src/setmetamode.c:79
+#, fuzzy
+msgid ""
+"Error reading current setting. Maybe stdin is not a VT?: ioctl KDGKBMETA"
+msgstr ""
+"Hiba a jelenlegi beállítás olvasásakor. Talán a szabványos bemenet nem a "
+"VT?\n"
+
+#: src/setmetamode.c:99
+#, c-format
+msgid "old state:    "
+msgstr "régi állapot: "
+
+#: src/setmetamode.c:104
+#, c-format
+msgid "new state:    "
+msgstr "új állapot:   "
+
+#: src/setvesablank.c:25
+#, c-format
+msgid "usage: %s\n"
+msgstr "használat: %s\n"
+
+#: src/setvtrgb.c:42
+#, c-format
+msgid ""
+"Usage: %s vga|FILE|-\n"
+"\n"
+"If you use the FILE parameter, FILE should be exactly 3 lines of\n"
+"comma-separated decimal values for RED, GREEN, and BLUE.\n"
+"\n"
+"To seed a valid FILE:\n"
+"   cat /sys/module/vt/parameters/default_{red,grn,blu} > FILE\n"
+"\n"
+"and then edit the values in FILE.\n"
+"\n"
+msgstr ""
+"Használat: %s vga|FÁJL|-\n"
+"\n"
+"Ha a FÁJL paramétert használja, a FÁJLNAK pontosan 3 soros, vesszővel\n"
+"elválasztott decimális értékeknek kell lennie a VÖRÖS, ZÖLD és KÉK\n"
+"értékekhez.\n"
+"\n"
+"Egy érvényes FÁJL megszerzéséhez:\n"
+"   cat /sys/module/vt/parameters/default_{red,grn,blu} > FÁJL\n"
+"\n"
+"majd ezután szerkessze a FÁJLBAN lévő értékeket.\n"
+"\n"
+
+#: src/setvtrgb.c:68
+#, c-format
+msgid "Error: %s: Invalid value in field %u in line %u."
+msgstr "Hiba: %s: érvénytelen érték a(z) %u mezőben a(z) %u sorban."
+
+#: src/setvtrgb.c:75
+#, c-format
+msgid "Error: %s: Insufficient number of fields in line %u."
+msgstr "Hiba: %s: a mezők száma nem elegendő a(z) %u sorban."
+
+#: src/setvtrgb.c:80
+#, c-format
+msgid "Error: %s: Line %u has ended unexpectedly.\n"
+msgstr "Hiba: %s: a(z) %u sor váratlanul befejeződött.\n"
+
+#: src/setvtrgb.c:84
+#, c-format
+msgid "Error: %s: Line %u is too long.\n"
+msgstr "Hiba: %s: a(z) %u sor túl hosszú.\n"
+
+#: src/showconsolefont.c:35
+msgid "failed to restore original translation table\n"
+msgstr "nem sikerült az eredeti fordítási táblázat visszaállítása\n"
+
+#: src/showconsolefont.c:39
+msgid "failed to restore original unimap\n"
+msgstr "nem sikerült az eredeti unimap visszaállítása\n"
+
+#: src/showconsolefont.c:57
+msgid "cannot change translation table\n"
+msgstr "nem sikerült a fordítási táblázat módosítása\n"
+
+#: src/showconsolefont.c:95
+#, c-format
+msgid ""
+"usage: showconsolefont -V|--version\n"
+"       showconsolefont [-C tty] [-v] [-i]\n"
+"(probably after loading a font with `setfont font')\n"
+"\n"
+"Valid options are:\n"
+" -C tty   Device to read the font from. Default: current tty.\n"
+" -v       Be more verbose.\n"
+" -i       Don't print out the font table, just show\n"
+"          ROWSxCOLSxCOUNT and exit.\n"
+msgstr ""
+"használat: showconsolefont -V|--version\n"
+"       showconsolefont [-C tty] [-v] [-i]\n"
+"(valószínűleg egy betűkészlet betöltése után a „setfont font” "
+"használatával)\n"
+"\n"
+"Az érvényes kapcsolók:\n"
+" -C tty   A betű beolvasásának eszköze. Alapértelmezett: jelenlegi tty.\n"
+" -v       Legyen bőbeszédűbb.\n"
+" -i       Ne írja ki a betűkészlet táblázatot, csak jelenítse meg a\n"
+"          SORxOSZLOPxSZÁM értékét és lépjen ki.\n"
+
+#: src/showconsolefont.c:161
+#, c-format
+msgid "Character count: %d\n"
+msgstr "Karakterszám:          %d\n"
+
+#: src/showconsolefont.c:162
+#, c-format
+msgid "Font width     : %d\n"
+msgstr "Betűkészlet szélesség: %d\n"
+
+#: src/showconsolefont.c:163
+#, c-format
+msgid "Font height    : %d\n"
+msgstr "Betűkészlet magasság:  %d\n"
+
+#: src/showconsolefont.c:175
+#, c-format
+msgid ""
+"Showing %d-char font\n"
+"\n"
+msgstr ""
+"%d-char betűkészlet megjelenítése\n"
+"\n"
+
+#: src/showkey.c:44
+msgid "?UNKNOWN?"
+msgstr "?ISMERETLEN?"
+
+#: src/showkey.c:46
+#, c-format
+msgid "kb mode was %s\n"
+msgstr "a kb mód ez volt: %s\n"
+
+#: src/showkey.c:48
+#, c-format
+msgid ""
+"[ if you are trying this under X, it might not work\n"
+"since the X server is also reading /dev/console ]\n"
+msgstr ""
+"[ ha ezt X alatt próbálja, előfordulhat, hogy nem működik,\n"
+"amióta az X-kiszolgáló is a /dev/console fájlt olvassa ]\n"
+
+#: src/showkey.c:66
+#, c-format
+msgid "caught signal %d, cleaning up...\n"
+msgstr "%d szignál elkapva, tisztítás…\n"
+
+#: src/showkey.c:80
+#, c-format
+msgid ""
+"showkey version %s\n"
+"\n"
+"usage: showkey [options...]\n"
+"\n"
+"valid options are:\n"
+"\n"
+"\t-h --help\tdisplay this help text\n"
+"\t-a --ascii\tdisplay the decimal/octal/hex values of the keys\n"
+"\t-s --scancodes\tdisplay only the raw scan-codes\n"
+"\t-k --keycodes\tdisplay only the interpreted keycodes (default)\n"
+msgstr ""
+"showkey %s verzió\n"
+"\n"
+"használat: showkey [kapcsolók…]\n"
+"\n"
+"az érvényes kapcsolók:\n"
+"\n"
+"\t-h --help\tezen súgószöveg megjelenítése és kilépés\n"
+"\t-a --ascii\ta billentyűk decimális/oktális/hexa értékeinek megjelenítése\n"
+"\t-s --scancodes\tcsak a nyers vizsgálókódok megjelenítése\n"
+"\t-k --keycodes\tcsak az értelmezett billentyűkódok megjelenítése (alap)\n"
+
+#: src/showkey.c:158
+#, c-format
+msgid ""
+"\n"
+"Press any keys - Ctrl-D will terminate this program\n"
+"\n"
+msgstr ""
+"\n"
+"Nyomjon meg egy billentyűt - a Ctrl-D befejezi a programot\n"
+"\n"
+
+#: src/showkey.c:226
+#, c-format
+msgid "press any key (program terminates 10s after last keypress)...\n"
+msgstr ""
+"nyomjon meg egy billentyűt (a program befejeződik az utolsó "
+"billentyűlenyomás után 10 másodperccel)…\n"
+
+#: src/showkey.c:250
+msgid "release"
+msgstr "elengedés"
+
+#: src/showkey.c:250
+msgid "press"
+msgstr "lenyomás"
+
+#: src/showkey.c:262
+#, c-format
+msgid "keycode %3d %s\n"
+msgstr "billentyűkód: %3d %s\n"
+
+#: src/totextmode.c:31
+msgid "usage: totextmode\n"
+msgstr "használat: totextmode\n"
+
+#: src/vlock/auth.c:78
+msgid ""
+"Please try again later.\n"
+"\n"
+"\n"
+msgstr ""
+"Próbálja meg később.\n"
+"\n"
+"\n"
+
+#: src/vlock/auth.c:87
+#, c-format
+msgid "The entire console display is now completely locked by %s.\n"
+msgstr "Az egész konzolkijelzőt most a(z) %s teljesen zárolta.\n"
+
+#: src/vlock/auth.c:91
+#, c-format
+msgid "The %s is now locked by %s.\n"
+msgstr "A(z) %s most zárolva van a(z) %s által.\n"
+
+#: src/vlock/auth.c:94
+msgid "Use Alt-function keys to switch to other virtual consoles."
+msgstr ""
+"Használja az Alt-funkcióbillentyűket egy másik virtuális konzolra váltáshoz."
+
+#: src/vlock/parse.c:51
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "További információkért próbálja a(z) „%s --help” parancsot.\n"
+
+#: src/vlock/parse.c:59
+#, c-format
+msgid ""
+"%s: locks virtual consoles, saving your current session.\n"
+"Usage: %s [options]\n"
+"       Where [options] are any of:\n"
+"-c or --current: lock only this virtual console, allowing user to\n"
+"       switch to other virtual consoles.\n"
+"-a or --all: lock all virtual consoles by preventing other users\n"
+"       from switching virtual consoles.\n"
+"-v or --version: Print the version number of vlock and exit.\n"
+"-h or --help: Print this help message and exit.\n"
+msgstr ""
+"%s: lezárja a virtuális konzolokat, elmenti a jelenlegi munkamenetet.\n"
+"Használat: %s [kapcsolók]\n"
+"       Ahol a [kapcsolók] a következők lehetnek:\n"
+"-c vagy --current: csak ezen virtuális konzol zárolása, lehetővé téve a\n"
+"       felhasználónak másik virtuális konzolra váltást.\n"
+"-a vagy --all: minden virtuális konzol zárolása, megakadályozva más\n"
+"       felhasználóknak a virtuális konzolra váltást.\n"
+"-v vagy --version: A vlock verziószámának kiírása és kilépés.\n"
+"-h vagy --help: Ezen súgószöveg kiírása és kilépés.\n"
+
+#: src/vlock/username.c:57
+msgid "unrecognized user"
+msgstr "azonosítatlan felhasználó"
+
+#: src/vlock/vlock.c:59
+msgid "stdin is not a tty"
+msgstr "a szabványos bemenet nem tty"
+
+#: src/vlock/vt.c:152
+#, c-format
+msgid "This tty (%s) is not a virtual console.\n"
+msgstr "Ez a tty (%s) nem egy virtuális konzol.\n"
+
+#: src/vlock/vt.c:160
+#, c-format
+msgid "The entire console display cannot be locked.\n"
+msgstr "Az egész konzolkijelzőt nem sikerült zárolni.\n"
+
+#~ msgid "%s: deallocating all unused consoles failed\n"
+#~ msgstr "%s: az összes nem használt konzol felszabadítása sikertelen\n"
+
+#~ msgid "kbd_mode: error reading keyboard mode\n"
+#~ msgstr "kbd_mode: hiba a billentyűzetmód olvasásakor\n"
+
+#~ msgid "%s: error setting keyboard mode\n"
+#~ msgstr "%s: hiba a billentyűzetmód beállításakor\n"
+
+#~ msgid "Error opening /dev/kbd.\n"
+#~ msgstr "Hiba a /dev/kbd megnyitásakor.\n"
+
+#~ msgid "%s: out of memory?\n"
+#~ msgstr "%s: elfogyott a memória?\n"

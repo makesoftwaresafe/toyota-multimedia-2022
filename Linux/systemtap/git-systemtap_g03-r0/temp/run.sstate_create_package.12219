@@ -1,0 +1,135 @@
+#!/bin/sh
+
+# Emit a useful diagnostic if something fails:
+bb_exit_handler() {
+    ret=$?
+    case $ret in
+    0)  ;;
+    *)  case $BASH_VERSION in
+        "") echo "WARNING: exit code $ret from a shell command.";;
+        *)  echo "WARNING: ${BASH_SOURCE[0]}:${BASH_LINENO[0]} exit $ret from '$BASH_COMMAND'";;
+        esac
+        exit $ret
+    esac
+}
+trap 'bb_exit_handler' 0
+set -e
+export AS="i686-pc-linux-gnu-as  "
+export TARGET_CFLAGS="-O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0=/usr/src/debug/systemtap/git-systemtap_g03-r0 -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64= -fstack-protector-strong -Wformat -Wformat-security -Werror=format-security"
+export CCLD="i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64"
+export CPPFLAGS=""
+export sysconfdir="/etc"
+export CFLAGS="-O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0=/usr/src/debug/systemtap/git-systemtap_g03-r0 -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64= -fstack-protector-strong -Wformat -Wformat-security -Werror=format-security"
+export READELF="i686-pc-linux-gnu-readelf"
+export prefix="/usr"
+export TARGET_LDFLAGS="-Wl,-O1 -Wl,--hash-style=gnu -Wl,--build-id=sha1 -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now"
+export LD="i686-pc-linux-gnu-ld --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64   -m elf_x86_64"
+unset MACHINE
+export base_libdir="/lib64"
+export BUILD_FC="gfortran "
+export userconfdir="/opt/platform/security-user-group-data"
+export BUILD_NM="nm"
+export PSEUDO_UNLOAD="1"
+export OBJCOPY="i686-pc-linux-gnu-objcopy"
+export BUILD_CXX="g++ "
+export includedir="/usr/include"
+export ltpdir="/opt/ltp"
+export base_sbindir="/sbin"
+export docdir="/usr/share/doc"
+export LOGNAME="ivilinux"
+export LDFLAGS="-Wl,-O1 -Wl,--hash-style=gnu -Wl,--build-id=sha1 -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now -ltinfo -lpthread"
+export libdir="/usr/lib64"
+export BUILD_CPPFLAGS="-isystem/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/include"
+export nonarch_base_libdir="/lib"
+export NM="i686-pc-linux-gnu-nm"
+export systemd_unitdir="/lib/systemd"
+export FC="i686-pc-linux-gnu-gfortran -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64"
+export TARGET_CXXFLAGS="-O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0=/usr/src/debug/systemtap/git-systemtap_g03-r0 -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64= -fstack-protector-strong -Wformat -Wformat-security -Werror=format-security"
+export AR="i686-pc-linux-gnu-ar"
+export RANLIB="i686-pc-linux-gnu-ranlib"
+export STRINGS="i686-pc-linux-gnu-strings"
+export MGLS_LICENSE_FILE="11717@13.112.135.249"
+export BUILD_AR="ar"
+export base_bindir="/bin"
+export BUILD_CC="gcc "
+export infodir="/usr/share/info"
+export CXX="i686-pc-linux-gnu-g++ -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64"
+export PATH="/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/git-repos/COS2-drop/poky/scripts:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/bin/x86_64-mel-linux:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/bin/crossscripts:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/sbin:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/bin:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/sbin:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/bin:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/git-repos/COS2-drop/poky/scripts:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/git-repos/COS2-drop/poky/bitbake/bin:/home/ivilinux/bin:/home/ivilinux/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/export/adit-sysroots/x86_64-linux/usr/bin:/opt/tooling/codesourcery/MGC-2017.02-55-x86-gcc-6.2.0/Sourcery_CodeBench_for_IA32_GNU_Linux/bin"
+export BUILD_RANLIB="ranlib"
+export BUILD_CPP="gcc  -E"
+export BUILD_CXXFLAGS="-isystem/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe"
+export PKG_CONFIG_PATH="/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/lib64/pkgconfig:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/share/pkgconfig"
+export STRIP="i686-pc-linux-gnu-strip"
+unset TARGET_ARCH
+export base_prefix=""
+export exec_prefix="/usr"
+export BUILD_STRIP="strip"
+export datadir="/usr/share"
+export sbindir="/usr/sbin"
+export CXXFLAGS="-O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0=/usr/src/debug/systemtap/git-systemtap_g03-r0 -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64= -fstack-protector-strong -Wformat -Wformat-security -Werror=format-security -fvisibility-inlines-hidden"
+export PKG_CONFIG_DIR="/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/lib64/pkgconfig"
+export OBJDUMP="i686-pc-linux-gnu-objdump"
+export BUILD_CFLAGS="-isystem/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/include -O2 -pipe"
+export CPP="i686-pc-linux-gnu-gcc -E --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 -m64 -msgxx-glibc --no-sysroot-suffix"
+export BUILD_AS="as "
+export CCACHE_DISABLE="1"
+export PKG_CONFIG_SYSROOT_DIR="/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64"
+unset DISTRO
+export PKG_CONFIG_LIBDIR="/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/lib64/pkgconfig"
+export bindir="/usr/bin"
+export PKG_CONFIG_SYSTEM_INCLUDE_PATH="/usr/include"
+export CCACHE_DIR="/home/ivilinux/.ccache"
+export LC_ALL="en_US.UTF-8"
+export BUILD_CCLD="gcc "
+export servicedir="/srv"
+export optdir="/opt"
+export libexecdir="/usr/libexec"
+export BUILD_LD="ld "
+export testdir="/opt/platform"
+export localstatedir="/var"
+export USER="ivilinux"
+export systemd_system_unitdir="/lib/systemd/system"
+export PKG_CONFIG_DISABLE_UNINSTALLED="yes"
+export BUILD_LDFLAGS="-L/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/lib -L/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath-link,/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath-link,/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/lib -Wl,-rpath,/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/lib -Wl,-rpath,/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/lib -Wl,-O1"
+export systemd_user_unitdir="/usr/lib/systemd/user"
+export PSEUDO_DISABLED="1"
+export TERM="xterm"
+export TARGET_CPPFLAGS=""
+export mandir="/usr/share/man"
+export CC="i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64"
+export nonarch_libdir="/usr/lib"
+unset SHELL
+export PKG_CONFIG_SYSTEM_LIBRARY_PATH="/lib64:/usr/lib64"
+export oldincludedir="/usr/include"
+export MAKE="make"
+export HOME="/home/ivilinux"
+export sharedstatedir="/com"
+
+sstate_create_package() {
+	TFILE=`mktemp /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/../../cached-binaries/7a/sstate:systemtap:corei7-64-mel-linux:git-systemtap_g03:r0:corei7-64:3:7a7b914410455a0a26d363e250aec6cd_populate_sysroot.tgz.XXXXXXXX`
+	# Need to handle empty directories
+	if [ "$(ls -A)" ]; then
+		set +e
+		tar -czf $TFILE *
+		ret=$?
+		if [ $ret -ne 0 ] && [ $ret -ne 1 ]; then
+			exit 1
+		fi
+		set -e
+	else
+		tar -cz --file=$TFILE --files-from=/dev/null
+	fi
+	chmod 0664 $TFILE
+	mv -f $TFILE /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/../../cached-binaries/7a/sstate:systemtap:corei7-64-mel-linux:git-systemtap_g03:r0:corei7-64:3:7a7b914410455a0a26d363e250aec6cd_populate_sysroot.tgz
+
+	cd /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0
+	rm -rf /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/sstate-build-populate_sysroot/
+}
+
+cd '/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/sstate-build-populate_sysroot/'
+sstate_create_package
+
+# cleanup
+ret=$?
+trap '' 0
+exit $ret

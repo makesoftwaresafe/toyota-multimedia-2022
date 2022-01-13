@@ -1,0 +1,1326 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="controller" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:c="controller">
+    <xsd:include schemaLocation="customtypes.xsd" xmlns:c="controller"/>
+    <xsd:simpleType name="am_GeniviAvailabilityReason_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AR_UNKNOWN">
+                <xsd:annotation>
+                    <xsd:documentation>The availability change reason is unknown.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AR_GENIVI_NEWMEDIA">
+                <xsd:annotation>
+                    <xsd:documentation>The availability change reason is new media.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AR_GENIVI_SAMEMEDIA">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for availability change is the same media.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AR_GENINVI_NOMEDIA">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for availability change is no media.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AR_GENIVI_TEMPERATURE">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for availability change is the temperature.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AR_GENIVI_VOLTAGE">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for availability change is the voltage.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AR_GENIVI_ERRORMEDIA">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for availability change is the erroneous media.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_Error_e">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="E_OK"/>
+            <xsd:enumeration value="E_UNKNOWN"/>
+            <xsd:enumeration value="E_OUT_OF_RANGE"/>
+            <xsd:enumeration value="E_NOT_USED"/>
+            <xsd:enumeration value="E_DATABASE_ERROR"/>
+            <xsd:enumeration value="E_ALREADY_EXISTS"/>
+            <xsd:enumeration value="E_NO_CHANGE"/>
+			<xsd:enumeration value="E_NOT_POSSIBLE"/>
+			<xsd:enumeration value="E_NON_EXISTENT"/>
+			<xsd:enumeration value="E_ABORTED"/>
+			<xsd:enumeration value="E_WRONG_FORMAT"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_AvailabilityReason_t">
+        <xsd:union memberTypes="c:am_GeniviAvailabilityReason_t c:am_CustomAvailabilityReason_t"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_GeniviConnectionFormat_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CF_UNKNOWN">
+                <xsd:annotation>
+                    <xsd:documentation>unknown connection format.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CF_GENIVI_MONO">
+                <xsd:annotation>
+                    <xsd:documentation>The connection format is MONO</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CF_GENIVI_STEREO">
+                <xsd:annotation>
+                    <xsd:documentation>The connection format is STEREO</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CF_GENIVI_ANALOG">
+                <xsd:annotation>
+                    <xsd:documentation>The connection format is ANALOG.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CF_GENIVI_AUTO">
+                <xsd:annotation>
+                    <xsd:documentation>THe connection format is AUTO.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_ConnectionFormat_t">
+        <xsd:union memberTypes="c:am_GeniviConnectionFormat_t c:am_CustomConnectionFormat_t"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_GeniviNotificationType_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="NT_UNKNOWN">
+                <xsd:annotation>
+                    <xsd:documentation>This means the notification type is unknown.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_NotificationType_t">
+        <xsd:union memberTypes="c:am_GeniviNotificationType_t c:am_CustomNotificationType_t"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_GeniviSystemPropertyType_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SYP_UNKNOWN">
+                <xsd:annotation>
+                    <xsd:documentation>0 system property none</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_ReservedSystemPropertyType_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SYP_GLOBAL_LOG_THRESHOLD">
+                <xsd:annotation>
+                    <xsd:documentation>61440 This is calculated as below 61440  128 * X + Y , 
+                                       where 61440 is the reserved system property offset,
+                                             X is the Reserved system property usecase ID(range 0-31) X=0 in this case,
+                                             Y is the system property ID (0-127) Y=0 in this case. This system property controls 
+                                             the threshold log level. 
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYP_REGISTRATION_ALLOW_UNKNOWN_ELEMENT">
+                <xsd:annotation>
+                    <xsd:documentation>61568 This is calculated as below 61440  128 * X + Y , 
+                                       where 61440 is the reserved system property offset,
+                                             X is the Reserved system property usecase ID(range 0-31) X=1 in this case,
+                                             Y is the system property ID (0-127) Y=0 in this case. If this system property is
+                                             set then unknown elements registration is allowed.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYP_REGISTRATION_DOMAIN_TIMEOUT">
+                <xsd:annotation>
+                    <xsd:documentation>61569 </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYP_CONNECTION_ALLOW_ONLY_TOPOLOGY_ROUTE">
+                <xsd:annotation>
+                    <xsd:documentation>61696 This is calculated as below 61440  128 * X + Y , 
+                                       where 61440 is the reserved system property offset,
+                                             X is the Reserved system property usecase ID(range 0-31) X=2 in this case,
+                                             Y is the system property ID (0-127) Y=0 in this case. If this property is set then the
+                                             connection for which no topology is present in configuration are also allowed based on
+                                             the route retrieved from audiomanager daemon.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_SystemPropertyType_t">
+        <xsd:union memberTypes="c:am_GeniviSystemPropertyType_t c:am_ReservedSystemPropertyType_t c:am_CustomSystemPropertyType_t"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_GeniviRampType_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RAMP_UNKNOWN"/>
+            <xsd:enumeration value="RAMP_GENIVI_DIRECT"/>
+            <xsd:enumeration value="RAMP_GENIVI_NO_PLOP"/>
+            <xsd:enumeration value="RAMP_GENIVI_EXP_INV"/>
+            <xsd:enumeration value="RAMP_GENIVI_LINEAR"/>
+            <xsd:enumeration value="RAMP_GENIVI_EXP"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_RampType_t">
+        <xsd:union memberTypes="c:am_GeniviRampType_t c:am_CustomRampType_t"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_GeniviSoundPropertyType_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SP_UNKNOWN"/>
+            <xsd:enumeration value="SP_GENIVI_TREBLE"/>
+            <xsd:enumeration value="SP_GENIVI_BASS"/>
+            <xsd:enumeration value="SP_GENIVI_MID"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_ReservedSoundPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_SoundPropertyType_t">
+        <xsd:union memberTypes="c:am_GeniviSoundPropertyType_t c:am_ReservedSoundPropertyType_t c:am_CustomSoundPropertyType_t"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_GeniviClassPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="am_GeniviMainSoundPropertyType_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="MSP_UNKNOWN">
+                <xsd:annotation>
+                    <xsd:documentation>The main source property is unknown.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MSP_GENIVI_TREBLE">
+                <xsd:annotation>
+                    <xsd:documentation>The main sound property for treble</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MSP_GENIVI_BASS">
+                <xsd:annotation>
+                    <xsd:documentation>The main sound property for bass</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MSP_GENIVI_MID">
+                <xsd:annotation>
+                    <xsd:documentation>The main sound property for mid</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_ReservedMainSoundPropertyType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_MainSoundPropertyType_t">
+        <xsd:union memberTypes="c:am_GeniviMainSoundPropertyType_t c:am_ReservedMainSoundPropertyType_t c:am_CustomMainSoundPropertyType_t"/>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_ReservedClassPropertyType_t">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CP_PER_SINK_CLASS_VOLUME_SUPPORT">
+                <xsd:annotation>
+                    <xsd:documentation>61440 If this property is non zero per sink volume management would be enabled for a class</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>        
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_ClassPropertyType_t">
+        <xsd:union memberTypes="c:am_GeniviClassPropertyType_t c:am_ReservedClassPropertyType_t c:am_CustomClassPropertyType_t"/>
+    </xsd:simpleType>
+	<xsd:simpleType name="am_DomainState_e">
+		<xsd:annotation>
+			<xsd:documentation>This enumeration lists the Domain state.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DS_UNKNOWN">
+				<xsd:annotation>
+					<xsd:documentation>Domain status is unknown.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DS_CONTROLLED">
+				<xsd:annotation>
+					<xsd:documentation>1 The domain is controlled domain.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DS_INDEPENDENT_STARTUP">
+				<xsd:annotation>
+					<xsd:documentation>2 The domain has the independent startup.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DS_INDEPENDENT_RUNDOWN">
+				<xsd:annotation>
+					<xsd:documentation>3 The domain has independent rundown.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="gc_Source_s">
+		<xsd:annotation>
+			<xsd:documentation>This is the configuration of the Audio sources. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="c:am_Source_s">
+				<xsd:sequence>
+                    <xsd:element name="registrationType" type="c:gc_Registration_e" minOccurs="0" maxOccurs="1"/>
+					<xsd:element name="isVolumeSupported" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>If source supports the volume control the this value should be set to true, false otherwise. If nothing is specified then the default is true.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="isPersistencySupported" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>If source supports the last main connection persistency then this value should be set to true, false otherwise. If nothing is specified then the default is false.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="isVolumePersistencySupported" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>If source supports the last volume persistency then this value should be set to true, false otherwise. If nothing is specified then the default is false.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+
+					<xsd:element name="priority" type="xsd:int" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>The priority of the source. The connection priority is calculated as the sum of the participating main source and sink of the connection. The connection priority can be used to push or pop the connection.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="listMainSoundPropertiesToSoundProperties" type="c:listMainSoundPropertiesToSoundProperties" minOccurs="0" maxOccurs="1"/>
+					<xsd:element name="minVolume" type="xsd:short" minOccurs="0" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>This is the minimum volume for a source.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="maxVolume" type="xsd:short" minOccurs="0" maxOccurs="1">
+                        <xsd:annotation>
+                            <xsd:documentation>This is the maximum volume for a source.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="listSourceVolumeMap" type="c:listSourceVolumeMap" minOccurs="0" maxOccurs="1"/>
+				</xsd:sequence>
+				<xsd:attribute name="baseName" use="optional" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="gc_Sink_s">
+		<xsd:annotation>
+			<xsd:documentation>This is the configuration of the Audio sinks. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="c:am_Sink_s">
+				<xsd:sequence>
+                    <xsd:element name="registrationType" type="c:gc_Registration_e" minOccurs="0" maxOccurs="1"/>
+    				<xsd:element name="isVolumeSupported" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>If sinksupports the volume control the this value should be set to true, false otherwise. If nothing is specified then the default is true.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="isPersistencySupported" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>If sink supports the last main connection persistency then this value should be set to true, false otherwise. If nothing is specified then the default is false.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="isVolumePersistencySupported" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>If sink supports the last volume persistency then this value should be set to true, false otherwise. If nothing is specified then the default is false.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+
+					<xsd:element name="priority" type="xsd:int" minOccurs="0" maxOccurs="1">
+						<xsd:annotation>
+							<xsd:documentation>The priority of the sink. The connection priority is calculated as the sum of the participating main source and sink of the connection. The connection priority can be used to push or pop the connection.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="listMainVolumesToNormalizedVolumes" type="c:listMainVolumesToNormalizedVolumes" minOccurs="0" maxOccurs="1"/>
+					<xsd:element name="listNormalizedVolumesToDecibelVolumes" type="c:listNormalizedVolumesToDecibelVolumes" minOccurs="0" maxOccurs="1"/>
+					<xsd:element name="listMainSoundPropertiesToSoundProperties" type="c:listMainSoundPropertiesToSoundProperties" minOccurs="0" maxOccurs="1"/>
+				</xsd:sequence>
+				<xsd:attribute name="baseName" use="optional" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="gc_Gateway_s">
+		<xsd:annotation>
+			<xsd:documentation>In terms of genivi Audio manager, the gateway is an entity which connects the source and sink belonging to different domains.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="c:am_Gateway_s">
+				<xsd:sequence>
+				<xsd:element name="sinkName" type="xsd:string" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>The name of the sink side of the gateway. TBD</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="sourceName" type="xsd:string" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the name of the source side of the gateway.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="controlDomainName" type="xsd:string" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the name of the domain which controls the gateway.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+            <xsd:element name="registrationType" type="c:gc_Registration_e" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>			
+			<xsd:attribute name="baseName" use="optional" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="gc_class_s">
+		<xsd:annotation>
+			<xsd:documentation>At a system level audio source and sinks can be grouped together in a group or a class based on the behavior or the policy.  This group of source and sinks is called class. For example the entertainments sources like cd player, i-pod player radio etc can be classified as belonging to one group lets call it base, where as Navigation, Traffic announcement, dangerous spot warning can be classified as Interrupt class. The phone can be classified as phone class. This classification is based on the policy and the behavior of this sources. For example the BASE class is the background class, the connect and disconnection of this class is user event driven(user clicking the play button). This class volume would be ramped down when there is a source request from the interrupt class and the audio from interrupt class would be played on top of this class. Similarly for interrupt class the connect and disconnect request would come the system and not the user event driven. This kind of source would get connected and disconnected automatically for a short duration of time. The above two example are considered without loss of generality. The system designer is free to create own classes and classify the source sink having similar behavior in same class.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="c:am_class_s">
+				<xsd:sequence>
+					<xsd:element name="priority" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+					<xsd:element name="topology" type="xsd:token" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+					<xsd:documentation>This string has the list of all the sources and the gateways that can connect to the sink. 
+For details of the topology writing rules refer the topology writing rules section.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>		
+                <xsd:element name="registrationType" type="c:gc_Registration_e" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="classProperty" type="c:gc_classProperty_s" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="defaultVolume" type="xsd:short" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is the default volume for a class.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="isVolumePersistencySupported" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+					<xsd:annotation>
+					   <xsd:documentation>If class supports the last volume persistency then this value should be set to true, false otherwise. If nothing is specified then the default is false.</xsd:documentation>
+					</xsd:annotation>
+			</xsd:element>                
+				</xsd:sequence>				
+				<xsd:attribute name="baseName" use="optional" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:simpleType name="am_ConnectionState_e">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CS_UNKNOWN"/>
+			<xsd:enumeration value="CS_CONNECTING"/>
+			<xsd:enumeration value="CS_CONNECTED"/>
+			<xsd:enumeration value="CS_DISCONNECTING"/>
+			<xsd:enumeration value="CS_DISCONNECTED"/>
+			<xsd:enumeration value="CS_SUSPENDED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="listSources">
+		<xsd:annotation>
+			<xsd:documentation>This is the collection of the sources.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="source" type="c:gc_Source_s" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="listSinks">
+		<xsd:annotation>
+			<xsd:documentation>This is the collection of the Sinks.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="sink" type="c:gc_Sink_s" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="listGateways">
+		<xsd:annotation>
+			<xsd:documentation>This is the collection of the gateways.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="gateway" type="c:gc_Gateway_s" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="listDomains">
+		<xsd:annotation>
+			<xsd:documentation>This is the collection of all the domain.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="domain" type="c:gc_Domain_s" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="listClasses">
+		<xsd:annotation>
+			<xsd:documentation>This is the collection of the class.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="class" type="c:gc_class_s" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="listPolicies">
+		<xsd:annotation>
+			<xsd:documentation>This is the collection of Policies.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="policy" type="c:policy" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+    <xsd:complexType name="listSourceVolumeMap">
+        <xsd:annotation>
+            <xsd:documentation>This is the mapping table between the source internal volume to the routing side volume.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="tableEntry" minOccurs="2" maxOccurs="unbounded">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="[+-]?[0-9]+\.[0-9]+,[+-]?[0-9]+\.[0-9]+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+	<xsd:complexType name="listMainVolumesToNormalizedVolumes">
+		<xsd:annotation>
+			<xsd:documentation>This is the mapping table between the user volume and the normalized volume.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="tableEntry" minOccurs="2" maxOccurs="unbounded">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[+-]?[0-9]+,[+-]?[0-9]+\.[0-9]+"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="listNormalizedVolumesToDecibelVolumes">
+		<xsd:annotation>
+			<xsd:documentation>This is the mapping table between the normalized volume and the Decibel volume</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="tableEntry" minOccurs="2" maxOccurs="unbounded">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[+-]?[0-9]+\.[0-9]+,[+-]?[0-9]+\.[0-9]+"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="am_SystemProperty_s">
+		<xsd:annotation>
+			<xsd:documentation>This is a system property structure.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="type" type="c:am_SystemPropertyType_t" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>The system property enumeration.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="value" type="xsd:short" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Value of the system property.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="gc_Event_e">
+        <xsd:annotation>
+            <xsd:documentation>This enumeration lists the possible triggers for the specifying the policy.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="TRIGGER_UNKNOWN"/>
+            <xsd:enumeration value="USER_CONNECTION_REQUEST">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when connect request is initiated from the command interface.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="USER_DISCONNECTION_REQUEST">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when disconnect request is initiated from the command interface.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="USER_SET_SINK_MUTE_STATE">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when mute request is initiated from the command interface.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="USER_SET_VOLUME">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when change volume request is initiated from the command interface.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="USER_SET_SINK_MAIN_SOUND_PROPERTY">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when set sink property request is initiated from the command interface.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="USER_SET_SOURCE_MAIN_SOUND_PROPERTY">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when set source property request is initiated from the command interface.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="USER_SET_SYSTEM_PROPERTY"/>
+            <xsd:enumeration value="USER_SET_SINK_MAIN_NOTIFICATION_CONFIGURATION"/>
+            <xsd:enumeration value="USER_SET_SOURCE_MAIN_NOTIFICATION_CONFIGURATION"/>
+            <xsd:enumeration value="SYSTEM_SOURCE_AVAILABILITY_CHANGED">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when a source availability status change is called by routing adaptor. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYSTEM_SINK_AVAILABILITY_CHANGED">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when a sink availability status change is called by routing adaptor.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYSTEM_INTERRUPT_STATE_CHANGED">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when routing adapter notifies the interrupt state change.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYSTEM_SINK_MUTE_STATE_CHANGED"/>
+            <xsd:enumeration value="SYSTEM_SINK_MAIN_SOUND_PROPERTY_CHANGED"/>
+            <xsd:enumeration value="SYSTEM_SOURCE_MAIN_SOUND_PROPERTY_CHANGED"/>
+            <xsd:enumeration value="SYSTEM_VOLUME_CHANGED"/>
+            <xsd:enumeration value="SYSTEM_SINK_NOTIFICATION_DATA_CHANGED"/>
+            <xsd:enumeration value="SYSTEM_SOURCE_NOTIFICATION_DATA_CHANGED"/>
+            <xsd:enumeration value="SYSTEM_REGISTER_DOMAIN"/>
+            <xsd:enumeration value="SYSTEM_REGISTER_SOURCE">
+            <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when a new source is registered by routing adaptor.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYSTEM_REGISTER_SINK">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when a new sink is registered by a Routing Adaptor</xsd:documentation>
+            </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYSTEM_REGISTER_GATEWAY"/>
+            <xsd:enumeration value="SYSTEM_DEREGISTER_DOMAIN"/>
+            <xsd:enumeration value="SYSTEM_DEREGISTER_SOURCE">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger occurs when source is unregistered by routing adaptor.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYSTEM_DEREGISTER_SINK">
+                <xsd:annotation>
+                    <xsd:documentation>This trigger is called when sink is unregistered by routing adaptor.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SYSTEM_DEREGISTER_GATEWAY"/>
+            <xsd:enumeration value="SYSTEM_DOMAIN_REGISTRATION_COMPLETE"/>
+            <xsd:enumeration value="SYSTEM_CONNECTION_STATE_CHANGE"/>
+            <xsd:enumeration value="SYSTEM_STORED_SINK_VOLUME"/>
+            <xsd:enumeration value="SYSTEM_ALL_DOMAIN_REGISTRATION_COMPLETE"/>
+            
+            <xsd:enumeration value="USER_ALL_TRIGGER"/>
+            <xsd:enumeration value="TRIGGER_MAX"/>
+            </xsd:restriction>
+	</xsd:simpleType>
+    <xsd:simpleType name="gc_Registration_e">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="REG_CONTROLLER">
+                <xsd:annotation>
+                    <xsd:documentation>1 </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="REG_ROUTER">
+                <xsd:annotation>
+                    <xsd:documentation>2 </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="REG_TEMPLATE">
+                <xsd:annotation>
+                    <xsd:documentation>3 </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+	<xsd:simpleType name="am_SourceState_e">
+		<xsd:annotation>
+			<xsd:documentation>This enumeration lists the source state.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="SS_UNKNOWN">
+				<xsd:annotation>
+					<xsd:documentation>source state is unknown</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SS_ON">
+				<xsd:annotation>
+					<xsd:documentation>The source is ON</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SS_OFF">
+				<xsd:annotation>
+					<xsd:documentation>The source is OFF.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SS_PAUSED">
+				<xsd:annotation>
+					<xsd:documentation>The source state is paused.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="am_Availability_s">
+		<xsd:annotation>
+			<xsd:documentation>This complex data type which specifies the availability of the source and sinks.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="availability" type="c:am_Availability_e" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This boolean value specifies whether source or sink is available or not.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="availabilityReason" type="c:am_AvailabilityReason_t" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This specifies the availability reasons. It can be one of the enumerated type availability  Reason.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="am_InterruptState_e">
+		<xsd:annotation>
+			<xsd:documentation>This enumeration lists the interrupt state type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="IS_UNKNOWN">
+				<xsd:annotation>
+					<xsd:documentation>The interrupt state is unknown.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IS_OFF">
+				<xsd:annotation>
+					<xsd:documentation>Interrupt state is OFF.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IS_INTERRUPTED">
+				<xsd:annotation>
+					<xsd:documentation>The interrupt state is active.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="action">
+		<xsd:annotation>
+			<xsd:documentation>This complex data type defines the Action. The Policy includes the set of this type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="type" type="c:gc_Action_e" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the action type, it takes one of the ActionType enumerated value.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="param" type="c:param" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="policy">
+		<xsd:annotation>
+			<xsd:documentation>This complex data type specifies the policy.
+The policy is made up of two elements
+
+	- Trigger set   
+	- Action condition set  
+
+For example lets take a real life policy, "when I go out , if its raining , I will carry an umbrella with me". In the above sentence the trigger is "going out", condition is "is it raining?" and action is "carrying umbrella".  </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+		<xsd:element name="trigger" type="c:gc_Event_e" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="process" type="c:process" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="gc_Action_e">
+		<xsd:annotation>
+			<xsd:documentation>This enumeration list the possible types of actions.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ACTION_UNKNOWN">
+				<xsd:annotation>
+					<xsd:documentation>The action is NONE.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_CONNECT">
+				<xsd:annotation>
+					<xsd:documentation>The action is to connect.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_DISCONNECT">
+				<xsd:annotation>
+					<xsd:documentation>disconnect action.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_SET_VOLUME">
+				<xsd:annotation>
+					<xsd:documentation>Source/Sink volume change action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_LIMIT">
+				<xsd:annotation>
+					<xsd:documentation>limit volume action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_UNLIMIT">
+				<xsd:annotation>
+					<xsd:documentation>unlimit volume action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_PUSH">
+				<xsd:annotation>
+					<xsd:documentation>push action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_POP">
+				<xsd:annotation>
+					<xsd:documentation>pop action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_SUSPEND">
+				<xsd:annotation>
+					<xsd:documentation>suspend action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_RESUME">
+				<xsd:annotation>
+					<xsd:documentation>resume action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_MUTE">
+				<xsd:annotation>
+					<xsd:documentation>mute action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_UNMUTE">
+				<xsd:annotation>
+					<xsd:documentation>unmute action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_SET_PROPERTY">
+				<xsd:annotation>
+					<xsd:documentation>set sink property action</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACTION_REGISTER"/>
+			<xsd:enumeration value="ACTION_DEBUG"/>
+			<xsd:enumeration value="ACTION_SET_NOTIFICATION_CONFIGURATION"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="configuration" type="c:configuration"/>
+	<xsd:complexType name="configuration">
+		<xsd:annotation>
+			<xsd:documentation>This is the container of the Generic controller configuration. This contains the set of sources, sinks, gateways, domains , classes, policies and system properties.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="listSources" type="c:listSources"
+				minOccurs="1" maxOccurs="1" />
+			<xsd:element name="listSinks" type="c:listSinks"
+				minOccurs="1" maxOccurs="1" />
+			<xsd:element name="listGateways" type="c:listGateways"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="listDomains" type="c:listDomains"
+				minOccurs="1" maxOccurs="1" />
+			<xsd:element name="listClasses" type="c:listClasses"
+				minOccurs="1" maxOccurs="1" />
+			<xsd:element name="listPolicies" type="c:listPolicies"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="listSystemProperties"
+				type="c:listSystemProperties" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="gc_Class_e">
+		<xsd:annotation>
+			<xsd:documentation>This enumeration lists the class type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="C_PLAYBACK">
+				<xsd:annotation>
+					<xsd:documentation>1 The class is playback type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="C_CAPTURE">
+				<xsd:annotation>
+					<xsd:documentation>The class is capture type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	<xsd:complexType name="am_NotificationConfiguration_s">
+		<xsd:annotation>
+			<xsd:documentation>This complex type is used to define the Notification configuration.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="type" type="c:am_NotificationType_t" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the notification type. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="status" type="c:am_NotificationStatus_e" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the status of notification.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="parameter" type="xsd:short" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>The notification parameter.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="am_NotificationStatus_e">
+		<xsd:annotation>
+			<xsd:documentation>This enumerations list the notification status.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="NS_UNKNOWN">
+				<xsd:annotation>
+					<xsd:documentation>Notification status is unknown.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NS_OFF">
+				<xsd:annotation>
+					<xsd:documentation>Notification off.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NS_PERIODIC">
+				<xsd:annotation>
+					<xsd:documentation>Notification is a periodic one.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NS_MINIMUM">
+				<xsd:annotation>
+					<xsd:documentation>Notification is Minimum.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NS_MAXIMUM">
+				<xsd:annotation>
+					<xsd:documentation>Notification is Maximum.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NS_CHANGE">
+				<xsd:annotation>
+					<xsd:documentation>The notification is for change in some property.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="am_MuteState_e">
+		<xsd:annotation>
+			<xsd:documentation>This enumerations lists the Mute state.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="MS_UNKNOWN">
+				<xsd:annotation>
+					<xsd:documentation>0 Mute state is unknown.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MS_MUTED">
+				<xsd:annotation>
+					<xsd:documentation>1 The source or sink is muted.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MS_UNMUTED">
+				<xsd:annotation>
+					<xsd:documentation>2 The source or sink is unmuted.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="gc_Domain_s">
+		<xsd:annotation>
+			<xsd:documentation>This specifies the domain within the systems. The domain can be like DSP domain, ALSA domain etc.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="c:am_Domain_s">
+				<xsd:sequence>
+				<xsd:element name="registrationType" type="c:gc_Registration_e" minOccurs="0" maxOccurs="1"/>
+				</xsd:sequence>
+				<xsd:attribute name="baseName" use="optional" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="param">
+		<xsd:annotation>
+			<xsd:documentation>This complex type specifies the action parameter. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:all>
+			<xsd:element name="className" type="xsd:string" minOccurs="0" maxOccurs="1" />	
+			<xsd:element name="sourceName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="sinkName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="gatewayName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="rampType" type="c:am_RampType_t" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="rampTime" type="xsd:short" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="muteState" type="c:am_MuteState_e" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="mainVolumeStep" type="xsd:short" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="mainVolume" type="xsd:short" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="volumeStep" type="xsd:short" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="volume" type="xsd:short" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="order" type="c:gc_Order_e" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="propertyType" type="c:am_MainSoundPropertyType_t" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="propertyValue" type="xsd:short" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="timeOut" type="xsd:int" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="pattern" type="xsd:hexBinary" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="connectionState" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="debugType" type="c:am_CustomSystemPropertyType_t" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="debugValue" type="xsd:short" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="connectionFormat" type="c:am_ConnectionFormat_t" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="exceptSource" type="c:stringListType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="exceptSink" type="c:stringListType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="exceptClass" type="c:stringListType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="notificationConfigurationType" type="c:am_NotificationType_t" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="notificationConfigurationStatus" type="c:am_NotificationStatus_e" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="notificationConfigurationParam" type="xsd:short" minOccurs="0" maxOccurs="1" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:simpleType name="gc_Operator_e">
+		<xsd:annotation>
+			<xsd:documentation>This enumerations lists the Operator between the LHS and RHS.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EQ"/>
+			<xsd:enumeration value="GT"/>
+			<xsd:enumeration value="GEQ"/>
+			<xsd:enumeration value="LT"/>
+			<xsd:enumeration value="LEQ"/>
+			<xsd:enumeration value="NE"/>
+			<xsd:enumeration value="INC"/>
+			<xsd:enumeration value="EXC"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="gc_Boolean_e">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="TRUE">
+				<xsd:annotation>
+					<xsd:documentation>1</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FALSE">
+				<xsd:annotation>
+					<xsd:documentation>0</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="process">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="priority" type="xsd:int" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>The priority for the policy.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>			
+			<xsd:element name="condition" type="xsd:token" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="action" type="c:action" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="break" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>There can be a case where a particular policy needs to be over-ridden. In that case by setting this flag to true , the further evaluation of the policy can be stopped. 
+
+       For details refer the policy evaluation section.
+
+Example : 
+Let say we have a RadioSrc and RadioSink , we might have a generic policy for connection. but for this source sink pair we want a different set of actions. In that case we would increase the priority of this policy and set the stopEvaluating flag , so that the actions defined in this policy would be override the generic policy.
+
+  </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="am_sourceID_t">
+		<xsd:union memberTypes="c:am_SourceID_e xsd:unsignedShort"/>
+	</xsd:simpleType>
+	<xsd:complexType name="listSystemProperties">
+		<xsd:annotation>
+			<xsd:documentation>This is the collection of system properties.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence minOccurs="1" maxOccurs="1">
+			<xsd:element name="systemProperty" type="c:am_SystemProperty_s" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="am_Availability_e">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="A_UNKNOWN"/>
+			<xsd:enumeration value="A_AVAILABLE"/>
+			<xsd:enumeration value="A_UNAVAILABLE"/>
+			<xsd:enumeration value="A_MAX"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="gc_Order_e">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="O_HIGH_PRIORITY"/>
+			<xsd:enumeration value="O_LOW_PRIORITY"/>
+			<xsd:enumeration value="O_NEWEST"/>
+			<xsd:enumeration value="O_OLDEST"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+    <xsd:complexType name="gc_classProperty_s">
+        <xsd:annotation>
+            <xsd:documentation>This is the genivi class property structure.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="type" type="c:am_ClassPropertyType_t" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="value">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="c:short">
+                            <xsd:attribute name="minValue" use="optional" type="xsd:short"/>
+                            <xsd:attribute name="maxValue" use="optional" type="xsd:short"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>	
+	<xsd:complexType name="gc_MainSoundProperty_s">
+		<xsd:annotation>
+			<xsd:documentation>This is the genivi main sound property structure.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="type" type="c:am_MainSoundPropertyType_t" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="value">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="c:short">
+							<xsd:attribute name="minValue" use="optional" type="xsd:short"/>
+							<xsd:attribute name="maxValue" use="optional" type="xsd:short"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="am_sinkID_t">
+		<xsd:union memberTypes="c:am_SinkID_e xsd:unsignedShort"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="am_classID_t">
+        <xsd:union memberTypes="c:am_ClassID_e xsd:unsignedShort"/>
+    </xsd:simpleType>
+	<xsd:complexType name="gc_SoundProperty_s">
+		<xsd:annotation>
+			<xsd:documentation>This is the genivi main sound property structure.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="type" type="c:am_SoundPropertyType_t" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="value">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="c:short">
+							<xsd:attribute name="minValue" use="optional" type="xsd:short"/>
+							<xsd:attribute name="maxValue" use="optional" type="xsd:short"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="am_Source_s">
+		<xsd:sequence>
+			<xsd:element name="id" type="c:am_sourceID_t" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is a ID for the source and it is optional. In case source ID is not specified then the Audio manager assigns from the dynamic range 100 and above.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="domainName" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the name of the domain, to which the source belong to.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the name of the source.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="volume" type="xsd:short" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the default volume for a source.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="visible" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This element specifies if this source is visible to the user.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="className" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the name of the class to which this source is belonging to. This is an optional element, if not specified then the name would be copied from the default class instance.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="sourceState" type="c:am_SourceState_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the source state while registering. This is also an optional element.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="connectionFormat" type="c:am_ConnectionFormat_t" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>connection format type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="interruptState" type="c:am_InterruptState_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>The interrupt state for source.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="mainNotificationConfiguration" type="c:am_NotificationConfiguration_s" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="notificationConfiguration" type="c:am_NotificationConfiguration_s" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="availability" type="c:am_Availability_s" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="soundProperty" type="c:gc_SoundProperty_s" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="mainSoundProperty" type="c:gc_MainSoundProperty_s" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="am_Sink_s">
+		<xsd:sequence>
+			<xsd:element name="id" type="c:am_sinkID_t" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is a ID for the sink. This is an optional element if not specified than the controller would assign dynamic ID to the sink in case source registration is owned by controller else it would get the source id from the Audio manager daemon.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="domainName" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the name of the domain where this sink belongs to.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the name of the sink.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="volume" type="xsd:short" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the default volume for a sink.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="visible" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This element specifies if this sink is visible to the user.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="mainVolume" type="xsd:short" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>TBD</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="className" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the name of the class to which this sink is belonging to. This is an optional element, if not specified then the sink would be assumed to be belonging to the default class.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="muteState" type="c:am_MuteState_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>TBD</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="connectionFormat" type="c:am_ConnectionFormat_t" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>connection format type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="mainNotificationConfiguration" type="c:am_NotificationConfiguration_s" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="notificationConfiguration" type="c:am_NotificationConfiguration_s" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="availability" type="c:am_Availability_s" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="soundProperty" type="c:gc_SoundProperty_s" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="mainSoundProperty" type="c:gc_MainSoundProperty_s" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="am_Gateway_s">
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:unsignedShort" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the id of the gateway. This is optional.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is name of the gateway.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>				
+			<xsd:element name="conversionMatrix" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This is the boolean array of conversion matrix for gateway.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="am_Domain_s">
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:unsignedShort" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the id for domain. The id is optional element. If not specified the controller would assign one automatically. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is a domain name and its mandatory element.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="busName" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the bus name for the domain.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="nodeName" type="xsd:string" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>THis is the node name for domain.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="early" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This boolean value specifies if this domain is early domain.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="complete" type="c:gc_Boolean_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>TBD</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="state" type="c:am_DomainState_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>The state of the domain.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="am_class_s">
+		<xsd:sequence>
+            <xsd:element name="id" type="c:am_classID_t" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                    <xsd:documentation>This is a ID for the class. This is an optional element if not specified then the controller would assign dynamic ID to the class.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+			<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the user defined name given to the class.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="type" type="c:gc_Class_e" minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>This is the type of the class i.e playback or capture</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="short">
+		<xsd:list itemType="xsd:short"/>
+	</xsd:simpleType>
+    <xsd:simpleType name="gc_MSPMappingDirection_e">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="MD_MSP_TO_SP">
+                <xsd:annotation>
+                    <xsd:documentation>The mapping direction is from MSP to SP</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MD_SP_TO_MSP">
+                <xsd:annotation>
+                    <xsd:documentation>The mapping direction is from SP to MSP</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+	<xsd:complexType name="listMainSoundPropertiesToSoundProperties">
+		<xsd:sequence>
+            <xsd:element name="mapEntry" minOccurs="1" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="xsd:string">
+                            <xsd:attribute name="mappingDirection" use="optional" type="c:gc_MSPMappingDirection_e"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="stringListType">
+		<xsd:list itemType="xsd:string"></xsd:list>
+	</xsd:simpleType>
+</xsd:schema>
+

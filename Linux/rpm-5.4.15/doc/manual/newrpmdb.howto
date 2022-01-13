@@ -1,0 +1,119 @@
+HOWTO NEW RPMDB IN RPM5 
+=======================
+
+
+
+First of all, there are known and significant rpmdb changes on HEAD.
+So make a back up before doing anything else
+       cd /var/lib
+       tar czvf rpmdb-0.tar.gz ./rpm
+
+If you need to switch between HEAD -> older versions of RPM,
+remove everything from /var/lib/rpm _EXCEPT_ Packages, install
+rpm-5.1.9, and do a --rebuildb -vv. If that fails, restore
+from the saved tarball.
+
+Now for a terse description of some things to watch out for.
+
+1) DB_CONFIG is used to configure Berkeley DB rather than macros.
+
+       There's a rpmdb/DB_CONFIG file that is installed. There are
+       3 lines that are important atm:
+
+               set_thread_count        64
+               set_cachesize           0 1048576 0
+               set_mp_mmapsize         16777216
+
+       The above captures all the Berkeley DB tunables that RPM has been using.
+
+       (aside)
+       It turns out that there are some significant performance advantages
+       if you increase the last 2 lines to
+               set_cachesize 0 67108864 4
+               set_mp_mmapsize 268435456
+       See details at
+               https://bugzilla.redhat.com/show_bug.cgi?id=536818
+       The configuration should apply to any recent version of Berkeley DB
+       used by RPM, with expected performance increases from using mmap(2)
+       rather than pread(2) for I/O.
+
+2) You can't just do "rm -rf /var/lib/rpm/__db*" to fix problems anymore.
+
+       There's additional state in /var/lib/rpm that is needed for transactionally
+       protected ACID behavior, including:
+               Seqno   this a database/table with a persistent header instance counter
+               log.*   these are the transactional log files
+       One cannot remove Seqno without doing --rebuilddb, or the h# instances will go awry.
+       If you remove the log.* files, then you cannot open Packages. The simple
+       (to explain) fix is to install rpm-5.1.9, do --rebuilddb, then return to
+       HEAD to continue.
+
+       There's another (more difficult to explain) fix to change from the transactional logging
+       model back to the concurrent access model and then doing --rebuilddb.
+
+       Here is the older macro settings
+               %__dbi_cdb      create cdb mpool mp_mmapsize=16Mb mp_size=1Mb thread_count=64
+       and the newer
+               %__dbi_txn      create lock log mpool txn auto_commit thread thread_count=64
+       Note that the macro name has changed, and that mp_mmapsize mp_size are now set from
+       DB_CONFIG (the thread_count will end up in DB_CONFIG, but db-4.7.25 needs a patch)
+
+       Other Berkeley DB configuration changes
+               1) permitting duplicate keys
+               2) attaching secondary indices to Packages
+       that is largely handled by these macros atm
+               %_bt_dupsort    bt_dupsort index
+               %_h_dupsort     h_dupsort index
+       I wouldn't advise changing those values, you will likely not be happy.
+
+       But other than new state in Seqno and log.* files, well you can do
+               rm -f /var/lib/rpm/__db*
+       files whenever you want.
+
+3) Join keys are now network order, not native order.
+
+       Previously, rpm itself used to handle join keys, and
+       the join keys were in host order. Most of that code
+       is now in the bit bucket.
+
+       In order for DB_BTREE to be used with memcmp(), and so that
+       duplicates can be sorted with memcmp, integer fields need to
+       be saved in network order always. This is a change from previous
+       rpmdb behavior, which used to save integers in native order.
+
+       You can see the join keys (or header instances) by doing
+               rpm -qavv
+       If the numbers aren't small integer values, then something is wrong.
+
+       When moving to HEAD or back to 5.1.9, --rebuilddb just iterates using DB_NEXT
+       so the endianness will not matter.
+
+       Note that the old convention of renumbering instances doing --rebuilddb, and
+       saving the counter in Packages with a key of 0 is now history. What is done
+       instead is to assign h #'s persistently (i.e. the value is preserved across
+       --rebuilddb) using the counter stored in Seqno.
+
+4) There's debugging messages that are displayed while installing.
+
+       I'll rework the "syscall ACID" and "scriptlet ACID" logging tomorrow
+       to turn off the debugging messages and to add a disabler for adding
+       the (not yet finalized) syscall/scriptlet records to the transactional
+       log.
+
+       (aside)
+       I've been waiting to see how much of syscall/scriptlet logging could
+       be shared with what Mancoosi WP3 is going to do. But they appear
+       to be headed for a different --rollback implementation not based
+       on Berkeley DB, so I will finalize syscall/scriptlet log records
+       @rpm5.org over the next 2 weeks without additional input.
+
+If you run into issues or problems, please report here on <rpm-devel@rpm5.org>.
+
+You can also often find me on #rpm through freenode. But please note that
+I will be traveling next week, and so e-mail is likely the best reporting
+mechanism.
+
+Again, I will have a proper HOWTO/FAQ written up as experience is gained.
+I personally have been using some variant of the above "database ACID"
+for about a month in development. I believe I'm close to being able
+to finalize the "database ACID" changes, but one never knows until one tries.

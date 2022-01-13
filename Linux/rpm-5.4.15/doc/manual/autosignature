@@ -1,0 +1,88 @@
+All packages produced by rpmbuild now have a DSA pubkey/signature.
+
+The reason for automagically signing all packages should be obvious:
+
+       All software distributed through "packages" is subject to
+       malicious tampering.
+
+Adding a signature to _ALL_ packages produced by rpmbuild is the first step
+towards a MANDATORY policy of:
+
+       All packages installed by rpm MUST be signed.
+
+Clearly rpmbuild is forced to GUARANTEE that _SOME_ signature exists before
+an enforcing MANDATORY policy that all packages must be signed can be attempted.
+
+(aside)
+Vendors might well understand the need for software package integrity checks
+enforced by  digital signatures. Unfortunately the issues of "branding"
+(signified by signing with the "official" vendor key) have gotten convolved
+with security isssues because of common practice in RPM based distros.
+Absolutely one shouldn't signify "official" release of software without due
+diligence and attention to the myriad "business" details of QA testing and
+release notes and marketing and ...
+... but that's no reason _NOT_ to attempt signing *.rpm packages _ALWAYS_.
+
+(another aside)
+And yes, many vendors _ARE_ signing _ALL_ packages routinely. Unfortunately,
+the process of making gigabyes of *.rpm plaintext available for public
+distribution on very short time scales (like within 24 hours of being built)
+is quite complex, and so mistakes (like unsigned packages) occur too frequently.
+
+That should make the reasoning for attempting automagic signing of all *.rpm
+packages produced by rpmbuild clearer. If not, well, "Have it your own way!"
+and do whatever you wish.
+
+The mechanism for the automagic signing is based on a "non-repudiable"
+signature, technical details described in the "Handbook of Applied Crytography"
+section 13.8.2 p 582 which can be read online here:
+
+   http://www.cacr.math.uwaterloo.ca/hac/about/chap13.pdf
+
+In plain speak here's what rpmbuild does (in rpm-5.3.2):
+
+   1) At the beginning of every invocation, rpmbuild generates a DSA keypair
+	(using BeeCrypt, the highest performing and only MANDATORY crypto
+	implementation available @rpm5.org).
+
+   2) When producing packages, the pubkey parameters are converted to
+	RFC 2440/4880 OpenPGP format and added to _ALL_ package headers
+	using a (pre-existing) RPMTAG_PUBKEYS tag.
+      The pubkey is exactly an armored pubkey as produced by gnupg with no
+	additional signatures or "user id" identifiers.
+
+   3) The header (containing the pubkey) is signed and the signature is added to
+	the detached signature header using RPMSIGTAG_DSA. This is identical
+	to what would be done if rpmbuild had been invoked with --sign,
+	the only difference is that the automagically generated keypair is
+	substituted for what --sign would have done.
+
+   4) The private key (of the automagically generated keypair) is discarded.
+
+In plain speak here's what rpm-5.3.2 does with the pubkey while installing:
+
+   1) In order to verify a signature, rpm undertakes looking up the
+	associated pubkey. This is just the concept of a "keyring",
+	nothing more.
+      The following "keyrings" for pubkeys are checked (in this order):
+       a) (linux only) keyutils kernel cache
+       b) rpmdb Pubkeys table
+       c) the automagically included non-repudiable pubkey (added in rpm-5.3.2)
+       d) SKS keys servers with hkp:// transport (added in rpm-5.3.1)
+
+    2) (for SKS retrieved pubkeys) The self-signature binding the userid to
+	the key is verified, and revocations/expiry are checked, rejecting
+	pubkeys that do not have a userid bound through a self-signature, or
+	whose signatures/pubkeys are expired/revoked.
+
+    3) (linux only) Acceptable pubkeys are saved in the keyutils cache.
+
+    4) The package signature is verified.
+
+    5) The pubkey (contained in the header tag RPMTAG_PUBKEYS) is indexed into
+	the secondary /var/lib/rpm/Pubkeys index. Note that there will be
+	multiple entries for the pubkey of any build that produced more than
+	a single sub-package.
+
+I hope the above clarifies the new behavior in rpm-5.3.2 to automagically
+add a DSA signature to all packages produced by rpmbuild.

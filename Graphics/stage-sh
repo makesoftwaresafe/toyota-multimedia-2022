@@ -1,0 +1,31 @@
+#!/bin/sh
+SRCDIR=.
+case "$-" in
+*i*)
+	# this is an interactive shell, so don't use $0 (probably "/bin/sh")
+	# or the argument list
+	set --;;
+*)
+	case "$0" in */*)
+		SRCDIR=${0%/*}
+	esac
+esac
+SRCDIR=$(cd "$SRCDIR" && pwd)
+
+# don't accept any options (getopts will print an error)
+while getopts '' opt
+do
+	case "$opt" in
+	\?) exit 2;;
+	esac
+done
+shift "$((OPTIND - 1))"
+
+QCONF_OVERRIDE=$SRCDIR/qconf-override.mk
+QNX_STAGE_ROOT=$SRCDIR/stage
+export QCONF_OVERRIDE QNX_STAGE_ROOT
+
+printf 'Stage directory: %s\n' "$QNX_STAGE_ROOT"
+
+[ "$#" -gt 0 ] || set -- "${SHELL:-sh}"
+exec "$@"

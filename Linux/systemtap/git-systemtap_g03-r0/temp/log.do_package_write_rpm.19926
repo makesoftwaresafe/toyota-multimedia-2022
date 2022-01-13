@@ -1,0 +1,46 @@
+DEBUG: Executing python function sstate_task_prefunc
+DEBUG: Python function sstate_task_prefunc finished
+DEBUG: Executing python function do_package_write_rpm
+DEBUG: Executing python function read_subpackage_metadata
+DEBUG: Python function read_subpackage_metadata finished
+DEBUG: Executing python function do_package_rpm
+DEBUG: Executing python function write_specfile
+NOTE: Creating RPM package for systemtap-dbg
+NOTE: Not creating empty RPM package for systemtap-staticdev
+NOTE: Creating RPM package for systemtap-dev
+NOTE: Creating RPM package for systemtap-doc
+NOTE: Not creating empty RPM package for systemtap-locale
+NOTE: Creating RPM package for systemtap
+NOTE: Creating RPM package for systemtap
+DEBUG: Python function write_specfile finished
+DEBUG: PKGWRITEDIR: /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/deploy-rpms/corei7_64
+DEBUG: Executing shell function BUILDSPEC
+Building target platforms: corei7_64-mel-linux
+Processing files: systemtap-git+systemtap_g03-r0.corei7_64
+Provides: elf(buildid) = 9434e0a481c94826e4fa6df6b2520625e1eb7365 elf(buildid) = fed74551895bcc998800ddbdb08adcba944588bb elf(buildid) = 4b59ab1cb7c9d4b350c9cc73dbac5365eda576f8 elf(buildid) = ddffa3863d5828625bc1b25c039af2cdff407ab9
+Provides: elf(buildid) = 9434e0a481c94826e4fa6df6b2520625e1eb7365 elf(buildid) = fed74551895bcc998800ddbdb08adcba944588bb elf(buildid) = 4b59ab1cb7c9d4b350c9cc73dbac5365eda576f8 elf(buildid) = ddffa3863d5828625bc1b25c039af2cdff407ab9
+Processing files: systemtap-dbg-git+systemtap_g03-r0.corei7_64
+Processing files: systemtap-dev-git+systemtap_g03-r0.corei7_64
+Processing files: systemtap-doc-git+systemtap_g03-r0.corei7_64
+Checking for unpackaged file(s): /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/bin/../lib/rpm/check-files /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/package
+Wrote: /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/deploy-rpms/corei7_64/systemtap-git+systemtap_g03-r0.corei7_64.rpm
+Wrote: /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/deploy-rpms/corei7_64/systemtap-dbg-git+systemtap_g03-r0.corei7_64.rpm
+Wrote: /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/deploy-rpms/corei7_64/systemtap-dev-git+systemtap_g03-r0.corei7_64.rpm
+Wrote: /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/deploy-rpms/corei7_64/systemtap-doc-git+systemtap_g03-r0.corei7_64.rpm
+DEBUG: Shell function BUILDSPEC finished
+DEBUG: Python function do_package_rpm finished
+DEBUG: Python function do_package_write_rpm finished
+DEBUG: Executing python function sstate_task_postfunc
+DEBUG: Staging files from /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/deploy-rpms to /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/deploy/rpm
+DEBUG: Executing python function buildhistory_emit_pkghistory
+DEBUG: Python function buildhistory_emit_pkghistory finished
+NOTE: Using umask 0o002 (not 22) for sstate packaging
+DEBUG: Preparing tree /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/deploy-rpms for packaging at /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/sstate-build-package_write_rpm/deploy-rpms
+DEBUG: Executing python function sstate_hardcode_path
+NOTE: Removing hardcoded paths from sstate package: 'find /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/sstate-build-package_write_rpm/ \( -name "*.la" -o -name "*-config" -o -name "*_config" \) -type f | xargs grep -l -e '/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64' | tee /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0/sstate-build-package_write_rpm/fixmepath | xargs --no-run-if-empty sed -i -e 's:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64:FIXMESTAGINGDIRHOST:g''
+DEBUG: Python function sstate_hardcode_path finished
+DEBUG: Executing shell function sstate_create_package
+DEBUG: Shell function sstate_create_package finished
+DEBUG: Executing python function sstate_sign_package
+DEBUG: Python function sstate_sign_package finished
+DEBUG: Python function sstate_task_postfunc finished

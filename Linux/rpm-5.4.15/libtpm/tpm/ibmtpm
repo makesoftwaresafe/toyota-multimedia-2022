@@ -1,0 +1,102 @@
+#!/bin/sh
+#
+# ibmtpmd:   The IBM TPM emulator daemon
+#
+# chkconfig: 345 22 85
+# description:  This is a daemon which emulates a TPM in software
+#
+# processname: ibmtpmd
+# pidfile: /var/run/ibmtpmd.pid
+#
+### BEGIN INIT INFO
+# Provides: ibmtpmd
+# Required-Start: $syslog $local_fs
+# Required-Stop: $syslog $local_fs
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: The IBM TPM emulator daemon
+# Description: This is a daemon which emulates a TPM in software
+### END INIT INFO
+
+# so we can rearrange this easily
+processname=ibmtpmd
+servicename=ibmtpmd
+ibmtpmd="$ROOTDIR/usr/sbin/$processname"
+
+ROOTDIR=
+
+export TPM_PATH=$ROOTDIR/var/lib/$processname
+export TPM_SERVER_NAME=localhost
+export TPM_PORT=6543
+
+initdir=$ROOTPATH/etc/init.d
+lockfile=$ROOTDIR/var/lock/subsys/$processname
+logfile=$ROOTDIR//var/log/$processname.log
+pidfile=$ROOTDIR/var/run/$processname.pid
+
+# Sanity checks.
+[ -x $ibmtpmd ] || exit 0
+
+# Source function library.
+. $initdir/functions
+
+RETVAL=0
+
+start() {
+    echo -n $"Starting $processname: "
+    daemon --pidfile $pidfile $processname 2\>\&1 \> $logfile \< /dev/null \&
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && {
+	pidof $processname | cat > $pidfile
+	touch $lockfile
+    }
+}
+
+stop() {
+    echo -n $"Stopping $processname: "
+
+    ## we don't want to kill all the per-user $processname, we want
+    ## to use the pid file *only*; because we use the fake nonexistent 
+    ## program name "$servicename" that should be safe-ish
+    killproc $servicename -TERM
+    RETVAL=$?
+    echo
+    if [ $RETVAL -eq 0 ]; then
+        rm -f $lockfile
+        rm -f $pidfile
+    fi
+}
+
+# See how we were called.
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $processname
+        RETVAL=$?
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    condrestart)
+        if [ -f $lockfile ]; then
+            stop
+            start
+        fi
+        ;;
+    reload)
+        stop
+        start
+        RETVAL=$?
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status|restart|condrestart|reload}"
+        ;;
+esac
+exit $RETVAL

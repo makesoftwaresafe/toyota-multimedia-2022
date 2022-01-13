@@ -1,0 +1,372 @@
+grammarVersion 2.1
+variantName brd2
+configVersion 10.0.0
+
+AudioChain MasterChain {
+  periodSize 192
+  samplingRate SampleRate_48000
+
+  // Inputs (crossbar IasAudioSink)
+  InputStream Stereo0 {
+    numberChannels 2
+    streamInfo NotAvailable
+    id 0
+  }
+  InputStream Stereo1 {
+    numberChannels 2
+    streamInfo NotAvailable
+    id 1
+  }
+  InputStream Mono0 {
+    numberChannels 1
+    streamInfo NotAvailable
+    id 2
+  }
+  InputStream Mono1 {
+    numberChannels 1
+    streamInfo NotAvailable
+    id 3
+  }
+  InputStream Stereo2 {
+    numberChannels 2
+    streamInfo NotAvailable
+    id 4
+  }
+  InputStream AvbMc1 {
+    numberChannels 8
+    streamInfo Available
+    id 11
+  }  
+  InputStream Entertainment {
+    numberChannels 2
+    streamInfo NotAvailable
+    id 16
+  }
+  InputStream Interrupt {
+    numberChannels 2
+    streamInfo NotAvailable
+    id 17
+  }
+  InputStream SystemBeep {
+    numberChannels 2
+    streamInfo NotAvailable
+    id 18
+  }
+
+
+  // Output to AudioZone
+  OutputStream Speakers0 {
+    numberChannels 6
+    streamInfo NotAvailable
+    id 0
+  }
+  OutputStream HeadPhones0 {
+    numberChannels 2
+    streamInfo NotAvailable
+    id 1
+  }
+  OutputStream RefChannelStream {
+    numberChannels 1
+    streamInfo NotAvailable
+    ignoreId
+  }
+  OutputStream AvbMc6ch {
+    numberChannels 6
+    streamInfo Available
+    ignoreId
+  }
+  IntermediateOutputStream HFPDL {
+    numberChannels 6
+    streamInfo NotAvailable
+    ignoreId
+  }
+
+  outputMapping [
+    Speakers0 -> SPEAKER_playback_0 [
+      0 -> 2
+      1 -> 3
+      2 -> 4
+      3 -> 5
+      4 -> 0
+      5 -> 1
+    ]
+    HeadPhones0 -> SPEAKER_playback_0 [
+      0 -> 6
+      1 -> 7
+    ]
+    RefChannelStream -> RefChannel_0 [
+      0 -> 0
+    ]
+    AvbMc6ch -> AVB [
+      0 -> 13
+      1 -> 14
+      2 -> 15
+      3 -> 16
+      4 -> 17
+      5 -> 18
+      6 -> 19
+    ]
+  ]
+
+  // audio components
+  UserEqualizer myUserEq {
+    maxNumberFilterStages 3
+    streamsToProcess [ Stereo0 Stereo1 Stereo2 Entertainment Interrupt SystemBeep ]
+  }
+  Mixer myMixer {
+    InputsFor Speakers0   [ Stereo0 Stereo1 Mono0 Entertainment Interrupt SystemBeep ]
+    InputsFor HeadPhones0 [ Stereo2 ]
+    InputsFor HFPDL       [ Mono1 ]
+  }
+  CarEqualizer myCarEq {
+    maxNumberFilterStages 10
+    streamsToProcess [ Speakers0 ]
+  }
+  Delay myDelay {
+    maxDelay 1000000
+    streamsToProcess [ Speakers0 ]
+  }
+  Volume myVolume {
+    lengthLoudnessTable 5
+    streamsToProcess [ Stereo0 Stereo1 Mono0 Mono1 Stereo2 Entertainment Interrupt SystemBeep ]
+    loudnessParameter [
+      FilterParam ld1 {
+        index 0
+        freq 50
+        gain 0.0
+        quality 2.0
+        type FilterTypePeak
+        order 2
+      }
+      FilterParam ld2 {
+        index 1
+        freq 13000
+        gain 0.0
+        quality 1.1
+        type FilterTypePeak
+        order 2
+      }
+    ]
+    activeLdFilters [
+        Stereo0 -> ld1 -> ld2
+        Stereo1 -> ld1 -> ld2
+        Stereo2 -> ld1 -> ld2
+    ]
+}
+  Limiter myLimiter {
+      limiterDelay 5
+      streamsToProcess [ Speakers0 HeadPhones0 ]
+  }
+  TelephoneMixer myTelephoneMixer {
+     Speakers0  + HFPDL -> RefChannelStream
+  }
+  UpDownMixer myUpDownMixer {
+      streamMap [ AvbMc1 -> AvbMc6ch ]
+  }
+  ChainSequence [ myUserEq -> myVolume-> myMixer -> myCarEq -> myLimiter -> myDelay -> myTelephoneMixer -> myUpDownMixer ]
+}
+
+AudioDevices {
+  // alsa inputs
+  AlsaVirtualInput ANN_mono0          { numberChannels 1 id  2 blockOnConnect }
+  AlsaVirtualInput ANN_mono1          { numberChannels 1 id  3 }
+  AlsaVirtualInput MEDIA_playback_0   { numberChannels 2 id  1 }
+  AlsaVirtualInput MEDIA_playback_1   { numberChannels 2 id  7 }
+  AlsaVirtualInput A2DP_playback0     { numberChannels 2 id  4 }
+  AlsaVirtualInput A2DP_playback1     { numberChannels 2 id 16 }
+  AlsaVirtualInput A2DP_playback2     { numberChannels 2 id 17 }
+  AlsaVirtualInput HFPDL_playback0    { numberChannels 2 id  6 }
+  AlsaVirtualInput MediaPlayer1       { numberChannels 2 id  22 }
+  AlsaVirtualInput Navigation         { numberChannels 2 id  23 }
+  AlsaVirtualInput BT_IN              { numberChannels 2 id  24 }
+  AlsaVirtualInput Test8ChPlayback    { numberChannels 8 id  25 }
+  
+  // alsa inputs with subdevices
+  AlsaVirtualInput MEDIA_playbackMc_0 {
+    numberChannels 11
+    AudioSubdevice Dm               { numberChannels 2 id 18 }
+    AudioSubdevice Mc               { numberChannels 9 id 12 }
+  }
+  AlsaVirtualInput MEDIA_playbackMc_1 {
+    numberChannels 11
+    AudioSubdevice Dm               { numberChannels 2 id 19 }
+    AudioSubdevice Mc               { numberChannels 9 id 13 }
+  }
+  AlsaVirtualInput AVB {
+    numberChannels 20
+    AudioSubdevice Stereo0          { numberChannels 2 id 14    }
+    AudioSubdevice Stereo1          { numberChannels 2 id 15    }
+    AudioSubdevice mc0              { numberChannels 9 id 20    }
+    AudioSubdevice mc1              { numberChannels 7 id 21    }
+  }
+  
+  // alsa outputs
+  AlsaVirtualOutput A2DP_capture_0    { numberChannels 2 id  8    }
+  AlsaVirtualOutput A2DP_capture_1    { numberChannels 2 id  9    }
+  AlsaVirtualOutput A2DP_capture_2    { numberChannels 2 id 10    }
+  AlsaVirtualOutput RefChannel_0      { numberChannels 1 ignoreId }
+  AlsaVirtualOutput MIC_capture_0     { numberChannels 2 ignoreId }
+  AlsaVirtualOutput SpeechRecog       { numberChannels 1 id 12 }
+  AlsaVirtualOutput HfpSnk            { numberChannels 2 id 13 }
+  AlsaVirtualOutput Test8ChCapture    { numberChannels 8 id 14 }
+  
+  
+  AlsaVirtualOutput AVB {
+    numberChannels 20
+    AudioSubdevice Stereo0          { numberChannels 2 id 5     }
+    AudioSubdevice Stereo1          { numberChannels 2 id 6     }
+    AudioSubdevice Mc0              { numberChannels 9 id 7     }
+    AudioSubdevice Mc1              { numberChannels 7 ignoreId }
+  }
+  
+  // EarlyAudio to dmixer
+  DmixerInput EarlyAudio_4ch_0 {
+    transferTable [
+      0 -> 2 attenuation 0.3
+      1 -> 3 attenuation 0.3
+      2 -> 0 attenuation 0.3
+      3 -> 1 attenuation 0.3
+      0 -> 4 attenuation 0.0
+      1 -> 5 attenuation 0.0
+      0 -> 6 attenuation 0.0
+      1 -> 7 attenuation 0.0
+    ]
+  }
+  DmixerInput EarlyAudio_stereo_0 {
+    transferTable [
+      0 -> 0 attenuation 0.3
+      1 -> 1 attenuation 0.3
+      0 -> 2 attenuation 0.3
+      1 -> 3 attenuation 0.3
+      0 -> 4 attenuation 0.0
+      1 -> 5 attenuation 0.0
+      0 -> 6 attenuation 0.0
+      1 -> 7 attenuation 0.0
+    ]
+  }
+  DmixerInput EarlyAudio_mono_0 {
+    transferTable [
+      0 -> 0 attenuation 0.3
+      0 -> 1 attenuation 0.3
+      0 -> 2 attenuation 0.3
+      0 -> 3 attenuation 0.3
+      0 -> 4 attenuation 0.0
+      0 -> 5 attenuation 0.0
+      0 -> 6 attenuation 0.0
+      0 -> 7 attenuation 0.0
+    ]
+  }
+  DmixerInput DefaultPlayback {
+    transferTable [
+      0 -> 0 attenuation 0.3
+      1 -> 1 attenuation 0.3
+      0 -> 2 attenuation 0.3
+      1 -> 3 attenuation 0.3
+      0 -> 4 attenuation 0.0
+      1 -> 5 attenuation 0.0
+      0 -> 6 attenuation 0.0
+      1 -> 7 attenuation 0.0
+    ]
+  }
+  Dmixer dmix{
+    ipc_key 1024
+    ipc_perm 0666
+    hwOutput SPEAKER_playback_0
+    periods 4
+    rate SampleRate_48000
+    numberChannels 8
+    bindings [
+      0 -> 0
+      1 -> 1
+      2 -> 2
+      3 -> 3
+      4 -> 4
+      5 -> 5
+      6 -> 6
+      7 -> 7
+    ]
+  }
+  
+  // avb alsa sound card
+  AvbDevice AVB_EarlyAudio_4ch_0 {
+    playback_ports [
+      0 -> 0
+      1 -> 1
+      2 -> 2
+      3 -> 3
+    ]
+  }
+  
+  AvbDeviceInput AVB_PlugEA_4ch_0 {
+  }
+  
+  // alsa sound cards
+  AlsaHwPlaybackDriver SPEAKER_playback_0 {
+    clockMaster
+    synchronous
+    numberChannels 8
+    audioFormat S16_LE
+    samplingRate SampleRate_48000
+    card Baytrailaudio
+    device 0
+    ignoreId
+  }
+  AlsaHwCaptureDriver BYT_capture_0 {
+    synchronous
+    numberChannels 8
+    samplingRate SampleRate_48000
+    card Baytrailaudio
+    device 1
+    audioFormat S16_LE
+    AudioSubdevice MIC0 {
+      numberChannels 1
+      id 8
+    }
+    AudioSubdevice MIC1 {
+      numberChannels 1
+      id 9
+    }
+    AudioSubdevice MIC2 {
+      numberChannels 1
+      id 10
+    }
+    AudioSubdevice Microphone {
+      numberChannels 1
+      id 11
+    }
+    AudioSubdevice LINE_IN {
+      numberChannels 2
+      id 005
+    }
+    AudioSubdevice dummy {
+      numberChannels 2
+      ignoreId
+    }
+  }
+  AlsaHwCaptureDriver BYT_capture_2 {
+    synchronous
+    numberChannels 8
+    samplingRate SampleRate_48000
+    card BYTSSP2
+    device 0
+    audioFormat S32_LE
+    AudioSubdevice TunerPlayback0 {
+      numberChannels 2
+      id 0
+    }
+    AudioSubdevice dummy {
+      numberChannels 6
+      ignoreId
+    }
+  }
+  
+  deviceMap {
+    BYT_capture_0 -> MIC_capture_0 [
+      0 -> 0
+      1 -> 1
+    ]
+  }
+  
+  alsaDefaultDevice DefaultPlayback
+}
+

@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPDIDLLiteWriter: GUPnP A/V Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP A/V Reference Manual">
+<link rel="up" href="ch01.html" title="GUPnP A/V">
+<link rel="prev" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem">
+<link rel="next" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteWriter.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteWriter.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteWriter.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPDIDLLiteItem.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPDIDLLiteResource.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPDIDLLiteWriter"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPDIDLLiteWriter.top_of_page"></a>GUPnPDIDLLiteWriter</span></h2>
+<p>GUPnPDIDLLiteWriter — DIDL-Lite fragment writer</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteWriter.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="returnvalue">GUPnPDIDLLiteWriter</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteWriter.html#gupnp-didl-lite-writer-new" title="gupnp_didl_lite_writer_new ()">gupnp_didl_lite_writer_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem"><span class="returnvalue">GUPnPDIDLLiteItem</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteWriter.html#gupnp-didl-lite-writer-add-item" title="gupnp_didl_lite_writer_add_item ()">gupnp_didl_lite_writer_add_item</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="returnvalue">GUPnPDIDLLiteContainer</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteWriter.html#gupnp-didl-lite-writer-add-container" title="gupnp_didl_lite_writer_add_container ()">gupnp_didl_lite_writer_add_container</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteDescriptor.html" title="GUPnPDIDLLiteDescriptor"><span class="returnvalue">GUPnPDIDLLiteDescriptor</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteWriter.html#gupnp-didl-lite-writer-add-descriptor" title="gupnp_didl_lite_writer_add_descriptor ()">gupnp_didl_lite_writer_add_descriptor</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNode</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteWriter.html#gupnp-didl-lite-writer-get-xml-node" title="gupnp_didl_lite_writer_get_xml_node ()">gupnp_didl_lite_writer_get_xml_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteWriter.html#gupnp-didl-lite-writer-get-string" title="gupnp_didl_lite_writer_get_string ()">gupnp_didl_lite_writer_get_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteWriter.html#gupnp-didl-lite-writer-get-language" title="gupnp_didl_lite_writer_get_language ()">gupnp_didl_lite_writer_get_language</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteWriter.html#gupnp-didl-lite-writer-filter" title="gupnp_didl_lite_writer_filter ()">gupnp_didl_lite_writer_filter</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteWriter.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteWriter.html#GUPnPDIDLLiteWriter--language" title="The “language” property">language</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteWriter.html#GUPnPDIDLLiteWriter--xml-node" title="The “xml-node” property">xml-node</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteWriter.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GUPnPDIDLLiteWriter.html#GUPnPDIDLLiteWriter-struct" title="GUPnPDIDLLiteWriter">GUPnPDIDLLiteWriter</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteWriter.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPDIDLLiteWriter
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteWriter.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> is a helper class for writing DIDL-Lite fragments.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteWriter.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-didl-lite-writer-new"></a><h3>gupnp_didl_lite_writer_new ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="returnvalue">GUPnPDIDLLiteWriter</span></a> *
+gupnp_didl_lite_writer_new (<em class="parameter"><code>const <span class="type">char</span> *language</code></em>);</pre>
+<p>Note: <em class="parameter"><code>language</code></em>
+ should always be set to <code class="literal">NULL</code>, DLNA does not support the
+language parameter.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>language</p></td>
+<td class="parameter_description"><p>The language the DIDL-Lite fragment is in, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-new.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> object.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-writer-add-item"></a><h3>gupnp_didl_lite_writer_add_item ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem"><span class="returnvalue">GUPnPDIDLLiteItem</span></a> *
+gupnp_didl_lite_writer_add_item (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> *writer</code></em>);</pre>
+<p>Creates a new item, attaches it to <em class="parameter"><code>writer</code></em>
+ and returns it.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-add-item.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>writer</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-add-item.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem"><span class="type">GUPnPDIDLLiteItem</span></a> object. Unref after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-writer-add-container"></a><h3>gupnp_didl_lite_writer_add_container ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="returnvalue">GUPnPDIDLLiteContainer</span></a> *
+gupnp_didl_lite_writer_add_container (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> *writer</code></em>);</pre>
+<p>Creates a new container, attaches it to <em class="parameter"><code>writer</code></em>
+ and returns it.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-add-container.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>writer</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-add-container.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteContainer.html" title="GUPnPDIDLLiteContainer"><span class="type">GUPnPDIDLLiteContainer</span></a> object. Unref after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-writer-add-descriptor"></a><h3>gupnp_didl_lite_writer_add_descriptor ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteDescriptor.html" title="GUPnPDIDLLiteDescriptor"><span class="returnvalue">GUPnPDIDLLiteDescriptor</span></a> *
+gupnp_didl_lite_writer_add_descriptor (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> *writer</code></em>);</pre>
+<p>Creates a new descriptor, attaches it to <em class="parameter"><code>object</code></em>
+ and returns it.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-add-descriptor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>writer</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-add-descriptor.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteDescriptor.html" title="GUPnPDIDLLiteDescriptor"><span class="type">GUPnPDIDLLiteDescriptor</span></a> object. Unref after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-writer-get-xml-node"></a><h3>gupnp_didl_lite_writer_get_xml_node ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNode</span> *
+gupnp_didl_lite_writer_get_xml_node (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> *writer</code></em>);</pre>
+<p>Get the pointer to root node in XML document.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-get-xml-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>writer</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-get-xml-node.returns"></a><h4>Returns</h4>
+<p> The pointer to root node in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-writer-get-string"></a><h3>gupnp_didl_lite_writer_get_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_didl_lite_writer_get_string (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> *writer</code></em>);</pre>
+<p>Creates a string representation of the DIDL-Lite XML document.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-get-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>writer</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-get-string.returns"></a><h4>Returns</h4>
+<p> The DIDL-Lite XML string, or <code class="literal">NULL</code>. <span class="type">g_free</span> after usage.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-writer-get-language"></a><h3>gupnp_didl_lite_writer_get_language ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_writer_get_language (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> *writer</code></em>);</pre>
+<p>Get the language the DIDL-Lite fragment is in.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-get-language.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>writer</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-get-language.returns"></a><h4>Returns</h4>
+<p> The language of the <em class="parameter"><code>writer</code></em>
+, or <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-writer-filter"></a><h3>gupnp_didl_lite_writer_filter ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_writer_filter (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a> *writer</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *filter</code></em>);</pre>
+<p>Clears the DIDL-Lite XML document of the properties not specified in the
+<em class="parameter"><code>filter</code></em>
+. The passed filter string would typically come from the 'Filter'
+argument of Browse or Search actions from a ContentDirectory control point.
+Please refer to Section 2.3.15 of UPnP AV ContentDirectory version 3
+specification for details on this string.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-writer-filter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>writer</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter"><span class="type">GUPnPDIDLLiteWriter</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>filter</p></td>
+<td class="parameter_description"><p>A filter string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteWriter.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteWriter-struct"></a><h3>GUPnPDIDLLiteWriter</h3>
+<pre class="programlisting">typedef struct _GUPnPDIDLLiteWriter GUPnPDIDLLiteWriter;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteWriter.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteWriter--language"></a><h3>The <code class="literal">“language”</code> property</h3>
+<pre class="programlisting">  “language”                 <span class="type">gchar</span> *</pre>
+<p>The language the DIDL-Lite fragment is in.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteWriter--xml-node"></a><h3>The <code class="literal">“xml-node”</code> property</h3>
+<pre class="programlisting">  “xml-node”                 <span class="type">gpointer</span></pre>
+<p>The pointer to root node in XML document.</p>
+<p>Flags: Read</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

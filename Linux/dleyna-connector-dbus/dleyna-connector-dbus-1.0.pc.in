@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libexecdir=@libexecdir@
+includedir=${prefix}/include
+libdir=@libdir@
+
+Name: @PACKAGE@
+Description: dLeyna dbus connector
+Libs: -L${libdir}/dleyna-1.0/connectors -ldleyna-connector-dbus
+Requires.private: glib-2.0 gio-2.0 dbus-1
+Version: @VERSION@

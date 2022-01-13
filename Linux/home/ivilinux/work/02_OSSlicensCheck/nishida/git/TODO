@@ -1,0 +1,19 @@
+- Make slack-site default priority be 100 or so?
+- Clean stdin buffer before asking for user input.
+- Autodetection of removable media for apt-deb channels.
+- Implement package content listing for deb backend.
+- Create a "master local directory mirror", which is checked
+  for packages, to be used in conjuction with upgrade --urls?
+- Implement scheme similar to apt-get remove -D.
+- Implement "info" command, to show information about packages.
+- Implement per-channel package signature checking.
+- Implement something close to urpmi's --no-uninstall
+- Add command for explicit cache rebuilding
+- Add option to enable mixed dependency satisfaction.
+- Transform "Stopped" progress in elapsed time
+- Make it more clear that action commands on shell do not commit
+  immediately.
+- Implement flag --edit
+- Add rpm-* option for rpm.setVerbosity(rpm.RPMLOG_*)
+- Find a better way of making public patches between releases
+  (http://tracker.labix.org/msg451)

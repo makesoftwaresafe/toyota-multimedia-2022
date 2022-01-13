@@ -1,0 +1,5 @@
+# udev rules for audio devices handled in the corresponded audio setup services
+# Only imx6 has a this asrc device. Therefore only deployed on imx6
+# it is important that coldplug devices set the same access rights as udev rules for these devices
+
+SUBSYSTEM=="mxc_asrc", GROUP="audio", MODE="660", SYMLINK=""

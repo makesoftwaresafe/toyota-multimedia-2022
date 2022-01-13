@@ -1,0 +1,5 @@
+#!/bin/ksh
+ function hook_preconfigure {
+     configure_opts="${configure_opts} --with-yielding-select=yes"
+     configure_opts="${configure_opts} ac_cv_func_fork_works=yes"
+}

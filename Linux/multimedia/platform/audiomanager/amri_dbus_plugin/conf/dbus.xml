@@ -1,0 +1,3 @@
+<amri_dbus>
+    <tDBUS_POLICIES path = "/etc/dbus-1/system.d/amrp_dbus.conf"/>
+</amri_dbus>

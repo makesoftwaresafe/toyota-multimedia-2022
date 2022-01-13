@@ -1,0 +1,14 @@
+[Unit]
+Description=Setup of audio device on VirtIO
+DefaultDependencies=yes
+ConditionVirtualization=vm
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we start loading the modules here and wait for devices to appear ------
+ExecStart=/bin/kmodule_loader -c /etc/alsa-brd-cfg/virtio/kmodules_loader.conf
+

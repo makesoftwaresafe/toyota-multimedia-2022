@@ -1,0 +1,16 @@
+[Unit]
+Description=Setup of ASRC non p2p support for all boards supporting it
+DefaultDependencies=yes
+ConditionPathExistsGlob=/sys/devices/soc*/asrc.*
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we start loading the modules here and wait for devices to appear ------
+ExecStart=/bin/kmodule_loader -c /etc/alsa-brd-cfg/mxc-asrc/kmodules_loader.conf
+
+#-------------------- configuration is test case specific - no setup here ---------------
+

@@ -1,0 +1,150 @@
+/**
+
+ @page actionSetVolume Action Set Volume
+
+ <b>Name:</b> ACTION_SET_VOLUME<BR>
+ <b>Description:</b> This action sets the volume for the source/sink. In case of a sink the volume change
+ request can come from command side(i.e hookUserSetSinkVolume or it can be internally set in the 
+ configuration. For source there is no interface from the command side it's volume can be changed
+ only through configuration. For setting sink volume an additional step of conversion from main
+ volume to volume is performed. If the element whose volume is set, is part of an active connection
+ which is limited then a new limit for a connection is recomputed and applied.
+ 
+ For example consider a connection between Source1 and Sink1. Let us assume that the volume of Source1
+ and Sink1 are -10 db and -20 db respectively. Hence the total connection volume is -30 db. Now the 
+ the connection volume was limited say to a target volume of -50 db. This can be achieved by reducing 
+ the volume of source by -20 db. New volumes are Source1 -30 db and Sink1 -20 db. 
+ Assume that the set volume request comes for a Sink1 asking to change the volume of sink to -10 db.
+ if we change the volume of sink to -10 db the total volume of the connection becomes -40 db. This is 
+ higher then the limit hence we need to recompute the limit for entire connection and apply the new 
+ limit, we need to adjust for increase of 10 db. The controller finds out the limit and applies
+ it to the Source1 by  -40 db. Finally the connection volume is maintained at -50 db.
+
+ \code
+     <action>
+        <type>ACTION_SET_VOLUME</type>
+        <param>
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName>
+
+            <mainVolume>45</mainVolume>
+            <!-- OR -->
+            <mainVolumeStep>-10</mainVolumeStep>
+            <!-- OR -->
+            <volume>-10</volume>
+            <!-- OR -->
+            <volumeStep>-10</volumeStep>
+
+            <timeOut>3000</timeOut> <!-- This is an optional parameter -->
+        </param>
+    </action>
+ 
+ \endcode
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>sourceName</td>
+<td>M<sup>1</sup></td>
+<td>string</td>
+<td>The name of the source.</td>
+</tr>
+
+<tr>
+<td>sinkName</td>
+<td>M<sup>1</sup></td>
+<td>string</td>
+<td>The name of the sink.</td>
+</tr>
+<tr>
+<td>mainVolume</td>
+<td>M<sup>2,3</sup></td>
+<td>16 bit integer</td>
+<td>This is the main volume as displayed in HMI. This parameter is only possible for the sink.</td>
+</tr>
+
+<tr>
+<td>mainVolumeStep</td>
+<td>M<sup>2,3</sup></td>
+<td>16 bit integer</td>
+<td>Instead of absolute main volume a step can also be specified.This parameter is only possible for the sink. </td>
+</tr>
+
+<tr>
+<td>volumeStep</td>
+<td>M<sup>2</sup></td>
+<td>16 bit integer</td>
+<td>This is the volume in decible</td>
+</tr>
+
+<tr>
+<td>volumeStep</td>
+<td>M<sup>2</sup></td>
+<td>16 bit integer</td>
+<td>This is the volume step in decible</td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+M<sup>1</sup> either sourceName or sinkName should be specified for action to work.<BR>
+M<sup>2</sup> either volume or volumeStep or mainVolume or mainVolumeStep should be specified for action to work.<BR>  
+M<sup>3</sup> mainVoluemStep and mainVolume can only be specified for a sink<BR>
+
+<b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_SET_VOLUME</type>
+        <param>
+            <sinkName>"RadioSink"</sinkName>
+            <mainVolume>45</mainVolume>
+        </param>
+    </action>
+ \endcode
+    The above example sets the mainVolume of 45 for the RadioSink.
+ 
+ \code
+    <action>
+        <type>ACTION_SET_VOLUME</type>
+        <param>
+            <sinkName>"RadioSink"</sinkName>
+            <volumeStep>5</volumeStep>
+        </param>
+    </action>
+ \endcode
+    The above example increases the volume in decibel of the RadioSink by 5.
+
+ \code
+    <action>
+        <type>ACTION_SET_VOLUME</type>
+        <param>
+            <sinkName>"RadioSink"</sinkName>
+            <mainVolumeStep>-5</mainVolumeStep>
+        </param>
+    </action>
+ \endcode
+    The above example decreases the mainVolume of the RadioSink by 5.
+
+ \code
+    <action>
+        <type>ACTION_SET_VOLUME</type>
+        <param>
+            <sourceName>"mediaPlayer"</sourceName>
+            <volumeStep>-10</volumeStep>
+        </param>
+    </action>
+ \endcode
+    The above example decreases the volume in decibel of the mediaPlayer source by 10.
+   
+*/

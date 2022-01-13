@@ -1,0 +1,60 @@
+# epoll_ctl __________________________________________________
+#
+# long sys_epoll_ctl(int epfd, int op, int fd, struct epoll_event __user *event)
+# long compat_sys_epoll_ctl(int epfd, int op, int fd,
+#			struct compat_epoll_event __user *event)
+#
+
+@define _SYSCALL_EPOLL_CTL_NAME
+%(
+	name = "epoll_ctl"
+%)
+
+@define _SYSCALL_EPOLL_CTL_ARGSTR
+%(
+	argstr = sprintf("%d, %s, %d, %p", epfd, op_str, fd, event_uaddr)
+%)
+
+probe syscall.epoll_ctl = dw_syscall.epoll_ctl !, nd_syscall.epoll_ctl ? {}
+probe syscall.epoll_ctl.return = dw_syscall.epoll_ctl.return !, nd_syscall.epoll_ctl.return ? {}
+
+# dw_epoll_ctl _____________________________________________________
+
+probe dw_syscall.epoll_ctl = kernel.function("compat_sys_epoll_ctl").call ?,
+                          kernel.function("sys_epoll_ctl").call ?
+{
+	@_SYSCALL_EPOLL_CTL_NAME
+	epfd = __int32($epfd)
+	op = $op
+	op_str = _opoll_op_str($op)
+	fd = __int32($fd)
+	event_uaddr = $event
+	@_SYSCALL_EPOLL_CTL_ARGSTR
+}
+probe dw_syscall.epoll_ctl.return = kernel.function("compat_sys_epoll_ctl").return ?,
+                                 kernel.function("sys_epoll_ctl").return ?
+{
+	@_SYSCALL_EPOLL_CTL_NAME
+	retstr = return_str(1, $return)
+}
+
+# nd_epoll_ctl _____________________________________________________
+
+probe nd_syscall.epoll_ctl = kprobe.function("compat_sys_epoll_ctl") ?,
+                             kprobe.function("sys_epoll_ctl") ?
+{
+	@_SYSCALL_EPOLL_CTL_NAME
+	asmlinkage()
+	epfd = int_arg(1)
+	op = int_arg(2)
+	op_str = _opoll_op_str(op)
+	fd = int_arg(3)
+	event_uaddr = pointer_arg(4)
+	@_SYSCALL_EPOLL_CTL_ARGSTR
+}
+probe nd_syscall.epoll_ctl.return = kprobe.function("compat_sys_epoll_ctl").return ?,
+                                    kprobe.function("sys_epoll_ctl").return ?
+{
+	@_SYSCALL_EPOLL_CTL_NAME
+	retstr = returnstr(1)
+}

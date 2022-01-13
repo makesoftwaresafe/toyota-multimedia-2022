@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SoupAuth: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch02.html" title="Core API">
+<link rel="prev" href="ch02.html" title="Core API">
+<link rel="next" href="SoupAuthDomain.html" title="SoupAuthDomain">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#SoupAuth.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#SoupAuth.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#SoupAuth.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch02.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="SoupAuthDomain.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="SoupAuth"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="SoupAuth.top_of_page"></a>SoupAuth</span></h2>
+<p>SoupAuth — HTTP client-side authentication support</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="SoupAuth.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupAuth.html" title="SoupAuth"><span class="returnvalue">SoupAuth</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-new" title="soup_auth_new ()">soup_auth_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-update" title="soup_auth_update ()">soup_auth_update</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-BASIC:CAPS" title="SOUP_TYPE_AUTH_BASIC">SOUP_TYPE_AUTH_BASIC</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-DIGEST:CAPS" title="SOUP_TYPE_AUTH_DIGEST">SOUP_TYPE_AUTH_DIGEST</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-NTLM:CAPS" title="SOUP_TYPE_AUTH_NTLM">SOUP_TYPE_AUTH_NTLM</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-NEGOTIATE:CAPS" title="SOUP_TYPE_AUTH_NEGOTIATE">SOUP_TYPE_AUTH_NEGOTIATE</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-negotiate-supported" title="soup_auth_negotiate_supported ()">soup_auth_negotiate_supported</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-is-for-proxy" title="soup_auth_is_for_proxy ()">soup_auth_is_for_proxy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-get-scheme-name" title="soup_auth_get_scheme_name ()">soup_auth_get_scheme_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-get-host" title="soup_auth_get_host ()">soup_auth_get_host</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-get-realm" title="soup_auth_get_realm ()">soup_auth_get_realm</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-get-info" title="soup_auth_get_info ()">soup_auth_get_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-authenticate" title="soup_auth_authenticate ()">soup_auth_authenticate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-can-authenticate" title="soup_auth_can_authenticate ()">soup_auth_can_authenticate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-is-authenticated" title="soup_auth_is_authenticated ()">soup_auth_is_authenticated</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-is-ready" title="soup_auth_is_ready ()">soup_auth_is_ready</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-get-authorization" title="soup_auth_get_authorization ()">soup_auth_get_authorization</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-get-protection-space" title="soup_auth_get_protection_space ()">soup_auth_get_protection_space</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuth.html#soup-auth-free-protection-space" title="soup_auth_free_protection_space ()">soup_auth_free_protection_space</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupAuth.html#SoupAuth--host" title="The “host” property">host</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="SoupAuth.html#SoupAuth--is-authenticated" title="The “is-authenticated” property">is-authenticated</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="SoupAuth.html#SoupAuth--is-for-proxy" title="The “is-for-proxy” property">is-for-proxy</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupAuth.html#SoupAuth--realm" title="The “realm” property">realm</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupAuth.html#SoupAuth--scheme-name" title="The “scheme-name” property">scheme-name</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SoupAuth-struct" title="SoupAuth">SoupAuth</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-AUTH-SCHEME-NAME:CAPS" title="SOUP_AUTH_SCHEME_NAME">SOUP_AUTH_SCHEME_NAME</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-AUTH-REALM:CAPS" title="SOUP_AUTH_REALM">SOUP_AUTH_REALM</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-AUTH-HOST:CAPS" title="SOUP_AUTH_HOST">SOUP_AUTH_HOST</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-AUTH-IS-FOR-PROXY:CAPS" title="SOUP_AUTH_IS_FOR_PROXY">SOUP_AUTH_IS_FOR_PROXY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuth.html#SOUP-AUTH-IS-AUTHENTICATED:CAPS" title="SOUP_AUTH_IS_AUTHENTICATED">SOUP_AUTH_IS_AUTHENTICATED</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> SoupAuth
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.description"></a><h2>Description</h2>
+<p><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> objects store the authentication data associated with a
+given bit of web space. They are created automatically by
+<a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>.</p>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-auth-new"></a><h3>soup_auth_new ()</h3>
+<pre class="programlisting"><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="returnvalue">SoupAuth</span></a> *
+soup_auth_new (<em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>,
+               <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+               <em class="parameter"><code>const <span class="type">char</span> *auth_header</code></em>);</pre>
+<p>Creates a new <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> of type <em class="parameter"><code>type</code></em>
+ with the information from
+<em class="parameter"><code>msg</code></em>
+ and <em class="parameter"><code>auth_header</code></em>
+.</p>
+<p>This is called by <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>; you will normally not create auths
+yourself.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.2.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of auth to create (a subtype of <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a>)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> the auth is being created for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auth_header</p></td>
+<td class="parameter_description"><p>the WWW-Authenticate/Proxy-Authenticate header</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.2.7"></a><h4>Returns</h4>
+<p> the new <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it could
+not be created. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-update"></a><h3>soup_auth_update ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_auth_update (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>,
+                  <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                  <em class="parameter"><code>const <span class="type">char</span> *auth_header</code></em>);</pre>
+<p>Updates <em class="parameter"><code>auth</code></em>
+ with the information from <em class="parameter"><code>msg</code></em>
+ and <em class="parameter"><code>auth_header</code></em>
+,
+possibly un-authenticating it. As with <a class="link" href="SoupAuth.html#soup-auth-new" title="soup_auth_new ()"><code class="function">soup_auth_new()</code></a>, this is
+normally only used by <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> <em class="parameter"><code>auth</code></em>
+is being updated for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>auth_header</p></td>
+<td class="parameter_description"><p>the WWW-Authenticate/Proxy-Authenticate header</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.3.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>auth</code></em>
+is still a valid (but potentially
+unauthenticated) <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a>. <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if something about <em class="parameter"><code>auth_params</code></em>
+could not be parsed or incorporated into <em class="parameter"><code>auth</code></em>
+at all.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-TYPE-AUTH-BASIC:CAPS"></a><h3>SOUP_TYPE_AUTH_BASIC</h3>
+<pre class="programlisting">#define SOUP_TYPE_AUTH_BASIC  (soup_auth_basic_get_type ())
+</pre>
+<p>A <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> corresponding to HTTP "Basic" authentication.
+<a href="SoupSession.html"><span class="type">SoupSessions</span></a> support this by default; if you want to disable
+support for it, call <a class="link" href="SoupSession.html#soup-session-remove-feature-by-type" title="soup_session_remove_feature_by_type ()"><code class="function">soup_session_remove_feature_by_type()</code></a>,
+passing <a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-BASIC:CAPS" title="SOUP_TYPE_AUTH_BASIC"><code class="literal">SOUP_TYPE_AUTH_BASIC</code></a>.</p>
+<p class="since">Since: 2.34</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-TYPE-AUTH-DIGEST:CAPS"></a><h3>SOUP_TYPE_AUTH_DIGEST</h3>
+<pre class="programlisting">#define SOUP_TYPE_AUTH_DIGEST (soup_auth_digest_get_type ())
+</pre>
+<p>A <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> corresponding to HTTP "Digest" authentication.
+<a href="SoupSession.html"><span class="type">SoupSessions</span></a> support this by default; if you want to disable
+support for it, call <a class="link" href="SoupSession.html#soup-session-remove-feature-by-type" title="soup_session_remove_feature_by_type ()"><code class="function">soup_session_remove_feature_by_type()</code></a>,
+passing <a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-DIGEST:CAPS" title="SOUP_TYPE_AUTH_DIGEST"><code class="literal">SOUP_TYPE_AUTH_DIGEST</code></a>.</p>
+<p class="since">Since: 2.34</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-TYPE-AUTH-NTLM:CAPS"></a><h3>SOUP_TYPE_AUTH_NTLM</h3>
+<pre class="programlisting">#define SOUP_TYPE_AUTH_NTLM   (soup_auth_ntlm_get_type ())
+</pre>
+<p>A <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> corresponding to HTTP-based NTLM authentication.
+<a href="SoupSession.html"><span class="type">SoupSessions</span></a> do not support this type by default; if you want to
+enable support for it, call <a class="link" href="SoupSession.html#soup-session-add-feature-by-type" title="soup_session_add_feature_by_type ()"><code class="function">soup_session_add_feature_by_type()</code></a>,
+passing <a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-NTLM:CAPS" title="SOUP_TYPE_AUTH_NTLM"><code class="literal">SOUP_TYPE_AUTH_NTLM</code></a>.</p>
+<p class="since">Since: 2.34</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-TYPE-AUTH-NEGOTIATE:CAPS"></a><h3>SOUP_TYPE_AUTH_NEGOTIATE</h3>
+<pre class="programlisting">#define SOUP_TYPE_AUTH_NEGOTIATE  (soup_auth_negotiate_get_type ())
+</pre>
+<p>A <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> corresponding to HTTP-based GSS-Negotiate authentication.
+<a href="SoupSession.html"><span class="type">SoupSessions</span></a> do not support this type by default; if you want to
+enable support for it, call <a class="link" href="SoupSession.html#soup-session-add-feature-by-type" title="soup_session_add_feature_by_type ()"><code class="function">soup_session_add_feature_by_type()</code></a>,
+passing <a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-NEGOTIATE:CAPS" title="SOUP_TYPE_AUTH_NEGOTIATE"><code class="literal">SOUP_TYPE_AUTH_NEGOTIATE</code></a>.</p>
+<p>This auth type will only work if libsoup was compiled with GSSAPI
+support; you can check <a class="link" href="SoupAuth.html#soup-auth-negotiate-supported" title="soup_auth_negotiate_supported ()"><code class="function">soup_auth_negotiate_supported()</code></a> to see if it
+was.</p>
+<p class="since">Since: 2.54</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-negotiate-supported"></a><h3>soup_auth_negotiate_supported ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_auth_negotiate_supported (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Indicates whether libsoup was built with GSSAPI support. If this is
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, <a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-NEGOTIATE:CAPS" title="SOUP_TYPE_AUTH_NEGOTIATE"><code class="literal">SOUP_TYPE_AUTH_NEGOTIATE</code></a> will still be defined and can
+still be added to a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>, but libsoup will never attempt to
+actually use this auth type.</p>
+<p class="since">Since: 2.54</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-is-for-proxy"></a><h3>soup_auth_is_for_proxy ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_auth_is_for_proxy (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>);</pre>
+<p>Tests whether or not <em class="parameter"><code>auth</code></em>
+ is associated with a proxy server rather
+than an "origin" server.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.9.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-get-scheme-name"></a><h3>soup_auth_get_scheme_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_auth_get_scheme_name (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>);</pre>
+<p>Returns <em class="parameter"><code>auth</code></em>
+'s scheme name. (Eg, "Basic", "Digest", or "NTLM")</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.10.6"></a><h4>Returns</h4>
+<p> the scheme name</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-get-host"></a><h3>soup_auth_get_host ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_auth_get_host (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>);</pre>
+<p>Returns the host that <em class="parameter"><code>auth</code></em>
+ is associated with.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.11.6"></a><h4>Returns</h4>
+<p> the hostname</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-get-realm"></a><h3>soup_auth_get_realm ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_auth_get_realm (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>);</pre>
+<p>Returns <em class="parameter"><code>auth</code></em>
+'s realm. This is an identifier that distinguishes
+separate authentication spaces on a given server, and may be some
+string that is meaningful to the user. (Although it is probably not
+localized.)</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.12.6"></a><h4>Returns</h4>
+<p> the realm name</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-get-info"></a><h3>soup_auth_get_info ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_auth_get_info (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>);</pre>
+<p>Gets an opaque identifier for <em class="parameter"><code>auth</code></em>
+, for use as a hash key or the
+like. <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> objects from the same server with the same
+identifier refer to the same authentication domain (eg, the URLs
+associated with them take the same usernames and passwords).</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.13.6"></a><h4>Returns</h4>
+<p> the identifier</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-authenticate"></a><h3>soup_auth_authenticate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_auth_authenticate (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>,
+                        <em class="parameter"><code>const <span class="type">char</span> *username</code></em>,
+                        <em class="parameter"><code>const <span class="type">char</span> *password</code></em>);</pre>
+<p>Call this on an auth to authenticate it; normally this will cause
+the auth's message to be requeued with the new authentication info.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>username</p></td>
+<td class="parameter_description"><p>the username provided by the user or client</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>password</p></td>
+<td class="parameter_description"><p>the password provided by the user or client</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-can-authenticate"></a><h3>soup_auth_can_authenticate ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_auth_can_authenticate (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>);</pre>
+<p>Tests if <em class="parameter"><code>auth</code></em>
+ is able to authenticate by providing credentials to the
+<a class="link" href="SoupAuth.html#soup-auth-authenticate" title="soup_auth_authenticate ()"><code class="function">soup_auth_authenticate()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.15.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>auth</code></em>
+is able to accept credentials.</p>
+</div>
+<p class="since">Since: 2.54</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-is-authenticated"></a><h3>soup_auth_is_authenticated ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_auth_is_authenticated (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>);</pre>
+<p>Tests if <em class="parameter"><code>auth</code></em>
+ has been given a username and password</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.16.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>auth</code></em>
+has been given a username and password</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-is-ready"></a><h3>soup_auth_is_ready ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_auth_is_ready (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>,
+                    <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Tests if <em class="parameter"><code>auth</code></em>
+ is ready to make a request for <em class="parameter"><code>msg</code></em>
+ with. For most
+auths, this is equivalent to <a class="link" href="SoupAuth.html#soup-auth-is-authenticated" title="soup_auth_is_authenticated ()"><code class="function">soup_auth_is_authenticated()</code></a>, but for
+some auth types (eg, NTLM), the auth may be sendable (eg, as an
+authentication request) even before it is authenticated.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.17.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>auth</code></em>
+is ready to make a request with.</p>
+</div>
+<p class="since">Since: 2.42</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-get-authorization"></a><h3>soup_auth_get_authorization ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_auth_get_authorization (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>,
+                             <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Generates an appropriate "Authorization" header for <em class="parameter"><code>msg</code></em>
+. (The
+session will only call this if <a class="link" href="SoupAuth.html#soup-auth-is-authenticated" title="soup_auth_is_authenticated ()"><code class="function">soup_auth_is_authenticated()</code></a>
+returned <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.)</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> to be authorized</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.18.6"></a><h4>Returns</h4>
+<p> the "Authorization" header, which must be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-get-protection-space"></a><h3>soup_auth_get_protection_space ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+soup_auth_get_protection_space (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>,
+                                <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *source_uri</code></em>);</pre>
+<p>Returns a list of paths on the server which <em class="parameter"><code>auth</code></em>
+ extends over.
+(All subdirectories of these paths are also assumed to be part
+of <em class="parameter"><code>auth</code></em>
+'s protection space, unless otherwise discovered not to
+be.)</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.19.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>source_uri</p></td>
+<td class="parameter_description"><p>the URI of the request that <em class="parameter"><code>auth</code></em>
+was generated in
+response to.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.19.6"></a><h4>Returns</h4>
+<p> the list of
+paths, which can be freed with <a class="link" href="SoupAuth.html#soup-auth-free-protection-space" title="soup_auth_free_protection_space ()"><code class="function">soup_auth_free_protection_space()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-free-protection-space"></a><h3>soup_auth_free_protection_space ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_auth_free_protection_space (<em class="parameter"><code><a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a> *auth</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *space</code></em>);</pre>
+<p>Frees <em class="parameter"><code>space</code></em>
+.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.3.2.9.20.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>auth</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupAuth.html" title="SoupAuth"><span class="type">SoupAuth</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>space</p></td>
+<td class="parameter_description"><p>the return value from <a class="link" href="SoupAuth.html#soup-auth-get-protection-space" title="soup_auth_get_protection_space ()"><code class="function">soup_auth_get_protection_space()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupAuth-struct"></a><h3>SoupAuth</h3>
+<pre class="programlisting">typedef struct _SoupAuth SoupAuth;</pre>
+<p>The abstract base class for handling authentication. Specific HTTP
+Authentication mechanisms are implemented by its subclasses, but
+applications never need to be aware of the specific subclasses
+being used.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-AUTH-SCHEME-NAME:CAPS"></a><h3>SOUP_AUTH_SCHEME_NAME</h3>
+<pre class="programlisting">#define SOUP_AUTH_SCHEME_NAME      "scheme-name"
+</pre>
+<p>An alias for the <a class="link" href="SoupAuth.html#SoupAuth--scheme-name" title="The “scheme-name” property"><span class="type">“scheme-name”</span></a> property. (The
+authentication scheme name.)</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-AUTH-REALM:CAPS"></a><h3>SOUP_AUTH_REALM</h3>
+<pre class="programlisting">#define SOUP_AUTH_REALM            "realm"
+</pre>
+<p>An alias for the <a class="link" href="SoupAuth.html#SoupAuth--realm" title="The “realm” property"><span class="type">“realm”</span></a> property. (The
+authentication realm.)</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-AUTH-HOST:CAPS"></a><h3>SOUP_AUTH_HOST</h3>
+<pre class="programlisting">#define SOUP_AUTH_HOST             "host"
+</pre>
+<p>An alias for the <a class="link" href="SoupAuth.html#SoupAuth--host" title="The “host” property"><span class="type">“host”</span></a> property. (The
+host being authenticated to.)</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-AUTH-IS-FOR-PROXY:CAPS"></a><h3>SOUP_AUTH_IS_FOR_PROXY</h3>
+<pre class="programlisting">#define SOUP_AUTH_IS_FOR_PROXY     "is-for-proxy"
+</pre>
+<p>An alias for the <a class="link" href="SoupAuth.html#SoupAuth--is-for-proxy" title="The “is-for-proxy” property"><span class="type">“is-for-proxy”</span></a> property. (Whether
+or not the auth is for a proxy server.)</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-AUTH-IS-AUTHENTICATED:CAPS"></a><h3>SOUP_AUTH_IS_AUTHENTICATED</h3>
+<pre class="programlisting">#define SOUP_AUTH_IS_AUTHENTICATED "is-authenticated"
+</pre>
+<p>An alias for the <a class="link" href="SoupAuth.html#SoupAuth--is-authenticated" title="The “is-authenticated” property"><span class="type">“is-authenticated”</span></a> property.
+(Whether or not the auth has been authenticated.)</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="SoupAuth--host"></a><h3>The <code class="literal">“host”</code> property</h3>
+<pre class="programlisting">  “host”                     <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Authentication host.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupAuth--is-authenticated"></a><h3>The <code class="literal">“is-authenticated”</code> property</h3>
+<pre class="programlisting">  “is-authenticated”         <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Whether or not the auth is authenticated.</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupAuth--is-for-proxy"></a><h3>The <code class="literal">“is-for-proxy”</code> property</h3>
+<pre class="programlisting">  “is-for-proxy”             <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Whether or not the auth is for a proxy server.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupAuth--realm"></a><h3>The <code class="literal">“realm”</code> property</h3>
+<pre class="programlisting">  “realm”                    <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Authentication realm.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupAuth--scheme-name"></a><h3>The <code class="literal">“scheme-name”</code> property</h3>
+<pre class="programlisting">  “scheme-name”              <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>Authentication scheme name.</p>
+<p>Flags: Read</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupAuth.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

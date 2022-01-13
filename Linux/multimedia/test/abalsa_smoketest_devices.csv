@@ -1,0 +1,10 @@
+
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+#definitions of ALSA devices and configuration to be used with Audio Backend Alsa
+#
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+ADEV;line_in;IN;48000;256;0;
+ADEV;entertainment_main;OUT;48000;256;0;
+

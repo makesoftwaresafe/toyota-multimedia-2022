@@ -1,0 +1,9 @@
+# TCL specific macro definitions.
+# To make use of these macros insert the following line into your spec file:
+# %{load:%{_usrlibrpm}/macros.d/tcl}
+
+%__tclsh	/usr/bin/tclsh
+
+%tcl_version	%(echo 'puts $tcl_version' | %{__tclsh})
+%tcl_sitelib	%{_datadir}/tcl%{tcl_version}
+%tcl_sitearch	%{_libdir}/tcl%{tcl_version}

@@ -1,0 +1,188 @@
+DEBUG: Executing python function sysroot_cleansstate
+DEBUG: Python function sysroot_cleansstate finished
+DEBUG: Executing shell function do_configure
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-mel-linux-gnu
+checking target system type... x86_64-mel-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for x86_64-mel-linux-strip... i686-pc-linux-gnu-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports nested variables... (cached) yes
+checking for style of include used by make... GNU
+checking for x86_64-mel-linux-gcc... i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 accepts -g... yes
+checking for i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 option to accept ISO C89... none needed
+checking whether i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 understands -c and -o together... yes
+checking dependency style of i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64... none
+checking how to run the C preprocessor... i686-pc-linux-gnu-gcc -E --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 -m64 -msgxx-glibc --no-sysroot-suffix
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether ln -s works... yes
+checking for x86_64-mel-linux-gcc... (cached) i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 accepts -g... (cached) yes
+checking for i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 option to accept ISO C89... (cached) none needed
+checking whether i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 understands -c and -o together... (cached) yes
+checking dependency style of i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64... (cached) none
+checking whether we are using the GNU C++ compiler... yes
+checking whether i686-pc-linux-gnu-g++ -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 accepts -g... yes
+checking dependency style of i686-pc-linux-gnu-g++ -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64... none
+checking how to run the C preprocessor... i686-pc-linux-gnu-gcc -E --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 -m64 -msgxx-glibc --no-sysroot-suffix
+checking for x86_64-mel-linux-ranlib... i686-pc-linux-gnu-ranlib
+checking whether make sets $(MAKE)... (cached) yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for ppoll... yes
+checking for openat... yes
+checking for a sed that does not truncate output... /bin/sed
+checking whether NLS is requested... no
+checking for msgfmt... /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/bin/msgfmt
+checking for gmsgfmt... /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/bin/msgfmt
+checking for xgettext... /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/bin/xgettext
+checking for msgmerge... /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/bin/msgmerge
+checking for ld used by i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64... i686-pc-linux-gnu-ld --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64   -m elf_x86_64
+checking if the linker (i686-pc-linux-gnu-ld --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64   -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking whether to use NLS... no
+checking for python... /usr/bin/python
+checking whether /usr/bin/python is version 2 or 3... 2
+checking for a Python interpreter with version >= 2.6... python
+checking for python... /usr/bin/python
+checking for python version... 2.7
+checking for python platform... linux2
+checking for python script directory... ${prefix}/lib/python2.7/site-packages
+checking for python extension module directory... ${exec_prefix}/lib/python2.7/site-packages
+checking for python3... /usr/bin/python3
+checking for python3 version... 3.5
+checking for python3 platform... linux
+checking for python3 script directory... ${prefix}/lib/python3.5/site-packages
+checking for python3 extension module directory... ${exec_prefix}/lib/python3.5/site-packages
+checking to see if prologue searching should be the default... no
+checking to see if sdt probes should be the default... yes
+checking whether i686-pc-linux-gnu-g++ -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 supports C++11 features by default... yes
+configure: Compiling with gcc -fstack-protector-all et al.
+checking for x86_64-mel-linux-pkg-config... no
+checking for pkg-config... /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux/usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for sqlite3... yes
+checking for latex... no
+checking for dvips... no
+checking for ps2pdf... yes
+checking for xmlto... yes
+checking for fop... no
+checking for xmlto --stringparam support... yes
+configure: using dracut module directory /usr/lib/dracut/modules.d/99stap
+configure: using dracut binary /sbin
+configure: WARNING: compile-server client functionality will be disabled, cannot find nss development files
+configure: WARNING: some compile-server functionality will be restricted, cannot find avahi development files
+checking how to link readline libs... -lreadline
+configure: stap will link 
+checking libelf.h usability... yes
+checking libelf.h presence... yes
+checking for libelf.h... yes
+checking for elf_getshdrstrndx in -lelf... yes
+configure: staprun will link  -lelf
+checking how to run the C++ preprocessor... i686-pc-linux-gnu-g++ -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 -E
+checking boost/utility/string_ref.hpp usability... yes
+checking boost/utility/string_ref.hpp presence... yes
+checking for boost/utility/string_ref.hpp... yes
+checking for libvirt... no
+checking for libxml2... yes
+configure: WARNING: will not build systemtap virt support, cannot find libvirt headers
+checking for python-config... /usr/bin/python-config
+checking Python.h usability... no
+checking Python.h presence... no
+checking for Python.h... no
+checking for python3-config... no
+checking for jsonc... yes
+checking for ncurses... yes
+checking for assembler .section "?" flags support... yes
+checking for selinux... no
+checking whether F_SETPIPE_SZ is declared... yes
+checking for javac... (cached) "no"
+checking for jar... (cached) "no"
+java found, will try to configure Byteman support
+configure: Adding extra version 
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating includes/sys/sdt-config.h
+config.status: creating po/Makefile.in
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating man/Makefile
+config.status: creating man/cs/Makefile
+config.status: creating doc/beginners/Makefile
+config.status: creating doc/SystemTap_Tapset_Reference/Makefile
+config.status: creating man/stap.1
+config.status: creating man/stappaths.7
+config.status: creating man/systemtap.8
+config.status: creating man/cs/stap.1
+config.status: creating man/cs/stappaths.7
+config.status: creating man/cs/systemtap.8
+config.status: creating initscript/config.systemtap
+config.status: creating initscript/config.stap-server
+config.status: creating initscript/systemtap
+config.status: creating initscript/stap-server
+config.status: creating initscript/99stap/module-setup.sh
+config.status: creating initscript/99stap/install
+config.status: creating initscript/99stap/check
+config.status: creating dtrace
+config.status: creating stapdyn/Makefile
+config.status: creating java/Makefile
+config.status: creating java/stapbm
+config.status: creating python/Makefile
+config.status: creating staprun/Makefile
+config.status: creating staprun/run-staprun
+config.status: creating staprun/guest/stapshd
+config.status: creating staprun/guest/stapsh-daemon
+config.status: creating staprun/guest/stapsh@.service
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing doc/beginners commands
+=== configuring in testsuite (/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/systemtap/build_x86_64-mel-linux/systemtap/testsuite)
+configure: running /bin/sh /home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/../../systemtap/testsuite/configure --disable-option-checking '--prefix=/opt/tooling/adit/systemtap'  '--disable-dependency-tracking' '--exec-prefix=/opt/tooling/adit/systemtap' '--host=x86_64-mel-linux' '--disable-translator' '--disable-server' '--disable-docs' '--disable-refdocs' '--disable-grapher' '--without-rpm' '--without-nss' '--without-avahi' '--without-dyninst' 'ac_cv_prog_have_javac="no"' 'ac_cv_prog_have_jar="no"' '--disable-static' '--disable-nls' 'host_alias=x86_64-mel-linux' 'CC=i686-pc-linux-gnu-gcc -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64' 'CFLAGS=-O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0=/usr/src/debug/systemtap/git-systemtap_g03-r0 -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64= -fstack-protector-strong -Wformat -Wformat-security -Werror=format-security' 'LDFLAGS=-Wl,-O1 -Wl,--hash-style=gnu -Wl,--build-id=sha1 -Wl,--as-needed -fstack-protector-strong -Wl,-z,relro,-z,now -ltinfo -lpthread' 'CPPFLAGS=' 'CPP=i686-pc-linux-gnu-gcc -E --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64 -m64 -msgxx-glibc --no-sysroot-suffix' 'CXX=i686-pc-linux-gnu-g++ -m64 -msgxx-glibc --no-sysroot-suffix --sysroot=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64' 'CXXFLAGS=-O2 -pipe -g -feliminate-unused-debug-types -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/work/corei7-64-mel-linux/systemtap/git-systemtap_g03-r0=/usr/src/debug/systemtap/git-systemtap_g03-r0 -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/x86_64-linux= -fdebug-prefix-map=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64= -fstack-protector-strong -Wformat -Wformat-security -Werror=format-security -fvisibility-inlines-hidden' 'PKG_CONFIG_PATH=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/lib64/pkgconfig:/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/share/pkgconfig' 'PKG_CONFIG_LIBDIR=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/lib64/pkgconfig' 'python=/usr/bin/python' 'pyexecdir=${exec_prefix}/lib/python2.7/site-packages' 'python3=/usr/bin/python3' 'py3execdir=${exec_prefix}/lib/python3.5/site-packages' --cache-file=/dev/null --srcdir=/home/ivilinux/work/01_pfinteg/pf_integ_tools_1105/dn-delivery-common/oe-MGC_COS2-gr-mrb-64_1/build/../../systemtap/testsuite
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for x86_64-mel-linux-strip... i686-pc-linux-gnu-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+configure: Will test no apps from: xulrunner tcl postgres mysql java 
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+DEBUG: Shell function do_configure finished
+DEBUG: Executing python function do_qa_configure
+DEBUG: Python function do_qa_configure finished

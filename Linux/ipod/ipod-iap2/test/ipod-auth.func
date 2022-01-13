@@ -1,0 +1,89 @@
+#!/bin/bash
+
+################################################################################
+# This source code is proprietary of ADIT
+# Copyright (C) Advanced Driver Information Technology GmbH
+# All rights reserved
+################################################################################
+
+function FN_ipod_startup()
+{
+  # exclude q-sd board because it has no auth chip
+    FN_smoketest_exclude "board" "imx6q-sd"
+
+  #common initializations irrespective of board
+    FN_start_service "dlt.service"
+    # start usb setup service and check if active
+    FN_start_service "usb-setup.target"
+    FN_active_service "usb-setup.target"
+
+
+  # board specific initializaions
+  #IMX6 family
+  if [ "${SMOKETEST_FAMILY}" == "mx6q" ] ; then
+    # restart gpio setup service and check if active
+    FN_stop_service "gpio-setup.service"
+    FN_start_service "gpio-setup.service" "skip"
+    FN_active_service "gpio-setup.service"
+
+    # start ipod auth service and check if active. Starts the i2c-dev
+    FN_start_service "ipod-auth.target"
+    FN_active_service "ipod-auth.target"
+
+     # check for i2c presense on board
+    i2cdev=$(awk '$1=="IPOD_AUTH_DEV_NAME"{print $2}' /etc/pfcfg/IPOD_AUTH.cfg)
+    if [ ! -e "$i2cdev" ]; then
+      FN_smoketest_error "No device $i2cdev found."
+    fi
+  fi # [ "${SMOKETEST_FAMILY}" == "mx6q" ]
+
+  #Broxton and QNX
+  if [ "${SMOKETEST_FAMILY}" == "gr-mrb-64" ] ; then
+    # cbc connection for broxton
+    FN_user_execute "${TEST_USER}" "ldattach -s 4000000 26 /dev/ttyS1"
+
+    # start ipod auth service and check if active. Starts the i2c-dev
+    FN_start_service "ipod-auth.target"
+    FN_active_service "ipod-auth.target"
+
+    # check for i2c presense on board
+    i2cdev=$(awk '$1=="IPOD_AUTH_DEV_NAME"{print $2}' /etc/pfcfg/IPOD_AUTH.cfg)
+    if [ ! -e "$i2cdev" ]; then
+      FN_smoketest_error "No device $i2cdev found."
+    fi
+
+  fi # [ "${SMOKETEST_FAMILY}" == "gr-mrb-64" ] 
+
+  #RCAR3 and GHS
+  if [ "${SMOKETEST_FAMILY}" == "rcar-gen3" ] ; then
+
+    # start ipod auth service and check if active. Starts the i2c-dev
+    FN_start_service "ipod-auth.target"
+    FN_active_service "ipod-auth.target"
+
+    # check for i2c presense on board
+    i2cdev=$(awk '$1=="IPOD_AUTH_DEV_NAME"{print $2}' /etc/pfcfg/IPOD_AUTH.cfg)
+    if [ ! -e "$i2cdev" ]; then
+      FN_smoketest_error "No device $i2cdev found."
+    fi
+  fi # [ "${SMOKETEST_FAMILY}" == "rcar-gen3" ]
+
+  #SIM and Vbox(simulation)
+  #if [ "${SMOKETEST_FAMILY}" == "oracle-virtualbox" ] ; then
+    # Nothing board specific to be done
+  #"fi # [ "${SMOKETEST_FAMILY}" == "oracle-virtualbox" ]
+
+  return 0
+}
+
+function FN_ipod_exit()
+{
+  if [ "${SMOKETEST_FAMILY}" == "gr-mrb-64" ] ; then
+    # cbc disconnection for broxton
+    killall ldattach
+
+  fi # [ "${SMOKETEST_FAMILY}" == "gr-mrb-64" ] 
+
+  return 0
+}
+

@@ -1,0 +1,123 @@
+/**
+
+ @page actionSetLimit Action Limit/UnLimit
+
+ <b>Name:</b> ACTION_LIMIT<BR>
+ <b>Name:</b> ACTION_UNLIMIT<BR>
+ <b>Description:</b> This action limits the volume of a class. Limiting a volume of a class means
+ that any active connection of that class would be in limit volume state. If there  is no active connection 
+ than any connection of that class which becomes active in future would be limited till the  class limit is 
+ present. 
+ Limit can be of two types absolute limit or the relative limit. Absolute limit means
+ the volume of the class cannot be more than specified limit. Relative limit means that the volume of
+ the class is changed by the given value.
+ 
+ Example: lets say a connection of a class BASE involving Source1 and Sink1. The volume of the Source1 
+ and Sink1 are respectively -10 db and -20 db respectively. The effective volume of the connection is
+ -30 db , if say class is limited by absoulute volume of -100 db then the connection volume cannot be
+ greater than -100 db. 
+
+ \code
+     <action>
+        <type>ACTION_LIMIT</type>
+        <param>
+            <className>CLASS</className>
+            
+            <volume>-60</volume>
+            <!-- OR -->
+            <volumeStep>-60</volumeStep>
+
+            <pattern>FF</pattern>   <!-- This is an optional parameter -->
+            <timeOut>3000</timeOut> <!-- This is an optional parameter -->
+        </param>
+    </action>
+
+     <action>
+        <type>ACTION_UNLIMIT</type>
+        <param>
+            <className>CLASS</className>
+            <pattern>FF</pattern>   <!-- This is an optional parameter -->
+            <timeOut>3000</timeOut> <!-- This is an optional parameter -->
+        </param>
+    </action>
+
+ \endcode
+
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>className</td>
+<td>M</td>
+<td>string</td>
+<td>The name of the class which should be limited</td>
+</tr>
+
+<tr>
+<td>volume</td>
+<td>M<sup>1</sup></td>
+<td>16 bit integer</td>
+<td>This is the absolute limit. The volume of the class cannot be greater than this volume.</td>
+</tr>
+
+<tr>
+<td>volumeStep</td>
+<td>M<sup>1</sup></td>
+<td>16 bit integer</td>
+<td>This is the relative limit. The volume of the class is changed by this value</td>
+</tr>
+
+<tr>
+<td>pattern</td>
+<td>O</td>
+<td>32 bit unsigned integer</td>
+<td>This is the pattern by which the class is limited. A class can be limited multiple times, in 
+order to differentiate between the multiple limits pattern is used. Multiple limits with different 
+pattern can be applied, while unlimiting pattern is used to identify the limit value. If this is
+not specified then a default pattern with all 1's is used.
+</td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+M<sup>1</sup> either volume or volumeStep should be specified for action to work.<BR>
+  
+ 
+ <BR>
+ <b>Example Configuration:</b>
+     Below are some examples of the action configuration
+
+ \code
+    <action>
+        <type>ACTION_LIMIT</type>
+        <param>
+            <className>"BASE"</className>
+            <volume>-200</volume>
+            <pattern>01</pattern>
+        </param>
+    </action>
+ \endcode
+The above example sets the limit for BASE class to -200 and pattern 1.
+
+ \code
+    <action>
+        <type>ACTION_UNLIMIT</type>
+        <param>
+            <className>"BASE"</className>
+            <pattern>01</pattern>
+        </param>
+    </action>
+ \endcode
+The above example removes the limit for BASE class with pattern 1.
+
+*/

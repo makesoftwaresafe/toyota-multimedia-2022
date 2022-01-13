@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPAcl: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-utility.html" title="Utility Functions">
+<link rel="prev" href="api-utility.html" title="Utility Functions">
+<link rel="next" href="GUPnPWhiteList.html" title="GUPnPWhiteList">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPAcl.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPAcl.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#GUPnPAcl.prerequisites" class="shortcut">Prerequisites</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-utility.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="api-utility.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPWhiteList.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPAcl"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPAcl.top_of_page"></a>GUPnPAcl</span></h2>
+<p>GUPnPAcl — Object providing a simple access control list for
+GUPnP.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPAcl.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPAcl.html#gupnp-acl-can-sync" title="gupnp_acl_can_sync ()">gupnp_acl_can_sync</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPAcl.html#gupnp-acl-is-allowed" title="gupnp_acl_is_allowed ()">gupnp_acl_is_allowed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPAcl.html#gupnp-acl-is-allowed-async" title="gupnp_acl_is_allowed_async ()">gupnp_acl_is_allowed_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPAcl.html#gupnp-acl-is-allowed-finish" title="gupnp_acl_is_allowed_finish ()">gupnp_acl_is_allowed_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPAcl.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GUPnPAcl.html#GUPnPAcl-struct" title="GUPnPAcl">GUPnPAcl</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPAcl.html#GUPnPAclInterface" title="struct GUPnPAclInterface">GUPnPAclInterface</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPAcl.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/home/jens/jhbuild/install/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+    <span class="lineart">╰──</span> GUPnPAcl
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPAcl.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+GUPnPAcl requires
+ GObject.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPAcl.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a> provides either synchronous or asynchronous functions to check
+whether a peer sould be able to access a resource or not.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPAcl.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-acl-can-sync"></a><h3>gupnp_acl_can_sync ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_acl_can_sync (<em class="parameter"><code><a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a> *self</code></em>);</pre>
+<p>Check whether <a class="link" href="GUPnPAcl.html#gupnp-acl-is-allowed-async" title="gupnp_acl_is_allowed_async ()"><code class="function">gupnp_acl_is_allowed_async()</code></a> is supported.</p>
+<div class="refsect3">
+<a name="gupnp-acl-can-sync.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a>
+<em class="parameter"><code>returns</code></em>
+<code class="literal">TRUE</code>, if <a class="link" href="GUPnPAcl.html#gupnp-acl-is-allowed-async" title="gupnp_acl_is_allowed_async ()"><code class="function">gupnp_acl_is_allowed_async()</code></a> is supported, <code class="literal">FALSE</code>
+otherwise.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-acl-is-allowed"></a><h3>gupnp_acl_is_allowed ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_acl_is_allowed (<em class="parameter"><code><a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a> *self</code></em>,
+                      <em class="parameter"><code><span class="type">struct _GUPnPDevice</span> *device</code></em>,
+                      <em class="parameter"><code><span class="type">struct _GUPnPService</span> *service</code></em>,
+                      <em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                      <em class="parameter"><code>const <span class="type">char</span> *address</code></em>,
+                      <em class="parameter"><code>const <span class="type">char</span> *agent</code></em>);</pre>
+<p>Check whether an IP address is allowed to access this resource.</p>
+<div class="refsect3">
+<a name="gupnp-acl-is-allowed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>an instance of <a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p> The <a class="link" href="GUPnPDevice.html" title="GUPnPDevice"><span class="type">GUPnPDevice</span></a> associated with <em class="parameter"><code>path</code></em>
+or <code class="literal">NULL</code> if
+unknown. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p> The <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> associated with <em class="parameter"><code>path</code></em>
+or <code class="literal">NULL</code> if
+unknown. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>The path being served.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>IP address of the peer.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>agent</p></td>
+<td class="parameter_description"><p> The User-Agent header of the peer or <code class="literal">NULL</code> if not
+unknown.
+<em class="parameter"><code>returns</code></em>
+<code class="literal">TRUE</code> if the peer is allowed, <code class="literal">FALSE</code> otherwise. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-acl-is-allowed-async"></a><h3>gupnp_acl_is_allowed_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_acl_is_allowed_async (<em class="parameter"><code><a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a> *self</code></em>,
+                            <em class="parameter"><code><span class="type">struct _GUPnPDevice</span> *device</code></em>,
+                            <em class="parameter"><code><span class="type">struct _GUPnPService</span> *service</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *address</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *agent</code></em>,
+                            <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                            <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                            <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Optional. Check asynchronously whether an IP address is allowed to access
+this resource. Use this function if the process of verifying the access right
+is expected to take some time, for example when using D-Bus etc.</p>
+<p>If this function is supported, <a class="link" href="GUPnPAcl.html#gupnp-acl-can-sync" title="gupnp_acl_can_sync ()"><code class="function">gupnp_acl_can_sync()</code></a> should return <code class="literal">TRUE</code>.</p>
+<p>Use <a class="link" href="GUPnPAcl.html#gupnp-acl-is-allowed-finish" title="gupnp_acl_is_allowed_finish ()"><code class="function">gupnp_acl_is_allowed_finish()</code></a> to retrieve the result.</p>
+<div class="refsect3">
+<a name="gupnp-acl-is-allowed-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>device</p></td>
+<td class="parameter_description"><p> The <a class="link" href="GUPnPDevice.html" title="GUPnPDevice"><span class="type">GUPnPDevice</span></a> associated with <em class="parameter"><code>path</code></em>
+or <code class="literal">NULL</code> if
+unknown. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p> The <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> associated with <em class="parameter"><code>path</code></em>
+or <code class="literal">NULL</code> if
+unknown. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>The path being served.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>address</p></td>
+<td class="parameter_description"><p>IP address of the peer</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>agent</p></td>
+<td class="parameter_description"><p> The User-Agent header of the peer or <code class="literal">NULL</code> if not
+unknown. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> A <span class="type">GCancellable</span> which can be used to cancel the
+operation. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>Callback to call after the function is done.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>Some user data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-acl-is-allowed-finish"></a><h3>gupnp_acl_is_allowed_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_acl_is_allowed_finish (<em class="parameter"><code><a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a> *self</code></em>,
+                             <em class="parameter"><code><span class="type">GAsyncResult</span> *res</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-acl-is-allowed-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>An instance of <a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>res</p></td>
+<td class="parameter_description"><p><code class="literal">GAsyncResult</code> obtained from the callback in <a class="link" href="GUPnPAcl.html#gupnp-acl-is-allowed-async" title="gupnp_acl_is_allowed_async ()"><code class="function">gupnp_acl_is_allowed_async()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> A return location for a <span class="type">GError</span> describing the failure
+<em class="parameter"><code>returns</code></em>
+<code class="literal">TRUE</code> if the authentication was successful, <code class="literal">FALSE</code> otherwise and on
+error. Check <em class="parameter"><code>error</code></em>
+for details. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPAcl.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPAcl-struct"></a><h3>GUPnPAcl</h3>
+<pre class="programlisting">typedef struct _GUPnPAcl GUPnPAcl;</pre>
+<p>Handle to an object implementing the <a class="link" href="GUPnPAcl.html#GUPnPAclInterface" title="struct GUPnPAclInterface"><span class="type">GUPnPAclInterface</span></a> interface.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPAclInterface"></a><h3>struct GUPnPAclInterface</h3>
+<pre class="programlisting">struct GUPnPAclInterface {
+    GTypeInterface parent;
+
+    gboolean (*is_allowed) (GUPnPAcl     *self,
+                            struct _GUPnPDevice  *device,
+                            struct _GUPnPService *service,
+                            const char   *path,
+                            const char   *address,
+                            const char   *agent);
+
+    void     (*is_allowed_async) (GUPnPAcl           *self,
+                                  struct _GUPnPDevice        *device,
+                                  struct _GUPnPService       *service,
+                                  const char         *path,
+                                  const char         *address,
+                                  const char         *agent,
+                                  GCancellable       *cancellable,
+                                  GAsyncReadyCallback callback,
+                                  gpointer            user_data);
+
+    gboolean (*is_allowed_finish) (GUPnPAcl      *self,
+                                   GAsyncResult  *res,
+                                   GError       **error);
+
+    gboolean (*can_sync)          (GUPnPAcl *self);
+};
+</pre>
+<p>Implement a simple access control list for GUPnP.</p>
+<div class="refsect3">
+<a name="GUPnPAclInterface.members"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="GUPnPAclInterface.parent"></a>parent</code></em>;</p></td>
+<td class="struct_member_description"><p>The parent interface.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GUPnPAclInterface.is-allowed"></a>is_allowed</code></em> ()</p></td>
+<td class="struct_member_description"><p>Check whether access to the resource is granted.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GUPnPAclInterface.is-allowed-async"></a>is_allowed_async</code></em> ()</p></td>
+<td class="struct_member_description"><p>Asynchronously check whether the access is granted.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GUPnPAclInterface.is-allowed-finish"></a>is_allowed_finish</code></em> ()</p></td>
+<td class="struct_member_description"><p>Conclude the <em class="parameter"><code>is_allowed_async</code></em>
+operation.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GUPnPAclInterface.can-sync"></a>can_sync</code></em> ()</p></td>
+<td class="struct_member_description"><p>Whether the ACL can do sync queries.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

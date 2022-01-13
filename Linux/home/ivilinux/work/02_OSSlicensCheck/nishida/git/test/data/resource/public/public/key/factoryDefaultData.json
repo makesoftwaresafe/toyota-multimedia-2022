@@ -1,0 +1,10 @@
+{
+  "config_public": "public",
+  "version": "0.1.0",
+  "resources": {
+    "pubSettingB": {
+      "size": "35",
+      "data": "466163746F727944656661756C74203A2070756253657474696E6742203A206E657700"
+    }
+  }
+}

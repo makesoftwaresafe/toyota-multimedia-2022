@@ -1,0 +1,58 @@
+/*
+ * PREF_FUNC_recover --
+ *	Recovery function for FUNC.
+ *
+ * PUBLIC: int PREF_FUNC_recover
+ * PUBLIC:   __P((dbenv *, DBT *, DB_LSN *, db_recops));
+ */
+int
+PREF_FUNC_recover(DB_ENV * dbenv, DBT * dbtp, DB_LSN * lsnp, db_recops op)
+{
+    PREF_DUP_args *argp = NULL;
+    int ret = EINVAL;
+
+#ifdef DEBUG_RECOVER
+    (void)PREF_DUP_print(dbenv, dbtp, lsnp, op);
+#endif
+    if ((ret = PREF_DUP_read(dbenv, dbtp->data, &argp)) != 0)
+	goto exit;
+
+    switch (op) {
+    case DB_TXN_ABORT:
+    case DB_TXN_BACKWARD_ROLL:
+	ret = UNFUNC(argp->path.data);
+	if (ret != 0)
+	    dbenv->err(dbenv, ret, "FUNC: DB_TXN_BACKWARD_ROLL");
+	else
+	    ret = 0;
+	break;
+    case DB_TXN_APPLY:
+    case DB_TXN_FORWARD_ROLL:
+	ret = FUNC(argp->path.data);
+	if (ret != 0)
+	    dbenv->err(dbenv, ret, "FUNC: DB_TXN_FORWARD_ROLL");
+	else
+	    ret = 0;
+    case DB_TXN_PRINT:
+	if (ret != 0)
+	    dbenv->err(dbenv, ret, "FUNC: DB_TXN_PRINT");
+	else
+	    ret = 0;
+	break;
+    default:
+	if (ret != 0)
+	    dbenv->err(dbenv, ret, "FUNC: UNKNOWN");
+	else
+	    ret = 0;
+	break;
+    }
+
+    /* Allow for following LSN pointers through a transaction. */
+    *lsnp = argp->prev_lsn;
+
+exit:
+    if (argp != NULL)
+	free(argp);
+    return ret;
+}
+

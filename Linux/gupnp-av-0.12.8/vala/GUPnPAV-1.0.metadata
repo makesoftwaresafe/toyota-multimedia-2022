@@ -1,0 +1,14 @@
+GUPnPAV cheader_filename="libgupnp-av/gupnp-av.h"
+*.get_*_namespace type="Xml.Ns*"
+*.xml_node type="Xml.Node*"
+*.dlna_namespace type="Xml.Ns*"
+*.pv_namespace type="Xml.Ns*"
+*.dc_namespace type="Xml.Ns*"
+*.upnp_namespace type="Xml.Ns*"
+DIDL_LITE_WRITER_NAMESPACE_* skip
+*.gupnp_reserved skip
+SearchCriteriaParserError skip
+SearchCriteriaParser
+    .expression skip
+ProtocolError skip
+protocol_error_quark skip

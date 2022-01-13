@@ -1,0 +1,168 @@
+# ca-certificates po-debconf translation to Spanish
+# Copyright (C) 2005-2007 Software in the Public Interest
+# This file is distributed under the same license as the ca-certificates package.
+#
+# Changes:
+#  - Initial translation
+#         César Gómez Martín <cesar.gomez@gmail.com>
+#  - Update
+#         Javier Fernández-Sanguino <jfs@debian.org>, 2006-2011
+#
+#   Traductores, si no conoce el formato PO, merece la pena leer la
+#   documentación de gettext, especialmente las secciones dedicadas a este
+#   formato, por ejemplo ejecutando:
+#          info -n '(gettext)PO Files'
+#          info -n '(gettext)Header Entry'
+# Equipo de traducción al español, por favor, lean antes de traducir
+# los siguientes documentos:
+#
+#  - El proyecto de traducción de Debian al español
+#    http://www.debian.org/intl/spanish/
+#    especialmente las notas de traducción en
+#    http://www.debian.org/intl/spanish/notas
+#
+#  - La guía de traducción de po's de debconf:
+#    /usr/share/doc/po-debconf/README-trans
+#    o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ca-certificates\n"
+"Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2011-09-21 23:37+0200\n"
+"Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
+"Language-Team: Debian l10n spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr "Configuración de ca-certificates"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "yes"
+msgstr "sí"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "no"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "preguntar"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid "Trust new certificates from certificate authorities?"
+msgstr ""
+"¿Desea confiar en los nuevos certificados de las autoridades de "
+"certificación?"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+"This package may install new CA (Certificate Authority) certificates when "
+"upgrading. You may want to check such new CA certificates and select only "
+"certificates that you trust."
+msgstr ""
+"Este paquete puede que instale nuevos certificados de CA (Autoridad "
+"Certificadora) al actualizarse. Quizás quiera comprobar esos nuevos "
+"certificados CA y seleccionar sólo los certificados en los que confíe."
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+" - yes: new CA certificates will be trusted and installed;\n"
+" - no : new CA certificates will not be installed by default;\n"
+" - ask: prompt for each new CA certificate."
+msgstr ""
+" - sí: se confiará en los nuevos certificados de CA y se instalarán.\n"
+" - no: los nuevos certificados de CA no se instalarán por omisión.\n"
+" - preguntar: se hará la pregunta para cada nuevo certificado de CA."
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid "New certificates to activate:"
+msgstr "Nuevos certificados a activar:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid ""
+"During upgrades, new certificates will be added. Please choose those you "
+"trust."
+msgstr ""
+"Se añadirán estos certificados durante la actualización. Escoja de la lista "
+"aquellos en los que confía."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid "Certificates to activate:"
+msgstr "Certificados a activar:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"This package installs common CA (Certificate Authority) certificates in /usr/"
+"share/ca-certificates."
+msgstr ""
+"Este paquete instala certificados comunes de CA (Autoridad Certificadora) "
+"en /usr/share/ca-certificates."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"Please select the certificate authorities you trust so that their "
+"certificates are installed into /etc/ssl/certs. They will be compiled into a "
+"single /etc/ssl/certs/ca-certificates.crt file."
+msgstr ""
+"Escoja las autoridades de certificación en las que confía para instalarlas "
+"en «/etc/ssl/certs». Se incluirán todas en un único archivo «/etc/ssl/certs/"
+"ca-certificates.crt»."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "sí, no, preguntar"
+
+#~ msgid "${new_crts}"
+#~ msgstr "${new_crts}"
+
+#~ msgid "${enable_crts}"
+#~ msgstr "${enable_crts}"
+
+#~ msgid "Select new certificates to activate:"
+#~ msgstr "Seleccione los nuevos certificados que quiere activar:"
+
+#~ msgid ""
+#~ "This package installs common CA (Certificate Authority) certificates in /"
+#~ "usr/share/ca-certificates. You can select certs from these available "
+#~ "certs to be installed into /etc/ssl/certs. This package will make "
+#~ "symlinks and generate a single file of all your selected certs, /etc/ssl/"
+#~ "certs/ca-certificates.crt."
+#~ msgstr ""
+#~ "Este paquete instala certificados de CA («Certificate Authority», o "
+#~ "Autoridad Certificadora) comunes en /usr/share/ca-certificates. Puede "
+#~ "seleccionar certificados de entre los que estan disponibles para "
+#~ "instalarlos en /etc/ssl/certs. Este paquete hará enlaces simbólicos y con "
+#~ "cada uno de los certificados seleccionados generará un único fichero cuya "
+#~ "ruta es /etc/ssl/certs/ca-certificates.crt."

@@ -1,0 +1,24 @@
+###########################################################################################
+# iAP2 autostarting demo
+#
+
+[Unit]
+Description=iAP2Service autostarting demo
+
+After=ipod-auth.target \
+      volatile-fs.target \
+      early-devices-setup.service
+
+Requires=ipod-auth.target \
+         volatile-fs.target \
+	 early-devices-setup.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/strace -f -ttt -o /tmp/iap2-service-demo-logs.txt /bin/ipod-iap2_service_smoketest.out gadget ai nopo
+#ExecStart=/bin/ipod-iap2_service_smoketest.out gadget ai nopo
+User=system
+SupplementaryGroups=audio dlt adit-persistent
+
+[Install]
+WantedBy=multi-user.target

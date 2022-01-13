@@ -1,0 +1,151 @@
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc
+-- Check for working C compiler: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-g++
+-- Check for working CXX compiler: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/qnx-sdp7/host/linux/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Build type not defined. Using default build type 'RelWithDebInfo'.
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - found
+-- Found Threads: TRUE  
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Using unsigned short
+-- Check if the system is big endian - little endian
+-- Looking for include file arpa/inet.h
+-- Looking for include file arpa/inet.h - found
+-- Looking for include file fcntl.h
+-- Looking for include file fcntl.h - found
+-- Looking for include file float.h
+-- Looking for include file float.h - found
+-- Looking for include file limits.h
+-- Looking for include file limits.h - found
+-- Looking for include file netdb.h
+-- Looking for include file netdb.h - found
+-- Looking for include file netinet/in.h
+-- Looking for include file netinet/in.h - found
+-- Looking for include file stdlib.h
+-- Looking for include file stdlib.h - found
+-- Looking for include file string.h
+-- Looking for include file string.h - found
+-- Looking for include file strings.h
+-- Looking for include file strings.h - found
+-- Looking for include file sys/ioctl.h
+-- Looking for include file sys/ioctl.h - found
+-- Looking for include file sys/socket.h
+-- Looking for include file sys/socket.h - found
+-- Looking for include file sys/time.h
+-- Looking for include file sys/time.h - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for include file sys/ipc.h
+-- Looking for include file sys/ipc.h - found
+-- Looking for include file ctype.h
+-- Looking for include file ctype.h - found
+-- Looking for include file signal.h
+-- Looking for include file signal.h - found
+-- Looking for include file syslog.h
+-- Looking for include file syslog.h - found
+-- Looking for include file sys/stat.h
+-- Looking for include file sys/stat.h - found
+-- Looking for include file linux/stat.h
+-- Looking for include file linux/stat.h - not found
+-- Looking for include file sys/uio.h
+-- Looking for include file sys/uio.h - found
+-- Looking for include file termios.h
+-- Looking for include file termios.h - found
+-- Looking for bzero
+-- Looking for bzero - found
+-- Looking for clock_gettime
+-- Looking for clock_gettime - found
+-- Looking for floor
+-- Looking for floor - not found
+-- Looking for fork
+-- Looking for fork - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - not found
+-- Looking for gettimeofday
+-- Looking for gettimeofday - found
+-- Looking for inet_ntoa
+-- Looking for inet_ntoa - not found
+-- Looking for malloc
+-- Looking for malloc - found
+-- Looking for memmove
+-- Looking for memmove - found
+-- Looking for memset
+-- Looking for memset - found
+-- Looking for mkfifo
+-- Looking for mkfifo - found
+-- Looking for select
+-- Looking for select - found
+-- Looking for socket
+-- Looking for socket - not found
+-- Looking for strchr
+-- Looking for strchr - found
+-- Looking for strerror
+-- Looking for strerror - found
+-- Looking for strstr
+-- Looking for strstr - found
+-- Looking for strtol
+-- Looking for strtol - found
+-- 
+-- -------------------------------------------------------------------------------
+-- Build for Version 2.16.0 build t_dn43_inte_qnx_g27.5_aap073 version state STABLE
+-- WITH_SYSTEMD = OFF
+-- WITH_SYSTEMD_WATCHDOG = OFF
+-- WITH_SYSTEMD_JOURNAL = OFF
+-- WITH_DOC = OFF
+-- WITH_MAN = OFF
+-- WTIH_DLT_ADAPTOR = ON
+-- WITH_DLT_CONSOLE = ON
+-- WITH_DLT_EXAMPLES = ON
+-- WITH_DLT_SYSTEM = OFF
+-- WITH_DLT_DBUS = OFF
+-- WITH_DLT_TESTS = ON
+-- WITH_DLT_UNIT_TESTS = OFF
+-- WITH_DLT_SHM_ENABLE = OFF
+-- WITH_DLTTEST = OFF
+-- WITH_DLT_CXX11_EXT = OFF
+-- WITH_DLT_COREDUMPHANDLER = OFF
+-- WITH_DLT_HP_LOG = OFF
+-- WITH_DLT_KPI = OFF
+-- WITH_CHECK_CONFIG_FILE = OFF
+-- WITH_TESTSCRIPTS = OFF
+-- WITH_GPROF = OFF
+-- WITH_DLT_USE_IPv6 = OFF
+-- DLT_USER = genivi
+-- BUILD_SHARED_LIBS = ON
+-- TARGET_CPU_NAME = 
+-- CMAKE_INSTALL_PREFIX = /usr
+-- CMAKE_BUILD_TYPE = RelWithDebInfo
+-- CMAKE_HOST_SYSTEM_PROCESSOR = x86_64
+-- CMAKE_SYSTEM_PROCESSOR = i686
+-- WITH_DLT_LOGSTORAGE_CTRL_UDEV = OFF
+-- WITH_DLT_LOGSTORAGE_CTRL_PROP = OFF
+-- WITH_DLT_FILTER_BACKEND_PROP = OFF
+-- WITH_UNIX_SOCKET_IPC = ON (Path: /tmp/dlt)
+-- Change a value with: cmake -D<Variable>=<Value>
+-- -------------------------------------------------------------------------------
+-- 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/dlt-daemon/build

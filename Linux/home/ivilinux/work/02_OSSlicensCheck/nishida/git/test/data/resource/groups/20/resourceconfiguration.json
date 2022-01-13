@@ -1,0 +1,66 @@
+{
+  "config_appl": "shared",
+  "version": "0.1.0",
+  "resources": {
+    "address/home_address": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "1024",
+      "responsible": "group20",
+      "custom_name": "13",
+      "type": "key",
+      "customID": "abf3266fae5b2966c0475bb3b58c3bc2"
+    },
+    "links/last_link3": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "1024",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "321123",
+      "type": "key",
+      "customID": "cusID: 16"
+    },
+    "links/last_link4": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "1024",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "456654",
+      "type": "key",
+      "customID": "cusID: 18"
+    },
+    "links/last_link2": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "1024",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "123321",
+      "type": "key",
+      "customID": "cusID: 14"
+    },
+    "links/last_link": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "1024",
+      "responsible": "group20",
+      "custom_name": "13",
+      "type": "key",
+      "customID": "abf3266fae5b2966c0475bb3b58c3bc2"
+    },
+    "justTesting": {
+      "policy": "cached",
+      "permission": "RO",
+      "storage": "shared",
+      "max_size": "123456",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "na"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+#!/bin/sh
+#---------------------------------------------------------------
+# Original author:	Gwenole Beauchesne <gbeauchesne@mandriva.com>
+# Created On:		Wed Jan 12 12:38:53 EST 2005
+#---------------------------------------------------------------
+
+if [[ "$0" = "/usr/bin/multiarch-dispatch" ]]; then
+    echo "Helper script to dispatch a binary under a specific personality"
+    exit 0
+fi
+
+# go through symlinks until multiarch-dispatch leaf is reached
+mprog="$0"
+mcomp="$mprog"
+while [[ -L "$mcomp" ]]; do
+    mprog="$mcomp"
+    mcomp=`readlink "$mprog"`
+    case "$mcomp" in
+	/*) ;;
+	*)  mcomp=`dirname "$mprog"`/"$mcomp";;
+    esac
+done
+
+bin=`dirname "$mprog"`/`multiarch-platform`/"${mprog##*/}"
+
+if [[ ! -x "$bin" ]]; then
+    echo "Cannot execute $bin" 1>&2
+    exit 1
+fi
+
+exec $bin ${1+"$@"}

@@ -1,0 +1,42 @@
+#!/bin/sh
+
+function hook_preconfigure {
+
+	if [ x$INSTALL_ROOT == x ]; then
+		case ${TARGET_SYSNAME} in
+			nto*) INSTALL_ROOT=${INSTALL_ROOT_nto} ;;
+			linux*) INSTALL_ROOT=${INSTALL_ROOT_linux} ;;
+			win32*) INSTALL_ROOT=${INSTALL_ROOT_win32} ;;
+			win64*) INSTALL_ROOT=${INSTALL_ROOT_win64} ;;
+			darwin*) INSTALL_ROOT=${INSTALL_ROOT_darwin} ;;
+		esac
+	fi
+
+	prefix=${INSTALL_ROOT}/${cpudir}/usr
+	configure_opts="${configure_opts} -C --prefix=${prefix} gzip_cv_assembler=no"
+
+	if [ "${ac_host}" != "${ac_build}" ]; then
+		export CONFIG_SHELL="/bin/sh"
+	fi
+}
+
+function hook_premake {
+	if [ ${SYSNAME} = nto ]; then
+	    export CPPFLAGS="${CPPFLAGS} -D_XOPEN_SOURCE=500 -D_FILE_OFFSET_BITS=64"
+	fi
+	unset make_CC
+}
+
+function hook_pinfo {
+   case ${SYSNAME} in
+     win*)
+	   gen_pinfo -e gzip usr/bin USE="%1>%C --help" DESCRIPTION="GNU zip compression utility" LICE=GPL 
+	   gen_pinfo gunzip usr/bin DESCRIPTION="GNU zip compression utility" LICE=GPL 
+	   gen_pinfo zcat usr/bin DESCRIPTION="GNU zip compression utility" LICE=GPL 
+	   gen_pinfo uncompress usr/bin DESCRIPTION="GNU zip compression utility" LICE=GPL 
+	   ;;
+     *) 
+	   gen_pinfo -e gzip bin USE="%1>%C --help" DESCRIPTION="GNU zip compression utility" LICE=GPL
+	   ;;
+   esac
+}

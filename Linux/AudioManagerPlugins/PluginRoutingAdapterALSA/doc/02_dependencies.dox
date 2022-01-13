@@ -1,0 +1,5 @@
+/*!
+\page dep Dependencies
+\section deps Dependency Graph
+\image html static_dependencies.png
+*/

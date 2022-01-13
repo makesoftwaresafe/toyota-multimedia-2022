@@ -1,0 +1,21 @@
+/*!
+\page pageActions Actions
+
+    Policy Engine evaluates the policies and sets the list of actions in action framework. The 
+action framework starts the execution of actions sequentially. The action framework performs the 
+following
+ - Execute the list of action sequentially.
+ - In case of error perform the rewind operation.
+ - Composition of actions, a top level action coming from the policy engine, are expanded into 
+multiple low level actions. For example consider a ACTION_CONNECT, policy specifies the connect 
+action, but framework internally depending on the topology expands it to multiple connect request 
+per domain.  
+ - Asynchronous routing side request and response handling.
+<BR>
+
+The actions are broadly classified into
+    - Route actions
+    - Volume actions
+    - property actions
+
+*/

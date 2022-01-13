@@ -1,0 +1,56 @@
+NOTFOUND	0xfeedfacedeadbeef
+NOTTRUSTED	0x58e727c4c621be0f
+NOTTRUSTED	0x5D385582001AE622
+NOKEY   	0xa520e8f1cba29bf9
+OK      	0x9AC53D4D
+BAD     	0x7AD0BECB
+OK      	0x7C611479
+OK      	0x1CFC22F3363DEAE3
+OK      	0xb873641b2039b291
+OK      	Jeff Johnson (ARS N3NPQ) <jbj@redhat.com>
+OK      	Russell Coker <russell@coker.com.au>
+NOTTRUSTED	0xD5CA9B04F2C423BC
+OK      	0xBC916AF40D001429
+OK      	0x6bddfe8e54a2acf1
+OK      	Fedora Project (Test Software) <rawhide@redhat.com>
+OK      	Fedora Linux (RPMS) <security@fedora.us>
+OK      	Fedora Project automated build signing key (2003) <rawhide@redhat.com>
+OK      	Red Hat, Inc. automated build signing key (2003) <rawhide@redhat.com>
+OK      	0xb44269d04f2a6fd2
+OK      	0x219180cddb42a60e
+OK      	0xfd372689897da07a
+OK      	0x37017186
+OK      	Red Hat, Inc. (RHX key) <rhx-support@redhat.com>
+OK      	Red Hat, Inc. (Beta Test Software) <rawhide@redhat.com>
+OK      	Red Hat, Inc <security@redhat.com>
+OK      	Red Hat, Inc. (beta key 2) <security@redhat.com>
+OK      	Red Hat, Inc. (release key 2) <security@redhat.com>
+OK      	Fedora (11) <fedora@fedoraproject.org>
+OK      	0x57bbccba
+OK      	0xe8e40fde
+OK      	0xfdb36b03
+OK      	0x97a1071f
+OK      	0x069c8460
+OK      	0xA82BA4B7
+OK      	0x10D90A9E
+OK      	0x1ACA3465
+OK      	0xF8DF67E6
+OK      	0x22B3B81A
+OK      	0x34E166FA
+OK      	0x0608b895
+OK      	0x217521f6
+OK      	0x1edca302
+OK      	0xe8562897
+OK      	0x70771FF3
+OK      	0x22458A98
+OK      	0x37017186
+OK      	0x78D019F5
+OK      	0x437D05B5
+OK      	0xFBB75451
+OK      	0x55BE302B
+OK      	0x473041FA
+OK      	0xC45A42F1
+OK      	0x6B8D79E6
+OK      	0x1AA78495
+OK      	0xE42D547B
+OK      	0xC431416D

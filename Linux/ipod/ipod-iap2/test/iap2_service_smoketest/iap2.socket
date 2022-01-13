@@ -1,0 +1,8 @@
+[Socket]
+#SocketUser=system
+#SocketGroup=system
+SocketMode=0660
+ListenSequentialPacket=/tmp/iAP2_Server
+
+[Install]
+WantedBy=sockets.target

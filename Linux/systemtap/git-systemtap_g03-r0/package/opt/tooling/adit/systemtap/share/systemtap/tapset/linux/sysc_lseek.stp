@@ -1,0 +1,57 @@
+# lseek ______________________________________________________
+# off_t sys_lseek(unsigned int fd, off_t offset, unsigned int whence)
+# COMPAT_SYSCALL_DEFINE3(lseek, unsigned int, fd, compat_off_t, offset,
+#			 unsigned int, whence)
+#
+
+@define _SYSCALL_LSEEK_NAME
+%(
+	name = "lseek"
+%)
+
+@define _SYSCALL_LSEEK_ARGSTR
+%(
+	argstr = sprintf("%d, %d, %s", fildes, offset, whence_str)
+%)
+
+probe syscall.lseek = dw_syscall.lseek !, nd_syscall.lseek ? {}
+probe syscall.lseek.return = dw_syscall.lseek.return !, nd_syscall.lseek.return ? {}
+
+# dw_lseek _____________________________________________________
+
+probe dw_syscall.lseek = kernel.function("sys_lseek").call ?,
+                      kernel.function("compat_sys_lseek").call ?
+{
+	@_SYSCALL_LSEEK_NAME
+	fildes = __int32($fd)
+	offset = @__compat_long($offset)
+	whence = @__compat_ulong(@choose_defined($whence, $origin))
+	whence_str = _seek_whence_str(whence)
+	@_SYSCALL_LSEEK_ARGSTR
+}
+probe dw_syscall.lseek.return = kernel.function("sys_lseek").return,
+			     kernel.function("compat_sys_lseek").return ?
+{
+	@_SYSCALL_LSEEK_NAME
+	retstr = return_str(1, $return)
+}
+
+# nd_lseek _____________________________________________________
+
+probe nd_syscall.lseek = kprobe.function("sys_lseek"),
+                         kprobe.function("compat_sys_lseek") ?
+{
+	@_SYSCALL_LSEEK_NAME
+	asmlinkage()
+	fildes = int_arg(1)
+	offset = long_arg(2)
+	whence = uint_arg(3)
+	whence_str = _seek_whence_str(whence)
+	@_SYSCALL_LSEEK_ARGSTR
+}
+probe nd_syscall.lseek.return = kprobe.function("sys_lseek").return,
+				kprobe.function("compat_sys_lseek").return ?
+{
+	@_SYSCALL_LSEEK_NAME
+	retstr = returnstr(1)
+}

@@ -1,0 +1,119 @@
+# Danish translation ca-certificates.
+# Copyright (C) 2011 ca-certificates & nedenstående oversættere.
+# This file is distributed under the same license as the ca-certificates package.
+# Claus Hindsgaul <claus.hindsgaul@gmail.com>, 2004, 2006.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ca-certificates_20031007_templates\n"
+"Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2011-10-09 19:21+0100\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr "konfiguration af ca-certificates"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "yes"
+msgstr "ja"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "nej"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "spørg"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid "Trust new certificates from certificate authorities?"
+msgstr "Stol på nye certifikater fra certifikatautoriteter?"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+"This package may install new CA (Certificate Authority) certificates when "
+"upgrading. You may want to check such new CA certificates and select only "
+"certificates that you trust."
+msgstr ""
+"Denne pakke kan installere nye CA-certifikater (Certificate Authority), "
+"under opgraderinger. Måske vil du gerne tjekke sådanne nye CA-certifikater "
+"og kun vælge de certifikater, du stoler på."
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+" - yes: new CA certificates will be trusted and installed;\n"
+" - no : new CA certificates will not be installed by default;\n"
+" - ask: prompt for each new CA certificate."
+msgstr ""
+" - ja: Nye CA-certifikater vil blive installeret og stolet på.\n"
+" - nej: Nye CA-certifikater vil som udgangspunkt ikke blive installeret.\n"
+" - spørg: Spørger om du vil stole på hvert enkelt nyt CA-certifikat eller ej."
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid "New certificates to activate:"
+msgstr "Nye certifikater at aktivere:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid ""
+"During upgrades, new certificates will be added. Please choose those you "
+"trust."
+msgstr ""
+"Under opgraderinger vil nye certifikater blive tilføjet. Vælg venligt dem du "
+"stoler på."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid "Certificates to activate:"
+msgstr "Certifikater at aktivere:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"This package installs common CA (Certificate Authority) certificates in /usr/"
+"share/ca-certificates."
+msgstr ""
+"Denne pakke installerer udbredte CA-certifikater (Certificate Authority) i /"
+"usr/share/ca-certificates."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"Please select the certificate authorities you trust so that their "
+"certificates are installed into /etc/ssl/certs. They will be compiled into a "
+"single /etc/ssl/certs/ca-certificates.crt file."
+msgstr ""
+"Vælg venligst de certifikatautoriteter du stoler på, så deres certifikater "
+"installeres i /etc/ssl/certs. De vil blive kompileret til en enkelt fil /etc/"
+"ssl/certs/ca-certificates.crt."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "ja, nej, spørg"

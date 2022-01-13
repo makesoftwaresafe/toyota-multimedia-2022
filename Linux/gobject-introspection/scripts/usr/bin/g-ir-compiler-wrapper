@@ -1,0 +1,2 @@
+#!/bin/sh
+/home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/bin/g-ir-scanner-qemuwrapper /home/svc_bambooagent/bamboo-agent-home/xml-data/build-dir/ADITGG3FQA-QAOSSQNX-JOB1/oe-MGC_COS2-gr-mrb-64_1/build/tmp/sysroots/gr-mrb-64/usr/bin/g-ir-compiler "$@"

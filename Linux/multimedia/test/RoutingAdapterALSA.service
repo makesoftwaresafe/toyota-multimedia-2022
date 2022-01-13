@@ -1,0 +1,16 @@
+[Unit]
+Description=ALSA RoutingAdapter for GENIVI Audio Manager
+Requires=dbus.service
+After=dbus.service
+
+PartOf=AudioManager.service
+Before=AudioManager.service
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/RoutingAdapterALSA -d -T1
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

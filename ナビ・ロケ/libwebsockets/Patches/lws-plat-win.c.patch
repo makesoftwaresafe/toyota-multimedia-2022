@@ -1,0 +1,18 @@
+--- libwebsockets/Implementation/lib/lws-plat-win.c	2015-09-04 09:04:34.000000000 0200
++++ libwebsockets/Implementation/lib/lws-plat-win.c	2015-09-04 09:04:34.000000000 0200
+@@ -24,15 +24,6 @@
+ 	return (datetime.QuadPart - DELTA_EPOCH_IN_MICROSECS) / 10;
+ }
+ 
+-#ifdef _WIN32_WCE
+-time_t time(time_t *t)
+-{
+-	time_t ret = time_in_microseconds() / 1000000;
+-	*t = ret;
+-	return ret;
+-}
+-#endif
+-
+ /* file descriptor hash management */
+ 
+ struct libwebsocket *

@@ -1,0 +1,3 @@
+%foo    Bar
+%bar    Baz
+%foobar Foo%foo

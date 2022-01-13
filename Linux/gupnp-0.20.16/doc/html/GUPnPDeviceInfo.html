@@ -1,0 +1,1261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPDeviceInfo: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-device-info.html" title="Device Information">
+<link rel="prev" href="api-device-info.html" title="Device Information">
+<link rel="next" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPDeviceInfo.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPDeviceInfo.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPDeviceInfo.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-device-info.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="api-device-info.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPServiceInfo.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPDeviceInfo"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPDeviceInfo.top_of_page"></a>GUPnPDeviceInfo</span></h2>
+<p>GUPnPDeviceInfo — Base abstract class for querying device information.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPDeviceInfo.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="returnvalue">GUPnPResourceFactory</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-resource-factory" title="gupnp_device_info_get_resource_factory ()">gupnp_device_info_get_resource_factory</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="returnvalue">GUPnPContext</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-context" title="gupnp_device_info_get_context ()">gupnp_device_info_get_context</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-location" title="gupnp_device_info_get_location ()">gupnp_device_info_get_location</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">SoupURI</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-url-base" title="gupnp_device_info_get_url_base ()">gupnp_device_info_get_url_base</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-udn" title="gupnp_device_info_get_udn ()">gupnp_device_info_get_udn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-device-type" title="gupnp_device_info_get_device_type ()">gupnp_device_info_get_device_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-friendly-name" title="gupnp_device_info_get_friendly_name ()">gupnp_device_info_get_friendly_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-manufacturer" title="gupnp_device_info_get_manufacturer ()">gupnp_device_info_get_manufacturer</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-manufacturer-url" title="gupnp_device_info_get_manufacturer_url ()">gupnp_device_info_get_manufacturer_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-model-description" title="gupnp_device_info_get_model_description ()">gupnp_device_info_get_model_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-model-name" title="gupnp_device_info_get_model_name ()">gupnp_device_info_get_model_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-model-number" title="gupnp_device_info_get_model_number ()">gupnp_device_info_get_model_number</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-model-url" title="gupnp_device_info_get_model_url ()">gupnp_device_info_get_model_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-serial-number" title="gupnp_device_info_get_serial_number ()">gupnp_device_info_get_serial_number</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-presentation-url" title="gupnp_device_info_get_presentation_url ()">gupnp_device_info_get_presentation_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-upc" title="gupnp_device_info_get_upc ()">gupnp_device_info_get_upc</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-icon-url" title="gupnp_device_info_get_icon_url ()">gupnp_device_info_get_icon_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-list-dlna-capabilities" title="gupnp_device_info_list_dlna_capabilities ()">gupnp_device_info_list_dlna_capabilities</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-list-dlna-device-class-identifier" title="gupnp_device_info_list_dlna_device_class_identifier ()">gupnp_device_info_list_dlna_device_class_identifier</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-description-value" title="gupnp_device_info_get_description_value ()">gupnp_device_info_get_description_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-list-devices" title="gupnp_device_info_list_devices ()">gupnp_device_info_list_devices</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-list-device-types" title="gupnp_device_info_list_device_types ()">gupnp_device_info_list_device_types</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="returnvalue">GUPnPDeviceInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-device" title="gupnp_device_info_get_device ()">gupnp_device_info_get_device</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-list-services" title="gupnp_device_info_list_services ()">gupnp_device_info_list_services</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-list-service-types" title="gupnp_device_info_list_service_types ()">gupnp_device_info_list_service_types</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="returnvalue">GUPnPServiceInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-service" title="gupnp_device_info_get_service ()">gupnp_device_info_get_service</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDeviceInfo.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo--context" title="The “context” property">context</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo--device-type" title="The “device-type” property">device-type</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GUPnPXMLDoc.html" title="GUPnPXMLDoc"><span class="type">GUPnPXMLDoc</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo--document" title="The “document” property">document</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo--element" title="The “element” property">element</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo--location" title="The “location” property">location</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo--resource-factory" title="The “resource-factory” property">resource-factory</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo--udn" title="The “udn” property">udn</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">SoupURI</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo--url-base" title="The “url-base” property">url-base</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDeviceInfo.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPDeviceInfo.html#GUPnPDeviceInfo-struct" title="struct GUPnPDeviceInfo">GUPnPDeviceInfo</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDeviceInfo.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPDeviceInfo
+        <span class="lineart">├──</span> <a class="link" href="GUPnPDevice.html" title="GUPnPDevice">GUPnPDevice</a>
+        <span class="lineart">╰──</span> <a class="link" href="GUPnPDeviceProxy.html" title="GUPnPDeviceProxy">GUPnPDeviceProxy</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPDeviceInfo.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> base abstract class provides methods for querying
+device information.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPDeviceInfo.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-device-info-get-resource-factory"></a><h3>gupnp_device_info_get_resource_factory ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="returnvalue">GUPnPResourceFactory</span></a> *
+gupnp_device_info_get_resource_factory
+                               (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *device_info</code></em>);</pre>
+<p>Get the <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> used by the <em class="parameter"><code>device_info</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-resource-factory.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>device_info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-resource-factory.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-context"></a><h3>gupnp_device_info_get_context ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="returnvalue">GUPnPContext</span></a> *
+gupnp_device_info_get_context (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the associated <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-context.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-context.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-location"></a><h3>gupnp_device_info_get_location ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_device_info_get_location (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the location of the device description file.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-location.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-location.returns"></a><h4>Returns</h4>
+<p> A constant string.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-url-base"></a><h3>gupnp_device_info_get_url_base ()</h3>
+<pre class="programlisting">const <span class="returnvalue">SoupURI</span> *
+gupnp_device_info_get_url_base (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the URL base of this device.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-url-base.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-url-base.returns"></a><h4>Returns</h4>
+<p> A <span class="type">SoupURI</span>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-udn"></a><h3>gupnp_device_info_get_udn ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_device_info_get_udn (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the Unique Device Name of the device.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-udn.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-udn.returns"></a><h4>Returns</h4>
+<p> A constant string.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-device-type"></a><h3>gupnp_device_info_get_device_type ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_device_info_get_device_type (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the UPnP device type.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-device-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-device-type.returns"></a><h4>Returns</h4>
+<p> A constant string, or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-friendly-name"></a><h3>gupnp_device_info_get_friendly_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_friendly_name (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the friendly name of the device.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-friendly-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-friendly-name.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-manufacturer"></a><h3>gupnp_device_info_get_manufacturer ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_manufacturer (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the manufacturer of the device.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-manufacturer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-manufacturer.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-manufacturer-url"></a><h3>gupnp_device_info_get_manufacturer_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_manufacturer_url
+                               (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a URL pointing to the manufacturer's website.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-manufacturer-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-manufacturer-url.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-model-description"></a><h3>gupnp_device_info_get_model_description ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_model_description
+                               (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the description of the device model.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-model-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-model-description.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-model-name"></a><h3>gupnp_device_info_get_model_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_model_name (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the model name of the device.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-model-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-model-name.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-model-number"></a><h3>gupnp_device_info_get_model_number ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_model_number (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the model number of the device.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-model-number.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-model-number.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-model-url"></a><h3>gupnp_device_info_get_model_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_model_url (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a URL pointing to the device model's website.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-model-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-model-url.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-serial-number"></a><h3>gupnp_device_info_get_serial_number ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_serial_number (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the serial number of the device.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-serial-number.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-serial-number.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-presentation-url"></a><h3>gupnp_device_info_get_presentation_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_presentation_url
+                               (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a URL pointing to the device's presentation page, for web-based
+administration.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-presentation-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-presentation-url.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-upc"></a><h3>gupnp_device_info_get_upc ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_upc (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get the Universal Product Code of the device.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-upc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-upc.returns"></a><h4>Returns</h4>
+<p> A string, or <code class="literal">NULL</code>. <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-icon-url"></a><h3>gupnp_device_info_get_icon_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_icon_url (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *requested_mime_type</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> requested_depth</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> requested_width</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> requested_height</code></em>,
+                                <em class="parameter"><code><span class="type">gboolean</span> prefer_bigger</code></em>,
+                                <em class="parameter"><code><span class="type">char</span> **mime_type</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> *depth</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> *width</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> *height</code></em>);</pre>
+<p>Get a URL pointing to the icon most closely matching the
+given criteria, or <code class="literal">NULL</code>. If <em class="parameter"><code>requested_mime_type</code></em>
+ is set, only icons with
+this mime type will be returned. If <em class="parameter"><code>requested_depth</code></em>
+ is set, only icons with
+this or lower depth will be returned. If <em class="parameter"><code>requested_width</code></em>
+ and/or
+<em class="parameter"><code>requested_height</code></em>
+ are set, only icons that are this size or smaller are
+returned, unless <em class="parameter"><code>prefer_bigger</code></em>
+ is set, in which case the next biggest icon
+will be returned. The returned strings should be freed.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-icon-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>requested_mime_type</p></td>
+<td class="parameter_description"><p> The requested file
+format, or <code class="literal">NULL</code> for any. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>requested_depth</p></td>
+<td class="parameter_description"><p>The requested color depth, or -1 for any</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>requested_width</p></td>
+<td class="parameter_description"><p>The requested width, or -1 for any</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>requested_height</p></td>
+<td class="parameter_description"><p>The requested height, or -1 for any</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prefer_bigger</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> if a bigger, rather than a smaller icon should be
+returned if no exact match could be found</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>mime_type</p></td>
+<td class="parameter_description"><p> The location where to store the the format
+of the returned icon, or <code class="literal">NULL</code>. The returned string should be freed after
+use. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>depth</p></td>
+<td class="parameter_description"><p>(out) (allow-none) :  The location where to store the depth of the
+returned icon, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>width</p></td>
+<td class="parameter_description"><p>(out) (allow-none) : The location where to store the width of the
+returned icon, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>height</p></td>
+<td class="parameter_description"><p>(out) (allow-none) : The location where to store the height of the
+returned icon, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-icon-url.returns"></a><h4>Returns</h4>
+<p> a string, or <code class="literal">NULL</code>.  <code class="function">g_free()</code> after use. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-list-dlna-capabilities"></a><h3>gupnp_device_info_list_dlna_capabilities ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_device_info_list_dlna_capabilities
+                               (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a <span class="type">GList</span> of strings that represent the device capabilities as announced
+in the device description file using the &lt;dlna:X_DLNACAP&gt; element.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-list-dlna-capabilities.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-list-dlna-capabilities.returns"></a><h4>Returns</h4>
+<p> a <span class="type">GList</span> of newly allocated strings or
+<code class="literal">NULL</code> if the device description doesn't contain the &lt;dlna:X_DLNACAP&gt;
+element. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+<p class="since">Since: 0.13.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-list-dlna-device-class-identifier"></a><h3>gupnp_device_info_list_dlna_device_class_identifier ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_device_info_list_dlna_device_class_identifier
+                               (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a <span class="type">GList</span> of strings that represent the device class and version as
+announced in the device description file using the &lt;dlna:X_DLNADOC&gt;
+element.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-list-dlna-device-class-identifier.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-list-dlna-device-class-identifier.returns"></a><h4>Returns</h4>
+<p> a <span class="type">GList</span> of newly allocated strings or
+<code class="literal">NULL</code> if the device description doesn't contain the &lt;dlna:X_DLNADOC&gt;
+element. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+<p class="since">Since: 0.20.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-description-value"></a><h3>gupnp_device_info_get_description_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_device_info_get_description_value
+                               (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *element</code></em>);</pre>
+<p>This function provides generic access to the contents of arbitrary elements
+in the device description file.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-description-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>element</p></td>
+<td class="parameter_description"><p>Name of the description element to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-description-value.returns"></a><h4>Returns</h4>
+<p> a newly allocated string or <code class="literal">NULL</code> if the device
+description doesn't contain the given <em class="parameter"><code>element</code></em>
+</p>
+</div>
+<p class="since">Since: 0.13.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-list-devices"></a><h3>gupnp_device_info_list_devices ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_device_info_list_devices (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a <span class="type">GList</span> of new objects implementing <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a>
+representing the devices directly contained in <em class="parameter"><code>info</code></em>
+. The returned list
+should be <code class="function">g_list_free()</code>'d and the elements should be <code class="function">g_object_unref()</code>'d.</p>
+<p>Note that devices are not cached internally, so that every time you
+call this function new objects are created. The application
+must cache any used devices if it wishes to keep them around and re-use
+them.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-list-devices.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-list-devices.returns"></a><h4>Returns</h4>
+<p> a <span class="type">GList</span> of
+new <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> objects. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnP.DeviceInfo][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-list-device-types"></a><h3>gupnp_device_info_list_device_types ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_device_info_list_device_types (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a <span class="type">GList</span> of strings representing the types of the devices
+directly contained in <em class="parameter"><code>info</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-list-device-types.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-list-device-types.returns"></a><h4>Returns</h4>
+<p> A <span class="type">GList</span> of strings. The
+elements should be <code class="function">g_free()</code>'d and the list should be <code class="function">g_list_free()</code>'d. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-device"></a><h3>gupnp_device_info_get_device ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="returnvalue">GUPnPDeviceInfo</span></a> *
+gupnp_device_info_get_device (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>,
+                              <em class="parameter"><code>const <span class="type">char</span> *type</code></em>);</pre>
+<p>Get the service with type <em class="parameter"><code>type</code></em>
+ directly contained in <em class="parameter"><code>info</code></em>
+ as
+a new object implementing <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a>, or <code class="literal">NULL</code> if no such device
+was found. The returned object should be unreffed when done.</p>
+<p>Note that devices are not cached internally, so that every time you call
+this function a new object is created. The application must cache any used
+devices if it wishes to keep them around and re-use them.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The type of the device to be retrieved.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-device.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-list-services"></a><h3>gupnp_device_info_list_services ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_device_info_list_services (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a <span class="type">GList</span> of new objects implementing <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> representing the
+services directly contained in <em class="parameter"><code>info</code></em>
+. The returned list should be
+<code class="function">g_list_free()</code>'d and the elements should be <code class="function">g_object_unref()</code>'d.</p>
+<p>Note that services are not cached internally, so that every time you call
+function new objects are created. The application must cache any used
+services if it wishes to keep them around and re-use them.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-list-services.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-list-services.returns"></a><h4>Returns</h4>
+<p> (element-type GUPnP.ServiceInfo) (transfer full) : A <span class="type">GList</span> of
+new <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> objects.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-list-service-types"></a><h3>gupnp_device_info_list_service_types ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_device_info_list_service_types (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>);</pre>
+<p>Get a <span class="type">GList</span> of strings representing the types of the services
+directly contained in <em class="parameter"><code>info</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-list-service-types.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-list-service-types.returns"></a><h4>Returns</h4>
+<p> A <span class="type">GList</span> of strings. The
+elements should be <code class="function">g_free()</code>'d and the list should be <code class="function">g_list_free()</code>'d. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-device-info-get-service"></a><h3>gupnp_device_info_get_service ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="returnvalue">GUPnPServiceInfo</span></a> *
+gupnp_device_info_get_service (<em class="parameter"><code><a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> *info</code></em>,
+                               <em class="parameter"><code>const <span class="type">char</span> *type</code></em>);</pre>
+<p>Get the service with type <em class="parameter"><code>type</code></em>
+ directly contained in <em class="parameter"><code>info</code></em>
+ as a new object
+implementing <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a>, or <code class="literal">NULL</code> if no such device was found. The
+returned object should be unreffed when done.</p>
+<p>Note that services are not cached internally, so that every time you call
+this function a new object is created. The application must cache any used
+services if it wishes to keep them around and re-use them.</p>
+<div class="refsect3">
+<a name="gupnp-device-info-get-service.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The type of the service to be retrieved.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-device-info-get-service.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDeviceInfo.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo-struct"></a><h3>struct GUPnPDeviceInfo</h3>
+<pre class="programlisting">struct GUPnPDeviceInfo;</pre>
+<p>This struct contains private data only, and should be accessed using the
+functions below.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDeviceInfo.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo--context"></a><h3>The <code class="literal">“context”</code> property</h3>
+<pre class="programlisting">  “context”                  <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *</pre>
+<p>The <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> to use.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo--device-type"></a><h3>The <code class="literal">“device-type”</code> property</h3>
+<pre class="programlisting">  “device-type”              <span class="type">gchar</span> *</pre>
+<p>The device type.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo--document"></a><h3>The <code class="literal">“document”</code> property</h3>
+<pre class="programlisting">  “document”                 <a class="link" href="GUPnPXMLDoc.html" title="GUPnPXMLDoc"><span class="type">GUPnPXMLDoc</span></a> *</pre>
+<p>Private property.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p class="stability">Stability Level: <acronym title="An interface that can be used within the GNOME stack itself, but that is not
+documented for end-users.  Such functions should only be used in specified and
+documented ways.
+"><span class="acronym">Private</span></acronym></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo--element"></a><h3>The <code class="literal">“element”</code> property</h3>
+<pre class="programlisting">  “element”                  <span class="type">gpointer</span></pre>
+<p>Private property.</p>
+<p>Flags: Write / Construct Only</p>
+<p class="stability">Stability Level: <acronym title="An interface that can be used within the GNOME stack itself, but that is not
+documented for end-users.  Such functions should only be used in specified and
+documented ways.
+"><span class="acronym">Private</span></acronym></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo--location"></a><h3>The <code class="literal">“location”</code> property</h3>
+<pre class="programlisting">  “location”                 <span class="type">gchar</span> *</pre>
+<p>The location of the device description file.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo--resource-factory"></a><h3>The <code class="literal">“resource-factory”</code> property</h3>
+<pre class="programlisting">  “resource-factory”         <a class="link" href="GUPnPResourceFactory.html" title="GUPnPResourceFactory"><span class="type">GUPnPResourceFactory</span></a> *</pre>
+<p>The resource factory to use. Set to NULL for default factory.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo--udn"></a><h3>The <code class="literal">“udn”</code> property</h3>
+<pre class="programlisting">  “udn”                      <span class="type">gchar</span> *</pre>
+<p>The UDN of this device.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDeviceInfo--url-base"></a><h3>The <code class="literal">“url-base”</code> property</h3>
+<pre class="programlisting">  “url-base”                 <span class="type">SoupURI</span> *</pre>
+<p>The URL base (<span class="type">SoupURI</span>).</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

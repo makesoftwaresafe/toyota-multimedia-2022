@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Porting to the new SoupSession: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch01.html" title="Tutorial">
+<link rel="prev" href="libsoup-request-howto.html" title="libsoup Client SoupRequest API">
+<link rel="next" href="libsoup-server-howto.html" title="libsoup Server Basics">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libsoup-request-howto.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libsoup-server-howto.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libsoup-session-porting"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">Porting to the new SoupSession</span></h2>
+<p>Porting to the new SoupSession — Notes on
+porting from SoupSessionAsync and SoupSessionSync to SoupSession</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect2">
+<a name="intro"></a><h3>Introduction</h3>
+<p>
+As of libsoup 2.42, <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> is no longer an
+abstract class, and the base <span class="type">SoupSession</span> class is now
+preferred over its traditional subclasses, <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> and
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>.
+</p>
+<p>
+There are several changes in behavior between the old and new sessions
+to be aware of.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="defaults"></a><h3>Different defaults</h3>
+<p>
+The new <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a>
+has different (and hopefully better) defaults than <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> and
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>:
+</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>
+      The system TLS/SSL certificate database is used by default to
+      validate https certificates, and sites with invalid certificates
+      will refuse to load with a
+      <a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-SSL-FAILED:CAPS"><code class="literal">SOUP_STATUS_SSL_FAILED</code></a>
+      error.
+    </p>
+<p>
+      You can still override the CA database as before, by setting the
+      <a class="link" href="SoupSession.html#SoupSession--ssl-ca-file" title="The “ssl-ca-file” property"><span class="type">"ssl-ca-file"</span></a>
+      property, although the
+      <a class="link" href="SoupSession.html#SoupSession--tls-database" title="The “tls-database” property"><span class="type">"tls-database"</span></a>
+      property is preferred, since it allows you to do proper error
+      handling.
+    </p>
+<p>
+      If you want to accept all certificates, set
+      <a class="link" href="SoupSession.html#SoupSession--ssl-strict" title="The “ssl-strict” property"><span class="type">"ssl-strict"</span></a> to
+      <code class="literal">FALSE</code>. Note that libsoup will still check
+      certificates, it will just continue with the HTTP request even
+      if the certificate fails to validate. You can use
+      <a class="link" href="SoupMessage.html#soup-message-get-https-status" title="soup_message_get_https_status ()"><code class="function">soup_message_get_https_status()</code></a>
+      to look at the certificate after the fact.
+    </p>
+</li>
+<li class="listitem"><p>
+      The
+      <a class="link" href="SoupSession.html#SoupSession--timeout" title="The “timeout” property"><span class="type">"timeout"</span></a>
+      and
+      <a class="link" href="SoupSession.html#SoupSession--idle-timeout" title="The “idle-timeout” property"><span class="type">"idle-timeout"</span></a>
+      properties both default to 60 seconds.
+    </p></li>
+<li class="listitem"><p>
+      The
+      <a class="link" href="SoupSession.html#SoupSession--http-aliases" title="The “http-aliases” property"><span class="type">"http-aliases"</span></a>
+      property defaults to <code class="literal">NULL</code>, meaning that URI
+      schemes like "<code class="literal">webcal</code>" and
+      "<code class="literal">dav</code>" (and "<code class="literal">ftp</code>") are not
+      considered to be aliases for "<code class="literal">http</code>", and so
+      libsoup will not accept requests for such URIs, and will not
+      follow redirects to such URIs.
+    </p></li>
+<li class="listitem"><p>
+      The new
+      <a class="link" href="SoupSession.html#SoupSession--proxy-resolver" title="The “proxy-resolver” property"><span class="type">"proxy-resolver"</span></a>
+      property is now initialized to the default
+      <a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a>,
+      meaning that it will automatically use the user's system proxy
+      configuration. This replaces the use of the
+      <a class="link" href="SoupProxyResolverDefault.html" title="SoupProxyResolverDefault"><span class="type">SoupProxyResolverDefault</span></a>,
+      session feature in earlier releases. You can set this property to
+      <code class="literal">NULL</code> if you don't want to use proxies, and the
+      <a class="link" href="SoupSession.html#SoupSession--proxy-uri" title="The “proxy-uri” property"><span class="type">"proxy-uri"</span></a>
+      property still works if you want to use a single proxy for all requests.
+    </p></li>
+<li class="listitem"><p>
+      Every session gets a
+      <a class="link" href="SoupContentDecoder.html" title="SoupContentDecoder"><span class="type">SoupContentDecoder</span></a>
+      attached to it by default, meaning that it will automatically
+      handle (and request) "gzip"- and "deflate"-encoded response
+      bodies.
+    </p></li>
+</ul></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="behavior"></a><h3>Differences in feature behavior</h3>
+<p>
+If you are using NTLM authentication, the new <span class="type">SoupSession</span>
+behaves slightly differently from the old session types.
+</p>
+<p>
+First, the deprecated <code class="literal">SOUP_SESSION_USE_NTLM</code>
+property is no longer supported. If you want to add support for NTLM
+to a session, call <a class="link" href="SoupSession.html#soup-session-add-feature-by-type" title="soup_session_add_feature_by_type ()"><code class="function">soup_session_add_feature_by_type()</code></a>,
+passing <a class="link" href="SoupAuth.html#SOUP-TYPE-AUTH-NTLM:CAPS" title="SOUP_TYPE_AUTH_NTLM"><code class="literal">SOUP_TYPE_AUTH_NTLM</code></a>.
+</p>
+<p>
+Second, with the old session types, enabling NTLM would cause all
+(otherwise-unauthenticated) requests to be sent with an NTLM request
+in the <code class="literal">Authorization</code> header. That is, libsoup would
+assume that all servers supported NTLM, and would attempt to begin
+negotiating NTLM authentication before the server ever returned a 401
+response. With the plain <span class="type">SoupSession</span>, this no longer
+happens. If you want the old behavior, you need to call <a class="link" href="SoupAuthManager.html#soup-auth-manager-use-auth" title="soup_auth_manager_use_auth ()"><code class="function">soup_auth_manager_use_auth()</code></a>
+for each host to "preload" the NTLM authentication:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">SoupAuthManager</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">auth_manager</span><span class="symbol">;</span>
+<span class="usertype">SoupAuth</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">auth</span><span class="symbol">;</span>
+<span class="usertype">SoupURI</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">uri</span><span class="symbol">;</span>
+
+<span class="normal">auth_manager </span><span class="symbol">=</span><span class="normal"> </span><span class="function">SOUP_AUTH_MANAGER</span><span class="normal"> </span><span class="symbol">(</span><span class="function"><a href="SoupSession.html#soup-session-get-feature">soup_session_get_feature</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">session</span><span class="symbol">,</span><span class="normal"> <a href="SoupAuthManager.html#SOUP-TYPE-AUTH-MANAGER:CAPS">SOUP_TYPE_AUTH_MANAGER</a></span><span class="symbol">));</span>
+<span class="normal">auth </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-new">g_object_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal"><a href="SoupAuth.html#SOUP-TYPE-AUTH-NTLM:CAPS">SOUP_TYPE_AUTH_NTLM</a></span><span class="symbol">,</span><span class="normal"> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS">NULL</a></span><span class="symbol">);</span>
+<span class="normal">uri </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="SoupURI.html#soup-uri-new">soup_uri_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="string">"http://ntlm-using-host.example.com/"</span><span class="symbol">);</span>
+<span class="function"><a href="SoupAuthManager.html#soup-auth-manager-use-auth">soup_auth_manager_use_auth</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">auth_manager</span><span class="symbol">,</span><span class="normal"> uri</span><span class="symbol">,</span><span class="normal"> auth</span><span class="symbol">);</span>
+<span class="function"><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref">g_object_unref</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">auth</span><span class="symbol">);</span>
+<span class="function"><a href="SoupURI.html#soup-uri-free">soup_uri_free</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">auth</span><span class="symbol">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<hr>
+<div class="refsect2">
+<a name="apis"></a><h3>Differences in SoupMessage-sending APIs</h3>
+<p>
+<span class="type">SoupSessionAsync</span> always uses asynchronous I/O, and
+<span class="type">SoupSessionSync</span> always uses blocking I/O, regardless of
+the operation. In the new <span class="type">SoupSession</span>, <a class="link" href="SoupSession.html#soup-session-queue-message" title="soup_session_queue_message ()"><code class="function">soup_session_queue_message()</code></a>
+uses asynchronous I/O (like <span class="type">SoupSessionAsync</span>), and <a class="link" href="SoupSession.html#soup-session-send-message" title="soup_session_send_message ()"><code class="function">soup_session_send_message()</code></a>
+uses blocking I/O (like <span class="type">SoupSessionSync</span>). There is no API
+on the plain <span class="type">SoupSession</span> that simulates the effect of
+calling <code class="function">soup_session_send_message()</code> on a
+<span class="type">SoupSessionAsync</span> (ie, running the main loop internally),
+or of calling <code class="function">soup_session_queue_message()</code> on a
+<span class="type">SoupSessionSync</span> (ie, automatically sending the request in
+another thread).
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="async"></a><h3>Differences in Asynchronous I/O</h3>
+<p>
+As compared to <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a>, <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> behaves more
+like gio with respect to asynchronous I/O.
+</p>
+<p>
+In particular, the <a class="link" href="SoupSession.html#SoupSession--async-context" title="The “async-context” property"><span class="type">"async-context"</span></a>
+and <a class="link" href="SoupSession.html#SoupSession--use-thread-context" title="The “use-thread-context” property"><span class="type">"use-thread-context"</span></a>
+properties are now effectively unused, and the session always queues
+asynchronous requests in the <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> that was is
+the thread default when the asynchronous operation is started. Session
+bookkeeping tasks (like closing idle connections) happen in the
+context that was thread default when the session was created.
+</p>
+<p>
+Additionally, <a class="link" href="SoupSession.html#soup-session-cancel-message" title="soup_session_cancel_message ()"><code class="function">soup_session_cancel_message()</code></a>
+now acts asynchronously when you cancel an asynchronous request;
+rather than having the request's callback be called from inside
+<code class="function">soup_session_cancel_message()</code>, it just gets called
+when you need return to the main loop.
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

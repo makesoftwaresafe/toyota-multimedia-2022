@@ -1,0 +1,10 @@
+[Unit]
+Description=Bluetooth service
+
+[Service]
+Type=dbus
+BusName=org.bluez
+ExecStart=/usr/lib/bluez5/bluetooth/bluetoothd -n
+
+[Install]
+WantedBy=multi-user.target

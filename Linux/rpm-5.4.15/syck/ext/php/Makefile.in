@@ -1,0 +1,8 @@
+# $Id: Makefile.in,v 1.1 2003/03/05 15:03:12 whythluckystiff Exp $
+
+LTLIBRARY_NAME        = libsyck.a
+LTLIBRARY_SOURCES     = phpext.c
+LTLIBRARY_SHARED_NAME = syck.la
+LTLIBRARY_SHARED_LIBADD	= $(SYCK_SHARED_LIBADD)
+
+include $(top_srcdir)/build/dynlib.mk

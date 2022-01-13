@@ -1,0 +1,124 @@
+/**
+@page policyexample Example use-case and policy
+
+   This section covers a typical use-case in a automotive system, and how to define a policy to 
+realize the use-case. Consider a system with following sources USBPlayer, RadioTuner, 
+trafficInfo and navigationGuide.
+   As the names suggests the functionality of sources are as below
+- RadioTuner : Used for listening to Radio.
+- USBPlayer: Used for playing media stored on USB Mass Storage device.
+- trafficInfo : used for playing traffic information 
+- navigationGuide: This source is used for playing navigation guidance. 
+    The connection request from the last two sources would not be triggered explicitly by the user. 
+
+    A typical use cases would be as follows
+ - user is listening to the radio, then USB device is connected, now automatically the playback of 
+media inside USB should start, when the USB device is removed the RadioTuner should play 
+automatically.
+- RadioTuner is playing, there is a announcement from the trafficInfo or navigationGuide,
+temporarily volume of RadioTuner should be brought down till the trafficInfo or 
+navigationGuide is over. Once the trafficInfo or the navigation Guidance are over bring the volume
+of the mediaPlayer or RadioTuner to original level.
+
+    In order to achieve this use case let classify the RadioTuner and the USBPlayer as BASE
+class and consider the remaining two source as INTERRUPT class.
+
+    The policy for the above two use-case be written in psuedo code as below
+\code
+    - If there is a connection request
+           - If request is of BASE, and  
+           - If a BASE connection except the requesting source is connected then 
+                - push active connection
+                - connect requesting connection
+           - If request is of INTERRUPT, and 
+           - If BASE connection is in connected state then
+                - limit BASE
+                - connect interrupt
+    - If there is a disconnection request
+           - If request is of BASE, and  
+                - disconnect requesting, and
+                - POP If any connection present in the Queue
+           - If request is of INTERRUPT, and 
+                - disconnect requesting, and
+                - unlimit BASE
+\endcode
+
+   This translates to the configuration as below
+\code
+    <policy>
+        <trigger>USER_CONNECTION_REQUEST</trigger>
+        <process>
+            <condition>name(CLASS, REQUESTING) EQ "BASE"</condition>
+            <condition>connectionState(CONNECTIONOFCLASS, REQUESTING, OTHERS) INC CS_CONNECTED</condition>
+            <action>
+                <type>ACTION_PUSH</type>
+                <param>
+                    <className>"BASE"</className>
+                </param>
+            </action>
+            <action>
+                <type>ACTION_CONNECT</type>
+                <param>
+                    <sourceName>REQUESTING</sourceName>
+                    <sinkName>REQUESTING</sinkName>
+                </param>
+            </action>
+        </process>
+        <process>
+            <condition>name(CLASS, REQUESTING) EQ "INTERRUPT"</condition>
+            <condition>connectionState(CONNECTIONOFCLASS, REQUESTING, ALL) INC CS_CONNECTED</condition>
+            <action>
+                <type>ACTION_LIMIT</type>
+                <param>
+                    <className>"BASE"</className>
+                    <volume>-500</volume>
+                </param>
+            </action>
+            <action>
+                <type>ACTION_CONNECT</type>
+                <param>
+                    <sourceName>REQUESTING</sourceName>
+                    <sinkName>REQUESTING</sinkName>
+                </param>
+            </action>
+        </process>
+    </policy>
+    <policy>
+        <trigger>USER_DISCONNECTION_REQUEST</trigger>
+        <process>
+            <condition>name(CLASS, REQUESTING) EQ "BASE"</condition>
+            <action>
+                <type>ACTION_DISCONNECT</type>
+                <param>
+                    <className>REQUESTING</className>
+                    <connectionState>CS_CONNECTED</connectionState>
+                </param>
+            </action>
+            <action>
+                <type>ACTION_POP</type>
+                <param>
+                    <className>"BASE"</className>
+                </param>
+            </action>
+        </process>
+        <process>
+            <condition>name(CLASS, REQUESTING) EQ "INTERRUPT"</condition>
+            <action>
+                <type>ACTION_DISCONNECT</type>
+                <param>
+                    <className>REQUESTING</className>
+                    <connectionState>CS_CONNECTED</connectionState>
+                </param>
+            </action>
+            <action>
+                <type>ACTION_UNLIMIT</type>
+                <param>
+                    <className>"BASE"</className>
+                </param>
+            </action>
+        </process>
+    </policy>
+
+\endcode   
+ 
+*/

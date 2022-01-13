@@ -1,0 +1,2104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPDIDLLiteResource: GUPnP A/V Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP A/V Reference Manual">
+<link rel="up" href="ch01.html" title="GUPnP A/V">
+<link rel="prev" href="GUPnPDIDLLiteWriter.html" title="GUPnPDIDLLiteWriter">
+<link rel="next" href="GUPnPDIDLLiteDescriptor.html" title="GUPnPDIDLLiteDescriptor">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteResource.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteResource.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPDIDLLiteResource.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPDIDLLiteWriter.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPDIDLLiteDescriptor.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPDIDLLiteResource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPDIDLLiteResource.top_of_page"></a>GUPnPDIDLLiteResource</span></h2>
+<p>GUPnPDIDLLiteResource — DIDL-Lite Resource</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteResource.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-uri" title="gupnp_didl_lite_resource_set_uri ()">gupnp_didl_lite_resource_set_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-import-uri" title="gupnp_didl_lite_resource_set_import_uri ()">gupnp_didl_lite_resource_set_import_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-protocol-info" title="gupnp_didl_lite_resource_set_protocol_info ()">gupnp_didl_lite_resource_set_protocol_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-size" title="gupnp_didl_lite_resource_set_size ()">gupnp_didl_lite_resource_set_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-size64" title="gupnp_didl_lite_resource_set_size64 ()">gupnp_didl_lite_resource_set_size64</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-duration" title="gupnp_didl_lite_resource_set_duration ()">gupnp_didl_lite_resource_set_duration</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-bitrate" title="gupnp_didl_lite_resource_set_bitrate ()">gupnp_didl_lite_resource_set_bitrate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-sample-freq" title="gupnp_didl_lite_resource_set_sample_freq ()">gupnp_didl_lite_resource_set_sample_freq</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-bits-per-sample" title="gupnp_didl_lite_resource_set_bits_per_sample ()">gupnp_didl_lite_resource_set_bits_per_sample</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-protection" title="gupnp_didl_lite_resource_set_protection ()">gupnp_didl_lite_resource_set_protection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-audio-channels" title="gupnp_didl_lite_resource_set_audio_channels ()">gupnp_didl_lite_resource_set_audio_channels</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-width" title="gupnp_didl_lite_resource_set_width ()">gupnp_didl_lite_resource_set_width</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-height" title="gupnp_didl_lite_resource_set_height ()">gupnp_didl_lite_resource_set_height</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-color-depth" title="gupnp_didl_lite_resource_set_color_depth ()">gupnp_didl_lite_resource_set_color_depth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-cleartext-size" title="gupnp_didl_lite_resource_set_cleartext_size ()">gupnp_didl_lite_resource_set_cleartext_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-uri" title="gupnp_didl_lite_resource_get_uri ()">gupnp_didl_lite_resource_get_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-import-uri" title="gupnp_didl_lite_resource_get_import_uri ()">gupnp_didl_lite_resource_get_import_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="returnvalue">GUPnPProtocolInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-protocol-info" title="gupnp_didl_lite_resource_get_protocol_info ()">gupnp_didl_lite_resource_get_protocol_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">long</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-size" title="gupnp_didl_lite_resource_get_size ()">gupnp_didl_lite_resource_get_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-size64" title="gupnp_didl_lite_resource_get_size64 ()">gupnp_didl_lite_resource_get_size64</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">long</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-duration" title="gupnp_didl_lite_resource_get_duration ()">gupnp_didl_lite_resource_get_duration</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-bitrate" title="gupnp_didl_lite_resource_get_bitrate ()">gupnp_didl_lite_resource_get_bitrate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-sample-freq" title="gupnp_didl_lite_resource_get_sample_freq ()">gupnp_didl_lite_resource_get_sample_freq</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-bits-per-sample" title="gupnp_didl_lite_resource_get_bits_per_sample ()">gupnp_didl_lite_resource_get_bits_per_sample</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-protection" title="gupnp_didl_lite_resource_get_protection ()">gupnp_didl_lite_resource_get_protection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-audio-channels" title="gupnp_didl_lite_resource_get_audio_channels ()">gupnp_didl_lite_resource_get_audio_channels</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-width" title="gupnp_didl_lite_resource_get_width ()">gupnp_didl_lite_resource_get_width</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-height" title="gupnp_didl_lite_resource_get_height ()">gupnp_didl_lite_resource_get_height</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-color-depth" title="gupnp_didl_lite_resource_get_color_depth ()">gupnp_didl_lite_resource_get_color_depth</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNode</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-xml-node" title="gupnp_didl_lite_resource_get_xml_node ()">gupnp_didl_lite_resource_get_xml_node</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint64</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-cleartext-size" title="gupnp_didl_lite_resource_get_cleartext_size ()">gupnp_didl_lite_resource_get_cleartext_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNsPtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-dlna-namespace" title="gupnp_didl_lite_resource_get_dlna_namespace ()">gupnp_didl_lite_resource_get_dlna_namespace</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">xmlNsPtr</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-pv-namespace" title="gupnp_didl_lite_resource_get_pv_namespace ()">gupnp_didl_lite_resource_get_pv_namespace</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-update-count" title="gupnp_didl_lite_resource_get_update_count ()">gupnp_didl_lite_resource_get_update_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-update-count" title="gupnp_didl_lite_resource_set_update_count ()">gupnp_didl_lite_resource_set_update_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-unset-update-count" title="gupnp_didl_lite_resource_unset_update_count ()">gupnp_didl_lite_resource_unset_update_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-update-count-is-set" title="gupnp_didl_lite_resource_update_count_is_set ()">gupnp_didl_lite_resource_update_count_is_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-track-total" title="gupnp_didl_lite_resource_get_track_total ()">gupnp_didl_lite_resource_get_track_total</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-track-total" title="gupnp_didl_lite_resource_set_track_total ()">gupnp_didl_lite_resource_set_track_total</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-track-total-is-set" title="gupnp_didl_lite_resource_track_total_is_set ()">gupnp_didl_lite_resource_track_total_is_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-unset-track-total" title="gupnp_didl_lite_resource_unset_track_total ()">gupnp_didl_lite_resource_unset_track_total</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-subtitle-file-type" title="gupnp_didl_lite_resource_get_subtitle_file_type ()">gupnp_didl_lite_resource_get_subtitle_file_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-get-subtitle-file-uri" title="gupnp_didl_lite_resource_get_subtitle_file_uri ()">gupnp_didl_lite_resource_get_subtitle_file_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-subtitle-file-type" title="gupnp_didl_lite_resource_set_subtitle_file_type ()">gupnp_didl_lite_resource_set_subtitle_file_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-subtitle-file-uri" title="gupnp_didl_lite_resource_set_subtitle_file_uri ()">gupnp_didl_lite_resource_set_subtitle_file_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteResource.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--audio-channels" title="The “audio-channels” property">audio-channels</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--bitrate" title="The “bitrate” property">bitrate</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--bits-per-sample" title="The “bits-per-sample” property">bits-per-sample</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint64</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--cleartext-size" title="The “cleartext-size” property">cleartext-size</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--color-depth" title="The “color-depth” property">color-depth</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--dlna-namespace" title="The “dlna-namespace” property">dlna-namespace</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">glong</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--duration" title="The “duration” property">duration</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--height" title="The “height” property">height</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--import-uri" title="The “import-uri” property">import-uri</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--protection" title="The “protection” property">protection</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--protocol-info" title="The “protocol-info” property">protocol-info</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--pv-namespace" title="The “pv-namespace” property">pv-namespace</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--sample-freq" title="The “sample-freq” property">sample-freq</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">glong</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--size" title="The “size” property">size</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint64</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--size64" title="The “size64” property">size64</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--subtitle-file-type" title="The “subtitle-file-type” property">subtitle-file-type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--subtitle-file-uri" title="The “subtitle-file-uri” property">subtitle-file-uri</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--track-total" title="The “track-total” property">track-total</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--update-count" title="The “update-count” property">update-count</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--uri" title="The “uri” property">uri</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--width" title="The “width” property">width</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<a href="/home/jens/jhbuild/install/share/gtk-doc/html/gupnpGUPnPXMLDoc.html#GUPnPXMLDoc-struct"><span class="type">GUPnPXMLDoc</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--xml-doc" title="The “xml-doc” property">xml-doc</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource--xml-node" title="The “xml-node” property">xml-node</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteResource.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GUPnPDIDLLiteResource.html#GUPnPDIDLLiteResource-struct" title="GUPnPDIDLLiteResource">GUPnPDIDLLiteResource</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteResource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPDIDLLiteResource
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteResource.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> respresent a DIDL-Lite resource (res) element.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteResource.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-uri"></a><h3>gupnp_didl_lite_resource_set_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_uri (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);</pre>
+<p>Set the URI associated with the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>The URI as string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-import-uri"></a><h3>gupnp_didl_lite_resource_set_import_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_import_uri
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *import_uri</code></em>);</pre>
+<p>Set the import URI associated with the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-import-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>import_uri</p></td>
+<td class="parameter_description"><p>The URI as string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-protocol-info"></a><h3>gupnp_didl_lite_resource_set_protocol_info ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_protocol_info
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *info</code></em>);</pre>
+<p>Set the protocol info associated with the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-protocol-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>The protocol string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-size"></a><h3>gupnp_didl_lite_resource_set_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_size (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                   <em class="parameter"><code><span class="type">glong</span> size</code></em>);</pre>
+<p>Set the size (in bytes) of the <em class="parameter"><code>resource</code></em>
+. Passing a negative number will
+unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>The size (in bytes)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-size64"></a><h3>gupnp_didl_lite_resource_set_size64 ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_size64 (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                     <em class="parameter"><code><span class="type">gint64</span> size</code></em>);</pre>
+<p>Set the size (in bytes) of the <em class="parameter"><code>resource</code></em>
+. Passing a negative number will
+unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-size64.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>The size (in bytes)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-duration"></a><h3>gupnp_didl_lite_resource_set_duration ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_duration (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                       <em class="parameter"><code><span class="type">glong</span> duration</code></em>);</pre>
+<p>Set the duration (in seconds) of the <em class="parameter"><code>resource</code></em>
+. Passing a negative number
+will unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>duration</p></td>
+<td class="parameter_description"><p>The duration (in seconds)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-bitrate"></a><h3>gupnp_didl_lite_resource_set_bitrate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_bitrate (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                      <em class="parameter"><code><span class="type">int</span> bitrate</code></em>);</pre>
+<p>Set the bitrate (in bytes per second) of the <em class="parameter"><code>resource</code></em>
+. Passing a negative
+number will unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-bitrate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>bitrate</p></td>
+<td class="parameter_description"><p>The bitrate</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-sample-freq"></a><h3>gupnp_didl_lite_resource_set_sample_freq ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_sample_freq
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> sample_freq</code></em>);</pre>
+<p>Set the sample frequency of the <em class="parameter"><code>resource</code></em>
+. Passing a negative number will
+unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-sample-freq.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sample_freq</p></td>
+<td class="parameter_description"><p>The sample frequency</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-bits-per-sample"></a><h3>gupnp_didl_lite_resource_set_bits_per_sample ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_bits_per_sample
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> sample_size</code></em>);</pre>
+<p>Set the sample size of the <em class="parameter"><code>resource</code></em>
+. Passing a negative number will unset
+this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-bits-per-sample.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>sample_size</p></td>
+<td class="parameter_description"><p>The number of bits per sample</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-protection"></a><h3>gupnp_didl_lite_resource_set_protection ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_protection
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *protection</code></em>);</pre>
+<p>Set the protection system used by the <em class="parameter"><code>resource</code></em>
+. Passing a negative number
+will unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-protection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>protection</p></td>
+<td class="parameter_description"><p>The protection system identifier as string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-audio-channels"></a><h3>gupnp_didl_lite_resource_set_audio_channels ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_audio_channels
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> n_channels</code></em>);</pre>
+<p>Set the number of audio channels in the <em class="parameter"><code>resource</code></em>
+. Passing a negative number
+will unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-audio-channels.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_channels</p></td>
+<td class="parameter_description"><p>The number of channels</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-width"></a><h3>gupnp_didl_lite_resource_set_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_width (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                    <em class="parameter"><code><span class="type">int</span> width</code></em>);</pre>
+<p>Set the width of this image/video resource. Setting both width and height to
+a negative number will unset the resolution property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>width</p></td>
+<td class="parameter_description"><p>The width</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-height"></a><h3>gupnp_didl_lite_resource_set_height ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_height (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                     <em class="parameter"><code><span class="type">int</span> height</code></em>);</pre>
+<p>Set the height of this image/video resource. Setting both width and height to
+a negative number will unset the resolution property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-height.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>height</p></td>
+<td class="parameter_description"><p>The height</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-color-depth"></a><h3>gupnp_didl_lite_resource_set_color_depth ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_color_depth
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> color_depth</code></em>);</pre>
+<p>Set the color-depth of this image/video resource. Passing a negative number
+will unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-color-depth.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>color_depth</p></td>
+<td class="parameter_description"><p>The color-depth</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-cleartext-size"></a><h3>gupnp_didl_lite_resource_set_cleartext_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_cleartext_size
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code><span class="type">gint64</span> cleartext_size</code></em>);</pre>
+<p>Set the size (in bytes) of the <em class="parameter"><code>resource</code></em>
+. Passing a negative number will
+unset this property.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-cleartext-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cleartext_size</p></td>
+<td class="parameter_description"><p>The size (in bytes)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-uri"></a><h3>gupnp_didl_lite_resource_get_uri ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_resource_get_uri (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the URI associated with the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-uri.returns"></a><h4>Returns</h4>
+<p> The of URI the <em class="parameter"><code>resource</code></em>
+or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-import-uri"></a><h3>gupnp_didl_lite_resource_get_import_uri ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_resource_get_import_uri
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the import URI associated with the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-import-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-import-uri.returns"></a><h4>Returns</h4>
+<p> The import URI or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-protocol-info"></a><h3>gupnp_didl_lite_resource_get_protocol_info ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="returnvalue">GUPnPProtocolInfo</span></a> *
+gupnp_didl_lite_resource_get_protocol_info
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the protocol info associated with the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-protocol-info.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-protocol-info.returns"></a><h4>Returns</h4>
+<p> The protocol info associated with the <em class="parameter"><code>resource</code></em>
+or <code class="literal">NULL</code>. The
+returned object must not be unrefed. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-size"></a><h3>gupnp_didl_lite_resource_get_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">long</span>
+gupnp_didl_lite_resource_get_size (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the size (in bytes) of the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-size.returns"></a><h4>Returns</h4>
+<p> The size (in bytes) of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-size64"></a><h3>gupnp_didl_lite_resource_get_size64 ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint64</span>
+gupnp_didl_lite_resource_get_size64 (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the size (in bytes) of the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-size64.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-size64.returns"></a><h4>Returns</h4>
+<p> The size (in bytes) of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-duration"></a><h3>gupnp_didl_lite_resource_get_duration ()</h3>
+<pre class="programlisting"><span class="returnvalue">long</span>
+gupnp_didl_lite_resource_get_duration (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the duration (in seconds) of the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-duration.returns"></a><h4>Returns</h4>
+<p> The duration (in seconds) of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-bitrate"></a><h3>gupnp_didl_lite_resource_get_bitrate ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gupnp_didl_lite_resource_get_bitrate (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the bitrate (in bytes per second) of the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-bitrate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-bitrate.returns"></a><h4>Returns</h4>
+<p> The bitrate (in bytes per second) of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-sample-freq"></a><h3>gupnp_didl_lite_resource_get_sample_freq ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gupnp_didl_lite_resource_get_sample_freq
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the sample frequency of the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-sample-freq.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-sample-freq.returns"></a><h4>Returns</h4>
+<p> The sample frequency of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-bits-per-sample"></a><h3>gupnp_didl_lite_resource_get_bits_per_sample ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gupnp_didl_lite_resource_get_bits_per_sample
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the sample size of the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-bits-per-sample.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-bits-per-sample.returns"></a><h4>Returns</h4>
+<p> The number of bits per sample of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-protection"></a><h3>gupnp_didl_lite_resource_get_protection ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_resource_get_protection
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the protection system used by the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-protection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-protection.returns"></a><h4>Returns</h4>
+<p> The protection system in use by the <em class="parameter"><code>resource</code></em>
+or <code class="literal">NULL</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-audio-channels"></a><h3>gupnp_didl_lite_resource_get_audio_channels ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gupnp_didl_lite_resource_get_audio_channels
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the number of audio channels in the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-audio-channels.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-audio-channels.returns"></a><h4>Returns</h4>
+<p> The number of audio channels in the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-width"></a><h3>gupnp_didl_lite_resource_get_width ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gupnp_didl_lite_resource_get_width (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the width of this image/video resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-width.returns"></a><h4>Returns</h4>
+<p> The width of this image/video resource or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-height"></a><h3>gupnp_didl_lite_resource_get_height ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gupnp_didl_lite_resource_get_height (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the height of this image/video resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-height.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-height.returns"></a><h4>Returns</h4>
+<p> The height of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-color-depth"></a><h3>gupnp_didl_lite_resource_get_color_depth ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gupnp_didl_lite_resource_get_color_depth
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the color-depth of this image/video resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-color-depth.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-color-depth.returns"></a><h4>Returns</h4>
+<p> The color depth of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-xml-node"></a><h3>gupnp_didl_lite_resource_get_xml_node ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNode</span> *
+gupnp_didl_lite_resource_get_xml_node (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the pointer to res node in XML document.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-xml-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-xml-node.returns"></a><h4>Returns</h4>
+<p> The pointer to res node in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-cleartext-size"></a><h3>gupnp_didl_lite_resource_get_cleartext_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint64</span>
+gupnp_didl_lite_resource_get_cleartext_size
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the size (in bytes) of the <em class="parameter"><code>resource</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-cleartext-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-cleartext-size.returns"></a><h4>Returns</h4>
+<p> The size (in bytes) of the <em class="parameter"><code>resource</code></em>
+or -1.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-dlna-namespace"></a><h3>gupnp_didl_lite_resource_get_dlna_namespace ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNsPtr</span>
+gupnp_didl_lite_resource_get_dlna_namespace
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the pointer to the DLNA metadata namespace registered with the XML
+document containing this object.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-dlna-namespace.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-dlna-namespace.returns"></a><h4>Returns</h4>
+<p> The pointer to DLNA namespace in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-pv-namespace"></a><h3>gupnp_didl_lite_resource_get_pv_namespace ()</h3>
+<pre class="programlisting"><span class="returnvalue">xmlNsPtr</span>
+gupnp_didl_lite_resource_get_pv_namespace
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the pointer to the DLNA metadata namespace registered with the XML
+document containing this object.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-pv-namespace.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPDIDLLiteObject.html" title="GUPnPDIDLLiteObject"><span class="type">GUPnPDIDLLiteObject</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-pv-namespace.returns"></a><h4>Returns</h4>
+<p> The pointer to DLNA namespace in XML document. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-update-count"></a><h3>gupnp_didl_lite_resource_get_update_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_didl_lite_resource_get_update_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the update count of this resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-update-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-update-count.returns"></a><h4>Returns</h4>
+<p> The update count of the <em class="parameter"><code>resource</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-update-count"></a><h3>gupnp_didl_lite_resource_set_update_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_update_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> update_count</code></em>);</pre>
+<p>Set the update count of this resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-update-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>update_count</p></td>
+<td class="parameter_description"><p>The update_count</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-unset-update-count"></a><h3>gupnp_didl_lite_resource_unset_update_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_unset_update_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Unset the update count of this resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-unset-update-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-update-count-is-set"></a><h3>gupnp_didl_lite_resource_update_count_is_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_didl_lite_resource_update_count_is_set
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Check whether the update count property of this resource is set.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-update-count-is-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-update-count-is-set.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if set, otherwise <code class="literal">FALSE</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-track-total"></a><h3>gupnp_didl_lite_resource_get_track_total ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_didl_lite_resource_get_track_total
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Get the total track count of this resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-track-total.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-track-total.returns"></a><h4>Returns</h4>
+<p> The total track count of the <em class="parameter"><code>resource</code></em>
+.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-track-total"></a><h3>gupnp_didl_lite_resource_set_track_total ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_track_total
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> track_total</code></em>);</pre>
+<p>Set the total number of tracks in this resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-track-total.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>track_total</p></td>
+<td class="parameter_description"><p>The total number of tracks in this resource</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-track-total-is-set"></a><h3>gupnp_didl_lite_resource_track_total_is_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_didl_lite_resource_track_total_is_set
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Check whether the total track count property of this resource is set.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-track-total-is-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-track-total-is-set.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if set, otherwise <code class="literal">FALSE</code>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-unset-track-total"></a><h3>gupnp_didl_lite_resource_unset_track_total ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_unset_track_total
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<p>Unset the total track count of this resource.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-unset-track-total.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-subtitle-file-type"></a><h3>gupnp_didl_lite_resource_get_subtitle_file_type ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_resource_get_subtitle_file_type
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-subtitle-file-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-subtitle-file-type.returns"></a><h4>Returns</h4>
+<p> The content of the subtitleFileType property or <code class="literal">NULL</code></p>
+</div>
+<p class="since">Since: 0.12.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-get-subtitle-file-uri"></a><h3>gupnp_didl_lite_resource_get_subtitle_file_uri ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_didl_lite_resource_get_subtitle_file_uri
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-subtitle-file-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-get-subtitle-file-uri.returns"></a><h4>Returns</h4>
+<p> The content of the subtitleFileUri property or <code class="literal">NULL</code> when not set.</p>
+</div>
+<p class="since">Since: 0.12.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-subtitle-file-type"></a><h3>gupnp_didl_lite_resource_set_subtitle_file_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_subtitle_file_type
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *type</code></em>);</pre>
+<p>Set the type of an external subtitle file, specified via
+pv:subtitleFileUri using <a class="link" href="GUPnPDIDLLiteResource.html#gupnp-didl-lite-resource-set-subtitle-file-uri" title="gupnp_didl_lite_resource_set_subtitle_file_uri ()"><code class="function">gupnp_didl_lite_resource_set_subtitle_file_uri()</code></a>.</p>
+<p>When <em class="parameter"><code>type</code></em>
+ is <code class="literal">NULL</code> the value is removed.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-subtitle-file-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p> An URI to an external subtitle file. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.12.4</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-didl-lite-resource-set-subtitle-file-uri"></a><h3>gupnp_didl_lite_resource_set_subtitle_file_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_didl_lite_resource_set_subtitle_file_uri
+                               (<em class="parameter"><code><a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a> *resource</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);</pre>
+<p>Set the URI of an external subtitle file to be used with this resource.
+When <em class="parameter"><code>uri</code></em>
+ is <code class="literal">NULL</code> the value is removed.</p>
+<div class="refsect3">
+<a name="gupnp-didl-lite-resource-set-subtitle-file-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>resource</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPDIDLLiteResource.html" title="GUPnPDIDLLiteResource"><span class="type">GUPnPDIDLLiteResource</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>  An URI to an external subtitle file or <code class="literal">NULL</code> to remove. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.12.4</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteResource.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource-struct"></a><h3>GUPnPDIDLLiteResource</h3>
+<pre class="programlisting">typedef struct _GUPnPDIDLLiteResource GUPnPDIDLLiteResource;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPDIDLLiteResource.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--audio-channels"></a><h3>The <code class="literal">“audio-channels”</code> property</h3>
+<pre class="programlisting">  “audio-channels”           <span class="type">gint</span></pre>
+<p>The number of audio channels in this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--bitrate"></a><h3>The <code class="literal">“bitrate”</code> property</h3>
+<pre class="programlisting">  “bitrate”                  <span class="type">gint</span></pre>
+<p>The bitrate of this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--bits-per-sample"></a><h3>The <code class="literal">“bits-per-sample”</code> property</h3>
+<pre class="programlisting">  “bits-per-sample”          <span class="type">gint</span></pre>
+<p>The sample size of this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--cleartext-size"></a><h3>The <code class="literal">“cleartext-size”</code> property</h3>
+<pre class="programlisting">  “cleartext-size”           <span class="type">gint64</span></pre>
+<p>The clear text size (in bytes) of this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--color-depth"></a><h3>The <code class="literal">“color-depth”</code> property</h3>
+<pre class="programlisting">  “color-depth”              <span class="type">gint</span></pre>
+<p>The color-depth of this image/video resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--dlna-namespace"></a><h3>The <code class="literal">“dlna-namespace”</code> property</h3>
+<pre class="programlisting">  “dlna-namespace”           <span class="type">gpointer</span></pre>
+<p>Pointer to the DLNA metadata namespace registered with the
+resource object.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--duration"></a><h3>The <code class="literal">“duration”</code> property</h3>
+<pre class="programlisting">  “duration”                 <span class="type">glong</span></pre>
+<p>The duration (in seconds) of this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--height"></a><h3>The <code class="literal">“height”</code> property</h3>
+<pre class="programlisting">  “height”                   <span class="type">gint</span></pre>
+<p>The height of this image/video resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--import-uri"></a><h3>The <code class="literal">“import-uri”</code> property</h3>
+<pre class="programlisting">  “import-uri”               <span class="type">gchar</span> *</pre>
+<p>The Import URI associated with this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--protection"></a><h3>The <code class="literal">“protection”</code> property</h3>
+<pre class="programlisting">  “protection”               <span class="type">gchar</span> *</pre>
+<p>The protection system used for this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--protocol-info"></a><h3>The <code class="literal">“protocol-info”</code> property</h3>
+<pre class="programlisting">  “protocol-info”            <a class="link" href="GUPnPProtocolInfo.html" title="GUPnPProtocolInfo"><span class="type">GUPnPProtocolInfo</span></a> *</pre>
+<p>The protocol info associated with this resource.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--pv-namespace"></a><h3>The <code class="literal">“pv-namespace”</code> property</h3>
+<pre class="programlisting">  “pv-namespace”             <span class="type">gpointer</span></pre>
+<p>Pointer to the PV metadata namespace registered with the
+resource object.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--sample-freq"></a><h3>The <code class="literal">“sample-freq”</code> property</h3>
+<pre class="programlisting">  “sample-freq”              <span class="type">gint</span></pre>
+<p>The sample frequency of this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--size"></a><h3>The <code class="literal">“size”</code> property</h3>
+<pre class="programlisting">  “size”                     <span class="type">glong</span></pre>
+<p>The size (in bytes) of this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--size64"></a><h3>The <code class="literal">“size64”</code> property</h3>
+<pre class="programlisting">  “size64”                   <span class="type">gint64</span></pre>
+<p>The size (in bytes) of this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--subtitle-file-type"></a><h3>The <code class="literal">“subtitle-file-type”</code> property</h3>
+<pre class="programlisting">  “subtitle-file-type”       <span class="type">gchar</span> *</pre>
+<p>Type of external subtitle file. Usually SRT or SMI.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--subtitle-file-uri"></a><h3>The <code class="literal">“subtitle-file-uri”</code> property</h3>
+<pre class="programlisting">  “subtitle-file-uri”        <span class="type">gchar</span> *</pre>
+<p>Uri to external subtitle file.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--track-total"></a><h3>The <code class="literal">“track-total”</code> property</h3>
+<pre class="programlisting">  “track-total”              <span class="type">guint</span></pre>
+<p>Number of tracks in a DIDL_S or DIDL_V resource.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--update-count"></a><h3>The <code class="literal">“update-count”</code> property</h3>
+<pre class="programlisting">  “update-count”             <span class="type">guint</span></pre>
+<p>The update count of this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--uri"></a><h3>The <code class="literal">“uri”</code> property</h3>
+<pre class="programlisting">  “uri”                      <span class="type">gchar</span> *</pre>
+<p>The URI associated with this resource.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--width"></a><h3>The <code class="literal">“width”</code> property</h3>
+<pre class="programlisting">  “width”                    <span class="type">gint</span></pre>
+<p>The width of this image/video resource.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= -1</p>
+<p>Default value: -1</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--xml-doc"></a><h3>The <code class="literal">“xml-doc”</code> property</h3>
+<pre class="programlisting">  “xml-doc”                  <a href="/home/jens/jhbuild/install/share/gtk-doc/html/gupnpGUPnPXMLDoc.html#GUPnPXMLDoc-struct"><span class="type">GUPnPXMLDoc</span></a> *</pre>
+<p>The reference to XML document containing this object.</p>
+<p>Internal property.</p>
+<p>Flags: Write / Construct Only</p>
+<p class="stability">Stability Level: <acronym title="An interface that can be used within the GNOME stack itself, but that is not
+documented for end-users.  Such functions should only be used in specified and
+documented ways.
+"><span class="acronym">Private</span></acronym></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPDIDLLiteResource--xml-node"></a><h3>The <code class="literal">“xml-node”</code> property</h3>
+<pre class="programlisting">  “xml-node”                 <span class="type">gpointer</span></pre>
+<p>The pointer to res node in XML document.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+#! /usr/bin/make -f
+%:
+	dh $@ --with autoreconf
+
+export DEB_CFLAGS_MAINT_APPEND := -Wall
+
+override_dh_auto_clean:
+	# make sure the POT and POs are up to date
+	[ ! -f man/Makefile ] || $(MAKE) -C man update
+	-$(MAKE) mrproper
+
+override_dh_shlibdeps:
+	dh_shlibdeps -- -dPre-Depends
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip

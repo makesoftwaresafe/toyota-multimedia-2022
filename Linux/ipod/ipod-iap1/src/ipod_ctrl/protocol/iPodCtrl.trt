@@ -1,0 +1,476 @@
+;**
+;* @file iPodCtrl.trt
+;*
+;* @version $Id: iPodCtrl.trt,v 1.4 2012/02/23 10:32:52 kgerhards Exp $
+;*
+;* @release: $Name: IPOD_r2_C40 $
+;*
+;* This file contains rules and arrays for TTFis support of the iPod control
+;*
+;* @component iPod control
+;*
+;* @author
+;*
+;* @copyright (c) 2003 � 2004 ADIT Corporation
+;*
+;* @see <related items>
+;*
+;* @history
+;* $Log: iPodCtrl.trt,v $
+;* Revision 1.4  2012/02/23 10:32:52  kgerhards
+;* SWGIIX-2300 exception occurs in pthread_join, when ipod is (un)plugged,
+;* SWGIIX-2265 Nullpointerexception in "mediaplayer.out"
+;*
+;* Revision 1.3  2011/04/08 07:35:33  jlorenz
+;* Merge authentication and upate trace
+;*
+;* Revision 1.2  2010/09/20 07:50:18  jlorenz
+;* Changed trace.
+;*
+;* Revision 1.1  2010/01/13 04:21:35  mshibata
+;* Fix the Location commands
+;*
+;* Revision 1.12  2009/07/24 13:54:27  jlorenz
+;* SFE-295: [SFE-293] Change iPodCtrl to select used interface and their configuration over devconf
+;*
+;* Revision 1.11  2009/05/15 13:40:55  jlorenz
+;* Fixed trace for ATTACH/DETACH messages.
+;*
+;* Revision 1.10  2009/03/24 08:45:37  jlorenz
+;* Changed traces for usbPacketizer.
+;*
+;* Revision 1.9  2009/01/16 10:05:24  jlorenz
+;* SWG-24801: [SWG-24539] a race condition in the ipod_ctrl when receiving multiple answers
+;* SWG-24804: [SWG-24590] Several Driver-Timeouts (10 seconds no answer from iPodCtrl) in undervoltage tests
+;* SWG-24383: [SWG-24341] Setting iPod to extended mode sporadically fails and times out
+;*
+;* Revision 1.8  2008/11/06 12:03:51  jlorenz
+;* SWG-23118: iPOd nano 2G is attached, pressing often FFWD: device driver
+;* SWG-24043: No popup message 'Checking iPod...' is displayed and screen can't transfer to 'iPod Primary' screen
+;* SWG-24027: Popup "Checking IPod"for a long time with Ipod nano 2G
+;* SWG-24051: Race-Condition in USB-Packetizer between Reader-Task and Caller
+;* SWG-24047: Setting iPod to extended Mode sporadically lasts more than 60 seconds
+;* SWG-23544: iPod nano2g chrash
+;*
+;* Revision 1.7  2008/10/21 12:28:55  smaleyka
+;* SWG-24015 (SWG-24018) "[b_MAIN] functions "S32 iPodGetIPodName(U8* iPodName)" and "S32 iPodGetSerialNumber(U8* serialNumber)" have an "off-by-one" error"
+;* SWG-23675 (SWG-24031) "[b_MAIN] Playback of iPOD is not possible after coming out of undervoltage"
+;* SWG-23374 (SWG-23547) "[b_MAIN] When reading of the iPod Serial Number fails a retry gets stuck"
+;* SWG-23386 (SWG-23544) "[b_MAIN] iPod nano2g chrash"
+;* SWG-23893 (SWG-24039) "[b_MAIN] Cyclic audio gaps are observed with iPod video 30 GB capacity"
+;* SWG-23995 (SWG-24047) "[b_MAIN] Setting iPod to extended Mode sporadically lasts more than 60 seconds "
+;* SWG-23675 (SWG-24031) "[b_MAIN] Playback of iPOD is not possible after coming out of undervoltage"
+;* SWG-24075 (SWG-24077) "[b_MAIN] Reset after Ipod touch disconnect while "Checking iPod" Popup is visible"
+;*
+;* Revision 1.6  2008/02/14 15:01:37  rwillig
+;* trace messages modified
+;*
+;* Revision 1.5  2007/11/07 12:51:58  rwillig
+;* IPOD_ERROR=-90:The_Ipod_is_not_connected added
+;*
+;* Revision 1.4  2007/10/17 06:42:23  rwillig
+;* uart commands added
+;*
+;* Revision 1.3  2007/10/15 05:58:38  rwillig
+;* error description for usb_packetizer added
+;*
+;* Revision 1.2  2007/04/24 09:09:17  llendeckel
+;* timeout for semaphore wait
+;*
+;* Revision 1.1  2007/03/23 11:38:02  llendeckel
+;* trace ttfis
+;*
+;*
+;*
+;***********************************************************************/
+;*
+; Trace data will be in following format
+; ________________________________________________________________________________________
+;|CompId|ClassId|Trace Level|empty|Errorcode |Error_Type    |Trace Data
+;|1Byte |1Byte  |1Byte      |2Byte|1Byte     |1Byte         |xByte
+;|1     |2      |3          |4    |6         |7             |8                      |n
+;|______|_______|___________|_____|__________|______________|_______________________|_____
+
+
+; iPod modules
+; =============================================================================
+ARRAY TR_CLASS_IPOD=0x28:IAPCONTROL_CB
+ARRAY TR_CLASS_IPOD=0x29:IAPCONTROL_GENERAL
+ARRAY TR_CLASS_IPOD=0x2A:IAPCONTROL_EXTENDED
+ARRAY TR_CLASS_IPOD=0x2B:IAPCONTROL_DIGITAL
+ARRAY TR_CLASS_IPOD=0x2C:IAPCONTROL_STORAGE
+ARRAY TR_CLASS_IPOD=0x2D:IAPCONTROL
+ARRAY TR_CLASS_IPOD=0x2E:IAPCONTROL_IDPS_FEATURE
+ARRAY TR_CLASS_IPOD=0x2F:IPODSPI
+ARRAY TR_CLASS_IPOD=0x30:IAPCONTROL_LOCATION
+ARRAY TR_CLASS_IPOD=0x32:IAPCONTROL_TRANSPORT
+ARRAY TR_CLASS_IPOD=0x33:IAPCONTROL_AUTH
+
+; iPod USB events
+; =============================================================================
+ARRAY IPOD_HID_EVENT=100:TDC_HID_ATTACH
+ARRAY IPOD_HID_EVENT=101:TDC_HID_DETACH
+
+; iPod Init Information
+; =============================================================================
+ARRAY IPOD_INIT_EVENT=0:MSCI
+ARRAY IPOD_INIT_EVENT=1:I2C_100_kHz
+ARRAY IPOD_INIT_EVENT=2:I2C_50_kHz
+
+; iPod errortypes
+; =============================================================================
+ARRAY IPOD_ERRORTYPES=0x01:IPOD_ERRORTYPE_HANDLEABLE
+ARRAY IPOD_ERRORTYPES=0x02:IPOD_ERRORTYPE_CRITICAL
+ARRAY IPOD_ERRORTYPES=0x03:IPOD_ERRORTYPE_FATAL
+ARRAY IPOD_ERRORTYPES=0x04:IPOD_ERRORTYPE_STATUS
+ARRAY IPOD_ERRORTYPES=0x05:IPOD_ERRORTYPE_LOG
+
+
+ARRAY IPOD_ERROR=         0:IPOD_OK
+ARRAY IPOD_ERROR=        -1:IPOD_ERROR
+ARRAY IPOD_ERROR=         1:ERROR:_Unknown_database_category
+ARRAY IPOD_ERROR=         2:ERROR:_Command_failed
+ARRAY IPOD_ERROR=         3:ERROR:_Out_of_resources
+ARRAY IPOD_ERROR=         4:ERROR:_Bad_parameter
+ARRAY IPOD_ERROR=         5:ERROR:_Unknown_ID
+ARRAY IPOD_ERROR=         6:Reserved
+ARRAY IPOD_ERROR=         7:Accessory_not_authenticated
+ARRAY IPOD_ERROR=       -98:Authentication_Certification_Length_incorrect!
+ARRAY IPOD_ERROR=       -97:Communication_with_Apple_Authentication_CP_failed
+ARRAY IPOD_ERROR=       -96:Authentication_of_iPod_failed
+ARRAY IPOD_ERROR=       -95:The_Operation_cannot_executed_in_the_selected mode!
+ARRAY IPOD_ERROR=       -94:The_Operation_is_only_in_the_advanced_mode_available!
+ARRAY IPOD_ERROR=       -93:Getting_response_message_failed!
+ARRAY IPOD_ERROR=       -92:All_tasks_were_stopped
+ARRAY IPOD_ERROR=       -91:The_Ipod_is_already_connected
+ARRAY IPOD_ERROR=       -90:The_Ipod_is_not_connected
+ARRAY IPOD_ERROR=       -89:iPodUnknownDatabaseCategory
+ARRAY IPOD_ERROR=       -88:iPodCommandFailed
+ARRAY IPOD_ERROR=       -87:iPodOutOfResources
+ARRAY IPOD_ERROR=       -86:iPodBadParameter
+ARRAY IPOD_ERROR=       -85:iPodUnknownID
+ARRAY IPOD_ERROR=       -84:iPodUnsupportedDevice
+ARRAY IPOD_ERROR=       -83:iPodAccessoryNotAuthenticated
+ARRAY IPOD_ERROR=       -82:iPodBadAuthenticationVersion
+ARRAY IPOD_ERROR=       -81:iPodAccessoryPowerModeFailed
+ARRAY IPOD_ERROR=       -80:iPodCertificateInvalid
+ARRAY IPOD_ERROR=       -79:iPodCertificatePermissionsInvalid
+ARRAY IPOD_ERROR=       -78:iPodFileIsInUse
+ARRAY IPOD_ERROR=       -77:iPodInvalidFileHandle
+ARRAY IPOD_ERROR=       -76:iPodDirectryNotEmpty
+ARRAY IPOD_ERROR=       -75:iPodOperationTimeOut
+ARRAY IPOD_ERROR=       -74:iPodUnavailableMode
+ARRAY IPOD_ERROR=       -73:iPodInvalidAccessoryResourceIDValue
+ARRAY IPOD_ERROR=       -72:iPodMaxConnect
+ARRAY IPOD_ERROR=       -71:iPodCommandNotSupported
+ARRAY IPOD_ERROR=       -70:iPodUnexpectedError
+
+ARRAY IPOD_ERROR=       -67:Open_mode_is_invalid_(write not permitted)
+ARRAY IPOD_ERROR=       -66:Processing_aborted
+ARRAY IPOD_ERROR=       -52:Wait_released_by_wait_disabled_state
+ARRAY IPOD_ERROR=       -51:The_object_being_waited_for_was_deleted_-the_specified_semaphore_was_deleted_while_waiting)
+ARRAY IPOD_ERROR=       -50:Busy_processing_other_requests
+ARRAY IPOD_ERROR=       -49:Wait_state_released-tk_rel_wai_received_in_wait_state
+ARRAY IPOD_ERROR=       -42:Object_does_not_exist
+ARRAY IPOD_ERROR=       -41:Incorrect_object_state
+ARRAY IPOD_ERROR=       -34:Read-only_device
+ARRAY IPOD_ERROR=       -33:Incufficient_memory
+ARRAY IPOD_ERROR=       -27:Exceeds_system_limits
+ARRAY IPOD_ERROR=       -25:Context_error_(issued_from_task-independent_portion_or_in_dispatch_disabled_state)
+ARRAY IPOD_ERROR=       -18:dd_is_invalid_or_not_open
+ARRAY IPOD_ERROR=       -17:Parameter_error
+ARRAY IPOD_ERROR=0xfffb0000:System_error
+ARRAY IPOD_ERROR=0xfffa0000:Coprocessor_disable
+ARRAY IPOD_ERROR=0xfff70000:Unsupported_function
+ARRAY IPOD_ERROR=0xfffe0000:Reserved_function_code_number
+ARRAY IPOD_ERROR=0xfffd0000:Reserved_attribute
+ARRAY IPOD_ERROR=0xffef0000:Parameter_error
+ARRAY IPOD_ERROR=0xffee0000:Incorrect_ID_number
+ARRAY IPOD_ERROR=0xffe70000:Context_error
+ARRAY IPOD_ERROR=0xffe60000:Inaccessible_memory/access_violation
+ARRAY IPOD_ERROR=0xffe50000:Object_access_violation
+ARRAY IPOD_ERROR=0xffe40000:Incorrect_system_call_use
+ARRAY IPOD_ERROR=0xffdf0000:Insufficient_memory
+ARRAY IPOD_ERROR=0xffde0000:Exceed_system_limits
+ARRAY IPOD_ERROR=0xffd70000:Incorrect_object_state
+ARRAY IPOD_ERROR=0xffd60000:Object_does_not_exist
+ARRAY IPOD_ERROR=0xffd50000:Queuing_overflow
+ARRAY IPOD_ERROR=0xffcf0000:Forcibly_release_wait_state
+ARRAY IPOD_ERROR=0xffce0000:Polling_fail/time_out
+ARRAY IPOD_ERROR=0xffcd0000:Waited_object_was_deleted
+ARRAY IPOD_ERROR=0xffcc0000:Release_wait_caused_by_wait_disable
+ARRAY IPOD_ERROR=0xffc70000:Output/input_error
+ARRAY IPOD_ERROR=0xffc60000:No_media
+ARRAY IPOD_ERROR=0xffbf0000:Busy_state
+ARRAY IPOD_ERROR=0xffbe0000:Aborted
+ARRAY IPOD_ERROR=0xffbd0000:write_protected
+
+; Rules
+; =============================================================================
+
+# TR_CLASS_IPOD -> 0x28:IAPCONTROL_CB
+# -----------------------------------------------------------------------------
+c1:(2)==0x28,	(8)==0x01	: Class= %0x(TR_CLASS_IPOD,2,1); Callback Id = IPOD_NOTIFY_CB: status = %u(9) , parameter = %u(10,4)
+c1:(2)==0x28,	(8)==0x02	: Class= %0x(TR_CLASS_IPOD,2,1); Callback Id = IPOD_NOTIFY_STATE_CHANGE_CB: stateChange = %u(9)
+c1:(2)==0x28,	(8)==0x03	: Class= %0x(TR_CLASS_IPOD,2,1); Callback Id = IPOD_GET_ACC_SAMPLE_RATE_CAPS_CB
+c1:(2)==0x28,	(8)==0x04	: Class= %0x(TR_CLASS_IPOD,2,1); Callback Id = IPOD_NEW_TRACK_INFO_CB: sample rate = %u(9,2), sound check value = %u(13,4), track vol adjustment = %u(17, 4)
+c1:(2)==0x28,	(8)==0x05	: Class= %0x(TR_CLASS_IPOD,2,1); Callback Id = IPOD_GET_TRACK_ARTWORK_DATA_CB
+c1:(2)==0x28,	(8)==0x06	: Class= %0x(TR_CLASS_IPOD,2,1); Callback Id = IPOD_USB_EXECUTE_ATTACH_CB: success = %u(IPOD_ERROR,9,4)
+c1:(2)==0x28,	(8)==0x07	: Class= %0x(TR_CLASS_IPOD,2,1); Callback Id = IPOD_USB_EXECUTE_DETACH_CB
+c1:(2)==0x28,	(8)==0x08	: Class= %0x(TR_CLASS_IPOD,2,1); Callback Id = IPOD_USB_EXECUTE_NOTIFICATION_CB: success = %u(IPOD_ERROR,9,4)
+
+# TR_CLASS_IPOD -> 0x29:IAPCONTROL_GENERAL / SIMPLE_REMOTE_LINGO
+# -----------------------------------------------------------------------------
+c1:(2)==0x29,	(8)==0x01	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayPause" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x02	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodNextTitle title" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x03	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPreviousTitle" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x04	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodNextAlbum" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x05	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPreviousAlbum" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x06	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodVolumeUp" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x07	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodVolumeDown" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x08	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodEnterExtendedInterfaceMode" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x09	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodEnterSimpleMode" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x0A	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetRemoteUIMode" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x0B	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetModelNum" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x0C	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetLingoProtocolVersion" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x0D	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetSoftwareVersion" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x0E	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodIdentifyDeviceLingoes" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x0F	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodReidentify" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x10	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetiPodOption" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x11	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetiPodPreferenceSetting" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x29,	(8)==0x12	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetiPodPreferenceSetting" finished. rc = %d(IPOD_ERROR,9,4)
+
+# TR_CLASS_IPOD -> 0x2A:IAPCONTROL_EXTENDED
+# -----------------------------------------------------------------------------
+c1:(2)==0x2A,	(8)==0x01	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetIPodName" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x02	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetIndexedPlayingTrackTitle" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x03	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetIndexedPlayingTrackArtistName" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x04	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetIndexedPlayingTrackAlbumName" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x05	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetDisplayImage" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x06	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayToggle" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x07	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayStop" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x08	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayNextTrack" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x09	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayPrevTrack" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x0A	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayFastForward" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x0B	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayFastBackward" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x0C	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayNormal" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x0D	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayNextChapter" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x0E	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayPrevChapter" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x0F	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodShuffleOff" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x10	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodShuffleOnSongs" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x11	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodShuffleOnAlbums" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x12	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetShuffleMode" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x13	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodRepeatOff" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x14	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodRepeatCurrentSong" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x15	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodRepeatAllSongs" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x16	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetRepeatMode" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x17	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetNumberCategorizedDBRecords" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x18	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSelectSortDBRecords" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x19	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodRetrieveCategorizedDBRecords" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x1A	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodResetDBSelection" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x1B	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSelectDBRecord" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x1C	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodReturnToPreviousDBRecordSelection" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x1D	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayCurrentSelection" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x1E	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetCurrentPlayingTrackIndex" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x1F	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetAudioBookSpeed" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x20	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetAudioBookSpeed" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x21	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetIndexedPlayingTrackInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x22   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetTrackArtworkTimes" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x23	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetTrackArtworkData" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x24	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetMonoDisplayImageLimits" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x25	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetColorDisplayImageLimits" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x26	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetArtworkFormats" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x27	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetNumPlayingTracks" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x28	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetCurrentPlayingTrack" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x29	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetPlayStatus" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x2A	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetPlayStatusChangeNotification" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x2B	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetCurrentPlayingTrackChapterInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x2C	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetCurrentPlayingTrackChapter" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x2D	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetCurrentPlayingTrackChapterPlayStatus" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x2E	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetCurrentPlayingTrackChapterName" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x2F	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetDisplayImageMonoCrome" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x30	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayControl" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x31	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetDBiTtunesInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x32	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetUIDTrackInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x33	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetDBTrackInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x34	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetPBTrackInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,	(8)==0x35	: Class= %0x(TR_CLASS_IPOD,2,1); "iPodResetDBSelectionHierarchy" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,   (8)==0x36   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetBulkUIDTrackInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,   (8)==0x37   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetBulkDBTrackInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,   (8)==0x38   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetBulkPBTrackInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,   (8)==0x39   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodPrepareUIDList" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,   (8)==0x3A   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodPlayPreparedUIDList" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,   (8)==0x3B   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetShuffle" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x2A,   (8)==0x3C   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSetRepeat" finished. rc = %d(IPOD_ERROR,9,4)
+
+# TR_CLASS_IPOD -> 0x2B:IAPCONTROL_DIGITAL
+C1:(2)==0x2B, (8)==0x01 : Class= %0x(TR_CLASS_IPOD,2,1): "iPodSetVideoDelay" rc = %d(IPOD_ERROR,9,4)
+
+# TR_CLASS_IPOD -> 0x2C:IAPCONTROL_STORAGE
+C1:(2)==0x2C, (8)==0x01 : Class= %0x(TR_CLASS_IPOD,2,1): "iPodGetiPodCaps" rc = %d(IPOD_ERROR,9,4)
+C1:(2)==0x2C, (8)==0x02 : Class= %0x(TR_CLASS_IPOD,2,1): "iPodWriteiPodFileData" rc = %d(IPOD_ERROR,9,4)
+C1:(2)==0x2C, (8)==0x03 : Class= %0x(TR_CLASS_IPOD,2,1): "iPodCloseiPodFile" rc = %d(IPOD_ERROR,9,4)
+C1:(2)==0x2C, (8)==0x04 : Class= %0x(TR_CLASS_IPOD,2,1): "iPodGetiPodFreeSpace" rc = %d(IPOD_ERROR,9,4)
+C1:(2)==0x2C, (8)==0x05 : Class= %0x(TR_CLASS_IPOD,2,1): "iPodOpeniPodFeature" rc = %d(IPOD_ERROR,9,4)
+C1:(2)==0x2C, (8)==0x06 : Class= %0x(TR_CLASS_IPOD,2,1): "iPodDeviceAck" rc = %d(IPOD_ERROR,9,4)
+C1:(2)==0x2C, (8)==0x07 : Class= %0x(TR_CLASS_IPOD,2,1): "iPodReturnDeviceCaps" rc = %d(IPOD_ERROR,9,4)
+
+# TR_CLASS_IPOD -> 0x2E:IAPCONTROL_IDPS_FEATURE
+C1:(2)==0x2E, (8)==0x01 : Class= %0x(TR_CLASS_IPOD,2,1): Start IDPS Feature. Result = %d(IPOD_ERROR,9,4)
+C1:(2)==0x2E, (8)==0x02 : Class= %0x(TR_CLASS_IPOD,2,1): SetFIDTokenValue. Result = %d(IPOD_ERROR,9,4)
+C1:(2)==0x2E, (8)==0x03 : Class= %0x(TR_CLASS_IPOD,2,1): End IDPS Feature. Status = %d(IPOD_ERROR,9,4)
+
+# TR_CLASS_IPOD -> 0x2F:IPODSPI
+C1:(2)==0x2F, (6)==0x00 : Class= %0x(TR_CLASS_IPOD,2,1): Get DevConf Parameter. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x01 : Class= %0x(TR_CLASS_IPOD,2,1): iPod SPI Main. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x02 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Attr CP Ready. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x03 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Attr CP Reset. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x04 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Attr Setup. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x05 : Class= %0x(TR_CLASS_IPOD,2,1): SPI attr Time Out. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x06 : Class= %0x(TR_CLASS_IPOD,2,1): Apple CP ready. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x07 : Class= %0x(TR_CLASS_IPOD,2,1): Apple CP Transfer Success. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x08 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Create Alarm Handler. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x09 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Create Driver Task. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x0A : Class= %0x(TR_CLASS_IPOD,2,1): SPI Create Flag. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x0B : Class= %0x(TR_CLASS_IPOD,2,1): SPI Define Int Handler. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x0C : Class= %0x(TR_CLASS_IPOD,2,1): SPI Def Device. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x0D : Class= %0x(TR_CLASS_IPOD,2,1): SPI Get Memory. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x0E : Class= %0x(TR_CLASS_IPOD,2,1): SPI Main Task. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x0F : Class= %0x(TR_CLASS_IPOD,2,1): SPI Read Attr. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x10 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Read Data. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x11 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Start. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x12 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Write Attr. Result = %d(IPOD_ERROR,7,1)
+C1:(2)==0x2F, (6)==0x13 : Class= %0x(TR_CLASS_IPOD,2,1): SPI Write Data. Result = %d(IPOD_ERROR,7,1)
+
+# TR_CLASS_IPOD -> 0x30:IAPCONTROL_LOCATION
+C1:(2)==0x30, (8)==0x01 : Class= %0x(TR_CLASS_IPOD,2,1):"iPodDevAck" finished. rc = %d(IPOD_ERROR,9,4))
+C1:(2)==0x30, (8)==0x02 : Class= %0x(TR_CLASS_IPOD,2,1):"iPodRetDevCaps" finished. rc = %d(IPOD_ERROR,9,4))
+C1:(2)==0x30, (8)==0x03 : Class= %0x(TR_CLASS_IPOD,2,1):"iPodRetDevControl" finished. rc = %d(IPOD_ERROR,9,4))
+C1:(2)==0x30, (8)==0x04 : Class= %0x(TR_CLASS_IPOD,2,1):"iPodRetDevData" finished. rc = %d(IPOD_ERROR,9,4))
+C1:(2)==0x30, (8)==0x05 : Class= %0x(TR_CLASS_IPOD,2,1):"iPodAsyncDevData" finished. rc = %d(IPOD_ERROR,9,4))
+
+# TR_CLASS_IPOD -> 0x32:IAPCONTROL_TRNSPORT
+# -----------------------------------------------------------------------------
+# IPOD_USB
+c1:(2)==0x32,   (8)==0x01   : Class= %0x(TR_CLASS_IPOD,2,1); "audio_copy_task" finished
+c1:(2)==0x32,   (8)==0x02   : Class= %0x(TR_CLASS_IPOD,2,1); "audio_event_task" finished
+c1:(2)==0x32,   (8)==0x03   : Class= %0x(TR_CLASS_IPOD,2,1); "close_all_devices" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x04   : Class= %0x(TR_CLASS_IPOD,2,1); "delete_all_buffers" finished
+c1:(2)==0x32,   (8)==0x05   : Class= %0x(TR_CLASS_IPOD,2,1); "delete_all_semaphores" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x06   : Class= %0x(TR_CLASS_IPOD,2,1); "getBottomRightX" finished
+c1:(2)==0x32,   (8)==0x07   : Class= %0x(TR_CLASS_IPOD,2,1); "getBottomRightY" finished
+c1:(2)==0x32,   (8)==0x08   : Class= %0x(TR_CLASS_IPOD,2,1); "getDisplayPixelFormatCode" finished
+c1:(2)==0x32,   (8)==0x09   : Class= %0x(TR_CLASS_IPOD,2,1); "getImageHeight" finished
+c1:(2)==0x32,   (8)==0x0A   : Class= %0x(TR_CLASS_IPOD,2,1); "getImageWidth" finished
+c1:(2)==0x32,   (8)==0x0B   : Class= %0x(TR_CLASS_IPOD,2,1); "getNewSampleRate" finished
+c1:(2)==0x32,   (8)==0x0C   : Class= %0x(TR_CLASS_IPOD,2,1); "getNewSoundCheckValue" finished
+c1:(2)==0x32,   (8)==0x0D   : Class= %0x(TR_CLASS_IPOD,2,1); "getNewTrackVolume" finished
+c1:(2)==0x32,   (8)==0x0E   : Class= %0x(TR_CLASS_IPOD,2,1); "getPosition" finished
+c1:(2)==0x32,   (8)==0x0F   : Class= %0x(TR_CLASS_IPOD,2,1); "getRowSize" finished
+c1:(2)==0x32,   (8)==0x11   : Class= %0x(TR_CLASS_IPOD,2,1); "getTelegramIndex" finished
+c1:(2)==0x32,   (8)==0x12   : Class= %0x(TR_CLASS_IPOD,2,1); "getTopLeftPointX" finished
+c1:(2)==0x32,   (8)==0x13   : Class= %0x(TR_CLASS_IPOD,2,1); "getTopLeftPointY" finished
+c1:(2)==0x32,   (8)==0x14   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAudiorouterNewSampleRate" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x15   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthenticationGetDeviceID" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x16   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthenticationGetFirmwareVersion" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x17   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthenticationGetProtocolVersion" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x18   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthenticationSelftest" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x19   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetAuthenticateCertificate" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1A   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodGetSignatureData" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1B   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodInitAuthenticationCP" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1C   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSendAuthenticationCertificate" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1D   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBaudioNewSampleRate" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1E   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBCalcChecksum" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1F   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBCalcChecksumLongTelegram" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x21   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBCreateAudioTask" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x22   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBCreateEventTask" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x23   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBCreateReaderTask" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x24   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBCreateWorkerTask" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x25   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBDisconnect" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x26   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBGetReportId" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x27   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBGetResponseData" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x28   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBGetResponseMsgData" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x29   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBGetTelegramHeaderInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x2A   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBGetValuesOfLenCmdInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x2B   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBInitConnection" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x2C   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBReaderTask" Event = %d(IPOD_HID_EVENT,9,4)
+c1:(2)==0x32,   (8)==0x2D   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBRetAccSampleCaps" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x2E   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBRetSignatureData" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x2F   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBSendAccAck" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x31   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBSendCommand" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x32   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBSendCommandNoWaitForACK" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x33   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBSendLongTelegram" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x34   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBSetExpectedCmdId" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x35   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBWaitAndGetResponseFixedSize" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x36   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBWaitAndGetResponseLenght" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x37   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBWaitAndGetValuesOfLenCmdInfo" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x38   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBWaitForSemaphore" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x39   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBWorkerTask" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x3A   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBWorkerWaitForSemaphore" finished. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x3B   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAudioCopyTask" Audiorouter error = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x3C   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAudioCopyTask" Can't read USB. error = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x3D   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAudioCopyTask" Self termination. Retry count = %d(9,4)
+c1:(2)==0x32,   (8)==0x3E   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBReaderTask" Can't read USB. error = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x3F   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBAudioWrite" error. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x40   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodUSBAudioRead" error. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x41   : Class= %0x(TR_CLASS_IPOD,2,1); "Lost Lingo in Reader-Task" ID = 0x%x(9,4)
+c1:(2)==0x32,   (8)==0x42   : Class= %0x(TR_CLASS_IPOD,2,1); "Lost CMD in Reader-Task" ID = 0x%x(9,4)
+c1:(2)==0x32,   (8)==0x43   : Class= %0x(TR_CLASS_IPOD,2,1); "Init Authentication CoPro" Device control over %d(IPOD_INIT_EVENT,9,4)
+c1:(2)==0x32,   (8)==0x44   : Class= %0x(TR_CLASS_IPOD,2,1); Attention! Configured stack size too low, stack size was increased to %d(9,4)
+
+# IPOD_UART
+c1:(2)==0x32,   (8)==0x0E   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodCalcChecksum. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x0F   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodCalcChecksumLongTelegram. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x11   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodInitSerialConnection. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x12   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialCreateReaderTask. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x13   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialDisconnect. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x14   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialGetDevconfValues. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x15   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialGetResponseData. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x16   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialGetResponseMsgData. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x17   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialGetTelegramHeaderInfo. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x18   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialGetValuesOfLenCmdInfo. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x19   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialReadChecksumFromEmptyResponse. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1A   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialReaderTask. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1B   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialReceiveResponse. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1C   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialSendCommand. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1D   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialSendCommandNoWaitForACK. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1E   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialSendLongTelegram. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x1F   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialSendSyncByte. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x21   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialSetExpectedCmdId. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x22   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialWaitAndGetResponseFixedSize. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x23   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialWaitAndGetResponseLenght. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x24   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialWaitAndGetValuesOfLenCmdInfo. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x25   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialWaitForReaderSemaphore. rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x32,   (8)==0x26   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodSerialWaitForSemaphore. rc = %d(IPOD_ERROR,9,4)
+
+
+# TR_CLASS_IPOD -> 0x33:IAPCONTROL_AUTH
+c1:(2)==0x33,   (8)==0x01   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthGetSignatureData" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x02   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthGetCertificate" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x03   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthGetFirmwareVersion" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x04   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthGetProtocolVersion" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x05   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthGetDeviceID" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x06   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthSelfTest" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x07   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthResetCP" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x08   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthSetCertificate" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x09   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthGetChallengeData" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x0A   : Class= %0x(TR_CLASS_IPOD,2,1); "iPodAuthGetSignature" rc = %d(IPOD_ERROR,9,4)
+c1:(2)==0x33,   (8)==0x0B   : Class= %0x(TR_CLASS_IPOD,2,1); 
+c1:(2)==0x33,   (8)==0x0C   : Class= %0x(TR_CLASS_IPOD,2,1);
+
+
+
+; Trace classes
+ARRAY TR_CLASS=0xc128:TR_CLASS_IPOD_CTRL_CB
+ARRAY TR_CLASS=0xc129:TR_CLASS_IPOD_CTRL_GEN
+ARRAY TR_CLASS=0xc12A:TR_CLASS_IPOD_CTRL_EXT
+ARRAY TR_CLASS=0xc12B:TR_CLASS_IPOD_CTRL_DIG
+ARRAY TR_CLASS=0xc12C:TR_CLASS_IPOD_CTRL_STO
+ARRAY TR_CLASS=0xc12D:TR_CLASS_IPOD_CTRL
+ARRAY TR_CLASS=0xc12E:TR_CLASS_IPOD_CTRL_IDPS
+ARRAY TR_CLASS=0xc12F:TR_CLASS_IPODSPI
+ARRAY TR_CLASS=0xc130:TR_CLASS_IPOD_CTRL_LOC
+ARRAY TR_CLASS=0xc132: TR_CLASS_IPOD_CTRL_TRANS
+ARRAY TR_CLASS=0xc133: TR_CLASS_IPOD_AUTH
+
+ARRAY TR_CLASS=0xb800:TR_CLASS_AUDIO_EDAR

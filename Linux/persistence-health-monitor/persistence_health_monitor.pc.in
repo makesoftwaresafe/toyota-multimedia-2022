@@ -1,0 +1,15 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+datarootdir=@datarootdir@
+datadir=@datadir@
+
+Name: persistence health monitor
+Description: persistence heaklth monitor
+Version: @VERSION@
+Requires: automotive-dlt
+Requires.private: dbus-1
+Libs: -L${libdir} -lpersistence_health_monitor -lrt -ldl
+Libs.private: -ldbus
+Cflags: -I${includedir}

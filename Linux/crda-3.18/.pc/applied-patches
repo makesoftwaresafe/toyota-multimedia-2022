@@ -1,0 +1,4 @@
+do-not-run-ldconfig-if-destdir-is-set.patch
+fix-linking-of-libraries-used-by-reglib.patch
+fix-gcc-6-unused-variables.patch
+0001-Makefile-respect-LDFLAGS-for-libreg.patch

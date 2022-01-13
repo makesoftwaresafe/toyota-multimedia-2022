@@ -1,0 +1,1934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Soup Miscellaneous Utilities: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch02.html" title="Core API">
+<link rel="prev" href="libsoup-2.4-soup-method.html" title="soup-method">
+<link rel="next" href="SoupMultipart.html" title="SoupMultipart">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-Soup-Miscellaneous-Utilities.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#libsoup-2.4-Soup-Miscellaneous-Utilities.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libsoup-2.4-soup-method.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="SoupMultipart.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libsoup-2.4-Soup-Miscellaneous-Utilities"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libsoup-2.4-Soup-Miscellaneous-Utilities.top_of_page"></a>Soup Miscellaneous Utilities</span></h2>
+<p>Soup Miscellaneous Utilities — Miscellaneous functions</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="libsoup-2.4-Soup-Miscellaneous-Utilities.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-new" title="soup_date_new ()">soup_date_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-new-from-string" title="soup_date_new_from_string ()">soup_date_new_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-new-from-time-t" title="soup_date_new_from_time_t ()">soup_date_new_from_time_t</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-new-from-now" title="soup_date_new_from_now ()">soup_date_new_from_now</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-to-string" title="soup_date_to_string ()">soup_date_to_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">time_t</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-to-time-t" title="soup_date_to_time_t ()">soup_date_to_time_t</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-to-timeval" title="soup_date_to_timeval ()">soup_date_to_timeval</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-is-past" title="soup_date_is_past ()">soup_date_is_past</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-day" title="soup_date_get_day ()">soup_date_get_day</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-hour" title="soup_date_get_hour ()">soup_date_get_hour</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-minute" title="soup_date_get_minute ()">soup_date_get_minute</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-month" title="soup_date_get_month ()">soup_date_get_month</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-offset" title="soup_date_get_offset ()">soup_date_get_offset</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-second" title="soup_date_get_second ()">soup_date_get_second</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-utc" title="soup_date_get_utc ()">soup_date_get_utc</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-year" title="soup_date_get_year ()">soup_date_get_year</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-free" title="soup_date_free ()">soup_date_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-headers-parse-request" title="soup_headers_parse_request ()">soup_headers_parse_request</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-headers-parse-response" title="soup_headers_parse_response ()">soup_headers_parse_response</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-headers-parse-status-line" title="soup_headers_parse_status_line ()">soup_headers_parse_status_line</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-headers-parse" title="soup_headers_parse ()">soup_headers_parse</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-list" title="soup_header_parse_list ()">soup_header_parse_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-quality-list" title="soup_header_parse_quality_list ()">soup_header_parse_quality_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-free-list" title="soup_header_free_list ()">soup_header_free_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-contains" title="soup_header_contains ()">soup_header_contains</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-param-list" title="soup_header_parse_param_list ()">soup_header_parse_param_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-semi-param-list" title="soup_header_parse_semi_param_list ()">soup_header_parse_semi_param_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-free-param-list" title="soup_header_free_param_list ()">soup_header_free_param_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-g-string-append-param" title="soup_header_g_string_append_param ()">soup_header_g_string_append_param</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-g-string-append-param-quoted" title="soup_header_g_string_append_param_quoted ()">soup_header_g_string_append_param_quoted</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-str-case-equal" title="soup_str_case_equal ()">soup_str_case_equal</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-str-case-hash" title="soup_str_case_hash ()">soup_str_case_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="returnvalue">GSource</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-add-completion" title="soup_add_completion ()">soup_add_completion</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="returnvalue">GSource</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-add-idle" title="soup_add_idle ()">soup_add_idle</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="returnvalue">GSource</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-add-io-watch" title="soup_add_io_watch ()">soup_add_io_watch</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="returnvalue">GSource</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-add-timeout" title="soup_add_timeout ()">soup_add_timeout</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="SoupDate"></a><div class="refsect1">
+<a name="libsoup-2.4-Soup-Miscellaneous-Utilities.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate-struct" title="SoupDate">SoupDate</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDateFormat" title="enum SoupDateFormat">SoupDateFormat</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Soup-Miscellaneous-Utilities.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GBoxed
+    <span class="lineart">╰──</span> SoupDate
+</pre>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Soup-Miscellaneous-Utilities.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Soup-Miscellaneous-Utilities.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Soup-Miscellaneous-Utilities.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-date-new"></a><h3>soup_date_new ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+soup_date_new (<em class="parameter"><code><span class="type">int</span> year</code></em>,
+               <em class="parameter"><code><span class="type">int</span> month</code></em>,
+               <em class="parameter"><code><span class="type">int</span> day</code></em>,
+               <em class="parameter"><code><span class="type">int</span> hour</code></em>,
+               <em class="parameter"><code><span class="type">int</span> minute</code></em>,
+               <em class="parameter"><code><span class="type">int</span> second</code></em>);</pre>
+<p>Creates a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> representing the indicated time, UTC.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>year</p></td>
+<td class="parameter_description"><p>the year (1-9999)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>month</p></td>
+<td class="parameter_description"><p>the month (1-12)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>day</p></td>
+<td class="parameter_description"><p>the day of the month (1-31, as appropriate for <em class="parameter"><code>month</code></em>
+)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>hour</p></td>
+<td class="parameter_description"><p>the hour (0-23)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>minute</p></td>
+<td class="parameter_description"><p>the minute (0-59)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>second</p></td>
+<td class="parameter_description"><p>the second (0-59, or up to 61 for leap seconds)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.2.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-new-from-string"></a><h3>soup_date_new_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+soup_date_new_from_string (<em class="parameter"><code>const <span class="type">char</span> *date_string</code></em>);</pre>
+<p>Parses <em class="parameter"><code>date_string</code></em>
+ and tries to extract a date from it. This
+recognizes all of the "HTTP-date" formats from RFC 2616, all ISO
+8601 formats containing both a time and a date, RFC 2822 dates,
+and reasonable approximations thereof. (Eg, it is lenient about
+whitespace, leading "0"s, etc.)</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date_string</p></td>
+<td class="parameter_description"><p>the date in some plausible format</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.3.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>date_string</code></em>
+could not be parsed. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-new-from-time-t"></a><h3>soup_date_new_from_time_t ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+soup_date_new_from_time_t (<em class="parameter"><code><span class="type">time_t</span> when</code></em>);</pre>
+<p>Creates a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> corresponding to <em class="parameter"><code>when</code></em>
+</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>when</p></td>
+<td class="parameter_description"><p>a <span class="type">time_t</span></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.4.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-new-from-now"></a><h3>soup_date_new_from_now ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+soup_date_new_from_now (<em class="parameter"><code><span class="type">int</span> offset_seconds</code></em>);</pre>
+<p>Creates a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> representing a time <em class="parameter"><code>offset_seconds</code></em>
+ after the
+current time (or before it, if <em class="parameter"><code>offset_seconds</code></em>
+ is negative). If
+offset_seconds is 0, returns the current time.</p>
+<p>If <em class="parameter"><code>offset_seconds</code></em>
+ would indicate a time not expressible as a</p>
+<span class="type">time_t</span>, the return value will be clamped into range.
+<div class="refsect3">
+<a name="id-1.3.12.9.5.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>offset_seconds</p></td>
+<td class="parameter_description"><p>offset from current time</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.5.8"></a><h4>Returns</h4>
+<p> a new <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-to-string"></a><h3>soup_date_to_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_date_to_string (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>,
+                     <em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDateFormat" title="enum SoupDateFormat"><span class="type">SoupDateFormat</span></a> format</code></em>);</pre>
+<p>Converts <em class="parameter"><code>date</code></em>
+ to a string in the format described by <em class="parameter"><code>format</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>format</p></td>
+<td class="parameter_description"><p>the format to generate the date in</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.6.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+as a string</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-to-time-t"></a><h3>soup_date_to_time_t ()</h3>
+<pre class="programlisting"><span class="returnvalue">time_t</span>
+soup_date_to_time_t (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Converts <em class="parameter"><code>date</code></em>
+ to a <span class="type">time_t</span>.</p>
+<p>If <em class="parameter"><code>date</code></em>
+ is not representable as a <span class="type">time_t</span>, it will be
+clamped into range. (In particular, some HTTP cookies have
+expiration dates after "Y2.038k" (2038-01-19T03:14:07Z).)</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.7.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.7.7"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+as a <span class="type">time_t</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-to-timeval"></a><h3>soup_date_to_timeval ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_date_to_timeval (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>,
+                      <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Date-and-Time-Functions.html#GTimeVal"><span class="type">GTimeVal</span></a> *time</code></em>);</pre>
+<p>Converts <em class="parameter"><code>date</code></em>
+ to a <a href="https://developer.gnome.org/glib/unstable/glib-Date-and-Time-Functions.html#GTimeVal"><span class="type">GTimeVal</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>time</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/glib/unstable/glib-Date-and-Time-Functions.html#GTimeVal"><span class="type">GTimeVal</span></a> structure in which to store the converted time. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-is-past"></a><h3>soup_date_is_past ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_date_is_past (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Determines if <em class="parameter"><code>date</code></em>
+ is in the past.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.9.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>date</code></em>
+is in the past</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-get-day"></a><h3>soup_date_get_day ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+soup_date_get_day (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Gets <em class="parameter"><code>date</code></em>
+'s day.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.10.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+'s day</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-get-hour"></a><h3>soup_date_get_hour ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+soup_date_get_hour (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Gets <em class="parameter"><code>date</code></em>
+'s hour.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.11.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+'s hour</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-get-minute"></a><h3>soup_date_get_minute ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+soup_date_get_minute (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Gets <em class="parameter"><code>date</code></em>
+'s minute.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.12.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+'s minute</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-get-month"></a><h3>soup_date_get_month ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+soup_date_get_month (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Gets <em class="parameter"><code>date</code></em>
+'s month.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.13.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+'s month</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-get-offset"></a><h3>soup_date_get_offset ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+soup_date_get_offset (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Gets <em class="parameter"><code>date</code></em>
+'s offset from UTC.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.14.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+'s offset from UTC. If <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-utc" title="soup_date_get_utc ()"><code class="function">soup_date_get_utc()</code></a>
+returns <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> but <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-get-offset" title="soup_date_get_offset ()"><code class="function">soup_date_get_offset()</code></a> returns 0, that means the
+date is a "floating" time with no associated offset information.</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-get-second"></a><h3>soup_date_get_second ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+soup_date_get_second (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Gets <em class="parameter"><code>date</code></em>
+'s second.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.15.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.15.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+'s second</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-get-utc"></a><h3>soup_date_get_utc ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+soup_date_get_utc (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Gets <em class="parameter"><code>date</code></em>
+'s UTC flag</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.16.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.16.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>date</code></em>
+is UTC.</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-get-year"></a><h3>soup_date_get_year ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+soup_date_get_year (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Gets <em class="parameter"><code>date</code></em>
+'s year.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.17.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.17.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>date</code></em>
+'s year</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-date-free"></a><h3>soup_date_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_date_free (<em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *date</code></em>);</pre>
+<p>Frees <em class="parameter"><code>date</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>date</p></td>
+<td class="parameter_description"><p>a <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-headers-parse-request"></a><h3>soup_headers_parse_request ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+soup_headers_parse_request (<em class="parameter"><code>const <span class="type">char</span> *str</code></em>,
+                            <em class="parameter"><code><span class="type">int</span> len</code></em>,
+                            <em class="parameter"><code><a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a> *req_headers</code></em>,
+                            <em class="parameter"><code><span class="type">char</span> **req_method</code></em>,
+                            <em class="parameter"><code><span class="type">char</span> **req_path</code></em>,
+                            <em class="parameter"><code><a class="link" href="SoupMessage.html#SoupHTTPVersion" title="enum SoupHTTPVersion"><span class="type">SoupHTTPVersion</span></a> *ver</code></em>);</pre>
+<p>Parses the headers of an HTTP request in <em class="parameter"><code>str</code></em>
+ and stores the
+results in <em class="parameter"><code>req_method</code></em>
+, <em class="parameter"><code>req_path</code></em>
+, <em class="parameter"><code>ver</code></em>
+, and <em class="parameter"><code>req_headers</code></em>
+.</p>
+<p>Beware that <em class="parameter"><code>req_headers</code></em>
+ may be modified even on failure.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.19.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>the headers (up to, but not including, the trailing blank line)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>length of <em class="parameter"><code>str</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>req_headers</p></td>
+<td class="parameter_description"><p><a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a> to store the header values in</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>req_method</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with the
+request method. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>req_path</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with the
+request path. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ver</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with the HTTP
+version. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.19.7"></a><h4>Returns</h4>
+<p> <a class="link" href="libsoup-2.4-soup-status.html#SOUP-STATUS-OK:CAPS"><code class="literal">SOUP_STATUS_OK</code></a> if the headers could be parsed, or an
+HTTP error to be returned to the client if they could not be.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-headers-parse-response"></a><h3>soup_headers_parse_response ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_headers_parse_response (<em class="parameter"><code>const <span class="type">char</span> *str</code></em>,
+                             <em class="parameter"><code><span class="type">int</span> len</code></em>,
+                             <em class="parameter"><code><a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a> *headers</code></em>,
+                             <em class="parameter"><code><a class="link" href="SoupMessage.html#SoupHTTPVersion" title="enum SoupHTTPVersion"><span class="type">SoupHTTPVersion</span></a> *ver</code></em>,
+                             <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *status_code</code></em>,
+                             <em class="parameter"><code><span class="type">char</span> **reason_phrase</code></em>);</pre>
+<p>Parses the headers of an HTTP response in <em class="parameter"><code>str</code></em>
+ and stores the
+results in <em class="parameter"><code>ver</code></em>
+, <em class="parameter"><code>status_code</code></em>
+, <em class="parameter"><code>reason_phrase</code></em>
+, and <em class="parameter"><code>headers</code></em>
+.</p>
+<p>Beware that <em class="parameter"><code>headers</code></em>
+ may be modified even on failure.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.20.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>the headers (up to, but not including, the trailing blank line)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>length of <em class="parameter"><code>str</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>headers</p></td>
+<td class="parameter_description"><p><a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a> to store the header values in</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ver</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with the HTTP
+version. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>status_code</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with
+the status code. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>reason_phrase</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with
+the reason phrase. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.20.7"></a><h4>Returns</h4>
+<p> success or failure.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-headers-parse-status-line"></a><h3>soup_headers_parse_status_line ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_headers_parse_status_line (<em class="parameter"><code>const <span class="type">char</span> *status_line</code></em>,
+                                <em class="parameter"><code><a class="link" href="SoupMessage.html#SoupHTTPVersion" title="enum SoupHTTPVersion"><span class="type">SoupHTTPVersion</span></a> *ver</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *status_code</code></em>,
+                                <em class="parameter"><code><span class="type">char</span> **reason_phrase</code></em>);</pre>
+<p>Parses the HTTP Status-Line string in <em class="parameter"><code>status_line</code></em>
+ into <em class="parameter"><code>ver</code></em>
+,
+<em class="parameter"><code>status_code</code></em>
+, and <em class="parameter"><code>reason_phrase</code></em>
+. <em class="parameter"><code>status_line</code></em>
+ must be terminated by
+either "\0" or "\r\n".</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>status_line</p></td>
+<td class="parameter_description"><p>an HTTP Status-Line</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>ver</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with the HTTP
+version. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>status_code</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with
+the status code. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>reason_phrase</p></td>
+<td class="parameter_description"><p> if non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be filled in with
+the reason phrase. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.21.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>status_line</code></em>
+was parsed successfully.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-headers-parse"></a><h3>soup_headers_parse ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_headers_parse (<em class="parameter"><code>const <span class="type">char</span> *str</code></em>,
+                    <em class="parameter"><code><span class="type">int</span> len</code></em>,
+                    <em class="parameter"><code><a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a> *dest</code></em>);</pre>
+<p>Parses the headers of an HTTP request or response in <em class="parameter"><code>str</code></em>
+ and
+stores the results in <em class="parameter"><code>dest</code></em>
+. Beware that <em class="parameter"><code>dest</code></em>
+ may be modified even
+on failure.</p>
+<p>This is a low-level method; normally you would use
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-headers-parse-request" title="soup_headers_parse_request ()"><code class="function">soup_headers_parse_request()</code></a> or <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-headers-parse-response" title="soup_headers_parse_response ()"><code class="function">soup_headers_parse_response()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.22.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>str</p></td>
+<td class="parameter_description"><p>the header string (including the Request-Line or Status-Line,
+but not the trailing blank line)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>len</p></td>
+<td class="parameter_description"><p>length of <em class="parameter"><code>str</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dest</p></td>
+<td class="parameter_description"><p><a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a> to store the header values in</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.22.7"></a><h4>Returns</h4>
+<p> success or failure</p>
+</div>
+<p class="since">Since: 2.26</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-parse-list"></a><h3>soup_header_parse_list ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+soup_header_parse_list (<em class="parameter"><code>const <span class="type">char</span> *header</code></em>);</pre>
+<p>Parses a header whose content is described by RFC2616 as
+"<span class="type">something</span>", where "something" does not itself contain commas,
+except as part of quoted-strings.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>header</p></td>
+<td class="parameter_description"><p>a header value</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.23.6"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of
+list elements, as allocated strings. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-parse-quality-list"></a><h3>soup_header_parse_quality_list ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+soup_header_parse_quality_list (<em class="parameter"><code>const <span class="type">char</span> *header</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> **unacceptable</code></em>);</pre>
+<p>Parses a header whose content is a list of items with optional
+"qvalue"s (eg, Accept, Accept-Charset, Accept-Encoding,
+Accept-Language, TE).</p>
+<p>If <em class="parameter"><code>unacceptable</code></em>
+ is not <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then on return, it will contain the
+items with qvalue 0. Either way, those items will be removed from
+the main list.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.24.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>header</p></td>
+<td class="parameter_description"><p>a header value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>unacceptable</p></td>
+<td class="parameter_description"><p> on
+return, will contain a list of unacceptable values. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.24.7"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of
+acceptable values (as allocated strings), highest-qvalue first. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-free-list"></a><h3>soup_header_free_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_header_free_list (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *list</code></em>);</pre>
+<p>Frees <em class="parameter"><code>list</code></em>
+.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.3.12.9.25.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>list</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> returned from <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-list" title="soup_header_parse_list ()"><code class="function">soup_header_parse_list()</code></a> or
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-quality-list" title="soup_header_parse_quality_list ()"><code class="function">soup_header_parse_quality_list()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-contains"></a><h3>soup_header_contains ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_header_contains (<em class="parameter"><code>const <span class="type">char</span> *header</code></em>,
+                      <em class="parameter"><code>const <span class="type">char</span> *token</code></em>);</pre>
+<p>Parses <em class="parameter"><code>header</code></em>
+ to see if it contains the token <em class="parameter"><code>token</code></em>
+ (matched
+case-insensitively). Note that this can't be used with lists
+that have qvalues.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.26.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>header</p></td>
+<td class="parameter_description"><p>An HTTP header suitable for parsing with
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-list" title="soup_header_parse_list ()"><code class="function">soup_header_parse_list()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>token</p></td>
+<td class="parameter_description"><p>a token</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.26.6"></a><h4>Returns</h4>
+<p> whether or not <em class="parameter"><code>header</code></em>
+contains <em class="parameter"><code>token</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-parse-param-list"></a><h3>soup_header_parse_param_list ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+soup_header_parse_param_list (<em class="parameter"><code>const <span class="type">char</span> *header</code></em>);</pre>
+<p>Parses a header which is a comma-delimited list of something like:
+<code class="literal">token [ "=" ( token | quoted-string ) ]</code>.</p>
+<p>Tokens that don't have an associated value will still be added to
+the resulting hash table, but with a <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value.</p>
+<p>This also handles RFC5987 encoding (which in HTTP is mostly used
+for giving UTF8-encoded filenames in the Content-Disposition
+header).</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.27.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>header</p></td>
+<td class="parameter_description"><p>a header value</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.27.8"></a><h4>Returns</h4>
+<p> a
+<a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> of list elements, which can be freed with
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-free-param-list" title="soup_header_free_param_list ()"><code class="function">soup_header_free_param_list()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-parse-semi-param-list"></a><h3>soup_header_parse_semi_param_list ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="returnvalue">GHashTable</span></a> *
+soup_header_parse_semi_param_list (<em class="parameter"><code>const <span class="type">char</span> *header</code></em>);</pre>
+<p>Parses a header which is a semicolon-delimited list of something
+like: <code class="literal">token [ "=" ( token | quoted-string ) ]</code>.</p>
+<p>Tokens that don't have an associated value will still be added to
+the resulting hash table, but with a <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value.</p>
+<p>This also handles RFC5987 encoding (which in HTTP is mostly used
+for giving UTF8-encoded filenames in the Content-Disposition
+header).</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.28.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>header</p></td>
+<td class="parameter_description"><p>a header value</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.28.8"></a><h4>Returns</h4>
+<p> a
+<a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> of list elements, which can be freed with
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-free-param-list" title="soup_header_free_param_list ()"><code class="function">soup_header_free_param_list()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-free-param-list"></a><h3>soup_header_free_param_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_header_free_param_list (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> *param_list</code></em>);</pre>
+<p>Frees <em class="parameter"><code>param_list</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.29.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>param_list</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> returned from <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-param-list" title="soup_header_parse_param_list ()"><code class="function">soup_header_parse_param_list()</code></a>
+or <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-parse-semi-param-list" title="soup_header_parse_semi_param_list ()"><code class="function">soup_header_parse_semi_param_list()</code></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8 utf8]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-g-string-append-param"></a><h3>soup_header_g_string_append_param ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_header_g_string_append_param (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Strings.html#GString"><span class="type">GString</span></a> *string</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *value</code></em>);</pre>
+<p>Appends something like <code class="literal"><em class="parameter"><code>name</code></em>
+=<em class="parameter"><code>value</code></em>
+</code> to <em class="parameter"><code>string</code></em>
+,
+taking care to quote <em class="parameter"><code>value</code></em>
+ if needed, and if so, to escape any
+quotes or backslashes in <em class="parameter"><code>value</code></em>
+.</p>
+<p>Alternatively, if <em class="parameter"><code>value</code></em>
+ is a non-ASCII UTF-8 string, it will be
+appended using RFC5987 syntax. Although in theory this is supposed
+to work anywhere in HTTP that uses this style of parameter, in
+reality, it can only be used portably with the Content-Disposition
+"filename" parameter.</p>
+<p>If <em class="parameter"><code>value</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, this will just append <em class="parameter"><code>name</code></em>
+ to <em class="parameter"><code>string</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.30.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Strings.html#GString"><span class="type">GString</span></a> being used to construct an HTTP header value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a parameter name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a parameter value, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.26</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-header-g-string-append-param-quoted"></a><h3>soup_header_g_string_append_param_quoted ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_header_g_string_append_param_quoted
+                               (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Strings.html#GString"><span class="type">GString</span></a> *string</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *value</code></em>);</pre>
+<p>Appends something like <code class="literal"><em class="parameter"><code>name</code></em>
+="<em class="parameter"><code>value</code></em>
+"</code> to
+<em class="parameter"><code>string</code></em>
+, taking care to escape any quotes or backslashes in <em class="parameter"><code>value</code></em>
+.</p>
+<p>If <em class="parameter"><code>value</code></em>
+ is (non-ASCII) UTF-8, this will instead use RFC 5987
+encoding, just like <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-header-g-string-append-param" title="soup_header_g_string_append_param ()"><code class="function">soup_header_g_string_append_param()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.31.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Strings.html#GString"><span class="type">GString</span></a> being used to construct an HTTP header value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>a parameter name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>a parameter value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-str-case-equal"></a><h3>soup_str_case_equal ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_str_case_equal (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> v1</code></em>,
+                     <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> v2</code></em>);</pre>
+<p>Compares <em class="parameter"><code>v1</code></em>
+ and <em class="parameter"><code>v2</code></em>
+ in a case-insensitive manner</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.32.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>v1</p></td>
+<td class="parameter_description"><p>an ASCII string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>v2</p></td>
+<td class="parameter_description"><p>another ASCII string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.32.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if they are equal (modulo case)</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-str-case-hash"></a><h3>soup_str_case_hash ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+soup_str_case_hash (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> key</code></em>);</pre>
+<p>Hashes <em class="parameter"><code>key</code></em>
+ in a case-insensitive manner.</p>
+<div class="refsect3">
+<a name="id-1.3.12.9.33.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>key</p></td>
+<td class="parameter_description"><p>ASCII string to hash</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.33.6"></a><h4>Returns</h4>
+<p> the hash code.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-add-completion"></a><h3>soup_add_completion ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="returnvalue">GSource</span></a> *
+soup_add_completion (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> *async_context</code></em>,
+                     <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSourceFunc"><span class="type">GSourceFunc</span></a> function</code></em>,
+                     <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Adds <em class="parameter"><code>function</code></em>
+ to be executed from inside <em class="parameter"><code>async_context</code></em>
+ with the
+default priority. Use this when you want to complete an action in
+<em class="parameter"><code>async_context</code></em>
+'s main loop, as soon as possible.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.3.12.9.34.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>async_context</p></td>
+<td class="parameter_description"><p> the <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to dispatch the I/O
+watch in, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for the default context. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>function</p></td>
+<td class="parameter_description"><p>the callback to invoke</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>user data to pass to <em class="parameter"><code>function</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.34.7"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>, which can be removed from <em class="parameter"><code>async_context</code></em>
+with <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#g-source-destroy"><code class="function">g_source_destroy()</code></a>.</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-add-idle"></a><h3>soup_add_idle ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="returnvalue">GSource</span></a> *
+soup_add_idle (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> *async_context</code></em>,
+               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSourceFunc"><span class="type">GSourceFunc</span></a> function</code></em>,
+               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Adds an idle event as with <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#g-idle-add"><code class="function">g_idle_add()</code></a>, but using the given
+<em class="parameter"><code>async_context</code></em>
+.</p>
+<p>If you want <em class="parameter"><code>function</code></em>
+ to run "right away", use
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-add-completion" title="soup_add_completion ()"><code class="function">soup_add_completion()</code></a>, since that sets a higher priority on the
+<a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a> than <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-add-idle" title="soup_add_idle ()"><code class="function">soup_add_idle()</code></a> does.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.3.12.9.35.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>async_context</p></td>
+<td class="parameter_description"><p> the <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to dispatch the I/O
+watch in, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for the default context. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>function</p></td>
+<td class="parameter_description"><p>the callback to invoke at idle time</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>user data to pass to <em class="parameter"><code>function</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.35.8"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>, which can be removed from <em class="parameter"><code>async_context</code></em>
+with <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#g-source-destroy"><code class="function">g_source_destroy()</code></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-add-io-watch"></a><h3>soup_add_io_watch ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="returnvalue">GSource</span></a> *
+soup_add_io_watch (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> *async_context</code></em>,
+                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> *chan</code></em>,
+                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-IO-Channels.html#GIOCondition"><span class="type">GIOCondition</span></a> condition</code></em>,
+                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-IO-Channels.html#GIOFunc"><span class="type">GIOFunc</span></a> function</code></em>,
+                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Adds an I/O watch as with <a href="https://developer.gnome.org/glib/unstable/glib-IO-Channels.html#g-io-add-watch"><code class="function">g_io_add_watch()</code></a>, but using the given
+<em class="parameter"><code>async_context</code></em>
+.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.3.12.9.36.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>async_context</p></td>
+<td class="parameter_description"><p> the <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to dispatch the I/O
+watch in, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for the default context. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>chan</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/glib/unstable/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a> to watch</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>condition</p></td>
+<td class="parameter_description"><p>the condition to watch for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>function</p></td>
+<td class="parameter_description"><p>the callback to invoke when <em class="parameter"><code>condition</code></em>
+occurs</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>user data to pass to <em class="parameter"><code>function</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.36.7"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>, which can be removed from <em class="parameter"><code>async_context</code></em>
+with <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#g-source-destroy"><code class="function">g_source_destroy()</code></a>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-add-timeout"></a><h3>soup_add_timeout ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="returnvalue">GSource</span></a> *
+soup_add_timeout (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> *async_context</code></em>,
+                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> interval</code></em>,
+                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSourceFunc"><span class="type">GSourceFunc</span></a> function</code></em>,
+                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Adds a timeout as with <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#g-timeout-add"><code class="function">g_timeout_add()</code></a>, but using the given
+<em class="parameter"><code>async_context</code></em>
+.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.3.12.9.37.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>async_context</p></td>
+<td class="parameter_description"><p> the <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to dispatch the I/O
+watch in, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for the default context. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>interval</p></td>
+<td class="parameter_description"><p>the timeout interval, in milliseconds</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>function</p></td>
+<td class="parameter_description"><p>the callback to invoke at timeout time</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>user data to pass to <em class="parameter"><code>function</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.12.9.37.7"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>, which can be removed from <em class="parameter"><code>async_context</code></em>
+with <a href="https://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html#g-source-destroy"><code class="function">g_source_destroy()</code></a>.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libsoup-2.4-Soup-Miscellaneous-Utilities.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupDate-struct"></a><h3>SoupDate</h3>
+<pre class="programlisting">typedef struct {
+	int      year;
+	int      month;
+	int      day;
+
+	int      hour;
+	int      minute;
+	int      second;
+
+	gboolean utc;
+	int      offset;
+} SoupDate;
+</pre>
+<p>A date and time. The date is assumed to be in the (proleptic)
+Gregorian calendar. The time is in UTC if <em class="parameter"><code>utc</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>. Otherwise,
+the time is a local time, and <em class="parameter"><code>offset</code></em>
+ gives the offset from UTC in
+minutes (such that adding <em class="parameter"><code>offset</code></em>
+ to the time would give the
+correct UTC time). If <em class="parameter"><code>utc</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and <em class="parameter"><code>offset</code></em>
+ is 0, then the
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><code class="literal">SoupDate</code></a> represents a "floating" time with no associated timezone
+information.</p>
+<div class="refsect3">
+<a name="id-1.3.12.10.2.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="SoupDate-struct.year"></a>year</code></em>;</p></td>
+<td class="struct_member_description"><p>the year, 1 to 9999</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="SoupDate-struct.month"></a>month</code></em>;</p></td>
+<td class="struct_member_description"><p>the month, 1 to 12</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="SoupDate-struct.day"></a>day</code></em>;</p></td>
+<td class="struct_member_description"><p>day of the month, 1 to 31</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="SoupDate-struct.hour"></a>hour</code></em>;</p></td>
+<td class="struct_member_description"><p>hour of the day, 0 to 23</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="SoupDate-struct.minute"></a>minute</code></em>;</p></td>
+<td class="struct_member_description"><p>minute, 0 to 59</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="SoupDate-struct.second"></a>second</code></em>;</p></td>
+<td class="struct_member_description"><p>second, 0 to 59 (or up to 61 in the case of leap seconds)</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> <em class="structfield"><code><a name="SoupDate-struct.utc"></a>utc</code></em>;</p></td>
+<td class="struct_member_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the date is in UTC</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">int</span> <em class="structfield"><code><a name="SoupDate-struct.offset"></a>offset</code></em>;</p></td>
+<td class="struct_member_description"><p>offset from UTC</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupDateFormat"></a><h3>enum SoupDateFormat</h3>
+<p>Date formats that <a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#soup-date-to-string" title="soup_date_to_string ()"><code class="function">soup_date_to_string()</code></a> can use.</p>
+<p><em class="parameter"><code>SOUP_DATE_HTTP</code></em>
+ and <em class="parameter"><code>SOUP_DATE_COOKIE</code></em>
+ always coerce the time to
+UTC. <em class="parameter"><code>SOUP_DATE_ISO8601_XMLRPC</code></em>
+ uses the time as given, ignoring the
+offset completely. <em class="parameter"><code>SOUP_DATE_RFC2822</code></em>
+ and the other ISO 8601
+variants use the local time, appending the offset information if
+available.</p>
+<p>This enum may be extended with more values in future releases.</p>
+<div class="refsect3">
+<a name="id-1.3.12.10.3.6"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-DATE-HTTP:CAPS"></a>SOUP_DATE_HTTP</p></td>
+<td class="enum_member_description">
+<p>RFC 1123 format, used by the HTTP "Date" header. Eg
+"Sun, 06 Nov 1994 08:49:37 GMT"</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-DATE-COOKIE:CAPS"></a>SOUP_DATE_COOKIE</p></td>
+<td class="enum_member_description">
+<p>The format for the "Expires" timestamp in the
+Netscape cookie specification. Eg, "Sun, 06-Nov-1994 08:49:37 GMT".</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-DATE-RFC2822:CAPS"></a>SOUP_DATE_RFC2822</p></td>
+<td class="enum_member_description">
+<p>RFC 2822 format, eg "Sun, 6 Nov 1994 09:49:37 -0100"</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-DATE-ISO8601-COMPACT:CAPS"></a>SOUP_DATE_ISO8601_COMPACT</p></td>
+<td class="enum_member_description">
+<p>ISO 8601 date/time with no optional
+punctuation. Eg, "19941106T094937-0100".</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-DATE-ISO8601-FULL:CAPS"></a>SOUP_DATE_ISO8601_FULL</p></td>
+<td class="enum_member_description">
+<p>ISO 8601 date/time with all optional
+punctuation. Eg, "1994-11-06T09:49:37-01:00".</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-DATE-ISO8601:CAPS"></a>SOUP_DATE_ISO8601</p></td>
+<td class="enum_member_description">
+<p>An alias for <em class="parameter"><code>SOUP_DATE_ISO8601_FULL</code></em>
+.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-DATE-ISO8601-XMLRPC:CAPS"></a>SOUP_DATE_ISO8601_XMLRPC</p></td>
+<td class="enum_member_description">
+<p>ISO 8601 date/time as used by XML-RPC.
+Eg, "19941106T09:49:37".</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

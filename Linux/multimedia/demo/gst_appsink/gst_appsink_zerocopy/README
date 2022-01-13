@@ -1,0 +1,22 @@
+HOWTO - GST-APPSINK-ZEROCOPY
+----------------------------
+
+This example implements the gstreamer pipeline for video capture / playback usecase and use the appsink to get the GstBuffer for each frame
+through the callback, creates the Opengl texture out of it by using the dma-buf fd and render it to the screen. Zero-copy is achieved
+here to render the captured frame to the screen. Currently the single planar format only considered in the demo, work in progress for
+multi planar formats
+
+To run this, excute:
+	$ gst-appsink-zerocopy <decode/capture> <stream-location/video-node> <width> <height>
+
+   <decode/capture>: decode/capture usecase
+   stream-location: location of the stream file to be played(h264 only supported)
+   video-node: video device node for capture
+   width: display width
+   height: display height
+
+   decode-example:gst-appsink-zerocopy decode /opt/platform/unit_tests/01_189_libx264_1920x1080_6M.mp4 1920 1080
+   capture-example:gst-appsink-zerocopy capture /dev/video1 1920 1080
+
+The Makefile is based on ADIT tooling.
+

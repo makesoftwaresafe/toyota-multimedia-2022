@@ -1,0 +1,12 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${exec_prefix}/lib@LIB_INSTALL_SUFFIX@
+includedir=${prefix}/include/adit-components
+
+Name: @PROJECT_NAME@
+Description: @PROJECT_DESCRIPTION@
+Version: @PROJECT_VERSION@
+
+Requires:
+Libs: -L${libdir} -l@IF_NAME@ -l@IPC_NAME@ -l@UTIL_NAME@
+Cflags: -I${includedir}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Setup of ESAI, SSI audio devices on imx6qdl-audioboard
+DefaultDependencies=yes
+ConditionPathExistsGlob=/sys/devices/soc*/sound_esai.*
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we start loading the modules here and wait for devices to appear ------
+ExecStart=/bin/kmodule_loader -c /etc/alsa-brd-cfg/imx6qdl-audioboard/kmodules_loader.conf
+
+#-------------------- configuration is test case specific - no setup here ---------------
+

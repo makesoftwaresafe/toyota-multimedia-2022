@@ -1,0 +1,36 @@
+#include "config.h"
+
+#include "ntp_stdlib.h"
+#include "ntp_fp.h"
+
+#include "unity.h"
+
+void setUp(void);
+void test_LoopbackNetNonResolve(void);
+
+
+void
+setUp(void)
+{
+	init_lib();
+
+	return;
+}
+
+
+void
+test_LoopbackNetNonResolve(void) {
+	/* A loopback address in 127.0.0.0/8 is chosen, and
+	 * numtohost() should not try to resolve it unless
+	 * it is 127.0.0.1
+	 */
+
+	const u_int32 input = 127*256*256*256 + 1*256 + 1; // 127.0.1.1
+
+	TEST_ASSERT_EQUAL_STRING("127.0.1.1", numtohost(htonl(input)));
+}
+
+#if defined(__QNXNTO__) && defined(__USESRCVERSION)
+#include <sys/srcversion.h>
+__SRCVERSION("$URL: http://svn.ott.qnx.com/product/tags/7.0.0/GA/lib/io-pkt/dist/ntp/tests/libntp/numtohost.c $ $Rev: 799952 $")
+#endif

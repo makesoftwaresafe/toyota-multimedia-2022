@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+datarootdir=@datarootdir@
+datadir=@datadir@
+
+Name: persistence file cache
+Description: persistence file cache 
+Version: @VERSION@
+
+Libs: -L${libdir} -lpersistence_file_cache -lrt
+Cflags: -I${includedir}

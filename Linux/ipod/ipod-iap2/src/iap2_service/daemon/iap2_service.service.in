@@ -1,0 +1,31 @@
+################################################################################################################
+# Service file for iAP2
+
+[Unit]
+Description=iAP2Service
+After=ipod-auth.target \
+      volatile-fs.target \
+      usb-setup.target \
+      dlt.service \
+      early-devices-setup.service
+
+Requires=ipod-auth.target \
+         volatile-fs.target \
+         usb-setup.target \
+         dlt.service \
+         early-devices-setup.service
+
+[Service]
+Type=notify
+#User=system
+#SupplementaryGroups=dlt i2c gpio usb_device usb_role_ctl
+
+ExecStart=/bin/iap2_service
+#ExecStop=/usr/bin/killall /bin/iap2_service
+StandardOutput=syslog
+StandardError=syslog
+NotifyAccess=main
+LimitRTPRIO=infinity
+
+[Install]
+#WantedBy=multi-user.target

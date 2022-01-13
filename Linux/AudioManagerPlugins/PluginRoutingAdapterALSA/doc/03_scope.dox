@@ -1,0 +1,101 @@
+/*! \page scope Scope
+ 
+AudioManager concept (<a href="http://docs.projects.genivi.org/AudioManager/audiomanagercomponentspage.html">http://docs.projects.genivi.org/AudioManager/audiomanagercomponentspage.html</a>) shows how a Routing Adapter is placed in the main architecture.
+\n
+\n
+The Routing Adapter ALSA is a plugin which can be used as a playground to get familiar with the GENIVI AudioManager. With an XML file it is possible to register as many Domains as needed with respective Source, Sinks and Gateways.
+\n
+\n
+The Routing Adapter ALSA does not interact directly with applications which stream PCM audio to an ALSA device. An application has to interact with AudioManager through Command Interface in order to request connections, disconnect them, to receive notifications about new elements detected or elements removed. The AudioManager Daemon itself interacts with the Routing Adapter ALSA.
+\n
+\n
+In order to implement use cases like mixing of different MainSource of class entertainment and announcement the Routing Adapter ALSA can be used to change the volume level of the “MainSource”. To achieve this the user must configure dedicated virtual ALSA devices in the ALSA configuration file which offers e.g. softvol ALSA plugin per application. With the dmix ALSA plugin the streams are finally mixed together.
+\n
+\b NOTE: The Generic Controller can be used to control the MainSource volumes for mixed scenarios.
+\n
+\n
+Routing implies streaming data from Source to Sink and for this purpose the Routing Adapter ALSA implements the Proxy concept. It performs audio data forwarding, so that applications need not to go for their own solutions. The Proxy is a configurable element in the XML file.
+\n
+\n
+Following is an example for better showing how the Routing Adapter ALSA is meant to be used. Let's assume to deal with two Domains (<a href="http://docs.projects.genivi.org/AudioManager/architecturepage.html">http://docs.projects.genivi.org/AudioManager/architecturepage.html</a>): one Domain is "Applications", which will contain MainSources, the other one is "VirtDSP", which will contain one MainSink. As the names suggest, the goal is to connect some Applications to a (Virtual)DSP Domain that will output to an Amplifier. It is possible to achieve the DSP idea (there's no need for a real Digital Signal Processing unit for the example shown) by using the ALSA loopback soundcard. It consists of a virtual soundcard device and it can be used to record the streaming sent from Applications, and then playback such data in the VirtDSP, technically allowing the raw communication between the two Domains on the same workstation. To make the example even closer to a real use-case, potential data traveling from a MediaPlayer source and a Navigation source will be considered. 
+\n
+\n
+Here is a graphical representation of the example: 
+\image html scope_example.png
+The ALSA setup is granted through:
+\code
+# Applications Devices
+
+pcm.vdev_app_mediaplayer {
+    type plug
+    slave.pcm vdev_mpsv
+}
+
+pcm.vdev_mpsv {
+    type softvol
+    slave.pcm "pb_gateway:0"
+    control.name vol_mediaplayer
+    control.card 0
+}
+
+ctl.vdev_app_mediaplayer {
+    type hw
+    card 0
+}
+
+pcm.vdev_app_interrupt {
+    type plug
+    slave.pcm vdev_isv
+}
+
+pcm.vdev_isv {
+    type softvol
+    slave.pcm "pb_gateway:1"
+    control.name vol_interrupt
+    control.card 0
+}
+
+ctl.vdev_app_interrupt {
+    type hw
+    card 0
+}
+
+pcm.pb_gateway {
+    @args [ SUBDEV ]
+    @args.SUBDEV {
+        type integer
+    }
+    type hw
+    card "Loopback"
+    device 0
+    subdevice $SUBDEV
+}
+
+# VirtDSP Devices
+
+pcm.cp_gateway {
+    @args [ SUBDEV ]
+    @args.SUBDEV {
+        type integer
+    }
+    type hw
+    card "Loopback"
+    device 1
+    subdevice $SUBDEV
+}
+
+pcm.vdev_dsp_gateway_0 "cp_gateway:0"
+
+pcm.vdev_dsp_gateway_1 "cp_gateway:1"
+
+pcm.vdev_dsp_amp {
+   type dmix
+   slave.pcm “hwplug:0”
+   slave.rate 48000
+   slave.channels 2
+}
+
+\endcode
+
+In the \ref example can be seen how these resources have to be configured for the RoutingAdapter ALSA to achieve the design.
+*/

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<xsd:schema targetNamespace="controller" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:c="controller">
+    <xsd:simpleType name="am_CustomAvailabilityReason_t">
+        <xsd:annotation>
+            <xsd:documentation>This enumeration list the source/sink availability change reason. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomSoundPropertyType_t">
+        <xsd:annotation>
+            <xsd:documentation>This enumeration list the source and sink sound property. The sound properties of Genivi Audio manager can be extended to include project specific properties. Three sound properties like volume persistence, connection persistence and volume support are extended.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomConnectionFormat_t">
+        <xsd:annotation>
+            <xsd:documentation>This enumeration lists the connection format for the source and sinks.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomNotificationType_t">
+        <xsd:annotation>
+            <xsd:documentation>This enumeration contains the type of notification possible.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomSystemPropertyType_t">
+        <xsd:annotation>
+            <xsd:documentation>This enumeration lists the system properties.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomRampType_t">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomMainSoundPropertyType_t">
+        <xsd:annotation>
+            <xsd:documentation>This enumeration lists the Main Properties for source and sinks.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_CustomClassPropertyType_t">
+        <xsd:annotation>
+            <xsd:documentation>This enumeration lists the Class Properties.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_SourceID_e">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_SinkID_e">
+        <xsd:restriction base="xsd:string">
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="am_ClassID_e">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="BASE_CLASS_ID">
+                <xsd:annotation>
+                    <xsd:documentation>1 Some class.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

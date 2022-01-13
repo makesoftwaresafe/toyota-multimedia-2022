@@ -1,0 +1,35 @@
+/*! \page architecture_overview Architecture Overview
+ 
+Following is a general Overview of how the Plugin’s components are structured and the interaction with the central AudioManagerDaemon:
+\image html macro_component_view.png
+
+The logical entry point is for sure the CoreLogic, initialized at the very beginning and then responsible for managing the messages traffic, incoming and outgoing.
+During the initialization phase, CoreLogic will collect details on the underlying audio resources and configurations by calling the DBManagement.
+DBManagement will parse the configuration XML file and return the collected data.
+Requests from the AudioManagerDaemon may address to Streaming operations or Volume operations. These are managed on separated components as shown in the above diagram.
+
+\section class_00 Core Logic
+
+\c CAmRoutingAdapterALSASender class will be responsible for contacting DBManagement on init phase for data retrieving, and will then process incoming messages in order to contact the proper component for finally handling them.
+\c IAmRoutingReceiverShadow is the class responsible for receiving the Acknowledgements (that can be provided by the Sender and by the VolumeControl component as well) and send them back to the AudioManagerDaemon.
+\image html core_logic.png
+
+\section class_01 DBManagement
+
+\c CAmRoutingAdapterALSAParser reads the configuration from \c /etc/amra_alsa.conf XML file, using the utilities from \c CAmRoutingAdapterKVPConverter for achieving the correct relations between Key and Value/s. The data is collected in \c CAmRoutingAdapterALSAdb class.
+
+\image html db_management.png
+
+\section class_02 StreamingControl
+
+\c CAmRoutingAdapterALSAProxyDefault is the class responsible for providing the Streaming capabilities, using ALSA as backend. In order to do so, it inherits from \c CAmRoutingAdapterThread (that offers a centralized way to insulate a worker thread through condition variables and relies on state variables protected by mutex to follow state transitions) to properly manage the threaded actions. Please note that it is also possible to build up a customized Proxy interacting with desired backend (JACK, PulseAudio, OSS…), configuration file and command line parameters allow the user to select a separate plugin to customize such management, if needed.
+
+\image html streaming_control.png
+
+\section class_03 VolumeControl
+
+\c CAmRoutingAdapterALSAVolume is called by the Sender whenever a Volume operation is needed and returns back Acknowledgements. It inherits from \c CAmRoutingAdapterThread for threading purposes, and from \c CAmRoutingAdapterALSAMixerCtrl for mixer capabilities to properly change volume levels.
+
+\image html volume_control.png
+
+ */

@@ -1,0 +1,15 @@
+[Unit]
+Description=ADR3 Audio Mock
+Requires=rbcm-inc-adr3-config.service
+After=rbcm-inc-adr3-config.service
+
+PartOf=rbcm-audiomanager.service
+Before=rbcm-audiomanager.service
+
+[Service]
+Environment=AMRA_ALSA_CONFIGPATH=/etc/audio_mock.conf
+Environment=RTS_PLAYBACK_PREFILL=125
+ExecStartPre=/bin/sh -c "echo \"ibase=16; 0000000000000000\" | aplay -DAdevEnt1Out -fdat -q"
+ExecStartPre=/bin/sh -c "echo \"ibase=16; 0000000000000000\" | aplay -DAdevAcousticoutSpeech -fdat -q"
+ExecStartPre=/bin/sh -c "echo \"ibase=16; 0000000000000000\" | aplay -DAdevTunerOut -fdat -q"
+ExecStart=/usr/bin/ADR3_audio_mock -s40

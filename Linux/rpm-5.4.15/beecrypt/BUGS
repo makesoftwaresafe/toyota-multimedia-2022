@@ -1,0 +1,23 @@
+Legend:
+	- = open bug
+	* = fixed bug
+
+4.2.0:
+	- Sparc / Solaris 64-bit with gcc fails during link of library with
+	  error due to wrong ELF class: this is actually a bug in Sun's gcc
+	  profiles, which tries to link 32-bit libraries in 64-bit mode.
+
+4.1.0:
+	- SuSE 9.2 (x86) compiler is buggy: the MMX-optimized version fails all
+	  test vectors. Since all other Linux distro's handle this perfectly it
+	  is up to them to fix this bug.
+
+3.0.0:
+	- Can't seem to generate 64-bit shared libraries on AIX; use
+	  --disable-shared on this platform for now.
+	- Intel icc can't cope with gcj headers. There's also a problem in
+	  combination with aio.h; solution should be to not test gcj when using
+	  this compiler. As a workaround, you can specify --without-javaglue.
+	- GCC 3.3 produces faster output for Blowfish on Pentium 4 than the
+	  included assembler source; try coding two Blowfish rounds (without swap)
+	  in C and compile to assembler to see how GCC accomplishes this.

@@ -1,0 +1,33 @@
+/*!
+\page pageTrigger Trigger
+
+    Generic Controller is a Plug-in of AudioManager Daemon, it implements the IAmControlSend and uses
+ the IAmControlReceive. Any hookxxx or CbAckxxx functions in IAmControlSends called by AudioManager 
+are the entry point for the controller's execution, these are triggers. In response to the 
+trigger, controller executes a set of sequential action(s).
+
+    The diagram below shows the internals of the generic controller functioning 
+\image html TriggerConcept.png
+
+     Action framework manages two Queues, trigger queue and action queue. All the triggers are  
+first Queued by the action framework. Only when the action Queue is empty, single trigger is dequeued 
+and forwarded along with the trigger parameters to policy engine. policy engine evaluates the 
+policies and gives the set of actions which are added in action Queue. After which the action 
+framework executes the actions till all the actions are executed successfully. 
+
+@section triggerDesc Trigger Descriptions
+
+    The triggers which are generated from command interface have a prefix "USER" whereas the triggers
+from the routing interface have prefix "SYSTEM"
+\image html TriggerDesc.png
+
+@section triggerParams Trigger Parameters
+     The trigger parameters are the parameter which are part of the trigger. Example a connect 
+request from the command side would have source ID and sink ID as the trigger parameter. Each  
+trigger has its own set of trigger parameters. The trigger parameters can be used in configuration
+for condition evaluation and are accessible using a macro REQUESTING.
+
+    The table below shows all possible trigger and the trigger parameters applicable for each 
+trigger. 
+\image html TriggerParams.png
+*/

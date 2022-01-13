@@ -1,0 +1,50 @@
+{
+  "config_appl": "lt-persistence_client_library_test",
+  "version": "0.1.0",
+  "resources": {
+    "utf8String": {
+      "size": "20",
+      "data": "537472696E6720C2B05EC2B020C3912074657874"
+    },
+    "address/home_address": {
+      "size": "37",
+      "data": "57545f203535333237204865696d617473746164742c20576f686e73747261737365203331"
+    },
+    "69": {
+      "size": "5",
+      "data": "4546474849"
+    },
+    "links/last_link": {
+      "size": "24",
+      "data": "CACHE_ /last_exit/queens"
+    },
+    "language/current_language": {
+      "size": "16",
+      "data": "43414348455f204b6973756168656c69"
+    },
+    "pos/last_satellites": {
+      "size": "6",
+      "data": "57545f203137"
+    },
+    "posHandle/last_position": {
+      "size": "50",
+      "data": "57545f20482041204e2044204c20453a202b3438b0203130272033382e39355c222c202b38b0203434272033392e30365c22"
+    },
+    "statusHandle/default02": {
+      "size": "11",
+      "data": "44454641554c545f303221"
+    },
+    "statusHandle/default01": {
+      "size": "11",
+      "data": "44454641554c545f303121"
+    },
+    "pos/last_position": {
+      "size": "34",
+      "data": "43414348455f202b3438203130272033382e39352c202b38203434272033392e3036"
+    },
+    "status/open_document": {
+      "size": "43",
+      "data": "57545f202f7661722f6f70742f757365725f6d616e75616c5f636c696d617465436f6e74726f6c2e706466"
+    }
+  }
+}

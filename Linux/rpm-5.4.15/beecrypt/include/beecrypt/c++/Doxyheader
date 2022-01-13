@@ -1,0 +1,172 @@
+/*!\mainpage BeeCrypt C++ API Documentation
+ *
+ * \section intro_sec Introduction
+ *
+ * BeeCrypt started its life when the need for a portable and fast cryptography
+ * library arose at Virtual Unlimited in 1997. I'm still trying to make it
+ * faster, easier to use and more portable, in addition to providing better
+ * documentation.
+ * 
+ * \section license_sec License
+ *
+ * BeeCrypt is released under the following license:
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ * 
+ * Legal disclaimer: note that depending on where you are, the use of
+ * cryptography may be limited or forbidden by law. Before using this library,
+ * make sure you are legally entitled to do so.
+ * 
+ * \section features_sec Features
+ *
+ * A new feature in version 4.x is the C++ API, built to resemble Java's
+ * security and cryptography API.
+ *
+ * As of version 4.2.0 basic versions of Object and Thread have been
+ * added and should work on any platform offering either POSIX, Solaris
+ * or Win32 threads. Java's Collections system had to be adapted to work
+ * in C++. See the documentation in class beecrypt::util::Collections
+ * 
+ * Included in the base provider are broad spectrum of algorithms:
+ * <ul>
+ *  <li>AlgorithmParameterGenerator
+ *   <ul>
+ *    <li>DH
+ *    <li>DSA
+ *   </ul>
+ *  <li>AlgorithmParameters
+ *   <ul>
+ *    <li>DH
+ *    <li>DHAES
+ *    <li>DSA
+ *   </ul>
+ *  <li>Cipher
+ *   <ul>
+ *    <li>AES
+ *    <li>Blowfish
+ *    <li>DHAES
+ *   </ul>
+ *  <li>KeyAgreement
+ *   <ul>
+ *    <li>DH
+ *   </ul>
+ *  <li>KeyPairGenerator
+ *   <ul>
+ *    <li>DH
+ *    <li>DSA
+ *    <li>RSA
+ *   </ul>
+ *  <li>Mac
+ *   <ul>
+ *    <li>HMAC-MD5
+ *    <li>HMAC-SHA-1
+ *    <li>HMAC-SHA-256
+ *    <li>HMAC-SHA-384
+ *    <li>HMAC-SHA-512
+ *   </ul>
+ *  <li>MessageDigest
+ *   <ul>
+ *    <li>MD5
+ *    <li>SHA-1
+ *    <li>SHA-256
+ *    <li>SHA-384
+ *    <li>SHA-512
+ *   </ul>
+ *  <li>Signature
+ *   <ul>
+ *    <li>MD5withRSA
+ *    <li>SHA1withDSA
+ *    <li>SHA1withRSA
+ *    <li>SHA256withRSA
+ *    <li>SHA384withRSA
+ *    <li>SHA512withRSA
+ *   </ul>
+ * </ul>
+ *
+ */
+
+/*!\defgroup	CXX_m	C++ API
+ */
+/*!\defgroup	CXX_IO_m	C++ classes mimicking java.io
+ */
+/*!\defgroup	CXX_LANG_m	C++ classes mimicking java.lang
+ */
+/*!\defgroup	CXX_NIO_m	C++ classes mimicking java.nio
+ */
+/*!\defgroup	CXX_SECURITY_m	C++ classes mimicking java.security
+ */
+/*!\defgroup	CXX_SECURITY_CERT_m	C++ classes mimicking java.security.cert
+ */
+/*!\defgroup	CXX_SECURITY_INTERFACES_m	C++ classes mimicking java.security.interfaces
+ */
+/*!\defgroup	CXX_SECURITY_SPEC_m	C++ classes mimicking java.security.spec
+ */
+/*!\defgroup	CXX_UTIL_m	C++ classes mimicking java.util
+ */
+/*!\defgroup	CXX_UTIL_CONCURRENT_m	C++ classes mimicking java.util.concurrent
+ */
+/*!\defgroup	CXX_UTIL_CONCURRENT_LOCKS_m	C++ classes mimicking java.util.concurrent.locks
+ */
+/*!\defgroup	CXX_CRYPTO_m	C++ classes mimicking javax.crypto
+ */
+/*!\defgroup	CXX_CRYPTO_INTERFACES_m	C++ classes mimicking javax.crypto.interfaces
+ */
+/*!\defgroup	CXX_CRYPTO_SPEC_m	C++ classes mimicking javax.crypto.spec
+ */
+/*!\defgroup	CXX_SECURITY_AUTH_m	C++ classes mimicking javax.security.auth
+ */
+
+/*!\namespace beecrypt::io
+ * \brief Namespace emulating java.io
+ */
+/*!\namespace beecrypt::lang
+ * \brief Namespace emulating java.lang
+ */
+/*!\namespace beecrypt::nio
+ * \brief Namespace emulating java.nio
+ */
+/*!\namespace beecrypt::security
+ * \brief Namespace emulating java.security
+ */
+/*!\namespace beecrypt::security::cert
+ * \brief Namespace emulating java.security.cert
+ */
+/*!\namespace beecrypt::security::interfaces
+ * \brief Namespace emulating java.security.interfaces
+ */
+/*!\namespace beecrypt::security::spec
+ * \brief Namespace emulating java.security.spec
+ */
+/*!\namespace beecrypt::util
+ * \brief Namespace emulating java.util
+ */
+/*!\namespace beecrypt::util::concurrent
+ * \brief Namespace emulating java.util.concurrent
+ */
+/*!\namespace beecrypt::util::concurrent::locks
+ * \brief Namespace emulating java.util.concurrent.locks
+ */
+/*!\namespace beecrypt::crypto
+ * \brief Namespace emulating javax.crypto
+ */
+/*!\namespace beecrypt::crypto::interfaces
+ * \brief Namespace emulating javax.crypto.interfaces
+ */
+/*!\namespace beecrypt::crypto::spec
+ * \brief Namespace emulating javax.crypto.spec
+ */
+/*!\namespace beecrypt::security::auth
+ * \brief Namespace emulating javax.security.auth
+ */

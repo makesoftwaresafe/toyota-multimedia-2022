@@ -1,0 +1,2775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection>
+
+<spec_type>
+  <kind> common_env </kind>
+  <global_code>
+    // common_env global_code
+    #include <system.h>
+    #include <rpmio.h>	/* XXX rpmioItem */
+    #include <poptIO.h>
+    #include <assert.h>
+    static struct poptOption optionsTable[] = {
+      { NULL, '\0', POPT_ARG_INCLUDE_TABLE, rpmioAllPoptTable, 0,
+           "Common options for all rpmio executables:", NULL },
+      POPT_AUTOHELP
+      POPT_TABLEEND
+    };
+  </global_code>
+  <init_code>
+    // common_env init_code
+    poptContext con = rpmioInit(argc, argv, optionsTable);
+  </init_code>
+  <final_code>
+    // common_env final_code
+    con = rpmioFini(con);
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> FILE * </data_type>
+  <value> stdout </value>
+</spec_type>
+
+<!-- argv.h -->
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ARGint_t </data_type>
+  <value> (ARGint_t) 0xdeadbeef </value>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ARGI_t </data_type>
+  <value> NULL </value>
+  <init_code>
+    assert(argiAdd(&$0, -1, 1) == 0 && $0 != NULL && argiCount($0) == 1);
+  </init_code>
+  <final_code>
+    $0 = argiFree($0);
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> ARGI_t </data_type>
+  <value> NULL </value>
+  <init_code>
+    assert(argiAdd(&$0, -1, 1) == 0 && $0 != NULL && argiCount($0) == 1);
+  </init_code>
+  <associating>
+    <interfaces>
+      argiFree
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ARGstr_t </data_type>
+  <value> "foo" </value>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ARGV_t </data_type>
+  <value> NULL </value>
+  <init_code>
+    assert(argvAdd(&$0, "foo") == 0 && $0 != NULL && !strcmp($0[0], "foo"));
+  </init_code>
+  <final_code>
+    $0 = argvFree($0);
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> ARGV_t * </data_type>
+  <value> NULL </value>
+  <global_code>
+    static ARGV_t _av;
+  </global_code>
+  <init_code>
+    $0 = &_av;
+    assert(argvAdd($0, "foo") == 0 && *$0 != NULL && !strcmp((*$0)[0], "foo"));
+  </init_code>
+  <final_code>
+    if ($0) *$0 = argvFree(*$0);
+  </final_code>
+  <associating>
+    <interfaces>
+      argvAdd
+      argvAppend
+      argvSplit
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> ARGV_t </data_type>
+  <value> NULL </value>
+  <init_code>
+    assert(argvAdd(&$0, "foo") == 0 && $0 != NULL && !strcmp($0[0], "foo"));
+  </init_code>
+  <associating>
+    <interfaces>
+      argvFree
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> ARGV_t * </data_type>
+  <value> NULL </value>
+  <global_code>
+    static ARGV_t _av;
+  </global_code>
+  <init_code>
+    $0 = &_av;
+  </init_code>
+  <final_code>
+    if ($0) *$0 = argvFree(*$0);
+  </final_code>
+  <associating>
+    <interfaces>
+      argvFgets
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <rpmio.h>	/* XXX Fopen/Fclose */
+    static const char * _fn = "/dev/null";
+  </global_code>
+  <init_code>
+    $0 = (void *) Fopen(_fn, "r");
+  </init_code>
+  <final_code>
+    if ($0) (void) Fclose($0);
+  </final_code>
+  <associating>
+    <interfaces> argvFgets </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- bson.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> bson * </data_type>
+  <value> bson_alloc() </value>
+  <global_code>
+    // bson* common_param global_code
+  </global_code>
+  <decl_code>
+    // bson* common_param decl_code
+    bson * $0 = bson_alloc();
+  </decl_code>
+  <init_code>
+    // bson* common_param init_code
+    assert(bson_init($0) == BSON_OK);
+  </init_code>
+  <final_code>
+    // bson* common_param final_code
+    assert(bson_finish($0) == BSON_OK);
+    bson_destroy($0);
+    bson_dealloc($0);
+    $0 = NULL;
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> bson_timestamp_t </data_type>
+  <value> { 1, 2 } </value>
+</spec_type>
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> bson_oid_t </data_type>
+  <value> {} </value>
+  <init_code>
+    // $0 common_param init_code
+    bson_oid_from_string(&$0, "010203040506070809101112");
+  </init_code>
+</spec_type>
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> bson_bool_t </data_type>
+  <value> 1 </value>
+</spec_type>
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> bson_date_t </data_type>
+  <value> 0x0102030405060708 </value>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> bson_iterator * </data_type>
+  <value> NULL  </value>
+  <global_code>
+    // bson_iterator* common_param global_code
+  </global_code>
+  <decl_code>
+    // bson_iterator* common_param decl_code
+    bson * ib = bson_alloc();
+    bson_iterator * i = bson_iterator_alloc();
+  </decl_code>
+  <init_code>
+    // bson_iterator* common_param init_code
+    assert(bson_init(ib) == BSON_OK);
+    bson_iterator_init(i, ib);
+  </init_code>
+  <pre_condition>
+    1
+  </pre_condition>
+  <constraint>
+    1
+  </constraint>
+  <post_condition>
+    bson_iterator_more(i) && \
+    bson_iterator_next(i) == type && \
+    bson_iterator_type(i) == type && \
+    !strcmp(bson_iterator_key(i), name)
+  </post_condition>
+  <final_code>
+    // bson_iterator* common_param final_code
+#define	ENVfinal	\
+  { bson_iterator_dealloc(ib); \
+    ib = NULL; \
+    bson_destroy(ib); \
+    bson_dealloc(ib); \
+    ib = NULL; \
+  }
+  </final_code>
+</spec_type>
+
+<!--
+<spec_type>
+  <name>i_ctor</name>
+  <kind> env </kind>
+  <global_code>
+    // i_ctor global_code
+  </global_code>
+  <init_code>
+    // i_ctor init_code
+    bson * cb = $(bson_ctor);
+  </init_code>
+  <final_code>
+    // i_ctor final_code
+    bson_destroy(cb);
+    bson_dealloc(cb);
+    eb = NULL;
+  </final_code>
+  <pre_condition>
+    1
+  </pre_condition>
+  <constraint>
+    1
+  </constraint>
+  <post_condition>
+    1
+  </post_condition>
+  <associating>
+    <interfaces>
+      bson_iterator_double
+      bson_iterator_double_raw
+      bson_iterator_int
+      bson_iterator_int_raw
+      bson_iterator_long
+      bson_iterator_long_raw
+    </interfaces>
+  </associating>
+</spec_type>
+-->
+<spec_type>
+  <kind> env </kind>
+  <global_code>
+    // XXX env global_code
+    #define ENVglobal
+  </global_code>
+  <decl_code>
+    // XXX env decl_code
+    #define ENVdecl
+  </decl_code>
+  <init_code>
+    // XXX env init_code
+    #define ENVinit
+  </init_code>
+  <final_code>
+    // XXX env final_code
+#if defined(ENVfinal)
+    if (i) { bson_iterator_dealloc(i); i = NULL; }
+    if (ib) { bson_destroy(ib); bson_dealloc(ib); ib = NULL; }
+#endif
+  </final_code>
+  <pre_condition>
+    1
+  </pre_condition>
+  <constraint>
+    1
+  </constraint>
+  <post_condition>
+    1
+  </post_condition>
+  <associating>
+    <interfaces>
+      bson_iterator_bin_data
+      bson_iterator_bool
+      bson_iterator_bool_raw
+      bson_iterator_code
+      bson_iterator_date
+      bson_iterator_double
+      bson_iterator_double_raw
+      bson_iterator_int
+      bson_iterator_int_raw
+      bson_iterator_long
+      bson_iterator_long_raw
+      bson_iterator_oid
+      bson_iterator_regex
+      bson_iterator_string
+      bson_iterator_string_len
+      bson_iterator_timestamp
+      bson_iterator_time_t
+    </interfaces>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> double </data_type>
+  <global_code>
+    // double retval global_code
+    #define DOUBLEglobal
+  </global_code>
+  <decl_code>
+    // double retval decl_code
+    #define DOUBLEdecl
+  </decl_code>
+  <init_code>
+    // double retval init_code
+    const char name[] = "d";
+    bson_type type = BSON_DOUBLE;
+    double val = 3.1415926;
+    assert(bson_append_double(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <final_code>
+    // double retval final_code
+  </final_code>
+  <constraint> $0 == val </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_double
+      bson_iterator_double_raw
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <init_code>
+    const char name[] = "s";
+    bson_type type = BSON_BINDATA;
+    const char * val = "w\0rld";
+    int nval = (int) strlen("world");
+    assert(bson_append_binary(ib, name, BSON_BIN_BINARY, val, nval) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> !memcmp($0, val, nval) && bson_iterator_bin_type(i) == BSON_BIN_BINARY && bson_iterator_bin_len(i) == nval </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_bin_data
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> bson_oid_t * </data_type>
+  <init_code>
+    const char name[] = "oid";
+    bson_type type = BSON_OID;
+    const char * _val = "010203040506070809101112";
+    bson_oid_t val;
+    bson_oid_from_string(&val, _val);
+    assert(bson_append_oid(ib, name, &val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> !memcmp($0->bytes, val.bytes, sizeof(val.bytes)) && $0->ints[0] == val.ints[0] && $0->ints[1] == val.ints[1] && $0->ints[2] == val.ints[2] </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_oid
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <init_code>
+    const char name[] = "s";
+    bson_type type = BSON_STRING;
+    const char * val = "hello";
+    int nval = (int) strlen(val);
+    assert(bson_append_string(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> !strcmp($0, val) && (int)strlen($0) == nval && bson_iterator_string_len(i) == nval+1 </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_string
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <init_code>
+    const char name[] = "s_n";
+    bson_type type = BSON_STRING;
+    const char * val = "goodbye cruel world";
+    int nval = (int) strlen("goodbye");
+    assert(bson_append_string_n(ib, name, val, nval) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> $0 == nval+1 && !strncmp(bson_iterator_string(i), val, nval) </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_string_len
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> bson_bool_t </data_type>
+  <init_code>
+    const char name[] = "b";
+    bson_type type = BSON_BOOL;
+    bson_bool_t val = 1;
+    assert(bson_append_bool(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> $0 == val </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_bool
+      bson_iterator_bool_raw
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <init_code>
+    const char name[] = "i";
+    bson_type type = BSON_INT;
+    int val = 123;
+    assert(bson_append_int(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> $0 == val </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_int
+      bson_iterator_int_raw
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> long </data_type>
+  <init_code>
+    const char name[] = "l";
+    bson_type type = BSON_LONG;
+    long val = 0x1122334455667788;
+    assert(bson_append_long(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> $0 == val </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_long
+      bson_iterator_long_raw
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> bson_date_t </data_type>
+  <init_code>
+    const char name[] = "date";
+    bson_type type = BSON_DATE;
+    bson_date_t val = 0x0102030405060708;
+    assert(bson_append_date(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> $0 == val </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_date
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> time_t </data_type>
+  <init_code>
+    const char name[] = "t";
+    bson_type type = BSON_DATE;
+    time_t val = time(NULL);
+    assert(bson_append_time_t(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> $0 == val </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_time_t
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> bson_timestamp_t </data_type>
+  <init_code>
+    const char name[] = "timestamp";
+    bson_type type = BSON_TIMESTAMP;
+    bson_timestamp_t _val = { 1, 2 };
+    bson_timestamp_t *val = &_val;
+    assert(bson_append_timestamp(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint>
+    bson_iterator_timestamp_increment(i) == val->i && \
+    bson_iterator_timestamp_time(i) == val->t && \
+    $0.i == val->i && $0.t == val->t
+  </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_timestamp
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<!--
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <init_code>
+    const char name[] = "n";
+    bson_type type = BSON_NULL;
+    int val = BSON_OK;
+    assert(bson_append_null(ib, name) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> $0 == val </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_???
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+-->
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <init_code>
+    const char name[] = "n";
+    bson_type type = BSON_REGEX;
+    const char *val = "^asdf";
+    int nval = strlen(val);
+    const char *opts = "imx";
+    int nopts = strlen(opts);
+    assert(bson_append_regex(ib, name, val, opts) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint>
+    !strcmp($0, val) && (int)strlen($0) == nval &&\
+    !strcmp(bson_iterator_regex_opts(i), opts) && \
+    (int)strlen(bson_iterator_regex_opts(i)) == nopts
+  </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_regex
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <init_code>
+    const char name[] = "c";
+    bson_type type = BSON_CODE;
+    const char * val = "function(){}";
+    int nval = (int) strlen(val);
+    assert(bson_append_code(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> !strcmp($0, val) && (int)strlen($0) == nval </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_code
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<!--
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <init_code>
+    const char name[] = "c_n";
+    bson_type type = BSON_CODE;
+    const char * val = "function(){}garbage";
+    int nval = (int) strlen("function(){}");
+    assert(bson_append_code_n(ib, name, val, nval) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> !strncmp($0, val, nval) && (int)strlen($0) == nval </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_code
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <init_code>
+    const char name[] = "symbol";
+    bson_type type = BSON_SYMBOL;
+    const char * val = "symbol";
+    int nval = (int) strlen(val);
+    assert(bson_append_symbol(ib, name, val) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> !strcmp($0, val) && (int)strlen($0) == nval && bson_iterator_string_len(i) == nval </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_string
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <init_code>
+    const char name[] = "symbol and garbage";
+    bson_type type = BSON_SYMBOL;
+    const char * val = "function(){}garbage";
+    int nval = (int) strlen("function(){}");
+    assert(bson_append_symbol_n(ib, name, val, nval) == BSON_OK);
+    assert(bson_finish(ib) == BSON_OK);
+  </init_code>
+  <constraint> !strcmp($0, val) && (int)strlen($0) == nval && bson_iterator_string_len(i) == nval </constraint>
+  <associating>
+    <interfaces>
+      bson_iterator_string
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+-->
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <constraint> $0 == BSON_OK </constraint>
+  <associating>
+    <interfaces>
+      bson_init_finished_data
+      bson_init_finished_data_with_copy
+      bson_init_size
+      bson_init_unfinished_data
+      bson_ensure_space
+      bson_init_empty
+      bson_copy
+      bson_append_oid
+      bson_append_new_oid
+      bson_append_int
+      bson_append_long
+      bson_append_double
+      bson_append_string
+      bson_append_string_n
+      bson_append_symbol
+      bson_append_symbol_n
+      bson_append_code
+      bson_append_code_n
+      bson_append_code_w_scope
+      bson_append_code_w_scope_n
+      bson_append_binary
+      bson_append_bool
+      bson_append_null
+      bson_append_undefined
+      bson_append_maxkey
+      bson_append_minkey
+      bson_append_regex
+      bson_append_bson
+      bson_append_element
+      bson_append_timestamp
+      bson_append_date
+      bson_append_time_t
+      bson_append_start_object
+      bson_append_start_array
+      bson_append_finish_object
+      bson_append_finish_array
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<!-- mongo.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmmgo </data_type>
+  <value> rpmmgoNew(argv, 0) </value>
+  <final_code> $0 = rpmmgoFree($0); </final_code>
+  <associating>
+    <except> rpmmgoFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmmgo </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> mongo * </data_type>
+  <value> mongo_alloc() </value>
+  <global_code>
+    // mongo* common_param global_code
+  </global_code>
+  <decl_code>
+    // mongo* common_param decl_code
+    mongo * $0 = mongo_alloc();
+    const char * host = "127.0.0.1";
+    int port = 27017;
+  </decl_code>
+  <init_code>
+    // mongo* common_param init_code
+    mongo_init($0);
+    assert(mongo_client($0, host, port) == MONGO_OK);
+  </init_code>
+  <final_code>
+    // mongo* common_param final_code
+    if ($0) { mongo_destroy($0); mongo_dealloc($0); $0 = NULL; }
+  </final_code>
+  <associating>
+    <except> mongo_cursor_init </except>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> mongo_cursor * </data_type>
+  <value> mongo_cursor_alloc() </value>
+  <global_code>
+    // mongo_cursor* common_param global_code
+  </global_code>
+  <decl_code>
+    // mongo_cursor* common_param decl_code
+    mongo * conn = mongo_alloc();
+    const char * ns = "test.c.simple";
+    mongo_cursor * $0 = mongo_cursor_alloc();
+    const char * host = "127.0.0.1";
+    int port = 27017;
+  </decl_code>
+  <init_code>
+    // mongo_cursor* common_param init_code
+    mongo_init(conn);
+    assert(mongo_client($0, host, port) == MONGO_OK);
+    mongo_cursor_init($0, conn, ns);
+  </init_code>
+  <final_code>
+    // mongo_cursor* common_param final_code
+    if ($0) { mongo_cursor_dealloc($0); $0 = NULL; }
+    if (conn) { mongo_destroy(conn); mongo_dealloc(conn); conn = NULL; }
+  </final_code>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> mongo_cursor * </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> mongo_write_concern * </data_type>
+  <value> mongo_write_concern_alloc() </value>
+  <final_code> if ($0 != NULL) { mongo_write_concern_dealloc($0); $0 = NULL; } </final_code>
+  <associating>
+    <except> mongo_write_concern_dealloc </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> mongo_write_concern * </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <constraint> $0 == MONGO_OK </constraint>
+  <associating>
+    <interfaces>
+      mongo_client
+      mongo_connect
+      mongo_validate_ns
+      mongo_replica_set_client
+      mongo_replset_connect
+      mongo_set_op_timeout
+      mongo_check_connection
+      mongo_reconnect
+      mongo_insert
+      mongo_insert_batch
+      mongo_update
+      mongo_remove
+      mongo_cursor_next
+      mongo_cursor_destroy
+      mongo_create_index
+      mongo_run_command
+      mongo_simple_int_command
+      mongo_cmd_drop_db
+      mongo_cmd_add_user
+      mongo_cmd_authenticate
+      mongo_cmd_get_last_error
+      mongo_cmd_get_prev_error
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<!-- ar.h -->
+<!-- cpio.h -->
+<!-- tar.h
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> &__st </value>
+  <global_code>
+    static struct stat __st;
+  </global_code>
+  <init_code>
+    (void) memset(&__st, 0, sizeof(__st));
+  </init_code>
+  <associating>
+    <interfaces>
+      arHeaderRead
+      arHeaderWrite
+      cpioHeaderRead
+      cpioHeaderWrite
+      tarHeaderRead
+      tarHeaderWrite
+    </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> &__iosm </value>
+  <global_code>
+    #include <rpmio.h>
+    #include <iosm.h>
+    static struct iosm_s __iosm;
+    static FD_t __cfd;
+    static const char * __failedFile;
+  </global_code>
+  <init_code>
+    __cfd = $[Fopen];
+    (void) memset(&__iosm, 0, sizeof(__iosm));
+    (void) iosmSetup($0, IOSM_PKGINSTALL, "ar", NULL, NULL,
+		__cfd, NULL, &__failedFile);
+  </init_code>
+  <final_code>
+    (void) iosmTeardown($0);
+    if (__cfd) (void) Fclose(__cfd);
+  </final_code>
+  <associating>
+    <interfaces>
+      arHeaderRead
+      arHeaderWrite
+      arTrailerWrite
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> &__iosm </value>
+  <global_code>
+    #include <rpmio.h>
+    #include <iosm.h>
+    static struct iosm_s __iosm;
+    static FD_t __cfd;
+    static const char * __failedFile;
+  </global_code>
+  <init_code>
+    __cfd = $[Fopen];
+    (void) memset(&__iosm, 0, sizeof(__iosm));
+    (void) iosmSetup($0, IOSM_PKGINSTALL, "cpio", NULL, NULL,
+		__cfd, NULL, &__failedFile);
+  </init_code>
+  <final_code>
+    (void) iosmTeardown($0);
+  </final_code>
+  <associating>
+    <interfaces>
+      cpioHeaderRead
+      cpioHeaderWrite
+      cpioTrailerWrite
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> &__iosm </value>
+  <global_code>
+    #include <rpmio.h>
+    #include <iosm.h>
+    static struct iosm_s __iosm;
+    static FD_t __cfd;
+    static const char * __failedFile;
+  </global_code>
+  <init_code>
+    __cfd = $[Fopen];
+    (void) memset(&__iosm, 0, sizeof(__iosm));
+    (void) iosmSetup($0, IOSM_PKGINSTALL, "ustar", NULL, NULL,
+		__cfd, NULL, &__failedFile);
+  </init_code>
+  <final_code>
+    (void) iosmTeardown($0);
+  </final_code>
+  <associating>
+    <interfaces>
+      tarHeaderRead
+      tarHeaderWrite
+      tarTrailerWrite
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+-->
+
+<!-- fts.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> FTS * </data_type>
+  <value> NULL </value>
+  <global_code>
+    #include <fts.h>
+  </global_code>
+  <init_code>
+    rpmioFtsOpts = (FTS_COMFOLLOW | FTS_LOGICAL | FTS_NOSTAT);
+    $0 = Fts_open (argv, rpmioFtsOpts, NULL);
+  </init_code>
+  <final_code> (void) Fts_close($0); </final_code>
+  <associating>
+    <except> Fts_close </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> FTS * </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- iosm.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> IOSM_t </data_type>
+  <value> &_iosm </value>
+  <global_code>
+    #include <rpmio.h>
+    static struct iosm_s _iosm;
+  </global_code>
+  <init_code>
+    (void) memset(&_iosm, 0, sizeof(_iosm));
+  </init_code>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> iosmSetup </interfaces>
+    <links> param8 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> unsigned int * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> iosmSetup </interfaces>
+    <links> param7 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> FD_t </data_type>
+  <value> $[Fopen] </value>
+  <final_code> if ($0) { Fclose($0); $0 = NULL; } </final_code>
+  <associating>
+    <interfaces> iosmSetup </interfaces>
+    <links> param6 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> iosmSetup </interfaces>
+    <links> param5 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> iosmSetup </interfaces>
+    <links> param4 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "cpio" </value>
+  <associating>
+    <interfaces> iosmSetup </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> iosmFileStage </data_type>
+  <value> IOSM_PKGINSTALL </value>
+  <associating>
+    <interfaces> iosmSetup </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- mire.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> miRE </data_type>
+  <value> mireNew(RPMMIRE_REGEX, 0) </value>
+  <init_code>
+    mireRegcomp($0, "pattern");
+  </init_code>
+  <final_code> $0 = mireFree($0); </final_code>
+  <associating>
+    <except>
+      mireAppend
+      mireApply
+      mireFree
+      mireFreeAll
+    </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> miRE </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> miRE </data_type>
+  <value> mireNew(RPMMIRE_REGEX, 0) </value>
+  <init_code>
+    (void) mireRegcomp($0, "pattern");
+    $2 = 1;
+  </init_code>
+  <associating>
+    <interfaces> mireFreeAll </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "en_US" </value>
+  <associating>
+    <interfaces> mireSetLocale </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- NOTYET
+<spec_type>
+  <kind> normal </kind>
+  <global_code>
+    static const char * _patterns[] = { "foo", "bar", "baz", NULL };
+    static miRE _mires;
+    static int _nmires;
+  </global_code>
+  <init_code>
+    /* type:		$(type) */
+    /* interface:	$[interface] */
+    /* obj:		$obj */
+    $1 = RPMMIRE_REGEX;
+    $2 = 0;
+    $3 = _patterns;
+    $4 = NULL;
+    $5 = &_mires;
+    $6 = &_nmires;
+  </init_code>
+  <final_code> mireFreeAll(_mires, _nmires); </final_code>
+  <associating>
+    <interfaces> mireLoadPatterns </interfaces>
+  </associating>
+</spec_type>
+-->
+
+<!-- poptIO.h -->
+
+<!-- rpmacl.h -->
+
+<!-- rpmasn.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmasn </data_type>
+  <value> rpmasnNew(argv[1], 0) </value>
+  <final_code> $0 = rpmasnFree($0); </final_code>
+  <associating>
+    <except> rpmasnFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmasn </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmaug.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmaug </data_type>
+  <value> rpmaugNew("root", "loadpath", 0) </value>
+  <final_code> $0 = rpmaugFree($0); </final_code>
+  <associating>
+    <except> rpmaugFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmaug </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmbag.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmbag </data_type>
+  <value> rpmbagNew(argv[1], 0) </value>
+  <final_code> $0 = rpmbagFree($0); </final_code>
+  <associating>
+    <except> rpmbagFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmbag </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmbc.h -->
+
+<!-- rpmbf.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmbf </data_type>
+  <value> rpmbfCreate(1000, 1.0e-4) </value>
+  <global_code>
+    #include <rpmio.h>	/* XXX rpmioItem */
+    static rpmbf rpmbfCreate(size_t n, double e)
+    {
+	size_t m = 0;
+	size_t k = 0;
+	rpmbfParams(n, e, &m, &k);
+	return rpmbfNew(m, k, 0);
+    }
+  </global_code>
+  <init_code>
+    assert(rpmbfAdd($0, "foo", 0) == 0 && rpmbfChk($0, "foo", 0) > 0);
+    assert(rpmbfAdd($0, "bar", 0) == 0 && rpmbfChk($0, "bar", 0) > 0);
+    assert(rpmbfAdd($0, "baz", 0) == 0 && rpmbfChk($0, "baz", 0) > 0);
+  </init_code>
+  <final_code> $0 = rpmbfFree($0); </final_code>
+  <associating>
+    <except> rpmbfFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmbf </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmbz.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmbz </data_type>
+  <value> $[rpmbzNew] </value>
+  <final_code> $0 = rpmbzFree($0, 0); </final_code>
+  <associating>
+    <except> rpmbzFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmbz </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> -1 </value>
+  <associating>
+    <interfaces> rpmbzNew </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "a+" </value>
+  <associating>
+    <interfaces> rpmbzNew </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> tmpnam(NULL) </value>
+  <associating>
+    <interfaces> rpmbzNew </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> rpmbzClose </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> 0 </value>
+  <associating>
+    <interfaces> rpmbzClose </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces>
+      rpmbzRead
+      rpmbzWrite
+    </interfaces>
+    <links> param4 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> size_t </data_type>
+  <value> sizeof(_buf) </value>
+  <associating>
+    <interfaces>
+      rpmbzRead
+      rpmbzWrite
+    </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> char * </data_type>
+  <value> _buf </value>
+  <global_code>
+    static char _buf[8192];
+  </global_code>
+  <associating>
+    <interfaces>
+      rpmbzRead
+      rpmbzWrite
+    </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmcb.h -->
+
+<!-- rpmcudf.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmcudf </data_type>
+  <value> NULL </value>
+  <init_code>
+    argv[0] = TEST_DATA_PATH("legacy.cudf");
+    argv[1] = NULL;
+    $0 = rpmcudfNew(argv, /* RPMCUDV_CUDF */ 256+1);
+  </init_code>
+  <final_code> $0 = rpmcudfFree($0); </final_code>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> char ** </data_type>
+  <value> NULL </value>
+  <init_code>
+    argv[0] = TEST_DATA_PATH("legacy.cudf");
+    argv[1] = NULL;
+    $0 = argv;
+    $2 = 256+1;
+  </init_code>
+  <associating>
+    <interfaces> rpmcudfNew </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmcudf </data_type>
+  <value> NULL </value>
+  <init_code>
+    argv[0] = TEST_DATA_PATH("legacy.cudf");
+    argv[1] = NULL;
+    $0 = rpmcudfNew(argv, /* RPMCUDV_CUDF */ 256+1);
+  </init_code>
+  <associating>
+    <interfaces> rpmcudfFree </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmcudf </data_type>
+  <value> NULL </value>
+  <init_code>
+    argv[0] = TEST_DATA_PATH("legacy-sol.cudf");
+    argv[1] = NULL;
+    $0 = rpmcudfNew(argv, /* RPMCUDV_CUDF */ 256+2);
+  </init_code>
+  <final_code> $0 = rpmcudfFree($0); </final_code>
+  <associating>
+    <interfaces>
+      rpmcudfInstalledSize
+      rpmcudfIsConsistent
+      rpmcudfUniverseSize
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmcvs.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmcvs </data_type>
+  <value> rpmcvsNew(argv, 0) </value>
+  <final_code> $0 = rpmcvsFree($0); </final_code>
+  <associating>
+    <except> rpmcvsFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmcvs </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmdav.h -->
+
+<!-- rpmdir.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> DIR * </data_type>
+  <value> $[Opendir] </value>
+  <final_code> (void) Closedir($0); </final_code>
+  <associating>
+    <except> Closedir </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> DIR * </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "." </value>
+  <associating>
+    <interfaces> Opendir </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> DIR * </data_type>
+  <value> $[Opendir] </value>
+  <associating>
+    <interfaces> Closedir </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> struct dirent * </data_type>
+  <value> NULL </value>
+  <init_code>
+    DIR * _dir = $[Opendir];
+    $0 = Readdir(_dir);
+  </init_code>
+  <final_code>
+    $0 = NULL;
+    if (_dir) (void) Closedir(_dir);
+  </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const void * </data_type>
+  <value> &_foo </value>
+  <global_code>
+    static const char * _foo = "foo";
+  </global_code>
+  <associating>
+    <interfaces>
+      Alphasort
+      Versionsort
+    </interfaces>
+    <links>
+      param1
+      param2
+    </links>
+  </associating>
+</spec_type>
+
+<!-- rpmficl.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmficl </data_type>
+  <value> rpmficlNew(argv, 0) </value>
+  <final_code> $0 = rpmficlFree($0); </final_code>
+  <associating>
+    <except> rpmficlFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmficl </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> ".( -->     ficl: Das OpenBoot!)" </value>
+  <associating>
+    <interfaces> rpmficlRun </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmgc.h -->
+
+<!-- rpmgit.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmgit </data_type>
+  <value> rpmgitNew(argv, 0, NULL) </value>
+  <final_code> $0 = rpmgitFree($0); </final_code>
+  <associating>
+    <except> rpmgitFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmgit </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmhash.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> hashTable </data_type>
+  <value> htCreate(1000, 0, 1, NULL, NULL) </value>
+  <final_code> $0 = htFree($0); </final_code>
+  <associating>
+    <except> htFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> hashTable </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmhook.h -->
+
+<!-- rpmio.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> mode_t </data_type>
+  <value> 0700 </value>
+</spec_type>
+
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> FD_t </data_type>
+  <constraint> $0 != NULL && Fileno($0) > 2 && !Ferror($0) </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> FD_t </data_type>
+  <value> $[fdDup] </value>
+  <final_code> Fclose($0); </final_code>
+  <associating>
+    <except> Fclose </except>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "a+" </value>
+  <associating>
+    <interfaces> Fopen </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> tmpnam(NULL) </value>
+  <associating>
+    <interfaces> Fopen </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> fileno(tmpfile()) </value>
+  <associating>
+    <interfaces> fdDup </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> unsigned int </data_type>
+  <value> __LINE__ </value>
+  <associating>
+    <interfaces> XfdNew </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> __FILE__ </value>
+  <associating>
+    <interfaces> XfdNew </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "msg" </value>
+  <associating>
+    <interfaces> XfdNew </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> FD_t </data_type>
+  <constraint> $0 != NULL </constraint>
+  <associating>
+    <interfaces> XfdNew </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> FD_t </data_type>
+  <value> $[XfdNew] </value>
+  <associating>
+    <interfaces>
+      fdFree
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> FD_t </data_type>
+  <value> $[fdDup] </value>
+  <associating>
+    <interfaces>
+      ufdGetFile
+    </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<!--
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmioPool </data_type>
+  <value> $[rpmioNewPool] </value>
+  <final_code> $0 = rpmioFreePool($0); </final_code>
+  <associating>
+    <except>
+      rpmioFreePool
+    </except>
+  </associating>
+</spec_type>
+-->
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmioItem </data_type>
+  <value> fooGetPool(NULL) </value>
+  <global_code>
+    typedef struct rpmfoo_s * rpmfoo;
+    struct rpmfoo_s {
+      struct rpmioItem_s _item;	/* usage mutex and pool identifier. */
+      void * bar[100];
+    };
+    static int _foo_debug;
+    static rpmioPool _fooPool;
+    static void fooFini(void * _foo) {
+      rpmfoo foo = _foo;
+      return;
+    }
+    static rpmfoo fooGetPool(rpmioPool pool) {
+      rpmfoo foo;
+     if (_fooPool == NULL) {
+       _fooPool = rpmioNewPool("foo", sizeof(*foo), -1, _foo_debug,
+			NULL, NULL, fooFini);
+	pool = _fooPool;
+     }
+     foo = (rpmfoo) rpmioGetPool(pool, sizeof(*foo));
+     memset(((char *)foo)+sizeof(foo->_item), 0, sizeof(*foo)-sizeof(foo->_item));
+     return foo;
+  }
+  </global_code>
+  <final_code>
+    $0 = rpmioFreePoolItem((rpmioItem)$0, __FUNCTION__, __FILE__, __LINE__);
+    _fooPool = rpmioFreePool(_fooPool);
+  </final_code>
+  <associating>
+    <except>
+      rpmioFreePoolItem
+      rpmioPutPool
+      rpmioUnlinkPoolItem
+    </except>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_return </kind>
+  <data_type> rpmioPool </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void (*) (void *) </data_type>
+  <value> fooFini </value>
+  <associating>
+    <interfaces> rpmioNewPool </interfaces>
+    <links> param7 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void (*) (void *) </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> rpmioNewPool </interfaces>
+    <links> param6 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> char * (*) (void *) </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> rpmioNewPool </interfaces>
+    <links> param5 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> _foo_debug </value>
+  <global_code>
+    static int _foo_debug;
+    static void fooFini(void * _foo) {
+      rpmfoo foo = _foo;
+      return;
+    }
+    static rpmfoo fooGetPool(rpmioPool pool) {
+      rpmfoo foo;
+     if (_fooPool == NULL) {
+       _fooPool = rpmioNewPool("foo", sizeof(*foo), -1, _foo_debug,
+			NULL, NULL, fooFini);
+	pool = _fooPool;
+     }
+     foo = (rpmfoo) rpmioGetPool(pool, sizeof(*foo));
+     memset(((char *)foo)+sizeof(foo->_item), 0, sizeof(*foo)-sizeof(foo->_item));
+     return foo;
+  }
+  </global_code>
+  <associating>
+    <interfaces> rpmioNewPool </interfaces>
+    <links> param4 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> -1 </value>
+  <associating>
+    <interfaces> rpmioNewPool </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> size_t </data_type>
+  <value> sizeof(struct rpmfoo_s) </value>
+  <global_code>
+    typedef struct rpmfoo_s * rpmfoo;
+    struct rpmfoo_s {
+      struct rpmioItem_s _item;	/* usage mutex and pool identifier. */
+      void * bar[99];
+    };
+    static rpmioPool _fooPool;
+  </global_code>
+  <associating>
+    <interfaces> rpmioNewPool </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "foo" </value>
+  <associating>
+    <interfaces> rpmioNewPool </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmioItem </data_type>
+  <final_code>
+    $0 = rpmioFreePoolItem($0, "foo", __FILE__, __LINE__);
+  </final_code>
+  <associating>
+    <except> rpmioFreePoolItem </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_return </kind>
+  <data_type> rpmioItem </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> size_t </data_type>
+  <value> sizeof(struct rpmfoo_s) </value>
+  <associating>
+    <interfaces> rpmioGetPool </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmioPool </data_type>
+  <value> $[rpmioNewPool] </value>
+  <associating>
+    <interfaces> rpmioGetPool </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmioItem </data_type>
+  <constraint> $0 != NULL </constraint>
+  <associating>
+    <interfaces> rpmioGetPool </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> unsigned int </data_type>
+  <value> __LINE__ </value>
+  <associating>
+    <interfaces> rpmioFreePoolItem </interfaces>
+    <links> param4 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> __FILE__ </value>
+  <associating>
+    <interfaces> rpmioFreePoolItem </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "foo" </value>
+  <associating>
+    <interfaces> rpmioFreePoolItem </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmioItem </data_type>
+  <value> $[rpmioGetPool] </value>
+  <associating>
+    <interfaces> rpmioFreePoolItem </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> &__pglob </value>
+  <global_code>
+    #include <glob.h>
+    static glob_t __pglob;
+  </global_code>
+  <init_code>
+    (void) Glob("*", 0, Glob_error, $0);
+  </init_code>
+  <associating>
+    <interfaces> Globfree </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> char * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> Realpath </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmiotypes.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmiob </data_type>
+  <value> $[rpmiobNew] </value>
+  <final_code> $0 = rpmiobFree($0); </final_code>
+  <associating>
+    <except> rpmiobFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmiob </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> size_t </data_type>
+  <value> 0 </value>
+  <associating>
+    <interfaces> rpmiobNew </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmRC </data_type>
+  <constraint> $0 == RPMRC_OK </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> DIGEST_CTX </data_type>
+  <final_code> rpmDigestFinal($0, NULL, NULL, 0); </final_code>
+  <associating>
+    <except> rpmDigestFinal </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> DIGEST_CTX </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> DIGEST_CTX </data_type>
+  <constraint> $0 != NULL </constraint>
+  <associating>
+    <interfaces> rpmDigestInit </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> rpmDigestFlags </data_type>
+  <value> RPMDIGEST_NONE </value>
+  <associating>
+    <interfaces> rpmDigestInit </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> pgpHashAlgo </data_type>
+  <value> PGPHASHALGO_MD5 </value>
+  <associating>
+    <interfaces> rpmDigestInit </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> DIGEST_CTX </data_type>
+  <constraint> $0 != NULL && rpmDigestFinal($0, NULL, NULL, 0) == 0 </constraint>
+  <associating>
+    <interfaces>
+      rpmDigestDup
+    </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> strdup("foo") </value>
+  <associating>
+    <interfaces> xstrtolocale </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmioP </data_type>
+  <value> NULL </value>
+  <init_code>
+    rpmioParse(&$0, "bing bang boom");
+  </init_code>
+</spec_type>
+
+<!-- rpmjs.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmjs </data_type>
+  <value> rpmjsNew(argv, 0) </value>
+  <final_code> $0 = rpmjsFree($0); </final_code>
+  <associating>
+    <except> rpmjsFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmjs </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "print(\"-->       js: Use GPSEE!\"" </value>
+  <associating>
+    <interfaces> rpmjsRun </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmku.h -->
+
+<!-- rpmlog.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmlogRec </data_type>
+  <value> { "msg", RPMLOG_DEBUG } </value>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> 1 </value>
+  <associating>
+    <interfaces> _rpmlog </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "%d" </value>
+  <associating>
+    <interfaces> _rpmlog </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> RPMLOG_DEBUG </value>
+  <associating>
+    <interfaces> _rpmlog </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> va_list </data_type>
+  <value> NULL </value>
+  <init_code>
+    va_start($0, argc);
+  <init_code>
+  <final_code>
+    va_end($0);
+  <final_code>
+  <associating>
+    <interfaces> vrpmlog </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "%p" </value>
+  <associating>
+    <interfaces> vrpmlog </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> RPMLOG_DEBUG </value>
+  <associating>
+    <interfaces> vrpmlog </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmlua.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmlua </data_type>
+  <value> rpmluaNew() </value>
+  <final_code> $0 = rpmluaFree($0); </final_code>
+  <associating>
+    <except> rpmluaFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmlua </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmluav </data_type>
+  <value> rpmluavNew() </value>
+  <final_code> $0 = rpmluavFree($0); </final_code>
+  <associating>
+    <except> rpmluavFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmluav </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> NULL </value>
+  <associating>
+    <interfaces> rpmluaRunScript </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "print(\"-->      lua: Hard Rocks!\")" </value>
+  <associating>
+    <interfaces> rpmluaRunScript </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> TEST_DATA_PATH("print.lua") </value>
+  <associating>
+    <interfaces> rpmluaRunScriptFile </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmmacro.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> MacroContext </data_type>
+  <value> NULL </value>
+  <final_code> rpmFreeMacros($0); </final_code>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> void * </data_type>
+  <value> NULL </value>
+  <final_code> rpmFreeMacros($0); </final_code>
+  <associating>
+    <interfaces> expandMacros </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> char * </data_type>
+  <value> _buf </value>
+  <global_code>
+    static char _buf[8192];
+  </global_code>
+  <init_code>
+      (void) rpmDefineMacro(NULL, "foo bar", 0);
+      $0 = strcpy(_buf, "%{foo}");
+      $4 = sizeof(_buf);
+  </init_code>
+  <associating>
+    <interfaces> expandMacros </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> char * </data_type>
+  <value> "foo bar" </value>
+  <associating>
+    <interfaces> rpmDefineMacro </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmmg.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmmg </data_type>
+  <value> $[rpmmgNew] </value>
+  <final_code> $0 = rpmmgFree($0); </final_code>
+  <associating>
+    <except> rpmmgFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmmg </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <value> 0 </value>
+  <associating>
+    <interfaces> rpmmgNew </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "/usr/lib/rpm/magic" </value>
+  <associating>
+    <interfaces> rpmmgNew </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmnix.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmnix </data_type>
+  <value> rpmnixNew(argv, 0, NULL) </value>
+  <final_code> $0 = rpmnixFree($0); </final_code>
+  <associating>
+    <except> rpmpythonFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmpython </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmnss.h -->
+
+<!-- rpmodbc.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> ODBC_t </data_type>
+  <global_code>
+    static char * _odbc_uri = "postgres://luser:jasnl@harwich.jbj.org/test";
+  </global_code>
+  <value> odbcNew(_odbc_uri, 0) </value>
+  <final_code> $0 = odbcFree($0); </final_code>
+  <associating>
+    <except> odbcFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> ODBC_t </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmperl.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmperl </data_type>
+  <value> rpmperlNew(argv, 0) </value>
+  <final_code> $0 = rpmperlFree($0); </final_code>
+  <associating>
+    <except> rpmperlFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmperl </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "print \"-->     perl: Artistic Scribbles!\"" </value>
+  <associating>
+    <interfaces> rpmperlRun </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmpgp.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> pgpDig </data_type>
+  <value> pgpDigNew(RPMVSF_DEFAULT, 0) </value>
+  <final_code> $0 = pgpDigFree($0); </final_code>
+  <associating>
+    <except> pgpDigFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> pgpDig </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmpython.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmpython </data_type>
+  <value> rpmpythonNew(argv, 0) </value>
+  <final_code> $0 = rpmpythonFree($0); </final_code>
+  <associating>
+    <except> rpmpythonFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmpython </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "print \"-->   python: Snake Eggs!\"," </value>
+  <associating>
+    <interfaces> rpmpythonRun </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmruby.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmruby </data_type>
+  <value> rpmrubyNew(argv, 0) </value>
+  <final_code> $0 = rpmrubyFree($0); </final_code>
+  <associating>
+    <except> rpmrubyFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmruby </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "print \"-->     ruby: Puppet Gems!\"" </value>
+  <associating>
+    <interfaces> rpmrubyRun </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmsm.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmsm </data_type>
+  <value> rpmsmNew(argv[1], 0) </value>
+  <final_code> $0 = rpmsmFree($0); </final_code>
+  <associating>
+    <except> rpmsmFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmsm </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmsp.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmsp </data_type>
+  <value> rpmspNew(argv[1], 0) </value>
+  <final_code> $0 = rpmspFree($0); </final_code>
+  <associating>
+    <except> rpmspFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmsp </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmsq.h -->
+
+<!-- rpmsql.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmsql </data_type>
+  <value> rpmsqlNew(argv, 0) </value>
+  <final_code> $0 = rpmsqlFree($0); </final_code>
+  <associating>
+    <except> rpmsqlFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmsql </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> ".help" </value>
+  <associating>
+    <interfaces> rpmsqlRun </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmsquirrel.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmsquirrel </data_type>
+  <value> rpmsquirrelNew(argv, 0) </value>
+  <final_code> $0 = rpmsquirrelFree($0); </final_code>
+  <associating>
+    <except> rpmsquirrelFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmsquirrel </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "print(\"--> squirrel: Eat Nuts!\")" </value>
+  <associating>
+    <interfaces> rpmsquirrelRun </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmssl.h -->
+
+<!-- rpmsvn.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmsvn </data_type>
+  <value> rpmsvnNew(argv, 0) </value>
+  <final_code> $0 = rpmsvnFree($0); </final_code>
+  <associating>
+    <except> rpmsvnFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmsvn </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmsw.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmsw </data_type>
+  <value> &_sw </value>
+  <global_code> static struct rpmsw_s _sw; </global_code>
+</spec_type>
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmop </data_type>
+  <value> &_op </value>
+  <global_code> static struct rpmop_s _op; </global_code>
+</spec_type>
+
+<!-- rpmsx.h ->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmsx </data_type>
+  <value> rpmsxNew(argv[1], 0) </value>
+  <final_code> $0 = rpmsxFree($0); </final_code>
+  <associating>
+    <except> rpmsxFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmsx </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmsyck.h
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmSyck </data_type>
+  <global_code>
+    #include <rpmsyck.h>
+  </global_code>
+  <value> rpmSyckCreate() </value>
+  <final_code> $0 = rpmSyckFree($0); </final_code>
+  <associating>
+    <except> rpmSyckFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmSyck </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+-->
+
+<!-- rpmtcl.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmtcl </data_type>
+  <value> rpmtclNew(argv, 0) </value>
+  <final_code> $0 = rpmtclFree($0); </final_code>
+  <associating>
+    <except> rpmtclFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmtcl </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> "puts \"-->      tcl: Porticus Ports!\"" </value>
+  <associating>
+    <interfaces> rpmtclRun </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<!-- rpmtpm.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmtpm </data_type>
+  <value> rpmtpmNew(argv[1], 0) </value>
+  <final_code> $0 = rpmtpmFree($0); </final_code>
+  <associating>
+    <except> rpmtpmFree</except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmtpm </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- rpmurl.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> urlinfo </data_type>
+  <value> NULL </value>
+  <global_code>
+    static const char * _url = "http://keys.rpm5.org:11371/pks/lookup?op=stats";
+    static urlinfo _u;
+  </global_code>
+  <init_code> (void) urlSplit(_url, &$0); </init_code>
+  <final_code>
+    $0 = urlFree($0, "msg");
+    urlFreeCache();
+  </final_code>
+  <associating>
+    <except> urlSplit </except>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> urlinfo * </data_type>
+  <value> &_u </value>
+  <global_code>
+    static urlinfo _u;
+  </global_code>
+  <final_code>
+    _u = urlFree(_u, __FILE__);
+    urlFreeCache();
+  </final_code>
+  <associating>
+    <interfaces> urlSplit </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> const char * </data_type>
+  <value> _url </value>
+  <global_code>
+    static const char * _url = "http://keys.rpm5.org:11371/pks/lookup?op=stats";
+  </global_code>
+  <associating>
+    <interfaces> urlSplit </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> int </data_type>
+  <constraint> $0 == 0 </constraint>
+  <associating>
+    <interfaces> urlSplit </interfaces>
+    <links> retval </links>
+  </associating>
+</spec_type>
+
+<!-- rpmuuid.h -->
+
+<!-- rpmxar.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmxar </data_type>
+  <value> rpmxarNew(argv[1], 0) </value>
+  <final_code> $0 = rpmxarFree($0, "msg"); </final_code>
+  <associating>
+    <except> rpmxarFree</except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmxar </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- set.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> rpmset </data_type>
+  <value> rpmsetNew(argv[1], 0) </value>
+  <final_code> $0 = rpmsetFree($0); </final_code>
+  <associating>
+    <except> rpmsetFree </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> rpmset </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<!-- ugid.h -->
+
+<!-- yarn.h -->
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> yarnLock </data_type>
+  <value> $[yarnNewLock] </value>
+  <associating>
+    <except> yarnFreeLock </except>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> common_retval </kind>
+  <data_type> yarnLock </data_type>
+  <constraint> $0 != NULL </constraint>
+</spec_type>
+
+<spec_type>
+  <kind> normal </kind>
+  <data_type> long </data_type>
+  <value> 0 </value>
+  <associating>
+    <interfaces> yarnNewLock </interfaces>
+    <links> param1 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> long </data_type>
+  <value> 0 </value>
+  <associating>
+    <interfaces> yarnWaitFor </interfaces>
+    <links> param3 </links>
+  </associating>
+</spec_type>
+<spec_type>
+  <kind> normal </kind>
+  <data_type> yarnWaitOP </data_type>
+  <value> TO_BE </value>
+  <associating>
+    <interfaces> yarnWaitFor </interfaces>
+    <links> param2 </links>
+  </associating>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> void (*) (void *) </data_type>
+  <value> _snooze </value>
+  <global_code>
+    static unsigned int _seconds = 2;
+    static void _snooze (void * _uip) { sleep(_seconds); }
+  </global_code>
+</spec_type>
+
+<spec_type>
+  <kind> common_param </kind>
+  <data_type> yarnThread </data_type>
+  <value> NULL </value>
+  <global_code>
+    static unsigned int _seconds = 2;
+    static void _snooze (void * _uip) { sleep(_seconds); }
+  </global_code>
+  <init_code>
+    $0 = yarnLaunch(_snooze, &_seconds);
+  </init_code>
+</spec_type>
+
+</collection>

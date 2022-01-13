@@ -1,0 +1,5 @@
+[Unit]
+Description=iPod authentication
+After=i2c-dev-setup.service
+Requires=i2c-dev-setup.service
+

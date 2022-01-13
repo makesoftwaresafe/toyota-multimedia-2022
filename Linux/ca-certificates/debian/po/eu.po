@@ -1,0 +1,125 @@
+# translation of eu.po to Euskara
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Piarres Beobide <pi@beobide.net>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: eu\n"
+"Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2007-07-27 11:55+0200\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Euskara <Librezale@librezale.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "yes"
+msgstr "bai"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "ez"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "galdetu"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid "Trust new certificates from certificate authorities?"
+msgstr "Ziurtagiri autoritateen ziurtagiri berrietaz fidatu?"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+"This package may install new CA (Certificate Authority) certificates when "
+"upgrading. You may want to check such new CA certificates and select only "
+"certificates that you trust."
+msgstr ""
+"Pakete honek ZA (Ziurtagiri Autoritate) berri ziurtagiriak instala ditzake "
+"bertsio berritzean. Agian ZA ziurtagiri hauek arakatu eta fidatzen zarenetaz "
+"bakarrik hautatu ditzakezu."
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+" - yes: new CA certificates will be trusted and installed;\n"
+" - no : new CA certificates will not be installed by default;\n"
+" - ask: prompt for each new CA certificate."
+msgstr ""
+" - bai: ZA berrietako ziurtagiriak instalatu eta fidagarriak dira;\n"
+" - ez: lehenespen bezala ZA berrietako ziurtagiriak ez dira instalatuko\n"
+" - galdetu: ZA berrietako ziuratgiri bakoitzean galdetu."
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid "New certificates to activate:"
+msgstr "Gaitzeko ziurtagiri berriak:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid ""
+"During upgrades, new certificates will be added. Please choose those you "
+"trust."
+msgstr ""
+"Bertsio berritzeetan, ziurtagiri berriak gehituko dira, Mesedez hautatu "
+"zeinetaz fidatzen zaren."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid "Certificates to activate:"
+msgstr "Gaitzeko Ziurtagiriak:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"This package installs common CA (Certificate Authority) certificates in /usr/"
+"share/ca-certificates."
+msgstr ""
+"Pakete honek ZA (Ziurtagiri Autoritate) arrunt ziurtagiriak  /usr/share/ca-"
+"certificates direktorioan gordeko ditu,"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"Please select the certificate authorities you trust so that their "
+"certificates are installed into /etc/ssl/certs. They will be compiled into a "
+"single /etc/ssl/certs/ca-certificates.crt file."
+msgstr ""
+"Mesedez hautatu fidagarri zaizkizun ziurtagiri autoritateak /etc/ssl/certs-"
+"en instala daitezen. /etc/ssl/certs/ca-certificates fitxategi soilean "
+"konpilatuko dira."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "bai, ez, galdetu"
+
+#~ msgid "${new_crts}"
+#~ msgstr "${new_crts}"
+
+#~ msgid "${enable_crts}"
+#~ msgstr "${enable_crts}"

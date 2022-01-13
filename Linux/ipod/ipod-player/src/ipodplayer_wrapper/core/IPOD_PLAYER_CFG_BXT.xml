@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipodplayercfg>
+    <cfgitem>
+        <key>IPOD_PLAYER_TMOUT</key>
+        <value type="integer">1100</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Maximum number which can connect Apple device at the same time -->
+        <key>IPOD_DEVICE_MAX_NUM</key>
+        <value type="integer">2</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Maximum number which can connect Application at the same time -->
+        <key>IPOD_APP_MAX_NUM</key>
+        <value type="integer">4</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Default protocol to operate Apple device. -->
+        <!-- 1: Default Protocol is old protocol -->
+        <!-- 2: Default Protocol is new protocol -->
+        <key>IPOD_DEFAULT_PROTOCOL</key>
+        <value type="integer">2</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- IAP1 connection support. -->
+        <!-- 0: Does not support connection of iAP1 -->
+        <!-- 1: Supports connection of iAP1 -->
+        <key>IPOD_SUPPORT_IAP1</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_SELF_AUTHENTICATE</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Number of entries which are sent by one IPOD_PLAYER_CB_NOTIFY_DB_ENTRIES callback -->
+        <key>IPOD_MAX_ENTRY_NUM</key>
+        <value type="integer">5</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Message size for one IPC send/receive -->
+        <key>IPOD_MAX_MSG_SIZE</key>
+        <value type="integer">4192</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Message size for one Queue send/receive -->
+        <key>IPOD_MAX_QUEUE_SIZE</key>
+        <value type="integer">5120</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Audio sink name e.g. hw:0,0 in case of ALSA -->
+        <key>IPOD_AUDIO_OUTPUT_NAME</key>
+        <value type="string">entertainment_main</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Default sample rate when audio streaming is stared -->
+        <key>IPOD_AUDIO_DEFAULT_SAMPLE</key>
+        <value type="integer">44100</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Audio server name -->
+        <key>IPOD_AUDIO_SERVER_NAME</key>
+        <value type="string">pai_com_server</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_AUDIO_THREAD_SIZE</key>
+        <value type="integer">16384</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CTRL_READ_RETRIES</key>
+        <value type="integer">5</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CTRL_THREAD_SIZE</key>
+        <value type="integer">16384</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CTRL_READER_PRIO</key>
+        <value type="integer">60</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CTRL_WORKER_THREAD_SIZE</key>
+        <value type="integer">16384</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CTRL_WORKER_PRIO</key>
+        <value type="integer">60</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CTRL_WORKER_FLAG_NAME</key>
+        <value type="string">ADipWrkFlg</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CTRL_READER_FLAG_NAME</key>
+        <value type="string">ADipRdrFlg</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CTRL_WAIT_TIMEOUT</key>
+        <value type="integer">60000</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Product name of Application -->
+        <key>IPOD_TOKEN_ACCINFO_NAME</key>
+        <value type="string">ADIT_GEN3</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Firmware version of product -->
+        <key>IPOD_TOKEN_ACCINFO_FWVER</key>
+        <value type="string">1</value>
+        <value type="string">0</value>
+        <value type="string">0</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Hardware version of product -->
+        <key>IPOD_TOKEN_ACCINFO_HWVER</key>
+        <value type="string">1</value>
+        <value type="string">0</value>
+        <value type="string">3</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Manufacture of product -->
+        <key>IPOD_TOKEN_ACCINFO_MANUFACTURE</key>
+        <value type="string">ADIT</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Model number of product -->
+        <key>IPOD_TOKEN_ACCINFO_MODEL_NUM</key>
+        <value type="string">20120508</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Serial number of product -->
+        <key>IPOD_TOKEN_ACCINFO_SERIAL_NUM</key>
+        <value type="string">20120508</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Device Detection name -->
+        <key>IPOD_DETECTION_SERVER_NAME</key>
+        <value type="string">dev_detect_server</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Authentication server name -->
+        <!-- This is no longer available -->
+        <key>IPOD_AUTH_SERVER_NAME</key>
+        <value type="string">ipod-aut_com_server</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- HID server name -->
+        <!-- This is no longer available -->
+        <key>IPOD_DATA_COM_SERVER_NAME</key>
+        <value type="string">ipod-hid_com_server</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_SYSTEM_SUPPORT_MASK</key>
+        <value type="integer">0x00</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IOS_APP_ATTR_MASK</key>
+        <value type="integer">0x00</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_RF_CERTIFICATIONS</key>
+        <value type="integer">0x00</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_DEFAULT_VIDEO_SETTING_MASK</key>
+        <value type="integer">0</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_GPS_ASSIST_SUPPORT</key>
+        <value type="integer">0</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_GPS_SATELITE_MAX_REFLESH</key>
+        <value type="integer">0</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_GPS_SATELITE_RECOMMNED_REFLESH</key>
+        <value type="integer">0</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_CORE_SERVER_NAME</key>
+        <value type="integer">0</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_TAG_MAJOR</key>
+        <value type="string">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_TAG_MINOR</key>
+        <value type="string">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_TAG_MANID</key>
+        <value type="string">17</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_TAG_MANNAME</key>
+        <value type="string">Acme</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_TAG_DEVNAME</key>
+        <value type="string">AC-HDR100</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_TAG_MARKED</key>
+        <value type="string">MarkedTracks</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IOSAPP_NAME</key>
+        <value type="string">9K5Q52P988</value>
+        <value type="string">45968V2XBG</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IOSAPP_URL</key>
+        <value type="string">jp.co.denso.NaviCon</value>
+        <value type="string">com.tweddletech.pcf.enform.v1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IOSAPP_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Maximum number of database which can be saved -->
+        <key>IPOD_IAP2_MAX_DATABASE_NUM</key>
+        <value type="integer">3</value>
+    </cfgitem>
+    <cfgitem>
+        <!-- Prefix of location for file of database -->
+        <!-- Local Device media library database file will be saved as PREFIX/ipp_x.db -->
+        <!-- Apple Music Radio media library database file will be saved as PREFIX/ipp_amr_x.db -->
+        <key>IPOD_IAP2_DATABASE_LOCATION_PREFIX</key>
+        <value type="string">/tmp/</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFG_AVAILABLE_CURRENT</key>
+        <value type="integer">2100</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFG_BATTERY_SHOULD_CHARGE</key>
+        <value type="integer">0</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFG_MAXIMUM_CURRENT_DRWAN_FROM_ACCESSORY</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFIG_BATTERY_WILL_CHARGE</key>
+        <value type="integer">0</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFIG_POWER_MODE</key>
+        <value type="integer">0</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFIG_FILE_XFER_STREAM</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFIG_EAP_SUPPORT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_FILE_XFER_SUPPORT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFG_TRANS_USB_OTG_GPIO_POWER_AI</key>
+        <value type="string">425</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_CONFG_TRANS_USB_OTG_GPIO_POWER_SD</key>
+        <value type="string">86</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_MAXIMUM_CURRENT_DRAWN_FROM_DEVICE</key>
+        <value type="string">86</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_PREFFERD_APP_BUNDLE</key>
+        <value type="string">name</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_CURRENT_LANGUAGE</key>
+        <value type="string">ja</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_SUPPORTED_LANGUAGE</key>
+        <value type="string">ja</value>
+        <value type="string">en</value>
+        <value type="string">de</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_LANGUAGE_COUNT</key>
+        <value type="integer">3</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_SUPPORT_SAMPLE_RATE</key>
+        <value type="integer">32000</value>
+        <value type="integer">44100</value>
+        <value type="integer">48000</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_SAMPLE_RATE_COUNT</key>
+        <value type="integer">3</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_BT_MAC_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_BT_MAC</key>
+        <value type="string">000102030405</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_VENDOR_ID</key>
+        <value type="string">44311</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_PRODUCT_ID</key>
+        <value type="string">1111</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_BCD_DEVICE</key>
+        <value type="string">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ACC_INFO_PRODUCT_PLAN_UUID</key>
+        <value type="string">1234abcd</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_LOCINFO_NMEA_TYPE</key>
+        <value type="string">GPGGA</value>
+        <value type="string">GPRMC</value>
+        <value type="string">GPGSV</value>
+        <value type="string">PASCD</value>
+        <value type="string">PAGCD</value>
+        <value type="string">PAACD</value>
+        <value type="string">GPHDT</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_LOCINFO_NMEA_TYPE_COUNT</key>
+        <value type="integer">7</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_VINFO_ENGINE_TYPE</key>
+        <value type="string">Gasoline</value>
+        <value type="string">Diesel</value>
+        <value type="string">Electric</value>
+        <value type="string">CNG</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_VINFO_ENGINE_COUNT</key>
+        <value type="integer">4</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_VINFO_DISPLAY_NAME</key>
+        <value type="string">ADIT_DISPLAY</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_VSTATUS_TYPE</key>
+        <value type="string">Range</value>
+        <value type="string">OutsideTemperature</value>
+        <value type="string">RangeWarning</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_VSTATUS_TYPE_COUNT</key>
+        <value type="integer">3</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_POWER_SUPPLY_CURRENT</key>
+        <value type="integer">1000</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_POWER_SUPPLY_CHARGE_BUTTERY</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_ID</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_ID_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_NAME</key>
+        <value type="string">Route Guidance Display Name</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_NAME_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_CURRENT_ROADNAME_LEN</key>
+        <value type="integer">256</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_CURRENT_ROADNAME_LEN_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_DESTINATION_NAME_LEN</key>
+        <value type="integer">256</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_DESTINATION_NAME_LEN_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_AFTER_MANEUVER_ROAD_NAME_LEN</key>
+        <value type="integer">256</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_AFTER_MANEUVER_ROAD_NAME_LEN_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_MANEUVER_DESCRIPTION_LEN</key>
+        <value type="integer">512</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_MANEUVER_DESCRIPTION_LEN_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_GUIDANCE_MANEUVER_CAPACITY</key>
+        <value type="integer">20</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_GUIDANCE_MANEUVER_CAPACITY_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_LANE_DESCRIPTION_LEN</key>
+        <value type="integer">15</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_LANE_DESCRIPTION_LEN_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_LANE_STORAGE_CAPACITY</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_MAX_LANE_STORAGE_CAPACITY_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+    <cfgitem>
+        <key>IPOD_IAP2_ROUTE_GUID_COMP_COUNT</key>
+        <value type="integer">1</value>
+    </cfgitem>
+</ipodplayercfg>
+

@@ -1,0 +1,8 @@
+glibc-external (>= 2.24-2016.11-25)
+libelf (>= 0.148)
+libstdc++ (>= 6.2.0-2016.11-25)
+libgcc-external (>= 6.2.0-2016.11-25)
+json-c (>= 0.12)
+ncurses-libpanel (>= 6.0+20160625)
+ncurses-libncurses (>= 6.0+20160625)
+ncurses-libtinfo (>= 6.0+20160625)

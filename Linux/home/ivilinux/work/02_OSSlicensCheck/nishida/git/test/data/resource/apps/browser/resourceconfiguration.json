@@ -1,0 +1,76 @@
+{
+  "config_appl": "browser",
+  "version": "0.1.0",
+  "resources": {
+    "dataLoc/fileE.txt": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "dataLoc/fileF.txt": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "dataLoc/fileD.txt": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "dataLoc/fileG.txt": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "dataLoc/fileA.txt": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "dataLoc/fileB.txt": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "dataLoc/fileC.txt": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    }
+  }
+}

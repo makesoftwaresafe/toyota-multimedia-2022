@@ -1,0 +1,46 @@
+state.broxtongpmrb {
+	control.3 {
+		iface MIXER
+		name 'Speaker Switch'
+		value true
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.22 {
+		iface MIXER
+		name entertainment_main
+		value.0 156
+		value.1 156
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			tlv '0000000100000008ffffec1400000014'
+			dbmin -5100
+			dbmax 0
+			dbvalue.0 -1980
+			dbvalue.1 -1980
+		}
+	}
+	control.23 {
+		iface MIXER
+		name interrupt
+		value.0 156
+		value.1 156
+		comment {
+			access 'read write user'
+			type INTEGER
+			count 2
+			range '0 - 255'
+			tlv '0000000100000008ffffec1400000014'
+			dbmin -5100
+			dbmax 0
+			dbvalue.0 -1980
+			dbvalue.1 -1980
+		}
+	}
+}

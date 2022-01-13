@@ -1,0 +1,4 @@
+DEBUG: Executing python function do_patch
+DEBUG: Executing python function patch_do_patch
+DEBUG: Python function patch_do_patch finished
+DEBUG: Python function do_patch finished

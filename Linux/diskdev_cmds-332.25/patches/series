@@ -1,0 +1,13 @@
+00-create_makefiles.patch -p1
+10-linux_specific_code.patch -p1
+20-apple_specific_files.patch -p1
+25-64-bit-fix.patch -p1
+30-formatting_strings.patch -p1
+40-printf_types.patch -p1
+50-typo-new_fs-manpage.diff -p1
+60-hfs-wrapper-boot-in-usr-share.diff -p1
+70-diskdev_cmds_system_check-332.14.patch -p1
+80-fix_manpages.patch -p1
+90-rename_dprintf.patch -p1
+91-remove-nils.patch -p1
+92-fix-types.patch -p1

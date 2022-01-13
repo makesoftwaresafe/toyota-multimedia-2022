@@ -1,0 +1,36 @@
+#!/bin/sh
+# ADIT smoke test IPOD-PLAYER for LTP
+##################################################
+
+set -o nounset
+
+export TST_TOTAL=1
+export TCID="ipod-smoketest_01"
+export TST_COUNT=0
+
+
+tst_resm TINFO "starting IPOD"
+
+systemctl stop ipod-player.service
+sleep 1
+
+I=0
+
+systemctl start ipod-player.service
+sleep 1
+
+@CMAKE_INSTALL_PREFIX@/bin/ipod-sample_app
+RET=$?
+tst_resm TINFO "--- result of run #$I : $RET -------------------------------"
+
+systemctl stop ipod-player.service
+sleep 1
+
+if [ "$RET" != "0" ]; then
+	tst_resm TFAIL "<---Failed --->"
+	exit 1
+else
+	tst_resm TPASS "<----Test completed succesfully-------->"
+	exit 0
+fi
+

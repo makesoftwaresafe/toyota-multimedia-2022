@@ -1,0 +1,10 @@
+.deps
+.libs
+Makefile
+Makefile.in
+test-basic
+test-emit
+test-parse
+test-yts
+*.log
+*.trs

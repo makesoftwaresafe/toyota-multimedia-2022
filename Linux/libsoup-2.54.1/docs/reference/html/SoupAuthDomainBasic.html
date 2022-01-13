@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SoupAuthDomainBasic: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch02.html" title="Core API">
+<link rel="prev" href="SoupAuthDomain.html" title="SoupAuthDomain">
+<link rel="next" href="SoupAuthDomainDigest.html" title="SoupAuthDomainDigest">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#SoupAuthDomainBasic.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#SoupAuthDomainBasic.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#SoupAuthDomainBasic.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="SoupAuthDomain.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="SoupAuthDomainDigest.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="SoupAuthDomainBasic"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="SoupAuthDomainBasic.top_of_page"></a>SoupAuthDomainBasic</span></h2>
+<p>SoupAuthDomainBasic — Server-side "Basic" authentication</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupAuthDomain.html" title="SoupAuthDomain"><span class="returnvalue">SoupAuthDomain</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuthDomainBasic.html#soup-auth-domain-basic-new" title="soup_auth_domain_basic_new ()">soup_auth_domain_basic_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasicAuthCallback" title="SoupAuthDomainBasicAuthCallback ()">*SoupAuthDomainBasicAuthCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupAuthDomainBasic.html#soup-auth-domain-basic-set-auth-callback" title="soup_auth_domain_basic_set_auth_callback ()">soup_auth_domain_basic_set_auth_callback</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasic--auth-callback" title="The “auth-callback” property">auth-callback</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
+<td class="property_name"><a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasic--auth-data" title="The “auth-data” property">auth-data</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasic-struct" title="SoupAuthDomainBasic">SoupAuthDomainBasic</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuthDomainBasic.html#SOUP-AUTH-DOMAIN-BASIC-AUTH-CALLBACK:CAPS" title="SOUP_AUTH_DOMAIN_BASIC_AUTH_CALLBACK">SOUP_AUTH_DOMAIN_BASIC_AUTH_CALLBACK</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupAuthDomainBasic.html#SOUP-AUTH-DOMAIN-BASIC-AUTH-DATA:CAPS" title="SOUP_AUTH_DOMAIN_BASIC_AUTH_DATA">SOUP_AUTH_DOMAIN_BASIC_AUTH_DATA</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> <a class="link" href="SoupAuthDomain.html" title="SoupAuthDomain">SoupAuthDomain</a>
+        <span class="lineart">╰──</span> SoupAuthDomainBasic
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.description"></a><h2>Description</h2>
+<p><a class="link" href="SoupAuthDomainBasic.html" title="SoupAuthDomainBasic"><span class="type">SoupAuthDomainBasic</span></a> handles the server side of HTTP "Basic" (ie,
+cleartext password) authentication.</p>
+</div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-auth-domain-basic-new"></a><h3>soup_auth_domain_basic_new ()</h3>
+<pre class="programlisting"><a class="link" href="SoupAuthDomain.html" title="SoupAuthDomain"><span class="returnvalue">SoupAuthDomain</span></a> *
+soup_auth_domain_basic_new (<em class="parameter"><code>const <span class="type">char</span> *optname1</code></em>,
+                            <em class="parameter"><code>...</code></em>);</pre>
+<p>Creates a <a class="link" href="SoupAuthDomainBasic.html" title="SoupAuthDomainBasic"><span class="type">SoupAuthDomainBasic</span></a>. You must set the
+<a class="link" href="SoupAuthDomain.html#SOUP-AUTH-DOMAIN-REALM:CAPS" title="SOUP_AUTH_DOMAIN_REALM"><code class="literal">SOUP_AUTH_DOMAIN_REALM</code></a> parameter, to indicate the realm name to be
+returned with the authentication challenge to the client. Other
+parameters are optional.</p>
+<div class="refsect3">
+<a name="id-1.3.4.9.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>optname1</p></td>
+<td class="parameter_description"><p>name of first option, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>option name/value pairs</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.4.9.2.6"></a><h4>Returns</h4>
+<p> the new <a class="link" href="SoupAuthDomain.html" title="SoupAuthDomain"><span class="type">SoupAuthDomain</span></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupAuthDomainBasicAuthCallback"></a><h3>SoupAuthDomainBasicAuthCallback ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="c_punctuation">(</span>*SoupAuthDomainBasicAuthCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="SoupAuthDomain.html" title="SoupAuthDomain"><span class="type">SoupAuthDomain</span></a> *domain</code></em>,
+                                    <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                    <em class="parameter"><code>const <span class="type">char</span> *username</code></em>,
+                                    <em class="parameter"><code>const <span class="type">char</span> *password</code></em>,
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Callback used by <a class="link" href="SoupAuthDomainBasic.html" title="SoupAuthDomainBasic"><span class="type">SoupAuthDomainBasic</span></a> for authentication purposes.
+The application should verify that <em class="parameter"><code>username</code></em>
+ and <em class="parameter"><code>password</code></em>
+ and valid
+and return <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</p>
+<p>If you are maintaining your own password database (rather than
+using the password to authenticate against some other system like
+PAM or a remote server), you should make sure you know what you are
+doing. In particular, don't store cleartext passwords, or
+easily-computed hashes of cleartext passwords, even if you don't
+care that much about the security of your server, because users
+will frequently use the same password for multiple sites, and so
+compromising any site with a cleartext (or easily-cracked) password
+database may give attackers access to other more-interesting sites
+as well.</p>
+<div class="refsect3">
+<a name="id-1.3.4.9.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>domain</p></td>
+<td class="parameter_description"><p>the domain</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the message being authenticated</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>username</p></td>
+<td class="parameter_description"><p>the username provided by the client</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>password</p></td>
+<td class="parameter_description"><p>the password provided by the client</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data passed to <a class="link" href="SoupAuthDomainBasic.html#soup-auth-domain-basic-set-auth-callback" title="soup_auth_domain_basic_set_auth_callback ()"><code class="function">soup_auth_domain_basic_set_auth_callback()</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.4.9.3.7"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>username</code></em>
+and <em class="parameter"><code>password</code></em>
+are valid</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-auth-domain-basic-set-auth-callback"></a><h3>soup_auth_domain_basic_set_auth_callback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_auth_domain_basic_set_auth_callback
+                               (<em class="parameter"><code><a class="link" href="SoupAuthDomain.html" title="SoupAuthDomain"><span class="type">SoupAuthDomain</span></a> *domain</code></em>,
+                                <em class="parameter"><code><a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasicAuthCallback" title="SoupAuthDomainBasicAuthCallback ()"><span class="type">SoupAuthDomainBasicAuthCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> dnotify</code></em>);</pre>
+<p>Sets the callback that <em class="parameter"><code>domain</code></em>
+ will use to authenticate incoming
+requests. For each request containing authorization, <em class="parameter"><code>domain</code></em>
+ will
+invoke the callback, and then either accept or reject the request
+based on <em class="parameter"><code>callback</code></em>
+'s return value.</p>
+<p>You can also set the auth callback by setting the
+<a class="link" href="SoupAuthDomainBasic.html#SOUP-AUTH-DOMAIN-BASIC-AUTH-CALLBACK:CAPS" title="SOUP_AUTH_DOMAIN_BASIC_AUTH_CALLBACK"><code class="literal">SOUP_AUTH_DOMAIN_BASIC_AUTH_CALLBACK</code></a> and
+<a class="link" href="SoupAuthDomainBasic.html#SOUP-AUTH-DOMAIN-BASIC-AUTH-DATA:CAPS" title="SOUP_AUTH_DOMAIN_BASIC_AUTH_DATA"><code class="literal">SOUP_AUTH_DOMAIN_BASIC_AUTH_DATA</code></a> properties, which can also be
+used to set the callback at construct time.</p>
+<div class="refsect3">
+<a name="id-1.3.4.9.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>domain</p></td>
+<td class="parameter_description"><p>the domain</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data to pass to <em class="parameter"><code>auth_callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>dnotify</p></td>
+<td class="parameter_description"><p>destroy notifier to free <em class="parameter"><code>user_data</code></em>
+when <em class="parameter"><code>domain</code></em>
+is destroyed</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupAuthDomainBasic-struct"></a><h3>SoupAuthDomainBasic</h3>
+<pre class="programlisting">typedef struct _SoupAuthDomainBasic SoupAuthDomainBasic;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-AUTH-DOMAIN-BASIC-AUTH-CALLBACK:CAPS"></a><h3>SOUP_AUTH_DOMAIN_BASIC_AUTH_CALLBACK</h3>
+<pre class="programlisting">#define SOUP_AUTH_DOMAIN_BASIC_AUTH_CALLBACK "auth-callback"
+</pre>
+<p>Alias for the <a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasic--auth-callback" title="The “auth-callback” property"><span class="type">“auth-callback”</span></a> property.
+(The <a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasicAuthCallback" title="SoupAuthDomainBasicAuthCallback ()"><span class="type">SoupAuthDomainBasicAuthCallback</span></a>.)</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-AUTH-DOMAIN-BASIC-AUTH-DATA:CAPS"></a><h3>SOUP_AUTH_DOMAIN_BASIC_AUTH_DATA</h3>
+<pre class="programlisting">#define SOUP_AUTH_DOMAIN_BASIC_AUTH_DATA     "auth-data"
+</pre>
+<p>Alias for the <a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasic--auth-data" title="The “auth-data” property"><span class="type">“auth-data”</span></a> property.
+(The data to pass to the <a class="link" href="SoupAuthDomainBasic.html#SoupAuthDomainBasicAuthCallback" title="SoupAuthDomainBasicAuthCallback ()"><span class="type">SoupAuthDomainBasicAuthCallback</span></a>.)</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupAuthDomainBasic.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="SoupAuthDomainBasic--auth-callback"></a><h3>The <code class="literal">“auth-callback”</code> property</h3>
+<pre class="programlisting">  “auth-callback”            <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Password-checking callback.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupAuthDomainBasic--auth-data"></a><h3>The <code class="literal">“auth-data”</code> property</h3>
+<pre class="programlisting">  “auth-data”                <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
+<p>Data to pass to authentication callback.</p>
+<p>Flags: Read / Write</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

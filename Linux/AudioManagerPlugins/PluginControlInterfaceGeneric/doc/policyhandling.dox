@@ -1,0 +1,162 @@
+/**
+
+\page policyhandling Flowchart of Policy Handling
+
+
+    This sections covers the way policies are evaluated, the detailed syntax of the writing policies
+ is covered in a separate section. A list of policies is present in a configuration , on start up 
+ configuration is parsed and the list of policy is stored inside Policy engine. The policy consist 
+ of trigger and process. Policy engine outputs a list of actions for a given trigger 
+ based on conditions.In order to realize the desired use cases, it is important to  understand 
+ the logic of policy evaluation.
+    The below diagram shows the flow of policy evaluation
+\image html PolicyEvaluation.png
+
+Example of use case realization:
+    Let us assume a system with phone and mediaplayer as audio source. The use case
+which needs to be realized is, while the phone is active mediaplayer should not be active and after
+the phone call is over the interrupted mediaplayer should resume.
+
+ 
+    pseudo code for the use case is as below
+\htmlonly
+    <div class="fragment"><pre class="fragment">
+    <font color="#0066FF">
+    if(trigger == connection request)
+    {</font><font color="#B30085">
+        if(requesting source == phone && isConnected(mediaplayer))</font> // 1<font color="#B30085">
+        {</font><font color="#66FF33">
+            action.add(push mediaplayer connection);</font><font color="#B30085">
+        }</font> <font color="#B30085">
+        if(requesting source == mediaplayer && isConnected(phone))</font> // 2<font color="#B30085">
+        {</font><font color="#66FF33">
+            action.add(push mediaplayer connection);</font><font color="#FF0000">
+            return;</font><font color="#B30085">
+        }</font><font color="#66FF33">
+        action.add(connect requesting connection)</font> // 3<font color="#0066FF"> 
+    }</font><font color="#0066FF">
+    if(trigger == disconnection request) 
+    {</font><font color="#66FF33">
+        action.add(disconnect requesting connection)</font> // 4<font color="#B30085">
+        if(requesting source == phone)</font> // 5<font color="#B30085">
+        {</font><font color="#66FF33">
+            action.add(pop mediaplayer connection);</font><font color="#B30085">
+        }</font><font color="#0066FF">
+    }</font>
+    </pre></div>
+\endhtmlonly
+
+    The above can be written in generic controller configuration as
+\htmlonly
+<div class="fragment"><pre class="fragment">
+&lt;policy&gt;<font color="#0066FF">
+    &lt;triggers&gt;USER_CONNECTION_REQUEST&lt;/triggers&gt;</font>
+    &lt;process&gt;
+        &lt;name&gt;1&lt;/name&gt;<font color="#B30085">
+        &lt;condition&gt;name(SOURCE, REQUESTING) EQ "phone"&lt;/condition&gt;
+        &lt;condition&gt;connectionState(CONNECTIONOFSOURCE, "mediaplayer") INC CS_CONNECTED&lt;/condition&gt;</font><font color="#66FF33">
+        &lt;action&gt;
+            &lt;type&gt;ACTION_PUSH&lt;/type&gt;
+            &lt;param&gt;
+                &lt;sourceName&gt;"mediaplayer"&lt;/sourceName&gt;
+                &lt;connectionState&gt;CS_CONNECTED&lt;/connectionState&gt;
+            &lt;/param&gt;
+        &lt;/action&gt;</font>
+    &lt;/process&gt;
+    &lt;process&gt;
+        &lt;name&gt;2&lt;/name&gt;<font color="#B30085">
+        &lt;condition&gt;name(SOURCE, REQUESTING) EQ "mediaplayer"&lt;/condition&gt;
+        &lt;condition&gt;connectionState(CONNECTIONOFSOURCE, "phone") INC CS_CONNECTED&lt;/condition&gt;</font><font color="#66FF33">
+        &lt;action&gt;
+            &lt;type&gt;ACTION_PUSH&lt;/type&gt;
+            &lt;param&gt;
+                &lt;sourceName&gt;"mediaplayer"&lt;/sourceName&gt;
+            &lt;/param&gt;
+        &lt;/action&gt;</font><font color="#FF0000">
+        &lt;break&gt;TRUE&lt;/break&gt;</font>
+    &lt;/process&gt;
+    &lt;process&gt;
+        &lt;name&gt;3&lt;/name&gt;<font color="#66FF33">
+        &lt;action&gt;
+            &lt;type&gt;ACTION_MUTE&lt;/type&gt;
+            &lt;param&gt;
+                &lt;sinkName&gt;REQUESTING&lt;/sinkName&gt;
+            &lt;/param&gt;
+        &lt;/action&gt;
+        &lt;action&gt;
+            &lt;type&gt;ACTION_CONNECT&lt;/type&gt;
+            &lt;param&gt;
+                &lt;sourceName&gt;REQUESTING&lt;/className&gt;
+                &lt;sinkName&gt;REQUESTING&lt;/sinkName&gt;
+            &lt;/param&gt;
+        &lt;/action&gt;
+        &lt;action&gt;
+            &lt;type&gt;ACTION_UNMUTE&lt;/type&gt;
+            &lt;param&gt;
+                &lt;sinkName&gt;REQUESTING&lt;/sinkName&gt;
+            &lt;/param&gt;
+        &lt;/action&gt;</font>
+    &lt;/process&gt;
+&lt;/policy&gt;
+&lt;policy&gt;<font color="#0066FF">
+    &lt;triggers&gt;USER_DISCONNECTION_REQUEST&lt;/triggers&gt;</font>
+    &lt;process&gt;
+        &lt;name&gt;4&lt;/name&gt;<font color="#66FF33">
+        &lt;action&gt;
+            &lt;type&gt;ACTION_DISCONNECT&lt;/type&gt;
+            &lt;param&gt;
+                &lt;sourceName&gt;REQUESTING&lt;/sourceName&gt;
+                &lt;sinkName&gt;REQUESTING&lt;/sinkName&gt;
+            &lt;/param&gt;
+        &lt;/action&gt;</font>
+    &lt;/process&gt;
+    &lt;process&gt;
+        &lt;name&gt;5&lt;/name&gt;<font color="#B30085">
+        &lt;condition&gt;name(SOURCE, REQUESTING) EQ "phone"&lt;/condition&gt;</font><font color="#66FF33">
+        &lt;action&gt;
+            &lt;type&gt;ACTION_POP&lt;/type&gt;
+            &lt;param&gt;
+                &lt;sourceName&gt;"mediaplayer"&lt;/sourceName&gt;
+            &lt;/param&gt;
+        &lt;/action&gt;</font>
+    &lt;/process&gt;
+&lt;/policy&gt;
+
+</pre></div>
+
+\endhtmlonly
+
+    The tag <i>'name'</i> is used to give some identifier to the process, in this example number 1-5 are 
+used to identify the process.
+
+    consider the scenario, when Phone connection is requested when mediaplayer is already active.<BR>
+1. The list of all the process which matches the trigger are process 1,2 and 3 above.<BR>
+2. The policy engine would start executing the process in this order<BR>
+    - conditions for Process 1 and 3 would evaluate to true
+
+The resulting set of actions would be <BR>
+    - push mediaplayer connection<BR>
+    - mute phone<BR>
+    - connect phone connection<BR>
+    - unmute phone<BR>
+
+    consider the scenario, when media connection is requested when phone is already active.<BR>
+1. The list of all the process which matches the trigger are, process 1,2 and 3 above.<BR>
+2. The policy engine would start executing the process in this order<BR>
+    - conditions for Process 2 would evaluate to true and since it has stop on evaluation no further conditions are
+    evaluated.<BR>
+
+The resulting set of actions would be <BR>
+    - push mediaplayer connection<BR>
+
+    consider the scenario, when media connection is requested and no phone connection present<BR>
+1. The list of all the process which matches the trigger are, process 1,2 and 3 above.<BR>
+2. The policy engine would start executing the process in this order<BR>
+    - conditions for Process 3 would evaluate to true.<BR>
+
+The resulting set of actions would be <BR>
+    - mute phone<BR>
+    - connect mediaPlayer connection<BR>
+    - unmute phone<BR>
+
+*/

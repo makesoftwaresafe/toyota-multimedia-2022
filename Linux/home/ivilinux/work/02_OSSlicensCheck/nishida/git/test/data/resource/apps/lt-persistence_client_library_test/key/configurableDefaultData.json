@@ -1,0 +1,30 @@
+{
+  "config_appl": "lt-persistence_client_library_test",
+  "version": "0.1.0",
+  "resources": {
+    "utf8String": {
+      "size": "20",
+      "data": "537472696E6720C2B05EC2B020C3912074657874"
+    },
+    "statusHandle/confdefault01": {
+      "size": "16",
+      "data": "434f4e465f44454641554c545f303121"
+    },
+    "69": {
+      "size": "4",
+      "data": "40414243"
+    },
+    "statusHandle/confdefault02": {
+      "size": "16",
+      "data": "434f4e465f44454641554c545f303221"
+    },
+    "statusHandle/writeconfdefault02": {
+      "size": "16",
+      "data": "434f4e465f44454641554c545f303121"
+    },
+    "statusHandle/writeconfdefault01": {
+      "size": "16",
+      "data": "434f4e465f44454641554c545f303121"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+<project name="BeeCrypt Java" default="dist" basedir=".">
+  <property name="src" location="@srcdir@/src"/>
+  <property name="build" location="@builddir@/build"/>
+
+  <path id="classpath.base"/>
+  <path id="classpath.onewire">
+    <pathelement location="${basedir}/OneWireAPI.jar"/>
+    <path refid="classpath.base"/>
+  </path>
+  <path id="classpath.jib">
+    <pathelement location="${basedir}/iButton52.jar"/>
+    <pathelement location="${basedir}/JiB.jar"/>
+    <path refid="classpath.base"/>
+  </path>
+  <path id="classpath.test">
+    <pathelement location="@builddir@/beecrypt-java.jar"/>
+    <pathelement location="@builddir@/beecrypt-test.jar"/>
+    <path refid="classpath.base"/>
+  </path>
+
+  <target name="init">
+    <mkdir dir="${build}"/>
+    <mkdir dir="${build}/javacard/ibutton"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <javac srcdir="${src}" destdir="${build}" includes="beecrypt/**" excludes="beecrypt/ibutton/**">
+     <classpath refid="classpath.base"/>
+    </javac>
+    <javac srcdir="${src}" destdir="${build}" includes="beecrypt/ibutton/**">
+     <classpath refid="classpath.onewire"/>
+    </javac>
+  </target>
+
+  <target name="compile-ibutton" depends="init">
+    <javac srcdir="${src}/javacard/ibutton" destdir="${build}/javacard/ibutton" source="1.3" target="1.1">
+     <classpath refid="classpath.jib"/>
+    </javac>
+  </target>
+
+  <target name="dist" depends="compile">
+    <jar jarfile="@builddir@/beecrypt-java.jar" basedir="${build}" includes="beecrypt/**" excludes="beecrypt/tests/*,beecrypt/ibutton/*"/>
+    <jar jarfile="@builddir@/beecrypt-ibutton.jar" basedir="${build}" includes="beecrypt/ibutton/**"/>
+  </target>
+
+  <target name="dist-ibutton" depends="compile-ibutton">
+    <jar jarfile="@builddir@/beecrypt-ibutton-applet.jar" basedir="${build}/javacard/ibutton"/>
+  </target>
+
+  <target name="test" depends="dist">
+    <jar jarfile="@builddir@/beecrypt-test.jar" basedir="${build}" includes="beecrypt/tests/*.class"/>
+    <junit printsummary="on" fork="yes">
+      <classpath refid="classpath.test"/>
+      <test name="beecrypt.tests.SHA256Test"/>
+      <test name="beecrypt.tests.AESTest"/>
+    </junit>
+  </target>
+
+  <target name="headers" depends="dist">
+    <javah classpath="@builddir@/beecrypt-java.jar">
+       <class name="beecrypt.provider.AES"/>
+       <class name="beecrypt.provider.MD4"/>
+       <class name="beecrypt.provider.MD5"/>
+       <class name="beecrypt.provider.SHA1"/>
+       <class name="beecrypt.provider.SHA224"/>
+       <class name="beecrypt.provider.SHA256"/>
+       <class name="beecrypt.provider.SHA384"/>
+       <class name="beecrypt.provider.SHA512"/>
+       <class name="beecrypt.provider.HMACMD5"/>
+       <class name="beecrypt.provider.HMACSHA1"/>
+       <class name="beecrypt.provider.HMACSHA256"/>
+       <class name="beecrypt.provider.HMACSHA384"/>
+       <class name="beecrypt.provider.HMACSHA512"/>
+       <class name="beecrypt.provider.DHKeyPairGenerator"/>
+       <class name="beecrypt.provider.RSAKeyPairGenerator"/>
+    </javah>
+  </target>
+
+  <target name="clean">
+    <delete dir="${build}"/>
+  </target>
+</project>

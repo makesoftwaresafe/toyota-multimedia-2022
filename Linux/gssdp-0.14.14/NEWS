@@ -1,0 +1,650 @@
+0.14.14
+=======
+
+- Fix warning if the IP address is not known.
+- Fix issue with discovery.
+
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=760702
+
+All contributors to this release:
+ - Jens Georg <mail@jensge.org>
+ - Philip Withnall <philip@tecnocode.co.uk>
+
+0.14.13
+=======
+
+- Make "host-ip" of GSSDPClient a construction property to give the caller the
+  chance to bypass the IP autodetection during client creation.
+
+All contributors to this release:
+ - Jens Georg <mail@jensge.org>
+
+0.14.12.1
+=========
+
+- Update m4 macros from autoconf-archive.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=758778
+
+All contributors to this release:
+ - Jens Georg <mail@jensge.org>
+
+0.14.12
+=======
+
+- Fix issues with names of loopback device on *BSD.
+- Move gtest code one level up and examples to their own folder.
+- Fix a possible NULL derefence in gssdp-device-sniffer.
+- Remove use of gnome-common for building.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=743070
+
+All contributors to this release:
+ - Jens Georg <mail@jensge.org>
+ - Thomas Klausner <tk@giga.or.at>
+
+0.14.11
+=======
+
+- Fix memory leak in GSSDPClient.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=737870
+
+All contributors to this release:
+ - Richard Röjfors <richard@puffinpack.se>
+ - Jens Georg <mail@jensge.org>
+
+0.14.10
+=======
+
+- DOAP fixes
+- Fix SSDP when running on the same host.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=733851
+
+All contributors to this release:
+ - Olav Vitters <olav@vitters.nl>
+ - Jussi Kukkonen <jku@goto.fi>
+ - Jens Georg <mail@jensge.org>
+ - Andre Klapper <a9016009@gmx.de>
+
+0.14.9
+======
+
+- Properly set max age property.
+- Some gtk-doc fixes.
+- Only consider "200 OK" a proper response for SSDP requests.
+- Remove a scary warning.
+- Fix source packet filtering.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=697084
+ - https://bugzilla.gnome.org/show_bug.cgi?id=730946
+ - https://bugzilla.gnome.org/show_bug.cgi?id=733651
+
+All contributors to this release:
+ - Jussi Kukkonen <jku@goto.fi>
+ - Jens Georg <mail@jensge.org>
+ - Andre Moreira Magalhaes (andrunko) <andre.magalhaes@collabora.co.uk>
+
+0.14.8
+======
+
+- Recover from lost BYEBYE packets.
+- Some code clean-up.
+- Use GLib's multicast socket functions.
+- Fix compiling on mingw.
+- Don't abort if get_host_ip fails.
+- Fix an issue with unreffing GSources.
+- Fix build on some BSDs.
+- Use pktinfo on Linux to determine the source interface instead of relying on
+  netmasks.
+- Use strncpy() on interface names to not exceed ifrn_name length.
+- Documentation fixes.
+- Add support for vendor-specific headers in SSDP messages.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=678660
+ - https://bugzilla.gnome.org/show_bug.cgi?id=711320
+ - https://bugzilla.gnome.org/show_bug.cgi?id=724030
+ - https://bugzilla.gnome.org/show_bug.cgi?id=728871
+ - https://bugzilla.gnome.org/show_bug.cgi?id=728888
+ - https://bugzilla.gnome.org/show_bug.cgi?id=729613
+ - https://bugzilla.gnome.org/show_bug.cgi?id=730358
+
+All contributors to this release:
+ - Jens Georg <mail@jensge.org>
+ - Philip Withnall <philip.withnall@collabora.co.uk>
+ - Jens Georg <jensg@openismus.com>
+ - Riko Yamada <rik0yamada@yahoo.co.jp>
+ - Louis-Francis Ratté-Boulianne <lfrb@collabora.com>
+ - Branislav Katreniak <bkatreniak@nuvotechnologies.com>
+
+0.14.7
+======
+
+- Add mising function declaration.
+
+All contributors to this release:
+ - Jens Georg <jensg@openismus.com>
+
+0.14.6
+======
+
+- Add msearch-property to GSSDPClient to use a fixed UDP listening port.
+- Doc changes.
+- Marshalling fixes for GSSDPClient::message-received signal.
+
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=711015
+
+All contributors to this release:
+ - Jens Georg <jensg@openismus.com>
+
+0.14.5
+======
+
+- Port get_host_ip() to Android/Bionic.
+- Some more gtk-doc updates.
+- Fix some autoconf warnings.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=707161
+
+All contributors to this release:
+ - Jens Georg <jensg@openismus.com>
+ - Reynaldo H. Verdejo Pinochet <reynaldo@collabora.com>
+
+0.14.4
+======
+
+- Fix gtk-doc warnings.
+- Use SO_REUSEPORT on FreeBSD and Debian/kFreeBSD.
+- Fix discovery issue with some devices when g_get_application_name returned a
+  non-ASCII translated version of the name.
+- Fix a compiler warning about parentheses.
+- Use GNOME_COMPILE_WARNINGS for a safe set of strict compiler warnings.
+- Remove the use of INCLUDES which has been deprecated for a while.
+
+All contributors to this release:
+  Jens Georg <jensg@openismus.com>
+  Bastien Nocera <hadess@hadess.net>
+
+0.14.3
+======
+
+- Add --interface, -i commandline option to gssdp-device-sniffer to specify a
+  network interface for it to run on.
+- Update the GSSDP device sniffer to GTK+3.
+- Depend on vapigen >= 0.20 if gobject-introspection is 1.36 or newer.
+- Some minor UI fixes in gssdp-device-sniffer.
+- Make it compile with -Wall -Wextra.
+
+All contributors to this release:
+  Jens Georg <jensg@openismus.com>
+
+Changes in dependencies:
+  Gtk+ >= 3.0
+  vapigen >= 0.20 if gobject-introspection is >= 1.36
+
+0.14.2
+======
+
+- Fix memory leaks on initial interface search.
+- Make default interface detection a little bit smarter.
+
+All contributors to this release:
+  Krzesimir Nowak <krnowak@openismus.com>
+
+0.14.1
+======
+
+- Fix a crash on network announcements.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=694418
+
+All contributors to this release:
+  Krzesimir Nowak <krnowak@openismus.com>
+  Jussi Kukkonen <jussi.kukkonen@intel.com>
+
+0.14.0
+======
+- Don't use inet_netof to filter for correct source networks.
+- Add gssdp_resource_browser_rescan() function.
+- Allow custom TTL values for GSSDPClient.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=656406
+ - https://bugzilla.gnome.org/show_bug.cgi?id=668922
+ - https://bugzilla.gnome.org/show_bug.cgi?id=692516
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Krzesimir Nowak <krnowak@openismus.com>
+gnupnp <gnupnp@dorgby.net>
+
+0.13.2
+======
+- Fix implementation of GInitable such that _init() is callable multiple times
+  without breaking.
+- Really ignore invalid MAN headers.
+- Fix port reuse on NetBSD.
+- Allow non-sourcedir build from git.
+- Don't use -Werror by default.
+- Silence some deprecation warnings.
+
+Bugs fixed in this release:
+ - https://github.com/01org/media-service-upnp/issues/54
+ - https://bugzilla.gnome.org/show_bug.cgi?id=685949
+ - https://bugzilla.gnome.org/show_bug.cgi?id=682576
+ - https://bugzilla.gnome.org/show_bug.cgi?id=682308
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Theppitak Karoonboonyanan <thep@linux.thai.net>
+Matthias Drochner <M.Drochner@fz-juelich.de>
+
+0.13.1
+======
+- Run introspection in make distcheck.
+- Don't fail configure if vapigen could not be found.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=686039
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+
+0.13.0
+======
+
+Start of a new unstable cycle
+
+- Add/update license headers.
+- Fix pkg-config files to not leak libraries.
+- Add pkg-config name to GIR.
+
+All contributors to this release:
+
+Andreas Henriksson <andreas@fatal.se>
+Jens Georg <mail@jensge.org>
+
+Bugs addressed:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=685477
+
+0.12.2.1
+========
+- Add missing gssdp-1.0.deps file to tarball
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+
+Bugs fixed:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=682228
+
+0.12.2
+======
+- Functional tests.
+- Regression tests.
+- Ignore announcements from services with a lower version.
+- Make internal resource cache version-independant.
+- Update gtk-doc annotations.
+- Update pkg-config files.
+- Create Vala bindings from GIR.
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Stef Walter <stefw@gnome.org>
+Riko Yamada <rik0yamada@yahoo.co.jp>
+Mark Ryan <mark.d.ryan@intel.com>
+
+Bugs fixed:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=673150
+ - https://bugzilla.gnome.org/show_bug.cgi?id=678744
+ - https://bugzilla.gnome.org/show_bug.cgi?id=679781
+ - https://bugzilla.gnome.org/show_bug.cgi?id=682099
+ - https://bugzilla.gnome.org/show_bug.cgi?id=675355
+
+0.12.1
+======
+- Increase UDP buffer size.
+- Fix searching for an UDN that started with [a-f]
+
+All contributors to this release:
+
+Steffen Sledz <sledz@dresearch-fe.de>
+Jens Georg <mail@jensge.org>
+
+Bugs fixed:
+- https://bugzilla.gnome.org/show_bug.cgi?id=664177
+
+0.12.0
+======
+- Remove unnecessary and annoying deprecation warnings.
+- When sending duplicate announcement packets, always repeat complete sets.
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+
+Bugs fixed:
+- bgo#655900
+
+DLNA requirements addressed:
+- 7.2.4.3
+- 7.2.4.5
+
+0.11.2
+======
+- Modernize autotools.
+- Create .xz dist tarballs only.
+- Deprecate main_context argument and property. Use
+  g_main_context_push_thread_default() instead.
+- Fix warnings from gtk-doc.
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+
+Bugs fixed:
+- bgo#654733
+- bgo#654178
+- bgo#654177
+
+Changes in dependencies (when compiling from git):
+Autoconf >= 2.64
+Automake >= 1.11
+
+0.11.1
+======
+- Fullfill restrictions imposed by UPnP CTT 1.5.
+- Initial OpenBSD support.
+- Fix a crash on socket creation.
+- Implement DLNA guideline 7.2.3.4.
+- Copyright header clean-up.
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+
+Bugs fixed:
+- bgo#653733
+- bgo#653875
+- bgo#653857
+
+0.11.0
+======
+- Many fixes to discovery, discoverability and announcement.
+- Many introspection improvements such as:
+  * Classes that can throw an error on construction now implement
+    GInitable.
+  * Updated introspection annotations.
+- Code cleanup.
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Alberto Mardegan <mardy@users.sourceforge.net>
+Sven Neumann <s.neumann@raumfeld.com>
+
+0.10.0
+======
+
+- Improve interoperability by also announcing lower versions of the service.
+- More reliable announcements by announcing at least 3 times.
+- Drop ChangeLog in favour of git history.
+- Fix IPv6 network calculation.
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Luis de Bethencourt <luis@debethencourt.com>
+Jens Georg <mail@jensge.org>
+
+0.9.2
+=====
+
+- Fix a critical issue in event handling code introduced in last release.
+- Add 'network' property to GSSDPClient. By default its set to network IP
+  address of the interface the client is associated with.
+- Plug some leaks.
+
+Changes in dependencies:
+
+- Explicitly require libsoup >= 2.26.1.
+
+Bugs fixed in this release:
+
+2210 - Socket address leaking in socket_source_cb
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Sven Neumann <s.neumann@raumfeld.com>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.9.1
+=====
+
+Another micro release in the unstable 0.9.x branch that brings in all new
+fixes from the stable 0.8.2 release.
+
+All contributors to this release:
+
+Sven Neumann <s.neumann@raumfeld.com>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.9.0
+=====
+
+This release marks the beginning of the new unstable 0.9.x release cycle.
+Changes after 0.8.0 that were not included in the subsequent stable release:
+
+- Port to GIO/GSocket.
+- Port to Windows.
+- Don't print the whole packet on failure to send it.
+- Some other non-functional improvements and fixes.
+
+All Contributors:
+
+Jens Georg <mail@jensge.org>
+Ross Burton <ross@linux.intel.com>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.8.0
+=====
+
+- Chain up in dispose() and finalize() all classes.
+- Flag string arg of GSSDPClient signal as static.
+- Don't use deprecated libsoup API.
+- Properly catch errors in recvfrom syscall.
+- Fix some typos.
+
+Bugs fixed in this release:
+
+2194 - Typo in gssdp_socket_source
+2193 - Errors caught in recvfrom by pure luck
+2090 - 0.7.2 Typo in configure.ac
+
+All Contributors:
+
+Sven Neumann <s.neumann@raumfeld.com>
+Jens Georg <mail@jensge.org>
+Ross Burton <ross@linux.intel.com>
+Berrie Bloem <berrie@codevio.com>
+
+0.7.2
+=====
+
+- Provide gobject-introspection GIR and typelib.
+- Use silent build rules.
+- Fix issues with version-independence magic in SSDP code.
+- Fix build issues in jhbuild environment.
+
+Bugs fixed in this release:
+
+2025 - autogen.sh fails to find autoconf macros when they're installed in a
+       non-standard location
+1927 - gssdp fails to answer M-SEARCH sometimes
+1921 - GObject Introspection Makefile for GSSDP
+
+All Contributors:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Zach Goldberg <zach@zachgoldberg.com>
+Jens Georg <mail@jensge.org>
+Neil Roberts <neil@linux.intel.com>
+Ross Burton <ross@linux.intel.com>
+
+0.7.1
+=====
+
+- Don't leak target regex.
+- Make GSSDPClient ignore Point to Point interfaces.
+- Use SO_REUSEPORT if present. Darwin and some BSDs don't have SO_REUSEADDR, but
+  SO_REUSEPORT.
+- If we can't create a request socket don't try to create a multicast socket.
+- Have specific GError code for interfaces without an IP address.
+- Actually remove gssdp_client_new_full().
+
+Bugs fixed:
+
+1898 - GSSDPClient keeps autoselecting my VPN
+1810 - Not possible to run multiple ssdp clients on darwin
+1800 - leak of a gregex in gssdp-resource-browser
+1796 - gssdp_client_new_full is declared in header but not implemented
+
+All contributors:
+
+Olivier Crête <olivier.crete@collabora.co.uk>
+Ross Burton <ross@linux.intel.com>
+Iain Holmes <iain@linux.intel.com>
+Mattias Wadman <mattias.wadman@gmail.com>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.7
+===
+
+- Join the multicast group on the specified interface.
+- Put the message src timeout in the specified GMainContext.
+- "host-ip" property moved from GUPnPContext to parent GSSDPClient.
+- Use inet_aton instead of inet_addr and handle the error from it.
+- gssdp-device-sniffer ported to GtkBuilder.
+- Version-independent target match. This makes client forward and backward
+  compatible with resources that implement different version of the specs than
+  the client.
+- Version-independent M-SEARCH response. This has the same effect as above but
+  only the other way around.
+- GSSDPClient now binds to interface rather than IP.
+- No need to find the default route.
+- Add "active" property to GSSDPClient.
+- Fix pkg-config paths.
+- Add basic .gitignore.
+- Other minor/internal changes.
+
+Bugs fixed:
+
+1621 - new gssdp timeout not added to the specific maincontext
+1570 - gupnp doesn't set the pkgconfig lib dir correctly in 64 bit env
+
+Dependencies dropped:
+
+- libglade
+
+All contributors:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Ross Burton <ross@linux.intel.com>
+Jens Georg <mail@jensge.org>
+Olivier Crête <olivier.crete@collabora.co.uk>
+
+WARNING: This release is API and ABI incompatible with previous releases.
+
+0.6.4
+=====
+
+- Send ssdp:byebye before sending the first ssdp:alive. [Jussi Kukkonen]
+- Moderate the outbound SSDP messages. [Jussi Kukkonen]
+- Documentation fixes. [Jussi Kukkonen]
+- Send byebyes in dispose without sleep. [Jussi Kukkonen]
+- Use g_set_error_literal(). [Jorn Baayen]
+- Depend on glib 2.18. [Jorn Baayen]
+- Do not byebye unavailable resources. [Jorn Baayen]
+- All resources must respond to "ssdp:all" messages. [Hugo Calleja, Jorn Baayen]
+
+0.6.3
+=====
+
+- Don't use NULL g_get_application_names [Ross Burton]
+- Use specified GMainContext for timeouts [Olivier Crete, Jorn Baayen]
+
+0.6.2
+=====
+
+- Reannounce resources after max_age / 2 - 1 instead of after max_age.
+  [Peter Christensen, Jorn Baayen]
+- Remove unnecessary call to g_thread_init(). [Zeeshan Ali]
+
+0.6.1
+=====
+
+- Bump soname.
+
+0.6
+===
+
+- Use libsoup 2.4. [Zeeshan Ali Khattak, Jorn Baayen]
+- Use g_timeout_add_seconds(). [Jorn Baayen]
+
+0.4.2
+=====
+
+- Add User-Agent header to discovery requests including the application name
+  as reported by g_get_application_name(). [Jorn Baayen]
+- Send messages from dynamic port. [Jorn Baayen]
+- Send responses to originating port (instead of to SSDP port). [Jorn Baayen]
+- Emit multiple discovery requests (because UDP is unreliable). [Zeeshan Ali]
+
+0.4.1
+=====
+
+- Pass the correct value to n_columns argument of gtk_list_store_new().
+  Fixes bug#501. [Zeeshan Ali]
+- Move libsoup requirement to Requires.Private. [Jorn Baayen]
+- Fix compiler warning. Fixes #421. [Priit Laes]
+
+0.4
+===
+
+- Minor fixes. [Jorn Baayen]
+
+0.3
+===
+
+- Handle "byebye" correctly. [Jorn Baayen]
+
+0.2
+===
+
+- New "Expires" header support. [Jorn Baayen]
+- Define own error code for use in GErrors. [Jorn Baayen]
+- Build fixes. [Ross Burton]
+
+0.1
+===
+
+Initial release. Should be fully functional.

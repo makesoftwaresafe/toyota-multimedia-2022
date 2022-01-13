@@ -1,0 +1,5 @@
+# udev rules for audio devices handled in the corresponded audio setup services
+# Only rcar3 has this proxy device. Therefore only deployed on rcar3
+# it is important that coldplug devices set the same access rights as udev rules for these devices
+
+SUBSYSTEM=="xtensa-proxy", GROUP="audio", MODE="660", SYMLINK=""

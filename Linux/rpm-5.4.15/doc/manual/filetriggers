@@ -1,0 +1,88 @@
+== Introduction ==
+
+Filetriggers allow to run some scripts when some file has been added or removed.
+
+The typical use cases are:
+
+* updating /etc/ld.so.cache when some libraries have been added/removed in /usr/lib or /lib
+* running update-menus to update menus of non-XDG compliant desktops when some *.desktop have been added/removed in /usr/share/applications
+
+== Usage ==
+
+Add the following to your macros to enable filetriggers:
+
+<pre>
+%_filetriggers_dir /var/lib/rpm/filetriggers
+</pre>
+
+Then install your watchers:
+
+<pre>
+% cat /var/lib/rpm/filetriggers/ldconfig.filter
+^.(/lib|/usr/lib)/[^/]*\.so\.
+% cat /var/lib/rpm/filetriggers/ldconfig.script
+#!/bin/sh
+ldconfig -X
+% cat /var/lib/rpm/filetriggers/gtk-icon-cache-hicolor.filter
+^./usr/share/icons/hicolor/
+% cat /var/lib/rpm/filetriggers/gtk-icon-cache-hicolor.script
+#!/bin/sh
+/usr/bin/gtk-update-icon-cache --force --quiet /usr/share/icons/hicolor
+</pre>
+
+== Implementation ==
+
+=== files-awaiting-filetriggers ===
+
+When a package is successfully installed (or removed), rpm will append the
+installed (resp. removed) files to {{file|/var/lib/rpm/files-awaiting-filetriggers}}.
+
+The format is quite simple: <installed-or-removed> <filename>
+
+where <installed-or-removed> ::= "+" | "-"
+
+For example, after installing hexedit:
+
+<pre>
++/usr/bin/hexedit
++/usr/share/doc/hexedit
++/usr/share/doc/hexedit/COPYING
++/usr/share/doc/hexedit/TODO
++/usr/share/doc/hexedit/hexedit-1.2.12.lsm
++/usr/share/man/man1/hexedit.1.lzma
+</pre>
+
+=== rpmRunFileTriggers ===
+
+This function is called before running {{macro|%posttrans}} scriptlets. It can be
+disabled using --noscripts or --notriggers (no special command line option
+introduced for now).
+
+For each {{file|%_filetriggers_dir/*.filter}}, the regexp (POSIX Extended Regular
+Expression) on the first line is applied on {{file|files-awaiting-filetriggers}}. If
+some files match, the corresponding {{prog|%_filetriggers_dir/<name>.script}} is
+called, with matching lines passed in stdin.
+
+Note that this is done in parallel, so multiple {{prog|<name>.script}} may be running
+at the same time.
+
+When it's done, {{file|/var/lib/rpm/files-awaiting-filetriggers}} is removed.
+
+== Comments ==
+
+Characteristics of this implementation :
+* if the transaction is aborted, the next successful transaction will run on every successful package installation/removal. This is due to files-awaiting-filetriggers which allows to keep state of what is done or not.
+* it needs only a light patch in rpm
+* files-awaiting-filetriggers may be getting big (eg: 5MB on a big transaction of 1000 packages)
+* not fully integrated in rpm:
+** --nofiletriggers and RPMTRANS_FLAG_NOFILETRIGGERS should be added
+** a new command {{cmd|rpm --run-filetriggers}} would be useful to force running filetriggers, and only them.
+
+Some links about filetriggers:
+* triggers in dpkg: 
+** http://www.dpkg.org/dpkg/Triggers
+** http://lists.debian.org/debian-devel/2008/03/msg00931.html
+** http://lists.debian.org/debian-dpkg/2007/04/msg00076.html
+* what may get in rpm.org:
+** http://www.mail-archive.com/rpm-maint@lists.rpm.org/msg00789.html
+** http://www.mail-archive.com/rpm-maint@lists.rpm.org/msg00788.html

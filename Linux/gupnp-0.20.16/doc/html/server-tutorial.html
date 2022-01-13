@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Writing a UPnP Service: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="tutorial.html" title="Part I. Tutorial">
+<link rel="prev" href="client-tutorial.html" title="Writing a UPnP Client">
+<link rel="next" href="api.html" title="Part II. Reference">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="tutorial.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="client-tutorial.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="server-tutorial"></a>Writing a UPnP Service</h2></div></div></div>
+<div class="simplesect">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.4.2"></a>Introduction</h2></div></div></div>
+<p>
+      This chapter explains how to implement a UPnP service using GUPnP. For
+      this example we will create a virtual UPnP-enabled light bulb.
+    </p>
+<p>
+      Before any code can be written, the device and services that it implement
+      need to be described in XML.  Although this can be frustrating, if you are
+      implementing a standardised service (see <a class="ulink" href="http://upnp.org/sdcps-and-certification/standards/sdcps/" target="_top">http://upnp.org/sdcps-and-certification/standards/sdcps/</a> for the
+      list of standard devices and services) then the service description is
+      already written for you and the device description is trivial.  UPnP has
+      standardised <a class="ulink" href="http://upnp.org/specs/ha/lighting/" target="_top">Lighting
+      Controls</a>, so we'll be using the device and service types defined
+      there.
+    </p>
+</div>
+<div class="simplesect">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.4.3"></a>Defining the Device</h2></div></div></div>
+<p>
+      The first step is to write the <em class="firstterm">device description</em>
+      file.  This is a short XML document which describes the device and what
+      services it provides (for more details see the <a class="ulink" href="http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.0.pdf" target="_top">UPnP
+      Device Architecture</a> specification, section 2.1).  We'll be using
+      the <code class="literal">BinaryLight1</code> device type, but if none of the
+      existing device types are suitable a custom device type can be created.
+    </p>
+<pre class="programlisting">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root xmlns="urn:schemas-upnp-org:device-1-0"&gt;
+  &lt;specVersion&gt;
+    &lt;major&gt;1&lt;/major&gt;
+    &lt;minor&gt;0&lt;/minor&gt;
+  &lt;/specVersion&gt;
+
+  &lt;device&gt;
+    &lt;deviceType&gt;urn:schemas-upnp-org:device:BinaryLight:1&lt;/deviceType&gt;
+    &lt;friendlyName&gt;Kitchen Lights&lt;/friendlyName&gt;
+    &lt;manufacturer&gt;OpenedHand&lt;/manufacturer&gt;
+    &lt;modelName&gt;Virtual Light&lt;/modelName&gt;
+    &lt;UDN&gt;uuid:cc93d8e6-6b8b-4f60-87ca-228c36b5b0e8&lt;/UDN&gt;
+    
+    &lt;serviceList&gt;
+      &lt;service&gt;
+        &lt;serviceType&gt;urn:schemas-upnp-org:service:SwitchPower:1&lt;/serviceType&gt;
+        &lt;serviceId&gt;urn:upnp-org:serviceId:SwitchPower:1&lt;/serviceId&gt;
+        &lt;SCPDURL&gt;/SwitchPower1.xml&lt;/SCPDURL&gt;
+        &lt;controlURL&gt;/SwitchPower/Control&lt;/controlURL&gt;
+        &lt;eventSubURL&gt;/SwitchPower/Event&lt;/eventSubURL&gt;
+      &lt;/service&gt;
+    &lt;/serviceList&gt;
+  &lt;/device&gt;
+&lt;/root&gt;
+</pre>
+<p>
+      The <code class="sgmltag-element">specVersion</code> tag defines what version of the UPnP
+      Device Architecture the document conforms to.  At the time of writing the
+      only version is 1.0.
+    </p>
+<p>
+      Next there is the root <code class="sgmltag-element">device</code> tag.  This contains
+      metadata about the device, lists the services it provides and any
+      sub-devices present (there are none in this example).  The
+      <code class="sgmltag-element">deviceType</code> tag specifies the type of the device.
+    </p>
+<p>
+      Next we have <code class="sgmltag-element">friendlyName</code>,
+      <code class="sgmltag-element">manufacturer</code> and <code class="sgmltag-element">modelName</code>.  The
+      friendly name is a human-readable name for the device, the manufacturer
+      and model name are self-explanatory.
+    </p>
+<p>
+      Next there is the UDN, or <em class="firstterm">Unique Device Name</em>.  This
+      is an identifier which is unique for each device but persistent for each
+      particular device.  Although it has to start with <code class="literal">uuid:</code>
+      note that it doesn't have to be an UUID.  There are several alternatives
+      here: for example it could be computed at built-time if the software will
+      only be used on a single machine, or it could be calculated using the
+      device's serial number or MAC address.
+    </p>
+<p>
+      Finally we have the <code class="sgmltag-element">serviceList</code> which describes the
+      services this device provides.  Each service has a service type (again
+      there are types defined for standardised services or you can create your
+      own), service identifier, and three URLs.  As a service type we're using
+      the standard <code class="literal">SwitchPower1</code> service.  The
+      <code class="sgmltag-element">SCPDURL</code> field specifies where the <em class="firstterm">Service
+      Control Protocol Document</em> can be found, this describes the
+      service in more detail and will be covered next.  Finally there are the
+      control and event URLs, which need to be unique on the device and will be
+      managed by GUPnP.
+    </p>
+</div>
+<div class="simplesect">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.4.4"></a>Defining Services</h2></div></div></div>
+<p>
+      Because we are using a standard service we can use the service description
+      from the specification.  This is the <code class="literal">SwitchPower1</code>
+      service description file:
+    </p>
+<pre class="programlisting">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;scpd xmlns="urn:schemas-upnp-org:service-1-0"&gt;
+  &lt;specVersion&gt;
+    &lt;major&gt;1&lt;/major&gt;
+    &lt;minor&gt;0&lt;/minor&gt;
+  &lt;/specVersion&gt;
+  &lt;actionList&gt;
+    &lt;action&gt;
+      &lt;name&gt;SetTarget&lt;/name&gt;
+      &lt;argumentList&gt;
+        &lt;argument&gt;
+          &lt;name&gt;NewTargetValue&lt;/name&gt;
+          &lt;relatedStateVariable&gt;Target&lt;/relatedStateVariable&gt;
+          &lt;direction&gt;in&lt;/direction&gt;
+        &lt;/argument&gt;
+      &lt;/argumentList&gt;
+    &lt;/action&gt;
+    &lt;action&gt;
+      &lt;name&gt;GetTarget&lt;/name&gt;
+      &lt;argumentList&gt;
+        &lt;argument&gt;
+          &lt;name&gt;RetTargetValue&lt;/name&gt;
+          &lt;relatedStateVariable&gt;Target&lt;/relatedStateVariable&gt;
+          &lt;direction&gt;out&lt;/direction&gt;
+        &lt;/argument&gt;
+      &lt;/argumentList&gt;
+    &lt;/action&gt;
+    &lt;action&gt;
+      &lt;name&gt;GetStatus&lt;/name&gt;
+      &lt;argumentList&gt;
+        &lt;argument&gt;
+          &lt;name&gt;ResultStatus&lt;/name&gt;
+          &lt;relatedStateVariable&gt;Status&lt;/relatedStateVariable&gt;
+          &lt;direction&gt;out&lt;/direction&gt;
+        &lt;/argument&gt;
+      &lt;/argumentList&gt;
+    &lt;/action&gt;
+  &lt;/actionList&gt;
+  &lt;serviceStateTable&gt;
+    &lt;stateVariable sendEvents="no"&gt;
+      &lt;name&gt;Target&lt;/name&gt;
+      &lt;dataType&gt;boolean&lt;/dataType&gt;
+      &lt;defaultValue&gt;0&lt;/defaultValue&gt;
+    &lt;/stateVariable&gt;
+    &lt;stateVariable sendEvents="yes"&gt;
+      &lt;name&gt;Status&lt;/name&gt;
+      &lt;dataType&gt;boolean&lt;/dataType&gt;
+      &lt;defaultValue&gt;0&lt;/defaultValue&gt;
+    &lt;/stateVariable&gt;
+  &lt;/serviceStateTable&gt;
+&lt;/scpd&gt;
+</pre>
+<p>
+      Again, the <code class="sgmltag-element">specVersion</code> tag defines the UPnP version
+      that is being used.  The rest of the document consists of an
+      <code class="sgmltag-element">actionList</code> defining the <a class="glossterm" href="glossary.html#action"><em class="glossterm">actions</em></a> available and a
+      <code class="sgmltag-element">serviceStateTable</code> defining the <a class="glossterm" href="glossary.html#state-variable"><em class="glossterm">state variables</em></a>.
+    </p>
+<p>
+      Every <code class="sgmltag-element">action</code> has a <code class="sgmltag-element">name</code> and a list
+      of <code class="sgmltag-element">argument</code>s.  Arguments also have a name, a direction
+      (<code class="literal">in</code> or <code class="literal">out</code> for input or output
+      arguments) and a related state variable.  The state variable is used to
+      determine the type of the argument, and as such is a required element.
+      This can lead to the creation of otherwise unused state variables to
+      define the type for an argument (the <code class="literal">WANIPConnection</code>
+      service is a good example of this), thanks to the legacy behind UPnP.
+    </p>
+<p>
+      <code class="sgmltag-element">stateVariable</code>s need to specify their
+      <code class="sgmltag-element">name</code> and <code class="sgmltag-element">dataType</code>.  State variables
+      by default send notifications when they change, to specify that a variable
+      doesn't do this set the <code class="sgmltag-element">sendEvents</code> attribute to
+      <code class="literal">no</code>.  Finally there are optional
+      <code class="sgmltag-element">defaultValue</code>, <code class="sgmltag-element">allowedValueList</code> and
+      <code class="sgmltag-element">allowedValueRange</code> elements which specify what the
+      default and valid values for the variable.
+    </p>
+<p>
+      For the full specification of the service definition file, including a
+      complete list of valid <code class="sgmltag-element">dataType</code>s, see section 2.3 of
+      the <a class="ulink" href="http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.0.pdf" target="_top">UPnP
+      Device Architecture</a>.
+    </p>
+</div>
+<div class="simplesect">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.4.5"></a>Implementing the Device</h2></div></div></div>
+<p>
+      Before starting to implement the device, some boilerplate code is needed
+      to initialise GUPnP.  GLib types and threading needs to be initialised,
+      and then a GUPnP context can be created using <a class="link" href="GUPnPContext.html#gupnp-context-new" title="gupnp_context_new ()"><code class="function">gupnp_context_new()</code></a>.
+    </p>
+<pre class="programlisting">GUPnPContext *context;
+/* Initialize required subsystems */
+#if !GLIB_CHECK_VERSION(2,35,0)
+  g_type_init ();
+#endif
+/* Create the GUPnP context with default host and port */
+context = gupnp_context_new (NULL, NULL, 0, NULL);</pre>
+<p>
+      Next the root device can be created. The name of the device description
+      file can be passed as an absolute file path or a relative path to the
+      second parameter of <a class="link" href="GUPnPRootDevice.html#gupnp-root-device-new" title="gupnp_root_device_new ()"><code class="function">gupnp_root_device_new()</code></a>. The service description
+      files referenced in the device description are expected to be at the path
+      given there as well.
+    </p>
+<pre class="programlisting">GUPnPRootDevice *dev;
+/* Create the root device object */
+dev = gupnp_root_device_new (context, "BinaryLight1.xml", ".");
+/* Activate the root device, so that it announces itself */
+gupnp_root_device_set_available (dev, TRUE);</pre>
+<p>
+      GUPnP scans the device description and any service description files it
+      refers to, so if the main loop was entered now the device and service
+      would be available on the network, albeit with no functionality.  The
+      remaining task is to implement the services.
+    </p>
+</div>
+<div class="simplesect">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.4.6"></a>Implementing a Service</h2></div></div></div>
+<p>
+      To implement a service we first fetch the <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> from the root
+      device using <a class="link" href="GUPnPDeviceInfo.html#gupnp-device-info-get-service" title="gupnp_device_info_get_service ()"><code class="function">gupnp_device_info_get_service()</code></a> (<a class="link" href="GUPnPRootDevice.html" title="GUPnPRootDevice"><span class="type">GUPnPRootDevice</span></a> is a
+      subclass of <a class="link" href="GUPnPDevice.html" title="GUPnPDevice"><span class="type">GUPnPDevice</span></a>, which implements <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a>).  This
+      returns a <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> which again is an interface, implemented by
+      <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> (on the server) and <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy"><span class="type">GUPnPServiceProxy</span></a> (on the client).
+    </p>
+<pre class="programlisting">GUPnPServiceInfo *service;
+service = gupnp_device_info_get_service
+  (GUPNP_DEVICE_INFO (dev), "urn:schemas-upnp-org:service:SwitchPower:1");</pre>
+<p>
+      <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> handles interacting with the network itself, leaving the
+      implementation of the service itself to signal handlers that we need to
+      connect.  There are two signals: <a class="link" href="GUPnPService.html#GUPnPService-action-invoked" title="The “action-invoked” signal"><span class="type">“action-invoked”</span></a> and
+      <a class="link" href="GUPnPService.html#GUPnPService-query-variable" title="The “query-variable” signal"><span class="type">“query-variable”</span></a>.  <a class="link" href="GUPnPService.html#GUPnPService-action-invoked" title="The “action-invoked” signal"><span class="type">“action-invoked”</span></a> is emitted
+      when a client invokes an action: the handler is passed a
+      <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> object that identifies which action was invoked, and
+      is used to return values using <a class="link" href="GUPnPService.html#gupnp-service-action-set" title="gupnp_service_action_set ()"><code class="function">gupnp_service_action_set()</code></a>.
+      <a class="link" href="GUPnPService.html#GUPnPService-query-variable" title="The “query-variable” signal"><span class="type">“query-variable”</span></a> is emitted for evented variables when a
+      control point subscribes to the service (to announce the initial value),
+      or whenever a client queries the value of a state variable (note that this
+      is now deprecated behaviour for UPnP control points): the handler is
+      passed the variable name and a <span class="type">GValue</span> which should be set to the current
+      value of the variable.
+    </p>
+<p>
+      Handlers should be targetted at specific actions or variables by using
+      the <em class="firstterm">signal detail</em> when connecting. For example,
+      this causes <code class="function">on_get_status_action</code> to be called when
+      the <code class="function">GetStatus</code> action is invoked:
+    </p>
+<pre class="programlisting">static void on_get_status_action (GUPnPService *service, GUPnPServiceAction *action, gpointer user_data);
+…
+g_signal_connect (service, "action-invoked::GetStatus", G_CALLBACK (on_get_status_action), NULL);</pre>
+<p>
+      The implementation of action handlers is quite simple.  The handler is
+      passed a <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> object which represents the in-progress
+      action.  If required it can be queried using
+      <a class="link" href="GUPnPService.html#gupnp-service-action-get-name" title="gupnp_service_action_get_name ()"><code class="function">gupnp_service_action_get_name()</code></a> to identify the action (this isn't
+      required if detailed signals were connected).  Any
+      <em class="firstterm">in</em> arguments can be retrieving using
+      <a class="link" href="GUPnPService.html#gupnp-service-action-get" title="gupnp_service_action_get ()"><code class="function">gupnp_service_action_get()</code></a>, and then return values can be set using
+      <a class="link" href="GUPnPService.html#gupnp-service-action-set" title="gupnp_service_action_set ()"><code class="function">gupnp_service_action_set()</code></a>.  Once the action has been performed, either
+      <a class="link" href="GUPnPService.html#gupnp-service-action-return" title="gupnp_service_action_return ()"><code class="function">gupnp_service_action_return()</code></a> or <a class="link" href="GUPnPService.html#gupnp-service-action-return-error" title="gupnp_service_action_return_error ()"><code class="function">gupnp_service_action_return_error()</code></a>
+      should be called to either return successfully or return an error code.
+      If any evented state variables were modified during the action then a
+      notification should be emitted using <a class="link" href="GUPnPService.html#gupnp-service-notify" title="gupnp_service_notify ()"><code class="function">gupnp_service_notify()</code></a>.  This is an
+      example implementation of <code class="function">GetStatus</code> and
+      <code class="function">SetTarget</code>:
+    </p>
+<pre class="programlisting">static gboolean status;
+
+static void
+get_status_cb (GUPnPService *service, GUPnPServiceAction *action, gpointer user_data)
+{
+  gupnp_service_action_set (action,
+                            "ResultStatus", G_TYPE_BOOLEAN, status,
+                            NULL);
+  gupnp_service_action_return (action);
+}
+
+void
+set_target_cb (GUPnPService *service, GUPnPServiceAction *action, gpointer user_data)
+{
+  gupnp_service_action_get (action,
+                            "NewTargetValue", G_TYPE_BOOLEAN, &amp;status,
+                            NULL);
+  gupnp_service_action_return (action);
+  gupnp_service_notify (service, "Status", G_TYPE_STRING, status, NULL);
+}
+…
+g_signal_connect (service, "action-invoked::GetStatus", G_CALLBACK (get_status_cb), NULL);
+g_signal_connect (service, "action-invoked::SetTarget", G_CALLBACK (set_target_cb), NULL);</pre>
+<p>
+      State variable query handlers are called with the name of the variable and
+      a <span class="type">GValue</span>.  This value should be initialized with the relevant type and
+      then set to the current value.  Again signal detail can be used to connect
+      handlers to specific state variable callbacks.
+    </p>
+<pre class="programlisting">static gboolean status;
+
+static void
+query_status_cb (GUPnPService *service, char *variable, GValue *value, gpointer user_data)
+{
+  g_value_init (value, G_TYPE_BOOLEAN);
+  g_value_set_boolean (value, status);
+}
+…
+g_signal_connect (service, "query-variable::Status", G_CALLBACK (query_status_cb), NULL);</pre>
+<p>
+      The service is now fully implemented.  To complete it, enter a GLib main
+      loop and wait for a client to connect.  The complete source code for this
+      example is available as <code class="filename">examples/light-server.c</code> in
+      the GUPnP sources.
+    </p>
+<p>
+      For services which have many actions and variables there is a convenience
+      method <a class="link" href="GUPnPService.html#gupnp-service-signals-autoconnect" title="gupnp_service_signals_autoconnect ()"><code class="function">gupnp_service_signals_autoconnect()</code></a> which will automatically
+      connect specially named handlers to signals.  See the documentation for
+      full details on how it works.
+    </p>
+</div>
+<div class="simplesect">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.2.4.7"></a>Generating Service-specific Wrappers</h2></div></div></div>
+<p>
+      Using service-specific wrappers can simplify the implementation of a service.
+      Wrappers can be generated with <a class="xref" href="gupnp-binding-tool.html" title="gupnp-binding-tool"><span class="refentrytitle">gupnp-binding-tool</span>(1)</a>
+      using the option <code class="literal">--mode server</code>. 
+    </p>
+<p>
+      In the following examples the wrapper has been created with
+      <code class="literal">--mode server --prefix switch</code>. Please note that the callback handlers
+      (<code class="literal">get_status_cb</code> and <code class="literal">set_target_cb</code>) are not automatically
+      generated by <a class="xref" href="gupnp-binding-tool.html" title="gupnp-binding-tool"><span class="refentrytitle">gupnp-binding-tool</span>(1)</a> for you.
+    </p>
+<pre class="programlisting">static gboolean status;
+
+static void
+get_status_cb (GUPnPService *service,
+               GUPnPServiceAction *action,
+               gpointer user_data)
+{
+  switch_get_status_action_set (action, status);
+  
+  gupnp_service_action_return (action);
+}
+
+static void
+set_target_cb (GUPnPService *service,
+               GUPnPServiceAction *action,
+               gpointer user_data)
+{
+  switch_set_target_action_get (action, &amp;status);
+  switch_status_variable_notify (service, status);
+  
+  gupnp_service_action_return (action);
+}
+
+…
+
+switch_get_status_action_connect (service, G_CALLBACK(get_status_cb), NULL);
+switch_set_target_action_connect (service, G_CALLBACK(set_target_cb), NULL);</pre>
+<p>
+      Note how many possible problem situations that were run-time errors are 
+      actually compile-time errors when wrappers are used: Action names, 
+      argument names and argument types are easier to get correct (and available
+      in editor autocompletion).
+    </p>
+<p>
+      State variable query handlers are implemented in a similar manner, but 
+      they are even simpler as the return value of the handler is the state 
+      variable value.
+    </p>
+<pre class="programlisting">static gboolean
+query_status_cb (GUPnPService *service, 
+                 gpointer user_data)
+{
+  return status;
+}
+
+…
+
+switch_status_query_connect (service, query_status_cb, NULL);</pre>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

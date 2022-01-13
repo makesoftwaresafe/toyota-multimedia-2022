@@ -1,0 +1,13 @@
+[Unit]
+Description=audio daemon
+Requires=audio_daemon.path
+Wants=jackd.service
+After=jackd.service audio_daemon.path
+
+[Service]
+Type=forking
+Environment=LD_LIBRARY_PATH=/opt/audio/lib:/opt/cinemo/lib:/opt/mm/lib:/opt/ias/lib:/usr/lib/audio-plugins
+User=pulse
+LimitRTPRIO=25
+ExecStart=/opt/audio/bin/audio_daemon -clibias-audio-configuration_brd2.so
+

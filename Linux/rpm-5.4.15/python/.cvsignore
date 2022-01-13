@@ -1,0 +1,10 @@
+.deps
+Makefile
+Makefile.in
+config.h.in
+.libs
+*.gcda
+*.gcno
+*.la
+*.lo
+*.pyc

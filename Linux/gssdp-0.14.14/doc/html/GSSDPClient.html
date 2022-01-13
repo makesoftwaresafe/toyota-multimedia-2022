@@ -1,0 +1,785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GSSDPClient: GSSDP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GSSDP Reference Manual">
+<link rel="up" href="ch01.html" title="GSSDP">
+<link rel="prev" href="ch01.html" title="GSSDP">
+<link rel="next" href="GSSDPResourceBrowser.html" title="GSSDPResourceBrowser">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GSSDPClient.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GSSDPClient.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GSSDPClient.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GSSDPClient.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GSSDPClient.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GSSDPResourceBrowser.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GSSDPClient"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GSSDPClient.top_of_page"></a>GSSDPClient</span></h2>
+<p>GSSDPClient — SSDP "bus" wrapper.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GSSDPClient.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="returnvalue">GSSDPClient</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-new" title="gssdp_client_new ()">gssdp_client_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="returnvalue">GSSDPClient</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-new-with-port" title="gssdp_client_new_with_port ()">gssdp_client_new_with_port</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GMainContext</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-get-main-context" title="gssdp_client_get_main_context ()">gssdp_client_get_main_context</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-set-server-id" title="gssdp_client_set_server_id ()">gssdp_client_set_server_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-get-server-id" title="gssdp_client_get_server_id ()">gssdp_client_get_server_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-get-interface" title="gssdp_client_get_interface ()">gssdp_client_get_interface</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-get-host-ip" title="gssdp_client_get_host_ip ()">gssdp_client_get_host_ip</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-set-network" title="gssdp_client_set_network ()">gssdp_client_set_network</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-get-network" title="gssdp_client_get_network ()">gssdp_client_get_network</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-get-active" title="gssdp_client_get_active ()">gssdp_client_get_active</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-append-header" title="gssdp_client_append_header ()">gssdp_client_append_header</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-clear-headers" title="gssdp_client_clear_headers ()">gssdp_client_clear_headers</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GSSDPClient.html#gssdp-client-remove-header" title="gssdp_client_remove_header ()">gssdp_client_remove_header</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="GSSDPClient.html#GSSDPClient--active" title="The “active” property">active</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GSSDPClient.html#GSSDPClient--host-ip" title="The “host-ip” property">host-ip</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GSSDPClient.html#GSSDPClient--interface" title="The “interface” property">interface</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GSSDPClient.html#GSSDPClient--main-context" title="The “main-context” property">main-context</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GSSDPClient.html#GSSDPClient--msearch-port" title="The “msearch-port” property">msearch-port</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GSSDPClient.html#GSSDPClient--network" title="The “network” property">network</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GSSDPClient.html#GSSDPClient--server-id" title="The “server-id” property">server-id</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GSSDPClient.html#GSSDPClient--socket-ttl" title="The “socket-ttl” property">socket-ttl</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GSSDPClient.html#GSSDPClient-message-received" title="The “message-received” signal">message-received</a></td>
+<td class="signal_flags">Run Last</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GSSDPClient.html#GSSDPClient-struct" title="struct GSSDPClient">GSSDPClient</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GSSDPClient
+</pre>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GSSDPClient implements
+ GInitable.</p>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.description"></a><h2>Description</h2>
+<p><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> wraps the SSDP "bus" as used by both <a class="link" href="GSSDPResourceBrowser.html" title="GSSDPResourceBrowser"><span class="type">GSSDPResourceBrowser</span></a>
+and <a class="link" href="GSSDPResourceGroup.html" title="GSSDPResourceGroup"><span class="type">GSSDPResourceGroup</span></a>.</p>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gssdp-client-new"></a><h3>gssdp_client_new ()</h3>
+<pre class="programlisting"><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="returnvalue">GSSDPClient</span></a> *
+gssdp_client_new (<em class="parameter"><code><span class="type">GMainContext</span> *main_context</code></em>,
+                  <em class="parameter"><code>const <span class="type">char</span> *iface</code></em>,
+                  <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="gssdp-client-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>main_context</p></td>
+<td class="parameter_description"><p> Deprecated: 0.11.2: Always set to NULL. If you want to
+specify a context use <code class="function">g_main_context_push_thread_default()</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p> The name of the network interface, or <code class="literal">NULL</code> for auto-detection. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>Location to store error, or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gssdp-client-new.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> object.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-new-with-port"></a><h3>gssdp_client_new_with_port ()</h3>
+<pre class="programlisting"><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="returnvalue">GSSDPClient</span></a> *
+gssdp_client_new_with_port (<em class="parameter"><code>const <span class="type">char</span> *iface</code></em>,
+                            <em class="parameter"><code><span class="type">guint16</span> msearch_port</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="gssdp-client-new-with-port.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p> The name of the network interface, or <code class="literal">NULL</code> for
+auto-detection. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msearch_port</p></td>
+<td class="parameter_description"><p>The network port to use for M-SEARCH requests or 0 for
+random.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> Location to store error, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gssdp-client-new-with-port.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> object.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-get-main-context"></a><h3>gssdp_client_get_main_context ()</h3>
+<pre class="programlisting"><span class="returnvalue">GMainContext</span> *
+gssdp_client_get_main_context (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-set-server-id"></a><h3>gssdp_client_set_server_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gssdp_client_set_server_id (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *server_id</code></em>);</pre>
+<p>Sets the server ID of <em class="parameter"><code>client</code></em>
+ to <em class="parameter"><code>server_id</code></em>
+.</p>
+<div class="refsect3">
+<a name="gssdp-client-set-server-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>server_id</p></td>
+<td class="parameter_description"><p>The server ID</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-get-server-id"></a><h3>gssdp_client_get_server_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gssdp_client_get_server_id (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>);</pre>
+<div class="refsect3">
+<a name="gssdp-client-get-server-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gssdp-client-get-server-id.returns"></a><h4>Returns</h4>
+<p> The server ID.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-get-interface"></a><h3>gssdp_client_get_interface ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gssdp_client_get_interface (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>);</pre>
+<p>Get the name of the network interface associated to <em class="parameter"><code>client</code></em>
+.</p>
+<div class="refsect3">
+<a name="gssdp-client-get-interface.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gssdp-client-get-interface.returns"></a><h4>Returns</h4>
+<p> The network interface name. This string should not be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-get-host-ip"></a><h3>gssdp_client_get_host_ip ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gssdp_client_get_host_ip (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>);</pre>
+<p>Get the IP address we advertise ourselves as using.</p>
+<div class="refsect3">
+<a name="gssdp-client-get-host-ip.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gssdp-client-get-host-ip.returns"></a><h4>Returns</h4>
+<p> The IP address. This string should not be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-set-network"></a><h3>gssdp_client_set_network ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gssdp_client_set_network (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>,
+                          <em class="parameter"><code>const <span class="type">char</span> *network</code></em>);</pre>
+<p>Sets the network identification of <em class="parameter"><code>client</code></em>
+ to <em class="parameter"><code>network</code></em>
+.</p>
+<div class="refsect3">
+<a name="gssdp-client-set-network.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>network</p></td>
+<td class="parameter_description"><p>The string identifying the network</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-get-network"></a><h3>gssdp_client_get_network ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gssdp_client_get_network (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>);</pre>
+<p>Get the network this client is associated with.</p>
+<div class="refsect3">
+<a name="gssdp-client-get-network.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gssdp-client-get-network.returns"></a><h4>Returns</h4>
+<p> The network identification. This string should not be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-get-active"></a><h3>gssdp_client_get_active ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gssdp_client_get_active (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>);</pre>
+<div class="refsect3">
+<a name="gssdp-client-get-active.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gssdp-client-get-active.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if <em class="parameter"><code>client</code></em>
+is active, <code class="literal">FALSE</code> otherwise.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-append-header"></a><h3>gssdp_client_append_header ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gssdp_client_append_header (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *value</code></em>);</pre>
+<p>Adds a header field to the message sent by this <em class="parameter"><code>client</code></em>
+. It is intended to
+be used by clients requiring vendor specific header fields. (If there is an
+existing header with name name , then this creates a second one).</p>
+<div class="refsect3">
+<a name="gssdp-client-append-header.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>Header name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>Header value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-clear-headers"></a><h3>gssdp_client_clear_headers ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gssdp_client_clear_headers (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>);</pre>
+<p>Removes all the headers for this <em class="parameter"><code>client</code></em>
+.</p>
+<div class="refsect3">
+<a name="gssdp-client-clear-headers.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gssdp-client-remove-header"></a><h3>gssdp_client_remove_header ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gssdp_client_remove_header (<em class="parameter"><code><a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>Removes <em class="parameter"><code>name</code></em>
+ from the list of headers . If there are multiple values for
+<em class="parameter"><code>name</code></em>
+, they are all removed.</p>
+<div class="refsect3">
+<a name="gssdp-client-remove-header.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>Header name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GSSDPClient-struct"></a><h3>struct GSSDPClient</h3>
+<pre class="programlisting">struct GSSDPClient;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GSSDPClient--active"></a><h3>The <code class="literal">“active”</code> property</h3>
+<pre class="programlisting">  “active”                   <span class="type">gboolean</span></pre>
+<p>Whether this client is active or not (passive). When active
+(default), the client sends messages on the network, otherwise
+not. In most cases, you don't want to touch this property.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GSSDPClient--host-ip"></a><h3>The <code class="literal">“host-ip”</code> property</h3>
+<pre class="programlisting">  “host-ip”                  <span class="type">gchar</span> *</pre>
+<p>The IP address of the assoicated network interface.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GSSDPClient--interface"></a><h3>The <code class="literal">“interface”</code> property</h3>
+<pre class="programlisting">  “interface”                <span class="type">gchar</span> *</pre>
+<p>The name of the network interface this client is associated with.
+Set to NULL to autodetect.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GSSDPClient--main-context"></a><h3>The <code class="literal">“main-context”</code> property</h3>
+<pre class="programlisting">  “main-context”             <span class="type">gpointer</span></pre>
+<p>The <span class="type">GMainContext</span> to use. Set to NULL to use the default.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="warning">
+<p><code class="literal">GSSDPClient:main-context</code> has been deprecated since version 0.11.2 and should not be used in newly-written code.</p>
+<p>Use <code class="function">g_main_context_push_thread_default()</code>.</p>
+</div>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GSSDPClient--msearch-port"></a><h3>The <code class="literal">“msearch-port”</code> property</h3>
+<pre class="programlisting">  “msearch-port”             <span class="type">guint</span></pre>
+<p>UDP port to use for sending multicast M-SEARCH requests on the
+network. If not set (or set to 0) a random port will be used.
+This property can be only set during object construction.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: &lt;= 65535</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GSSDPClient--network"></a><h3>The <code class="literal">“network”</code> property</h3>
+<pre class="programlisting">  “network”                  <span class="type">gchar</span> *</pre>
+<p>The network this client is currently connected to. You could set this
+to anything you want to identify the network this client is
+associated with. If you are using <a href="/home/jens/jhbuild/install/share/gtk-doc/html/gupnpGUPnPContextManager.html#GUPnPContextManager-struct"><span class="type">GUPnPContextManager</span></a> and associated
+interface is a WiFi interface, this property is set to the ESSID of
+the network. Otherwise, expect this to be the network IP address by
+default.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GSSDPClient--server-id"></a><h3>The <code class="literal">“server-id”</code> property</h3>
+<pre class="programlisting">  “server-id”                <span class="type">gchar</span> *</pre>
+<p>The SSDP server's identifier.</p>
+<p>Flags: Read / Write</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GSSDPClient--socket-ttl"></a><h3>The <code class="literal">“socket-ttl”</code> property</h3>
+<pre class="programlisting">  “socket-ttl”               <span class="type">guint</span></pre>
+<p>Time-to-live value to use for all sockets created by this client.
+If not set (or set to 0) the value recommended by UPnP will be used.
+This property can only be set during object construction.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: &lt;= 255</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GSSDPClient.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GSSDPClient-message-received"></a><h3>The <code class="literal">“message-received”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> *client,
+               <span class="type">gchar</span>       *from_ip,
+               <span class="type">guint</span>        from_port,
+               <span class="type">gint</span>         type,
+               <span class="type">gpointer</span>     headers,
+               <span class="type">gpointer</span>     user_data)</pre>
+<p>Internal signal.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="GSSDPClient-message-received.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>client</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GSSDPClient.html" title="GSSDPClient"><span class="type">GSSDPClient</span></a> that received the message.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>from_ip</p></td>
+<td class="parameter_description"><p>The IP address of the source.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>from_port</p></td>
+<td class="parameter_description"><p>The UDP port used by the sender.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The <span class="type">_GSSDPMessageType</span>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>headers</p></td>
+<td class="parameter_description"><p> Parsed <span class="type">SoupMessageHeaders</span> from the message. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> SoupMessageHeaders]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+<p class="stability">Stability Level: <acronym title="An interface that can be used within the GNOME stack itself, but that is not
+documented for end-users.  Such functions should only be used in specified and
+documented ways.
+"><span class="acronym">Private</span></acronym></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

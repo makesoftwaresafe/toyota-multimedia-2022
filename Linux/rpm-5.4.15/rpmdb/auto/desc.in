@@ -1,0 +1,160 @@
+<version>
+  @VERSION@
+</version>
+ 
+<headers>
+     ../fprint.h
+<!-- ../header_internal.h -->
+     ../legacy.h
+<!-- ../logio_auto.h -->
+<!-- ../logio.h -->
+     ../pkgio.h
+     ../rpmdb.h
+     ../rpmdpkg.h
+     ../rpmevr.h
+<!-- ../rpmlio.h -->
+     ../rpmmdb.h
+     ../rpmns.h
+     ../rpmrepo.h
+     ../rpmtag.h
+     ../rpmtd.h
+<!-- ../rpmtxn.h -->
+     ../rpmtypes.h
+     ../rpmwf.h
+     ../signature.h
+</headers>
+ 
+<libs>
+  @abs_top_builddir@/rpmdb/.libs/librpmdb.@shlibext@
+</libs>
+
+<include_paths>
+</include_paths>
+
+<add_include_paths>
+  @abs_top_srcdir@
+  @abs_top_srcdir@/lib
+  @abs_top_srcdir@/rpmdb
+  @abs_top_srcdir@/rpmio
+  @abs_top_srcdir@/popt
+</add_include_paths>
+
+<gcc_options>
+  @DEFS@
+  @CPPFLAGS@
+  @CFLAGS@
+  @LDFLAGS@
+</gcc_options>
+
+<include_preamble>
+  stdint.h
+  stdio.h
+  stdlib.h
+  string.h
+  sys/time.h
+  rpmiotypes.h
+  rpmtypes.h
+  rpmtag.h
+  rpmts.h
+</include_preamble>
+
+<test_include_preamble>
+  system.h
+  rpmtypes.h
+  rpmtag.h
+  rpmts.h
+</test_include_preamble>
+
+<libs_depend>
+  @abs_top_builddir@/lib/.libs/librpm.@shlibext@
+  @abs_top_builddir@/rpmio/.libs/librpmio.@shlibext@
+  @abs_top_builddir@/misc/.libs/librpmmisc.@shlibext@
+  @abs_top_builddir@/popt/.libs/libpopt.@shlibext@
+</libs_depend>
+
+<opaque_types>
+</opaque_types>
+
+<skip_symbols>
+<!-- build error -->
+  rpmDisplayQueryTags
+<!-- SEGV -->
+  headerCopy
+  headerDel
+  headerInit
+  headerMergeLegacySigs
+  headerNext
+  headerRegenSigHeader
+  headerReload
+  headerUnload
+  rpmAddSignature
+  rpmEVRcompare
+  rpmdbAdd
+  rpmdbBlockDBI
+  rpmdbClose
+  rpmdbCloseDBI
+  rpmdbCount
+  rpmdbCountPackages
+  rpmdbMireApply
+  rpmdbOpen
+  rpmdbOpenAll
+  rpmdbRemove
+  rpmmiAddPattern
+  rpmmiBNTag
+  rpmmiCount
+  rpmmiGrow
+  rpmmiGrowBasename
+  rpmmiInit
+  rpmmiInstance
+  rpmmiNext
+  rpmmiPrune
+  rpmmiSetModified
+  rpmmiSetRewrite
+  rpmmiSort
+  rpmReadPackageFile
+  rpmrepoNew
+  rpmwfFini
+  rpmwfInit
+  rpmwfPullXAR
+  wrRPM
+  wrXAR
+<!-- rpmRC failures -->
+  headerCheck
+  rpmpkgCheck
+  rpmpkgRead
+  rpmpkgWrite
+  rpmnsProbeSignature
+  rpmwfPushRPM
+  rpmwfPushXAR
+  rpmVerifySignature
+<!-- ABRT -->
+  rpmEVRfree
+  rpmrepoDoPkgMetadata
+<!-- exit 1 -->
+  rpmrepoError
+</skip_symbols>
+
+<skip_headers>
+     ../db_emu.h
+</skip_headers>
+
+<skip_libs>
+</skip_libs>
+
+<defines>
+</defines>
+
+<test_defines>
+</test_defines>
+
+<libgroup>
+</libgroup>
+
+<out_params>
+</out_params>
+
+<skip_warnings>
+</skip_warnings>
+
+<skip_interfaces>
+</skip_interfaces>

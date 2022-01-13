@@ -1,0 +1,69 @@
+Changes
+=======
+v3.1.12.7
+- Adapted 'capi-dbus-add-support-for-custom-marshalling.patch' to be compatible with dbus version 1.12.x
+
+v3.1.12.6
+- Removed concurrent timeout handling
+
+v3.1.12.5
+- Ensure availability listeners are unregistered properly (to free memory) when
+  proxies are being destroyed in callback invoking the availability listener(s)
+
+v3.1.12.4
+- support 'lock functors' in AttributeDispatcher(s)
+
+v3.1.12.3
+- Fixed data race in generated StubDefault when using attributes
+- use eventfd instead of pipe in Watch
+
+v3.1.12.2
+- Fixed hang-up in proxy destruction when async method call was done and proxy is not available
+- DBus connections are now released even if they were not created with the Factory interface
+
+v3.1.12.1
+- Fixed race condition for managed services. When a managed services was removed, an appropriate
+availability status changed event was received (service became unavailable) and afterwards a 'getAvailablStatusAsync' call for the removed service instance was done, the response could be that
+the service instance is still available.
+
+v3.1.12
+- Support DBus type DBUS_TYPE_UNIX_FD as deployment for ints
+- DBus deployment: IsObjectPath for all string locations
+
+v3.1.11.2
+- Fixed availability problems when deleting and recreating proxies multiple times
+
+v3.1.11.1
+- Support deployment for anonymous arrays
+- Fixed concurrency problem / segfault in unregisterStub()
+
+v3.1.11
+- Fixed availability problem of proxies that connect to legacy managed services by changing the way of resolving object paths and available interfaces
+- Fixed several data races and potential deadlocks reported by the thread sanitizer
+- Ensure proxy is not destroyed while callback function is invoked
+- check for #define _WIN32 instead of (deprecated) WIN32
+
+v3.1.10.4
+- Prevent crash (double free) on destruction of static objects
+- Fixed 'terminate called without an active exception' on verification test exit
+
+v3.1.10.3
+- Fixed crash on dlclose()
+
+v3.1.10
+- If an 'DBusInstanceAvailabilityStatusChangedEvent' occurs and the manager proxy was deleted, a bad_weak_ptr occurs. This is now avoided by introducing a weak_ptr. If the weak_ptr can be locked, the manager proxy was not deleted yet.
+- Moved mutex lock in 'DBusMainLoop::registerWatch' to avoid deadlock.
+- The 'DBusSignalHandlers' were stored as raw pointers and this can cause crashes when the proxy was deleted. This is now replaced by storing a weak_ptr of the 'DBusSignalHandler'.
+- DBusFreeDesktopAttribute is now adjusted to use the new interface of freeDesktopGetCurrentValueForSignalListener in LegacyEvent.
+- Fixed availability problem with services <= CommonAPI 3.1.8 due to the extension of the CommonAPI address.
+- Check path correctness in managed callback (DBusServiceRegistry.cpp).
+- Remove clang compiler warnings.
+- Keep service registry map alive: During program cleanup, the global service registry map was deleted before the global variables to proxies were cleaned up. This caused problems when the proxy tried to access the map that was no longer there. Solution: keep a reference to the map in the service registry entry. This way the map is deleted only after the last service registry (and the last proxy) has been deleted.
+- Fixed THMainloopIndependence and THMainloopIntegration segfault. The problem is that a 'DBusQueueDispatchSource' has a pointer to its related 'DBusQueueWatch' as member variable and in the destructor of the dispatch source the watch is accessed. So a segfault can occur when the watch is deleted before the dispatch source.
+- Replaced polling mechanism in 'DBusMainLoop' from sockets to WSAEvents in combination with named pipes.
+- Added support for the DBus message type 'Error'. This needed the introduction of a new class ('DBusErrorEvent'), adaptions on proxy side ('DBusProxyHelper') and on stub side ('DBusStubAdapterHelper') and a libdbus patch that avoids the deletion of a message reply when an error occured / when an error reply was sent. This is necessary to deserialize the arguments of the error reply.
+
+
+
+
+

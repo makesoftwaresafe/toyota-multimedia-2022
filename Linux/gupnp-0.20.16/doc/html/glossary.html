@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Glossary: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="index.html" title="GUPnP Reference Manual">
+<link rel="prev" href="schemas-service.html" title="Service Description">
+<link rel="next" href="annotation-glossary.html" title="Annotation Glossary">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="schemas-service.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="annotation-glossary.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="glossary">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="glossary"></a>Glossary</h1></div></div></div>
+<dl>
+<dt>
+<a name="action"></a><span class="glossterm">Action</span>
+</dt>
+<dd class="glossdef">
+<p>
+      An <em class="firstterm">Action</em> is a method call on a
+      <em class="glossterm">Service</em>, which encapsulated a single piece of
+      functionality.  Actions can have multiple input and output arguments, and
+      can return error codes.  UPnP allows one of the output arguments to be
+      marked as the <em class="firstterm">return value</em>, but GUPnP doesn't treat
+      return values specially.
+    </p>
+<p>
+      Every action argument has a related <em class="glossterm">State Variable</em>,
+      which determines the type of the argument.  Note that even if the argument
+      wouldn't need a state variable it is still required, due to historical
+      reasons.
+    </p>
+</dd>
+<dt>
+<a name="controlpoint"></a><span class="glossterm">Control Point</span>
+</dt>
+<dd class="glossdef"><p>
+      A <em class="firstterm">Control Point</em> is an entity on the network which
+      communicates with other <em class="glossterm">Devices</em> and
+      <em class="glossterm">Services</em>.  In the client/server model the control
+      point is a client and the <em class="glossterm">Service</em> is a server,
+      although it is common for devices to also be a control point because
+      whilst a single control point/service connection is client/server, the
+      UPnP network as whole is peer-to-peer.
+    </p></dd>
+<dt>
+<a name="device"></a><span class="glossterm">Device</span>
+</dt>
+<dd class="glossdef">
+<p>
+      A <em class="firstterm">Device</em> is an entity on the network which
+      communicates using the UPnP standards.  This can be a dedicated physical
+      device such as a router or printer, or a PC which is running software
+      implementing the UPnP standards.
+    </p>
+<p>
+      A Device can contain sub-devices, for example a combination
+      printer/scanner could appear as a general device with a printer
+      sub-device and a scanner sub-device.
+    </p>
+<p>
+      Every device has zero or more <em class="glossterm">Services</em>.  UPnP defines many standard
+      device types, which specify services which are required to be implemented.
+      Alternatively, a non-standard device type could be used.  Examples of
+      standard device types are <code class="literal">MediaRenderer</code> or
+      <code class="literal">InternetGatewayDevice</code>.
+    </p>
+<p>See Also <a class="glossseealso" href="glossary.html#service">Service</a>.</p>
+</dd>
+<dt><span class="glossterm">DIDL-Lite</span></dt>
+<dd><p>See <a class="glosssee" href="glossary.html#didllite">Digital Item Declaration Language - Lite</a>.</p></dd>
+<dt>
+<a name="didllite"></a><span class="glossterm">Digital Item Declaration Language - Lite</span>
+</dt>
+<dd class="glossdef"><p>
+      An XML schema used to represent digital content metadata. Defined by
+      the UPnP Forum.
+    </p></dd>
+<dt><span class="glossterm">SCPD</span></dt>
+<dd><p>See <a class="glosssee" href="glossary.html#scpd">Service Control Protocol Document</a>.</p></dd>
+<dt>
+<a name="service"></a><span class="glossterm">Service</span>
+</dt>
+<dd class="glossdef">
+<p>
+      A <em class="firstterm">Service</em> is a collection of related methods
+      (called <em class="glossterm">Actions</em>) and public variables (called
+      <em class="glossterm">State Variables</em>) which together form a logical
+      interface.
+    </p>
+<p>
+      UPnP defines standard services that define actions and variables which
+      must be present and their semantics.  Examples of these are
+      <code class="literal">AVTransport</code> and <code class="literal">WANIPConnection</code>.
+    </p>
+<p>See Also <a class="glossseealso" href="glossary.html#action">Action</a>, <a class="glossseealso" href="glossary.html#device">Device</a>, <a class="glossseealso" href="glossary.html#state-variable">State Variable</a>.</p>
+</dd>
+<dt>
+<a name="scpd"></a><span class="glossterm">Service Control Protocol Document</span>
+</dt>
+<dd class="glossdef">
+<p>
+        An XML document which defines the set of <em class="glossterm">Actions</em>
+        and <em class="glossterm">State Variables</em> that a
+        <em class="glossterm">Service</em> implements.
+      </p>
+<p>See Also <a class="glossseealso" href="glossary.html#service">Service</a>, <a class="glossseealso" href="glossary.html#action">Action</a>, <a class="glossseealso" href="glossary.html#state-variable">State Variable</a>.</p>
+</dd>
+<dt>
+<a name="ssdp"></a><span class="glossterm">Simple Service Discovery Protocol</span>
+</dt>
+<dd class="glossdef">
+<p>
+        UPnP device discovery protocol. Specifies how <em class="glossterm">Devices</em> 
+        advertise their <em class="glossterm">Services</em> in the network and also how 
+        <em class="glossterm">Control Points</em> search for
+        services and devices respond.
+      </p>
+<p>See Also <a class="glossseealso" href="glossary.html#device">Device</a>, <a class="glossseealso" href="glossary.html#controlpoint">Control Point</a>, <a class="glossseealso" href="glossary.html#service">Service</a>.</p>
+</dd>
+<dt><span class="glossterm">SSDP</span></dt>
+<dd><p>See <a class="glosssee" href="glossary.html#ssdp">Simple Service Discovery Protocol</a>.</p></dd>
+<dt>
+<a name="state-variable"></a><span class="glossterm">State Variable</span>
+</dt>
+<dd class="glossdef"><p>
+      A <em class="firstterm">State Variable</em> is a public variable exposing some
+      aspect of the service's state.  State variables are typed and optionally
+      are <em class="firstterm">evented</em>, which means that any changes will be
+      notified.  Control points are said to <em class="firstterm">subscribe</em> to
+      a state variable to receive change notifications.
+    </p></dd>
+<dt><span class="glossterm">UDN</span></dt>
+<dd><p>See <a class="glosssee" href="glossary.html#udn">Unique Device Name</a>.</p></dd>
+<dt>
+<a name="udn"></a><span class="glossterm">Unique Device Name</span>
+</dt>
+<dd class="glossdef">
+<p>
+        A a unique identifier which is <span class="emphasis"><em>unique</em></span> for every
+        device but <span class="emphasis"><em>never changes</em></span> for each particular
+        device.
+      </p>
+<p>
+        A common practise is to generate a unique UDN on first boot from a
+        random seed, or use some unique and persistent property such as the
+        device's MAC address to create the UDN.
+      </p>
+<p>See Also <a class="glossseealso" href="glossary.html#device">Device</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

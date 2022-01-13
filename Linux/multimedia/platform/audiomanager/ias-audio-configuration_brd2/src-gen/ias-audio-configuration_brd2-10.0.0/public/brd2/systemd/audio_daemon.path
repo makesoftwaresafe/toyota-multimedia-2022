@@ -1,0 +1,4 @@
+[Path]
+PathExists=/dev/shm/jack_default_0_0
+Unit=audio_daemon.service
+

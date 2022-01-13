@@ -1,0 +1,315 @@
+state.MASCA {
+	control.1 {
+		iface MIXER
+		name 'sound_masca clkfsy_mst_slv'
+		value CBM_CFM
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 CBM_CFM
+			item.1 CBS_CFM
+			item.2 CBM_CFS
+			item.3 CBS_CFS
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'sound_masca polarities'
+		value Normal
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Normal
+			item.1 Inverted_frame
+			item.2 Inverted_bit
+			item.3 Inverted
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'sound_masca codec_polarities'
+		value Normal
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Normal
+			item.1 Inverted_frame
+			item.2 Inverted_bit
+			item.3 Inverted
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'sound_masca format'
+		value LEFT_J
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 I2S
+			item.1 RIGHT_J
+			item.2 LEFT_J
+			item.3 DSP_A
+			item.4 DSP_B
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'sound_masca width'
+		value 16
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 32'
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'sound_masca slots'
+		value 2
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 32'
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'sound_masca tx_mask'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 65535'
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'sound_masca rx_mask'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 65535'
+		}
+	}
+}
+state.ESAI {
+	control.1 {
+		iface MIXER
+		name 'sound_esai_link clkfsy_mst_slv'
+		value CBS_CFS
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 CBM_CFM
+			item.1 CBS_CFM
+			item.2 CBM_CFS
+			item.3 CBS_CFS
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'sound_esai_link polarities'
+		value Normal
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Normal
+			item.1 Inverted_frame
+			item.2 Inverted_bit
+			item.3 Inverted
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'sound_esai_link codec_polarities'
+		value Normal
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Normal
+			item.1 Inverted_frame
+			item.2 Inverted_bit
+			item.3 Inverted
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'sound_esai_link format'
+		value I2S
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 I2S
+			item.1 RIGHT_J
+			item.2 LEFT_J
+			item.3 DSP_A
+			item.4 DSP_B
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'sound_esai_link width'
+		value 32
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 32'
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'sound_esai_link slots'
+		value 2
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 32'
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'sound_esai_link tx_mask'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 65535'
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'sound_esai_link rx_mask'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 65535'
+		}
+	}
+}
+state.EntESAIStMo4i2 {
+	control.1 {
+		iface MIXER
+		name 'sound_esai_link clkfsy_mst_slv'
+		value CBS_CFS
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 CBM_CFM
+			item.1 CBS_CFM
+			item.2 CBM_CFS
+			item.3 CBS_CFS
+		}
+	}
+	control.2 {
+		iface MIXER
+		name 'sound_esai_link polarities'
+		value Normal
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Normal
+			item.1 Inverted_frame
+			item.2 Inverted_bit
+			item.3 Inverted
+		}
+	}
+	control.3 {
+		iface MIXER
+		name 'sound_esai_link codec_polarities'
+		value Normal
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Normal
+			item.1 Inverted_frame
+			item.2 Inverted_bit
+			item.3 Inverted
+		}
+	}
+	control.4 {
+		iface MIXER
+		name 'sound_esai_link format'
+		value I2S
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 I2S
+			item.1 RIGHT_J
+			item.2 LEFT_J
+			item.3 DSP_A
+			item.4 DSP_B
+		}
+	}
+	control.5 {
+		iface MIXER
+		name 'sound_esai_link width'
+		value 32
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 32'
+		}
+	}
+	control.6 {
+		iface MIXER
+		name 'sound_esai_link slots'
+		value 2
+		comment {
+			access 'read write'
+			type INTEGER
+			count 1
+			range '0 - 32'
+		}
+	}
+	control.7 {
+		iface MIXER
+		name 'sound_esai_link tx_mask'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 65535'
+		}
+	}
+	control.8 {
+		iface MIXER
+		name 'sound_esai_link rx_mask'
+		value.0 0
+		value.1 0
+		comment {
+			access 'read write'
+			type INTEGER
+			count 2
+			range '0 - 65535'
+		}
+	}
+}

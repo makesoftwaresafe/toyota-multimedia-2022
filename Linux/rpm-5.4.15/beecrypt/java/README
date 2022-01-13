@@ -1,0 +1,7 @@
+Assumptions made by the build system (which should be fixed, as soon as I can
+figure out the right options to make Ant run with gcj).
+
+The build system assumes that ant can be called; in a later phase, autoconf
+should check for the executable.
+
+The build system assumes the presence of 'java' and 'javac' executables.

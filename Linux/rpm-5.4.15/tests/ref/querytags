@@ -1,0 +1,225 @@
+ARCH                   1022 string
+ARCHIVESIZE            1046 uint32
+BASENAMES              1117 argv array
+BLINKHDRID             1165 argv array
+BLINKNEVRA             1166 argv array
+BLINKPKGID             1164 argv array
+BUGURL                 5012 string
+BUILDARCHS             1089 argv array
+BUILDBUILD           1538136666 argv array
+BUILDBUILDPROG       1874092052 argv array
+BUILDCHECK           2134611893 argv array
+BUILDCHECKPROG       1217028302 argv array
+BUILDCLEAN           1449149119 argv array
+BUILDCLEANPROG       1120484673 argv array
+BUILDCPUCLOCK          1176 uint32
+BUILDHOST              1007 string
+BUILDINSTALL         1451186563 argv array
+BUILDINSTALLPROG     1892985711 argv array
+BUILDMACROS            1111 argv array
+BUILDPLATFORMS         1183 argv array
+BUILDPREP            2040269645 argv array
+BUILDPREPPROG        1269005470 argv array
+BUILDTIME              1006 uint32
+C                      1054 argv array
+CACHECTIME             1136 uint32
+CACHEPKGMTIME          1139 uint32
+CACHEPKGPATH           1137 string
+CACHEPKGSIZE           1138 uint32
+CAPABILITY             1105 uint32
+CHANGELOGNAME          1081 argv array
+CHANGELOGTEXT          1082 argv array
+CHANGELOGTIME          1080 uint32 array
+CLASS                  1202 string
+CLASSDICT              1142 argv array
+CONFLICTATTRSX         1189 uint32 array
+CONFLICTFLAGS          1053 uint32 array
+CONFLICTNAME           1054 argv array
+CONFLICTS              1054 argv array
+CONFLICTVERSION        1055 argv array
+CONFLICTYAMLENTRY      1219 argv array
+COOKIE                 1094 string
+CVSID                  1163 string
+D                      1218 string
+DBINSTANCE             1195 uint32
+DEPATTRSDICT           1188 argv array
+DEPENDSDICT            1145 uint32 array
+DESCRIPTION            1005 string
+DIRINDEXES             1116 uint32 array
+DIRNAMES               1118 argv array
+DISTEPOCH              1218 string
+DISTRIBUTION           1010 string
+DISTTAG                1155 string
+DISTURL                1123 string
+DSAHEADER               267 octets
+E                      1003 uint32
+ECDSAHEADER             270 octets
+ENHANCES               1159 argv array
+ENHANCESFLAGS          1161 uint32 array
+ENHANCESNAME           1159 argv array
+ENHANCESVERSION        1160 argv array
+EPOCH                  1003 uint32
+EXCLUDEARCH            1059 argv array
+EXCLUDEOS              1060 argv array
+EXCLUSIVEARCH          1061 argv array
+EXCLUSIVEOS            1062 argv array
+FILECLASS              1141 uint32 array
+FILECOLORS             1140 uint32 array
+FILECONTEXTS           1147 argv array
+FILEDEPENDSN           1144 uint32 array
+FILEDEPENDSX           1143 uint32 array
+FILEDEVICES            1095 uint32 array
+FILEDIGESTALGO         5011 uint32
+FILEDIGESTALGOS        1177 uint32 array
+FILEDIGESTS            1035 argv array
+FILEFLAGS              1037 uint32 array
+FILEGROUPNAME          1040 argv array
+FILEINODES             1096 uint32 array
+FILELANGS              1097 argv array
+FILELINKTOS            1036 argv array
+FILEMD5S               1035 argv array
+FILEMODES              1030 uint16 array
+FILEMTIMES             1034 uint32 array
+FILEPATHS              1197 argv array
+FILERDEVS              1033 uint16 array
+FILESIZES              1028 uint32 array
+FILESTAT               1207 argv array
+FILESTATES             1029 uint8 array
+FILEUSERNAME           1039 argv array
+FILEVERIFYFLAGS        1045 uint32 array
+FILEXATTRSX            1187 uint32 array
+FLINKHDRID             1168 argv array
+FLINKNEVRA             1169 argv array
+FLINKPKGID             1167 argv array
+FSCONTEXTS             1148 argv array
+GIF                    1012 octets
+GROUP                  1016 string
+HDRID                   269 string
+HEADERENDOFF           1212 uint64
+HEADERI18NTABLE         100 argv array
+HEADERIMMUTABLE          63 octets
+HEADERSTARTOFF         1211 uint64
+ICON                   1043 octets
+INSTALLCOLOR           1127 uint32
+INSTALLTID             1128 uint32 array
+INSTALLTIME            1008 uint32 array
+INSTPREFIXES           1099 argv array
+KEYWORDS               1182 argv array
+LICENSE                1014 string
+N                      1000 string
+NAME                   1000 string
+NVRA                   1196 string
+O                      1090 argv array
+OBSOLETEATTRSX         1190 uint32 array
+OBSOLETEFLAGS          1114 uint32 array
+OBSOLETENAME           1090 argv array
+OBSOLETES              1090 argv array
+OBSOLETEVERSION        1115 argv array
+OBSOLETEYAMLENTRY      1220 argv array
+OLDFILENAMES           1027 argv array
+OPTFLAGS               1122 string
+ORIGBASENAMES          1120 argv array
+ORIGDIRINDEXES         1119 uint32 array
+ORIGDIRNAMES           1121 argv array
+ORIGINTID              1209 uint32 array
+ORIGINTIME             1210 uint32 array
+ORIGPATHS              1198 argv array
+OS                     1021 string
+P                      1047 argv array
+PACKAGEBASEURL         1217 string
+PACKAGECOLOR           1184 uint32
+PACKAGEDEPFLAGS      1955234580 argv array
+PACKAGEDIGEST          1215 string
+PACKAGEORIGIN          1170 string
+PACKAGEPREFCOLOR       1185 uint32
+PACKAGER               1015 string
+PACKAGESIZE            1214 uint64
+PACKAGESTAT            1216 octets
+PACKAGETIME            1213 uint64
+PACKAGETRANSFLAGS    1325051865 argv array
+PATCH                  1019 argv array
+PATCHESFLAGS           1134 uint32 array
+PATCHESNAME            1133 argv array
+PATCHESVERSION         1135 argv array
+PAYLOADCOMPRESSOR      1125 string
+PAYLOADFLAGS           1126 string
+PAYLOADFORMAT          1124 string
+PKGID                   261 octets
+PLATFORM               1132 string
+POLICIES               1150 argv array
+POSTIN                 1024 string
+POSTINPROG             1086 string
+POSTTRANS              1152 string
+POSTTRANSPROG          1154 string
+POSTUN                 1026 string
+POSTUNPROG             1088 string
+PREFIXES               1098 argv array
+PREIN                  1023 string
+PREINPROG              1085 string
+PRETRANS               1151 string
+PRETRANSPROG           1153 string
+PREUN                  1025 string
+PREUNPROG              1087 string
+PRIORITY               1162 uint32 array
+PROVIDEATTRSX          1191 uint32 array
+PROVIDEFLAGS           1112 uint32 array
+PROVIDENAME            1047 argv array
+PROVIDES               1047 argv array
+PROVIDEVERSION         1113 argv array
+PROVIDEYAMLENTRY       1221 argv array
+PUBKEYS                 266 argv array
+R                      1002 string
+RECONTEXTS             1149 argv array
+RELEASE                1002 string
+REMOVETID              1129 uint32 array
+REPOTAG                1181 string
+REQUIREATTRSX          1192 uint32 array
+REQUIREFLAGS           1048 uint32 array
+REQUIRENAME            1049 argv array
+REQUIRES               1049 argv array
+REQUIREVERSION         1050 argv array
+REQUIREYAMLENTRY       1222 argv array
+RHNPLATFORM            1131 string
+RPMLIBTIMESTAMP        1200 uint32
+RPMLIBVENDOR           1201 uint32
+RPMLIBVERSION          1199 uint32
+RPMVERSION             1064 string
+RSAHEADER               268 octets
+SANITYCHECK            1205 string
+SANITYCHECKPROG        1206 string
+SCRIPTMETRICS          1175 uint32 array
+SCRIPTSTATES           1174 uint32 array
+SHA1HEADER              269 string
+SIGGPG                  262 octets
+SIGMD5                  261 octets
+SIGPGP                  259 octets
+SIGSIZE                 257 uint32
+SIZE                   1009 uint32
+SOURCE                 1018 argv array
+SOURCEPACKAGE          1106 uint32
+SOURCEPKGID            1146 octets
+SOURCERPM              1044 string
+STAT                   1208 argv array
+SUGGESTS               1156 argv array
+SUGGESTSFLAGS          1158 uint32 array
+SUGGESTSNAME           1156 argv array
+SUGGESTSVERSION        1157 argv array
+SUMMARY                1004 string
+SVNID                  1163 string
+TRIGGERFLAGS           1068 uint32 array
+TRIGGERINDEX           1069 uint32 array
+TRIGGERNAME            1066 argv array
+TRIGGERSCRIPTPROG      1092 argv array
+TRIGGERSCRIPTS         1065 argv array
+TRIGGERVERSION         1067 argv array
+URL                    1020 string
+V                      1001 string
+VARIANTS               1178 argv array
+VENDOR                 1011 string
+VERIFYSCRIPT           1079 string
+VERIFYSCRIPTPROG       1091 string
+VERSION                1001 string
+XATTRSDICT             1186 argv array
+XMAJOR                 1179 uint32
+XMINOR                 1180 uint32
+XPM                    1013 octets

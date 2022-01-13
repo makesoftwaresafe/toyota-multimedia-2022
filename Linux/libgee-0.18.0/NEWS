@@ -1,0 +1,302 @@
+libgee 0.18.0
+=============
+ * No changes since previous release
+
+libgee 0.17.92
+==============
+ * Fix default value of --enable-consistency-check
+
+libgee 0.16.1
+=============
+ * Workaround GC thread consuming 100% of CPU
+ * Fix HashMap destructor name
+ * Fix a documentation typo
+
+libgee 0.16.0
+=============
+ * No changes since previous release
+
+libgee 0.15.92
+==============
+ * Improve documentation
+
+libgee 0.15.90
+==============
+ * Add explicit tee implementations
+ * Improve the benchmark
+
+libgee 0.15.3
+=============
+ * Add UnrolledLinkedList class implementing List and Deque interface
+ * Clarify the add and insert operation on list iterators and make the behaviour consistent for ArrayList and LinkedList
+ * Allow (partially) disable internal asserts
+ * Internal symbols are hidden
+
+libgee 0.14.0
+=============
+ * No changes since previous release
+
+libgee 0.13.91
+==============
+ * Fix HazardPointer bugs
+ * Fix List test
+
+libgee 0.13.90
+==============
+ * Fix the broken test
+
+libgee 0.13.5.1
+===============
+ * Remove workaround for 'old' (<0.23.2) vala
+
+libgee 0.13.5
+=============
+ * Use WeakRef for keeping of read-only proxy for collection
+
+libgee 0.13.4
+=============
+ * The collection cloning no longer leaks memory
+ * Various warning fixes
+ * Various fixes to build system
+
+libgee 0.12.0
+=============
+ * No changes since previous release
+
+libgee 0.11.92
+==============
+ * Override read_only_view property in ReadOnlySortedMap and its subclasses
+
+libgee 0.11.91
+==============
+ * Bump the GLib requirements to 2.36 in configure.ac
+
+libgee 0.11.90
+==============
+ * Add adding to collection based on iterators
+ * Make Collection.add_all_array, contains_all_array and remove_all_array virtual
+ * Avoid destroy coroutine creation in hazard pointer implementation
+ * Various bugfixes
+
+libgee 0.11.5
+=============
+ * Add Traversable.tee
+ * Add exception handling to Future
+ * Add ability of getting Future from Lazy
+ * Make Traversable.flat_map a virtual function
+ * Add more specializations to .foreach
+ * Improve the test
+ * Various bugfixes
+
+libgee 0.11.4
+=============
+ * Add flat_map method to Traversable
+ * Add zip method to Future
+ * Specialize stream iterator (4-22% speed improvement in tests)
+ * Extend the Traversable.Stream with Stream.WAIT
+ * Fix lazy value usage in unfold
+
+libgee 0.11.0
+=============
+ * Add futures and promises to libgee
+ * Update the build system
+ * Return true from HashSet.Iterator.foreach() if we fall off the end
+
+libgee 0.10.0
+=============
+ * No changes since release candidate
+
+libgee 0.9.92
+=============
+ * Fix memory leak in TreeSet and TreeMap
+
+libgee 0.9.91
+=============
+ * ConcurrentSet implements SortedSet
+ * Fix HashMultiMap, TreeMultiSet constructor
+ * Add add/contains/remove_all working on array
+ * Allow creation of ArrayList from array
+ * Add read_only_view to Gee.MultiSet and Gee.MultiMap
+
+libgee 0.9.0
+============
+ * ConcurrentSet preliminary implementation
+ * Bugfixes from 0.8.2 and 0.8.3
+ * Fix various Vala warnings
+ * First part of test refactoring
+
+libgee 0.8.1
+============
+ * Allow slice in ReadOnlyList
+ * Fix Iterator.remove in PriorityQueue
+ * Add foreach specializations
+ * Use foreach function instead of iterators
+
+libgee 0.8.0
+============
+ * Fix Traversable.chop (bug #684348)
+ * Remove unnecessary method
+ * Update README
+ * Move everything to GenericAccessor
+
+libgee 0.7.90
+=============
+ * Don't notify when constructor property is set
+ * Use views instead of copies in MultiMap as in rest of libgee
+ * Allow early termination in Traversable.foreach
+
+libgee 0.7.4.1
+==============
+ * Fix missing property read_only in testmap Entry
+
+libgee 0.7.4
+============
+ * Remove *_impl methods
+ * Move virtual methods to interfaces
+ * Future-proof the ABI by adding reserved v-table members
+ * Add read_only to Map.Entry
+
+libgee 0.7.3
+============
+ * Update documentation
+ * Fix iteration order in hashtables
+ * Split SortedMap/SortedSet into bi-directional and uni-directional parts
+ * Simplify CompareDataFunc/HashDataFunc/EqualDataFunc
+ * Fix HazardPointers
+
+libgee 0.7.2
+============
+ * Require *_type property for all collections
+ * Add ArrayQueue
+ * Few bug fixes
+
+libgee 0.7.1
+============
+ * Implement hazard pointers and concurrent linked lists
+ * Respect VALAFLAGS when building tests
+ * Fix a few compiling warnings
+
+libgee 0.7.0
+============
+ * Build system using the automake 1.11 vala support
+ * Move to delegates with targets and move them to Gee namespace
+ * Gee.Hashable interface
+ * Improve Iterator allowing to, among others, query about state of iterator
+ * Allow checking if Iterator or Collection is read-only
+ * Introducing highier-level function via Traversable interface
+ * Introduce support for lazy values
+ * Allow to install in parallel with 0.6
+
+libgee 0.5.2
+============
+
+ * Build system enhancements to conform Gnome's style.
+ * Bug fixes in TreeSet, TreeMap and Collection.to_array.
+ * Deprecated Map methods marked with [Deprecated].
+
+libgee 0.5.1
+============
+
+ * Bug fixes in HashMultiSet, TimSort, TreeMap, TreeMultiSet, and TreeSet.
+ * Fix build with Vala 0.8.0 and later.
+ * Fix build on Windows.
+ * Fix subprocess handling in test infrastructure.
+
+libgee 0.5.0
+============
+
+ * API changes
+   * Introduce Functions hash, equal and compare function factory
+   * Introduce Comparable<G> interface
+   * Implementations provides sane defaults when constructed without functions
+   * ReadOnly* made internal in favor of a `read_only_view` properties
+   * Iterator<G> is now mutable and resettable
+   * Introduction of BidirIterator<G> bidirectional iterators
+   * List<G>.list_iterator () returns a specialized ListIterator<G>
+   * Various API contracts clarifications and enhancements
+   * Introduce List<G>.sort () with TimSort implementation
+   * Complete Map API rework
+   * Introduce Queue and Deque interfaces
+   * Introduce MultiSet and MultiMap interfaces (Ali Sabil)
+   * Introduce SortedSet interface (Maciej Pietchotka)
+
+ * New implementations
+   * HashMultiSet and HashMultiMap (Ali Sabil)
+   * TreeMultiSet and TreeMultiMap.
+   * PriorityQueue
+   * LinkedList now implements Deque
+   * TreeSet now implements SortedSet (Maciej Pietchotka)
+
+ * Infrastructure
+   * New test framework and complete tests refactoring (Julien Peters)
+   * New doc/ documentation directory (--enable-doc)
+   * Test coverage analysis using lcov (--enable-coverage)
+   * Basic benchmark framework and sort benchmark (--enable-benchmark)
+   * Use silent rules by default for users of automake 1.11
+
+ * Code Quality
+   * Many bug fixes
+   * Many optimizations
+   * Lots of additional documentation
+   * Better overall encapsulation, dangerous public setters have been removed
+   * Better test coverage (more than 90%)
+
+libgee 0.4.0
+============
+
+ * Bug fixes.
+
+libgee 0.3.0
+============
+
+ * Introduce AbstractCollection, AbstractList and AbstractMap base classes.
+ * Add new properties and methods to Collection, List and Map. (Tomaž Vajngerl)
+ * Add LinkedList implementation. (Mark Lee)
+ * Add TreeSet and TreeMap implementations. (Maciej Piechotka)
+ * Iterable.element_type is now a property.
+ * Map.remove now takes an optional parameter to retrieve the removed value.
+ * Bump library version info to reflect API/ABI breakage
+
+libgee 0.2.0
+============
+
+ * Generate GIR file.
+
+libgee 0.1.6
+============
+
+ * Fix build for Vala 0.7.
+ * Bug fixes.
+
+libgee 0.1.5
+============
+
+ * Add slice method to Gee.List.
+
+libgee 0.1.4
+============
+
+ * Update for Vala 0.3.3.
+
+libgee 0.1.3
+============
+
+ * More unit tests.
+ * Update for Vala 0.3.1.
+
+libgee 0.1.2
+============
+
+ * Add unit tests.
+ * Bug fixes.
+
+libgee 0.1.1
+============
+
+ * Add get_element_type method to Gee.Iterable.
+ * Update for Vala 0.1.6.
+
+libgee 0.1.0
+============
+
+ * Initial release.

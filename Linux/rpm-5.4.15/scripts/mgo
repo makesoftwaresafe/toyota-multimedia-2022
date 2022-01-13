@@ -1,0 +1,53 @@
+#!/bin/sh
+
+mongo=/usr/bin/mongo
+nick=${1:-localhost}
+
+# -- Common defaults:
+H=localhost
+P=27017
+DB=cooker
+
+# The "cooker" database has these collections:
+#	packages		-- full header metadata
+#	primary/filellsts/other	-- the mongodb analogue of repo-md 
+
+# -- Load U=user and PW=password envvar's.
+eval `cat ~/.mongohq`
+UPW=""
+[ ."$U" != . ] && UPW="$UPW -u ${U}"
+[ ."$PW" != . ] && UPW="$UPW -p ${PW}"
+
+# --- Set per-database variables across multiple hosts.
+case $nick in
+flame)
+    # --- mongohq "free" instance (w 16Mb limit). AWS hosted. mongo-1.6.x.
+    #	mongodb://${U}:${PW}>@flame.mongohq.com:27048/client-test
+    H=flame.mongohq.com
+    P=27048
+    DB=client-test
+    ;;
+tempest)
+    # --- mongohq "large" instance (w 5Gb limit). AWS hosted. mongo-1.8.0.
+    #	mongodb://${U}:${PW}@tempest.mongohq.com:10017/cooker
+    H=tempest.mongohq.com
+    P=10017
+    ;;
+harwich|hw)
+    # --- CentOS5/x86_64. @pmmman.com hosted VM. mongo-1.6.x.
+    H=harwich.jbj.org
+    ;;
+wareham|wh)
+    # --- Cooker/i586 (w 2Gb limit). IPv6 only. mongo-1.6.x.
+    H=wareham.jbj.org
+    ;;
+wellfleet|wf)
+    # --- CentOS5/i686 (w 2Gb limit). @pmmman.com hosted VM.
+    H=wellfleet.rpm5.org
+    ;;
+localhost|*)
+    ;;
+esac
+
+# --- Invoke the mongo shell.
+$mongo ${H}:${P}/${DB} ${UPW}

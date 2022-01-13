@@ -1,0 +1,44 @@
+file(GLOB ipod_ctrl_test_src *.[ch])
+
+add_executable(${IPOD_CTRL_TEST} ${ipod_ctrl_test_src})
+
+target_link_libraries(${IPOD_CTRL_TEST} PUBLIC
+		udev
+		${ADIT_PFCFG_SYS_LIBRARIES}
+		pthread
+		${IAP1_DLT_LOGGING_COMP_NAME}
+		${TRANS_NAME}
+		${PLUG_NAME_BTCOM}
+		${PLUG_NAME_USB_HIDAPI}
+		${PROT_NAME}
+		${LIBUSB_LIBRARIES}
+		${ADIT_IPOD_COMMON_LIBRARIES})
+
+install(TARGETS ${IPOD_CTRL_TEST}
+	DESTINATION ${CMAKE_INSTALL_BINDIR}
+	COMPONENT runtime)
+
+install(FILES runtest/smoketest/ipod-ctrl-smoketest
+	DESTINATION ${DEST_SMOKETEST_CMD_DIR}
+	COMPONENT runtime)
+
+configure_file(
+	ipod-ctrl-test.sh.in
+	${PROJECT_BINARY_DIR}/ipod-ctrl-test.sh
+	@ONLY)
+
+install(FILES ${PROJECT_BINARY_DIR}/ipod-ctrl-test.sh
+	DESTINATION ${DEST_SMOKETEST_DIR}
+	PERMISSIONS
+		OWNER_WRITE OWNER_READ OWNER_EXECUTE
+		GROUP_READ  GROUP_EXECUTE
+		WORLD_READ  WORLD_EXECUTE
+	COMPONENT runtime)
+
+install(FILES ${PROJECT_BINARY_DIR}/ipod-ctrl-test.sh
+	DESTINATION /opt/platform/
+	PERMISSIONS
+		OWNER_WRITE OWNER_READ OWNER_EXECUTE
+		GROUP_READ  GROUP_EXECUTE
+		WORLD_READ  WORLD_EXECUTE
+	COMPONENT runtime)

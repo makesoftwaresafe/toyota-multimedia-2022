@@ -1,0 +1,26 @@
+----------------------------
+How to build
+----------------------------
+
+The Persistence Healt Monitor component uses automake to build the library.
+Execute the following steps in order to build the component
+* autoreconf –vi
+* configure
+* make
+
+
+
+----------------------------
+How to test
+----------------------------
+
+Currently no automatic test have been implemented.
+Use the dbus send commands to test the functionality of the Persistence Health Monitor.
+Adjust the parameters like the partition to your environment:
+
+dbus-send --system --type=method_call --dest=org.genivi.persistence.health /org/genivi/persistence/health org.genivi.persistence.health.fsCheck string:'ext3' string:'/dev/sdb'
+dbus-send --system --type=method_call --dest=org.genivi.persistence.health /org/genivi/persistence/health org.genivi.persistence.health.createPartition string:'ext4' string:'/dev/sdb'
+dbus-send --system --type=method_call --dest=org.genivi.persistence.health /org/genivi/persistence/health org.genivi.persistence.health.fsCheckAndRecover string:'ext4' string:'/dev/sdb'
+dbus-send --system --type=method_call --dest=org.genivi.persistence.health /org/genivi/persistence/health org.genivi.persistence.health.mount string:'ext4' string:'/dev/sdb'
+dbus-send --system --type=method_call --dest=org.genivi.persistence.health /org/genivi/persistence/health org.genivi.persistence.health.umount string:'ext4' string:'/dev/sdb'
+

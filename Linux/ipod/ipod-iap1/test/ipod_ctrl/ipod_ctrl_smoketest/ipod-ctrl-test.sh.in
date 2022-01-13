@@ -1,0 +1,52 @@
+#!/bin/bash
+
+################################################################################
+# This source code is proprietary of ADIT
+# Copyright (C) Advanced Driver Information Technology GmbH
+# All rights reserved
+################################################################################
+
+################################################################################
+#
+# --- AUTOMATED SMOKETEST ---
+#
+# Description:  This test checks ipod control
+# Group:        smartphone,ipod
+# Arch NOK:
+# Board OK:
+# Board NOK:
+# Reset:        0
+# Timeout:      30
+# Check:        text
+# Host-Pre:
+# Host-Post:
+#
+################################################################################
+
+DIR=$(dirname $0)
+source "${DIR}/smoketest.func" || exit 1
+source "${DIR}/ipod-auth.func" || FN_smoketest_error "Sourcing '${DIR}/ipod-auth.func' failed."
+
+# initialize smoketest
+FN_smoketest_init || FN_smoketest_error "Smoketest init failed."
+
+# load dlt functionality
+FN_smoketest_use "dlt" || FN_smoketest_error "Use dlt functionality failed."
+
+# define test variables
+TEST_USER="${1:-root}"
+
+################################################################################
+
+# initialize ipod environment
+FN_ipod_startup || FN_smoketest_error "IPOD startup failed."
+
+FN_check_user "${TEST_USER}"
+
+# start smoketest
+FN_user_execute "${TEST_USER}" "@CMAKE_INSTALL_PREFIX@/bin/ipod_ctrl_smoketest.out"
+
+# finalize ipod environment
+FN_ipod_exit
+FN_smoketest_result "0" "User '${TEST_USER}' tested."
+

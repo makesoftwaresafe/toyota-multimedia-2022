@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Compiling with libsoup: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch01.html" title="Tutorial">
+<link rel="prev" href="ch01.html" title="Tutorial">
+<link rel="next" href="libsoup-client-howto.html" title="libsoup Client Basics">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libsoup-client-howto.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="libsoup-build-howto"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle">Compiling with libsoup</span></h2>
+<p>Compiling with libsoup — Notes on compiling</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect2">
+<a name="id-1.2.2.3"></a><h3>Using pkg-config</h3>
+<p>
+Like other GNOME libraries, <span class="application">libsoup</span> uses
+<span class="application">pkg-config</span> to provide compiler options. The
+package name is "<code class="literal">libsoup-2.4</code>". So in your
+<code class="literal">configure</code> script, you might specify something like:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function">PKG_CHECK_MODULES</span><span class="symbol">(</span><span class="normal">LIBSOUP</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">[</span><span class="normal">libsoup</span><span class="symbol">-</span><span class="number">2.4</span><span class="normal"> </span><span class="symbol">&gt;=</span><span class="normal"> </span><span class="number">2.26</span><span class="symbol">])</span>
+<span class="function">AC_SUBST</span><span class="symbol">(</span><span class="normal">LIBSOUP_CFLAGS</span><span class="symbol">)</span>
+<span class="function">AC_SUBST</span><span class="symbol">(</span><span class="normal">LIBSOUP_LIBS</span><span class="symbol">)</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+The "<code class="literal">2.4</code>" in the package name is the "API version"
+(indicating "the version of the <span class="application">libsoup</span> API
+that first appeared in version 2.4") and is essentially just part of
+the package name.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="id-1.2.2.4"></a><h3>API Availability and Deprecation Warnings</h3>
+<p>
+If you want to restrict your program to a particular
+<span class="application">libsoup</span> version or range of versions, you
+can define <a class="link" href="libsoup-2.4-Version-Information.html#SOUP-VERSION-MIN-REQUIRED:CAPS" title="SOUP_VERSION_MIN_REQUIRED"><code class="literal">SOUP_VERSION_MIN_REQUIRED</code></a>
+and/or <a class="link" href="libsoup-2.4-Version-Information.html#SOUP-VERSION-MAX-ALLOWED:CAPS" title="SOUP_VERSION_MAX_ALLOWED"><code class="literal">SOUP_VERSION_MAX_ALLOWED</code></a>.
+Eg:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">LIBSOUP_CFLAGS</span><span class="symbol">=</span><span class="string">"$LIBSOUP_CFLAGS -DSOUP_VERSION_MIN_REQUIRED=SOUP_VERSION_2_36"</span>
+<span class="normal">LIBSOUP_CFLAGS</span><span class="symbol">=</span><span class="string">"$LIBSOUP_CFLAGS -DSOUP_VERSION_MAX_ALLOWED=SOUP_VERSION_2_40"</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+The <code class="literal">SOUP_VERSION_MIN_REQUIRED</code> declaration states
+that the code is not expected to compile on versions of
+<span class="application">libsoup</span> older than the indicated version
+(here, 2.36), and so the compiler should print warnings if the code
+uses functions that were deprecated as of that release.
+</p>
+<p>
+The <code class="literal">SOUP_VERSION_MAX_ALLOWED</code> declaration states
+that the code <span class="emphasis"><em>is</em></span> expected to compile on versions
+of <span class="application">libsoup</span> up to the indicated version
+(here, 2.40), and so, when compiling the program against a newer
+version than that, the compiler should print warnings if the code uses
+functions that did not yet exist in the max-allowed release.
+</p>
+<p>
+You can use <a class="link" href="libsoup-2.4-Version-Information.html#SOUP-CHECK-VERSION:CAPS" title="SOUP_CHECK_VERSION()"><code class="literal">SOUP_CHECK_VERSION</code></a>
+to check the version of libsoup at compile time, to compile different
+code for different <span class="application">libsoup</span> versions. (If
+you are setting <code class="literal">SOUP_VERSION_MIN_REQUIRED</code> and
+<code class="literal">SOUP_VERSION_MAX_ALLOWED</code> to different versions, as
+in the example above, then you almost certainly need to be doing
+this.)
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="id-1.2.2.5"></a><h3>Headers</h3>
+<p>
+Code using <span class="application">libsoup</span> should do:
+</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="preproc">#include</span><span class="normal"> </span><span class="string">&lt;libsoup/soup.h&gt;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+Including individual headers rather than <code class="literal">soup.h</code> is not
+recommended.
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

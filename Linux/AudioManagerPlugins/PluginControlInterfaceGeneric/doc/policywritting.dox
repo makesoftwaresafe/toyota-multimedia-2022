@@ -1,0 +1,26 @@
+/**
+@page configurationtools XML editors
+
+    This section covers the tools which can be used to write the configuration faster. The 
+Generic Controller configuration is in XML format and there are multiple XML editors available. The 
+comparison is present at https://en.wikipedia.org/wiki/Comparison_of_XML_editors. Since schema for 
+controller configuration is also provided, it is advisable to use the editor which offers 
+intellisense/auto completion feature. This would speed up the configuration writing. 
+
+    During the development we used <b>Eclipse XML Editors and Tools</b> from Eclipse Web Tools Platform. 
+This can be installed from the eclipse IDE itself.
+
+    To install the eclipse XML plugin, click Install new software, select the default update site
+and install the Eclipse XML editors and Tools as shown in the diagram below
+\image html eclipse_xml_Pluing_installation.png
+
+    The diagram below shows the XML editor view, its possible to select the valid values using the 
+drop down box. Thereby eliminating any typing mistakes.
+\image html xml_editor.png
+
+    The below diagram shows the validation feature, in case invalid data is entered, it is 
+ underlined and highlighted. Validation can also be triggered by right clicking the XML file and 
+ selecting validate. 
+\image html xml_validation.png
+  
+*/

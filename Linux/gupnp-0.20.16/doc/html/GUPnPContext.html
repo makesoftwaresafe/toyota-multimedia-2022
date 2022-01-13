@@ -1,0 +1,889 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPContext: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-context.html" title="Network context handling">
+<link rel="prev" href="api-context.html" title="Network context handling">
+<link rel="next" href="GUPnPContextManager.html" title="GUPnPContextManager">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPContext.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPContext.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#GUPnPContext.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPContext.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-context.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="api-context.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUPnPContextManager.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPContext"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPContext.top_of_page"></a>GUPnPContext</span></h2>
+<p>GUPnPContext — Context object wrapping shared networking bits.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPContext.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="returnvalue">GUPnPContext</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-new" title="gupnp_context_new ()">gupnp_context_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-get-host-ip" title="gupnp_context_get_host_ip ()">gupnp_context_get_host_ip</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-get-port" title="gupnp_context_get_port ()">gupnp_context_get_port</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">SoupServer</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-get-server" title="gupnp_context_get_server ()">gupnp_context_get_server</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">SoupSession</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-get-session" title="gupnp_context_get_session ()">gupnp_context_get_session</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-set-subscription-timeout" title="gupnp_context_set_subscription_timeout ()">gupnp_context_set_subscription_timeout</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-get-subscription-timeout" title="gupnp_context_get_subscription_timeout ()">gupnp_context_get_subscription_timeout</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-get-default-language" title="gupnp_context_get_default_language ()">gupnp_context_get_default_language</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-set-default-language" title="gupnp_context_set_default_language ()">gupnp_context_set_default_language</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-add-server-handler" title="gupnp_context_add_server_handler ()">gupnp_context_add_server_handler</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-remove-server-handler" title="gupnp_context_remove_server_handler ()">gupnp_context_remove_server_handler</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-host-path" title="gupnp_context_host_path ()">gupnp_context_host_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-host-path-for-agent" title="gupnp_context_host_path_for_agent ()">gupnp_context_host_path_for_agent</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-unhost-path" title="gupnp_context_unhost_path ()">gupnp_context_unhost_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="returnvalue">GUPnPAcl</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-get-acl" title="gupnp_context_get_acl ()">gupnp_context_get_acl</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPContext.html#gupnp-context-set-acl" title="gupnp_context_set_acl ()">gupnp_context_set_acl</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContext.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPContext.html#GUPnPContext--acl" title="The “acl” property">acl</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPContext.html#GUPnPContext--default-language" title="The “default-language” property">default-language</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GUPnPContext.html#GUPnPContext--port" title="The “port” property">port</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">SoupServer</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPContext.html#GUPnPContext--server" title="The “server” property">server</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">SoupSession</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPContext.html#GUPnPContext--session" title="The “session” property">session</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">guint</span></td>
+<td class="property_name"><a class="link" href="GUPnPContext.html#GUPnPContext--subscription-timeout" title="The “subscription-timeout” property">subscription-timeout</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContext.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPContext.html#GUPnPContext-struct" title="struct GUPnPContext">GUPnPContext</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContext.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> <a href="/home/jens/jhbuild/install/share/gtk-doc/html/gssdpGSSDPClient.html#GSSDPClient-struct">GSSDPClient</a>
+        <span class="lineart">╰──</span> GUPnPContext
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPContext.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GUPnPContext implements
+ GInitable.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPContext.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> wraps the networking bits that are used by the various
+GUPnP classes. It automatically starts a web server on demand.</p>
+<p>For debugging, it is possible to see the messages being sent and received by
+exporting <code class="envar">GUPNP_DEBUG</code>.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPContext.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-context-new"></a><h3>gupnp_context_new ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="returnvalue">GUPnPContext</span></a> *
+gupnp_context_new (<em class="parameter"><code><span class="type">GMainContext</span> *main_context</code></em>,
+                   <em class="parameter"><code>const <span class="type">char</span> *iface</code></em>,
+                   <em class="parameter"><code><span class="type">guint</span> port</code></em>,
+                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Create a new <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> with the specified <em class="parameter"><code>main_context</code></em>
+, <em class="parameter"><code>iface</code></em>
+ and
+<em class="parameter"><code>port</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-context-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>main_context</p></td>
+<td class="parameter_description"><p> Deprecated: 0.17.2: Always set to <code class="literal">NULL</code>. If you
+want to use a different context, use <code class="function">g_main_context_push_thread_default()</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p> The network interface to use, or <code class="literal">NULL</code> to
+auto-detect. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>port</p></td>
+<td class="parameter_description"><p>Port to run on, or 0 if you don't care what port is used.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to store a <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-new.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> object, or <code class="literal">NULL</code> on an error</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-get-host-ip"></a><h3>gupnp_context_get_host_ip ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_context_get_host_ip (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_context_get_host_ip</code> has been deprecated since version 0.12.7 and should not be used in newly-written code.</p>
+<p>The "host-ip" property has moved to the base class
+<a href="/home/jens/jhbuild/install/share/gtk-doc/html/gssdpGSSDPClient.html#GSSDPClient-struct"><span class="type">GSSDPClient</span></a> so newer applications should use
+<a href="/home/jens/jhbuild/install/share/gtk-doc/html/gssdpGSSDPClient.html#gssdp-client-get-host-ip"><span class="type">gssdp_client_get_host_ip</span></a> instead.</p>
+</div>
+<p>Get the IP address we advertise ourselves as using.</p>
+<div class="refsect3">
+<a name="gupnp-context-get-host-ip.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-get-host-ip.returns"></a><h4>Returns</h4>
+<p> The IP address. This string should not be freed.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-get-port"></a><h3>gupnp_context_get_port ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_context_get_port (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>);</pre>
+<div class="warning"><p><code class="literal">gupnp_context_get_port</code> is deprecated and should not be used in newly-written code.</p></div>
+<p>Get the port that the SOAP server is running on.</p>
+<div class="refsect3">
+<a name="gupnp-context-get-port.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-get-port.returns"></a><h4>Returns</h4>
+<p> The port the SOAP server is running on.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-get-server"></a><h3>gupnp_context_get_server ()</h3>
+<pre class="programlisting"><span class="returnvalue">SoupServer</span> *
+gupnp_context_get_server (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>);</pre>
+<p>Get the <span class="type">SoupServer</span> HTTP server that GUPnP is using.</p>
+<div class="refsect3">
+<a name="gupnp-context-get-server.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-get-server.returns"></a><h4>Returns</h4>
+<p> The <span class="type">SoupServer</span> used by GUPnP. Do not unref this when finished. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-get-session"></a><h3>gupnp_context_get_session ()</h3>
+<pre class="programlisting"><span class="returnvalue">SoupSession</span> *
+gupnp_context_get_session (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>);</pre>
+<p>Get the <span class="type">SoupSession</span> object that GUPnP is using.</p>
+<div class="refsect3">
+<a name="gupnp-context-get-session.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-get-session.returns"></a><h4>Returns</h4>
+<p> The <span class="type">SoupSession</span> used by GUPnP. Do not unref
+this when finished. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.12.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-set-subscription-timeout"></a><h3>gupnp_context_set_subscription_timeout ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_set_subscription_timeout
+                               (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>,
+                                <em class="parameter"><code><span class="type">guint</span> timeout</code></em>);</pre>
+<p>Sets the event subscription timeout to <em class="parameter"><code>timeout</code></em>
+. Use 0 if you don't
+want subscriptions to time out. Note that any client side subscriptions
+will automatically be renewed.</p>
+<div class="refsect3">
+<a name="gupnp-context-set-subscription-timeout.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>timeout</p></td>
+<td class="parameter_description"><p>Event subscription timeout in seconds</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-get-subscription-timeout"></a><h3>gupnp_context_get_subscription_timeout ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_context_get_subscription_timeout
+                               (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>);</pre>
+<p>Get the event subscription timeout (in seconds), or 0 meaning there is no
+timeout.</p>
+<div class="refsect3">
+<a name="gupnp-context-get-subscription-timeout.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-get-subscription-timeout.returns"></a><h4>Returns</h4>
+<p> The event subscription timeout in seconds.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-get-default-language"></a><h3>gupnp_context_get_default_language ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_context_get_default_language (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>);</pre>
+<p>Get the default Content-Language header for this context.</p>
+<div class="refsect3">
+<a name="gupnp-context-get-default-language.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-get-default-language.returns"></a><h4>Returns</h4>
+<p> The default content of the Content-Language
+header. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.17.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-set-default-language"></a><h3>gupnp_context_set_default_language ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_set_default_language (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>,
+                                    <em class="parameter"><code>const <span class="type">char</span> *language</code></em>);</pre>
+<p>Set the default language for the Content-Length header to <em class="parameter"><code>language</code></em>
+.</p>
+<p>If the client sends an Accept-Language header the UPnP HTTP server
+is required to send a Content-Language header in return. If there are
+no files hosted in languages which match the requested ones the
+Content-Language header is set to this value. The default value is "en".</p>
+<div class="refsect3">
+<a name="gupnp-context-set-default-language.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>language</p></td>
+<td class="parameter_description"><p>A language tag as defined in RFC 2616 3.10</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.17.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-add-server-handler"></a><h3>gupnp_context_add_server_handler ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_add_server_handler (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>,
+                                  <em class="parameter"><code><span class="type">gboolean</span> use_acl</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                                  <em class="parameter"><code><span class="type">SoupServerCallback</span> callback</code></em>,
+                                  <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                  <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy</code></em>);</pre>
+<p>Add a <span class="type">SoupServerCallback</span> to the <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>'s <span class="type">SoupServer</span>.</p>
+<div class="refsect3">
+<a name="gupnp-context-add-server-handler.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>use_acl</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code>, if the path should query the GUPnPContext::acl before
+serving the resource, <code class="literal">FALSE</code> otherwise.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>the toplevel path for the handler.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>callback to invoke for requests under <em class="parameter"><code>path</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the user_data passed to <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>destroy</p></td>
+<td class="parameter_description"><p> A <span class="type">GDestroyNotify</span> for <em class="parameter"><code>user_data</code></em>
+or <code class="literal">NULL</code> if none. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-remove-server-handler"></a><h3>gupnp_context_remove_server_handler ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_remove_server_handler (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>,
+                                     <em class="parameter"><code>const <span class="type">char</span> *path</code></em>);</pre>
+<p>Remove a <span class="type">SoupServerCallback</span> from the <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>'s <span class="type">SoupServer</span>.</p>
+<div class="refsect3">
+<a name="gupnp-context-remove-server-handler.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>the toplevel path for the handler.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-host-path"></a><h3>gupnp_context_host_path ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_host_path (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>,
+                         <em class="parameter"><code>const <span class="type">char</span> *local_path</code></em>,
+                         <em class="parameter"><code>const <span class="type">char</span> *server_path</code></em>);</pre>
+<p>Start hosting <em class="parameter"><code>local_path</code></em>
+ at <em class="parameter"><code>server_path</code></em>
+. Files with the path
+<em class="parameter"><code>local_path.LOCALE</code></em>
+ (if they exist) will be served up when LOCALE is
+specified in the request's Accept-Language header.</p>
+<div class="refsect3">
+<a name="gupnp-context-host-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>local_path</p></td>
+<td class="parameter_description"><p>Path to the local file or folder to be hosted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>server_path</p></td>
+<td class="parameter_description"><p>Web server path where <em class="parameter"><code>local_path</code></em>
+should be hosted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-host-path-for-agent"></a><h3>gupnp_context_host_path_for_agent ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_context_host_path_for_agent (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *local_path</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *server_path</code></em>,
+                                   <em class="parameter"><code><span class="type">GRegex</span> *user_agent</code></em>);</pre>
+<p>Use this method to serve different local path to specific user-agent(s). The
+path <em class="parameter"><code>server_path</code></em>
+ must already be hosted by <em class="parameter"><code>context</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-context-host-path-for-agent.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>local_path</p></td>
+<td class="parameter_description"><p>Path to the local file or folder to be hosted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>server_path</p></td>
+<td class="parameter_description"><p>Web server path already being hosted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_agent</p></td>
+<td class="parameter_description"><p>The user-agent as a <span class="type">GRegex</span>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-host-path-for-agent.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> on success, <code class="literal">FALSE</code> otherwise.</p>
+</div>
+<p class="since">Since: 0.13.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-unhost-path"></a><h3>gupnp_context_unhost_path ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_unhost_path (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>,
+                           <em class="parameter"><code>const <span class="type">char</span> *server_path</code></em>);</pre>
+<p>Stop hosting the file or folder at <em class="parameter"><code>server_path</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-context-unhost-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>server_path</p></td>
+<td class="parameter_description"><p>Web server path where the file or folder is hosted</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-get-acl"></a><h3>gupnp_context_get_acl ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="returnvalue">GUPnPAcl</span></a> *
+gupnp_context_get_acl (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-context-get-acl.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-context-get-acl.returns"></a><h4>Returns</h4>
+<p> The access control list associated with this context or <code class="literal">NULL</code>
+if no acl is set. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-context-set-acl"></a><h3>gupnp_context_set_acl ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_context_set_acl (<em class="parameter"><code><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *context</code></em>,
+                       <em class="parameter"><code><a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a> *acl</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-context-set-acl.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>acl</p></td>
+<td class="parameter_description"><p> The new access control list or <code class="literal">NULL</code> to remove the
+current list. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.11</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContext.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPContext-struct"></a><h3>struct GUPnPContext</h3>
+<pre class="programlisting">struct GUPnPContext;</pre>
+<p>This struct contains private data only, and should be accessed using the
+functions below.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPContext.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPContext--acl"></a><h3>The <code class="literal">“acl”</code> property</h3>
+<pre class="programlisting">  “acl”                      <a class="link" href="GUPnPAcl.html" title="GUPnPAcl"><span class="type">GUPnPAcl</span></a> *</pre>
+<p>An access control list.</p>
+<p>Flags: Read / Write / Construct</p>
+<p class="since">Since: 0.20.11</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPContext--default-language"></a><h3>The <code class="literal">“default-language”</code> property</h3>
+<pre class="programlisting">  “default-language”         <span class="type">gchar</span> *</pre>
+<p>The content of the Content-Language header id the client
+sends Accept-Language and no language-specific pages to serve
+exist. The property defaults to 'en'.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: "en"</p>
+<p class="since">Since: 0.17.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPContext--port"></a><h3>The <code class="literal">“port”</code> property</h3>
+<pre class="programlisting">  “port”                     <span class="type">guint</span></pre>
+<p>The port to run on. Set to 0 if you don't care what port to run on.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPContext--server"></a><h3>The <code class="literal">“server”</code> property</h3>
+<pre class="programlisting">  “server”                   <span class="type">SoupServer</span> *</pre>
+<p>The <span class="type">SoupServer</span> HTTP server used by GUPnP.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPContext--session"></a><h3>The <code class="literal">“session”</code> property</h3>
+<pre class="programlisting">  “session”                  <span class="type">SoupSession</span> *</pre>
+<p>The <span class="type">SoupSession</span> object used by GUPnP.</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPContext--subscription-timeout"></a><h3>The <code class="literal">“subscription-timeout”</code> property</h3>
+<pre class="programlisting">  “subscription-timeout”     <span class="type">guint</span></pre>
+<p>The preferred subscription timeout: the number of seconds after
+which subscriptions are renewed. Set to '0' if subscriptions
+
+are never to time out.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Allowed values: &lt;= 604800</p>
+<p>Default value: 1800</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

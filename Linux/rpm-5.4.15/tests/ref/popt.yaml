@@ -1,0 +1,1222 @@
+- !!omap
+  Headeri18ntable:
+    - C
+  Sigsize: 102220
+  Sigmd5:     !!binary 2qo2BWmmg1NwRaRd2pcXGg==
+  Dsaheader:     !!binary iEYEABECAAYFAkfzxR0ACgkQuHNkGyA5spF6WgCfajA/r8qecEt+9aCtndKkCuquuxIAoIZ5QPUezNE683lnPZYw01rNt+gl
+  Sha1header: 9168777f898ed82d44693778a5cf50e17924a5e1
+  Name: popt
+  Version: 1.14
+  Release: 1
+  Summary: A C library for parsing command line parameters.
+  Description: |-
+      Popt is a C library for parsing command line parameters. Popt was
+      heavily influenced by the getopt() and getopt_long() functions, but it
+      improves on them by allowing more powerful argument expansion. Popt
+      can parse arbitrary argv[] style arrays and automatically set
+      variables based on command line arguments. Popt allows command line
+      arguments to be aliased via configuration files and includes utility
+      functions for parsing arbitrary strings into argv[] arrays using
+      shell-like rules.
+  Buildtime: 1207158035
+  Buildhost: wellfleet.jbj.org
+  Size: 221078
+  License: X Consortium
+  Group: System Environment/Libraries
+  Os: linux
+  Arch: i386
+  Filesizes:
+    - 39880
+    - 782
+    - 16
+    - 16
+    - 101390
+    - 17624
+    - 1752
+    - 1528
+    - 2178
+    - 1537
+    - 2426
+    - 1868
+    - 2060
+    - 1567
+    - 2140
+    - 1740
+    - 1902
+    - 2110
+    - 1857
+    - 1744
+    - 2204
+    - 2116
+    - 1816
+    - 1082
+    - 1890
+    - 553
+    - 557
+    - 2142
+    - 3162
+    - 1541
+    - 547
+    - 2507
+    - 560
+    - 2065
+    - 1700
+    - 10551
+  Filemodes:
+    - 33188
+    - 33261
+    - 41471
+    - 41471
+    - 33261
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+    - 33188
+  Filerdevs:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  Filemtimes:
+    - 1207158034
+    - 1207158034
+    - 1207158034
+    - 1207158034
+    - 1207158034
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+    - 1207158033
+  Filedigests:
+    - d5bf807db4c4089f36f629e00c071dac
+    - c822e9616eb3204200307b4704ebd5e8
+    - ~
+    - ~
+    - 7145f346e52773a8ad9702a3ce5ee7a9
+    - ddae259686af7bdf51a8192ca0ecf2af
+    - 169bb5208404f8a15df65a72723ddcf5
+    - 822afebec0111c3878c53f3b9d03a9a6
+    - a827b3147fa3bbb21356195910bc5a45
+    - aea12b16248ed2996ceea72b820180e7
+    - 82058439e841ecf11c2e9fc411e65ba7
+    - 8322028224f1b382dd60dbf1f213dfb9
+    - 11133a3c908df9d3f8cdf51254537ed5
+    - 08cdab8f0d359ce555d600867bd2f0e6
+    - d566c594411e24e0fc67f6d2396341cd
+    - 084bed685ae47efcc1c0c1e5b56f7c8a
+    - 7deb2b42d782c782bdea05a224802344
+    - 2b3b73e4ee5dcfecc05abaf2208774d5
+    - bf46d7e01a1480694c06eab58a04bcba
+    - a48a22706dbb7f7c799799f9bdf6c035
+    - fb546022a3b536bbb3562b5bbdb73132
+    - cb020eab16f91f72a2d0d24316a4865a
+    - 0778c521a54514afa0ae8f226a3893e3
+    - 5499f07399a656c10a79d74219074197
+    - 0ad6b54225fb595bf446c02d1d31aa69
+    - 698a24963516fdabda1b8a0bb0962d1d
+    - 0e6de04498104295d858692ebe5682eb
+    - ec4dfe9d58427074717bbf702447b1e4
+    - 014be66831bcf20b12cd464f0d4e5990
+    - 3f23b56d46e20fdeacfac494ae9663a5
+    - cdf464f550f0b03e7a8f63b95e6c6835
+    - d571c685d0fac81d2f562ca3f971901d
+    - d18f2bfbf6cbb23b56fdfedacdf4ceea
+    - 83c61c74a8c9231eb632de9199507383
+    - 1e6958b973d9b9f9b810f7a4897ed760
+    - 1938f2c0842d4f2238478cd4ed1afd95
+  Filelinktos:
+    - ~
+    - ~
+    - libpopt.so.0.0.0
+    - libpopt.so.0.0.0
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+  Fileflags:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 2
+  Fileusername:
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+  Filegroupname:
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+    - root
+  Sourcerpm: popt-1.14-1.src.rpm
+  Fileverifyflags:
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+    - 4294967295
+  Archivesize: 226620
+  Providename:
+    - libpopt.so.0
+    - libpopt.so.0(LIBPOPT_0)
+    - libtool(/lib/libpopt.la)
+    - popt
+  Requireflags:
+    - 16384
+    - 16384
+    - 16384
+    - 16384
+    - 16384
+    - 16384
+    - 16384
+  Requirename:
+    - libc.so.6
+    - libc.so.6(GLIBC_2.0)
+    - libc.so.6(GLIBC_2.1)
+    - libc.so.6(GLIBC_2.1.3)
+    - libc.so.6(GLIBC_2.2)
+    - libc.so.6(GLIBC_2.3)
+    - rtld(GNU_HASH)
+  Requireversion:
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+  Rpmversion: 5.1.DEVEL
+  Changelogtime:
+    - 1197410400
+    - 1184104800
+    - 1181426400
+  Changelogname:
+    - Jeff Johnson <jbj@rpm5.org>
+    - Jeff Johnson <jbj@rpm5.org>
+    - Jeff Johnson <jbj@rpm5.org>
+  Changelogtext:
+    - |-
+      - release popt-1.13 through rpm5.org.
+    - |-
+      - release popt-1.12 through rpm5.org.
+    - |-
+      - release popt-1.11 through rpm5.org.
+  Cookie: wellfleet.jbj.org 1207158035
+  Filedevices:
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+    - 2050
+  Fileinodes:
+    - 6635885
+    - 6635884
+    - 6635883
+    - 6635882
+    - 6635881
+    - 6586662
+    - 5324905
+    - 5292411
+    - 5292412
+    - 5324934
+    - 5357585
+    - 5391263
+    - 5456041
+    - 5456177
+    - 5489110
+    - 5619937
+    - 5587239
+    - 5587240
+    - 5652507
+    - 5652508
+    - 5685552
+    - 5751711
+    - 5784502
+    - 5816987
+    - 5816992
+    - 5849346
+    - 5915145
+    - 5915146
+    - 6013124
+    - 6046030
+    - 6078562
+    - 6111345
+    - 6520947
+    - 6570357
+    - 6520951
+    - 6619731
+  Filelangs:
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - cs
+    - da
+    - de
+    - es
+    - fi
+    - fr
+    - ga
+    - gl
+    - hu
+    - is
+    - it
+    - ja
+    - ko
+    - nb
+    - nl
+    - pl
+    - pt
+    - ro
+    - ru
+    - sk
+    - sl
+    - sv
+    - th
+    - tr
+    - uk
+    - vi
+    - wa
+    - zh
+    - zh
+    - ~
+  Provideflags:
+    - 32768
+    - 32768
+    - 32768
+    - 8
+  Provideversion:
+    - ~
+    - ~
+    - ~
+    - 1.14-1
+  Dirindexes:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+  Basenames:
+    - libpopt.a
+    - libpopt.la
+    - libpopt.so
+    - libpopt.so.0
+    - libpopt.so.0.0.0
+    - popt.h
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.mo
+    - popt.3.gz
+  Dirnames:
+    - /lib/
+    - /usr/include/
+    - /usr/share/locale/cs/LC_MESSAGES/
+    - /usr/share/locale/da/LC_MESSAGES/
+    - /usr/share/locale/de/LC_MESSAGES/
+    - /usr/share/locale/es/LC_MESSAGES/
+    - /usr/share/locale/fi/LC_MESSAGES/
+    - /usr/share/locale/fr/LC_MESSAGES/
+    - /usr/share/locale/ga/LC_MESSAGES/
+    - /usr/share/locale/gl/LC_MESSAGES/
+    - /usr/share/locale/hu/LC_MESSAGES/
+    - /usr/share/locale/is/LC_MESSAGES/
+    - /usr/share/locale/it/LC_MESSAGES/
+    - /usr/share/locale/ja/LC_MESSAGES/
+    - /usr/share/locale/ko/LC_MESSAGES/
+    - /usr/share/locale/nb/LC_MESSAGES/
+    - /usr/share/locale/nl/LC_MESSAGES/
+    - /usr/share/locale/pl/LC_MESSAGES/
+    - /usr/share/locale/pt/LC_MESSAGES/
+    - /usr/share/locale/ro/LC_MESSAGES/
+    - /usr/share/locale/ru/LC_MESSAGES/
+    - /usr/share/locale/sk/LC_MESSAGES/
+    - /usr/share/locale/sl/LC_MESSAGES/
+    - /usr/share/locale/sv/LC_MESSAGES/
+    - /usr/share/locale/th/LC_MESSAGES/
+    - /usr/share/locale/tr/LC_MESSAGES/
+    - /usr/share/locale/uk/LC_MESSAGES/
+    - /usr/share/locale/vi/LC_MESSAGES/
+    - /usr/share/locale/wa/LC_MESSAGES/
+    - /usr/share/locale/zh_CN/LC_MESSAGES/
+    - /usr/share/locale/zh_TW/LC_MESSAGES/
+    - /usr/share/man/man3/
+  Optflags: -O2 -g -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables
+  Payloadformat: cpio
+  Payloadcompressor: gzip
+  Payloadflags: 9
+  Platform: i386-redhat-linux
+  Filecolors:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  Fileclass:
+    - 2
+    - 4
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  Classdict:
+    - ~
+    - ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), not stripped
+    - current ar archive
+    - directory
+    - libtool library file
+  Filedependsx:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  Filedependsn:
+    - 0
+    - 1
+    - 0
+    - 0
+    - 9
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  Dependsdict:
+    - 1342177282
+    - 1342177280
+    - 1342177281
+    - 1375731712
+    - 1375731713
+    - 1375731714
+    - 1375731715
+    - 1375731716
+    - 1375731717
+    - 1375731718
+  Sourcepkgid:     !!binary pIJU/idO/XRcil9E/zWw8Q==
+  Filecontexts:
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+    - ~
+  Filedigestalgos:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+  Rpmlibversion: 673185792
+  Rpmlibtimestamp: 2105540608
+  Rpmlibvendor: 1380994357
+
+- !!omap
+  Headeri18ntable:
+    - C
+  Sigsize: 704831
+  Sigmd5:     !!binary pIJU/idO/XRcil9E/zWw8Q==
+  Dsaheader:     !!binary iEYEABECAAYFAkfzxR0ACgkQuHNkGyA5spEkIQCfYHJtlLG1qhaNpZcwwIuRYXCqTQsAn302sbTjDiDjwafq3Q5wdu1WVqc6
+  Sha1header: d88c31289b4062f6e09095546fae8af4176abece
+  Name: popt
+  Version: 1.14
+  Release: 1
+  Summary: A C library for parsing command line parameters.
+  Description: |-
+      Popt is a C library for parsing command line parameters. Popt was
+      heavily influenced by the getopt() and getopt_long() functions, but it
+      improves on them by allowing more powerful argument expansion. Popt
+      can parse arbitrary argv[] style arrays and automatically set
+      variables based on command line arguments. Popt allows command line
+      arguments to be aliased via configuration files and includes utility
+      functions for parsing arbitrary strings into argv[] arrays using
+      shell-like rules.
+  Buildtime: 1207158035
+  Buildhost: wellfleet.jbj.org
+  Size: 697372
+  License: X Consortium
+  Group: System Environment/Libraries
+  Source:
+    - popt-1.14.tar.gz
+  Os: linux
+  Arch: i386
+  Filesizes:
+    - 695557
+    - 1815
+  Filemodes:
+    - 33204
+    - 33204
+  Filerdevs:
+    - 0
+    - 0
+  Filemtimes:
+    - 1207158002
+    - 1207158002
+  Filedigests:
+    - 4f90a07316eb825604dd10ae4f9f3f04
+    - 0e621cd5906e4c5937db856c95550e39
+  Filelinktos:
+    - ~
+    - ~
+  Fileflags:
+    - 0
+    - 32
+  Fileusername:
+    - jbj
+    - jbj
+  Filegroupname:
+    - jbj
+    - jbj
+  Fileverifyflags:
+    - 4294967295
+    - 4294967295
+  Archivesize: 697748
+  Requireflags:
+    - 0
+  Requirename:
+    - gettext
+  Requireversion:
+    - ~
+  Rpmversion: 5.1.DEVEL
+  Changelogtime:
+    - 1197410400
+    - 1184104800
+    - 1181426400
+  Changelogname:
+    - Jeff Johnson <jbj@rpm5.org>
+    - Jeff Johnson <jbj@rpm5.org>
+    - Jeff Johnson <jbj@rpm5.org>
+  Changelogtext:
+    - |-
+      - release popt-1.13 through rpm5.org.
+    - |-
+      - release popt-1.12 through rpm5.org.
+    - |-
+      - release popt-1.11 through rpm5.org.
+  Cookie: wellfleet.jbj.org 1207158035
+  Filedevices:
+    - 2050
+    - 2050
+  Fileinodes:
+    - 7438418
+    - 5963874
+  Filelangs:
+    - ~
+    - ~
+  Buildmacros:
+    - %___build_args	-e
+    - %___build_cmd	%{?_sudo:%{_sudo} }%{?_remsh:%{_remsh} %{_remhost} }%{?_remsudo:%{_remsudo} }%{?_remchroot:%{_remchroot} %{_remroot} }%{___build_shell} %{___build_args}
+    - %___build_post	exit 0
+    - |3-
+      %___build_pre	
+        RPM_SOURCE_DIR="%{u2p:%{_sourcedir}}"
+        RPM_BUILD_DIR="%{u2p:%{_builddir}}"
+        RPM_OPT_FLAGS="%{optflags}"
+        RPM_ARCH="%{_arch}"
+        RPM_OS="%{_os}"
+        export RPM_SOURCE_DIR RPM_BUILD_DIR RPM_OPT_FLAGS RPM_ARCH RPM_OS
+        RPM_DOC_DIR="%{_docdir}"
+        export RPM_DOC_DIR
+        RPM_PACKAGE_NAME="%{name}"
+        RPM_PACKAGE_VERSION="%{version}"
+        RPM_PACKAGE_RELEASE="%{release}"
+        export RPM_PACKAGE_NAME RPM_PACKAGE_VERSION RPM_PACKAGE_RELEASE
+        %{?buildroot:RPM_BUILD_ROOT="%{u2p:%{buildroot}}"
+        export RPM_BUILD_ROOT}
+        %{?_javaclasspath:CLASSPATH="%{_javaclasspath}"
+        export CLASSPATH}
+        unset PERL_MM_OPT || :
+        LANG=C
+        export LANG
+        unset DISPLAY || :
+        
+        %{verbose:set -x}%{!verbose:exec > /dev/null}
+        umask 022
+        cd "%{u2p:%{_builddir}}"
+    - %___build_shell	%{?_buildshell:%{_buildshell}}%{!?_buildshell:/bin/sh}
+    - %__arch_install_post	%{nil}
+    - %__chgrp	/bin/chgrp
+    - %__chgrp_Rhf	%{__chgrp} -Rhf
+    - %__chmod	/bin/chmod
+    - %__chown	/bin/chown
+    - %__chown_Rhf	%{__chown} -Rhf
+    - |3-
+      %__dbi_btconfig	
+        btree		
+        %{__dbi_other}
+        %{__dbi_perms}
+      %{nil}
+    - %__dbi_btconfig_current	%{__dbi_btconfig}
+    - %__dbi_other	%{?_tmppath:tmpdir=%{_tmppath}} %{?__dbi_cdb}
+    - %__dbi_perms	perms=0644
+    - %__gzip	/bin/gzip
+    - %__id	/usr/bin/id
+    - %__id_u	%{__id} -u
+    - %__mkdir_p	/bin/mkdir -p
+    - |3-
+      %__os_install_post	
+          /usr/lib/rpm/brp-compress 
+          /usr/lib/rpm/brp-strip 
+          /usr/lib/rpm/brp-strip-static-archive 
+          /usr/lib/rpm/brp-strip-comment-note 
+      %{nil}
+    - %__perl	/usr/bin/perl
+    - %__rm	/bin/rm
+    - %__spec_build_cmd	%{___build_cmd}
+    - %__spec_build_post	%{___build_post}
+    - %__spec_build_pre	%{___build_pre}
+    - %__spec_build_shell	%{___build_shell}
+    - |-
+      %__spec_build_template	#!%{__spec_build_shell}
+      %{__spec_build_pre}
+      %{nil}
+    - %__spec_install_cmd	%{___build_cmd}
+    - |3-
+      %__spec_install_post	
+          %{?__debug_package:%{__debug_install_post}}
+          %{__arch_install_post}
+          %{__os_install_post}
+      %{nil}
+    - |-
+      %__spec_install_pre	%{___build_pre}
+      %{?buildroot:%{__rm} -rf '%{buildroot}'; %{__mkdir_p} '%{buildroot}'}
+    - %__spec_install_shell	%{___build_shell}
+    - |-
+      %__spec_install_template	#!%{__spec_install_shell}
+      %{__spec_install_pre}
+      %{nil}
+    - %__spec_prep_cmd	%{___build_cmd}
+    - %__spec_prep_post	%{___build_post}
+    - %__spec_prep_pre	%{___build_pre}
+    - %__spec_prep_shell	%{___build_shell}
+    - |-
+      %__spec_prep_template	#!%{__spec_prep_shell}
+      %{__spec_prep_pre}
+      %{nil}
+    - %__tar	/bin/tar
+    - %__vsflags	0xf0000
+    - %_arch	i386
+    - %_bindir	%{_exec_prefix}/bin
+    - %_build	%{_host}
+    - %_build_file_digest_algo	1
+    - %_builddir	%{_ntopdir}
+    - %_buildshell	/bin/sh
+    - %_datadir	%{_prefix}/share
+    - %_dbapi	3
+    - %_dbapi_rebuild	3
+    - %_dbapi_used	%{?_rpmdb_rebuild:%{_dbapi_rebuild}}%{!?_rpmdb_rebuild:%{_dbapi}}
+    - |3-
+      %_dbi_btconfig	
+        %{?_rpmdb_rebuild:%{__dbi_btconfig_rebuild}}
+        %{!?_rpmdb_rebuild:%{__dbi_btconfig_current}}
+      %{nil}
+    - %_dbi_config_3_Packages	%{_dbi_btconfig} lockdbfd
+    - %_dbi_config_3_Providename	%{_dbi_btconfig}
+    - %_dbi_config_Packages	%{expand:%%{_dbi_config_%{_dbapi_used}_Packages}}
+    - %_dbi_config_Providename	%{expand:%%{_dbi_config_%{_dbapi_used}_Providename}}
+    - %_dbi_tags_3	Packages:Name:Basenames:Group:Requirename:Providename:Conflictname:Triggername:Dirnames:Requireversion:Provideversion:Installtid:Sigmd5:Sha1header:Filedigests:Pubkeys:Packagecolor:Nvra:Sourcepkgid
+    - %_defaultdocdir	%{_usr}/share/doc
+    - %_docdir	%{_defaultdocdir}
+    - %_etcrpm	/etc/rpm
+    - %_exec_prefix	%{_prefix}
+    - %_fixgroup	[ `%{__id_u}` = '0' ] && %{__chgrp_Rhf} root
+    - %_fixowner	[ `%{__id_u}` = '0' ] && %{__chown_Rhf} root
+    - %_fixperms	%{__chmod} -Rf a+rX,u+w,g-w,o-w
+    - %_host	i686-pc-linux-gnu
+    - %_icondir	%{_sourcedir}
+    - %_includedir	%{_prefix}/include
+    - %_infodir	/usr/share/info
+    - %_javadocdir	%{_datadir}/javadoc
+    - %_legion	popt
+    - %_lib	lib
+    - %_libdir	/%{_lib}
+    - %_libexecdir	%{_exec_prefix}/libexec
+    - %_localstatedir	/var
+    - %_mandir	/usr/share/man
+    - %_ntopdir	%{_topdir}/%{_legion}
+    - %_os	linux
+    - %_patchdir	%{_sourcedir}
+    - %_prefix	/usr
+    - %_rpmhome	%{_usrlibrpm}
+    - %_sbindir	%{_exec_prefix}/sbin
+    - %_sharedstatedir	%{_prefix}/com
+    - %_sourcedir	%{_ntopdir}
+    - %_specdir	%{_ntopdir}
+    - %_sysconfdir	/etc
+    - %_target_cpu	i386
+    - %_target_os	linux
+    - %_target_platform	%{_target_cpu}-%{_vendor}-%{_target_os}
+    - %_tmppath	%{_topdir}/tmp
+    - %_topdir	/X
+    - %_usr	/usr
+    - %_usrlibrpm	/usr/lib/rpm
+    - %_var	/var
+    - %_vendor	redhat
+    - %_vsflags_build	%{__vsflags}
+    - %buildroot	%{_tmppath}/%{name}-root
+    - |3-
+      %configure	
+        CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; 
+        CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; 
+        FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ; 
+        ./configure --host=%{_host} --build=%{_build} \
+      	--target=%{_target_platform} \
+      	--program-prefix=%{?_program_prefix} \
+       	--prefix=%{_prefix} \
+      	--exec-prefix=%{_exec_prefix} \
+      	--bindir=%{_bindir} \
+      	--sbindir=%{_sbindir} \
+      	--sysconfdir=%{_sysconfdir} \
+      	--datadir=%{_datadir} \
+      	--includedir=%{_includedir} \
+      	--libdir=%{_libdir} \
+      	--libexecdir=%{_libexecdir} \
+      	--localstatedir=%{_localstatedir} \
+      	--sharedstatedir=%{_sharedstatedir} \
+      	--mandir=%{_mandir} \
+      	--infodir=%{_infodir}
+    - %find_lang	%{_rpmhome}/find-lang.sh %{buildroot}
+    - %name	popt
+    - %nil	%{!?nil}
+    - %optflags	-O2 -g -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables
+    - %release	1
+    - %version	1.14
+  Dirindexes:
+    - 0
+    - 0
+  Basenames:
+    - popt-1.14.tar.gz
+    - popt.spec
+  Dirnames:
+    - ~
+  Payloadformat: cpio
+  Payloadcompressor: gzip
+  Payloadflags: 9
+  Filecontexts:
+    - ~
+    - ~
+  Filedigestalgos:
+    - 1
+    - 1
+  Rpmlibversion: 673185792
+  Rpmlibtimestamp: 2105540608
+  Rpmlibvendor: 1380994357
+  Tag_0x46c39442: /usr/bin/perl /usr/lib/rpm/vcheck
+  Tag_0x6d479aed: |3-
+      prog popt = {
+          version   = 1.14
+          url       = http://rpm5.org/popt
+          regex     = popt-(\d+\.\d+\.\d+)\.tar\.gz
+      }
+      
+
+

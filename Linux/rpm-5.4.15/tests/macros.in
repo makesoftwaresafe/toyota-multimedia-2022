@@ -1,0 +1,174 @@
+%_testdir	@testdir@
+%_etcrpm	%{_testdir}
+%_topdir	%{_testdir}
+
+%_legion		%{expand:%%global _legion %{name}}%{_legion}
+%_ntopdir		%{_topdir}/%{_legion}
+%_builddir		%{_ntopdir}
+%_sourcedir		%{_ntopdir}
+%_specdir		%{_ntopdir}
+%_rpmdir		%{_ntopdir}
+%_srcrpmdir		%{_ntopdir}
+%_rpmfilename		%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm
+
+%_rpmgio		.ufdio
+%_rpmgi_pattern_glob	file://%{_testdir}/edos-test/
+
+#%_hkp_keyserver		%{nil}
+#%_hkp_keyserver_query	%{nil}
+%_hkp_keyserver         hkp://localhost
+%_gpg_path		%{_testdir}/tmp/.gnupg
+%_gpg_name		Ronald
+%__gpg_check_password_cmd       %{__gpg} \
+    gpg --batch --no-verbose --passphrase-fd 3 --no-secmem-warning \
+    --homedir %{_testdir}/tmp/.gnupg \
+    -u %{_gpg_name} -so -
+%__gpg_sign_cmd		%{__gpg} \
+    gpg --batch --no-verbose --no-armor --passphrase-fd 3 --no-secmem-warning \
+    --homedir %{_testdir}/tmp/.gnupg \
+    -u %{_gpg_name} -sbo %{__signature_filename} %{__plaintext_filename}
+%_keyutils_keyring	session
+
+%_rpmds_sysinfo_path	%{_topdir}/sysinfo/
+%_tmppath		%{_topdir}/tmp
+
+# -- database for tests
+%_dbapi			3
+%_dbpath		%{_topdir}/tmp/rpmdb/
+# -- alternative storages
+%__varlibwdj		%{_topdir}/tmp/wdj/
+%_dbi_config_4_Packages	%{_dbi_sqlconfig} debug
+
+%_hrmib_path		%{_tmppath}/hrmib/%{___NVRA}
+%_repackage_dir		%{_tmppath}/repackage/
+
+%_cache_dbpath		%{_tmppath}/cachedb/
+%_bhpath		file://%{_topdir}/edos-test
+%_bhcoll		%{nil}
+%_bhN			%{nil}
+%_bhVR			%{nil}
+%_bhA			%{nil}
+
+%_solve_A		%{_tmppath}/solveA/
+%_solve_B		%{_tmppath}/solveB/
+%_solve_C		%{_tmppath}/solveC/
+%_solve_dbpath		%{_solve_A}:%{_solve_B}:%{_solve_C}
+
+# XXX uncomment if solvedb headers don't have RPMTAG_PACKAGEORIGIN
+#%_solve_pkgsdir	%{_topdir}/edos-test/
+#%_solve_name_fmt	%{?_solve_pkgsdir}%{___NVRA}.rpm
+
+%_dependency_whiteout_caos_core		\
+	perl>perl-Filter		\
+	pam>coreutils			\
+	pam>initscripts			\
+	glibc-common>glibc		\
+	glibc>nscd			\
+	filesystem>setup
+
+%_dependency_whiteout_idms		\
+	cracklib>cracklib-dicts		\
+	perl>perl-Term-ReadKey		\
+	openssl>openssl-perl		\
+	gcc>libmudflap-devel		\
+	perl-libs>perl			\
+	smart>idms-package-config-smart	\
+	iptables>iptables-ipv6		\
+	krb5-server>krb5-workstation
+
+%_dependency_whiteout			\
+	%{?_dependency_whiteout_system}	\
+	%{nil}
+
+# XXX avoid/override embedded interpreter module loads
+%_luaI_init	%{nil}
+
+%_tclI_init	%{nil}
+
+%_perlI_init	\
+use lib "@abs_top_builddir@/perl/blib/lib";\
+use lib "@abs_top_builddir@/perl/blib/arch";\
+use RPM;\
+%{nil}
+
+#use lib "@abs_top_builddir@/perl-URPM/blib/lib";\
+#use lib "@abs_top_builddir@/perl-URPM/blib/arch";\
+#use URPM;\
+#
+
+%_rubyI_init	%{nil}
+
+%_pythonI_init	\
+sys.path.insert(1,'@abs_top_builddir@/python/.libs')\
+sys.path.insert(1,'@abs_top_builddir@/python')\
+import rpm\
+%{nil}
+
+# XXX overload the Debian tags config macro for now
+%_arbitrary_tags_debian	CVEID:RHSA:RHBZ:ATAS
+
+# XXX Macros have loaded (or not) from %{_usrlibrpm}. Load from within tree.
+%{load:%{_testdir}/../macros/selinux}
+# XXX avoid lua 5.2.0 upgrade b0rkenness for now.
+%__policy_tree		targeted
+%{load:%{_testdir}/../macros/macros.rpmbuild}
+#%{load:%{_testdir}/../macros/cmake}
+#%{load:%{_testdir}/../macros/perl}
+#%{load:%{_testdir}/../macros/python}
+#%{load:%{_testdir}/../macros/php}
+#%{load:%{_testdir}/../macros/java}
+#%{load:%{_testdir}/../macros/libtool}
+#%{load:%{_testdir}/../macros/pkgconfig}
+#%{load:%{_testdir}/../macros/mono}
+#%{load:%{_testdir}/../macros/ruby}
+#%{load:%{_testdir}/../macros/tcl}
+
+%find_lang		%{_testdir}/../scripts/find-lang.sh %{buildroot}
+@WITH_FILE_INTERNAL_TRUE@%_rpmfc_magic_path	%{_testdir}/../file/magic/magic
+%__libtool_provides     %{nil}
+%__libtool_requires     %{nil}
+%__pkgconfig_provides   %{nil}
+%__pkgconfig_requires   %{nil}
+%__scriptlet_requires	%{nil}
+%__check_files		%{_testdir}/../scripts/check-files %{buildroot}
+
+%NVR		%{name}-%{version}-%{release}
+%NVRA		%{name}-%{version}-%{release}.%{_target_cpu}
+
+%pretrans()	%%pretrans %*\
+  echo "--- pretrans(%NVRA)      arg $1 ..."\
+%nil
+%posttrans()	%%posttrans %*\
+  echo "--- posttrans(%NVRA)     arg $1 ..."\
+%nil
+%pre()		%%pre %*\
+  echo "--- pre(%NVRA)           arg $1 ..."\
+%nil
+%post()		%%post %*\
+  echo "--- post(%NVRA)          arg $1 ..."\
+%nil
+%preun()	%%preun %*\
+  echo "--- preun(%NVRA)         arg $1 ..."\
+%nil
+%postun()	%%postun %*\
+  echo "--- postun(%NVRA)        arg $1 ..."\
+%nil
+%verifyscript()	%%verifyscript %*\
+  echo "--- verifyscript(%NVRA)  arg $1 ..."\
+%nil
+%sanitycheck()	%%sanitycheck %*\
+  echo "--- sanitycheck(%NVRA)   arg $1 ..."\
+%nil
+
+%triggerprein()	%%triggerprein %1 -- %2%{?3: %3 %4}\
+  echo "--- triggerprein(%1) -- %2%{?3: %3 %4}	arg $1 $2 ..."\
+%nil
+%triggerin()	%%triggerin %1 -- %2%{?3: %3 %4}\
+  echo "--- triggerin(%1) -- %2%{?3: %3 %4}	arg $1 $2 ..."\
+%nil
+%triggerun()	%%triggerun %1 -- %2%{?3: %3 %4}\
+  echo "--- triggerun(%1) -- %2%{?3: %3 %4}	arg $1 $2 ..."\
+%nil
+%triggerpostun() %%triggerpostun %1 -- %2%{?3: %3 %4}\
+  echo "--- triggerpostun(%1) -- %2%{?3: %3 %4}	arg $1 $2 ..."\
+%nil

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# METHOD=GST # Gsteramer
+# METHOD=PA # PulseAudio
+METHOD=ALSA # direct hardware ALSO
+
+# audio test iPOD
+#  audiostreaming for iPod using GSTREAMER
+#  iPOD --> ipod-gst --> GST --> audio play
+
+#check for USB audio device (e.g. iPhone)
+arecord -l
+
+IPOD_SOURCE=hw:1,0
+AUDIO_SINK=plug:hw:0
+
+#**** List of CAPTURE Hardware Devices ****
+#card 0: imx6qsabreaics4 [imx6q-sabreai-cs42888], device 0: HiFi cs42888-0 []
+#  Subdevices: 1/1
+#  Subdevice #0: subdevice #0
+#card 1: iPod [iPod], device 0: USB Audio [USB Audio]
+#  Subdevices: 1/1
+#  Subdevice #0: subdevice #0
+
+
+
+# start iAP2 identification/authentication process
+systemctl start ipod-player.service
+sleep 1
+@CMAKE_INSTALL_PREFIX@/bin/ipod-sample_app &
+
+
+# launch streaming via gstreamer
+if [ "$METHOD" == "GST" ]; then
+	gst-launch alsasrc device=$IPOD_SOURCE ! queue ! alsasink device=$AUDIO_SINK -v
+fi
+
+# Alternative
+#  audiostreaming for iPod by arecord
+#  iPOD --> audio record --> audio play
+if [ "$METHOD" == "ALSA" ]; then
+	arecord -D $IPOD_SOURCE -r 44100 -c 2 -f S16_LE | aplay -D $AUDIO_SINK  -r 44100 -c 2 -f S16_LE
+fi
+

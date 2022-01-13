@@ -1,0 +1,1465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SoupCookie: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch02.html" title="Core API">
+<link rel="prev" href="SoupCache.html" title="SoupCache">
+<link rel="next" href="SoupMessage.html" title="SoupMessage">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#SoupCookie.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#SoupCookie.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="SoupCache.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="SoupMessage.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="SoupCookie"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="SoupCookie.top_of_page"></a>SoupCookie</span></h2>
+<p>SoupCookie — HTTP Cookies</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="SoupCookie.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupCookie.html" title="SoupCookie"><span class="returnvalue">SoupCookie</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-new" title="soup_cookie_new ()">soup_cookie_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupCookie.html" title="SoupCookie"><span class="returnvalue">SoupCookie</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-parse" title="soup_cookie_parse ()">soup_cookie_parse</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupCookie.html" title="SoupCookie"><span class="returnvalue">SoupCookie</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-copy" title="soup_cookie_copy ()">soup_cookie_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-free" title="soup_cookie_free ()">soup_cookie_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-set-name" title="soup_cookie_set_name ()">soup_cookie_set_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-get-name" title="soup_cookie_get_name ()">soup_cookie_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-set-value" title="soup_cookie_set_value ()">soup_cookie_set_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-get-value" title="soup_cookie_get_value ()">soup_cookie_get_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-set-domain" title="soup_cookie_set_domain ()">soup_cookie_set_domain</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-get-domain" title="soup_cookie_get_domain ()">soup_cookie_get_domain</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-set-path" title="soup_cookie_set_path ()">soup_cookie_set_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-get-path" title="soup_cookie_get_path ()">soup_cookie_get_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-set-max-age" title="soup_cookie_set_max_age ()">soup_cookie_set_max_age</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-HOUR:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_HOUR">SOUP_COOKIE_MAX_AGE_ONE_HOUR</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-DAY:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_DAY">SOUP_COOKIE_MAX_AGE_ONE_DAY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-WEEK:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_WEEK">SOUP_COOKIE_MAX_AGE_ONE_WEEK</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-YEAR:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_YEAR">SOUP_COOKIE_MAX_AGE_ONE_YEAR</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-set-expires" title="soup_cookie_set_expires ()">soup_cookie_set_expires</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-get-expires" title="soup_cookie_get_expires ()">soup_cookie_get_expires</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-set-secure" title="soup_cookie_set_secure ()">soup_cookie_set_secure</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-get-secure" title="soup_cookie_get_secure ()">soup_cookie_get_secure</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-set-http-only" title="soup_cookie_set_http_only ()">soup_cookie_set_http_only</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-get-http-only" title="soup_cookie_get_http_only ()">soup_cookie_get_http_only</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-applies-to-uri" title="soup_cookie_applies_to_uri ()">soup_cookie_applies_to_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-domain-matches" title="soup_cookie_domain_matches ()">soup_cookie_domain_matches</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-to-cookie-header" title="soup_cookie_to_cookie_header ()">soup_cookie_to_cookie_header</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookie-to-set-cookie-header" title="soup_cookie_to_set_cookie_header ()">soup_cookie_to_set_cookie_header</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookies-from-request" title="soup_cookies_from_request ()">soup_cookies_from_request</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookies-from-response" title="soup_cookies_from_response ()">soup_cookies_from_response</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookies-to-request" title="soup_cookies_to_request ()">soup_cookies_to_request</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookies-to-response" title="soup_cookies_to_response ()">soup_cookies_to_response</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookies-to-cookie-header" title="soup_cookies_to_cookie_header ()">soup_cookies_to_cookie_header</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookie.html#soup-cookies-free" title="soup_cookies_free ()">soup_cookies_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupCookie.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="SoupCookie.html#SoupCookie-struct" title="SoupCookie">SoupCookie</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupCookie.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GBoxed
+    <span class="lineart">╰──</span> SoupCookie
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupCookie.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupCookie.description"></a><h2>Description</h2>
+<p><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> implements HTTP cookies, as described by <a class="ulink" href="http://tools.ietf.org/html/rfc6265.txt" target="_top">RFC 6265</a>.</p>
+<p>To have a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> handle cookies for your appliction
+automatically, use a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a>.</p>
+</div>
+<div class="refsect1">
+<a name="SoupCookie.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-cookie-new"></a><h3>soup_cookie_new ()</h3>
+<pre class="programlisting"><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="returnvalue">SoupCookie</span></a> *
+soup_cookie_new (<em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                 <em class="parameter"><code>const <span class="type">char</span> *value</code></em>,
+                 <em class="parameter"><code>const <span class="type">char</span> *domain</code></em>,
+                 <em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                 <em class="parameter"><code><span class="type">int</span> max_age</code></em>);</pre>
+<p>Creates a new <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> with the given attributes. (Use
+<a class="link" href="SoupCookie.html#soup-cookie-set-secure" title="soup_cookie_set_secure ()"><code class="function">soup_cookie_set_secure()</code></a> and <a class="link" href="SoupCookie.html#soup-cookie-set-http-only" title="soup_cookie_set_http_only ()"><code class="function">soup_cookie_set_http_only()</code></a> if you
+need to set those attributes on the returned cookie.)</p>
+<p>If <em class="parameter"><code>domain</code></em>
+ starts with ".", that indicates a domain (which matches
+the string after the ".", or any hostname that has <em class="parameter"><code>domain</code></em>
+ as a
+suffix). Otherwise, it is a hostname and must match exactly.</p>
+<p><em class="parameter"><code>max_age</code></em>
+ is used to set the "expires" attribute on the cookie; pass
+-1 to not include the attribute (indicating that the cookie expires
+with the current session), 0 for an already-expired cookie, or a
+lifetime in seconds. You can use the constants
+<a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-HOUR:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_HOUR"><code class="literal">SOUP_COOKIE_MAX_AGE_ONE_HOUR</code></a>, <a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-DAY:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_DAY"><code class="literal">SOUP_COOKIE_MAX_AGE_ONE_DAY</code></a>,
+<a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-WEEK:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_WEEK"><code class="literal">SOUP_COOKIE_MAX_AGE_ONE_WEEK</code></a> and <a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-YEAR:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_YEAR"><code class="literal">SOUP_COOKIE_MAX_AGE_ONE_YEAR</code></a> (or
+multiples thereof) to calculate this value. (If you really care
+about setting the exact time that the cookie will expire, use
+<a class="link" href="SoupCookie.html#soup-cookie-set-expires" title="soup_cookie_set_expires ()"><code class="function">soup_cookie_set_expires()</code></a>.)</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.2.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>cookie name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>cookie value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>domain</p></td>
+<td class="parameter_description"><p>cookie domain or hostname</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>cookie path, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>max_age</p></td>
+<td class="parameter_description"><p>max age of the cookie, or -1 for a session cookie</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.2.8"></a><h4>Returns</h4>
+<p> a new <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>.</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-parse"></a><h3>soup_cookie_parse ()</h3>
+<pre class="programlisting"><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="returnvalue">SoupCookie</span></a> *
+soup_cookie_parse (<em class="parameter"><code>const <span class="type">char</span> *header</code></em>,
+                   <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *origin</code></em>);</pre>
+<p>Parses <em class="parameter"><code>header</code></em>
+ and returns a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>. (If <em class="parameter"><code>header</code></em>
+ contains
+multiple cookies, only the first one will be parsed.)</p>
+<p>If <em class="parameter"><code>header</code></em>
+ does not have "path" or "domain" attributes, they will
+be defaulted from <em class="parameter"><code>origin</code></em>
+. If <em class="parameter"><code>origin</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, path will default
+to "/", but domain will be left as <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. Note that this is not a
+valid state for a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>, and you will need to fill in some
+appropriate string for the domain if you want to actually make use
+of the cookie.</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>header</p></td>
+<td class="parameter_description"><p>a cookie string (eg, the value of a Set-Cookie header)</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>origin</p></td>
+<td class="parameter_description"><p>origin of the cookie, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.3.7"></a><h4>Returns</h4>
+<p> a new <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if it could
+not be parsed, or contained an illegal "domain" attribute for a
+cookie originating from <em class="parameter"><code>origin</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-copy"></a><h3>soup_cookie_copy ()</h3>
+<pre class="programlisting"><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="returnvalue">SoupCookie</span></a> *
+soup_cookie_copy (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Copies <em class="parameter"><code>cookie</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.4.6"></a><h4>Returns</h4>
+<p> a copy of <em class="parameter"><code>cookie</code></em>
+</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-free"></a><h3>soup_cookie_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_free (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Frees <em class="parameter"><code>cookie</code></em>
+</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-set-name"></a><h3>soup_cookie_set_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_set_name (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                      <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>Sets <em class="parameter"><code>cookie</code></em>
+'s name to <em class="parameter"><code>name</code></em>
+</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>the new name</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-get-name"></a><h3>soup_cookie_get_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_cookie_get_name (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Gets <em class="parameter"><code>cookie</code></em>
+'s name</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.7.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>cookie</code></em>
+'s name</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-set-value"></a><h3>soup_cookie_set_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_set_value (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                       <em class="parameter"><code>const <span class="type">char</span> *value</code></em>);</pre>
+<p>Sets <em class="parameter"><code>cookie</code></em>
+'s value to <em class="parameter"><code>value</code></em>
+</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>the new value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-get-value"></a><h3>soup_cookie_get_value ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_cookie_get_value (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Gets <em class="parameter"><code>cookie</code></em>
+'s value</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.9.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>cookie</code></em>
+'s value</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-set-domain"></a><h3>soup_cookie_set_domain ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_set_domain (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                        <em class="parameter"><code>const <span class="type">char</span> *domain</code></em>);</pre>
+<p>Sets <em class="parameter"><code>cookie</code></em>
+'s domain to <em class="parameter"><code>domain</code></em>
+</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>domain</p></td>
+<td class="parameter_description"><p>the new domain</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-get-domain"></a><h3>soup_cookie_get_domain ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_cookie_get_domain (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Gets <em class="parameter"><code>cookie</code></em>
+'s domain</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.11.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>cookie</code></em>
+'s domain</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-set-path"></a><h3>soup_cookie_set_path ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_set_path (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                      <em class="parameter"><code>const <span class="type">char</span> *path</code></em>);</pre>
+<p>Sets <em class="parameter"><code>cookie</code></em>
+'s path to <em class="parameter"><code>path</code></em>
+</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>the new path</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-get-path"></a><h3>soup_cookie_get_path ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+soup_cookie_get_path (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Gets <em class="parameter"><code>cookie</code></em>
+'s path</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.13.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>cookie</code></em>
+'s path</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-set-max-age"></a><h3>soup_cookie_set_max_age ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_set_max_age (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                         <em class="parameter"><code><span class="type">int</span> max_age</code></em>);</pre>
+<p>Sets <em class="parameter"><code>cookie</code></em>
+'s max age to <em class="parameter"><code>max_age</code></em>
+. If <em class="parameter"><code>max_age</code></em>
+ is -1, the cookie
+is a session cookie, and will expire at the end of the client's
+session. Otherwise, it is the number of seconds until the cookie
+expires. You can use the constants <a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-HOUR:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_HOUR"><code class="literal">SOUP_COOKIE_MAX_AGE_ONE_HOUR</code></a>,
+<a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-DAY:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_DAY"><code class="literal">SOUP_COOKIE_MAX_AGE_ONE_DAY</code></a>, <a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-WEEK:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_WEEK"><code class="literal">SOUP_COOKIE_MAX_AGE_ONE_WEEK</code></a> and
+<a class="link" href="SoupCookie.html#SOUP-COOKIE-MAX-AGE-ONE-YEAR:CAPS" title="SOUP_COOKIE_MAX_AGE_ONE_YEAR"><code class="literal">SOUP_COOKIE_MAX_AGE_ONE_YEAR</code></a> (or multiples thereof) to calculate
+this value. (A value of 0 indicates that the cookie should be
+considered already-expired.)</p>
+<p>(This sets the same property as <a class="link" href="SoupCookie.html#soup-cookie-set-expires" title="soup_cookie_set_expires ()"><code class="function">soup_cookie_set_expires()</code></a>.)</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.14.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>max_age</p></td>
+<td class="parameter_description"><p>the new max age</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-COOKIE-MAX-AGE-ONE-HOUR:CAPS"></a><h3>SOUP_COOKIE_MAX_AGE_ONE_HOUR</h3>
+<pre class="programlisting">#define SOUP_COOKIE_MAX_AGE_ONE_HOUR (60 * 60)
+</pre>
+<p>A constant corresponding to 1 hour, for use with <a class="link" href="SoupCookie.html#soup-cookie-new" title="soup_cookie_new ()"><code class="function">soup_cookie_new()</code></a>
+and <a class="link" href="SoupCookie.html#soup-cookie-set-max-age" title="soup_cookie_set_max_age ()"><code class="function">soup_cookie_set_max_age()</code></a>.</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-COOKIE-MAX-AGE-ONE-DAY:CAPS"></a><h3>SOUP_COOKIE_MAX_AGE_ONE_DAY</h3>
+<pre class="programlisting">#define SOUP_COOKIE_MAX_AGE_ONE_DAY  (SOUP_COOKIE_MAX_AGE_ONE_HOUR * 24)
+</pre>
+<p>A constant corresponding to 1 day, for use with <a class="link" href="SoupCookie.html#soup-cookie-new" title="soup_cookie_new ()"><code class="function">soup_cookie_new()</code></a>
+and <a class="link" href="SoupCookie.html#soup-cookie-set-max-age" title="soup_cookie_set_max_age ()"><code class="function">soup_cookie_set_max_age()</code></a>.</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-COOKIE-MAX-AGE-ONE-WEEK:CAPS"></a><h3>SOUP_COOKIE_MAX_AGE_ONE_WEEK</h3>
+<pre class="programlisting">#define SOUP_COOKIE_MAX_AGE_ONE_WEEK (SOUP_COOKIE_MAX_AGE_ONE_DAY * 7)
+</pre>
+<p>A constant corresponding to 1 week, for use with <a class="link" href="SoupCookie.html#soup-cookie-new" title="soup_cookie_new ()"><code class="function">soup_cookie_new()</code></a>
+and <a class="link" href="SoupCookie.html#soup-cookie-set-max-age" title="soup_cookie_set_max_age ()"><code class="function">soup_cookie_set_max_age()</code></a>.</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-COOKIE-MAX-AGE-ONE-YEAR:CAPS"></a><h3>SOUP_COOKIE_MAX_AGE_ONE_YEAR</h3>
+<pre class="programlisting">#define SOUP_COOKIE_MAX_AGE_ONE_YEAR (SOUP_COOKIE_MAX_AGE_ONE_DAY * 365.2422)
+</pre>
+<p>A constant corresponding to 1 year, for use with <a class="link" href="SoupCookie.html#soup-cookie-new" title="soup_cookie_new ()"><code class="function">soup_cookie_new()</code></a>
+and <a class="link" href="SoupCookie.html#soup-cookie-set-max-age" title="soup_cookie_set_max_age ()"><code class="function">soup_cookie_set_max_age()</code></a>.</p>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-set-expires"></a><h3>soup_cookie_set_expires ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_set_expires (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                         <em class="parameter"><code><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *expires</code></em>);</pre>
+<p>Sets <em class="parameter"><code>cookie</code></em>
+'s expiration time to <em class="parameter"><code>expires</code></em>
+. If <em class="parameter"><code>expires</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
+<em class="parameter"><code>cookie</code></em>
+ will be a session cookie and will expire at the end of the
+client's session.</p>
+<p>(This sets the same property as <a class="link" href="SoupCookie.html#soup-cookie-set-max-age" title="soup_cookie_set_max_age ()"><code class="function">soup_cookie_set_max_age()</code></a>.)</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.19.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>expires</p></td>
+<td class="parameter_description"><p>the new expiration time, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-get-expires"></a><h3>soup_cookie_get_expires ()</h3>
+<pre class="programlisting"><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="returnvalue">SoupDate</span></a> *
+soup_cookie_get_expires (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Gets <em class="parameter"><code>cookie</code></em>
+'s expiration time</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.20.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.20.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>cookie</code></em>
+'s expiration time, which is
+owned by <em class="parameter"><code>cookie</code></em>
+and should not be modified or freed. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-set-secure"></a><h3>soup_cookie_set_secure ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_set_secure (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                        <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> secure</code></em>);</pre>
+<p>Sets <em class="parameter"><code>cookie</code></em>
+'s secure attribute to <em class="parameter"><code>secure</code></em>
+. If <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, <em class="parameter"><code>cookie</code></em>
+ will
+only be transmitted from the client to the server over secure
+(https) connections.</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>secure</p></td>
+<td class="parameter_description"><p>the new value for the secure attribute</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-get-secure"></a><h3>soup_cookie_get_secure ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_cookie_get_secure (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Gets <em class="parameter"><code>cookie</code></em>
+'s secure attribute</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.22.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.22.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>cookie</code></em>
+'s secure attribute</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-set-http-only"></a><h3>soup_cookie_set_http_only ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_set_http_only (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> http_only</code></em>);</pre>
+<p>Sets <em class="parameter"><code>cookie</code></em>
+'s HttpOnly attribute to <em class="parameter"><code>http_only</code></em>
+. If <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, <em class="parameter"><code>cookie</code></em>
+
+will be marked as "http only", meaning it should not be exposed to
+web page scripts or other untrusted code.</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>http_only</p></td>
+<td class="parameter_description"><p>the new value for the HttpOnly attribute</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-get-http-only"></a><h3>soup_cookie_get_http_only ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_cookie_get_http_only (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Gets <em class="parameter"><code>cookie</code></em>
+'s HttpOnly attribute</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.24.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.24.6"></a><h4>Returns</h4>
+<p> <em class="parameter"><code>cookie</code></em>
+'s HttpOnly attribute</p>
+</div>
+<p class="since">Since: 2.32</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-applies-to-uri"></a><h3>soup_cookie_applies_to_uri ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_cookie_applies_to_uri (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                            <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *uri</code></em>);</pre>
+<p>Tests if <em class="parameter"><code>cookie</code></em>
+ should be sent to <em class="parameter"><code>uri</code></em>
+.</p>
+<p>(At the moment, this does not check that <em class="parameter"><code>cookie</code></em>
+'s domain matches
+<em class="parameter"><code>uri</code></em>
+, because it assumes that the caller has already done that.
+But don't rely on that; it may change in the future.)</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.25.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.25.7"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>cookie</code></em>
+should be sent to <em class="parameter"><code>uri</code></em>
+, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if
+not</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-domain-matches"></a><h3>soup_cookie_domain_matches ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_cookie_domain_matches (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *host</code></em>);</pre>
+<p>Checks if the <em class="parameter"><code>cookie</code></em>
+'s domain and <em class="parameter"><code>host</code></em>
+ match in the sense that
+<em class="parameter"><code>cookie</code></em>
+ should be sent when making a request to <em class="parameter"><code>host</code></em>
+, or that
+<em class="parameter"><code>cookie</code></em>
+ should be accepted when receiving a response from <em class="parameter"><code>host</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.26.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>host</p></td>
+<td class="parameter_description"><p>a URI</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.26.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the domains match, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+</div>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-to-cookie-header"></a><h3>soup_cookie_to_cookie_header ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_cookie_to_cookie_header (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Serializes <em class="parameter"><code>cookie</code></em>
+ in the format used by the Cookie header (ie, for
+returning a cookie from a <a class="link" href="SoupSession.html" title="SoupSession"><span class="type">SoupSession</span></a> to a server).</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.27.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.27.6"></a><h4>Returns</h4>
+<p> the header</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-to-set-cookie-header"></a><h3>soup_cookie_to_set_cookie_header ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_cookie_to_set_cookie_header (<em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Serializes <em class="parameter"><code>cookie</code></em>
+ in the format used by the Set-Cookie header
+(ie, for sending a cookie from a <a class="link" href="SoupServer.html" title="SoupServer"><span class="type">SoupServer</span></a> to a client).</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.28.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.28.6"></a><h4>Returns</h4>
+<p> the header</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookies-from-request"></a><h3>soup_cookies_from_request ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+soup_cookies_from_request (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Parses <em class="parameter"><code>msg</code></em>
+'s Cookie request header and returns a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of
+<a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>s. As the "Cookie" header, unlike "Set-Cookie",
+only contains cookie names and values, none of the other
+<a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> fields will be filled in. (Thus, you can't generally
+pass a cookie returned from this method directly to
+<a class="link" href="SoupCookie.html#soup-cookies-to-response" title="soup_cookies_to_response ()"><code class="function">soup_cookies_to_response()</code></a>.)</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.29.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> containing a "Cookie" request header</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.29.6"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a>
+of <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>s, which can be freed with
+<a class="link" href="SoupCookie.html#soup-cookies-free" title="soup_cookies_free ()"><code class="function">soup_cookies_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> SoupCookie][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookies-from-response"></a><h3>soup_cookies_from_response ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+soup_cookies_from_response (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Parses <em class="parameter"><code>msg</code></em>
+'s Set-Cookie response headers and returns a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of
+<a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>s. Cookies that do not specify "path" or
+"domain" attributes will have their values defaulted from <em class="parameter"><code>msg</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.30.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> containing a "Set-Cookie" response header</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.30.6"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a>
+of <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>s, which can be freed with
+<a class="link" href="SoupCookie.html#soup-cookies-free" title="soup_cookies_free ()"><code class="function">soup_cookies_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> SoupCookie][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookies-to-request"></a><h3>soup_cookies_to_request ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookies_to_request (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *cookies</code></em>,
+                         <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Adds the name and value of each cookie in <em class="parameter"><code>cookies</code></em>
+ to <em class="parameter"><code>msg</code></em>
+'s
+"Cookie" request. (If <em class="parameter"><code>msg</code></em>
+ already has a "Cookie" request header,
+these cookies will be appended to the cookies already present. Be
+careful that you do not append the same cookies twice, eg, when
+requeuing a message.)</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.31.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookies</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> SoupCookie]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookies-to-response"></a><h3>soup_cookies_to_response ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookies_to_response (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *cookies</code></em>,
+                          <em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>);</pre>
+<p>Appends a "Set-Cookie" response header to <em class="parameter"><code>msg</code></em>
+ for each cookie in
+<em class="parameter"><code>cookies</code></em>
+. (This is in addition to any other "Set-Cookie" headers
+<em class="parameter"><code>msg</code></em>
+ may already have.)</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.32.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cookies</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> SoupCookie]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookies-to-cookie-header"></a><h3>soup_cookies_to_cookie_header ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_cookies_to_cookie_header (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *cookies</code></em>);</pre>
+<p>Serializes a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> into a string suitable for
+setting as the value of the "Cookie" header.</p>
+<div class="refsect3">
+<a name="id-1.3.7.8.33.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookies</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> SoupCookie]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.7.8.33.6"></a><h4>Returns</h4>
+<p> the serialization of <em class="parameter"><code>cookies</code></em>
+</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookies-free"></a><h3>soup_cookies_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookies_free (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> *cookies</code></em>);</pre>
+<p>Frees <em class="parameter"><code>cookies</code></em>
+.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="id-1.3.7.8.34.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>cookies</p></td>
+<td class="parameter_description"><p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> SoupCookie]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupCookie.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupCookie-struct"></a><h3>SoupCookie</h3>
+<pre class="programlisting">typedef struct {
+	char     *name;
+	char     *value;
+	char     *domain;
+	char     *path;
+	SoupDate *expires;
+	gboolean  secure;
+	gboolean  http_only;
+} SoupCookie;
+</pre>
+<p>An HTTP cookie.</p>
+<p><em class="parameter"><code>name</code></em>
+ and <em class="parameter"><code>value</code></em>
+ will be set for all cookies. If the cookie is
+generated from a string that appears to have no name, then <em class="parameter"><code>name</code></em>
+
+will be the empty string.</p>
+<p><em class="parameter"><code>domain</code></em>
+ and <em class="parameter"><code>path</code></em>
+ give the host or domain, and path within that
+host/domain, to restrict this cookie to. If <em class="parameter"><code>domain</code></em>
+ starts with
+".", that indicates a domain (which matches the string after the
+".", or any hostname that has <em class="parameter"><code>domain</code></em>
+ as a suffix). Otherwise, it
+is a hostname and must match exactly.</p>
+<p><em class="parameter"><code>expires</code></em>
+ will be non-<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the cookie uses either the original
+"expires" attribute, or the newer "max-age" attribute. If <em class="parameter"><code>expires</code></em>
+
+is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, it indicates that neither "expires" nor "max-age" was
+specified, and the cookie expires at the end of the session.</p>
+<p>If <em class="parameter"><code>http_only</code></em>
+ is set, the cookie should not be exposed to untrusted
+code (eg, javascript), so as to minimize the danger posed by
+cross-site scripting attacks.</p>
+<div class="refsect3">
+<a name="id-1.3.7.9.2.9"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">char</span> *<em class="structfield"><code><a name="SoupCookie-struct.name"></a>name</code></em>;</p></td>
+<td class="struct_member_description"><p>the cookie name</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">char</span> *<em class="structfield"><code><a name="SoupCookie-struct.value"></a>value</code></em>;</p></td>
+<td class="struct_member_description"><p>the cookie value</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">char</span> *<em class="structfield"><code><a name="SoupCookie-struct.domain"></a>domain</code></em>;</p></td>
+<td class="struct_member_description"><p>the "domain" attribute, or else the hostname that the
+cookie came from.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">char</span> *<em class="structfield"><code><a name="SoupCookie-struct.path"></a>path</code></em>;</p></td>
+<td class="struct_member_description"><p>the "path" attribute, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a class="link" href="libsoup-2.4-Soup-Miscellaneous-Utilities.html#SoupDate"><span class="type">SoupDate</span></a> *<em class="structfield"><code><a name="SoupCookie-struct.expires"></a>expires</code></em>;</p></td>
+<td class="struct_member_description"><p>the cookie expiration time, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for a session cookie</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> <em class="structfield"><code><a name="SoupCookie-struct.secure"></a>secure</code></em>;</p></td>
+<td class="struct_member_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the cookie should only be tranferred over SSL</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> <em class="structfield"><code><a name="SoupCookie-struct.http-only"></a>http_only</code></em>;</p></td>
+<td class="struct_member_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the cookie should not be exposed to scripts</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupCookie.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>, <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

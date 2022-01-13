@@ -1,0 +1,18 @@
+/**
+@page configuration Configuration
+
+@section Overview
+    The configuration of Generic controller is XML based. The rationale behind choosing XML based 
+configuration was, the users can use various already available XML tools for quickly editing 
+configuration. Additionally a schema for XML configuration is also provided which can be used for 
+validating the configuration. AudioManager allows to extend the product specific custom data types, 
+the same approach is used in our schema. AudioManager data types are defined in the  
+our schema(audiomanagertypes.xsd) and the extended data types can be defined by the user in a 
+separate schema(customtypes.xsd).
+
+    The configuration consist the following
+    - Elements: Description for source, sink, gateways, domains and classes.
+    - Policy: Description of the product specific business logic.
+
+
+*/

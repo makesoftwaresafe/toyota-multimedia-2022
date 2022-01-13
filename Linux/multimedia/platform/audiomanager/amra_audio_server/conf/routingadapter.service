@@ -1,0 +1,13 @@
+[Unit]
+Description=KP Routing Adapter Service
+
+Requires=audio_daemon.service
+After=audio_daemon.service   
+
+[Service]
+Type=simple
+Environment=LD_LIBRARY_PATH=/opt/ias/lib:/opt/audio/lib
+ExecStart=/usr/bin/KPRoutingAdaptor
+
+[Install]
+WantedBy=basic.target

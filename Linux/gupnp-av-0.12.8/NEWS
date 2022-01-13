@@ -1,0 +1,744 @@
+0.12.8
+======
+
+Changes since 0.12.7:
+
+- Remove gnome-common.
+- Use -Wno-unused-parameter
+- Make DIDL-Lite check less restrictive
+- Distribute VAPI file
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=740266
+ - https://bugzilla.gnome.org/show_bug.cgi?id=751102
+ - https://bugzilla.gnome.org/show_bug.cgi?id=753382
+
+All contributors to this release:
+ - Jens Georg <mail@jensge.org>
+ - Ting-Wei Lan <lantw@src.gnome.org>
+
+0.12.7
+======
+
+Changes since 0.12.6:
+
+- Remove use of deprecated INCLUDES.
+- Fix GUPnPDIDLLiteObject namespace getters.
+- Avoid warnings on missing protocol info.
+- Require vapigen 0.22 to avoid endless loop on VAPI generation.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=740265
+ - https://bugzilla.gnome.org/show_bug.cgi?id=741103
+ - https://bugzilla.gnome.org/show_bug.cgi?id=741555
+ - https://bugzilla.gnome.org/show_bug.cgi?id=740365
+
+All contributors to this release:
+ - Sven Neumann <neumann@teufel.de>
+ - Jens Georg <mail@jensge.org>
+ - Philip Withnall <philip.withnall@collabora.co.uk>
+
+0.12.6
+======
+
+Changes since 0.12.5:
+
+- Fix some coverity issues.
+- lazy-create XML namespaces so only used-ones are declared.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=705564
+ - https://bugzilla.gnome.org/show_bug.cgi?id=730590
+ - https://bugzilla.gnome.org/show_bug.cgi?id=730591
+ - https://bugzilla.gnome.org/show_bug.cgi?id=731033
+
+All contributors to this release:
+ - Jens Georg <mail@jensge.org>
+
+0.12.5
+======
+
+Changes since 0.12.4:
+
+- Fix name of cleartext-size property.
+- Fix creation of pv namespace in DIDLLite parser.
+- Check for empty mandatory tags in UpdateObject.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=705522
+ - https://bugzilla.gnome.org/show_bug.cgi?id=719377
+
+All contributors to this release:
+ - Parthiban Balasubramanian <p.balasubramanian@cablelabs.com>
+ - Jens Georg <mail@jensge.org>
+
+0.12.4
+======
+
+Changes since 0.12.3:
+- Add support for pv:subtitleFileUri and pv:subtitleFileType
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=695990
+
+All contributors to this release:
+ - Jens Georg <mail@jensge.org>
+
+0.12.3
+======
+
+Changes since 0.12.2:
+- Add support for link protection DLNA flags.
+- Fix DLNA.ORG_PS generation.
+- Add res@dlna:cleartextSize attribute.
+- Only use DLNA XML namespace when it's actually used.
+- Add res@dlna:trackTotal attribute.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=705564
+ - https://bugzilla.gnome.org/show_bug.cgi?id=707495
+ - https://bugzilla.gnome.org/show_bug.cgi?id=702557
+ - https://bugzilla.gnome.org/show_bug.cgi?id=706926
+ - https://bugzilla.gnome.org/show_bug.cgi?id=706928
+
+All contributors to this release:
+ - Parthiban Balasubramanian <p.balasubramanian@cablelabs.com>
+ - Jens Georg <mail@jensge.org>
+ - Craig Pratt <craig@ecaspia.com>
+
+0.12.2
+======
+
+Changes since 0.12.1:
+- Fix VAPI generation if GObject-introspection version is >= 1.36.
+- Fix vala bindings for LastChangeParser.parse_last_change.
+- Small improvement to resource matching.
+- Fix DIDLLiteContainer.get_total_deleted_child_count return value.
+- Fix compiling with -Wall -Werror.
+- Fix gtk-doc warnings.
+
+All contributors to this release:
+  Jens Georg <mail@jensge.org>
+  Ludovic Ferrandis <ludovic.ferrandis@intel.com>
+
+0.12.1
+======
+
+Changes since 0.12.0:
+- Fix compiler warnings.
+- Update .gitignore.
+
+All contributors to this release:
+  Andreas Henriksson <andreas@fatal.se>
+  Krzesimir Nowak <qdlacz@gmail.com>
+
+0.12.0
+======
+
+Changes since 0.11.6:
+- Fix implicit dependency on glib 2.32.
+- Explicitly call AM_MAINTAINER_MODE([enable]).
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Krzesimir Nowak <qdlacz@gmail.com>
+
+0.11.6
+======
+
+Changes since 0.11.5:
+- Fix an unitialized variable.
+- Fix a wrong use of BAD_CAST.
+- Fix handling of updateID in the CDS LastChange parser.
+- Fix CDS LastChange test.
+
+All contributors to this release:
+
+Jens Georg <jensg@openismus.com>
+Mark Ryan <mark.d.ryan@intel.com>
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=689701
+ - https://bugzilla.gnome.org/show_bug.cgi?id=689808
+
+0.11.5
+======
+
+Changes since 0.11.4:
+- Fix API definition in gupnp-cds-last-change-parser.h
+- Set items in a media collection to "restricted" by default.
+
+All contributors to this release:
+
+Jens Georg <jensg@openismus.com>
+Ludovic Ferrandis <ludovic.ferrandis@intel.com>
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=689517
+
+0.11.4
+======
+
+Changes since 0.11.3:
+- Fix DIDL_S parsing issues in GUPnPMediaCollection.
+- Fix reference count issues in GUPnPMediaCollection.
+- Add more tests for GUPnPMediaCollection.
+- Add test for LastChange parser.
+- Fix LD_LIBRARAY_PATH handling on make check.
+- Silence XSD validation errors on make check.
+- Silence makefile portability warnings.
+- Some gtk-doc fixes.
+- Add LastChange parser for LastChange in ContentDirectory:3 including tests.
+
+All contributors to this release:
+
+Jens Georg <jensg@openismus.com>
+Krzesimir Nowak <krnowak@openismus.com>
+Regis Merlino <regis.merlino@intel.com>
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=689094
+ - https://bugzilla.gnome.org/show_bug.cgi?id=689141
+ - https://bugzilla.gnome.org/show_bug.cgi?id=689276
+
+0.11.3
+======
+
+Changes since 0.11.2:
+- Fix documentation generation for recently added functionality.
+- Tweak XSD files to make the validation shut up completely.
+- Fix an issue in the DIDL-Lite filtering.
+- Add new class GUPnPMediaCollection for parsing and creation of DIDL_S
+  playlists.
+
+All contributors to this release:
+
+Jens Georg <jensg@openismus.com>
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=687462
+
+0.11.2
+======
+
+Changes since 0.11.1:
+- Implement fragment handling and verification in DIDLLiteObject.
+- Don't error out if vapigen cannot be found.
+
+All contributors to this release:
+
+Krzesimir Nowak <krnowak@openismus.com>
+Jens Georg <mail@jensge.org>
+
+0.11.1
+======
+
+Changes since 0.11.0:
+- Add m4 vapigen detection macro.
+- Fix introspection install dirs.
+- Fix objectUpdateID setter.
+- Add a FeatureList parser.
+- Add some XML fragment getters for DIDLLiteObject.
+- Lower G-I requirements.
+- Enable introspection during distcheck.
+- Undeprecate single-value _{get|set}_creator methods.
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=685963
+ - https://bugzilla.gnome.org/show_bug.cgi?id=686464
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Regis Merlino <regis.merlino@intel.com>
+Christophe Guiraud <christophe.guiraud@intel.com>
+
+0.11.0
+======
+
+Changes since 0.10.3:
+
+- Add support for properties needed to implement MediaServer:3 "Track changes"
+  functionality.
+- Add proper upnp:createClass support.
+- Clean-up pkg-config files and link to the correct libraries instead of
+  relying on gupnp leaking the right ones.
+- Generate vapi from GIR files.
+
+All contributors to this release:
+
+Krzesimir Nowak <krnowak@openismus.com>
+Jens Georg <mail@jensge.org>
+Andreas Henriksson <andreas@fatal.se>
+Christophe Guiraud <christophe.guiraud@intel.com>
+
+Bug fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=684297
+ - https://bugzilla.gnome.org/show_bug.cgi?id=685477
+
+Changes in dependencies:
+ - gupnp >= 0.19.0 for proper cleaned pkg-config file consistency.
+
+0.10.3
+======
+
+Changes since 0.10.2:
+
+- Ignore case when parsing DIDLLite and LastChange.
+- Fix gupnp_didl_lite_container_get_{create|search}_classes.
+- Fix a potential memory corruption in parse_additional_info.
+
+All contributors to this release:
+Jens Georg <mail@jensge.org>
+Mark Ryan <mark.d.ryan@intel.com>
+
+Bugs fixes in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=674322
+ - https://bugzilla.gnome.org/show_bug.cgi?id=676372
+ - https://bugzilla.gnome.org/show_bug.cgi?id=678784
+
+0.10.2
+======
+
+Changes since 0.10.1:
+
+- Update Autotools integration.
+- Create xz tarballs by default.
+- Several fixes from static code analysis.
+- Fix an endless loop on really largs {Source,Sink}ProtocolInfo strings.
+- Fix a crash in gupnp_didl_lite_contributor_get_name.
+- Fix documentation for gupnp_didl_lite_object_get_parent_id.
+- Fix a memory leak in resolution parsing.
+- Allow OP, CI and PS params without DLNA profile.
+
+All contributors to this release:
+Jens Georg <mail@jensge.org>
+Javier Jardón <jjardon@gnome.org>
+Mark Ryan <mark.d.ryan@intel.com>
+
+Bugs fixed in this release:
+ - https://bugzilla.gnome.org/show_bug.cgi?id=671246
+ - https://bugzilla.gnome.org/show_bug.cgi?id=674319
+ - https://bugzilla.gnome.org/show_bug.cgi?id=674324
+ - https://bugzilla.gnome.org/show_bug.cgi?id=674325
+ - https://bugzilla.gnome.org/show_bug.cgi?id=653894
+
+0.10.1
+======
+
+Changes since 0.10.0:
+
+- Bump minimum dependency of GUPnP to 0.17.0.
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+
+0.10.0
+======
+
+Changes since 0.9.1:
+
+- Verify passed date in DIDL. Not a full verification but a small sanity
+  check.
+
+All contributors to this release:
+
+Topi Santakivi <topi.santakivi@digia.com>
+Jens Georg <mail@jensge.org>
+
+0.9.1
+=====
+
+Changes since 0.9.0:
+
+- Wrong validation of boolean arguments led to DIDL parsing regressions in
+  control points
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+
+0.9.0
+=====
+
+Changes since 0.8.0:
+
+- Wrong XML namespace for dlna attributes.
+- Add a sanity check for @restricted.
+- Updated gobject-introspection annotations.
+- add upnp:searchClass to containers.
+- make upnp:createClass@includeDerived mandatory.
+- add unpn:storageUsed property and make it mandatory for
+  object.container.storageFolder.
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Topi Santakivi <topi.santakivi@digia.com>
+
+0.8.0
+=====
+
+Changes since 0.7.1:
+
+- Fix XML node names for 'artist' and 'author'.
+- Explicitly link test programs. This should fix the DSO build issue on Fedora.
+- Use LDADD rather than LDFLAGS in Makefile.am.
+
+Bug fixed in this release:
+
+2222 - DIDLLiteObject get_artists()/get_authors() broken
+
+All contributors to this release:
+
+Jussi Kukkonen <jku@linux.intel.com>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Luis de Bethencourt <luis@debethencourt.com>
+
+0.7.1
+=====
+
+Another micro release in the unstable 0.7.x branch that brings in all new
+fixes from the stable 0.6.3 release.
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.7.0
+=====
+
+The first release in the new unstable 0.7.x branch.
+
+- Add API to set/get dlna:dlnaManaged attribute.
+- Add API to add/list createClass elements to/of DIDL-Lite containers.
+- Declare/create the DLNA namespace only once at the start of the DIDL-Lite
+  document (just like upnp and dc namespaces) and pass that to each object
+  in that document.
+- Correct minor typo/c&p mistakes in docs.
+- Use correct function to set XML attributes.
+- Minor coding-style fixes to doc comments.
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.6.2
+=====
+
+Another micro release that bumps the g-i requirement to 0.9.5.
+
+We either have the option of staying with the older gobject-introspection and
+keeping disto packagers happy or fix our .gir build against latest (and
+unstable) gobject-introspection that happens to be part of GNOME 2.32. After
+looking at possible alternatives, talking to a few people and keeping in mind
+that we mainly stabalized for GNOME 2.32, we've decided to go for the latter
+choice.
+
+All contributors to this release:
+
+Vincent Untz <vuntz@gnome.org>
+
+0.6.1
+=====
+
+A micro release that corrects the GIR generation rule and make it work against
+the latest gobject-intrsopection.
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.6.0
+=====
+
+Changes since 0.5.9:
+
+- Add mising symbols to docs.
+- Remove redundant entries from doc sections.
+- Doc system should ignore all private headers.
+- Don't use deprecated gobject API.
+- "genre" is in the upnp namespace, not dc.
+
+Bug fixed in this release:
+
+2191 - gupnp-av uses dc:genre instead of upnp:genre
+
+All contributors to this release:
+
+Sven Neumann <s.neumann@raumfeld.com>
+Jens Georg <mail@jensge.org>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.5.9
+=====
+
+Changes since 0.5.8:
+
+- Add 64bit size property to allow resources to be bigger than 2-GB.
+- Mircoseconds part of duration in resources needs to be a 3-digit number
+  as per DLNA requirement  (7.3.22.1).
+- Don't  set the operation parameter if no operations are supported as per DLNA 
+  requirement (7.3.33.3).
+
+Bug fixed in this release:
+
+2183 - size property of DIDL resource should be 64bit unsigned according to UPnP
+       spec
+
+All contributors to this release:
+
+Jens Georg <mail@jensge.org>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.5.8
+=====
+
+Changes since 0.5.7:
+
+- Fix crashes in DIDLLiteContributor API.
+- Remove incomplete and broken DLNA guessing code. Applications should use
+  gupnp-dlna now for all their DLNA needs.
+- Do set the 'dlna:profileID' property of 'albumArtURI' node and treat it as
+  mandatory as per DLNA guidelines (7.3.61.3).
+- Prefer non-transcoded resources over transcoded ones when choosing compatible 
+  resources for a particular MediaRenderer.
+- Minor correction to DIDL filtering code.
+- Some other minor improvements/fixes.
+
+Bug fixed in this release:
+
+2187 - GUPnPDIDLLiteContributor class doesn't work
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.5.7
+=====
+
+Changes since 0.5.6:
+
+- Make namespace properties on GUPnPDIDLLiteObject readable and provide
+  getter functions for them.
+- Improve performance of DIDL-Lite parsing by moving namespace lookups to
+  GUPnPDIDLLiteParser.
+
+All contributors to this release:
+
+Sven Neumann <s.neumann@raumfeld.com>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.5.6
+=====
+
+Changes since 0.5.5:
+
+- Optimize namespace handling in DIDL-Lite handling code.
+- Hide internal function gupnp_didl_lite_object_new_from_xml().
+- Remove new redundant gupnp_didl_lite_container_new_from_xml().
+- Free the array allocated by xmlGetNsList().
+
+All contributors to this release:
+
+Sven Neumann <s.neumann@raumfeld.com>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.5.5
+=====
+
+Changes since 0.5.4:
+
+- Provide gobject-introspection GIR and typelib.
+- Provide microseconds in 'duration' to satisfy XBox.
+- Fix data type of GUPnPDIDLLiteContainer:child-count
+- Fix build issues in jhbuild environment.
+- Enable silent build rules if they are available.
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Zach Goldberg <zach@zachgoldberg.com>
+Neil Roberts <neil@linux.intel.com>
+Ross Burton <ross@linux.intel.com>
+
+0.5.4
+=====
+
+Changes since 0.5.2:
+
+- Gracefully handle empty or no 'res' node.
+- Function to get the list of descriptors from DIDL-Lite objects.
+- More complete comparison for LPCM mime types.
+- Fix incorrect type conversion of DLNA flags.
+- DLNA flags should not default to a specific DLNA version.
+- New APIs to deal with contributor-related properties in DIDL-Lite objects.
+- Remove redundant construction methods.
+- Add forgotten header to the meta-header file.
+- Add and fix gobject-introspection annotations.
+- Lots of documentation fixes.
+- Many minor non-functional fixes/improvements.
+
+Bug fixes in this release:
+
+1935 - Incorrect conversion while parsing primary DLNA Flags
+1934 - DLNA Flags should not default to a specific DLNA version.
+1933 - Content type matching fails when additional parameters exist in LPCM
+       mime-type
+1814 - Add "artists" property to GUPnPDIDLLiteObject
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Yakup Akbay <yakbay@ubicom.com>
+Zachary Goldberg <zach@zachgoldberg.com>
+
+0.5.2
+=====
+
+Changes since 0.5.1:
+
+- Add a missing NULL check.
+- Fix a potential leak of xmlDoc.
+- Register a (g)type for GUPnPSearchCriteriaOp for better gtk-doc and
+  vala-gen-introspect support.
+- Fix docs for GUPnPSearchCriteriaParser::expression.
+- Fix parsing of SearchCriteria strings: Closing parenthesis doesn't imply end
+  of SearchCriteria expression.
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.5.1
+=====
+
+A micro release to fix a regression in DLNA profile guessing code in the
+previous (0.5) release.
+
+0.5
+===
+
+Changes in this release:
+
+- New completely object-oriented, much simpler and consistent API:
+  * GUPnPDIDLLiteResource & GUPnPDIDLLiteObject are now first-class GObjects.
+  * Convert the helper methods to read props and their attributes from DIDL-Lite
+    xml node into new first-class objects with writable properties:
+    - GUPnPDIDLLiteObject
+    - GUPnPDIDLLiteItem
+    - GUPnPDIDLLiteContainer
+  * GUPnPDIDLLiteObject provides a convenient method to get the compatible
+    resource given a SinkProtocolInfo string.
+  * A new class for dealing with protocolInfo fields: GUPnPProtocolInfo.
+  * A new class for dealing with DIDL-Lite descriptors: GUPnPDIDLLiteDescriptor.
+  * GUPnPDIDLLiteWriter now provides a much simpler API that is consistent with
+    rest of the GUPnP AV API.
+  * GUPnPDIDLLiteWriter now handles filtering of DIDL-Lite XML.
+  * Correct possible values of GUPnPDLNAFlags.
+  * Replace GUPnPDIDLLiteParserObjectCallback by following signals:
+    - object-available
+    - container-available
+    - item-available
+- New Error domain for protocol related errors.
+- Workaround for broken printf() implementations.
+- Bitrate is in bytes/second and not bits/second.
+- Enable DLL on windows.
+
+Dependencies changed:
+
+- gupnp >= 0.13
+
+Bug fixes in this release:
+
+1729 - bitrate checks in gupnp-dlna.c look wrong.
+1579 - Minor fixes to enable dynamic library on windows
+
+All contributors to this release:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Sven Neumann <s.neumann@raumfeld.com>
+Jens Georg <mail@jensge.org>
+Ross Burton <ross@openedhand.com>
+
+WARNING: This release is API and ABI incompatible with previous releases.
+
+0.4.1
+=====
+
+Changes in this release:
+
+- Fix typos in allowed frequencies.
+- Fix allowed frequencies in AC-3 and LPCM profiles.
+- Fix pkg-config paths.
+- Don't set the variable if it's value is not provided in the LastChange event.
+
+Bug fixes in this release:
+
+1563 - typos in allowed frequencies for DLNA profiles
+1570 - gupnp doesn't set the pkgconfig lib dir correctly in 64 bit env
+
+All contributors to this release:
+
+Sven Neumann
+Zeeshan Ali (Khattak)
+Ross Burton
+
+0.4
+===
+
+- Watch for empty DIDL-Lite nodes.
+- Escape the URIs before putting them into DIDL-Lite XML.
+- The '.' must be omitted from duration if fraction part is not included.
+- Be more lenient when parsing DIDL-Lite XML fragments.
+- Don't require the DLNA profile string.
+- Try to guess the DLNA Profile if not provided and put "*" in the whole 4th
+  field of protocolInfo if our guess work fails.
+- Make sure 4th field of protocolInfo is completely in compliance with DLNA
+  guidelines. This only implies one change in the API: enum dlna_play_speed is
+  replaced by play_speeds, a GList of allowed play speeds as strings.
+- Use '1' and '0' to express boolean properties in DIDL-Lite XML.
+- Other minor fixes.
+
+All contributors to this release:
+
+Henrique Ferreiro García
+Peter Christensen
+Sven Neumann
+Zeeshan Ali (Khattak)
+
+0.3.1
+=====
+
+- DIDLLiteResource is now an independent GBoxed-derving type.
+
+0.3
+===
+
+- Better error handling. [Jorn Baayen, Sven Neumann]
+- Fixes to documentation and build. [Ross Burton, Zeeshan Ali]
+- Fixes and additions to DIDLLiteResource to ease impelementation of
+  higher-level language bindings. [Zeeshan Ali]
+- DIDLLiteParser should only report container and item nodes. Fixes bug#1155.
+  [Zeeshan Ali]
+
+0.2.1
+=====
+
+- Correct function prototype. Fixes #940. [Jorn Baayen]
+- Include the glib header to satisfy vala-gen-introspect. [Zeeshan Ali Khattak]
+
+0.2
+===
+
+- Use libsoup 2.4. [Jorn Baayen]
+- Add DLNA support to DIDL writer. [Jorn Baayen]
+- Some small fixes. [Jorn Baayen]
+
+0.1
+===
+
+Initial release.

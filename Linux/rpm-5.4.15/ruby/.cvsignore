@@ -1,0 +1,10 @@
+.deps
+Makefile
+Makefile.in
+.libs
+*.gcda
+*.gcno
+*.la
+*.lo
+README
+trb

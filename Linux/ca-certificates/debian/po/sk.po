@@ -1,0 +1,121 @@
+# Slovak translations for ca-certificates package
+# Slovenské preklady pre balík ca-certificates.
+# Copyright (C) 2011 THE ca-certificates'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ca-certificates package.
+# Automatically generated, 2011.
+# Slavko <linux@slavino.sk>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ca-certificates 20110502+nmu1\n"
+"Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2011-09-18 13:43+0200\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: Slovak <debian-l10n-slovak@lists.debian.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr "Nastavenie ca-certificates"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "yes"
+msgstr "áno"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "nie"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "pýtať sa"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid "Trust new certificates from certificate authorities?"
+msgstr "Dôverovať novým certifikátom certifikačných autorít?"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+"This package may install new CA (Certificate Authority) certificates when "
+"upgrading. You may want to check such new CA certificates and select only "
+"certificates that you trust."
+msgstr ""
+"Tento balík môže pri aktualizácii inštalovať nové certifikáty certifikačných "
+"autorít (CA). Môžete chcieť  tieto nové certifikáty CA skontrolovať a zvoliť "
+"len certifikáty, ktorým dôverujete."
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+" - yes: new CA certificates will be trusted and installed;\n"
+" - no : new CA certificates will not be installed by default;\n"
+" - ask: prompt for each new CA certificate."
+msgstr ""
+" - áno     : nové certifikáty CA budú dôveryhodné a nainštalované;\n"
+" - nie     : nové certifikáty CA nebudú predvolene nainštalované;\n"
+" - pýtať sa: pýtať sa na každý nový certifikát CA."
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid "New certificates to activate:"
+msgstr "Nové certifikáty, ktoré majú byť aktivované:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid ""
+"During upgrades, new certificates will be added. Please choose those you "
+"trust."
+msgstr ""
+"Počas aktualizácie boli pridané nové certifikáty. Prosím, vyberte tie, "
+"ktorým dôverujete."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid "Certificates to activate:"
+msgstr "Certifikáty, ktoré majú byť aktivované:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"This package installs common CA (Certificate Authority) certificates in /usr/"
+"share/ca-certificates."
+msgstr ""
+"Tento balík inštaluje bežné certifikáty certifikačných autorít (CA) do /usr/"
+"share/ca-certificates."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"Please select the certificate authorities you trust so that their "
+"certificates are installed into /etc/ssl/certs. They will be compiled into a "
+"single /etc/ssl/certs/ca-certificates.crt file."
+msgstr ""
+"Prosím, vyberte certifikačné autority, ktorým dôverujete a ktorých "
+"certifikáty budú inštalované do /etc/ssl/certs. Tieto budú zlúčené do "
+"jedného súboru /etc/ssl/certs/ca-certificates.crt."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "áno, nie, pýtať sa"

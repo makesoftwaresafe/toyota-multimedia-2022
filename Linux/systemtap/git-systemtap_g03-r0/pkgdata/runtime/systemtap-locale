@@ -1,0 +1,13 @@
+PN: systemtap
+PV: git-systemtap_g03
+PR: r0
+PKGV: git-systemtap_g03
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION: SystemTap - script-directed dynamic tracing and performance analysis tool for Linux
+SUMMARY: systemtap version git-systemtap_g03-r0
+SECTION: base
+PKG_systemtap-locale: systemtap-locale
+FILES_systemtap-locale: /usr/share/locale /opt/tooling/adit/systemtap/share/locale
+FILES_INFO: {}
+PKGSIZE_systemtap-locale: 0

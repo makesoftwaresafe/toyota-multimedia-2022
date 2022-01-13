@@ -1,0 +1,1178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPService: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-device-impl.html" title="Device Implementation">
+<link rel="prev" href="GUPnPRootDevice.html" title="GUPnPRootDevice">
+<link rel="next" href="api-context.html" title="Network context handling">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPService.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPService.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPService.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GUPnPService.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-device-impl.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPRootDevice.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-context.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPService"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPService.top_of_page"></a>GUPnPService</span></h2>
+<p>GUPnPService — Class for service implementations.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPService.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-name" title="gupnp_service_action_get_name ()">gupnp_service_action_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-locales" title="gupnp_service_action_get_locales ()">gupnp_service_action_get_locales</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get" title="gupnp_service_action_get ()">gupnp_service_action_get</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-valist" title="gupnp_service_action_get_valist ()">gupnp_service_action_get_valist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-value" title="gupnp_service_action_get_value ()">gupnp_service_action_get_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GValue</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-gvalue" title="gupnp_service_action_get_gvalue ()">gupnp_service_action_get_gvalue</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-values" title="gupnp_service_action_get_values ()">gupnp_service_action_get_values</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-set" title="gupnp_service_action_set ()">gupnp_service_action_set</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-set-valist" title="gupnp_service_action_set_valist ()">gupnp_service_action_set_valist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-set-value" title="gupnp_service_action_set_value ()">gupnp_service_action_set_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-set-values" title="gupnp_service_action_set_values ()">gupnp_service_action_set_values</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-return" title="gupnp_service_action_return ()">gupnp_service_action_return</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-return-error" title="gupnp_service_action_return_error ()">gupnp_service_action_return_error</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">SoupMessage</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-message" title="gupnp_service_action_get_message ()">gupnp_service_action_get_message</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-argument-count" title="gupnp_service_action_get_argument_count ()">gupnp_service_action_get_argument_count</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-notify" title="gupnp_service_notify ()">gupnp_service_notify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-notify-valist" title="gupnp_service_notify_valist ()">gupnp_service_notify_valist</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-notify-value" title="gupnp_service_notify_value ()">gupnp_service_notify_value</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-freeze-notify" title="gupnp_service_freeze_notify ()">gupnp_service_freeze_notify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-thaw-notify" title="gupnp_service_thaw_notify ()">gupnp_service_thaw_notify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPService.html#gupnp-service-signals-autoconnect" title="gupnp_service_signals_autoconnect ()">gupnp_service_signals_autoconnect</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPService.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a class="link" href="GUPnPRootDevice.html" title="GUPnPRootDevice"><span class="type">GUPnPRootDevice</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPService.html#GUPnPService--root-device" title="The “root-device” property">root-device</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPService.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GUPnPService.html#GUPnPService-action-invoked" title="The “action-invoked” signal">action-invoked</a></td>
+<td class="signal_flags">Has Details</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GUPnPService.html#GUPnPService-notify-failed" title="The “notify-failed” signal">notify-failed</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="GUPnPService.html#GUPnPService-query-variable" title="The “query-variable” signal">query-variable</a></td>
+<td class="signal_flags">Has Details</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="GUPnPServiceAction"></a><div class="refsect1">
+<a name="GUPnPService.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPService.html#GUPnPService-struct" title="struct GUPnPService">GUPnPService</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GUPnPService.html#GUPnPServiceAction-struct" title="GUPnPServiceAction">GUPnPServiceAction</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPService.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/home/jens/jhbuild/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+    <span class="lineart">╰──</span> GUPnPServiceAction
+    GObject
+    <span class="lineart">╰──</span> <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo">GUPnPServiceInfo</a>
+        <span class="lineart">╰──</span> GUPnPService
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPService.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> allows for handling incoming actions and state variable
+notification. <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> implements the <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> interface.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPService.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-service-action-get-name"></a><h3>gupnp_service_action_get_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_service_action_get_name (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>);</pre>
+<p>Get the name of <em class="parameter"><code>action</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-action-get-name.returns"></a><h4>Returns</h4>
+<p> The name of <em class="parameter"><code>action</code></em>
+</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-get-locales"></a><h3>gupnp_service_action_get_locales ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_service_action_get_locales (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>);</pre>
+<p>Get an ordered (preferred first) <span class="type">GList</span> of locales preferred by
+the client. Free list and elements after use.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-get-locales.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-action-get-locales.returns"></a><h4>Returns</h4>
+<p> A <span class="type">GList</span> of <span class="type">char</span>*
+locale names. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-get"></a><h3>gupnp_service_action_get ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_get (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                          <em class="parameter"><code>...</code></em>);</pre>
+<p>Retrieves the specified action arguments.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-get.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>tuples of argument name, argument type, and argument value
+location, terminated with <code class="literal">NULL</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-get-valist"></a><h3>gupnp_service_action_get_valist ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_get_valist (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                                 <em class="parameter"><code><span class="type">va_list</span> var_args</code></em>);</pre>
+<p>See <a class="link" href="GUPnPService.html#gupnp-service-action-get" title="gupnp_service_action_get ()"><code class="function">gupnp_service_action_get()</code></a>; this version takes a va_list for
+use by language bindings.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-get-valist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>var_args</p></td>
+<td class="parameter_description"><p>va_list of tuples of argument name, argument type, and argument
+value location.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-get-value"></a><h3>gupnp_service_action_get_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_get_value (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *argument</code></em>,
+                                <em class="parameter"><code><span class="type">GValue</span> *value</code></em>);</pre>
+<p>Retrieves the value of <em class="parameter"><code>argument</code></em>
+ into <em class="parameter"><code>value</code></em>
+.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
+<div class="refsect3">
+<a name="gupnp-service-action-get-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>argument</p></td>
+<td class="parameter_description"><p>The name of the argument to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The <span class="type">GValue</span> to store the value of the argument, initialized
+to the correct type. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-get-gvalue"></a><h3>gupnp_service_action_get_gvalue ()</h3>
+<pre class="programlisting"><span class="returnvalue">GValue</span> *
+gupnp_service_action_get_gvalue (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                                 <em class="parameter"><code>const <span class="type">char</span> *argument</code></em>,
+                                 <em class="parameter"><code><span class="type">GType</span> type</code></em>);</pre>
+<p>Retrieves the value of <em class="parameter"><code>argument</code></em>
+ into a GValue of type <em class="parameter"><code>type</code></em>
+ and returns it.
+The method exists only and only to satify PyGI, please use
+<a class="link" href="GUPnPService.html#gupnp-service-action-get-value" title="gupnp_service_action_get_value ()"><code class="function">gupnp_service_action_get_value()</code></a> and ignore this if possible.</p>
+<p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> gupnp_service_action_get_value]</span></p>
+<div class="refsect3">
+<a name="gupnp-service-action-get-gvalue.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>argument</p></td>
+<td class="parameter_description"><p>The name of the argument to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>The type of argument to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-action-get-gvalue.returns"></a><h4>Returns</h4>
+<p> Value as <span class="type">GValue</span> associated with <em class="parameter"><code>action</code></em>
+.
+<code class="function">g_value_unset()</code> and <code class="function">g_slice_free()</code> it after usage. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.13.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-get-values"></a><h3>gupnp_service_action_get_values ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_service_action_get_values (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                                 <em class="parameter"><code><span class="type">GList</span> *arg_names</code></em>,
+                                 <em class="parameter"><code><span class="type">GList</span> *arg_types</code></em>);</pre>
+<p>A variant of <a class="link" href="GUPnPService.html#gupnp-service-action-get" title="gupnp_service_action_get ()"><span class="type">gupnp_service_action_get</span></a> that uses <span class="type">GList</span> instead of varargs.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-get-values.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_names</p></td>
+<td class="parameter_description"><p>(element-type utf8) : A <span class="type">GList</span> of argument names as string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_types</p></td>
+<td class="parameter_description"><p> A <span class="type">GList</span> of argument types as <span class="type">GType</span>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GType]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-action-get-values.returns"></a><h4>Returns</h4>
+<p> The values as <span class="type">GList</span> of
+<span class="type">GValue</span>. <code class="function">g_list_free()</code> the returned list and <code class="function">g_value_unset()</code> and <code class="function">g_slice_free()</code>
+each element. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GValue][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.13.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-set"></a><h3>gupnp_service_action_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_set (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                          <em class="parameter"><code>...</code></em>);</pre>
+<p>Sets the specified action return values.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>tuples of return value name, return value type, and
+actual return value, terminated with <code class="literal">NULL</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-set-valist"></a><h3>gupnp_service_action_set_valist ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_set_valist (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                                 <em class="parameter"><code><span class="type">va_list</span> var_args</code></em>);</pre>
+<p>See <a class="link" href="GUPnPService.html#gupnp-service-action-set" title="gupnp_service_action_set ()"><code class="function">gupnp_service_action_set()</code></a>; this version takes a va_list for
+use by language bindings.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-set-valist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>var_args</p></td>
+<td class="parameter_description"><p>va_list of tuples of return value name, return value type, and
+actual return value.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-set-value"></a><h3>gupnp_service_action_set_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_set_value (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *argument</code></em>,
+                                <em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);</pre>
+<p>Sets the value of <em class="parameter"><code>argument</code></em>
+ to <em class="parameter"><code>value</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-set-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>argument</p></td>
+<td class="parameter_description"><p>The name of the return value to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The <span class="type">GValue</span> to store the return value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-set-values"></a><h3>gupnp_service_action_set_values ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_set_values (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                                 <em class="parameter"><code><span class="type">GList</span> *arg_names</code></em>,
+                                 <em class="parameter"><code><span class="type">GList</span> *arg_values</code></em>);</pre>
+<p>Sets the specified action return values.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-set-values.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_names</p></td>
+<td class="parameter_description"><p> A <span class="type">GList</span> of argument names. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>arg_values</p></td>
+<td class="parameter_description"><p> The <span class="type">GList</span> of values (as
+<span class="type">GValues</span>) that line up with <em class="parameter"><code>arg_names</code></em>
+. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GValue][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.13.3</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-return"></a><h3>gupnp_service_action_return ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_return (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>);</pre>
+<p>Return succesfully.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-return.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-return-error"></a><h3>gupnp_service_action_return_error ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_action_return_error (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>,
+                                   <em class="parameter"><code><span class="type">guint</span> error_code</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *error_description</code></em>);</pre>
+<p>Return <em class="parameter"><code>error_code</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-return-error.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error_code</p></td>
+<td class="parameter_description"><p>The error code</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error_description</p></td>
+<td class="parameter_description"><p>The error description, or <code class="literal">NULL</code> if <em class="parameter"><code>error_code</code></em>
+is
+one of <a class="link" href="gupnp-Error-codes.html#GUPNP-CONTROL-ERROR-INVALID-ACTION:CAPS"><span class="type">GUPNP_CONTROL_ERROR_INVALID_ACTION</span></a>,
+<a class="link" href="gupnp-Error-codes.html#GUPNP-CONTROL-ERROR-INVALID-ARGS:CAPS"><span class="type">GUPNP_CONTROL_ERROR_INVALID_ARGS</span></a>, <a class="link" href="gupnp-Error-codes.html#GUPNP-CONTROL-ERROR-OUT-OF-SYNC:CAPS"><span class="type">GUPNP_CONTROL_ERROR_OUT_OF_SYNC</span></a> or
+<a class="link" href="gupnp-Error-codes.html#GUPNP-CONTROL-ERROR-ACTION-FAILED:CAPS"><span class="type">GUPNP_CONTROL_ERROR_ACTION_FAILED</span></a>, in which case a description is
+provided automatically.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-get-message"></a><h3>gupnp_service_action_get_message ()</h3>
+<pre class="programlisting"><span class="returnvalue">SoupMessage</span> *
+gupnp_service_action_get_message (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>);</pre>
+<p>Get the <span class="type">SoupMessage</span> associated with <em class="parameter"><code>action</code></em>
+. Mainly intended for
+applications to be able to read HTTP headers received from clients.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-get-message.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-action-get-message.returns"></a><h4>Returns</h4>
+<p> <span class="type">SoupMessage</span> associated with <em class="parameter"><code>action</code></em>
+. Unref
+after using it. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 0.13.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-action-get-argument-count"></a><h3>gupnp_service_action_get_argument_count ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gupnp_service_action_get_argument_count
+                               (<em class="parameter"><code><a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action</code></em>);</pre>
+<p>Get the number of IN arguments from the <em class="parameter"><code>action</code></em>
+ and return it.</p>
+<div class="refsect3">
+<a name="gupnp-service-action-get-argument-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-action-get-argument-count.returns"></a><h4>Returns</h4>
+<p> The number of IN arguments from the <em class="parameter"><code>action</code></em>
+.</p>
+</div>
+<p class="since">Since: 0.17.0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-notify"></a><h3>gupnp_service_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_notify (<em class="parameter"><code><a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> *service</code></em>,
+                      <em class="parameter"><code>...</code></em>);</pre>
+<p>Notifies listening clients that the properties listed in <em class="parameter"><code>Varargs</code></em>
+
+have changed to the specified values.</p>
+<div class="refsect3">
+<a name="gupnp-service-notify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>...</p></td>
+<td class="parameter_description"><p>Tuples of variable name, variable type, and variable value,
+terminated with <code class="literal">NULL</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-notify-valist"></a><h3>gupnp_service_notify_valist ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_notify_valist (<em class="parameter"><code><a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> *service</code></em>,
+                             <em class="parameter"><code><span class="type">va_list</span> var_args</code></em>);</pre>
+<p>See <a class="link" href="GUPnPService.html#gupnp-service-notify" title="gupnp_service_notify ()"><code class="function">gupnp_service_notify()</code></a>; this version takes a va_list for
+use by language bindings.</p>
+<div class="refsect3">
+<a name="gupnp-service-notify-valist.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>var_args</p></td>
+<td class="parameter_description"><p>A va_list of tuples of variable name, variable type, and variable
+value, terminated with <code class="literal">NULL</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-notify-value"></a><h3>gupnp_service_notify_value ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_notify_value (<em class="parameter"><code><a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> *service</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *variable</code></em>,
+                            <em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);</pre>
+<p>Notifies listening clients that <em class="parameter"><code>variable</code></em>
+ has changed to <em class="parameter"><code>value</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-service-notify-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>variable</p></td>
+<td class="parameter_description"><p>The name of the variable to notify</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The value of the variable</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-freeze-notify"></a><h3>gupnp_service_freeze_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_freeze_notify (<em class="parameter"><code><a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> *service</code></em>);</pre>
+<p>Causes new notifications to be queued up until <a class="link" href="GUPnPService.html#gupnp-service-thaw-notify" title="gupnp_service_thaw_notify ()"><code class="function">gupnp_service_thaw_notify()</code></a>
+is called.</p>
+<div class="refsect3">
+<a name="gupnp-service-freeze-notify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-thaw-notify"></a><h3>gupnp_service_thaw_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_thaw_notify (<em class="parameter"><code><a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> *service</code></em>);</pre>
+<p>Sends out any pending notifications, and stops queuing of new ones.</p>
+<div class="refsect3">
+<a name="gupnp-service-thaw-notify.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-signals-autoconnect"></a><h3>gupnp_service_signals_autoconnect ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_signals_autoconnect (<em class="parameter"><code><a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> *service</code></em>,
+                                   <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>A convenience function that attempts to connect all possible
+<a class="link" href="GUPnPService.html#GUPnPService-action-invoked" title="The “action-invoked” signal"><span class="type">“action-invoked”</span></a> and <a class="link" href="GUPnPService.html#GUPnPService-query-variable" title="The “query-variable” signal"><span class="type">“query-variable”</span></a> signals to
+appropriate callbacks for the service <em class="parameter"><code>service</code></em>
+. It uses service introspection
+and <span class="type">GModule</span>'s introspective features. It is very simillar to
+<code class="function">gtk_builder_connect_signals()</code> except that it attempts to guess the names of
+the signal handlers on its own.</p>
+<p>For this function to do its magic, the application must name the callback
+functions for <a class="link" href="GUPnPService.html#GUPnPService-action-invoked" title="The “action-invoked” signal"><span class="type">“action-invoked”</span></a> signals by striping the CamelCase
+off the action names and either prepend "on_" or append "_cb" to them. Same
+goes for <a class="link" href="GUPnPService.html#GUPnPService-query-variable" title="The “query-variable” signal"><span class="type">“query-variable”</span></a> signals, except that "query_" should
+be prepended to the variable name. For example, callback function for
+<code class="varname">GetSystemUpdateID</code> action should be either named as
+"get_system_update_id_cb" or "on_get_system_update_id" and callback function
+for the query of "SystemUpdateID" state variable should be named
+<code class="function">query_system_update_id_cb</code> or
+<code class="function">on_query_system_update_id</code>.</p>
+<div class="note">This function will not work correctly if <span class="type">GModule</span> is not supported
+on the platform or introspection is not available for <em class="parameter"><code>service</code></em>.</div>
+<div class="warning">This function can not and therefore does not guarantee that the
+resulting signal connections will be correct as it depends heavily on a
+particular naming schemes described above.</div>
+<div class="refsect3">
+<a name="gupnp-service-signals-autoconnect.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>the data to pass to each of the callbacks</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPService.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPService-struct"></a><h3>struct GUPnPService</h3>
+<pre class="programlisting">struct GUPnPService;</pre>
+<p>This struct contains private data only, and should be accessed using the
+functions below.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceAction-struct"></a><h3>GUPnPServiceAction</h3>
+<pre class="programlisting">typedef struct _GUPnPServiceAction GUPnPServiceAction;</pre>
+<p>Opaque structure for holding in-progress action data.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPService.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPService--root-device"></a><h3>The <code class="literal">“root-device”</code> property</h3>
+<pre class="programlisting">  “root-device”              <a class="link" href="GUPnPRootDevice.html" title="GUPnPRootDevice"><span class="type">GUPnPRootDevice</span></a> *</pre>
+<p>The containing <a class="link" href="GUPnPRootDevice.html" title="GUPnPRootDevice"><span class="type">GUPnPRootDevice</span></a>.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPService.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GUPnPService-action-invoked"></a><h3>The <code class="literal">“action-invoked”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a>       *service,
+               <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a> *action,
+               <span class="type">gpointer</span>            user_data)</pre>
+<p>Emitted whenever an action is invoked. Handler should process
+<em class="parameter"><code>action</code></em>
+ and must call either <a class="link" href="GUPnPService.html#gupnp-service-action-return" title="gupnp_service_action_return ()"><code class="function">gupnp_service_action_return()</code></a> or
+<a class="link" href="GUPnPService.html#gupnp-service-action-return-error" title="gupnp_service_action_return_error ()"><code class="function">gupnp_service_action_return_error()</code></a>.</p>
+<div class="refsect3">
+<a name="GUPnPService-action-invoked.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>action</p></td>
+<td class="parameter_description"><p>The invoked <a class="link" href="GUPnPService.html#GUPnPServiceAction"><span class="type">GUPnPServiceAction</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Has Details</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPService-notify-failed"></a><h3>The <code class="literal">“notify-failed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> *service,
+               <span class="type">gpointer</span>      callback_url,
+               <span class="type">gpointer</span>      reason,
+               <span class="type">gpointer</span>      user_data)</pre>
+<p>Emitted whenever notification of a client fails.</p>
+<div class="refsect3">
+<a name="GUPnPService-notify-failed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback_url</p></td>
+<td class="parameter_description"><p>A <span class="type">GList</span> of callback URLs. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GList][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> SoupURI]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>reason</p></td>
+<td class="parameter_description"><p> A pointer to a <span class="type">GError</span> describing why the notify failed. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GError]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPService-query-variable"></a><h3>The <code class="literal">“query-variable”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> *service,
+               <span class="type">gchar</span>        *variable,
+               <span class="type">gpointer</span>      value,
+               <span class="type">gpointer</span>      user_data)</pre>
+<p>Emitted whenever <em class="parameter"><code>service</code></em>
+ needs to know the value of <em class="parameter"><code>variable</code></em>
+.
+Handler should fill <em class="parameter"><code>value</code></em>
+ with the value of <em class="parameter"><code>variable</code></em>
+.</p>
+<div class="refsect3">
+<a name="GUPnPService-query-variable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>service</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPService.html" title="GUPnPService"><span class="type">GUPnPService</span></a> that received the signal</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>variable</p></td>
+<td class="parameter_description"><p>The variable that is being queried</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The location of the <span class="type">GValue</span> of the variable. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GValue][<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Has Details</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "config_appl": "concurrency_test",
+  "version": "0.1.0",
+  "resources": {
+    "concurrency_resource": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "concurrency_test",
+      "custom_name": "na",
+      "type": "key",
+      "customID": "244"
+    }
+  }
+}

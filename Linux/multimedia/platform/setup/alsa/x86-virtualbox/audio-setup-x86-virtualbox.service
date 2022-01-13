@@ -1,0 +1,23 @@
+[Unit]
+Description=Setup of audio device on x86-virtualbox
+DefaultDependencies=yes
+ConditionPathExistsGlob=/lib/modules/*/misc/vboxguest.ko
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we wait for devices to appear ------
+ExecStart=/bin/device_sync /etc/alsa-brd-cfg/x86-virtualbox/device_sync.conf
+
+#-------------------- we are deploy the common vad configuration -------
+# - this call is ADIT internally used to provide a common set of
+#   virtual devices on all targets
+ExecStart=/bin/mount --bind /etc/alsa-brd-cfg/x86-virtualbox/asound_board.conf /etc/asound_board.conf
+
+#-------------------- we are setting up the alsa devices ---------------
+# - adapt this call in a way that loads it the settings from your
+#   expected destination
+ExecStart=/usr/sbin/alsactl restore I82801AAICH -f /etc/alsa-brd-cfg/x86-virtualbox/asound.state

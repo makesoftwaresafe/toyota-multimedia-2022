@@ -1,0 +1,121 @@
+/**
+
+ @page actionSetNotifictionConfiguration Action Set Notification Configuration
+
+ <b>Name:</b> ACTION_SET_NOTIFICATION_CONFIGURATION<BR>
+ <b>Description:</b> This action sets the notification configuration for source and sinks. This action
+forwards the main notification configuration(received from command side) to 
+notification configuration(routing side) as is.  
+
+ \code
+     <action>
+        <type>ACTION_SET_NOTIFICATION_CONFIGURATION</type>
+        <param>
+            <sourceName>SOURCE</sourceName> 
+            <!-- OR -->
+            <sinkName>SINK</sinkName>
+
+            <notificationConfigurationType>NT_XXX</notificationConfigurationType>
+            <notificationConfigurationStatus>NS_PERIODIC</notificationConfigurationStatus>
+            <notificationConfigurationParam>1000</notificationConfigurationParam>
+            <timeOut>3000</timeOut> <!-- This is an optional parameter -->
+        </param>
+    </action>
+ \endcode
+
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>sourceName</td>
+<td>M<sup>1</sup></td>
+<td>string</td>
+<td>The name of the source.</td>
+</tr>
+
+<tr>
+<td>sinkName</td>
+<td>M<sup>1</sup></td>
+<td>string</td>
+<td>The name of the sink.</td>
+</tr>
+<tr>
+<td>notificationConfigurationType</td>
+<td>M</td>
+<td>am_CustomNotificationType_t</td>
+<td>This is the notification type for which configuration is set</td>
+</tr>
+
+<tr>
+<td>notificationConfigurationStatus</td>
+<td>M</td>
+<td>am_NotificationStatus_e</td>
+<td>This is the notification Configuration status<BR
+NS_OFF = 1, No notification, the function is turned off<BR>
+NS_PERIODIC = 2, Periodic notifications are sent out. The period in ms is given by am_NotificationParameter.<BR>
+NS_MINIMUM = 3, The notification is sent out when the minimum given by am_NotificationParameter is reached.<BR>
+NS_MAXIMUM = 4, The notification is sent out when the maximum given by am_NotificationParameter is reached.<BR>
+NS_CHANGE  = 5, The notification is sent out when a change happened. The Resolution of the change is defined by am_NotificationParameter.<BR>
+</td>
+</tr>
+
+<tr>
+<td>notificationConfigurationParam</td>
+<td>M</td>
+<td>16 bit integer</td>
+<td>This is the notification Configuration parameter, the meaning of this value depends on the configured notification status.
+</td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+M<sup>1</sup> either sourceName or sinkName should be specified for action.<BR>
+ 
+ <BR>
+ <b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_SET_NOTIFICATION_CONFIGURATION</type>
+        <param>
+            <sinkName>"RadioSink"</sinkName>
+            <notificationConfigurationType>NT_XXX</notificationConfigurationType>
+            <notificationConfigurationStatus>NS_PERIODIC</notificationConfigurationStatus>
+            <notificationConfigurationParam>1000</notificationConfigurationParam>
+        </param>
+    </action>
+ \endcode
+    The above example sets the notification configuration for RadioSink. The notification configuration
+is set for type NT_XXX, the types need to be defined in customtypes.xsd. The notification for this 
+type is configured to be periodic as indicated by notificationConfigurationStatus. The period of
+notification is 1000 ms as indicated by notificationConfigurationParam. Configuring this notification 
+configuration means routing side is expected to notify the value of NT_XXX every 1000 
+milliseconds or 1 second.
+
+ \code
+    <action>
+        <type>ACTION_SET_NOTIFICATION_CONFIGURATION</type>
+        <param>
+            <sinkName>"RadioSink"</sinkName>
+            <notificationConfigurationType>NT_XXX</notificationConfigurationType>
+            <notificationConfigurationStatus>NS_MAXIMUM</notificationConfigurationStatus>
+            <notificationConfigurationParam>600</notificationConfigurationParam>
+        </param>
+    </action>
+ \endcode
+    The above example sets the notification configuration for RadioSink. The notification configuration
+is set for type NT_XXX, the types need to be defined in customtypes.xsd. The notification for this 
+type is configured to be send when the value exceed 600. This notification configuration means 
+routing side should notify the NT_XXX when it exceeds the value of 600.
+
+*/

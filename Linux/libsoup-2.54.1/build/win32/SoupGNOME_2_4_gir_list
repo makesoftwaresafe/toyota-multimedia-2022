@@ -1,0 +1,6 @@
+..\..\libsoup\soup-cookie-jar-sqlite.h
+..\..\libsoup\soup-gnome-features.h
+..\..\libsoup\soup-cookie-jar-sqlite.c
+..\..\libsoup\soup-gnome-features.c
+..\..\libsoup\soup-proxy-resolver-gnome.c
+..\..\libsoup\soup-password-manager-gnome.c

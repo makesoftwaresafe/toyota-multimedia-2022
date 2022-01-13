@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPMediaCollection: GUPnP A/V Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP A/V Reference Manual">
+<link rel="up" href="ch01.html" title="GUPnP A/V">
+<link rel="prev" href="GUPnPFeatureListParser.html" title="GUPnPFeatureListParser">
+<link rel="next" href="ch02.html" title="Error Codes">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPMediaCollection.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPMediaCollection.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPMediaCollection.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPFeatureListParser.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPMediaCollection"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPMediaCollection.top_of_page"></a>GUPnPMediaCollection</span></h2>
+<p>GUPnPMediaCollection — Media collection writer</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPMediaCollection.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="returnvalue">GUPnPMediaCollection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-new" title="gupnp_media_collection_new ()">gupnp_media_collection_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="returnvalue">GUPnPMediaCollection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-new-from-string" title="gupnp_media_collection_new_from_string ()">gupnp_media_collection_new_from_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-set-title" title="gupnp_media_collection_set_title ()">gupnp_media_collection_set_title</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-get-title" title="gupnp_media_collection_get_title ()">gupnp_media_collection_get_title</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-set-author" title="gupnp_media_collection_set_author ()">gupnp_media_collection_set_author</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-get-author" title="gupnp_media_collection_get_author ()">gupnp_media_collection_get_author</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem"><span class="returnvalue">GUPnPDIDLLiteItem</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-add-item" title="gupnp_media_collection_add_item ()">gupnp_media_collection_add_item</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-get-string" title="gupnp_media_collection_get_string ()">gupnp_media_collection_get_string</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-get-items" title="gupnp_media_collection_get_items ()">gupnp_media_collection_get_items</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPMediaCollection.html#gupnp-media-collection-get-mutable" title="gupnp_media_collection_get_mutable ()">gupnp_media_collection_get_mutable</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPMediaCollection.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPMediaCollection.html#GUPnPMediaCollection--author" title="The “author” property">author</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPMediaCollection.html#GUPnPMediaCollection--data" title="The “data” property">data</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gboolean</span></td>
+<td class="property_name"><a class="link" href="GUPnPMediaCollection.html#GUPnPMediaCollection--mutable" title="The “mutable” property">mutable</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPMediaCollection.html#GUPnPMediaCollection--title" title="The “title” property">title</a></td>
+<td class="property_flags">Read / Write / Construct</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPMediaCollection.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPMediaCollection.html#GUPnPMediaCollection-struct" title="struct GUPnPMediaCollection">GUPnPMediaCollection</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPMediaCollection.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPMediaCollection
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPMediaCollection.description"></a><h2>Description</h2>
+<p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> is a helper class for writing media collection files.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPMediaCollection.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gupnp-media-collection-new"></a><h3>gupnp_media_collection_new ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="returnvalue">GUPnPMediaCollection</span></a> *
+gupnp_media_collection_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Create a new writable media collection.</p>
+<div class="refsect3">
+<a name="gupnp-media-collection-new.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-new-from-string"></a><h3>gupnp_media_collection_new_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="returnvalue">GUPnPMediaCollection</span></a> *
+gupnp_media_collection_new_from_string
+                               (<em class="parameter"><code>const <span class="type">char</span> *data</code></em>);</pre>
+<p>Parse a new <a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> from a block of XML data.</p>
+<div class="refsect3">
+<a name="gupnp-media-collection-new-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>XML string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-media-collection-new-from-string.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-set-title"></a><h3>gupnp_media_collection_set_title ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_media_collection_set_title (<em class="parameter"><code><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> *collection</code></em>,
+                                  <em class="parameter"><code>const <span class="type">char</span> *title</code></em>);</pre>
+<p>Set the title of a <a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a>.</p>
+<div class="refsect3">
+<a name="gupnp-media-collection-set-title.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>collection</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>title</p></td>
+<td class="parameter_description"><p>New Title of this collection;</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-get-title"></a><h3>gupnp_media_collection_get_title ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_media_collection_get_title (<em class="parameter"><code><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> *collection</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-title.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>collection</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-title.returns"></a><h4>Returns</h4>
+<p> The title of this media collection or <code class="literal">NULL</code> if not set.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-set-author"></a><h3>gupnp_media_collection_set_author ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_media_collection_set_author (<em class="parameter"><code><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> *collection</code></em>,
+                                   <em class="parameter"><code>const <span class="type">char</span> *author</code></em>);</pre>
+<p>Set the author of the media collection</p>
+<div class="refsect3">
+<a name="gupnp-media-collection-set-author.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>collection</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>author</p></td>
+<td class="parameter_description"><p>New author of this media collection.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-get-author"></a><h3>gupnp_media_collection_get_author ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_media_collection_get_author (<em class="parameter"><code><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> *collection</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-author.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>collection</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-author.returns"></a><h4>Returns</h4>
+<p> The author of this media collection or <code class="literal">NULL</code> if not set.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-add-item"></a><h3>gupnp_media_collection_add_item ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem"><span class="returnvalue">GUPnPDIDLLiteItem</span></a> *
+gupnp_media_collection_add_item (<em class="parameter"><code><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> *collection</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-media-collection-add-item.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>collection</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-media-collection-add-item.returns"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GUPnPDIDLLiteItem.html" title="GUPnPDIDLLiteItem"><span class="type">GUPnPDIDLLiteItem</span></a> object. Unref after
+use. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-get-string"></a><h3>gupnp_media_collection_get_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_media_collection_get_string (<em class="parameter"><code><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> *collection</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>collection</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-string.returns"></a><h4>Returns</h4>
+<p> XML string representing this media
+collection. <code class="function">g_free()</code> after use. If the colleciton is not mutable, returns a
+copy of the original string. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-get-items"></a><h3>gupnp_media_collection_get_items ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gupnp_media_collection_get_items (<em class="parameter"><code><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> *collection</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-items.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>collection</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-items.returns"></a><h4>Returns</h4>
+<p> A <span class="type">GList</span>
+containing the elemens of this collection, in proper order. Unref all items
+and free the list after use. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GUPnPDIDLLiteItem]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-media-collection-get-mutable"></a><h3>gupnp_media_collection_get_mutable ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gupnp_media_collection_get_mutable (<em class="parameter"><code><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a> *collection</code></em>);</pre>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-mutable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>collection</p></td>
+<td class="parameter_description"><p><a class="link" href="GUPnPMediaCollection.html" title="GUPnPMediaCollection"><span class="type">GUPnPMediaCollection</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-media-collection-get-mutable.returns"></a><h4>Returns</h4>
+<p> <span class="type">TRUE</span> if the collections is modifiable, <span class="type">FALSE</span> otherwise.</p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPMediaCollection.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPMediaCollection-struct"></a><h3>struct GUPnPMediaCollection</h3>
+<pre class="programlisting">struct GUPnPMediaCollection;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPMediaCollection.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPMediaCollection--author"></a><h3>The <code class="literal">“author”</code> property</h3>
+<pre class="programlisting">  “author”                   <span class="type">gchar</span> *</pre>
+<p>The author of this media collection.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPMediaCollection--data"></a><h3>The <code class="literal">“data”</code> property</h3>
+<pre class="programlisting">  “data”                     <span class="type">gchar</span> *</pre>
+<p>Block of data to parse a collection from. If data is set upon
+construction it will override the other properties and create a
+unmutable collection parsed from data.</p>
+<p>Flags: Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPMediaCollection--mutable"></a><h3>The <code class="literal">“mutable”</code> property</h3>
+<pre class="programlisting">  “mutable”                  <span class="type">gboolean</span></pre>
+<p>Whether this media collation is modifyable or not.</p>
+<p>Flags: Read</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPMediaCollection--title"></a><h3>The <code class="literal">“title”</code> property</h3>
+<pre class="programlisting">  “title”                    <span class="type">gchar</span> *</pre>
+<p>The title of this media collection.</p>
+<p>Flags: Read / Write / Construct</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+Mozilla switched to mercurial in 2013 and certdata.txt no longer contains
+the CVS version number.  CVS version 1.87 was equivalent to hg version 1.93.
+The upstream version number can now be found in the file nssckbi.h in the
+same directory - #define NSS_BUILTINS_LIBRARY_VERSION "1.94"
+
+----
+
+Upstream Sources - release branch:
+
+ Full repository clone for latest release (~2GB):
+  hg clone https://hg.mozilla.org/releases/mozilla-release
+
+ mozilla/certdata.txt:
+  https://hg.mozilla.org/releases/mozilla-release/raw-file/default/security/nss/lib/ckfw/builtins/certdata.txt
+
+ mozilla/nssckbi.h:
+  https://hg.mozilla.org/releases/mozilla-release/raw-file/default/security/nss/lib/ckfw/builtins/nssckbi.h
+
+----
+
+Upstream Sources - development branch (may not be released):
+
+ Full repository clone for development tip:
+  hg clone https://hg.mozilla.org/projects/nss
+
+ mozilla/certdata.txt:
+  https://hg.mozilla.org/projects/nss/raw-file/default/lib/ckfw/builtins/certdata.txt
+
+ mozilla/nssckbi.h:
+  https://hg.mozilla.org/projects/nss/raw-file/default/lib/ckfw/builtins/nssckbi.h

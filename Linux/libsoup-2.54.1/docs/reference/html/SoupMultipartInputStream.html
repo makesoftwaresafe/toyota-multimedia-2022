@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SoupMultipartInputStream: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch02.html" title="Core API">
+<link rel="prev" href="SoupMultipart.html" title="SoupMultipart">
+<link rel="next" href="SoupRequest.html" title="SoupRequest">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#SoupMultipartInputStream.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#SoupMultipartInputStream.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#SoupMultipartInputStream.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#SoupMultipartInputStream.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="SoupMultipart.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="SoupRequest.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="SoupMultipartInputStream"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="SoupMultipartInputStream.top_of_page"></a>SoupMultipartInputStream</span></h2>
+<p>SoupMultipartInputStream — Multipart input handling stream</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="returnvalue">SoupMultipartInputStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-new" title="soup_multipart_input_stream_new ()">soup_multipart_input_stream_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="returnvalue">SoupMessageHeaders</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-get-headers" title="soup_multipart_input_stream_get_headers ()">soup_multipart_input_stream_get_headers</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="returnvalue">GInputStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-next-part" title="soup_multipart_input_stream_next_part ()">soup_multipart_input_stream_next_part</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-next-part-async" title="soup_multipart_input_stream_next_part_async ()">soup_multipart_input_stream_next_part_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="returnvalue">GInputStream</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-next-part-finish" title="soup_multipart_input_stream_next_part_finish ()">soup_multipart_input_stream_next_part_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupMultipartInputStream.html#SoupMultipartInputStream--message" title="The “message” property">message</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="SoupMultipartInputStream.html#SoupMultipartInputStream-struct" title="struct SoupMultipartInputStream">SoupMultipartInputStream</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gio/unstable/GInputStream.html">GInputStream</a>
+        <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gio/unstable/GFilterInputStream.html">GFilterInputStream</a>
+            <span class="lineart">╰──</span> SoupMultipartInputStream
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+SoupMultipartInputStream implements
+ <a href="https://developer.gnome.org/gio/unstable/GPollableInputStream.html">GPollableInputStream</a>.</p>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.description"></a><h2>Description</h2>
+<p>This adds support for the multipart responses. For handling the
+multiple parts the user needs to wrap the <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> obtained by
+sending the request with a <a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> and use
+<a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-next-part" title="soup_multipart_input_stream_next_part ()"><code class="function">soup_multipart_input_stream_next_part()</code></a> before reading. Responses
+which are not wrapped will be treated like non-multipart responses.</p>
+<p>Note that although <a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> is a <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a>,
+you should not read directly from it, and the results are undefined
+if you do.</p>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-multipart-input-stream-new"></a><h3>soup_multipart_input_stream_new ()</h3>
+<pre class="programlisting"><a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="returnvalue">SoupMultipartInputStream</span></a> *
+soup_multipart_input_stream_new (<em class="parameter"><code><a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *msg</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> *base_stream</code></em>);</pre>
+<p>Creates a new <a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> that wraps the
+<a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> obtained by sending the <a class="link" href="SoupRequest.html" title="SoupRequest"><span class="type">SoupRequest</span></a>. Reads should
+not be done directly through this object, use the input streams
+returned by <a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-next-part" title="soup_multipart_input_stream_next_part ()"><code class="function">soup_multipart_input_stream_next_part()</code></a> or its async
+counterpart instead.</p>
+<div class="refsect3">
+<a name="id-1.3.14.10.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>msg</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> the response is related to.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>base_stream</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> returned by sending the request.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.14.10.2.6"></a><h4>Returns</h4>
+<p> a new <a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a></p>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-multipart-input-stream-get-headers"></a><h3>soup_multipart_input_stream_get_headers ()</h3>
+<pre class="programlisting"><a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="returnvalue">SoupMessageHeaders</span></a> *
+soup_multipart_input_stream_get_headers
+                               (<em class="parameter"><code><a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> *multipart</code></em>);</pre>
+<p>Obtains the headers for the part currently being processed. Note
+that the <a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a> that are returned are owned by the
+<a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> and will be replaced when a call is made
+to <a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-next-part" title="soup_multipart_input_stream_next_part ()"><code class="function">soup_multipart_input_stream_next_part()</code></a> or its async
+counterpart, so if keeping the headers is required, a copy must be
+made.</p>
+<p>Note that if a part had no headers at all an empty <a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a>
+will be returned.</p>
+<div class="refsect3">
+<a name="id-1.3.14.10.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>multipart</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.14.10.3.7"></a><h4>Returns</h4>
+<p> a <a class="link" href="SoupMessageHeaders.html" title="SoupMessageHeaders"><span class="type">SoupMessageHeaders</span></a>
+containing the headers for the part currently being processed or
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the headers failed to parse. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-multipart-input-stream-next-part"></a><h3>soup_multipart_input_stream_next_part ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="returnvalue">GInputStream</span></a> *
+soup_multipart_input_stream_next_part (<em class="parameter"><code><a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> *multipart</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Obtains an input stream for the next part. When dealing with a
+multipart response the input stream needs to be wrapped in a
+<a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> and this function or its async
+counterpart need to be called to obtain the first part for
+reading.</p>
+<p>After calling this function,
+<a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-get-headers" title="soup_multipart_input_stream_get_headers ()"><code class="function">soup_multipart_input_stream_get_headers()</code></a> can be used to obtain the
+headers for the first part. A read of 0 bytes indicates the end of
+the part; a new call to this function should be done at that point,
+to obtain the next part.</p>
+<div class="refsect3">
+<a name="id-1.3.14.10.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>multipart</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.14.10.4.7"></a><h4>Returns</h4>
+<p> a new <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a>, or
+<a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there are no more parts. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-multipart-input-stream-next-part-async"></a><h3>soup_multipart_input_stream_next_part_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_multipart_input_stream_next_part_async
+                               (<em class="parameter"><code><a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> *multipart</code></em>,
+                                <em class="parameter"><code><span class="type">int</span> io_priority</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
+<p>Obtains a <a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> for the next request. See
+<a class="link" href="SoupMultipartInputStream.html#soup-multipart-input-stream-next-part" title="soup_multipart_input_stream_next_part ()"><code class="function">soup_multipart_input_stream_next_part()</code></a> for details on the
+workflow.</p>
+<div class="refsect3">
+<a name="id-1.3.14.10.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>multipart</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>io_priority</p></td>
+<td class="parameter_description"><p>the I/O priority for the request.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>callback to call when request is satisfied.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>data for <em class="parameter"><code>callback</code></em>
+</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-multipart-input-stream-next-part-finish"></a><h3>soup_multipart_input_stream_next_part_finish ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="returnvalue">GInputStream</span></a> *
+soup_multipart_input_stream_next_part_finish
+                               (<em class="parameter"><code><a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a> *multipart</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Finishes an asynchronous request for the next part.</p>
+<div class="refsect3">
+<a name="id-1.3.14.10.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>multipart</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupMultipartInputStream.html" title="SoupMultipartInputStream"><span class="type">SoupMultipartInputStream</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> location to store any error, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.14.10.6.6"></a><h4>Returns</h4>
+<p> a newly created
+<a href="https://developer.gnome.org/gio/unstable/GInputStream.html"><span class="type">GInputStream</span></a> for reading the next part or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if there are no
+more parts. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupMultipartInputStream-struct"></a><h3>struct SoupMultipartInputStream</h3>
+<pre class="programlisting">struct SoupMultipartInputStream;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupMultipartInputStream.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="SoupMultipartInputStream--message"></a><h3>The <code class="literal">“message”</code> property</h3>
+<pre class="programlisting">  “message”                  <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a> *</pre>
+<p>The SoupMessage.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+libmediaart
+===========
+
+Library tasked with managing, extracting and handling media art caches

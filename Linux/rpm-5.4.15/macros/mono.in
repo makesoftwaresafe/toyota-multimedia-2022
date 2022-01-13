@@ -1,0 +1,10 @@
+# Mono specific macro definitions.
+# To make use of these macros insert the following line into your spec file:
+# %{load:%{_usrlibrpm}/macros.d/mono}
+
+# Path to scripts to autogenerate mono package dependencies,
+#
+# Note: Used iff _use_internal_dependency_generator is non-zero. The
+# helpers are also used by %{_rpmhome}/rpmdeps {--provides|--requires}.
+%__mono_provides	%{_rpmhome}/mono-find-provides
+%__mono_requires	%{_rpmhome}/mono-find-requires

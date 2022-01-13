@@ -1,0 +1,31 @@
+Version 1.3.0
+* Split mfxdecode into separate MFX decoder plugins.
+* Added VCM rate control method and new properties in MFX encoder.
+* Fixed seeking issues with MFX-encoded videos by setting correct IDR intervals.
+* Fixed memory leak issue in MFX encoder plugin when muxing to avcc or hvc1.
+* Added a new framerate property in mfxvpp.
+* Fixed memory leak issues with mfxdecode and mfxvpp.
+* Refined CMake compile options for decoder and renderer support.
+* Fixed CMake compilation issues for Ubuntu 16.04 LTS.
+
+Version 1.2.0
+* Implemented text overlay support with MFX VPP surface composition.
+
+Version 1.1.0
+* Implemented GstColorBalance interface on mfxvpp.
+* Renamed mfxsink to mfxsinkelement.
+* Implemented mfxsink which is a bin plugin consist of mfxsinkelement and mfxvpp.
+* Fixed memory leak issues in mfxsinkelement and mfxdecode.
+* Implemented video seeking.
+* Added VP9 decode support.
+* Supports playback via gst-play-1.0 and playbin element.
+
+Version 1.0.0
+* Added X11 rendering with DRI3 backend.
+* Implemented decoder flushing mechanism after video finish decoding,
+* Implemented H.264, HEVC, JPEG and MPEG2 encoder plugins.
+* Fixed frame lagging bug at the start of the video
+* Implemented VC-1 parser for VC-1 Simple, Main, and Advanced profile.
+
+Version 0.1.0
+* Initial release

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SoupProxyResolverDefault: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch03.html" title="Additional Features">
+<link rel="prev" href="SoupLogger.html" title="SoupLogger">
+<link rel="next" href="ch04.html" title="Web Services APIs">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#SoupProxyResolverDefault.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#SoupProxyResolverDefault.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#SoupProxyResolverDefault.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#SoupProxyResolverDefault.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="SoupLogger.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch04.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="SoupProxyResolverDefault"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="SoupProxyResolverDefault.top_of_page"></a>SoupProxyResolverDefault</span></h2>
+<p>SoupProxyResolverDefault — System proxy configuration integration</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a> *</td>
+<td class="property_name"><a class="link" href="SoupProxyResolverDefault.html#SoupProxyResolverDefault--gproxy-resolver" title="The “gproxy-resolver” property">gproxy-resolver</a></td>
+<td class="property_flags">Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="SoupProxyResolverDefault.html#SoupProxyResolverDefault-struct" title="SoupProxyResolverDefault">SoupProxyResolverDefault</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> SoupProxyResolverDefault
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+SoupProxyResolverDefault implements
+ <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature">SoupSessionFeature</a> and  SoupProxyURIResolver.</p>
+</div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.description"></a><h2>Description</h2>
+<p><a class="link" href="SoupProxyResolverDefault.html" title="SoupProxyResolverDefault"><span class="type">SoupProxyResolverDefault</span></a> is a <span class="type">SoupProxyURIResolver</span>
+implementation that uses the default gio <a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a> to resolve
+proxies.</p>
+<p>In libsoup 2.44 and later, you can set the session's
+<a class="link" href="SoupSession.html#SoupSession--proxy-resolver" title="The “proxy-resolver” property"><span class="type">“proxy-resolver”</span></a> property to the resolver returned by
+<a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html#g-proxy-resolver-get-default"><code class="function">g_proxy_resolver_get_default()</code></a> to get the same effect. Note that
+for "plain" <a href="SoupSession.html"><span class="type">SoupSessions</span></a> (ie, not <a class="link" href="SoupSessionAsync.html" title="SoupSessionAsync"><span class="type">SoupSessionAsync</span></a> or
+<a class="link" href="SoupSessionSync.html" title="SoupSessionSync"><span class="type">SoupSessionSync</span></a>), this is done for you automatically.</p>
+</div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.functions_details"></a><h2>Functions</h2>
+<p></p>
+</div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupProxyResolverDefault-struct"></a><h3>SoupProxyResolverDefault</h3>
+<pre class="programlisting">typedef struct _SoupProxyResolverDefault SoupProxyResolverDefault;</pre>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupProxyResolverDefault.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="SoupProxyResolverDefault--gproxy-resolver"></a><h3>The <code class="literal">“gproxy-resolver”</code> property</h3>
+<pre class="programlisting">  “gproxy-resolver”          <a href="https://developer.gnome.org/gio/unstable/GProxyResolver.html"><span class="type">GProxyResolver</span></a> *</pre>
+<p>The underlying GProxyResolver.</p>
+<p>Flags: Write</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

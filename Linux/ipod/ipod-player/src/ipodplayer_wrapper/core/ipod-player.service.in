@@ -1,0 +1,16 @@
+[Unit]
+Description=iPodPlayerCore Daemon service
+After=systemd-udevd-kernel.socket \
+         iap2_service.service
+Requires=systemd-udevd-kernel.socket \
+         iap2_service.service
+Wants=dlt.service
+
+[Service]
+Type=simple
+StandardOutput=syslog
+StandardError=tty
+ExecStart=/bin/iPodPlayerCore.out
+
+[Install]
+WantedBy=multi-user.target

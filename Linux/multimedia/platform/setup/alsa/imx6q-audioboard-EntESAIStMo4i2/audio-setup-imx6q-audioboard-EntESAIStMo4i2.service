@@ -1,0 +1,24 @@
+[Unit]
+Description=ABB ESAI mixer configuration and asound.conf - ESAI is Stereo32bit 4 TX and 2 RX lines
+DefaultDependencies=yes
+ConditionPathExistsGlob=/sys/devices/soc*/sound_esai_EntStMo4i2.*
+After=pretty-early.target
+Before=audio-setup.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+#-------------------- we start loading the modules here and wait for devices to appear ------
+ExecStart=/bin/kmodule_loader -c /etc/alsa-brd-cfg/imx6q-audioboard-EntESAIStMo4i2/kmodules_loader.conf
+
+#-------------------- we are deploy the common vad configuration -------
+# - this call is ADIT internally used to provide a common set of
+#   virtual devices on all targets 
+ExecStart=/bin/mount --bind /etc/alsa-brd-cfg/imx6q-audioboard-EntESAIStMo4i2/asound_board.conf /etc/asound_board.conf 
+
+#------------------- wetare setting up the alsa devices ---------------
+# - adapt this call in a way that loads it the settings from your
+#   expected destination
+# ESAI setup is similar to CS42888 - 4 TX signal lines stereo, 2 RX signal lines stereo
+ExecStart=/usr/sbin/alsactl restore EntESAIStMo4i2 -f /etc/alsa-brd-cfg/imx6q-audioboard-EntESAIStMo4i2/asound.state

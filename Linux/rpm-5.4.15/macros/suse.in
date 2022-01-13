@@ -1,0 +1,378 @@
+%distribution		@RPMCANONVENDOR@ Linux
+%vendor			novell
+%bugurl			http://bugzilla.novell.com
+%disturl		http://software.open@RPMCANONVENDOR@.org
+# 
+# Below is the rpm-suse_macros  contained in rpm-4.9.0-122 (Build factory)
+# _suse_install_post is defined in macros.brp in the brp-checks-suse 
+# rpm  
+
+
+# need to keep this around for a while
+%suse_check             %{nil}
+
+# directories
+%_infodir               %{_prefix}/share/info
+%_mandir                %{_prefix}/share/man
+%_sysconfdir            /etc
+%_localstatedir         /var
+%_defaultdocdir         %{_usr}/share/doc/packages
+
+# package build macros
+%make_install           make install DESTDIR=%{?buildroot}
+%makeinstall            make DESTDIR=%{?buildroot:%{buildroot}} install
+%rb_arch                %(echo %{_host_cpu}-linux | sed -e "s/i686/i586/" -e "s/armv5tel/armv4l/" -e "s/hppa2.0/hppa/")
+%rb_ver                 %(/usr/bin/ruby -e 'puts VERSION.sub(/\\\.\\\d$/, "")')
+%insserv_prereq         insserv sed
+%fillup_prereq          fillup coreutils grep diffutils
+%suseconfig_fonts_prereq          perl aaa_base
+%install_info_prereq    info
+
+# _suse_os_install_post is defined in brp-checks-suse
+%__os_install_post    %{?_suse_os_install_post}%{!?_suse_os_install_post: \
+    /usr/lib/rpm/brp-compress \
+    /usr/lib/rpm/brp-symlink  \
+%{nil}}
+
+# macro: %restart_on_update()
+#	Used to restart a service in postun section, if we are
+#	not running from YaST2 in instsys on update.
+%restart_on_update() \
+	test -n "$FIRST_ARG" || FIRST_ARG=$1 \
+	if test "$FIRST_ARG" -ge 1 ; then \
+	   test -f /etc/sysconfig/services && . /etc/sysconfig/services \
+           if test "$YAST_IS_RUNNING" != "instsys" -a "$DISABLE_RESTART_ON_UPDATE" != yes ; then \
+              for service in %{?*} ; do \
+                 /etc/init.d/$service try-restart > /dev/null || : \
+              done \
+           fi \
+        fi \
+	%nil
+
+# macro: %stop_on_removal()
+#       Used to stop a service in preun section, if we are
+#       not running from YaST2 in instsys on removal of this package.
+%stop_on_removal() \
+        test -n "$FIRST_ARG" || FIRST_ARG=$1 \
+        if test "$FIRST_ARG" = "0" ; then \
+	   test -f /etc/sysconfig/services && . /etc/sysconfig/services \
+           if test "$YAST_IS_RUNNING" != "instsys" -a "$DISABLE_STOP_ON_REMOVAL" != yes ; then \
+              for service in %{?*} ; do \
+                 /etc/init.d/$service stop > /dev/null \
+              done \
+           fi \
+        fi \
+        %nil
+# macro: %configure_kernel_source
+#
+#
+%configure_kernel_source() \
+	if test -d /usr/src/linux ; then \
+	    pushd /usr/src/linux \
+	    test -f .config || cp arch/%_arch/defconfig.default .config \
+	    yes "" | make oldconfig \
+	    make dep \
+	    popd \
+	fi \
+	%nil
+
+%is_plus %(if test -f /.buildenv ; then source /.buildenv ; if [[ "$BUILD_BASENAME" == *+kde ]] ; then echo 1 ; else echo 0 ; fi ; else echo 0 ; fi)
+
+# deprecated, use %set_permissions instead
+%run_permissions() \
+	if test "$YAST_IS_RUNNING" != "instsys" ; then \
+	    if test -x /sbin/SuSEconfig -a -f /sbin/conf.d/SuSEconfig.permissions ; then \
+		/sbin/SuSEconfig --module permissions \
+	    fi \
+	fi \
+	%nil
+		
+%run_suseconfig(m:) \
+   %{!-m:echo -e "\\nERROR: missing parameter for macro run_suseconfig\\n" ; exit 1 ; } \
+   if test "$YAST_IS_RUNNING" != "instsys" ; then \
+     if test -x /sbin/SuSEconfig -a -f /sbin/conf.d/SuSEconfig.%{-m*} ; then \
+       /sbin/SuSEconfig --module %{-m*} \
+     else \
+       echo -e "\\nWARNING: SuSEconfig or requested SuSEconfig module not present!\\n" ; \
+     fi \
+   fi \
+   %nil
+
+# macro: run_suseconfig_fonts
+# call SuSEconfig modules necessary for font setup
+# options:
+#         -c  (the fonts are CJK fonts, also do setup which is only needed
+#              for CJK)
+%run_suseconfig_fonts(c) \
+  if test -z "$YAST_IS_RUNNING" ; then \
+  if test -x /sbin/conf.d/SuSEconfig.fonts ; then \
+    %run_suseconfig -m fonts \
+  fi \
+  %{-c:if test -x /sbin/conf.d/SuSEconfig.ghostscript-cjk ; then \
+         %run_suseconfig -m ghostscript-cjk \
+       fi} \
+  fi \
+  %nil
+
+%set_permissions(f:) \
+  if [ -x /usr/bin/chkstat ]; then \
+    /usr/bin/chkstat -n --set --system %{**} \
+  fi \
+  %nil
+
+%verify_permissions(e:f:) \
+   /usr/bin/chkstat -n --warn --system %{**} 1>&2 \
+   %nil
+
+# %{suse_update_config [-fcl] [dirs...]}
+#   -f: force, ignore timestamp
+#   -c: no config.guess,config.sub
+#   -l: no ltconfig,ltmain.sh
+%suse_update_config(fcl) \
+    AUTOMAKE_DIR=/usr/share/automake \
+    [ -d $AUTOMAKE_DIR ] || AUTOMAKE_DIR=/usr/share/automake* \
+    %{!-c:\
+      [ -d $AUTOMAKE_DIR ] || { \
+        echo 'Please, install automake.' \
+        exit 1 \
+      } \
+    } \
+    for d in . %{?*}; do \
+      %{!-c:\
+        for f in config.sub config.guess; do \
+          if test -f $d/$f -a ! $d/$f -ef $AUTOMAKE_DIR/$f ; then \
+            %{!-f:[ $d/$f -nt $AUTOMAKE_DIR/$f ] ||} cp -f $AUTOMAKE_DIR/$f $d/$f \
+          fi \
+	  if test -d $d -a ! -f $d/depcomp -a -f $AUTOMAKE_DIR/depcomp ; then \
+	    cp -f $AUTOMAKE_DIR/depcomp $d/depcomp \
+	    echo "please add depcomp to sources for new automake!" \
+	  fi \
+	  if test -f $d/missing -a ! $d/missing -ef $AUTOMAKE_DIR/missing ; then \
+	     cp -f $AUTOMAKE_DIR/missing $d/missing \
+	  fi \
+        done \
+      } \
+      %{!-l:\
+        for f in ltconfig ltmain.sh; do \
+          if test -f $d/$f; then \
+	    sed 's/linux-gnu\\([^*][^*]*\\)\\*/linux*\\1*/g; s/linux-gnu/linux/g; s,/lib\\\>,/%_lib,g; s,/%_lib\\([\$-]\\),/lib\\1,g' $d/$f > $d/$f-$$ && \
+	    mv -f $d/$f-$$ $d/$f \
+	    chmod +x $d/$f \
+          fi \
+        done \
+      } \
+    done \
+
+
+%suse_update_libdir() \
+   if [ %_lib != lib ]; then \
+     for file in %{?*} ; do \
+        [ ! -e $file ] && echo "Error:  $file does not exist!" && exit -1 \
+        [ -e $file.nolib64 ] && echo "Error:  $file.nolib64 already exists!" && exit -1 \
+        cp $file $file.nolib64 \
+        echo "patching $file" \
+        sed -e "s,/lib\\\>,/%_lib,g" $file.nolib64 | sed -e "s,/%_lib/cpp,/lib/cpp,; s,/usr/%_lib/perl,/usr/lib/perl, ; s,/%_lib\\([\$-]\\),/lib\\1,g" > $file \
+        rm -f $file.nolib64 \
+     done; \
+   fi ; \
+
+
+# macro: fillup_and_insserv
+# do the fillup and insserv calls for postinstall
+# options: 
+#         -n  (use first argument as name for fillup template filenames
+#		instead of package name)
+#         -f  (skip fillup parts)
+#         -i  (skip insserv parts)
+#         -y  (default start-variable value to yes)
+#             Used only if X-UnitedLinux-Default-Enabled is not specified
+#             in the init script
+#         -Y  (force_yes: always activate, discard setting before update)
+# arguments:
+#         [if "-n" first argument as package name]
+#         Pairs of:
+#            main script name
+#           and
+#            name of (old) START variable (unless -s is given)
+#
+# template for variables into /etc/sysconfig/package:
+#     /var/adm/fillup-templates/sysconfig.package
+%fillup_and_insserv(finpsyY) \
+    %{-p:echo "-p option for fillup_and_insserv no longer supported (ever only used on SL8.0)"; exit 1;} \
+    %{-s:echo "STARTVAR for fillup_and_insserv no longer supported (rc.config is gone since SL8.0)"; exit 1;} \
+    test -n "$FIRST_ARG" || FIRST_ARG=$1 \
+    %{-Y:FORCE_YES=1}%{!-Y:FORCE_YES=0} \
+    set -- %{?*} \
+    %{-n:PNAME=$1 ; shift }%{!-n:PNAME=%{name}} \
+    INSSRV_ARRAY="" \
+    while [ ${#*} -gt 0 ] ; do \
+	SCRIPTNAME=$1 \
+	shift \
+	SV_B='^### BEGIN INIT INFO' \
+	SV_E='^### END INIT INFO' \
+	SV_KW=Default-Enabled \
+	SV_VALUE=`sed -n -e "/$SV_B/,/$SV_E/{/^# [^[:space:]]*$SV_KW:[[:space:]]*\\([^[:space:]]*\\).*/s//\\1/p;}" < /etc/init.d/$SCRIPTNAME` \
+	test "$FORCE_YES" = "1" && SV_VALUE="yes" \
+	test -n "$SV_VALUE" || SV_VALUE=%{-y:"yes"}%{!-y:"no"} \
+	INSSRV_ARRAY="$INSSRV_ARRAY $SCRIPTNAME $SV_VALUE" \
+    done \
+    %{!-f: %{do_real_fillup}} \
+    %{!-i: %{add_start_if_needed $INSSRV_ARRAY } } \
+    %nil
+
+# do_real_fillup: internal macro
+# this part really calls fillup for the appropriate files
+#
+%do_real_fillup() \
+    TEMPLATE_DIR=/var/adm/fillup-templates \
+    SYSC_TEMPLATE=$TEMPLATE_DIR/sysconfig.$PNAME \
+    SD_NAME="" \
+    %{sysc_fillup}
+
+# add_start_if_needed: internally used by fillup_and_insserv
+%add_start_if_needed() \
+    set -- %{?*} \
+    while [ ${#*} -gt 0 ] ; do \
+	SCRIPTNAME=$1 \
+	SV_VALUE=$2 \
+	shift 2 \
+	test -n "$SCRIPTNAME" -a -n "$SV_VALUE" || { echo "SCRIPTNAME or SV_VALUE unknown"; exit 1;} \
+	if test "$FIRST_ARG" = "1" -a "$SV_VALUE" = "no" ; then \
+	    /sbin/insserv ${YAST_IS_RUNNING:+-f} -r /etc/init.d/$SCRIPTNAME \
+	elif test "$FIRST_ARG" = "1" -o "$FORCE_YES" = "1" ; then \
+	    /sbin/insserv ${YAST_IS_RUNNING:+-f} /etc/init.d/$SCRIPTNAME \
+	fi \
+    done 
+
+# macro: insserv_cleanup
+%insserv_cleanup() \
+    /sbin/insserv /etc/init.d
+
+# macro: fillup_only
+#    do the fillup for sysconfig files
+#   template naming convention:
+#     .../fillup-templates/sysconfig.$NAME1[-$NAME2]
+#     NAME1: the name of the sysconfig-file
+#     NAME2: if needed (if more packages fill the
+#            same sysconfig file) the package name
+#   options:
+#           -n set sysconfig name manually
+#           -a use package name as $NAME2
+#           -s use second arg as package-name
+#           -d use a subdirectory of sysconfig
+#              (last arg as directory name)
+%fillup_only(dans) \
+    %{-n:PNAME=%{1}}%{!-n:PNAME=%{name}} \
+    %{-s:SUBPNAME=-%{2}}%{!-s:SUBPNAME=%{-a:-%{name}}} \
+    TEMPLATE_DIR=/var/adm/fillup-templates \
+    SYSC_TEMPLATE=$TEMPLATE_DIR/sysconfig.$PNAME$SUBPNAME \
+    SD_NAME="" \
+    %{-d:%{-s:SD_NAME=%{3}/}%{!-s:SD_NAME=%{2}/}} \
+    %{sysc_fillup} \
+    %nil
+
+# internal only: sysc_fillup
+%sysc_fillup() \
+    if [ -x /bin/fillup ] ; then \
+	if [ -f $SYSC_TEMPLATE ] ; then \
+	    echo "Updating /etc/sysconfig/$SD_NAME$PNAME..." \
+	    mkdir -p /etc/sysconfig/$SD_NAME \
+	    touch /etc/sysconfig/$SD_NAME$PNAME \
+	    /bin/fillup -q /etc/sysconfig/$SD_NAME$PNAME $SYSC_TEMPLATE \
+	fi \
+    else \
+	echo "ERROR: fillup not found. This should not happen. Please compare" \
+	echo "/etc/sysconfig/$PNAME and $TEMPLATE_DIR/sysconfig.$PNAME and" \
+	echo "update by hand." \
+    fi
+
+# macro: rename_sysconfig_variable
+#     as the name says, rename a variable in the file given with -f
+%rename_sysconfig_variable(f:) \
+    %{!-f:echo "missing argument for rename_sysconfig_variable"; exit 1; }%{-f:FILE=%{-f*}} \
+    if [ -f $FILE ] ; then \
+	sed -i -e "s/^%{1}=/%{2}=/" $FILE \
+    fi
+
+# macro: remove_and_set
+#      remove variables from sysconfig.$NAME
+#      (both if existant) and set them in the environment
+#      for further handling in postinstall
+#  options: -n set package name
+#           -y default to yes if not found (otherwise no)
+%remove_and_set(n:y) \
+    %{-n:PNAME=%{-n*}}%{!-n:PNAME=%{name}} \
+    DEF_VAL=%{-y:"yes"}%{!-y:"no"} \
+    DEL_TEMPL=/var/adm/fillup-templates/$PNAME.del \
+    rm -f $DEL_TEMPL \
+    for var in %{?*} ; do \
+	echo -e "#\\n$var=$DEF_VAL\\n" >> $DEL_TEMPL \
+    done \
+    if [ -f /etc/sysconfig/$PNAME ] ; then \
+	/bin/fillup -q -t -r -i -d "=" /etc/sysconfig/$PNAME $DEL_TEMPL /etc/sysconfig/$PNAME.deleted.$$ \
+	test -f /etc/sysconfig/$PNAME.new && mv /etc/sysconfig/$PNAME.new /etc/sysconfig/$PNAME \
+    fi  \
+    for i in $DEL_TEMPL /etc/sysconfig/$PNAME.deleted.$$ ; do \
+	if [ -f $i ] ; then \
+	    . $i \
+	    rm -f $i \
+	fi \
+    done
+
+%insserv_force_if_yast() \
+    /sbin/insserv ${YAST_IS_RUNNING:+-f} %{?*}
+
+%run_ldconfig /sbin/ldconfig
+
+%install_info(:-:) \
+    ALL_ARGS=(%{**}) \
+    NUM_ARGS=${#ALL_ARGS[@]} \
+    if test -x /sbin/install-info ; then \
+	if test -e "${ALL_ARGS[$((NUM_ARGS-1))]}" ; then \
+	    /sbin/install-info "${ALL_ARGS[@]}" \
+	fi \
+    fi ; 
+
+%install_info_delete(:-:) \
+    ALL_ARGS=(%{**}) \
+    NUM_ARGS=${#ALL_ARGS[@]} \
+    if test -x /sbin/install-info ; then \
+	if ! test -e "${ALL_ARGS[$((NUM_ARGS-1))]}" ; then \
+	    /sbin/install-info --quiet --delete "${ALL_ARGS[@]}" \
+	fi ; \
+    fi ; 
+
+# find-supplements.ksyms parses this macro directly out of the spec file:
+%supplements_kernel_module() \
+    %{expand:%(if ! rpm -q kernel-syms > /dev/null; then echo "%fail Please add the kernel-syms package to BuildRequires"; fi)}
+
+%suse_version 1140
+%sles_version 0
+%ul_version 0
+
+%do_profiling 1
+%cflags_profile_generate -fprofile-generate
+%cflags_profile_feedback -fprofile-use
+
+%suse_install_update_message() \
+    install -D -m 644 %1 %buildroot/var/adm/update-messages/%{name}-%{version}-%{release}-%(basename %1).txt \
+%nil
+
+%suse_install_update_script() \
+     install -D -m 755 %1 %buildroot/var/adm/update-scripts/%{name}-%{version}-%{release}-%(basename %1).txt \
+%nil
+
+# Template for lang sub-package.
+%lang_package(n:) \
+%package %{-n:-n %{-n*}-}lang \
+Summary: Languages for package %{name} \
+Group: System/Localization \
+Requires: %{-n:%{-n*}}%{!-n:%{name}} = %{version} \
+Provides: %{-n:%{-n*}}%{!-n:%{name}}-lang-all = %{version} \
+Supplements: packageand(bundle-lang-other:%{-n:%{-n*}}%{!-n:%{name}}) \
+BuildArch: noarch \
+%description %{-n:-n %{-n*}-}lang \
+Provides translations to the package %{name}
+
+# rpm5 prolog for loading the standard macro
+%{load:/etc/rpm/macros.d/*.macros}

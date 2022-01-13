@@ -1,0 +1,103 @@
+/**
+
+ @page actionSetMute Action Mute/Unmute
+
+<b>Name:</b> ACTION_MUTE<BR>
+<b>Name:</b> ACTION_UNMUTE<BR>
+<b>Description:</b> This action sets the mute state for the sink. The mute state is a volume of
+-3000. The internal implementation of the controller  treats the mute state as a special case of 
+the limit volume. This action also allows a class mute, the muting of a class means that the main 
+sink of the active connection of that class is muted. For details of the limit action please 
+refer \ref actionSetLimit.
+ \code
+     <action>
+        <type>ACTION_MUTE</type>
+           <!--OR -->
+        <type>ACTION_UNMUTE</type>
+        <param>
+            <sinkName>SINK</sinkName>
+             <!-- OR -- >
+            <className>CLASS</className>
+
+            <pattern>FF</pattern>   <!-- This is an optional parameter -->
+            <timeOut>3000</timeOut> <!-- This is an optional parameter -->
+        </param>
+    </action>
+ \endcode
+
+<table>
+<tr>
+<td>Name</td>
+<td>Mandatory/Optional</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td>sinkName</td>
+<td>M<sup>1</sup></td>
+<td>string</td>
+<td>The name of the sink.</td>
+</tr>
+
+<tr>
+<td>className</td>
+<td>M<sup>1</sup></td>
+<td>string</td>
+<td>The name of the class which is to be muted. A muting of a class means to mute the main sink of the active connection of a class.</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>M<sup>2</sup></td>
+<td>32 bit unsigned integer</td>
+<td>This is the pattern by which the class is muted. The pattern is a bitmask that is used for muting a class. 
+Say a class is muted by a pattern 0x01, then again muted by pattern 0x02 then the combined mute is 0x03 bitwise ORed.Now if the unmute
+is done by pattern 0x02, the resultant is 0x01, till the pattern is non-zero class would remain muted.</td>
+</tr>
+
+<tr>
+<td>timeOut</td>
+<td>O</td>
+<td>integer</td>
+<td>This is the timeout value in milliseconds. This is optional if not specified default value DEFAULT_ASYNC_ACTION_TIME is used.</td>
+</tr>
+</table>
+M<sup>1</sup> either className or sinkName should be specified for action to work.<BR>
+M<sup>2</sup> Only for class muting pattern is used, it's ignored if its a sink level mute<BR>  
+ 
+ <BR>
+ <b>Example Configuration:</b>
+     Below are some examples of the action configuration
+ \code
+    <action>
+        <type>ACTION_MUTE</type>
+        <param>
+            <sinkName>"RadioSink"</sinkName>
+        </param>
+    </action>
+ \endcode
+    The above example sets the mutes the radioSink
+ 
+ \code
+    <action>
+        <type>ACTION_UNMUTE</type>
+        <param>
+            <sinkName>"RadioSink"</sinkName>
+        </param>
+    </action>
+ \endcode
+    The above example unmutes the RadioSink
+
+ \code
+    <action>
+        <type>ACTION_SET_MUTE</type>
+        <param>
+            <className>"BASE"</className>
+            <pattern>01</pattern>
+        </param>
+    </action>
+ \endcode
+    The above example mutes BASE class with pattern 1.
+
+   
+*/

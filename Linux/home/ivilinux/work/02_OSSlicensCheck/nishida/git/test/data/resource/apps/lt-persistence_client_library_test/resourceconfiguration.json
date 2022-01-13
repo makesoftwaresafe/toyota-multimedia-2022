@@ -1,0 +1,696 @@
+{
+  "config_appl": "lt-persistence_client_library_test",
+  "version": "0.1.0",
+  "resources": {
+    "utf8String": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "NotMe",
+      "custom_name": "23",
+      "type": "key",
+      "customID": "na"
+    },
+    "media/mediaDB_write_03.db": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "e741f4ef2ae4fe49aa68a1a7a36bbfaf"
+    },
+    "emergency": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "emergency",
+      "max_size": "1024",
+      "responsible": "CustomSystem",
+      "custom_name": "sys/emergency 0",
+      "type": "key",
+      "customID": "5a0dc9c6264a762487538ea2748190da"
+    },
+    "hwinfo": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "hwinfo",
+      "max_size": "1024",
+      "responsible": "CustomSystem",
+      "custom_name": "sys/hwinfo 0",
+      "type": "key",
+      "customID": "5a0dc9c6264a762487538ea2748190da"
+    },
+    "media/iDontWantDoBeBackuped_01.txt": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "media/iDontWantDoBeBackuped_05.txt_END": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "media/doNotBackupMe_02.txt": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "statusHandle/writeconfdefault02": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "11",
+      "type": "key",
+      "customID": "40a0ffb6fb470feb6d1ebd82e4372ee3"
+    },
+    "statusHandle/writeconfdefault01": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Conf_Default 20",
+      "custom_name": "11",
+      "type": "key",
+      "customID": "40a0ffb6fb470feb6d1ebd82e4372ee3"
+    },
+    "addressHandle/home_address": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 21",
+      "custom_name": "21",
+      "type": "key",
+      "customID": "b82ba7c2655fe72521a327b7f19773e2"
+    },
+    "lt-persistence_client_library_test_69": {
+      "policy": "NA",
+      "permission": "WO",
+      "storage": "local",
+      "max_size": "na",
+      "responsible": "na",
+      "custom_name": "na",
+      "type": "file",
+      "customID": "na"
+    },
+    "posHandle/last_position": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Navigation 18",
+      "custom_name": "18",
+      "type": "key",
+      "customID": "5082e367293aec07c54845cbb2465ee1"
+    },
+    "media/doNotBackupMe_01.txt": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "pos/last_position_w_bench2": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "media/doNotBackupMe_03.txt": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "media/mediaDB_ReadWrite.db": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "e741f4ef2ae"
+    },
+    "media/mediaDB_write_04.db": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "e741f4ef2ae4fe49aa68a1a7a36bbfaf"
+    },
+    "handlePos/last_position_w_bench": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "media/mediaDB_DataRecovery.db": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "e741f4ef2ae468a1a7a36bbfaf"
+    },
+    "THIS_IS_A_NEW_KEY_ADDED_TO_THE_DATABASE": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "8888",
+      "responsible": "Write 25",
+      "custom_name": "25",
+      "type": "key",
+      "customID": "fb0c32481177948dc449fe627c9b1ad1"
+    },
+    "pos/last_position_w_bench": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "statusHandle/open_document": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 20",
+      "custom_name": "20",
+      "type": "key",
+      "customID": "40a0ffb6fb470feb6d1ebd82e4372ee3"
+    },
+    "media/mediaDB_create.db": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "ee3"
+    },
+    "media/doNotBackupMe_04.txt": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "languageHandle/current_language": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 19",
+      "custom_name": "19",
+      "type": "key",
+      "customID": "b84f0621d29f2f"
+    },
+    "handlePos/last_position_ro_bench2": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "media/mediaData.configurable": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "ee3"
+    },
+    "media/mediaData_02.configurable": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "ee3"
+    },
+    "secured": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "secure",
+      "max_size": "1024",
+      "responsible": "CustomSystem",
+      "custom_name": "sys/secure 0",
+      "type": "key",
+      "customID": "5a0dc9c6264a762487538ea2748190da"
+    },
+    "media/mediaData_01.configurable": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "ee3"
+    },
+    "status/open_document": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "8192",
+      "responsible": "Media 12",
+      "custom_name": "12",
+      "type": "key",
+      "customID": "9c02b1e05dfaf349476ce6e9aa158e6a"
+    },
+    "statusHandle/confdefault01": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Conf_Default 20",
+      "custom_name": "11",
+      "type": "key",
+      "customID": "40a0ffb6fb470feb6d1ebd82e4372ee3"
+    },
+    "address/home_address": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "shared",
+      "max_size": "1024",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "456654",
+      "type": "key",
+      "customID": "cusID: 18"
+    },
+    "69": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Write 22",
+      "custom_name": "22",
+      "type": "key",
+      "customID": "14bfa6bb14875e45bba028a21ed38046"
+    },
+    "statusHandle/confdefault02": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "11",
+      "type": "key",
+      "customID": "40a0ffb6fb470feb6d1ebd82e4372ee3"
+    },
+    "media/mediaDB_write_01.db": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "e72f"
+    },
+    "media/mediaDB_ReadOnly.db": {
+      "policy": "writethrough",
+      "permission": "RO",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "e768a1a7a36bbfaf"
+    },
+    "pos/last_satellites": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 14",
+      "custom_name": "14",
+      "type": "key",
+      "customID": "ee56054488e7302b3a6ae59d2f69bbe0"
+    },
+    "statusHandle/default02": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "11",
+      "type": "key",
+      "customID": "40a0ffb6fb470feb6d1ebd82e4372ee3"
+    },
+    "statusHandle/default01": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Default 20",
+      "custom_name": "111",
+      "type": "key",
+      "customID": "40a0ffe4372ee3"
+    },
+    "pos/last_position_ro_bench": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "media/mediaDBWrite.db": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 17",
+      "custom_name": "17",
+      "type": "file",
+      "customID": "18"
+    },
+    "handlePos/last_position_ro_bench": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "media/iDontWantDoBeBackuped_04.txt": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "custom3": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "custom3",
+      "max_size": "1024",
+      "responsible": "CustomSystem",
+      "custom_name": "sys/custom3 0",
+      "type": "key",
+      "customID": "5a0dc9c6264a762487538ea2748190da"
+    },
+    "70": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Write 23",
+      "custom_name": "23",
+      "type": "key",
+      "customID": "7cbbc409ec990f19c78c75bd1e06f215"
+    },
+    "custom1": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "custom1",
+      "max_size": "1024",
+      "responsible": "CustomSystem",
+      "custom_name": "sys/custom1 0",
+      "type": "key",
+      "customID": "5a0dc9c6264a762487538ea2748190da"
+    },
+    "custom2": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "custom2",
+      "max_size": "1024",
+      "responsible": "CustomSystem",
+      "custom_name": "sys/custom2 0",
+      "type": "key",
+      "customID": "5a0dc9c6264a762487538ea2748190da"
+    },
+    "pos/last_position": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "early": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "early",
+      "max_size": "1024",
+      "responsible": "CustomSystem",
+      "custom_name": "sys/early 0",
+      "type": "key",
+      "customID": "5a0dc9c6264a762487538ea2748190da"
+    },
+    "pos/last_position_ro_bench2": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "posHandle/last_position2": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 3",
+      "custom_name": "3",
+      "type": "key",
+      "customID": "0e98dd7fc20784ce5ae77850a7b34b40"
+    },
+    "media/iDontWantDoBeBackuped_03.txt": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "posHandle/last_position1": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 2",
+      "custom_name": "2",
+      "type": "key",
+      "customID": "5e0d46fc8619342b4f8fb9583ec491ba"
+    },
+    "handlePos/last_position_w_bench2": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 1",
+      "custom_name": "1",
+      "type": "key",
+      "customID": "edf1bc8c853c0355b80ad8b2b8efeae2"
+    },
+    "posHandle/last_position4": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 5",
+      "custom_name": "5",
+      "type": "key",
+      "customID": "0fd003bea510466e2a0d257a54c1ef98"
+    },
+    "media/mediaDB_write_02.db": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "e2"
+    },
+    "posHandle/last_position3": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 4",
+      "custom_name": "4",
+      "type": "key",
+      "customID": "c3c0b37dd1677ebcbaae53583dd27b39"
+    },
+    "posHandle/last_position6": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 7",
+      "custom_name": "7",
+      "type": "key",
+      "customID": "a810bc4af2368756a780704302dbd063"
+    },
+    "key_70": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Write 24",
+      "custom_name": "24",
+      "type": "key",
+      "customID": "b55d024042c54f75daab9e88ffbe6498"
+    },
+    "posHandle/last_position5": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 6",
+      "custom_name": "6",
+      "type": "key",
+      "customID": "59c649bf324bcde1e180009bc1c00ec5"
+    },
+    "links/last_link": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "group84",
+      "custom_name": "15",
+      "type": "key",
+      "customID": "12acebd05c77ad2a5d2f875dff647940"
+    },
+    "posHandle/last_position8": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 9",
+      "custom_name": "9",
+      "type": "key",
+      "customID": "77c362de86e7d8dda880b1eff4284ad6"
+    },
+    "posHandle/last_position7": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 8",
+      "custom_name": "8",
+      "type": "key",
+      "customID": "250ede119a36b5d3404af032555e3025"
+    },
+    "posHandle/last_position9": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "2048",
+      "responsible": "Navigation 10",
+      "custom_name": "10",
+      "type": "key",
+      "customID": "03703a2e3b62ddf1704ac85c32afbb63"
+    },
+    "media/doNotBackupMe.txt_START": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "media/mediaDB.db": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "Media 16",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "e74af"
+    },
+    "media/iDontWantDoBeBackuped_02.txt": {
+      "policy": "writethrough",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "na",
+      "custom_name": "16",
+      "type": "file",
+      "customID": "na"
+    },
+    "language/current_language": {
+      "policy": "cached",
+      "permission": "RW",
+      "storage": "local",
+      "max_size": "1024",
+      "responsible": "lt-persistence_client_library_test",
+      "custom_name": "456654",
+      "type": "key",
+      "customID": "cusID: 18"
+    }
+  }
+}

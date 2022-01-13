@@ -1,0 +1,121 @@
+# Dutch translation of ca-certificates debconf templates.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ca-certificates package.
+# Frans Pop <aragorn@tiscali.nl>, 2004, 2006.
+# Frans Pop <elendil@planet.nl>, 2007.
+# Jeroen Schot <schot@a-eskwadraat.nl>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ca-certificates 20110502+nmu1\n"
+"Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2011-10-10 09:58+0200\n"
+"Last-Translator: Jeroen Schot <schot@a-eskwadraat.nl>\n"
+"Language-Team: Debian l10n Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr "ca-certificates configuratie"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "yes"
+msgstr "ja"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "nee"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "selectie"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid "Trust new certificates from certificate authorities?"
+msgstr "Nieuwe certificaten van certificaatautoriteiten vertrouwen?"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+"This package may install new CA (Certificate Authority) certificates when "
+"upgrading. You may want to check such new CA certificates and select only "
+"certificates that you trust."
+msgstr ""
+"Het is mogelijk dat dit pakket nieuwe CA (certificaatautoriteit) "
+"certificaten installeert tijdens een opwaardering naar een nieuwe versie. "
+"Mogelijk wilt u dergelijke nieuwe certificaten controleren en alleen "
+"certificaten selecteren van autoriteiten die u vertrouwt."
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+" - yes: new CA certificates will be trusted and installed;\n"
+" - no : new CA certificates will not be installed by default;\n"
+" - ask: prompt for each new CA certificate."
+msgstr ""
+" - ja: nieuwe CA certificaten vertrouwen en installeren;\n"
+" - nee: nieuwe CA certificaten niet standaard installeren;\n"
+" - selectie: CA certificaten handmatig selecteren."
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid "New certificates to activate:"
+msgstr "Te activeren nieuwe certificaten:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid ""
+"During upgrades, new certificates will be added. Please choose those you "
+"trust."
+msgstr ""
+"Bij deze opwaardering worden nieuwe certificaten toegevoegd. Selecteer de "
+"certificaten die u vertrouwt."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid "Certificates to activate:"
+msgstr "Te activeren certificaten:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"This package installs common CA (Certificate Authority) certificates in /usr/"
+"share/ca-certificates."
+msgstr ""
+"Gangbare CA (certificaatautoriteit) certificaten worden door dit pakket "
+"geïnstalleerd in '/usr/share/ca-certificates'."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"Please select the certificate authorities you trust so that their "
+"certificates are installed into /etc/ssl/certs. They will be compiled into a "
+"single /etc/ssl/certs/ca-certificates.crt file."
+msgstr ""
+"Selecteer de certificaatautoriteiten die u vertrouwt. Hun certificaten "
+"zullen worden opgenomen in '/etc/ssl/certs' en worden gebundeld in het "
+"bestand '/etc/ssl/certs/ca-certificates.crt'."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "ja, nee, selectie"

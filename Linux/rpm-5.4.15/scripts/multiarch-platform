@@ -1,0 +1,14 @@
+#!/bin/sh
+arch=`uname -m`
+`perl -e '$le   = unpack("h*", pack("s", 1)) =~ /^1/; exit $le;'`
+le=$?
+case $arch in
+i?86) arch=i386;;
+mips*) [ $le -eq 1 ] && arch="$arch"el ;;
+arm*) [ $le -eq 0 ] && arch="armeb" || arch="arm" ;;
+esac
+os=`uname -s`
+case $os in
+Linux*) os=linux;;
+esac
+echo multiarch-$arch-$os

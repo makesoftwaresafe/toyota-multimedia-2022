@@ -1,0 +1,636 @@
+#ifndef _IPODCORE_DEF_H_
+#define _IPODCORE_DEF_H_
+
+#include <mqueue.h>
+#include <semaphore.h>
+#include <time.h>
+#include <libxml2/libxml/tree.h>
+#include <libxml2/libxml/parser.h>
+#include <libxml2/libxml/encoding.h>
+#include <libxml2/libxml/xmlwriter.h>
+#include "adit_typedef_linux.h"
+#include "iap_types.h"
+#include "iPodPlayerDef.h"
+#include "iPodPlayerDef_in.h"
+#include "iPodPlayerUtilityConfiguration.h"
+#include "ipp_iap2_common.h"
+#include "iPodPlayerIPCMessage.h"
+
+#define IPP_COM_OPT_DIS_DETECTION    "iPodPlayerDeviceDetection"
+#define IPP_COM_OPT_DIS_AUDIO        "iPodPlayerAudio"
+
+#define IPODCORE_POS0                   0
+#define IPODCORE_POS1                   1
+#define IPODCORE_POS2                   2
+
+#define IPODCORE_NO_END_NOTIFY_TIME     5000
+#define IPODCORE_DELETE_REQ_RETRY       5
+
+#define IPODCORE_COMMAND_QUEUE_IDENTIFY "iPodCore"
+#define IPODCORE_COMMAND_QUEUE_LONG_IDENTIFY "iPodCore_long"
+#define IPODCORE_IPOD_HANDLE_IDENTIFY "iPodHndl"
+#define IPODCORE_AUDIO_SERVER_IDENTIFY  "pai_com"
+#define IPODCORE_AUDIO_SERVER_CONNECTION_NUM 1
+
+#define IPODCORE_UNKNOWN_VALUE 0xFF
+
+#define IPODCORE_WAIT_LIST_MAX 50
+
+#define IPODCORE_AUDIO_STREAMING_PATH       "@CMAKE_INSTALL_PREFIX@/bin/iPodPlayerAudio"
+#define IPODCORE_DEVICE_DETECTION_PATH      "@CMAKE_INSTALL_PREFIX@/bin/iPodPlayerDeviceDetection"
+#define IPODCORE_DATA_COM_PATH              "/bin/ipod-hid_com_server"
+#define IPODCORE_AUT_COM_PATH               "/bin/ipod-aut_com_server"
+
+#define IPODCORE_MASK_BIT_0     (1 << 0)
+#define IPODCORE_MASK_BIT_1     (1 << 1)
+#define IPODCORE_MASK_BIT_2     (1 << 2)
+#define IPODCORE_MASK_BIT_3     (1 << 3)
+#define IPODCORE_MASK_BIT_4     (1 << 4)
+#define IPODCORE_MASK_BIT_5     (1 << 5)
+#define IPODCORE_MASK_BIT_6     (1 << 6)
+#define IPODCORE_MASK_BIT_7     (1 << 7)
+#define IPODCORE_MASK_BIT_8     (1 << 8)
+#define IPODCORE_MASK_BIT_9     (1 << 9)
+#define IPODCORE_MASK_BIT_10    (1 << 10)
+#define IPODCORE_MASK_BIT_11    (1 << 11)
+#define IPODCORE_MASK_BIT_12    (1 << 12)
+#define IPODCORE_MASK_BIT_13    (1 << 13)
+#define IPODCORE_MASK_BIT_14    (1 << 14)
+#define IPODCORE_MASK_BIT_15    (1 << 15)
+#define IPODCORE_MASK_BIT_16    (1 << 16)
+#define IPODCORE_MASK_BIT_17    (1 << 17)
+#define IPODCORE_MASK_BIT_18    (1 << 18)
+#define IPODCORE_MASK_BIT_19    (1 << 19)
+#define IPODCORE_MASK_BIT_20    (1 << 20)
+#define IPODCORE_MASK_BIT_21    (1 << 21)
+#define IPODCORE_MASK_BIT_24    (1 << 24)
+
+#define IPODCORE_VER_MAJOR_1 1
+#define IPODCORE_VER_MAJOR_2 2
+
+#define IPODCORE_VER_MINOR_0 0
+#define IPODCORE_VER_MINOR_1 1
+#define IPODCORE_VER_MINOR_2 2
+#define IPODCORE_VER_MINOR_3 3
+#define IPODCORE_VER_MINOR_4 4
+#define IPODCORE_VER_MINOR_5 5
+#define IPODCORE_VER_MINOR_6 6
+#define IPODCORE_VER_MINOR_7 7
+#define IPODCORE_VER_MINOR_8 8
+#define IPODCORE_VER_MINOR_9 9
+#define IPODCORE_VER_MINOR_10 10
+#define IPODCORE_VER_MINOR_11 11
+#define IPODCORE_VER_MINOR_12 12
+#define IPODCORE_VER_MINOR_13 13
+#define IPODCORE_VER_MINOR_14 14
+#define IPODCORE_VER_MINOR_15 15
+
+#define IPODCORE_EQUALIZER_DEFAULT 0xFF
+#define IPODCORE_ARG_NUM        3
+#define IPODCORE_QUEUE_MAX_NUM  10
+
+#define IPODCORE_DEFAULT_PAYLOAD_SIZE 497
+#define IPODCORE_BIT_MAX_32 32
+
+#define IPODCORE_TMOUT_FOREVER -1
+#define IPODCORE_SEND_TMOUT 8000
+#define IPODCORE_EPOLL_RETRY_WAIT 100000000
+#define IPODCORE_DEINIT_DELAY_WAIT 100000000
+#define IPODCORE_IAP2SINIT_RETRY_WAIT 100000000
+#define IPODCORE_AUDIO_RECV_TMOUT 30000
+
+
+#define IPODCORE_NANOSLEEP_RETRY_MAX 5
+/* Wait for iPodInitDeviceConnection by millisecond. Default is 100 milliseconds */
+#define IPODCORE_IPODCTRL_INIT_WAIT_TIME 100
+/* Max retry count. Default is 10. */
+#define IPODCORE_IPODCTRL_INIT_RETRY_MAX 10
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_FLOWCONTROL     0x00000004
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_TAGGING         0x00000008
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_CAMERA          0x00000010
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_CHARGING        0x00000020
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_DATABASE        0x00000200
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_APPNAME         0x00000400
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_SESSION         0x00000800
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_GENIUS          0x00002000
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_OUT             0x00008000
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_BT              0x00020000
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_APPSTATUS       0x00080000
+
+#define IPOD_PLAYER_EVENT_NOTIFICATION_MASK_ASSISTIBE       0x00100000
+
+#define IPODCORE_GET_TRACK_INFO_COUNT_1 1
+
+#define IPODCORE_DEFAULT_VALUE  -1
+
+#define IPODCORE_LONG_DATA_ARRAY 2
+
+#define IPODCORE_LONG_HEADER_POS 0
+
+#define IPODCORE_LONG_DATA_POS 1
+
+#define IPODCORE_LONG_HEADER_NUM 1
+
+#define IPODCORE_LONG_DATA_NUM 2
+
+#define IPODCORE_GET_STATUS_INTERVAL 1100
+
+#define IPODCORE_TAG_HANDLE_DEFAULT 0xFFFFFFFF
+
+#define IPODCORE_VOLUME_MAX 100
+
+#define IPODCORE_START_HEADER_MAX 10
+
+#define IPODCORE_LOCATION_NMEA_MAX 7
+
+#define IPODCORE_VINFO_ENGINE_MAX 4
+#define IPODCORE_VSTATUS_TYPE_MAX 3
+
+#define IPODCORE_MAX_LANG_NUM 16
+#define IPODCORE_MAX_SAMPLE_NUM 16
+#define IPODCORE_BT_MAC_NUM 10
+#define IPODCORE_BT_MAC_MAX_LEN 12
+
+#define IPOD_PLAYER_MAX_CHILDREN_PID_NUM     4
+#define IPOD_PLAYER_WAIT_CHILDREN_KILL_COUNT 10
+
+#define IPOD_PLAYER_WAIT_TIME_MAX_COUNT 5
+#define IPOD_PLAYER_ATS_WAIT_TIME 1100
+#define IPOD_PLAYER_TIME_SEC            (1)
+#define IPOD_PLAYER_TIME_MSEC_TO_SEC    (1000)
+#define IPOD_PLAYER_TIME_MSEC_TO_NSEC   (1000 * 1000)
+#define IPOD_PLAYER_TIME_NSEC_TO_SEC    (1000 * 1000 * 1000)
+
+#define IPOD_PLAYER_PROTOCOL_HEADER_LEN 10
+#define IPOD_PLAYER_TRACK_INDEX_UNKNOWN 0xFFFFFFFF
+#define IPOD_PLAYER_BIT_INT_NUM 32
+#define IPOD_PLAYER_WAIT_DEINIT_RETRY_MAX 5
+#define IPOD_PLAYER_WAIT_DEINIT_TIME 10000000
+#define IPOD_PLAYER_PIXEL_FORMAT_LE 0x02
+#define IPOD_PLAYER_TIMER_INTERVAL 1000
+#define IPOD_PLAYER_TIMER_IMMEDIATE 1
+/*--------------------- Song Tag information ------------------------------ */
+#define IPODCORE_TAG_NODE_KEY       "key"
+#define IPODCORE_TAG_NODE_INT       "integer"
+#define IPODCORE_TAG_NODE_STR       "string"
+#define IPODCORE_TAG_NODE_DATA      "data"
+#define IPODCORE_TAG_NODE_DATE      "date"
+#define IPODCORE_TAG_DTD_NAME        "plist"
+#define IPODCORE_TAG_DTD_PUBLIC     "-//Apple Inc//DTD PLIST 1.0//EN"
+#define IPODCORE_TAG_DTD_SYSTEM     "http://www.apple.com/DTDs/PropertyList-1.0.dtd"
+#define IPODCORE_TAG_INDENT_SPACE   "    "
+#define IPODCORE_TAG_NODE_PLIST     "plist"
+#define IPODCORE_TAG_ATTR_VER       "version"
+#define IPODCORE_TAG_VER_DATA       "1.0"
+
+#define IPODCORE_TAG_NODE_DICT      "dict"
+#define IPODCORE_TAG_NODE_MAJOR     "MajorVersion"
+#define IPODCORE_TAG_NODE_MINOR     "MinorVersion"
+#define IPODCORE_TAG_NODE_MANID     "ManufacturerID"
+#define IPODCORE_TAG_NODE_MANNAME   "ManufacturerName"
+#define IPODCORE_TAG_NODE_DEVNAME   "DeviceName"
+#define IPODCORE_TAG_NODE_ARRAY     "array"
+#define IPODCORE_TAG_NODE_AMBIGUOUS "AmbiguousTag"
+#define IPODCORE_TAG_NODE_BUTTONPRESS "ButtonPressed"
+#define IPODCORE_TAG_NODE_NAME      "Name"
+#define IPODCORE_TAG_NODE_ARTIST    "Artist"
+#define IPODCORE_TAG_NODE_ALBUM     "Album"
+#define IPODCORE_TAG_NODE_SONGID    "iTunesSongID"
+#define IPODCORE_TAG_NODE_FRONTID   "iTunesStorefrontID"
+#define IPODCORE_TAG_NODE_FREQ      "StationFrequency"
+#define IPODCORE_TAG_NODE_LETTERS   "StationCallLetters"
+#define IPODCORE_TAG_NODE_FEEDURL   "PodcastFeedURL"
+#define IPODCORE_TAG_NODE_STATIONURL "StationURL"
+#define IPODCORE_TAG_NODE_GENRE     "Genre"
+#define IPODCORE_TAG_NODE_TIMESTAMP "TimeStamp"
+#define IPODCORE_TAG_NODE_PROGRAM   "ProgramNumber"
+#define IPODCORE_TAG_NODE_STATIONID "iTunesStationID"
+#define IPODCORE_TAG_NODE_AFFILIATE "iTunesAffiliateID"
+#define IPODCORE_TAG_NODE_UNKNOWN   "UnknownData"
+#define IPODCORE_TAG_STR_UTF        "UTF-8"
+#define IPODCORE_TAG_TOP_DATA       "<data>"
+#define IPODCORE_TAG_LAST_DATA      "</data>"
+
+#define IPODCORE_TAG_RESULT_DATA_REMAIN 1
+#define IPODCORE_TAG_WRITE_MAX_SIZE 500
+#define BASE64_ENCODE_OUTPUT_CHUNK_SIZE 4 /* must be multiple of 4 */
+#define BASE64_ENCODE_INPUT_CHUNK_SIZE ((BASE64_ENCODE_OUTPUT_CHUNK_SIZE / 4) * 3) /* input size of xmlTextWriterWriteBase64 */
+
+#define IPODCORE_INTERNAL_APPLICATION_NUM 1
+#define IPOD_PLAYER_HMI_WAIT_STATUS 50
+#define IPOD_PLAYER_FHWVER_MAX_NUM        3
+#define IPOD_PLATER_DEVICE_MAX_NUM        5
+
+#define IPP_DELAYED_QUEUE_MAX   5
+
+/*--------------------- iPod core mask talble defines ----------------------------- */
+#define is_setbit(opt, mask) ((opt & mask) == mask )
+
+/*--------------------------------------------------------------------------- */
+typedef struct
+{
+    BOOL disDetectionApp;   /* disable iPodPlayerDeviceDetection */
+    BOOL disAudioApp;       /* disable iPodPlayerAudio */
+
+} IPPCOMOPT;
+
+typedef struct
+{
+    BOOL iAP2VehicleRange;
+    BOOL iAP2VehicleOutsideTemperature;
+    BOOL iAP2VehicleRangeWarning;
+}IPOD_PLAYER_CORE_VEHICLE_INFO;
+
+typedef struct
+{
+    S32 fd;
+    U8 num;
+    U32 size[IPODCORE_LONG_DATA_ARRAY];
+    U8 *buf[IPODCORE_LONG_DATA_ARRAY];
+    IPOD_PLAYER_FUNC_HEADER header;
+} IPOD_PLAYER_CORE_LONG_RECEIVE_INFO;
+
+typedef enum
+{
+    IPODCORE_QUEUE_STATUS_NONE = 0x00,
+    IPODCORE_QUEUE_STATUS_WAIT,
+    IPODCORE_QUEUE_STATUS_RUNNING,
+    IPODCORE_QUEUE_STATUS_FINISH,
+    IPODCORE_QUEUE_STATUS_CANCEL,
+    IPODCORE_QUEUE_STATUS_UNKNOWN = 0xFF
+} IPODCORE_QUEUE_STATUS;
+
+
+typedef enum
+{
+    IPODCORE_QUEUE_PRIOR_LOW = 0x00,
+    IPODCORE_QUEUE_PRIOR_MIDLOW,
+    IPODCORE_QUEUE_PRIOR_MID,
+    IPODCORE_QUEUE_PRIOR_MIDHIGH,
+    IPODCORE_QUEUE_PRIOR_HIGH
+} IPODCORE_QUEUE_PRIOR;
+
+typedef enum
+{
+    IPODCORE_IOSAPP_NONE = 0x00,
+    IPODCORE_IOSAPP_OPEN,
+    IPODCORE_IOSAPP_CLOSE
+
+} IPODCORE_IOSAPP_STATUS;
+
+/* Todo change structure */
+typedef struct
+{
+    IPODCORE_QUEUE_PRIOR prior;
+    IPODCORE_QUEUE_STATUS status;
+    IPOD_PLAYER_MESSAGE_DATA_CONTENTS contents;
+    U32 nextRequest;
+    U32 storeData;
+    U8 *storeBuf;
+    U32 stage;
+} IPOD_PLAYER_CORE_WAIT_LIST;
+
+typedef struct
+{
+    U8 deviceName[IPOD_PLAYER_STRING_LEN_MAX];
+    U8 audioInName[IPOD_PLAYER_STRING_LEN_MAX];
+    U8 audioOutName[IPOD_PLAYER_STRING_LEN_MAX];
+    IPOD_PLAYER_DEVICE_TYPE devType;
+} IPOD_PLAYER_CORE_DEVICE_NAME_INFO;
+
+typedef struct
+{
+    U8 macCount;
+    IPOD_PLAYER_BT_MAC_ADDR macAddr[IPOD_PLAYER_BT_MAC_COUNT_MAX];
+} IPOD_PLAYER_BT_INFORMATION;
+
+typedef struct
+{
+    pthread_t id;
+    U64 maxQueueSize;
+    U64 maxMsgSize;
+    U8 isReady;
+    U32 iPodDevID;
+    U32 appDevID;
+    U8 maxEntry;
+    U32 timeout;
+    U32 aTime;
+    IPOD_PLAYER_CORE_DEVICE_NAME_INFO nameInfo;
+    IPOD_PLAYER_BT_INFORMATION btInfo;
+    S32 queueInfo;
+    S32 queueInfoClient;
+    S32 cmdQueueInfoClient;
+    S32 longQueueServer;
+    S32 longQueueClient;
+    S32 longCmdQueueClient;
+    IPOD_PLAYER_IOSAPP_INFO iOSAppInfo[IPODCORE_MAX_IOSAPPS_INFO_NUM];
+    U32 iOSAppCount;
+    U8 *longDataBuf;
+    IPOD_PLAYER_PLAYBACK_STATUS playbackStatus;
+    U32 prevPlayTime;
+    U32 curTime;
+    IPOD_PLAYER_ACC_INFO_CONFIG accInfo;
+    IPOD_PLAYER_ACC_IOS_INFO iosInfo[IPODCORE_MAX_IOSAPPS_INFO_NUM];
+    U8 endpointPath[IPOD_PLAYER_STRING_LEN_MAX];
+    IPOD_PLAYER_VEHICLE_INFO_L vehicleInfo;
+} IPOD_PLAYER_CORE_THREAD_INFO;
+
+
+typedef enum
+{
+    IPODCORE_THREAD_CMD_HANDLER = 0x00,
+    IPODCORE_THREAD_IPODCTRL,
+    IPODCORE_THREAD_MAX
+} IPOD_PLAYER_CORE_THREAD_NUM;
+
+typedef enum
+{
+    IPODCORE_QUEUE_CMD_HANDLER = 0x00,
+    IPODCORE_QUEUE_IPODCTRL,
+    IPODCORE_QUEUE_MAX
+} IPOD_PLAYER_CORE_QUEUE_NUM;
+
+typedef struct
+{
+    S32 sckOut;
+    S32 sckIn;
+    S32 sckOutLong;
+    S32 sckInLong;
+    U32 appID;
+    U8 isReady;
+} IPOD_PLAYER_CORE_APP_INFO;
+
+typedef struct
+{
+    U32 appID;
+    U16 sessionID;
+    U8 isReady;
+    IPODCORE_IOSAPP_STATUS status;
+} IPOD_PLAYER_CORE_IOS_APP_INFO;
+
+typedef struct
+{
+    U32 timeout;
+    U64 maxQueueSize;
+    U64 maxMsgSize;
+    U32 iPodNum;
+    U32 curiPodNum;
+    U32 appNum;
+    U8 mask;
+    U32 maxEntry;
+    S32 cmdQueueInfo;
+    S32 cmdQueueInfoClient;
+    S32 longQueueServer;
+    S32 longQueueClient;
+    S32 serverInfo;
+    S32 longServerInfo;
+    S32 sckDetect;
+    S32 sckDetectServer;
+    S32 shutdownEvent;
+    IPOD_PLAYER_CORE_APP_INFO *appInfo;
+    IPOD_PLAYER_CORE_THREAD_INFO *threadInfo;
+    S32 handle[IPOD_PLAYER_IPC_MAX_EPOLL_NUM];
+    U32 handleNum;
+    S32 waitHandle;
+    IPOD_PLAYER_MESSAGE_DATA_CONTENTS *contents;
+    IPOD_PLAYER_MESSAGE_DATA_CONTENTS *detectInfo;
+    IPOD_PLAYER_IOSAPP_INFO iOSAppInfo[IPODCORE_MAX_IOSAPPS_INFO_NUM];
+    U32 iOSAppCount;
+    U32 iPodCtrlReady;
+    IPOD_PLAYER_CORE_LONG_RECEIVE_INFO longRecvInfo[IPOD_PLAYER_IPC_MAX_EPOLL_NUM];
+} IPOD_PLAYER_CORE_CFG;
+
+
+typedef struct
+{
+    U32 totalLen;
+    U32 curLen;
+    U8 maxSeq;
+    U8 curSeq;
+} IPOD_PLAYER_CORE_QUEUE_HEADER;
+
+typedef struct
+{
+    IPOD_PLAYER_CORE_QUEUE_HEADER header;
+    IPOD_PLAYER_MESSAGE_DATA_CONTENTS *contents;
+} IPOD_PLAUER_CORE_QUEUE;
+
+typedef struct
+{
+    IPOD_PLAYER_PLAY_STATUS status;
+    IPOD_PLAYER_PLAY_STATUS prevStatus;
+    IPOD_PLAYER_DEVICE_PROPERTY property;
+    U64 iPodOptions[IPOD_LINGO_MAX];
+    IPOD_PLAYER_DB_TYPE topType;
+    IPOD_PLAYER_DB_TYPE curType;
+    U32 catCountList[IPOD_PLAYER_DB_TYPE_ITUNESU + 1];
+    U8 speed;
+    U8 shuffleStatus;
+    U8 repeatStatus;
+    U32 equalizer;
+    U32 maxEq;
+    U32 sampleRate;
+    U32 trackInfoMask;
+    U32 deviceEventMask;
+    U16 formatId;
+    U32 coverartCount;
+    U32 coverartTime[IPOD_PLAYER_COVERART_TIME_ARRAY_MAX];
+    U8 curCoverart;
+    U8 mode;
+    U8 avType;
+    IPOD_PLAYER_VIDEO_SETTING videoSetting;
+    pthread_mutex_t waitMutex;
+    pthread_cond_t waitCond;
+    U32 timeWaitFlag;
+    U32 getDBprevTime;
+    U32 getTrackTime;
+    U32 getAlbumTime;
+    U32 getArtistTime;
+    U32 getInfoTime;
+    S32 getTrackInfoFd;
+    S32 getintTrackInfoFd;
+    S32 getDBprevTimeFd;
+    S32 nextRequestFd;
+    IPOD_PLAYER_DB_TYPE curTotalType;
+    U32 curTotalCount;
+    U64 totalSpace;
+    U32 maxFileSize;
+    U16 maxWriteSize;
+} IPOD_PLAYER_CORE_IPOD_DEVICE_INFO;
+
+typedef enum
+{
+    IPOD_CORE_INT_FUNC_FIRST_GET_IPOD_INFO = IPOD_PLAYER_INTERNAL_FUNC_MASK | 0x00,
+    IPOD_CORE_INT_FUNC_SET_SAMPLERATE,
+    IPOD_CORE_INT_FUNC_FIRST_SET_STATUS,
+    IPOD_CORE_INT_FUNC_GET_STATUS,
+    IPOD_CORE_INT_FUNC_GET_TRACK_INFO,
+    IPOD_CORE_INT_FUNC_NOTIFY_STATUS,
+    IPOD_CORE_INT_FUNC_FIRST_GET_IPOD_INFO_RESULT,
+    IPOD_CORE_INT_FUNC_GET_STATUS_RESULT,
+    IPOD_CORE_INT_FUNC_GET_TRACK_INFO_RESULT
+} IPOD_CORE_INT_FUNC;
+
+typedef struct
+{
+    BOOL authPass;
+    BOOL idenPass;
+} IPOD_PLAYER_AUTH_IDEN_PASS_STATUS;
+
+typedef enum
+{
+    IPP_DELAYED_MUTEX_INIT = 0,
+    IPP_DELAYED_MUTEX_LOCK,
+    IPP_DELAYED_MUTEX_UNLOCK
+} IPP_DELAYED_MUTEX_FUNC;
+
+typedef struct
+{
+    IPOD_PLAYER_LOCATION_INFO_STATUS status;
+    U32 locationMask;
+} IPP_LOCATION_INFO;
+
+typedef struct
+{
+    IPOD_PLAYER_CORE_IOS_APP_INFO appInfo;
+    U32 devIx;
+} IPP_IOS_APP;
+
+typedef struct
+{
+    IPOD_PLAYER_VEHICLE_STATUS status;
+} IPP_VEHICLE_STATUS;
+
+typedef struct
+{
+    /* location information queue */
+    IPP_LOCATION_INFO locationQueue[IPP_DELAYED_QUEUE_MAX];
+    U32 locationIxw;
+
+    /* vehicle status queue */
+    IPP_VEHICLE_STATUS vehicleQueue[IPP_DELAYED_QUEUE_MAX];
+    U32 vehicleIxw;
+
+    /* IOS App information queue */
+    IPP_IOS_APP iOSAppQueue[IPP_DELAYED_QUEUE_MAX];
+    U32 iosIxw;
+
+    /* last notification event for init api */
+    IPP_LOCATION_INFO locationNow;
+    IPP_VEHICLE_STATUS vehicleNow;
+    BOOL lastEventNotify;
+
+    pthread_mutex_t delayedMutex; /* mutex object */
+} IPOD_PLAYER_DELAYED_EVENT;
+
+typedef struct
+{
+    S32 handle[IPOD_PLAYER_IPC_MAX_EPOLL_NUM];
+    U32 handleNum;
+    U32 defaultProtocol;
+    IPOD_PLAYER_CORE_LONG_RECEIVE_INFO longRecvInfo[IPOD_PLAYER_IPC_MAX_EPOLL_NUM];
+    IPOD_PLAYER_PLAYBACK_STATUS playbackStatus;
+    IPOD_PLAYER_MESSAGE_DATA_CONTENTS *contents;
+    IPOD_PLAYER_CORE_IPOD_DEVICE_INFO *iPodInfo;
+    IPOD_PLAYER_CORE_THREAD_INFO *threadInfo;
+    void *funcTable;
+    S32 sckAudio;
+    S32 sckAudioServer;
+    IPOD_PLAYER_CONNECTION_STATUS deviceConnection;
+    IPOD_PLAYER_AUTH_IDEN_PASS_STATUS authIdenPass;
+
+    U32 deviceStatusChange;
+    BOOL StartSession;
+
+    /* todo */
+    IPOD_PLAYER_CORE_IOS_APP_INFO iOSAppID[IPODCORE_MAX_IOSAPPS_INFO_NUM];
+    U32 notifyEvent;
+    U8 appName[IPOD_PLAYER_STRING_LEN_MAX];
+    U8 oldiPod;
+    IPOD_PLAYER_CORE_WAIT_LIST *waitList;
+    U32 curRunMask;
+    S32 waitHandle;
+    U8 startAudio;
+    xmlBufferPtr xmlBuf;
+    xmlTextWriterPtr xmlText;
+    U32 curTagPos;
+    U32 lastGetTime;
+    U32 tagHandle;
+    U32 tagWriteFlag;
+    IPOD_PLAYER_AUDIO_SETTING audioSetting;
+    IPOD_PLAYER_CORE_IAP2_PARAM iap2Param;
+    U32 dataMask;
+    IPOD_PLAYER_CORE_VEHICLE_INFO vehicleInfo;
+    S32 serviceCallbacksEventFD;
+    pthread_mutex_t serviceCallbacksMutex;
+    IPOD_PLAYER_DELAYED_EVENT delayedEvent;
+    BOOL startMediaLib;
+    BOOL dbUpdateProgress;
+    BOOL dbUpdatePlaylist;
+} IPOD_PLAYER_CORE_IPODCTRL_CFG;
+
+typedef struct
+{
+    IPOD_PLAYER_CORE_WAIT_LIST *waitData;
+    IPOD_PLAYER_FUNC_HEADER *header;
+    U32 size;
+    const IPOD_PLAYER_MESSAGE_DATA_CONTENTS *contents;
+} IPOD_PLAYER_CORE_IAP2_EXECUTE_PARAM;
+
+typedef S32 (*IPODCORE_FUNC)(IPOD_PLAYER_CORE_IPODCTRL_CFG *iPodCtrlCfg, IPOD_PLAYER_CORE_WAIT_LIST *waitData, IPOD_PLAYER_FUNC_HEADER *header, const IPOD_PLAYER_MESSAGE_DATA_CONTENTS *contents, U32 *size);
+typedef S32 (*IPODCORE_IAP2_FUNC)(IPOD_PLAYER_CORE_IPODCTRL_CFG *iPodCtrlCfg, const IPOD_PLAYER_CORE_IAP2_EXECUTE_PARAM *param);
+
+typedef struct
+{
+    IPODCORE_FUNC func;
+    U32 attr;
+} IPOD_PLAYER_CORE_FUNC_TABLE;
+
+typedef struct
+{
+    IPODCORE_IAP2_FUNC func;
+    U32 attr;
+} IPOD_PLAYER_CORE_IAP2_FUNC_TABLE;
+
+typedef struct
+{
+    U8 iOSName[IPOD_PLAYER_STRING_LEN_MAX];
+    U8 iOSURL[IPOD_PLAYER_STRING_LEN_MAX];
+} IPOD_PLAYER_CORE_IOS_APP_CFG;
+
+
+/* iPodCore Apple device feature mask table */
+typedef struct iPodCoreMaskTbl_tag
+{
+    U32 opt_mask;                           /* mask bit pattan */
+    U32 flag;                               /* set flag pattan */
+} IPOD_CORE_MASK_TBL, *PIPOD_CORE_MASK_TBL;
+
+
+/* iPodCore iPodPlayer vs iPodCtrl category mapping table */
+typedef struct iPodCoreCategoryMappingTbl_tag
+{
+    IPOD_PLAYER_DB_TYPE player_category;                            /* category of iPodPlayer */
+    IPOD_CATEGORY ctrl_category;                                    /* category of iPodCtrl   */
+} IPOD_CORE_CATEGORY_MAPPING_TBL, *PIPOD_CORE_CATEGORY_MAPPING_TBL;
+
+
+/* iPodCore return code mapping table */
+typedef struct iPodCoreRetCodeMappingTbl_tag
+{
+    S32 ctrl_ret;                                                   /* return code of iPodCtrl   */
+    S32 player_ret;                                                 /* return code of iPodPlayer */
+} IPOD_CORE_RETCODE_MAPPING_TBL, *PIPOD_CORE_RETCODE_MAPPING_TBL;
+
+#endif /* _IPODCORE_DEF_H_ */

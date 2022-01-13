@@ -1,0 +1,17 @@
+/*!
+\page volumeActions Volume Actions
+
+    This section covers the volume related actions. The volume handling consist of executing the 
+request from the user side  like set volume or muting, additionally there could be volume request 
+which can originate only from policy(like limit volume). Limit volume operates on  a class, 
+as long as class is limited, none of the active connection belonging to that class can have a 
+volume above the specified limit.
+
+Following is the list of the routing actions
+    - ACTION_SET_VOLUME : This action sets a volume of source/sink. 
+    - ACTION_MUTE: This action mutes a sink.
+    - ACTION_UNMUTE : This action unmutes a sink.
+    - ACTION_LIMIT : This action limits the volume of a main connection 
+    - ACTION_UNLIMIT: This action unlimits the volume of a main connection.
+
+*/

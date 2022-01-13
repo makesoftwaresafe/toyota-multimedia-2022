@@ -1,0 +1,34 @@
+#!/bin/sh
+
+##################################################################################
+## File	      : run_ipod-smoketest.sh                                  	        ##
+##                                                                            	##
+## Description:                                           	                ##
+##	        		                                              	##
+## Author     : Masashi Shibata                                                 ##
+##                       							##
+##                                                   	                        ##
+##                                                                            	##
+##################################################################################
+
+export LTPROOT=/opt/ltp/
+export PATH="${PATH}:${LTPROOT}/testcases/bin"
+
+if ! cd "${LTPROOT}"; then
+        rc=$?
+        echo "${0##*/}: ERROR : Could not cd to ${LTPROOT}"
+        exit $rc
+fi
+
+rm -rf /opt/ltp/results/ipod-smoketest_result.log
+rm -rf /opt/ltp/output/ipod-smoketest_output.log
+chmod 777 /opt/ltp/testcases/bin/ipod-smoketest_01.sh
+
+CMDFILE=/opt/ltp/runtest/smoketest/ipod-smoketest_01
+${LTPROOT}/runltp -p -l ipod-smoketest_result.log -f ${CMDFILE} -o ipod-smoketest_output.log
+
+if [ $? -eq "0" ]; then
+  echo ltp-pan reported PASS
+else
+  echo ltp-pan reported FAIL
+fi

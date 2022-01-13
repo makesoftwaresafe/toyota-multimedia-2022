@@ -1,0 +1,568 @@
+#!/usr/bin/perl
+# vim: ai:ts=4:sw=4:et
+#
+# Pulls metadata from a Maven2 POM file on Maven Central
+# to generate a .spec file (on STDOUT) that merely warps
+# the .jar file(s) into noarch RPM files.
+#
+# Note that it does *NOT* create a .spec file that builds
+# the upstream sources, that would just be too much awesome
+# magic.
+#
+# Copyright 2011 Pascal Bleser <pascal.bleser@opensuse.org>
+#
+# This file is licensed under the
+# GNU Lesser General Public License version 2.1 or later:
+# http://www.gnu.org/licenses/lgpl-2.1.html
+#
+
+use strict;
+use warnings;
+use LWP::UserAgent;
+use XML::LibXML;
+use Cwd;
+use File::Basename;
+use Carp;
+
+# These are the very few configuration options:
+
+my $repourl = "http://repo1.maven.org/maven2";
+my $include_requires_as_buildrequires = 1;
+my $agent = "pom2spec/1.0";
+my $email = 'pascal.bleser@opensuse.org';
+my $max_redirect = 2;
+my $timeout = 20; # in seconds
+
+# Now some helper functions to reduce verbosity:
+
+# Returns either the content of the file that is specified
+# as parameter or undef if the file does not exist.
+sub r($) {
+    my $filename = shift;
+    if (-e $filename) {
+        open(my $fh, '<', $filename) or croak "failed to read existing file $filename: $!";
+        chomp(my $content = do { local $/; <$fh>; });
+        close($fh);
+        return $content;
+    } else {
+        return undef;
+    }
+}
+
+# "ue" = "unique element": seeks out a unique child element
+# under a node ($p) with a given tag name ($n) and, when
+# found, returns its chomped text content.
+# Croaks out when no matching element could be found, or when
+# more than one matching element could be found.
+sub ue($$) {
+    my $p = shift;
+    my $n = shift;
+    my @results = $p->getChildrenByTagName($n);
+    croak "invalid metadata: has more than one <${n}/> element" if scalar(@results) > 1;
+    croak "invalid metadata: has no <${n}/> element" if scalar(@results) < 1;
+    chomp(my $t = $results[0]->textContent);
+    return $t;
+}
+
+# Same as "ue", but when no matching element is found, it returns
+# a fallback value ($alt) instead of croaking.
+sub uec($$$) {
+    my $p = shift;
+    my $n = shift;
+    my $alt = shift;
+    my @results = $p->getChildrenByTagName($n);
+    croak "invalid metadata: has more than one <${n}/> element" if scalar(@results) > 1;
+    return $alt if scalar(@results) < 1;
+    chomp(my $t = $results[0]->textContent);
+    return $t;
+}
+
+# Conditionally puts a match (see ue() and uec() above) into a hash.
+sub ueh($$$$) {
+    my $p = shift;
+    my $n = shift;
+    my $h = shift;
+    my $k = shift;
+    my @results = $p->getChildrenByTagName($n);
+    croak "invalid metadata: has more than one <${n}/> element" if scalar(@results) > 1;
+    return undef if scalar(@results) < 1;
+    chomp(my $t = $results[0]->textContent);
+    $h->{$k} = $t if defined $t;
+    return $t;
+}
+
+# Simple and naive transliteration (replaces ${...} placeholders by
+# their value in a hash).
+sub trl($$) {
+    my $text = shift;
+    return $text unless defined $text;
+
+    my $dict = shift;
+
+    while ($text =~ /^(.*?)\$\{(.+?)\}(.*)$/) {
+        croak "unresolvable placeholder \${$2}" unless exists $dict->{$2};
+        $text = $1 . $dict->{$2} . $3;
+    }
+    return $text;
+}
+
+my $group;
+my $name;
+my $version;
+my $pgroup;
+my $path;
+{
+    if (scalar(@ARGV) == 0 or scalar(@ARGV) == 1) {
+        my $d = basename(cwd());
+        ($group, $name, $version) = $d =~ /^(.+)\.([^\.]+)(?:-(\d.?))?$/;
+        die "when groupId and artifactId are not specified as parameters, the current directory must reflect groupId.artifactId" unless defined $group and defined $name;
+        my $versionOverride = shift;
+        if (defined($versionOverride)) {
+            die "version is already specified in the name of the current working directory ($d -> $version)" if defined $version;
+            $version = $versionOverride;
+        }
+    } elsif (scalar(@ARGV) == 2 or scalar(@ARGV) == 3) {
+        $group = shift;
+        $name = shift;
+        $version = shift;
+
+        $group =~ s/\//./g;
+    }
+    # $version might and may be undefined at this point
+
+    ($pgroup = $group) =~ s/\./\//g;
+    $path = $pgroup.'/'.$name;
+}
+
+my $ua;
+{
+    $ua = LWP::UserAgent->new;
+    $ua->agent($agent);
+    $ua->timeout($timeout);
+    $ua->max_redirect($max_redirect);
+    $ua->from($email);
+}
+
+my $groupId;
+my $artifactId;
+my @versions;
+my $defaultVersion;
+{
+    my $url = "${repourl}/${path}/maven-metadata.xml";
+    my $req = HTTP::Request->new(GET => $url);
+    $req->content_type('text/xml');
+    my $res = $ua->request($req);
+    unless ($res->is_success) {
+        die "failed to get $url (".$res->status_line.")";
+    }
+
+    my $parser = XML::LibXML->new;
+    $parser->validation(0);
+    $parser->no_network(1);
+    $parser->load_ext_dtd(0);
+
+    my $doc = $parser->parse_string($res->content);
+    my $metadata = $doc->getDocumentElement();
+
+    $groupId = ue($metadata, 'groupId');
+    warn "WARNING: groupId in maven-metadata.xml file is \"$groupId\"\n" if $groupId ne $group;
+    $artifactId = ue($metadata, 'artifactId');
+    $defaultVersion = uec($metadata, 'version', undef);
+
+    @versions = ();
+    foreach my $versioning ($metadata->getChildrenByTagName('versioning')) {
+        foreach my $versions ($versioning->getChildrenByTagName('versions')) {
+            foreach my $ve ($versions->getChildrenByTagName('version')) {
+                chomp(my $v = $ve->textContent);
+                push(@versions, $v);
+            }
+        }
+    }
+
+    if (defined $version) {
+        die "requested version ${version} is not in metadata" unless @versions // $version;
+    } else {
+        die "call again and specify the exact version, one of:\n".join("\n", map { " - ".$_ } @versions)."\n";
+    }
+}
+
+
+$name = "${groupId}.${artifactId}-${version}";
+my $out = "${name}.spec";
+
+sub resolve($$$$);
+
+# global because we load once and cache
+my %ignoredeps;
+{
+    if (-e "_ignoredeps") {
+        open(my $fh, "<", "_ignoredeps") or die "failed to open _ignoredeps: $!";
+        while (<$fh>) {
+            chomp;
+            s/#.+//;
+            next if /^$/;
+            croak "invalid line \"$_\" in _ignoredeps" unless /^(.+?):(.+)$/;
+            $ignoredeps{$_} = 1;
+        }
+        close($fh);
+    } else {
+        %ignoredeps = ();
+    }
+}
+
+sub resolve($$$$) {
+    my $g = shift;
+    my $a = shift;
+    my $v = shift;
+    my $is_parent = shift;
+
+    my $r = {};
+
+    (my $p = $g) =~ s/\./\//g;
+
+    my $url = "${repourl}/${p}/${a}/${v}/${a}-${v}.pom";
+    my $req = HTTP::Request->new(GET => $url);
+    $req->content_type('text/xml');
+    my $res = $ua->request($req);
+    unless ($res->is_success) {
+        croak "failed to get $url (".$res->status_line.")";
+    }
+
+    $r->{pomurl} = $url;
+
+    my $parser = XML::LibXML->new;
+    $parser->validation(0);
+    $parser->no_network(1);
+    $parser->load_ext_dtd(0);
+
+    my $doc = $parser->parse_string($res->content);
+    my $project = $doc->getDocumentElement();
+
+    my $parent;
+    {
+        my @parentElems = $project->getChildrenByTagName('parent');
+        croak "invalid metadata: has more than one <parent/> element" if scalar(@parentElems) > 1;
+        if (scalar(@parentElems) > 0) {
+            my $parentElem = $parentElems[0];
+            $parent = resolve(ue($parentElem, 'groupId'), ue($parentElem, 'artifactId'), uec($parentElem, 'version', $v), 1);
+        } else {
+            $parent = {};
+        }
+    }
+
+    $r->{artifactId} = uec($project, 'artifactId', $name);
+    {
+        my $nameOverride = $is_parent ? undef : r("_name.override");
+        if (defined $nameOverride) {
+            $r->{name} = $nameOverride;
+        } else {
+            $r->{name} = $r->{artifactId};
+        }
+    }
+    {
+        my $groupIdOverride = $is_parent ? undef : r("_groupId.override");
+        if (defined $groupIdOverride) {
+            $r->{groupId} = $groupIdOverride;
+        } else {
+            $r->{groupId} = uec($project, 'groupId', $r->{artifactId});
+            warn "WARNING: groupId in pom file is \"$groupId\", was expecting \"$g\": $url\n" if $r->{groupId} ne $g;
+        }
+    }
+    $r->{version} = uec($project, 'version', exists $parent->{version} ? $parent->{version} : $v);
+    $r->{packaging} = uec($project, 'packaging', 'jar');
+    $r->{summary} = uec($project, 'name', r('_summary'));
+    ueh($project, 'description', $r, 'description');
+    ueh($project, 'url', $r, 'url');
+    {
+        my $license;
+        {
+            my @licenses;
+            {
+                my @l = ();
+                foreach my $licenses ($project->getChildrenByTagName('licenses')) {
+                    foreach my $licenseElem ($licenses->getChildrenByTagName('license')) {
+                        chomp(my $name = ue($licenseElem, 'name'));
+                        push(@l, $name);
+                    }
+                }
+                if (scalar(@l) > 0) {
+                    @licenses = @l;
+                } elsif (exists $parent->{license}) {
+                    @licenses = ($parent->{license});
+                } else {
+                    @licenses = ();
+                }
+            }
+            if (scalar(@licenses) > 1) {
+                $license = join(", ", @licenses);
+            } elsif (scalar(@licenses) > 0) {
+                $license = $licenses[0];
+            } else {
+                $license = undef;
+            }
+        }
+        if (defined $license) {
+            $r->{license} = $license;
+            warn "WARNING: unnecessary (and unused) file _license\n" if -e "_license" and $is_parent;
+        } else {
+            if (-e "_license") {
+                $r->{license} = '';
+                open(my $lf, '<', "_license") or croak "failed to open _license: $!";
+                while (<$lf>) {
+                    chomp;
+                    $r->{license} .= $_;
+                }
+                close($lf);
+            } else {
+                warn "WARNING: no license specified for ".join(":", map { $r->{$_} } qw(groupId artifactId version))."\n";
+            }
+        }
+    }
+
+    {
+        my @dependencies;
+        {
+            my $props;
+            {
+                $props = {};
+                while (my ($k, $v) = each(%{$r})) {
+                    $props->{"project.${k}"} = $v;
+                }
+                
+                foreach my $properties ($project->getChildrenByTagName('properties')) {
+                    foreach my $prop (grep { $_->nodeType == XML_ELEMENT_NODE } $properties->childNodes()) {
+                        chomp(my $k = $prop->nodeName);
+                        chomp(my $v = $prop->textContent);
+                        $props->{$k} = $v;
+                    }
+                }
+            }
+
+            if (exists $parent->{dependencies}) {
+                @dependencies = @{$parent->{dependencies}};
+            } else {
+                @dependencies = ();
+            }
+
+            foreach my $dependency ($project->getChildrenByTagName('dependencies')) {
+                foreach my $dependency ($dependency->getChildrenByTagName('dependency')) {
+                    my $scope = uec($dependency, 'scope', 'runtime');
+                    next if $scope ne 'runtime';
+
+                    my $dg = trl(ue($dependency, 'groupId'), $props);
+                    my $da = trl(ue($dependency, 'artifactId'), $props);
+                    my $dv = trl(uec($dependency, 'version', undef), $props);
+
+                    if (exists $ignoredeps{"$dg:$da"}) {
+                        warn "ignoring dependency $dg:$da\n";
+                        next;
+                    }
+
+                    my $d = {
+                        groupId => $dg,
+                        artifactId => $da,
+                    };
+                    $d->{version} = $dv if defined $dv;
+                    push(@dependencies, $d);
+                }
+            }
+        }
+
+        $r->{dependencies} = \@dependencies;
+    }
+
+    {
+        my $sources_url = "${repourl}/${p}/${a}/${v}/${a}-${v}-sources.jar";
+        my $head = HTTP::Request->new(HEAD => $sources_url);
+        $head->content_type('application/java-archive');
+        my $res = $ua->request($head);
+        $r->{sources} = $sources_url if $res->is_success and $res->code == 200;
+    }
+    if (0) {
+        # not sufficiently implemented, would actually need to explode the javadoc jar
+        # and strip off the package directory from it to properly install it
+        # under %{_javadocdir} in the spec file
+        my $javadoc_url = "${repourl}/${p}/${a}/${v}${a}-${v}-javadoc.jar";
+        my $head = HTTP::Request->new(HEAD => $javadoc_url);
+        $head->content_type('application/java-archive');
+        my $res = $ua->request($head);
+        $r->{javadoc} = $javadoc_url if $res->is_success;
+    }
+
+    return $r;
+}
+
+my %x = %{resolve($groupId, $artifactId, $version, 0)};
+
+{
+    my $tty;
+    {
+        open($tty, '>>', '/dev/tty') or $tty = undef;
+    }
+    if (defined $tty) {
+        say $tty "name:         $x{name}";
+        say $tty "groupId:      $x{groupId}";
+        say $tty "artifactId:   $x{artifactId}";
+        say $tty "version:      $x{version}";
+        say $tty "license:      $x{license}" if exists $x{license};
+        say $tty "packaging:    $x{packaging}";
+        say $tty "summary:      $x{summary}" if exists $x{summary};
+        say $tty "url:          $x{url}" if exists $x{url};
+        say $tty "description:  $x{description}" if exists $x{description};
+        if (scalar(@{$x{dependencies}}) > 0) {
+            say $tty "dependencies:";
+            foreach my $d (@{$x{dependencies}}) {
+                say $tty "    $d->{groupId}:$d->{artifactId}" . (exists $d->{version} ? ":".$d->{version} : "");
+            }
+        }
+    }
+}
+
+(my $uversion = $x{version}) =~ s/\./_/g;
+my $summary = exists $x{summary} ? $x{summary} : $x{groupId};
+my $description = exists $x{description} ? $x{description} : $summary;
+
+open(my $outfd, '>', $out) or die "failed to create $out: $!";
+my $oldselectfd = select $outfd;
+
+print<<EOF;
+# vim: set sw=4 ts=4 et:
+
+# POM:        $x{pomurl}
+# groupId:    $x{groupId}
+# artifactId: $x{artifactId}
+
+Name:               ${name}
+%define uname       %{name}-${uversion}
+Version:            $x{version}
+Release:            0
+Summary:            ${summary}
+Source0:            ${repourl}/${path}/${version}/$x{artifactId}-$x{version}.jar
+EOF
+if (exists $x{sources}) {
+    print<<EOF;
+Source1:            $x{sources}
+EOF
+}
+if (exists $x{url}) {
+    print<<EOF;
+URL:                $x{url}
+EOF
+}
+print<<EOF;
+Group:              Development/Libraries/Java
+EOF
+if (exists $x{license}) {
+    print<<EOF;
+License:            $x{license}
+EOF
+}
+print<<EOF;
+BuildRoot:          %{_tmppath}/build-%{name}-%{version}
+BuildArch:          noarch
+Requires:           %{uname} = %{version}
+EOF
+if ($include_requires_as_buildrequires) {
+    foreach my $d (@{$x{dependencies}}) {
+        my $version_text = exists $d->{version} ? " = ".$d->{version} : "";
+        print<<EOF;
+BuildRequires:      java($d->{groupId}:$d->{artifactId})${version_text}
+EOF
+    }
+}
+print<<EOF;
+
+%description
+${description}
+
+%package -n %{uname}
+Summary:            ${summary}
+Group:              Development/Libraries/Java
+Provides:           java($x{groupId}:$x{artifactId}) = $x{version}
+EOF
+foreach my $d (@{$x{dependencies}}) {
+    my $version_text = exists $d->{version} ? " = ".$d->{version} : "";
+    print<<EOF;
+Requires:           java($d->{groupId}:$d->{artifactId})${version_text}
+EOF
+}
+print<<EOF;
+%description -n %{uname}
+${description}
+
+EOF
+if (exists $x{sources}) {
+    print<<EOF;
+%package -n %{name}-sources
+Summary:            Sources for %{name}
+Group:              Development/Libraries/Java
+Requires:           %{uname}-sources = %{version}
+%description -n %{name}-sources
+This package contains the source bundle for %{name}.
+
+%package -n %{uname}-sources
+Summary:            Sources for %{uname}
+Group:              Development/Libraries/Java
+Requires:           %{uname} = %{version}
+%description -n %{uname}-sources
+This package contains the source bundle for %{uname}.
+EOF
+}
+print<<EOF;
+
+%prep
+%setup -q -T -c "%{name}-%{version}"
+
+%build
+
+%install
+%__install -D -m0644 "%{SOURCE0}" "%{buildroot}%{_javadir}/%{name}-%{version}.jar"
+%__ln_s "%{name}-%{version}.jar" "%{buildroot}%{_javadir}/%{name}.jar"
+
+cat<<EOCP > "%{buildroot}%{_javadir}/%{name}-%{version}.classpath"
+EOF
+print join(":", map { "%{_javadir}/$_->{artifactId}".(exists $_->{version} ? "-$_->{version}" : "").".jar" } @{$x{dependencies}}), "\n";
+print<<EOF;
+EOCP
+%__ln_s "%{name}-%{version}.classpath" "%{buildroot}%{_javadir}/%{name}.classpath"
+
+EOF
+if (exists $x{sources}) {
+    print<<EOF;
+%__install -m0644 "%{SOURCE1}" "%{buildroot}%{_javadir}/%{name}-%{version}-sources.jar"
+%__ln_s "%{name}-%{version}-sources.jar" "%{buildroot}%{_javadir}/%{name}-sources.jar"
+EOF
+}
+print<<EOF;
+
+%clean
+%{?buildroot:%__rm -rf "%{buildroot}"}
+
+%files
+%defattr(-,root,root)
+%{_javadir}/%{name}.jar
+%{_javadir}/%{name}.classpath
+
+%files -n %{uname}
+%defattr(-,root,root)
+%{_javadir}/%{name}-%{version}.jar
+%{_javadir}/%{name}-%{version}.classpath
+
+EOF
+if (exists $x{sources}) {
+    print<<EOF;
+%files -n %{name}-sources
+%defattr(-,root,root)
+%{_javadir}/%{name}-sources.jar
+
+%files -n %{uname}-sources
+%defattr(-,root,root)
+%{_javadir}/%{name}-%{version}-sources.jar
+EOF
+}
+print<<EOF;
+
+EOF
+
+select $oldselectfd;
+

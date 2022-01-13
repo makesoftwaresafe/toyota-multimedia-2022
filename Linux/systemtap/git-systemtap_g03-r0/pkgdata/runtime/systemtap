@@ -1,0 +1,26 @@
+PN: systemtap
+PV: git-systemtap_g03
+PR: r0
+PKGV: git-systemtap_g03
+PKGR: r0
+LICENSE: GPLv2
+DESCRIPTION: SystemTap - script-directed dynamic tracing and performance analysis tool for Linux
+SUMMARY: systemtap version git-systemtap_g03-r0
+RDEPENDS_systemtap: bash libelf (>= 0.148) libstdc++ (>= 6.2.0-2016.11-25) libgcc-external (>= 6.2.0-2016.11-25) ncurses-libtinfo (>= 6.0+20160625) ncurses-libncurses (>= 6.0+20160625) ncurses-libpanel (>= 6.0+20160625) glibc-external (>= 2.24-2016.11-25) json-c (>= 0.12)
+SECTION: base
+PKG_systemtap: systemtap
+FILES_systemtap: /usr/bin/* /usr/sbin/* /usr/libexec/* /usr/lib64/lib*.so.* /etc /com /var /bin/* /sbin/* /lib64/*.so.* /lib/udev /usr/lib/udev /lib64/udev /usr/lib64/udev /usr/share/systemtap /usr/lib64/systemtap/* /usr/share/pixmaps /usr/share/applications /usr/share/idl /usr/share/omf /usr/share/sounds /usr/lib64/bonobo/servers /opt/tooling/adit/systemtap /opt/platform/security-user-group-data
+FILERPROVIDESFLIST_systemtap: /opt/tooling/adit/systemtap/bin/stap-merge /opt/tooling/adit/systemtap/libexec/systemtap/stapio /opt/tooling/adit/systemtap/bin/staprun /opt/tooling/adit/systemtap/bin/stapsh
+FILES_INFO: {"/opt/tooling/adit/systemtap/bin/stap-merge": 27112, "/opt/tooling/adit/systemtap/libexec/systemtap/stap-env": 1733, "/opt/tooling/adit/systemtap/bin/staprun": 1100464, "/opt/tooling/adit/systemtap/bin/stap-report": 4520, "/opt/tooling/adit/systemtap/bin/stapsh": 62720, "/opt/platform/security-user-group-data/systemtap-groups.conf": 46, "/opt/tooling/adit/systemtap/include/sys/sdt-config.h": 276, "/opt/tooling/adit/systemtap/include/sys/sdt.h": 18445, "/opt/tooling/adit/systemtap/libexec/systemtap/stapio": 259960}
+FILERPROVIDES_/opt/tooling/adit/systemtap/bin/stap-merge_systemtap: elf(buildid) (= 9434e0a481c94826e4fa6df6b2520625e1eb7365)
+FILERPROVIDES_/opt/tooling/adit/systemtap/libexec/systemtap/stapio_systemtap: elf(buildid) (= fed74551895bcc998800ddbdb08adcba944588bb)
+FILERPROVIDES_/opt/tooling/adit/systemtap/bin/staprun_systemtap: elf(buildid) (= 4b59ab1cb7c9d4b350c9cc73dbac5365eda576f8)
+FILERPROVIDES_/opt/tooling/adit/systemtap/bin/stapsh_systemtap: elf(buildid) (= ddffa3863d5828625bc1b25c039af2cdff407ab9)
+FILERDEPENDSFLIST_systemtap: /opt/tooling/adit/systemtap/bin/stap-merge /opt/tooling/adit/systemtap/bin/stap-report /opt/tooling/adit/systemtap/bin/staprun /opt/tooling/adit/systemtap/bin/stapsh /opt/tooling/adit/systemtap/libexec/systemtap/stap-env /opt/tooling/adit/systemtap/libexec/systemtap/stapio
+FILERDEPENDS_/opt/tooling/adit/systemtap/bin/stap-merge_systemtap: libc.so.6()(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.4)(64bit) rtld(GNU_HASH)
+FILERDEPENDS_/opt/tooling/adit/systemtap/bin/stap-report_systemtap: /bin/sh
+FILERDEPENDS_/opt/tooling/adit/systemtap/bin/staprun_systemtap: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.15)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.4)(64bit) libc.so.6(GLIBC_2.8)(64bit) libc.so.6(GLIBC_2.9)(64bit) libelf.so.1()(64bit) libelf.so.1(ELFUTILS_1.0)(64bit) libelf.so.1(ELFUTILS_1.5)(64bit) libgcc_s.so.1()(64bit) libgcc_s.so.1(GCC_3.0)(64bit) libm.so.6()(64bit) libm.so.6(GLIBC_2.2.5)(64bit) libstdc++.so.6()(64bit) libstdc++.so.6(CXXABI_1.3)(64bit) libstdc++.so.6(CXXABI_1.3.8)(64bit) libstdc++.so.6(CXXABI_1.3.9)(64bit) libstdc++.so.6(GLIBCXX_3.4)(64bit) libstdc++.so.6(GLIBCXX_3.4.11)(64bit) libstdc++.so.6(GLIBCXX_3.4.20)(64bit) libstdc++.so.6(GLIBCXX_3.4.21)(64bit) libstdc++.so.6(GLIBCXX_3.4.9)(64bit) rtld(GNU_HASH)
+FILERDEPENDS_/opt/tooling/adit/systemtap/bin/stapsh_systemtap: libc.so.6()(64bit) libc.so.6(GLIBC_2.15)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.4)(64bit) libc.so.6(GLIBC_2.7)(64bit) rtld(GNU_HASH)
+FILERDEPENDS_/opt/tooling/adit/systemtap/libexec/systemtap/stap-env_systemtap: /bin/bash
+FILERDEPENDS_/opt/tooling/adit/systemtap/libexec/systemtap/stapio_systemtap: libc.so.6()(64bit) libc.so.6(GLIBC_2.15)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.4)(64bit) libc.so.6(GLIBC_2.8)(64bit) libc.so.6(GLIBC_2.9)(64bit) libjson-c.so.2()(64bit) libncurses.so.5()(64bit) libpanel.so.5()(64bit) libpthread.so.0()(64bit) libpthread.so.0(GLIBC_2.2.5)(64bit) libtinfo.so.5()(64bit) rtld(GNU_HASH)
+PKGSIZE_systemtap: 1475276

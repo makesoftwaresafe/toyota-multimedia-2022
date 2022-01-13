@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GUPnPServiceInfo: GUPnP Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="GUPnP Reference Manual">
+<link rel="up" href="api-device-info.html" title="Device Information">
+<link rel="prev" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo">
+<link rel="next" href="gupnp-gupnp-service-introspection.html" title="GUPnPServiceIntrospection">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GUPnPServiceInfo.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GUPnPServiceInfo.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GUPnPServiceInfo.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api-device-info.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUPnPDeviceInfo.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gupnp-gupnp-service-introspection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GUPnPServiceInfo"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GUPnPServiceInfo.top_of_page"></a>GUPnPServiceInfo</span></h2>
+<p>GUPnPServiceInfo — Base abstract class for querying service information.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GUPnPServiceInfo.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<span class="c_punctuation">(</span><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceIntrospectionCallback" title="GUPnPServiceIntrospectionCallback ()">*GUPnPServiceIntrospectionCallback</a><span class="c_punctuation">)</span> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="returnvalue">GUPnPContext</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-context" title="gupnp_service_info_get_context ()">gupnp_service_info_get_context</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-location" title="gupnp_service_info_get_location ()">gupnp_service_info_get_location</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">SoupURI</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-url-base" title="gupnp_service_info_get_url_base ()">gupnp_service_info_get_url_base</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-udn" title="gupnp_service_info_get_udn ()">gupnp_service_info_get_udn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-service-type" title="gupnp_service_info_get_service_type ()">gupnp_service_info_get_service_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-id" title="gupnp_service_info_get_id ()">gupnp_service_info_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-scpd-url" title="gupnp_service_info_get_scpd_url ()">gupnp_service_info_get_scpd_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-control-url" title="gupnp_service_info_get_control_url ()">gupnp_service_info_get_control_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-event-subscription-url" title="gupnp_service_info_get_event_subscription_url ()">gupnp_service_info_get_event_subscription_url</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="returnvalue">GUPnPServiceIntrospection</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-introspection" title="gupnp_service_info_get_introspection ()">gupnp_service_info_get_introspection</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-introspection-async" title="gupnp_service_info_get_introspection_async ()">gupnp_service_info_get_introspection_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-introspection-async-full" title="gupnp_service_info_get_introspection_async_full ()">gupnp_service_info_get_introspection_async_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceInfo.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceInfo--context" title="The “context” property">context</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<a class="link" href="GUPnPXMLDoc.html" title="GUPnPXMLDoc"><span class="type">GUPnPXMLDoc</span></a> *</td>
+<td class="property_name"><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceInfo--document" title="The “document” property">document</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceInfo--element" title="The “element” property">element</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceInfo--location" title="The “location” property">location</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceInfo--service-type" title="The “service-type” property">service-type</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceInfo--udn" title="The “udn” property">udn</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">SoupURI</span> *</td>
+<td class="property_name"><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceInfo--url-base" title="The “url-base” property">url-base</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceInfo.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceInfo-struct" title="struct GUPnPServiceInfo">GUPnPServiceInfo</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceInfo.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GUPnPServiceInfo
+        <span class="lineart">├──</span> <a class="link" href="GUPnPService.html" title="GUPnPService">GUPnPService</a>
+        <span class="lineart">╰──</span> <a class="link" href="GUPnPServiceProxy.html" title="GUPnPServiceProxy">GUPnPServiceProxy</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceInfo.description"></a><h2>Description</h2>
+<p>The <a class="link" href="GUPnPDeviceInfo.html" title="GUPnPDeviceInfo"><span class="type">GUPnPDeviceInfo</span></a> base abstract class provides methods for querying
+service information.</p>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceInfo.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="GUPnPServiceIntrospectionCallback"></a><h3>GUPnPServiceIntrospectionCallback ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+<span class="c_punctuation">(</span>*GUPnPServiceIntrospectionCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>,
+                                      <em class="parameter"><code><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> *introspection</code></em>,
+                                      <em class="parameter"><code>const <span class="type">GError</span> *error</code></em>,
+                                      <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Callback notifying that <em class="parameter"><code>introspection</code></em>
+ for <em class="parameter"><code>info</code></em>
+ has been obtained.</p>
+<div class="refsect3">
+<a name="GUPnPServiceIntrospectionCallback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>The <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> introspection was requested for</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>introspection</p></td>
+<td class="parameter_description"><p>The new <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> object, or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>The <span class="type">GError</span> that occurred, or NULL</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>User data</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-context"></a><h3>gupnp_service_info_get_context ()</h3>
+<pre class="programlisting"><a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="returnvalue">GUPnPContext</span></a> *
+gupnp_service_info_get_context (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> associated with <em class="parameter"><code>info</code></em>
+.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-context.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-context.returns"></a><h4>Returns</h4>
+<p> A <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-location"></a><h3>gupnp_service_info_get_location ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_service_info_get_location (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the location of the device description file.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-location.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-location.returns"></a><h4>Returns</h4>
+<p> A constant string.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-url-base"></a><h3>gupnp_service_info_get_url_base ()</h3>
+<pre class="programlisting">const <span class="returnvalue">SoupURI</span> *
+gupnp_service_info_get_url_base (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the URL base of this service.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-url-base.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-url-base.returns"></a><h4>Returns</h4>
+<p> A constant <span class="type">SoupURI</span>.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-udn"></a><h3>gupnp_service_info_get_udn ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_service_info_get_udn (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the Unique Device Name of the containing device.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-udn.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-udn.returns"></a><h4>Returns</h4>
+<p> A constant string.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-service-type"></a><h3>gupnp_service_info_get_service_type ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gupnp_service_info_get_service_type (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the UPnP service type, or <code class="literal">NULL</code>.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-service-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-service-type.returns"></a><h4>Returns</h4>
+<p> A constant string.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-id"></a><h3>gupnp_service_info_get_id ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_service_info_get_id (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the ID of this service, or <code class="literal">NULL</code> if there is no ID.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-id.returns"></a><h4>Returns</h4>
+<p> A string. This string should be freed with <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-scpd-url"></a><h3>gupnp_service_info_get_scpd_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_service_info_get_scpd_url (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the SCPD URL for this service, or <code class="literal">NULL</code> if there is no SCPD.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-scpd-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-scpd-url.returns"></a><h4>Returns</h4>
+<p> A string. This string should be freed with <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-control-url"></a><h3>gupnp_service_info_get_control_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_service_info_get_control_url (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the control URL for this service, or <code class="literal">NULL</code>..</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-control-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-control-url.returns"></a><h4>Returns</h4>
+<p> A string. This string should be freed with <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-event-subscription-url"></a><h3>gupnp_service_info_get_event_subscription_url ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+gupnp_service_info_get_event_subscription_url
+                               (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>);</pre>
+<p>Get the event subscription URL for this service, or <code class="literal">NULL</code>.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-event-subscription-url.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-event-subscription-url.returns"></a><h4>Returns</h4>
+<p> A string. This string should be freed with <code class="function">g_free()</code> after use.</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-introspection"></a><h3>gupnp_service_info_get_introspection ()</h3>
+<pre class="programlisting"><a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="returnvalue">GUPnPServiceIntrospection</span></a> *
+gupnp_service_info_get_introspection (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>,
+                                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gupnp_service_info_get_introspection</code> has been deprecated since version 0.20.15. and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-introspection-async" title="gupnp_service_info_get_introspection_async ()"><code class="function">gupnp_service_info_get_introspection_async()</code></a> or
+<a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-introspection-async-full" title="gupnp_service_info_get_introspection_async_full ()"><code class="function">gupnp_service_info_get_introspection_async_full()</code></a> instead.</p>
+</div>
+<p>Note that introspection object is created from the information in service
+description document (SCPD) provided by the service so it can not be created
+if the service does not provide an SCPD.</p>
+<p>Warning: You  should use <a class="link" href="GUPnPServiceInfo.html#gupnp-service-info-get-introspection-async" title="gupnp_service_info_get_introspection_async ()"><code class="function">gupnp_service_info_get_introspection_async()</code></a>
+instead, this function re-enter the GMainloop before returning or might
+even block.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-introspection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>return location for a <span class="type">GError</span>, or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="gupnp-service-info-get-introspection.returns"></a><h4>Returns</h4>
+<p>  A new <a class="link" href="gupnp-gupnp-service-introspection.html#GUPnPServiceIntrospection"><span class="type">GUPnPServiceIntrospection</span></a> for this
+service or <code class="literal">NULL</code>. Unref after use. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-introspection-async"></a><h3>gupnp_service_info_get_introspection_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_info_get_introspection_async
+                               (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceIntrospectionCallback" title="GUPnPServiceIntrospectionCallback ()"><span class="type">GUPnPServiceIntrospectionCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Note that introspection object is created from the information in service
+description document (SCPD) provided by the service so it can not be created
+if the service does not provide an SCPD.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-introspection-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>(scope async) : callback to be called when introspection object is ready.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user_data to be passed to the callback.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gupnp-service-info-get-introspection-async-full"></a><h3>gupnp_service_info_get_introspection_async_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gupnp_service_info_get_introspection_async_full
+                               (<em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a> *info</code></em>,
+                                <em class="parameter"><code><a class="link" href="GUPnPServiceInfo.html#GUPnPServiceIntrospectionCallback" title="GUPnPServiceIntrospectionCallback ()"><span class="type">GUPnPServiceIntrospectionCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Note that introspection object is created from the information in service
+description document (SCPD) provided by the service so it can not be created
+if the service does not provide an SCPD.</p>
+<p>If <em class="parameter"><code>cancellable</code></em>
+ is used to cancel the call, <em class="parameter"><code>callback</code></em>
+ will be called with
+error code <code class="literal">G_IO_ERROR_CANCELLED</code>.</p>
+<div class="refsect3">
+<a name="gupnp-service-info-get-introspection-async-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>info</p></td>
+<td class="parameter_description"><p>A <a class="link" href="GUPnPServiceInfo.html" title="GUPnPServiceInfo"><span class="type">GUPnPServiceInfo</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>(scope async) : callback to be called when introspection object is ready.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>GCancellable that can be used to cancel the call, or <code class="literal">NULL</code>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user_data to be passed to the callback.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 0.20.9.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceInfo.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GUPnPServiceInfo-struct"></a><h3>struct GUPnPServiceInfo</h3>
+<pre class="programlisting">struct GUPnPServiceInfo;</pre>
+<p>This struct contains private data only, and should be accessed using the
+functions below.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GUPnPServiceInfo.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GUPnPServiceInfo--context"></a><h3>The <code class="literal">“context”</code> property</h3>
+<pre class="programlisting">  “context”                  <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> *</pre>
+<p>The <a class="link" href="GUPnPContext.html" title="GUPnPContext"><span class="type">GUPnPContext</span></a> to use.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceInfo--document"></a><h3>The <code class="literal">“document”</code> property</h3>
+<pre class="programlisting">  “document”                 <a class="link" href="GUPnPXMLDoc.html" title="GUPnPXMLDoc"><span class="type">GUPnPXMLDoc</span></a> *</pre>
+<p>Private property.</p>
+<p>Flags: Write / Construct Only</p>
+<p class="stability">Stability Level: <acronym title="An interface that can be used within the GNOME stack itself, but that is not
+documented for end-users.  Such functions should only be used in specified and
+documented ways.
+"><span class="acronym">Private</span></acronym></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceInfo--element"></a><h3>The <code class="literal">“element”</code> property</h3>
+<pre class="programlisting">  “element”                  <span class="type">gpointer</span></pre>
+<p>Private property.</p>
+<p>Flags: Write / Construct Only</p>
+<p class="stability">Stability Level: <acronym title="An interface that can be used within the GNOME stack itself, but that is not
+documented for end-users.  Such functions should only be used in specified and
+documented ways.
+"><span class="acronym">Private</span></acronym></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceInfo--location"></a><h3>The <code class="literal">“location”</code> property</h3>
+<pre class="programlisting">  “location”                 <span class="type">gchar</span> *</pre>
+<p>The location of the device description file.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceInfo--service-type"></a><h3>The <code class="literal">“service-type”</code> property</h3>
+<pre class="programlisting">  “service-type”             <span class="type">gchar</span> *</pre>
+<p>The service type.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceInfo--udn"></a><h3>The <code class="literal">“udn”</code> property</h3>
+<pre class="programlisting">  “udn”                      <span class="type">gchar</span> *</pre>
+<p>The UDN of the containing device.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GUPnPServiceInfo--url-base"></a><h3>The <code class="literal">“url-base”</code> property</h3>
+<pre class="programlisting">  “url-base”                 <span class="type">SoupURI</span> *</pre>
+<p>The URL base (<span class="type">SoupURI</span>).</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24.1</div>
+</body>
+</html>

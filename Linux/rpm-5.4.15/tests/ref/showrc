@@ -1,0 +1,839 @@
+ARCHITECTURE AND OS:
+build arch            : x86_64
+compatible build archs: x86_64
+build os              : Linux
+compatible build os's : linux
+install arch          : x86_64
+install os            : Linux
+compatible archs      :
+compatible os's       : Linux
+optflags              : -O2
+
+LUA MODULES:
+luafiles              : /usr/lib/rpm/init.lua:/usr/lib/rpm/rpmlua:/usr/lib/rpm/x86_64-linux/rpmlua:/etc/rpm/rpmlua.*:/etc/rpm/rpmlua:/etc/rpm/x86_64-linux/rpmlua:~/.rpmlua
+luapath               : /usr/lib/rpm/lua/?.lua
+
+MACRO DEFINITIONS:
+macrofiles            : ../macros/macros:../tests/macros
+Features provided by rpmlib installer:
+    rpmlib(BuiltinAugeasScripts) = 5.3-1
+    rpmlib(BuiltinJVMBeanShell) = 5.4.15-1
+    rpmlib(BuiltinJavaScript) = 5.2-1
+    rpmlib(BuiltinLuaScripts) = 4.2.2-1
+    rpmlib(BuiltinMRubyScripts) = 5.4.15-1
+    rpmlib(BuiltinPerlScripts) = 5.2-1
+    rpmlib(BuiltinPythonScripts) = 5.2-1
+    rpmlib(BuiltinRubyScripts) = 5.2-1
+    rpmlib(BuiltinSpookScripts) = 5.3-1
+    rpmlib(BuiltinSqlScripts) = 5.3-1
+    rpmlib(BuiltinSquirrelScripts) = 5.2-1
+    rpmlib(BuiltinTclScripts) = 5.2-1
+    rpmlib(CompressedFileNames) = 3.0.4-1
+    rpmlib(ConcurrentAccess) = 4.1-1
+    rpmlib(ExplicitPackageProvide) = 4.0-1
+    rpmlib(FileDigestParameterized) = 4.4.6-1
+    rpmlib(FileDigests) = 4.6.0-1
+    rpmlib(HeaderLoadSortsTags) = 4.0.1-1
+    rpmlib(HeaderTagTypeInt64) = 4.4.3-1
+    rpmlib(PartialHardlinkSets) = 4.0.4-1
+    rpmlib(PayloadFilesHavePrefix) = 4.0-1
+    rpmlib(PayloadIsBzip2) = 3.0.5-1
+    rpmlib(PayloadIsLzma) = 4.4.2-1
+    rpmlib(PayloadIsUstar) = 4.4.4-1
+    rpmlib(PayloadIsXz) = 5.2-1
+    rpmlib(ScriptletInterpreterArgs) = 4.0.3-1
+    rpmlib(SetVersions) = 4.0.4-alt98
+    rpmlib(VersionedDependencies) = 3.0.3-1
+
+Features provided by current cpuinfo (from /proc/cpuinfo):
+    cpuinfo(acpi)
+    cpuinfo(aperfmperf)
+    cpuinfo(apic)
+    cpuinfo(arch_perfmon)
+    cpuinfo(bogomips) = 4999.94
+    cpuinfo(bts)
+    cpuinfo(cache_size) = 6144_KB
+    cpuinfo(clflush)
+    cpuinfo(clflush_size) = 64
+    cpuinfo(cmov)
+    cpuinfo(constant_tsc)
+    cpuinfo(cpu_MHz) = 2499.972
+    cpuinfo(cpu_family) = 6
+    cpuinfo(cx16)
+    cpuinfo(cx8)
+    cpuinfo(dca)
+    cpuinfo(de)
+    cpuinfo(ds_cpl)
+    cpuinfo(dtes64)
+    cpuinfo(dts)
+    cpuinfo(est)
+    cpuinfo(flexpriority)
+    cpuinfo(fpu)
+    cpuinfo(fpu_exception)
+    cpuinfo(fxsr)
+    cpuinfo(ht)
+    cpuinfo(lahf_lm)
+    cpuinfo(lm)
+    cpuinfo(mca)
+    cpuinfo(mce)
+    cpuinfo(mmx)
+    cpuinfo(model) = 23
+    cpuinfo(monitor)
+    cpuinfo(msr)
+    cpuinfo(mtrr)
+    cpuinfo(nx)
+    cpuinfo(pae)
+    cpuinfo(pat)
+    cpuinfo(pbe)
+    cpuinfo(pdcm)
+    cpuinfo(pebs)
+    cpuinfo(pge)
+    cpuinfo(pni)
+    cpuinfo(pse)
+    cpuinfo(pse36)
+    cpuinfo(rep_good)
+    cpuinfo(sep)
+    cpuinfo(ss)
+    cpuinfo(sse)
+    cpuinfo(sse2)
+    cpuinfo(sse4_1)
+    cpuinfo(ssse3)
+    cpuinfo(stepping) = 10
+    cpuinfo(syscall)
+    cpuinfo(tm)
+    cpuinfo(tm2)
+    cpuinfo(tpr_shadow)
+    cpuinfo(tsc)
+    cpuinfo(vme)
+    cpuinfo(vmx)
+    cpuinfo(vnmi)
+    cpuinfo(wp)
+    cpuinfo(xsave)
+    cpuinfo(xtpr)
+
+========================
+-14: GNUconfigure(MCs:)	
+  CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS; 
+  LDFLAGS="${LDFLAGS:-%{-s:-s}}"  ; export LDFLAGS; 
+  %{-C:_mydir="`pwd`"; %{-M: %{__mkdir} -p "%{-C*}";} cd "%{-C*}"} 
+  dirs="`find ${_mydir} -name 'configure.[ai][cn]' -print`"; export dirs; 
+    for coin in `echo ${dirs}` 
+do 
+  dr=`dirname ${coin}`; 
+if test -f ${dr}/NO-AUTO-GEN; then 
+ : 
+else 
+     macrodirs=`sed -n -e 's,AM_ACLOCAL_INCLUDE((.*)),1,gp' < ${coin}`; 
+    ( cd "${dr}"; 
+      aclocalinclude="${ACLOCAL_FLAGS}"; 
+      for k in ${macrodirs}; do 
+        if test -d ${k}; then 
+          aclocalinclude="${aclocalinclude} -I ${k}"; 
+        ##else 
+        ##  echo "**Warning**: No such directory `${k}'.  Ignored." 
+        fi 
+      done 
+      if grep "^AM_GNU_GETTEXT" configure.[ai][cn] >/dev/null; then 
+        if grep "sed.*POTFILES" configure.[ai][cn] >/dev/null; then 
+          : do nothing -- we still have an old unmodified configure.[ai][cn] 
+        else 
+          test -r ${dr}/aclocal.m4 || touch ${dr}/aclocal.m4; 
+          echo "no" | gettextize --force --copy; 
+          test -r ${dr}/aclocal.m4 && %{__chmod} u+w ${dr}/aclocal.m4; 
+        fi 
+      fi 
+      if grep "^AM_PROG_LIBTOOL" configure.[ai][cn] >/dev/null; then 
+        %{__libtoolize} --force --copy; 
+      fi 
+      aclocal ${aclocalinclude}; 
+      if grep "^AM_CONFIG_HEADER" configure.[ai][cn] >/dev/null; then 
+        %{__autoheader}; 
+      fi 
+      echo "Running automake --gnu ${am_opt} ..."; 
+      %{__automake} --add-missing --gnu ${am_opt}; 
+      %{__autoconf}; 
+    ); 
+  fi 
+done 
+  %{-C:${_mydir}}%{!-C:.}/configure %{_target_platform} --prefix=%{_prefix} --exec-prefix=%{_exec_prefix} --bindir=%{_bindir} --sbindir=%{_sbindir} --sysconfdir=%{_sysconfdir} --datadir=%{_datadir} --includedir=%{_includedir} --libdir=%{_libdir} --libexecdir=%{_libexecdir} --localstatedir=%{_localstatedir} --sharedstatedir=%{_sharedstatedir} --mandir=%{_mandir} --infodir=%{_infodir} %* ; 
+  %{-C:cd "${_mydir}"; unset _mydir}
+-14: NVR	%{name}-%{version}-%{release}
+-14: NVRA	%{name}-%{version}-%{release}.%{_target_cpu}
+-14: __7zip	/usr/bin/7za
+-14: ___NVRA	%%{NAME}-%%{VERSION}-%%{RELEASE}%%|DISTTAG?{-%%{DISTTAG}%%|DISTEPOCH?{%%{DISTEPOCH}}|}|%%|ARCH?{.%%|SOURCERPM?{%%{ARCH}}:{src}|}:{}|
+-14: ___build_args	-e
+-14: ___build_cmd	%{?_sudo:%{_sudo} }%{?_remsh:%{_remsh} %{_remhost} }%{?_remsudo:%{_remsudo} }%{?_remchroot:%{_remchroot} %{_remroot} }%{___build_shell} %{___build_args}
+-14: ___build_post	exit 0
+-14: ___build_pre	
+  RPM_OPT_FLAGS="%{optflags}"
+  export RPM_OPT_FLAGS
+  %{?buildroot:RPM_BUILD_ROOT="%{u2p:%{buildroot}}"
+  export RPM_BUILD_ROOT}
+  %{?_javaclasspath:CLASSPATH="%{_javaclasspath}"
+  export CLASSPATH}
+  unset PERL_MM_OPT || :
+  LC_ALL=C
+  export LC_ALL
+  LANG=C
+  export LANG
+  unset DISPLAY || :
+  unset LINGUAS || :
+  unset LANGUAGE || :
+  unset LC_MESSAGES || :
+  
+  %{verbose:set -x}%{!verbose:exec > /dev/null}
+  umask 022
+  cd "%{u2p:%{_builddir}}"
+-14: ___build_shell	%{?_buildshell:%{_buildshell}}%{!?_buildshell:/bin/sh}
+-14: ___build_template	#!%{___build_shell}
+%{___build_pre}
+%{nil}
+-14: __aclocal	aclocal
+-14: __ar	ar
+-14: __arch_install_post	%{nil}
+-14: __as	/usr/bin/as
+-14: __autoconf	autoconf
+-14: __autoheader	autoheader
+-14: __automake	automake
+-14: __awk	gawk
+-14: __bash	/bin/bash
+-14: __bzip2	/usr/bin/bzip2
+-14: __cat	/bin/cat
+-14: __cc	gcc
+-14: __chattr	/usr/bin/chattr
+-14: __check_files	%{_testdir}/../scripts/check-files %{buildroot}
+-14: __chgrp	/bin/chgrp
+-14: __chmod	/bin/chmod
+-14: __chown	/bin/chown
+-14: __chroot	%{_usrlibrpmbin}/chroot
+-14: __cp	%{_usrlibrpmbin}/cp
+-14: __cpio	/bin/cpio
+-14: __cpp	gcc -E
+-14: __curl	/usr/bin/curl
+-14: __cvs	/usr/bin/cvs
+-14: __cxx	g++
+-14: __db_archive	/usr/bin/db61_archive
+-14: __db_checkpoint	/usr/bin/db61_checkpoint
+-14: __db_deadlock	/usr/bin/db61_deadlock
+-14: __db_dump	/usr/bin/db61_dump
+-14: __db_hotbackup	/usr/bin/db61_hotbackup
+-14: __db_load	/usr/bin/db61_load
+-14: __db_log_verify	/usr/bin/db61_log_verify
+-14: __db_printlog	/usr/bin/db61_printlog
+-14: __db_recover	/usr/bin/db61_recover
+-14: __db_replicate	/usr/bin/db61_replicate
+-14: __db_sql_codegen	/usr/bin/db61_sql_codegen
+-14: __db_stat	/usr/bin/db61_stat
+-14: __db_tuner	/usr/bin/db61_tuner
+-14: __db_upgrade	/usr/bin/db61_upgrade
+-14: __db_verify	/usr/bin/db61_verify
+-14: __dbi_btconfig	
+  btree		
+  %{?__dbi_other}
+  %{?__dbi_perms}
+%{nil}
+-14: __dbi_htconfig	
+  hash		
+  %{?__dbi_other}
+  %{?__dbi_perms}
+%{nil}
+-14: __dbi_other	%{?__dbi_tmpdir} %{?__dbi_txn}
+-14: __dbi_perms	perms=0644
+-14: __dbi_sqlconfig	%{?__dbi_perms} %{?__dbi_tmpdir}
+-14: __dbi_tmpdir	tmpdir=%{_dbpath}/tmp
+-14: __dbi_transient	%{?__dbi_rebuild} temporary private
+-14: __dbi_txn	create %{?__nofsync:nofsync} lock log mpool txn auto_commit thread thread_count=64
+-14: __dbsql	/usr/bin/db61sql
+-14: __debug_install_post	
+   %{_rpmhome}/find-debuginfo.sh %{?_missing_build_ids_terminate_build:--strict-build-id} %{?_find_debuginfo_opts} "%{_builddir}/%{?buildsubdir}"
+%{nil}
+-14: __diff	/usr/bin/diff
+-14: __ditto	%{_bindir}/ditto
+-14: __exeext	%{nil}
+-14: __file	/usr/bin/file
+-14: __file_context_path	/etc/selinux/%{__policy_tree}/contexts/files/file_contexts
+-14: __find	%{_usrlibrpmbin}/find
+-14: __find_provides	%{_rpmhome}/find-provides
+-14: __find_requires	%{_rpmhome}/find-requires
+-14: __git	/usr/bin/git
+-14: __gpg	/usr/bin/gpg2
+-14: __gpg_check_password_cmd	%{__gpg} 
+    gpg --batch --no-verbose --passphrase-fd 3 --no-secmem-warning 
+    --homedir %{_testdir}/tmp/.gnupg 
+    -u %{_gpg_name} -so -
+-14: __gpg_sign_cmd	%{__gpg} 
+    gpg --batch --no-verbose --no-armor --passphrase-fd 3 --no-secmem-warning 
+    --homedir %{_testdir}/tmp/.gnupg 
+    -u %{_gpg_name} -sbo %{__signature_filename} %{__plaintext_filename}
+-14: __grep	%{_usrlibrpmbin}/grep
+-14: __gsr	/usr/local/gpsee/bin/gsr
+-14: __gzip	/bin/gzip
+-14: __hg	/usr/local/bin/hg
+-14: __id	/usr/bin/id
+-14: __install	/usr/bin/install
+-14: __install_info	/sbin/install-info
+-14: __ld	/usr/bin/ld
+-14: __ldconfig	/sbin/ldconfig
+-14: __libext	a
+-14: __libtool_provides	%{nil}
+-14: __libtool_requires	%{nil}
+-14: __libtoolize	libtoolize
+-14: __ln	/bin/ln
+-14: __ln_s	ln -s
+-14: __lrzip	/usr/bin/lrzip
+-14: __lsattr	/usr/bin/lsattr
+-14: __lua	%{_usrlibrpmbin}/lua
+-14: __lzip	/usr/bin/lzip
+-14: __lzma	/usr/bin/lzma
+-14: __lzop	/usr/bin/lzop
+-14: __make	/usr/bin/make
+-14: __mkdir	/bin/mkdir
+-14: __mkdir_p	/bin/mkdir -p
+-14: __mongo	/usr/bin/mongo
+-14: __mtree	%{_usrlibrpmbin}/mtree
+-14: __mv	/bin/mv
+-14: __nm	/usr/bin/nm
+-14: __objcopy	/usr/bin/objcopy
+-14: __objdump	/usr/bin/objdump
+-14: __objext	o
+-14: __os_install_post	%{___build_post}
+-14: __patch	/usr/bin/patch
+-14: __pax	/usr/bin/pax
+-14: __pgp	%{_bindir}/pgp
+-14: __pkgconfig_provides	%{nil}
+-14: __pkgconfig_requires	%{nil}
+-14: __policy_tree	targeted
+-14: __ranlib	ranlib
+-14: __rc	%{_usrlibrpmbin}/rc
+-14: __remsh	%{__rsh}
+-14: __rm	/bin/rm
+-14: __rmdir	/bin/rmdir
+-14: __rsh	/usr/kerberos/bin/rsh
+-14: __scriptlet_requires	%{nil}
+-14: __sed	/bin/sed
+-14: __sh	/bin/sh
+-14: __shlibext	so
+-14: __spec_build_args	%{___build_args}
+-14: __spec_build_body	%{___build_body}
+-14: __spec_build_cmd	%{___build_cmd}
+-14: __spec_build_post	%{___build_post}
+-14: __spec_build_pre	%{___build_pre}
+-14: __spec_build_shell	%{___build_shell}
+-14: __spec_build_template	#!%{__spec_build_shell}
+%{__spec_build_pre}
+%{nil}
+-14: __spec_check_args	%{___build_args}
+-14: __spec_check_body	%{___build_body}
+-14: __spec_check_cmd	%{___build_cmd}
+-14: __spec_check_post	%{___build_post}
+-14: __spec_check_pre	%{___build_pre}
+-14: __spec_check_shell	%{___build_shell}
+-14: __spec_check_template	#!%{__spec_check_shell}
+%{__spec_check_pre}
+%{?_ispras_check_abi} 
+%{?_ispras_check_autotest} 
+%{nil}
+-14: __spec_clean_args	%{___build_args}
+-14: __spec_clean_body	%{?buildroot:%{__rm} -rf '%{buildroot}'}
+%{nil}
+-14: __spec_clean_cmd	%{___build_cmd}
+-14: __spec_clean_post	%{nil}
+-14: __spec_clean_pre	%{___build_pre}
+-14: __spec_clean_shell	%{___build_shell}
+-14: __spec_clean_template	#!%{__spec_clean_cmd}
+%{__spec_clean_pre}
+%{nil}
+-14: __spec_install_args	%{___build_args}
+-14: __spec_install_body	%{___build_body}
+-14: __spec_install_cmd	%{___build_cmd}
+-14: __spec_install_post	
+%{?__debug_package:%{__debug_install_post}}
+%{__arch_install_post}
+%{__os_install_post}
+%{nil}
+-14: __spec_install_pre	%{___build_pre}
+%{?buildroot:%{__rm} -rf '%{buildroot}'; %{__mkdir_p} '%{buildroot}'}
+-14: __spec_install_shell	%{___build_shell}
+-14: __spec_install_template	#!%{__spec_install_shell}
+%{__spec_install_pre}
+%{nil}
+-14: __spec_prep_args	%{___build_args}
+-14: __spec_prep_body	%{___build_body}
+-14: __spec_prep_cmd	%{___build_cmd}
+-14: __spec_prep_post	%{___build_post}
+-14: __spec_prep_pre	%{___build_pre}
+-14: __spec_prep_shell	%{___build_shell}
+-14: __spec_prep_template	#!%{__spec_prep_shell}
+%{__spec_prep_pre}
+%{nil}
+-14: __spec_rmbuild_args	%{___build_args}
+-14: __spec_rmbuild_body	%{___build_body}
+-14: __spec_rmbuild_cmd	%{___build_cmd}
+-14: __spec_rmbuild_post	%{___build_post}
+-14: __spec_rmbuild_pre	%{___build_pre}
+-14: __spec_rmbuild_shell	%{___build_shell}
+-14: __spec_rmbuild_template	#!%{__spec_rmbuild_shell}
+%{__spec_rmbuild_pre}
+%{nil}
+-14: __spec_sanitycheck_args	%{___build_args}
+-14: __spec_sanitycheck_body	%{___build_body}
+-14: __spec_sanitycheck_cmd	%{___build_cmd}
+-14: __spec_sanitycheck_post	%{___build_post}
+-14: __spec_sanitycheck_pre	%{___build_pre}
+-14: __spec_sanitycheck_shell	%{___build_shell}
+-14: __spec_sanitycheck_template	#!%{__spec_sanitycheck_shell}
+%{__spec_sanitycheck_pre}
+%{nil}
+-14: __spec_track_args	%{___build_args}
+-14: __spec_track_body	%{___build_body}
+-14: __spec_track_cmd	%{___build_cmd}
+-14: __spec_track_post	GO_SYSIN_DD
+%{nil}
+-14: __spec_track_pre	%{__vcheck} %{verbose:--verbose}%{!verbose:--noverbose} -f - << GO_SYSIN_DD
+-14: __spec_track_shell	%{___build_shell}
+-14: __spec_track_template	#!%{__spec_track_shell}
+%{__spec_track_pre}
+%{nil}
+-14: __sqlite3	/usr/bin/sqlite3
+-14: __ssh	/usr/bin/ssh
+-14: __strip	/usr/bin/strip
+-14: __svn	/usr/bin/svn
+-14: __tar	/bin/tar
+-14: __unzip	/usr/bin/unzip
+-14: __varlibwdj	%{_topdir}/tmp/wdj/
+-14: __vcheck	%{__perl} %{_rpmhome}/vcheck
+-14: __vsflags	0xf0000
+-14: __wget	%{_usrlibrpmbin}/wget
+-14: __xar	%{_usrlibrpmbin}/xar
+-14: __xz	/usr/bin/xz
+-14: _arbitrary_tags	Class:Track:Trackprog:Depflags:Transflags:%{_arbitrary_tags_debian}:%{_arbitrary_tags_tests}
+-14: _arbitrary_tags_debian	CVEID:RHSA:RHBZ:ATAS
+-14: _arch	x86_64
+-14: _bhA	%{nil}
+-14: _bhN	%{nil}
+-14: _bhVR	%{nil}
+-14: _bhcoll	%{nil}
+-14: _bhpath	file://%{_topdir}/edos-test
+-14: _bindir	%{_exec_prefix}/bin
+-14: _bt_dupsort	bt_dupsort primary=Packages
+-14: _build	%{_host}
+-14: _build_alias	%{_host_alias}
+-14: _build_arch	x86_64
+-14: _build_binary_file_digest_algo	%{_build_file_digest_algo}
+-14: _build_cpu	%{_host_cpu}
+-14: _build_file_context_path	%{nil}
+-14: _build_file_digest_algo	189
+-14: _build_iconsize	2048
+-14: _build_name_fmt	%%{ARCH}/%{___NVRA}.rpm
+-14: _build_os	%{_host_os}
+-14: _build_platform	%{_build_cpu}-%{_build_vendor}-%{_build_os}%{?_gnu}
+-14: _build_sign	RSA/SHA1
+-14: _build_source_file_digest_algo	%{_build_file_digest_algo}
+-14: _build_vendor	%{_host_vendor}
+-14: _builddir	%{_ntopdir}
+-14: _buildrootdir	%{_tmppath}
+-14: _buildshell	/bin/sh
+-14: _cache_dbpath	%{_tmppath}/cachedb/
+-14: _changelog_truncate	1 year ago
+-14: _datadir	%{_datarootdir}
+-14: _datarootdir	%{_prefix}/share
+-14: _dbapi	3
+-14: _dbapi_used	%{_dbapi}
+-14: _dbi_btconfig	%{__dbi_btconfig}
+-14: _dbi_config	%{expand:%%{_dbi_config_%{_dbapi_used}}}
+-14: _dbi_config_3	%{_dbi_btconfig}
+-14: _dbi_config_3_Arch	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Basenames	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Btree	btree %{?__dbi_perms} debug
+-14: _dbi_config_3_Conflictname	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Conflictyamlentry	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Depcache	%{_dbi_btconfig} temporary private
+-14: _dbi_config_3_Dirnames	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Filedigests	%{_dbi_htconfig} %{?_h_dupsort}
+-14: _dbi_config_3_Filepaths	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Group	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Hash	hash  %{?__dbi_perms} debug
+-14: _dbi_config_3_Heap	heap %{?__dbi_perms} debug
+-14: _dbi_config_3_Installtid	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Name	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Nvra	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Obsoletename	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Obsoleteyamlentry	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Os	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Packagecolor	%{_dbi_htconfig} %{?_h_dupsort}
+-14: _dbi_config_3_Packages	%{_dbi_btconfig}
+-14: _dbi_config_3_Providename	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Provideyamlentry	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Pubkeys	%{_dbi_htconfig} %{?_h_dupsort}
+-14: _dbi_config_3_Queue	queue %{?__dbi_perms} debug
+-14: _dbi_config_3_Recno	recno %{?__dbi_perms} debug
+-14: _dbi_config_3_Release	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Removetid	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Requirename	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Requireyamlentry	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Seqno	%{_dbi_btconfig} seq_id=0
+-14: _dbi_config_3_Sha1header	%{_dbi_htconfig} %{?_h_dupsort}
+-14: _dbi_config_3_Sigmd5	%{_dbi_htconfig} %{?_h_dupsort}
+-14: _dbi_config_3_Sourcepkgid	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Triggername	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_3_Version	%{_dbi_btconfig} %{?_bt_dupsort}
+-14: _dbi_config_4	%{_dbi_sqlconfig}
+-14: _dbi_config_4_Arch	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Basenames	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Conflictname	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Conflictyamlentry	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Depcache	%{_dbi_sqlconfig} temporary private
+-14: _dbi_config_4_Dirnames	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Filedigests	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Filepaths	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Group	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Installtid	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Name	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Nvra	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Obsoletename	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Obsoleteyamlentry	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Os	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Packagecolor	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Packages	%{_dbi_sqlconfig} debug
+-14: _dbi_config_4_Providename	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Provideyamlentry	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Pubkeys	%{_dbi_sqlconfig} %{?_bt_dupsort} debug
+-14: _dbi_config_4_Release	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Removetid	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Requirename	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Requireyamlentry	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Seqno	%{_dbi_sqlconfig} seq_id=0
+-14: _dbi_config_4_Sha1header	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Sigmd5	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Sourcepkgid	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Triggername	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_4_Version	%{_dbi_sqlconfig} %{?_bt_dupsort}
+-14: _dbi_config_Arch	%{expand:%%{_dbi_config_%{_dbapi_used}_Arch}}
+-14: _dbi_config_Basenames	%{expand:%%{_dbi_config_%{_dbapi_used}_Basenames}}
+-14: _dbi_config_Conflictname	%{expand:%%{_dbi_config_%{_dbapi_used}_Conflictname}}
+-14: _dbi_config_Conflictyamlentry	%{expand:%%{_dbi_config_%{_dbapi_used}_Conflictyamlentry}}
+-14: _dbi_config_Depcache	%{expand:%%{_dbi_config_%{_dbapi_used}_Depcache}}
+-14: _dbi_config_Dirnames	%{expand:%%{_dbi_config_%{_dbapi_used}_Dirnames}}
+-14: _dbi_config_Filedigests	%{expand:%%{_dbi_config_%{_dbapi_used}_Filedigests}}
+-14: _dbi_config_Filepaths	%{expand:%%{_dbi_config_%{_dbapi_used}_Filepaths}}
+-14: _dbi_config_Group	%{expand:%%{_dbi_config_%{_dbapi_used}_Group}}
+-14: _dbi_config_Installtid	%{expand:%%{_dbi_config_%{_dbapi_used}_Installtid}}
+-14: _dbi_config_Name	%{expand:%%{_dbi_config_%{_dbapi_used}_Name}}
+-14: _dbi_config_Nvra	%{expand:%%{_dbi_config_%{_dbapi_used}_Nvra}}
+-14: _dbi_config_Obsoletename	%{expand:%%{_dbi_config_%{_dbapi_used}_Obsoletename}}
+-14: _dbi_config_Obsoleteyamlentry	%{expand:%%{_dbi_config_%{_dbapi_used}_Obsoleteyamlentry}}
+-14: _dbi_config_Os	%{expand:%%{_dbi_config_%{_dbapi_used}_Os}}
+-14: _dbi_config_Packagecolor	%{expand:%%{_dbi_config_%{_dbapi_used}_Packagecolor}}
+-14: _dbi_config_Packages	%{expand:%%{_dbi_config_%{_dbapi_used}_Packages}}
+-14: _dbi_config_Providename	%{expand:%%{_dbi_config_%{_dbapi_used}_Providename}}
+-14: _dbi_config_Provideyamlentry	%{expand:%%{_dbi_config_%{_dbapi_used}_Provideyamlentry}}
+-14: _dbi_config_Pubkeys	%{expand:%%{_dbi_config_%{_dbapi_used}_Pubkeys}}
+-14: _dbi_config_Release	%{expand:%%{_dbi_config_%{_dbapi_used}_Release}}
+-14: _dbi_config_Removetid	%{expand:%%{_dbi_config_%{_dbapi_used}_Removetid}}
+-14: _dbi_config_Requirename	%{expand:%%{_dbi_config_%{_dbapi_used}_Requirename}}
+-14: _dbi_config_Requireyamlentry	%{expand:%%{_dbi_config_%{_dbapi_used}_Requireyamlentry}}
+-14: _dbi_config_Seqno	%{expand:%%{_dbi_config_%{_dbapi_used}_Seqno}}
+-14: _dbi_config_Sha1header	%{expand:%%{_dbi_config_%{_dbapi_used}_Sha1header}}
+-14: _dbi_config_Sigmd5	%{expand:%%{_dbi_config_%{_dbapi_used}_Sigmd5}}
+-14: _dbi_config_Sourcepkgid	%{expand:%%{_dbi_config_%{_dbapi_used}_Sourcepkgid}}
+-14: _dbi_config_Triggername	%{expand:%%{_dbi_config_%{_dbapi_used}_Triggername}}
+-14: _dbi_config_Version	%{expand:%%{_dbi_config_%{_dbapi_used}_Version}}
+-14: _dbi_htconfig	%{__dbi_htconfig}
+-14: _dbi_sqlconfig	%{__dbi_sqlconfig}
+-14: _dbi_tags	%{expand:%%{_dbi_tags_%{_dbapi_used}}}
+-14: _dbi_tags_3	Packages:Name:Version:Release:Arch:Os:Basenames:Group:Providename:Requirename:Conflictname:Obsoletename:Triggername:Dirnames:Installtid:Sigmd5:Sha1header:Filedigests:Pubkeys:Packagecolor:Nvra:Sourcepkgid:Filepaths:Seqno:Btree:Hash:Queue:Recno
+-14: _dbi_tags_4	Packages:Name:Version:Release:Arch:Os:Basenames:Group:Providename:Requirename:Conflictname:Obsoletename:Triggername:Dirnames:Installtid:Sigmd5:Sha1header:Filedigests:Pubkeys:Packagecolor:Nvra:Sourcepkgid:Filepaths:Seqno
+-14: _dbpath	%{_topdir}/tmp/rpmdb/
+-14: _default_patch_flags	-s
+-14: _defaultdocdir	%{_usr}/doc
+-14: _dependency_whiteout	
+	%{?_dependency_whiteout_system}	
+	%{nil}
+-14: _dependency_whiteout_caos_core	
+	perl>perl-Filter		
+	pam>coreutils			
+	pam>initscripts			
+	glibc-common>glibc		
+	glibc>nscd			
+	filesystem>setup
+-14: _dependency_whiteout_idms	
+	cracklib>cracklib-dicts		
+	perl>perl-Term-ReadKey		
+	openssl>openssl-perl		
+	gcc>libmudflap-devel		
+	perl-libs>perl			
+	smart>idms-package-config-smart	
+	iptables>iptables-ipv6		
+	krb5-server>krb5-workstation
+-14: _disable_shell_interpreter_deps	0
+-14: _etcrpm	%{_testdir}
+-14: _exec_prefix	%{_prefix}
+-14: _filter_GLIBC_PRIVATE	0
+-14: _gnu	-gnu
+-14: _gpg_name	Ronald
+-14: _gpg_path	%{_testdir}/tmp/.gnupg
+-14: _h_dupsort	h_dupsort primary=Packages
+-14: _helperpath	%{?_install_helpers:%{_install_helpers}:}
+-14: _hkp_keyserver	hkp://localhost
+-14: _hkp_keyserver_query	%{_hkp_keyserver}/pks/lookup?op=get&search=
+-14: _host	x86_64-unknown-linux-gnu
+-14: _host_alias	%{nil}
+-14: _host_cpu	x86_64
+-14: _host_os	linux-gnu
+-14: _host_platform	%{_host_cpu}-%{_host_vendor}-%{_host_os}%{?_gnu}
+-14: _host_vendor	unknown
+-14: _hrmib_path	%{_tmppath}/hrmib/%{___NVRA}
+-14: _icondir	%{_sourcedir}
+-14: _includedir	%{_prefix}/include
+-14: _infodir	%{_datarootdir}/info
+-14: _initddir	%{_sysconfdir}/rc.d/init.d
+-14: _initrddir	%{_initddir}
+-14: _install_file_context_path	%{__file_context_path}
+-14: _install_helpers	%{rpmhome}/helpers
+-14: _install_langs	all
+-14: _install_script_path	%{_helperpath}/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin
+-14: _jvm_options	
+	-Xms2m		
+	-Xmx128m	
+	-Xcheck:jni	
+	-verbose:class	
+	-verbose:gc	
+	-verbose:jni	
+	vfprintf	
+	exit		
+	abort
+-14: _keyutils_keyring	session
+-14: _legion	%{expand:%%global _legion %{name}}%{_legion}
+-14: _lib	lib
+-14: _libdir	%{_exec_prefix}/%{_lib}
+-14: _libexecdir	%{_exec_prefix}/libexec
+-14: _lispdir	%{_datarootdir}/emacs/site-lisp
+-14: _localedir	%{_datarootdir}/locale
+-14: _localstatedir	%{_prefix}/var
+-14: _luaI_init	%{nil}
+-14: _mandir	%{_datarootdir}/man
+-14: _missing_doc_files_terminate_build	1
+-14: _multilibpatt	(/%{_lib}|/usr/%{_lib}(|/gconv)|/usr/local/%{_lib}|/usr/X11R6/%{_lib}|/opt/%{_lib})/[^/]*\.([oa]|la|so[0-9.]*)$
+-14: _nssdb_certprefix	rpm-
+-14: _nssdb_flags	0
+-14: _nssdb_keyprefix	rpm-
+-14: _nssdb_path	/etc/pki/rpm
+-14: _nssdb_secmodname	rpm-secmod.db
+-14: _ntopdir	%{_topdir}/%{_legion}
+-14: _oldincludedir	/usr/include
+-14: _os	linux
+-14: _package_version	30005
+-14: _patchdir	%{_sourcedir}
+-14: _perlI_init	
+use lib "../perl/blib/lib";
+use lib "../perl/blib/arch";
+use RPM;
+%{nil}
+-14: _pgpbin	%{__pgp}
+-14: _prefix	/usr
+-14: _pythonI_init	
+sys.path.insert(1,'../python/.libs')
+sys.path.insert(1,'../python')
+import rpm
+%{nil}
+-14: _query_all_fmt	%{___NVRA}
+-14: _query_hdlist_path	%{_datadir}/comps/%{_arch}/hdlist
+-14: _query_selector_match	default
+-14: _repackage_all_erasures	1
+-14: _repackage_dir	%{_tmppath}/repackage/
+-14: _repackage_name_fmt	%{___NVRA}.rpm
+-14: _repackage_root	%{nil}
+-14: _rollback_transaction_on_failure	0
+-14: _rpmdir	%{_ntopdir}
+-14: _rpmds_cpuinfo_path	/proc/cpuinfo
+-14: _rpmds_filter_name	archfilter
+-14: _rpmds_getconf_path	/
+-14: _rpmds_ldconfig_cache	/etc/ld.so.cache
+-14: _rpmds_ldconfig_cmd	/sbin/ldconfig -p
+-14: _rpmds_perldeps_cmd	%{__find} %{_libdir}/perl5 | %{_rpmhome}/perl.prov
+-14: _rpmds_sysinfo_path	%{_topdir}/sysinfo/
+-14: _rpmfc_magic_path	/usr/share/file/magic
+-14: _rpmfilename	%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm
+-14: _rpmgi_pattern_glob	file://%{_testdir}/edos-test/
+-14: _rpmgi_pattern_regex	^.+/%1-[^-]+-[^-]+\.[^.]+\.rpm$
+-14: _rpmgio	.ufdio
+-14: _rpmhome	%{_usrlibrpm}
+-14: _rpmversion	5.4.15
+-14: _rubyI_init	%{nil}
+-14: _sbindir	%{_exec_prefix}/sbin
+-14: _sharedstatedir	%{_prefix}/com
+-14: _signature	gpg
+-14: _smp_mflags	%([ -z "$RPM_BUILD_NCPUS" ] \
+	&& RPM_BUILD_NCPUS="`/usr/bin/getconf _NPROCESSORS_ONLN`"; \
+	[ "$RPM_BUILD_NCPUS" -gt 1 ] && echo "-j$RPM_BUILD_NCPUS")
+-14: _solve_A	%{_tmppath}/solveA/
+-14: _solve_B	%{_tmppath}/solveB/
+-14: _solve_C	%{_tmppath}/solveC/
+-14: _solve_dbpath	%{_solve_A}:%{_solve_B}:%{_solve_C}
+-14: _sourcedir	%{_ntopdir}
+-14: _spec_line_buffer_size	100000
+-14: _specdir	%{_ntopdir}
+-14: _srcrpmdir	%{_ntopdir}
+-14: _sysconfdir	%{_prefix}/etc
+-11= _target	x86_64-linux
+-14: _target_alias	%{_host_alias}
+-11= _target_cpu	x86_64
+-11= _target_os	linux
+-14: _target_platform	%{_target_cpu}-%{_target_vendor}-%{_target_os}%{?_gnu}
+-14: _target_vendor	%{_host_vendor}
+-14: _tclI_init	%{nil}
+-14= _testdir	../tests
+-14: _tmppath	%{_topdir}/tmp
+-14= _topdir	%{_testdir}
+-14: _transaction_color	3
+-14: _unpackaged_files_terminate_build	1
+-14: _unsafe_rollbacks	0
+-14: _use_internal_dependency_generator	2
+-14: _usr	/usr
+-14= _usrlibrpm	/usr/lib/rpm
+-14: _usrlibrpmbin	%{_usrlibrpm}/bin
+-14: _usrsrc	%{_usr}/src
+-14: _uuid_auth	http://rpm5.org/
+-14: _uuid_path	/package
+-14: _var	/var
+-14: _varrun	/var/run
+-14: _vendor	redhat
+-14: _verify_file_context_path	%{__file_context_path}
+-14: _vsflags_build	%{__vsflags}
+-14: _vsflags_erase	%{__vsflags}
+-14: _vsflags_install	%{__vsflags}
+-14: _vsflags_query	%{__vsflags}
+-14: _vsflags_verify	%{__vsflags}
+-14: alpha	alpha alphaev56 alphaev6 alphaev67
+-14: arm	arm armv3 armv3l armv3b armv4 armv4l armv4b armv5 armv5l armv5b armv5te armv5tel armv5teb xscale armv6 armv6l armv7l armv7hl armv7lh armv7hln armv7hnl armv7lhn armv7lnh armv7nhl armv7nlh
+-14: bcond_with	%{expand:%%{?_with_%{1}:%%global with_%{1} 1}}
+-14: bcond_without	%{expand:%%{!?_without_%{1}:%%global with_%{1} 1}}
+-14: buildroot	%{_buildrootdir}/%{name}-root
+-14: configure	
+  CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; 
+  CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; 
+  FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ; 
+  ./configure --host=%{_host} --build=%{_build} \
+	--target=%{_target_platform} \
+	--program-prefix=%{?_program_prefix} \
+ 	--prefix=%{_prefix} \
+	--exec-prefix=%{_exec_prefix} \
+	--bindir=%{_bindir} \
+	--sbindir=%{_sbindir} \
+	--sysconfdir=%{_sysconfdir} \
+	--datadir=%{_datadir} \
+	--includedir=%{_includedir} \
+	--libdir=%{_libdir} \
+	--libexecdir=%{_libexecdir} \
+	--localstatedir=%{_localstatedir} \
+	--sharedstatedir=%{_sharedstatedir} \
+	--mandir=%{_mandir} \
+	--infodir=%{_infodir}
+-14: debug_package	
+%ifnarch noarch
+%global __debug_package 1
+%package debug
+Summary: Debug information for package %{name}
+Group: Development/Debug
+AutoReqProv: 0
+%description debug
+This package provides debug information for package %{name}.
+Debug information is useful when developing applications that use this
+package or when debugging this package.
+%files debug -f debugfiles.list
+%defattr(-,root,root)
+%endif
+%{nil}
+-14: defined	%{expand:%%{?%{1}:1}%%{!?%{1}:0}}
+-14: efi	%{ix86} x86_64 ia64
+-14: evr_tuple_match	^(?:([^:-]+):)?([^:~-]+)(?:~([^:-]+))?(?:-([^:-]+))?(?::([^:-]+))?$
+-14: evr_tuple_order	EVR
+-14: evr_tuple_select	12_4_
+-14: find_lang	%{_testdir}/../scripts/find-lang.sh %{buildroot}
+-14: ix86	i386 i486 i586 i686 pentium3 pentium4 athlon
+-14: leg	leg legv3 legv3l legv3b legv4 legv4l legv4b legv5 legv5l legv5b legv5te legv5tel legv5teb xscale legv6 legv6l legv7l legv7hl legv7lh legv7hln legv7hnl legv7lhn legv7lnh legv7nhl legv7nlh
+-14: make	%{__make}
+-14: make_install	make install DESTDIR=%{?buildroot}
+-14: makeinstall	
+  make \
+	prefix=%{?buildroot:%{buildroot}}%{_prefix} \
+	exec_prefix=%{?buildroot:%{buildroot}}%{_exec_prefix} \
+	bindir=%{?buildroot:%{buildroot}}%{_bindir} \
+	sbindir=%{?buildroot:%{buildroot}}%{_sbindir} \
+	sysconfdir=%{?buildroot:%{buildroot}}%{_sysconfdir} \
+	datadir=%{?buildroot:%{buildroot}}%{_datadir} \
+	includedir=%{?buildroot:%{buildroot}}%{_includedir} \
+	libdir=%{?buildroot:%{buildroot}}%{_libdir} \
+	libexecdir=%{?buildroot:%{buildroot}}%{_libexecdir} \
+	localstatedir=%{?buildroot:%{buildroot}}%{_localstatedir} \
+	sharedstatedir=%{?buildroot:%{buildroot}}%{_sharedstatedir} \
+	mandir=%{?buildroot:%{buildroot}}%{_mandir} \
+	infodir=%{?buildroot:%{buildroot}}%{_infodir} \
+  install
+-14: mips	mips mips2 mips3 mips4 octeon
+-14: mipsel	mipsel mips2el mips3el mips4el loongson2e loongson2f octeonel
+-14: mipsx	%mips %mipsel mips64 mips64el
+-14: nil	%{!?nil}
+-14: optflags	-O2
+-14: patch(b:p:P:REz:F:d:)	%{shrink:
+%define __patch_number  %{-P:%{-P*}}%{!-P:0} 
+%define __patch_file    %{P:%{__patch_number}} 
+%define __patch_suffix  %{-b:-b --suffix %{-b*}} %{-z:--suffix %{-z*}} 
+%define __patch_fuzz    %{?_default_patch_fuzz:%(test %{_default_patch_fuzz} -ge 0 && echo "--fuzz=%{_default_patch_fuzz} ")} 
+%define __patch_options %{_default_patch_flags} %{-p:-p%{-p*}} %{-F:-F%{-F*}} %{-d:-d%{-d*}} %{-R} %{-E} %{__patch_suffix} 
+echo "Patch #%{__patch_number} (%{basename:%{__patch_file}}):" && ( %{uncompress:%{__patch_file}} | %{__patch} %{__patch_fuzz}%{__patch_options} ) || exit 1
+}
+-14: patches	%{lua: for i, p in ipairs(patches) do print(p.." ") end}
+-14: pattern_Distepoch	^[A-Za-z0-9.]+$
+-14: pattern_Disttag	^[A-Za-z0-9]+$
+-14: pattern_Epoch	^[0-9]+$
+-14: pattern_Name	^[A-Za-z0-9][A-Za-z0-9+._-]*$
+-14: pattern_Release	^[A-Za-z0-9+._]+$
+-14: pattern_Repotag	^[A-Za-z0-9]+$
+-14: pattern_Version	^[A-Za-z0-9+._~]+$
+-14: post	%%post %*
+  echo "--- post(%NVRA)          arg $1 ..."
+%nil
+-14: posttrans	%%posttrans %*
+  echo "--- posttrans(%NVRA)     arg $1 ..."
+%nil
+-14: postun	%%postun %*
+  echo "--- postun(%NVRA)        arg $1 ..."
+%nil
+-14: pre	%%pre %*
+  echo "--- pre(%NVRA)           arg $1 ..."
+%nil
+-14: pretrans	%%pretrans %*
+  echo "--- pretrans(%NVRA)      arg $1 ..."
+%nil
+-14: preun	%%preun %*
+  echo "--- preun(%NVRA)         arg $1 ..."
+%nil
+-14: requires_eq	%(echo '%*' | LC_ALL="C" xargs -r rpm -q --qf 'Requires: %%{name} = %%{epoch}:%%{version}\n' | sed -e 's/ (none):/ /' -e 's/ 0:/ /' | grep -v "is not")
+-14: sanitycheck	%%sanitycheck %*
+  echo "--- sanitycheck(%NVRA)   arg $1 ..."
+%nil
+-15: sigtype	none
+-14: sources	%{lua: for i, s in ipairs(sources) do print(s.." ") end}
+-14: sparc	sun4 sun4m sun4c sun4d sun4u sparc sparcv8 sparcv9 sparcv9b sparc9v sparcv9v2
+-14: sparcx	%sparc sparc64 sparc64v sparc64v2
+-14: tmpdir	%{_tmppath}
+-14: triggerin	%%triggerin %1 -- %2%{?3: %3 %4}
+  echo "--- triggerin(%1) -- %2%{?3: %3 %4}	arg $1 $2 ..."
+%nil
+-14: triggerpostun	%%triggerpostun %1 -- %2%{?3: %3 %4}
+  echo "--- triggerpostun(%1) -- %2%{?3: %3 %4}	arg $1 $2 ..."
+%nil
+-14: triggerprein	%%triggerprein %1 -- %2%{?3: %3 %4}
+  echo "--- triggerprein(%1) -- %2%{?3: %3 %4}	arg $1 $2 ..."
+%nil
+-14: triggerun	%%triggerun %1 -- %2%{?3: %3 %4}
+  echo "--- triggerun(%1) -- %2%{?3: %3 %4}	arg $1 $2 ..."
+%nil
+-14: undefined	%{expand:%%{?%{1}:0}%%{!?%{1}:1}}
+-14: verifyscript	%%verifyscript %*
+  echo "--- verifyscript(%NVRA)  arg $1 ..."
+%nil
+-14: with	%{expand:%%{?with_%{1}:1}%%{!?with_%{1}:0}}
+-14: without	%{expand:%%{?with_%{1}:0}%%{!?with_%{1}:1}}
+======================== active 504 empty 0

@@ -1,0 +1,160 @@
+<version>
+  5.4.15
+</version>
+ 
+<headers>
+     ../fprint.h
+<!-- ../header_internal.h -->
+     ../legacy.h
+<!-- ../logio_auto.h -->
+<!-- ../logio.h -->
+     ../pkgio.h
+     ../rpmdb.h
+     ../rpmdpkg.h
+     ../rpmevr.h
+<!-- ../rpmlio.h -->
+     ../rpmmdb.h
+     ../rpmns.h
+     ../rpmrepo.h
+     ../rpmtag.h
+     ../rpmtd.h
+<!-- ../rpmtxn.h -->
+     ../rpmtypes.h
+     ../rpmwf.h
+     ../signature.h
+</headers>
+ 
+<libs>
+  /X/src/wdj54/rpmdb/.libs/librpmdb.so
+</libs>
+
+<include_paths>
+</include_paths>
+
+<add_include_paths>
+  /X/src/wdj54
+  /X/src/wdj54/lib
+  /X/src/wdj54/rpmdb
+  /X/src/wdj54/rpmio
+  /X/src/wdj54/popt
+</add_include_paths>
+
+<gcc_options>
+  -DHAVE_CONFIG_H
+   -DRPM_OS_LINUX=020632   -I/usr/include/nss3 -I/usr/include/nspr4       -DLTM_DESC -I${prefix}/include/tommath         -I/usr/include/pakchois     -I/usr/include/apr-1 -I/usr/include/subversion-1 -I/usr/include/db61 -I/usr/include/libxml2   -I/usr/lib64/perl5/CORE -I/usr/include/python2.6 -I/usr/include/python2.6 -I/usr/lib64/ruby/1.8/x86_64-linux -I/usr/lib64/ruby/1.8/x86_64-linux -I/usr/java/jdk1.8.0_11/include -I/usr/java/jdk1.8.0_11/include/linux -I/usr/java/jdk1.8.0_11/include -I/usr/java/jdk1.8.0_11/include -I/usr/include/squirrel   -I/usr/include/gpsee -I/usr/include/gpsee -I${prefix}/include/js
+  -g -O2 -fPIC -DPIC -Wall -W -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes -Wno-char-subscripts -Wno-unused-parameter -Wformat-security -Wno-override-init -g3 -fno-delete-null-pointer-checks -D_FORTIFY_SOURCE=2 -fstack-protector -fexceptions -fexceptions -Wno-missing-field-initializers -D_GNU_SOURCE -D_REENTRANT                        
+                                               -L/usr/lib64/perl5/CORE -Wl,-rpath,/usr/lib64/perl5/CORE -L/usr/java/jdk1.8.0_11/jre/lib/amd64/server -Wl,-rpath,/usr/java/jdk1.8.0_11/jre/lib/amd64/server    
+</gcc_options>
+
+<include_preamble>
+  stdint.h
+  stdio.h
+  stdlib.h
+  string.h
+  sys/time.h
+  rpmiotypes.h
+  rpmtypes.h
+  rpmtag.h
+  rpmts.h
+</include_preamble>
+
+<test_include_preamble>
+  system.h
+  rpmtypes.h
+  rpmtag.h
+  rpmts.h
+</test_include_preamble>
+
+<libs_depend>
+  /X/src/wdj54/lib/.libs/librpm.so
+  /X/src/wdj54/rpmio/.libs/librpmio.so
+  /X/src/wdj54/misc/.libs/librpmmisc.so
+  /X/src/wdj54/popt/.libs/libpopt.so
+</libs_depend>
+
+<opaque_types>
+</opaque_types>
+
+<skip_symbols>
+<!-- build error -->
+  rpmDisplayQueryTags
+<!-- SEGV -->
+  headerCopy
+  headerDel
+  headerInit
+  headerMergeLegacySigs
+  headerNext
+  headerRegenSigHeader
+  headerReload
+  headerUnload
+  rpmAddSignature
+  rpmEVRcompare
+  rpmdbAdd
+  rpmdbBlockDBI
+  rpmdbClose
+  rpmdbCloseDBI
+  rpmdbCount
+  rpmdbCountPackages
+  rpmdbMireApply
+  rpmdbOpen
+  rpmdbOpenAll
+  rpmdbRemove
+  rpmmiAddPattern
+  rpmmiBNTag
+  rpmmiCount
+  rpmmiGrow
+  rpmmiGrowBasename
+  rpmmiInit
+  rpmmiInstance
+  rpmmiNext
+  rpmmiPrune
+  rpmmiSetModified
+  rpmmiSetRewrite
+  rpmmiSort
+  rpmReadPackageFile
+  rpmrepoNew
+  rpmwfFini
+  rpmwfInit
+  rpmwfPullXAR
+  wrRPM
+  wrXAR
+<!-- rpmRC failures -->
+  headerCheck
+  rpmpkgCheck
+  rpmpkgRead
+  rpmpkgWrite
+  rpmnsProbeSignature
+  rpmwfPushRPM
+  rpmwfPushXAR
+  rpmVerifySignature
+<!-- ABRT -->
+  rpmEVRfree
+  rpmrepoDoPkgMetadata
+<!-- exit 1 -->
+  rpmrepoError
+</skip_symbols>
+
+<skip_headers>
+     ../db_emu.h
+</skip_headers>
+
+<skip_libs>
+</skip_libs>
+
+<defines>
+</defines>
+
+<test_defines>
+</test_defines>
+
+<libgroup>
+</libgroup>
+
+<out_params>
+</out_params>
+
+<skip_warnings>
+</skip_warnings>
+
+<skip_interfaces>
+</skip_interfaces>

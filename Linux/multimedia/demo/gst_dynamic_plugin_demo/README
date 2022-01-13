@@ -1,0 +1,28 @@
+The gst_dynamic_plugin_demo is a demo application, logic and functionality been used as part of RVC application.
+This demo code has been shared to HMI team.
+
+Note:
+-----
+
+1) Updated code to configure device property w.r.t v4lsrc and v4lsink plugin. This changes were not part of the demo code shared to HMI team.
+
+2) To get camera and display device information follow the below mentioned steps
+
+# dmesg | grep video
+
+for ex: root@mx6q:~# dmesg | grep video
+
+[ 12.686129] mx6-camera v4l2cap.22: Device registered as /dev/video0, on ipu0
+[ 12.686876] mx6-vout v4l2out.24: Device registered as /dev/video1, on ipu0
+[ 12.687256] mx6-vout v4l2out.30: Device registered as /dev/video2, on ipu1
+[ 12.799122] mx6-m2m v4l2m2m.23: Device registered as /dev/video3, on ipu0
+[ 12.854233] mx6-m2m v4l2m2m.29: Device registered as /dev/video4, on ipu1
+
+
+update the init-switch.sh file with proper device information
+
+for ex: ./gst_dynamic_plugin /dev/video0 9 /dev/video2
+
+3) For execution "root@mx6q:~#. init-switch.sh"
+
+

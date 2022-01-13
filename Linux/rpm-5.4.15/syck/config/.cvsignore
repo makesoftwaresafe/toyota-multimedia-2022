@@ -1,0 +1,9 @@
+config.guess
+config.sub
+depcomp
+install-sh
+ltmain.sh
+compile
+missing
+test-driver
+ylwrap

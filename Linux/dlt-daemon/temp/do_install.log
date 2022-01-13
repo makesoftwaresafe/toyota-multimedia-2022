@@ -1,0 +1,101 @@
+[  9%] Built target dlt
+[ 32%] Built target dlt-daemon
+[ 35%] Built target dlt-receive
+[ 38%] Built target dlt-blockmode-ctrl
+[ 42%] Built target dlt-passive-node-ctrl
+[ 45%] Built target dlt-control
+[ 48%] Built target dlt-convert
+[ 51%] Built target dlt-filter-ctrl
+[ 57%] Built target dlt-logstorage-ctrl
+[ 60%] Built target dlt-example-user
+[ 62%] Built target dlt-example-filetransfer
+[ 64%] Built target dlt-example-user-common-api
+[ 67%] Built target dlt-example-user-func
+[ 69%] Built target dlt-adaptor-stdin
+[ 71%] Built target dlt-adaptor-udp
+[ 74%] Built target dlt-test-non-verbose
+[ 76%] Built target dlt-test-init-free
+[ 78%] Built target dlt-test-user
+[ 81%] Built target dlt-test-multi-process
+[ 83%] Built target dlt-test-stress-user
+[ 85%] Built target dlt-test-client
+[ 88%] Built target dlt-test-logstorage
+[ 90%] Built target dlt-test-stress-client
+[ 92%] Built target dlt-test-multi-process-client
+[ 95%] Built target dlt-test-stress
+[ 97%] Built target dlt-test-filetransfer
+[100%] Built target dlt-test-fork-handler
+Install the project...
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/lib/pkgconfig/automotive-dlt.pc
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/lib/libdlt.so.2.16.0
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/lib/libdlt.so.2
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/lib/libdlt.so
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-daemon
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/etc/dlt.conf
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/etc/dlt_message_filter.conf
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/etc/dlt_gateway.conf
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-convert
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-convert" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-receive
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-receive" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-control
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-control" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-filter-ctrl
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-filter-ctrl" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-passive-node-ctrl
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-passive-node-ctrl" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-blockmode-ctrl
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-blockmode-ctrl" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-logstorage-ctrl
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-logstorage-ctrl" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-example-user
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-example-user" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-example-user-func
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-example-user-func" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-example-user-common-api
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-example-user-common-api" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-example-filetransfer
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-example-filetransfer" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-adaptor-stdin
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-adaptor-stdin" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-adaptor-udp
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-adaptor-udp" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-multi-process
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-multi-process" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-multi-process-client
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-multi-process-client" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-user
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-user" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-client
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-client" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-stress-user
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-stress-user" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-stress-client
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-stress-client" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-stress
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-stress" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-filetransfer
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-filetransfer" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-fork-handler
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-fork-handler" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-init-free
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-init-free" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-logstorage
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-logstorage" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-non-verbose
+-- Set runtime path of "/home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/bin/dlt-test-non-verbose" to ""
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/share/dlt-filetransfer/dlt-test-filetransfer-file
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/share/dlt-filetransfer/dlt-test-filetransfer-image.png
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_user.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_user_macros.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_client.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_protocol.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_common.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_types.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_version.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_shm.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_offline_trace.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_filetransfer.h
+-- Installing: /home/ivilinux/work/01_pfinteg/pf_integ_tools/dn-delivery-common/build-qnx-SDP7/build/tmp/work/x86_64/qnx-host/../dlt-daemon/install/usr/include/dlt/dlt_common_api.h

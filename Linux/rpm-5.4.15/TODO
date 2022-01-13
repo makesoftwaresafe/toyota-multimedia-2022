@@ -1,0 +1,162 @@
+
+  TODO
+  ====
+
+  KNOWN PENDING ISSUES
+  --------------------
+
+  This is the list of known pending issues which still *HAVE* to be
+  resolved during release engineering. Please do not just list any
+  *CANDO* items.
+
+    - jbj: make a complete pass through rpm.org check-ins and make sure they
+	have exactly zero "features" that are not already in rpm-5.0. With
+	full attribution of course ...
+    - jbj: finish Requires: sanitycheck(N) = E:V-R runtime probe.
+    - jbj: finish BuildRequires: vcheck(N) = E:V-R runtime probe.
+    - jbj: write up added featlets/bugtures in %docdir notes.
+    - jbj: handle SourceN: foo-V-R.src.rpm unpacking.
+    - jbj: fix (or at least document) the /sbin/ldconfig optimization flaw.
+    - jbj: finish --trust with --import (or punt to 5.1).
+    - jbj: add build script templates for install scriptlets (or punt to 5.1).
+    - jbj: change RPM_I18NSTRING_TYPE wiring to use arbitrary tag.
+    - jbj: markReplacedFiles() subtly rewrites header back into rpmdb
+	with altered RPMTAG_FILESTATES data. get/del/add sequence
+	is needed instead.
+    - jbj: VSFlags (and --nodigest/--nosignature) is now global rather than
+	persistently per-transaction. That means its no longer possible to
+	have two transactions, one which verifies signatures while the other
+	does not. Per-transaction VSFlags never made much sense imho, but
+	some may care. Establishing a end-user, not a per-application or
+	per-transaction, package integrity/security policy is the only
+	rational end-point.
+    - jbj: there's a buildroot compatibility issue that needs to be addressed
+	in (at least) doco. The problem is common to rpm-4_5 and HEAD.
+	Issue at
+		http://qa.mandriva.com/show_bug.cgi?id=34705
+    - jbj: Heh, --import has *always* used the wrong data type for
+	Summary/Description/Group. The header that carries the pubkey
+	lacks RPMTAG_ARCH/RPMTAG_OS as well. Re-importing all pubkeys is
+	one solution, but perhaps a "just works" slam-dunk hack is needed
+	during --rebuildb, or with header extensions. When this issue is
+	resolved, then rpm can/should use implicit, rather than explicit, data
+	types for tag data.
+    - jbj: add libTomCrypt signature verification.
+    - jbj: add per-implementation crypto hashes.
+    - jbj: add per-implementation symmetric ciphers.
+    - jbj: permit per-file encryption with password caching through keyutils.
+    - jbj: generalize the Leopard XAR format to ar (as in *.deb), tar, and cpio.
+    - afb: add read-only support for 070707 cpio so we can piggy-back on pkg
+    - jbj: eliminate the oddball *.src.rpm paths, nuke rpmInstallSourcePackage.
+    - jbj: VPATH-like generalization to fold-in splitted-source-directory patch.
+    - jbj: add per file RPMTAG_ENTROPY a la Shannon to start making the choice
+	of compression scheme computible.
+    - jbj: explicitly compute sums of header and package sizes to help
+	distro maintainers understand their cdrom/dvd and memory footprint
+	needs.
+    - jbj: split rpmtsRun() into 2 pieces, moving the file resolution
+	computation into its own method.
+    - jbj: redesign the bleeping callback, which is good for nothing but pushing
+	script kiddie progress bars across the screen.
+    - jbj: arbitrary "%foo -p /bar" scriptlets as pair'ed RPMTAG_{FOO,FOOPROG}.
+    - jbj: arbitrary triggers, like scriptlets, but with a condition check too.
+    - jbj: the hash *ahem* algorithm at rpmdb/fprint.c:186 fpHashFunction() is
+	pathetic. FYI, the fingerprint hash is in the top 10 pigs when
+	profiling rpm installs, so better has immediate performance benefits.
+	rpmio/lookup3.c is possibly better. The other important usage case
+	is restructuring the multi-level add package "provides" lookup in
+	lib/rpmal.c (but that likely needs to be thrown into a Berkeley DB
+	table to minimize memory footprint).
+    - jbj: using qsort to insure that nearly sorted lists of join keys in
+	an rpmdb remain sorted is stoopid: quicksort on nearly sorted lists
+	is slower than alternative implementations like mergesort.
+    - jbj: eliminate internal --initdb (useless) and --verifydb (peculier
+	to Berkeley DB and adequately/equivalently achievable with db_verify).
+    - jbj: NSS has many memory leaks that are not free'd by NSS_Shutdown().
+    - jbj: this leak needs fixing somewhen:
+==3436== 12 bytes in 1 blocks are definitely lost in loss record 3 of 9
+==3436==    at 0x4805525: malloc (vg_replace_malloc.c:149)
+==3436==    by 0x4934365: argvSplit (argv.c:207)
+==3436==    by 0x48F89F9: tagLoadATags (tagname.c:31)
+==3436==    by 0x48F969E: _tagValue (tagname.c:361)
+==3436==    by 0x48F9805: tagValue (tagname.c:403)
+==3436==    by 0x48878F9: rpmdsSysinfo (rpmds.c:1600)
+==3436==    by 0x48A5BDE: rpmtsCreate (rpmts.c:1302)
+==3436==    by 0x3EFA: main (rpmqv.c:540)
+    - jbj: eliminate %patch-as-macro-in-C implementation.
+    - jbj: convert unused syntax (like Disttag:/Repotag:/Cvsid:) to arbitrary tags
+    - jbj: convert %prep/%build/%install/%check/%clean to arbitrary srpm tags.
+    - jbj: use devtool.sh as a model for an arbitrary state machine that
+	runs arbitrary scripts in deterministic order, checking error codes.
+	Rewrite rpmbuild.c accordingly.
+    - jbj: hmmm, arbitrary Foo: (except for Class:) ends up in binary *.rpm's,
+	while %foo (like %track) ends up in *.src.rpm's. I'll pretend that's
+	a feature until a means to more precisely specify arbitrary tag
+	copying into binary/source rpm's is devised.
+    - jbj: rpm --help using popt-1.13 with non-utf8 needs some work.
+	POPT_fprintf using iconv(3) is the common element so far.
+    - jbj: MacPorts is going to universal binaries (the Mac OS X equivalent
+	of multilib) with a "fat" arch in *.rpm packages. Better can be done,
+	including insturmenting running lipo(1) automagically during install.
+    - jbj: build/build.c doScript() was a crack-soaked proof-of-concept build
+	system script invoker with macro templates that I threw together on
+	a Saturday afternoon in November, 1999. No one has ever bothered to
+	rewrite the goop sadly, far better could and should be done.
+    - jbj: users continually expect the ability to create "noarch" subpkgs even
+	though rpm has only a single build (and arch is a constant for that build).
+	Permitting noarch subpkgs is no more complicated than applying an
+	explict sanity check that, indeed, the subpkg contents are "noarch".
+    - jbj: both --yaml and --xml are in need of QA regression tests.
+	2 of 1300 packages fail to YAML load correctly. One of the
+	failure cases was irregular white space in %description,
+	the other case involved RPM_I18NSTRING_TYPE.
+    - jbj: XOR operator needed, such that Requires: LSB ^ !LSB has valid 
+        truth table
+    - jbj: RFE: capture arbitrary 'defines' from the ENV, and the invocation 
+	command line, each to end up in binary *.rpm's to show more of build 
+	time options
+    - jbj: rewrite pgpReadPkts to return array of clearsign'd segments instead.
+    - jbj: teach argvSplit about escaped seperator characters.
+    - jasonc: spec file parser: one cannot represent a "odd" file path in a
+        Provides such as:
+          Provides: /path/with spaces/and,commas/foo.bar
+        currently because both spaces and commas can be used to indicate    
+        multiple provides entries (Mac OS X is great at finding these types of
+        "problems")
+    - rse: XAR 1.5.2 doesn't build under Solaris 10 as <fts.h> and the
+      BSD4.4 fts(3) API is completely missing there.
+    - jbj: "make dist" no workie with XAR internal. layering in automake is
+	preferred way forward.
+    - jbj: /usr/lib64 is reported not expanded into rpm.pc pkgconfig fle and
+        ___init.py___.
+    - jbj: distributing per-platform configuration needs to be done. At a minimum,
+        the cpu-os.macros.tar.gz file needs distributing with the rpm tarball.
+    - jbj: verify whether RPMv3 installs (or not).
+    - jbj: use txar to convert RPMv3 -> rpmv4 (headerReload needs adding).
+    - jbj: configure --parentdirs/--noparentdirs win persistent run-time macro
+	and stop discussing in public.
+    - jbj: permit building w/o changelogs. instead use a header extension to
+	pull changelogs from a URL, with a default of
+		file:///usr/share/doc/N-V/Changelog
+	Use YAML for extra credit.
+    - jbj: verify(...) probe likely needs to supply _SOME_ information for
+	failure cases, at least with -vv.
+    - jbj: verify(...) with prelinking likely needs more "stuff" in QVA_t:
+D: rpmdb: read h#     512 Header V3 DSA signature: OK, key ID 1ac70ce6
+prelink: Couldn't write file to standard output: Broken pipe
+    - jbj: handle +bing -bang =boom args within rpmgi.c.
+
+
+
+
+  RPM 5.2 ROADMAP ISSUES
+  ----------------------
+    - jbj: drill in "+foo" ports-like find the real store by prefixing 
+        secret sauce path.  Its wired into --install/--upggrade only to 
+        minimize risk. a small refactoring moves same to rpmgi ... 
+        where it becomes available for --query, so rpm -qT --aid +bash 
+        has a prayer of constructing the minimal transaction to install bash.
+    - jbj: ever better would be to add "=bash" token to construct (and
+        loop check) the minimal transaction to install bash using headers
+        from rpmdb.  -- added as a aide to memory per IRC thread
+

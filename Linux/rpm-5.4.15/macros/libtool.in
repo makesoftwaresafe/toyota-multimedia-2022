@@ -1,0 +1,10 @@
+# Libtool specific macro definitions.
+# To make use of these macros insert the following line into your spec file:
+# %{load:%{_usrlibrpm}/macros.d/libtool}
+
+# Path to scripts to autogenerate libtool package dependencies,
+#
+# Note: Used iff _use_internal_dependency_generator is non-zero. The
+# helpers are also used by %{_rpmhome}/rpmdeps {--provides|--requires}.
+%__libtool_provides	%{_rpmhome}/libtooldeps.sh --provides %{buildroot} %{name}
+%__libtool_requires	%{_rpmhome}/libtooldeps.sh --requires %{buildroot} %{name}

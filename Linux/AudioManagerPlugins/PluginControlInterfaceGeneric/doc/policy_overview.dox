@@ -1,0 +1,14 @@
+/*!
+\page pagePolicy Policy
+
+    Policy is very crucial part of the configuration, it is the brain of the generic controller. It 
+decides the action, which generic controller would execute in response to a trigger. 
+
+The high level structure of policy is as below
+- Trigger(s) 
+- Process(es)
+    - Condition(s)  
+    - Action(s)
+<BR>
+
+*/

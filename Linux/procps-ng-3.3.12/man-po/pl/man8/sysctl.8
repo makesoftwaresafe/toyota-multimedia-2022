@@ -1,0 +1,151 @@
+.\" Copyright 1999, George Staikos (staikos@0wned.org)
+.\" This file may be used subject to the terms and conditions of the
+.\" GNU General Public License Version 2, or any later version
+.\" at your option, as published by the Free Software Foundation.
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+.\" GNU General Public License for more details."
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH SYSCTL 8 "sty 2012" procps\-ng "Administracja systemem"
+.SH NAZWA
+sysctl \- konfiguracja parametrów jądra w czasie działania
+.SH SKŁADNIA
+\fBsysctl\fP [\fIopcje\fP] [\fIzmienna\fP[\fB=\fP\fIwartość\fP]] [...]
+.br
+\fBsysctl \-p\fP [\fIplik\fP lub \fIwyrażenie_regularne\fP] [...]
+.SH OPIS
+\fBsysctl\fP służy do modyfikowania parametrów jądra w czasie
+działania. Dostępne parametry to te, które są w /proc/sys/. Do obsługi
+\fBsysctl\fP pod Linuksem wymagany jest procfs. Program \fBsysctl\fP może być
+używany do odczytu i zapisu danych sysctl.
+.SH PARAMETRY
+.TP 
+\fIzmienna\fP
+Nazwa klucza, z którego mają być odczytane dane, na przykład
+kernel.ostype. Akceptowany jest także separator '/' zamiast '.'.
+.TP 
+\fIzmienna\fP=\fIwartość\fP
+Aby ustawić klucz, należy użyć formy \fIzmienna\fP=\fIwartość\fP, gdzie \fIzmienna\fP
+to klucz, a \fIwartość\fP wartość, na jaką klucz ma być ustawiony. Jeśli
+wartość zawiera apostrofy lub znaki, które są przetwarzane przez powłokę,
+może być potrzeba ujęcia wartości w cudzysłowy. Wymaga to użycia parametru
+\fB\-w\fP.
+.TP 
+\fB\-n\fP, \fB\-\-values\fP
+Ta opcja wyłącza wypisywanie nazwy klucza przy wypisywaniu wartości.
+.TP 
+\fB\-e\fP, \fB\-\-ignore\fP
+Ta opcja powoduje ignorowanie błędów przy nieznanych kluczach.
+.TP 
+\fB\-N\fP, \fB\-\-names\fP
+Ta opcja powoduje wypisywanie samych nazw. Może być przydatna dla powłok z
+programowalnym dopełnianiem.
+.TP 
+\fB\-q\fP, \fB\-\-quiet\fP
+Ta opcja powoduje niewyświetlanie ustawianych wartości na standardowym
+wyjściu.
+.TP 
+\fB\-w\fP, \fB\-\-write\fP
+Ta opcja pozwala na zmianę ustawienia sysctl.
+.TP 
+\fB\-p\fP[\fIPLIK\fP], \fB\-\-load\fP[=\fIPLIK\fP]
+Wczytanie ustawień sysctl z podanego pliku lub /etc/sysctl.conf, jeśli nie
+podano pliku. Podanie \- jako nazwy pliku oznacza odczyt danych ze
+standardowego wejścia. Użycie tej opcji oznacza, że argumenty \fBsysctl\fP są
+plikami, które będą czytane w kolejności podania. Argument plikowy może być
+też podany jako wyrażenie regularne.
+.TP 
+\fB\-a\fP, \fB\-\-all\fP
+Wyświetlenie wszystkie aktualnie dostępnych wartości.
+.TP 
+\fB\-\-deprecated\fP
+Dołączenie do listy wartości \fB\-\-all\fP parametrów przestarzałych.
+.TP 
+\fB\-b\fP, \fB\-\-binary\fP
+Wypisanie wartości bez nowej linii.
+.TP 
+\fB\-\-system\fP
+Wczytanie ustawień ze wszystkich systemowych plików konfiguracyjnych.
+.br
+/run/sysctl.d/*.conf
+.br
+/etc/sysctl.d/*.conf
+.br
+/usr/local/lib/sysctl.d/*.conf
+.br
+/usr/lib/sysctl.d/*.conf
+.br
+/lib/sysctl.d/*.conf
+.br
+/etc/sysctl.conf
+.TP 
+\fB\-r\fP, \fB\-\-pattern\fP \fIwzorzec\fP
+Naniesienie wyłącznie ustawień pasujących do \fIwzorca\fP. \fIwzorzec\fP
+wykorzystuje składnię rozszerzonych wyrażeń regularnych.
+.TP 
+\fB\-A\fP
+Alias dla \fB\-a\fP
+.TP 
+\fB\-d\fP
+Alias dla \fB\-h\fP
+.TP 
+\fB\-f\fP
+Alias dla \fB\-p\fP
+.TP 
+\fB\-X\fP
+Alias dla \fB\-a\fP
+.TP 
+\fB\-o\fP
+Nic nie robi, istnieje dla zgodności z BSD.
+.TP 
+\fB\-x\fP
+Nic nie robi, istnieje dla zgodności z BSD.
+.TP 
+\fB\-h\fP, \fB\-\-help\fP
+Wyświetlenie tekstu pomocy i zakończenie.
+.TP 
+\fB\-V\fP, \fB\-\-version\fP
+Wyświetlenie informacji o wersji i zakończenie.
+.SH PRZYKŁADY
+/sbin/sysctl \-a
+.br
+/sbin/sysctl \-n kernel.hostname
+.br
+/sbin/sysctl \-w kernel.domainname="example.com"
+.br
+/sbin/sysctl \-p/etc/sysctl.conf
+.br
+/sbin/sysctl \-a \-\-pattern forward
+.br
+/sbin/sysctl \-a \-\-pattern forward$
+.br
+/sbin/sysctl \-a \-\-pattern 'net.ipv4.conf.(eth|wlan)0.arp'
+.br
+/sbin/sysctl \-\-system \-\-pattern '^net.ipv6'
+.SH "PARAMETRY PRZESTARZAŁE"
+Zmienne \fBbase_reachable_time\fP oraz \fBretrans_time\fP są
+przestarzałe. Polecenie sysctl nie pozwala na zmianę wartości tych
+parametrów. Użytkownicy uporczywie używający przestarzałych interfejsów
+powinni umieścić wartości w systemie plików /proc w inny sposób, na
+przykład:
+.PP
+echo 256 > /proc/sys/net/ipv6/neigh/eth0/base_reachable_time
+.SH PLIKI
+\fI/proc/sys\fP
+.br
+\fI/etc/sysctl.conf\fP
+.SH "ZOBACZ TAKŻE"
+\fBsysctl.conf\fP(5)  \fBregex\fP(7)
+.SH AUTOR
+.UR staikos@0wned.org
+George Staikos
+.UE
+.SH "ZGŁASZANIE BŁĘDÓW"
+Zgłoszenia błędów prosimy wysyłać na adres
+.UR procps@freelists.org
+.UE

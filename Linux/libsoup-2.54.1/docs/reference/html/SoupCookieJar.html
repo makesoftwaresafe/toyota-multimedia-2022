@@ -1,0 +1,860 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SoupCookieJar: libsoup Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libsoup Reference Manual">
+<link rel="up" href="ch03.html" title="Additional Features">
+<link rel="prev" href="SoupContentSniffer.html" title="SoupContentSniffer">
+<link rel="next" href="SoupCookieJarText.html" title="SoupCookieJarText">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#SoupCookieJar.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#SoupCookieJar.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_interfaces">  <span class="dim">|</span> 
+                  <a href="#SoupCookieJar.implemented-interfaces" class="shortcut">Implemented Interfaces</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#SoupCookieJar.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#SoupCookieJar.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="SoupContentSniffer.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="SoupCookieJarText.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="SoupCookieJar"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="SoupCookieJar.top_of_page"></a>SoupCookieJar</span></h2>
+<p>SoupCookieJar — Automatic cookie handling for SoupSession</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="SoupCookieJar.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="returnvalue">SoupCookieJar</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-new" title="soup_cookie_jar_new ()">soup_cookie_jar_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-get-cookies" title="soup_cookie_jar_get_cookies ()">soup_cookie_jar_get_cookies</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-get-cookie-list" title="soup_cookie_jar_get_cookie_list ()">soup_cookie_jar_get_cookie_list</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-set-cookie" title="soup_cookie_jar_set_cookie ()">soup_cookie_jar_set_cookie</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-set-cookie-with-first-party" title="soup_cookie_jar_set_cookie_with_first_party ()">soup_cookie_jar_set_cookie_with_first_party</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-add-cookie" title="soup_cookie_jar_add_cookie ()">soup_cookie_jar_add_cookie</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-add-cookie-with-first-party" title="soup_cookie_jar_add_cookie_with_first_party ()">soup_cookie_jar_add_cookie_with_first_party</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-delete-cookie" title="soup_cookie_jar_delete_cookie ()">soup_cookie_jar_delete_cookie</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-all-cookies" title="soup_cookie_jar_all_cookies ()">soup_cookie_jar_all_cookies</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="returnvalue">SoupCookieJarAcceptPolicy</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-get-accept-policy" title="soup_cookie_jar_get_accept_policy ()">soup_cookie_jar_get_accept_policy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-set-accept-policy" title="soup_cookie_jar_set_accept_policy ()">soup_cookie_jar_set_accept_policy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-is-persistent" title="soup_cookie_jar_is_persistent ()">soup_cookie_jar_is_persistent</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="type">SoupCookieJarAcceptPolicy</span></a></td>
+<td class="property_name"><a class="link" href="SoupCookieJar.html#SoupCookieJar--accept-policy" title="The “accept-policy” property">accept-policy</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_name"><a class="link" href="SoupCookieJar.html#SoupCookieJar--read-only" title="The “read-only” property">read-only</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="SoupCookieJar.html#SoupCookieJar-changed" title="The “changed” signal">changed</a></td>
+<td class="signal_flags">Run First</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="SoupCookieJar.html#SoupCookieJar-struct" title="SoupCookieJar">SoupCookieJar</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy">SoupCookieJarAcceptPolicy</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupCookieJar.html#SOUP-COOKIE-JAR-READ-ONLY:CAPS" title="SOUP_COOKIE_JAR_READ_ONLY">SOUP_COOKIE_JAR_READ_ONLY</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="SoupCookieJar.html#SOUP-COOKIE-JAR-ACCEPT-POLICY:CAPS" title="SOUP_COOKIE_JAR_ACCEPT_POLICY">SOUP_COOKIE_JAR_ACCEPT_POLICY</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> SoupCookieJar
+        <span class="lineart">├──</span> <a class="link" href="SoupCookieJarDB.html" title="SoupCookieJarDB">SoupCookieJarDB</a>
+        <span class="lineart">╰──</span> <a class="link" href="SoupCookieJarText.html" title="SoupCookieJarText">SoupCookieJarText</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+SoupCookieJar implements
+ <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature">SoupSessionFeature</a>.</p>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libsoup/soup.h&gt;
+</pre>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.description"></a><h2>Description</h2>
+<p>A <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> stores <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>s and arrange for them
+to be sent with the appropriate <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>s.
+<a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> implements <a class="link" href="SoupSessionFeature.html" title="SoupSessionFeature"><span class="type">SoupSessionFeature</span></a>, so you can add a
+cookie jar to a session with <a class="link" href="SoupSession.html#soup-session-add-feature" title="soup_session_add_feature ()"><code class="function">soup_session_add_feature()</code></a> or
+<a class="link" href="SoupSession.html#soup-session-add-feature-by-type" title="soup_session_add_feature_by_type ()"><code class="function">soup_session_add_feature_by_type()</code></a>.</p>
+<p>Note that the base <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> class does not support any form
+of long-term cookie persistence.</p>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="soup-cookie-jar-new"></a><h3>soup_cookie_jar_new ()</h3>
+<pre class="programlisting"><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="returnvalue">SoupCookieJar</span></a> *
+soup_cookie_jar_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Creates a new <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a>. The base <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> class does
+not support persistent storage of cookies; use a subclass for that.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.2.5"></a><h4>Returns</h4>
+<p> a new <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-get-cookies"></a><h3>soup_cookie_jar_get_cookies ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *
+soup_cookie_jar_get_cookies (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>,
+                             <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *uri</code></em>,
+                             <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> for_http</code></em>);</pre>
+<p>Retrieves (in Cookie-header form) the list of cookies that would
+be sent with a request to <em class="parameter"><code>uri</code></em>
+.</p>
+<p>If <em class="parameter"><code>for_http</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, the return value will include cookies marked
+"HttpOnly" (that is, cookies that the server wishes to keep hidden
+from client-side scripting operations such as the JavaScript
+document.cookies property). Since <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> sets the Cookie
+header itself when making the actual HTTP request, you should
+almost certainly be setting <em class="parameter"><code>for_http</code></em>
+ to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if you are calling
+this.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>for_http</p></td>
+<td class="parameter_description"><p>whether or not the return value is being passed directly
+to an HTTP operation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.6.11.3.7"></a><h4>Returns</h4>
+<p> the cookies, in string form, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if
+there are no cookies for <em class="parameter"><code>uri</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-get-cookie-list"></a><h3>soup_cookie_jar_get_cookie_list ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+soup_cookie_jar_get_cookie_list (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>,
+                                 <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *uri</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> for_http</code></em>);</pre>
+<p>Retrieves the list of cookies that would be sent with a request to <em class="parameter"><code>uri</code></em>
+
+as a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> of <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> objects.</p>
+<p>If <em class="parameter"><code>for_http</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, the return value will include cookies marked
+"HttpOnly" (that is, cookies that the server wishes to keep hidden
+from client-side scripting operations such as the JavaScript
+document.cookies property). Since <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> sets the Cookie
+header itself when making the actual HTTP request, you should
+almost certainly be setting <em class="parameter"><code>for_http</code></em>
+ to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if you are calling
+this.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>for_http</p></td>
+<td class="parameter_description"><p>whether or not the return value is being passed directly
+to an HTTP operation</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.6.11.4.7"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a>
+with the cookies in the <em class="parameter"><code>jar</code></em>
+that would be sent with a request to <em class="parameter"><code>uri</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Soup.Cookie]</span></p>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-set-cookie"></a><h3>soup_cookie_jar_set_cookie ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_jar_set_cookie (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>,
+                            <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *uri</code></em>,
+                            <em class="parameter"><code>const <span class="type">char</span> *cookie</code></em>);</pre>
+<p>Adds <em class="parameter"><code>cookie</code></em>
+ to <em class="parameter"><code>jar</code></em>
+, exactly as though it had appeared in a
+Set-Cookie header returned from a request to <em class="parameter"><code>uri</code></em>
+.</p>
+<p>Keep in mind that if the <a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="type">SoupCookieJarAcceptPolicy</span></a>
+<a class="link" href="SoupCookieJar.html#SOUP-COOKIE-JAR-ACCEPT-NO-THIRD-PARTY:CAPS"><code class="literal">SOUP_COOKIE_JAR_ACCEPT_NO_THIRD_PARTY</code></a> is set you'll need to use
+<a class="link" href="SoupCookieJar.html#soup-cookie-jar-set-cookie-with-first-party" title="soup_cookie_jar_set_cookie_with_first_party ()"><code class="function">soup_cookie_jar_set_cookie_with_first_party()</code></a>, otherwise the jar
+will have no way of knowing if the cookie is being set by a third
+party or not.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>the URI setting the cookie</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>the stringified cookie to set</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-set-cookie-with-first-party"></a><h3>soup_cookie_jar_set_cookie_with_first_party ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_jar_set_cookie_with_first_party
+                               (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>,
+                                <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *uri</code></em>,
+                                <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *first_party</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *cookie</code></em>);</pre>
+<p>Adds <em class="parameter"><code>cookie</code></em>
+ to <em class="parameter"><code>jar</code></em>
+, exactly as though it had appeared in a
+Set-Cookie header returned from a request to <em class="parameter"><code>uri</code></em>
+. <em class="parameter"><code>first_party</code></em>
+
+will be used to reject cookies coming from third party resources in
+case such a security policy is set in the <em class="parameter"><code>jar</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>the URI setting the cookie</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>first_party</p></td>
+<td class="parameter_description"><p>the URI for the main document</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>the stringified cookie to set</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-add-cookie"></a><h3>soup_cookie_jar_add_cookie ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_jar_add_cookie (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>,
+                            <em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Adds <em class="parameter"><code>cookie</code></em>
+ to <em class="parameter"><code>jar</code></em>
+, emitting the 'changed' signal if we are modifying
+an existing cookie or adding a valid new cookie ('valid' means
+that the cookie's expire date is not in the past).</p>
+<p><em class="parameter"><code>cookie</code></em>
+ will be 'stolen' by the jar, so don't free it afterwards.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.7.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p> a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.26</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-add-cookie-with-first-party"></a><h3>soup_cookie_jar_add_cookie_with_first_party ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_jar_add_cookie_with_first_party
+                               (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>,
+                                <em class="parameter"><code><a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> *first_party</code></em>,
+                                <em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Adds <em class="parameter"><code>cookie</code></em>
+ to <em class="parameter"><code>jar</code></em>
+, emitting the 'changed' signal if we are modifying
+an existing cookie or adding a valid new cookie ('valid' means
+that the cookie's expire date is not in the past).</p>
+<p><em class="parameter"><code>first_party</code></em>
+ will be used to reject cookies coming from third party
+resources in case such a security policy is set in the <em class="parameter"><code>jar</code></em>
+.</p>
+<p><em class="parameter"><code>cookie</code></em>
+ will be 'stolen' by the jar, so don't free it afterwards.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.8.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>first_party</p></td>
+<td class="parameter_description"><p>the URI for the main document</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p> a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-delete-cookie"></a><h3>soup_cookie_jar_delete_cookie ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_jar_delete_cookie (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>,
+                               <em class="parameter"><code><a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> *cookie</code></em>);</pre>
+<p>Deletes <em class="parameter"><code>cookie</code></em>
+ from <em class="parameter"><code>jar</code></em>
+, emitting the 'changed' signal.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cookie</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.26</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-all-cookies"></a><h3>soup_cookie_jar_all_cookies ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+soup_cookie_jar_all_cookies (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>);</pre>
+<p>Constructs a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> with every cookie inside the <em class="parameter"><code>jar</code></em>
+.
+The cookies in the list are a copy of the original, so
+you have to free them when you are done with them.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.6.11.10.6"></a><h4>Returns</h4>
+<p> a <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a>
+with all the cookies in the <em class="parameter"><code>jar</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Soup.Cookie]</span></p>
+</div>
+<p class="since">Since: 2.26</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-get-accept-policy"></a><h3>soup_cookie_jar_get_accept_policy ()</h3>
+<pre class="programlisting"><a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="returnvalue">SoupCookieJarAcceptPolicy</span></a>
+soup_cookie_jar_get_accept_policy (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>);</pre>
+<p>Gets <em class="parameter"><code>jar</code></em>
+'s <a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="type">SoupCookieJarAcceptPolicy</span></a></p>
+<div class="refsect3">
+<a name="id-1.4.6.11.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.6.11.11.6"></a><h4>Returns</h4>
+<p> the <a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="type">SoupCookieJarAcceptPolicy</span></a> set in the <em class="parameter"><code>jar</code></em>
+</p>
+</div>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-set-accept-policy"></a><h3>soup_cookie_jar_set_accept_policy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+soup_cookie_jar_set_accept_policy (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>,
+                                   <em class="parameter"><code><a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="type">SoupCookieJarAcceptPolicy</span></a> policy</code></em>);</pre>
+<p>Sets <em class="parameter"><code>policy</code></em>
+ as the cookie acceptance policy for <em class="parameter"><code>jar</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>policy</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="type">SoupCookieJarAcceptPolicy</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="soup-cookie-jar-is-persistent"></a><h3>soup_cookie_jar_is_persistent ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+soup_cookie_jar_is_persistent (<em class="parameter"><code><a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar</code></em>);</pre>
+<p>Gets whether <em class="parameter"><code>jar</code></em>
+ stores cookies persistenly.</p>
+<div class="refsect3">
+<a name="id-1.4.6.11.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>a <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.6.11.13.6"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>jar</code></em>
+storage is persistent or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+<p class="since">Since: 2.40</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="SoupCookieJar-struct"></a><h3>SoupCookieJar</h3>
+<pre class="programlisting">typedef struct _SoupCookieJar SoupCookieJar;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupCookieJarAcceptPolicy"></a><h3>enum SoupCookieJarAcceptPolicy</h3>
+<p>The policy for accepting or rejecting cookies returned in
+responses.</p>
+<div class="refsect3">
+<a name="id-1.4.6.12.3.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-COOKIE-JAR-ACCEPT-ALWAYS:CAPS"></a>SOUP_COOKIE_JAR_ACCEPT_ALWAYS</p></td>
+<td class="enum_member_description">
+<p>accept all cookies unconditionally.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-COOKIE-JAR-ACCEPT-NEVER:CAPS"></a>SOUP_COOKIE_JAR_ACCEPT_NEVER</p></td>
+<td class="enum_member_description">
+<p>reject all cookies unconditionally.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="SOUP-COOKIE-JAR-ACCEPT-NO-THIRD-PARTY:CAPS"></a>SOUP_COOKIE_JAR_ACCEPT_NO_THIRD_PARTY</p></td>
+<td class="enum_member_description">
+<p>accept all cookies set by
+the main document loaded in the application using libsoup. An
+example of the most common case, web browsers, would be: If
+http://www.example.com is the page loaded, accept all cookies set
+by example.com, but if a resource from http://www.third-party.com
+is loaded from that page reject any cookie that it could try to
+set. For libsoup to be able to tell apart first party cookies from
+the rest, the application must call <a class="link" href="SoupMessage.html#soup-message-set-first-party" title="soup_message_set_first_party ()"><code class="function">soup_message_set_first_party()</code></a>
+on each outgoing <a class="link" href="SoupMessage.html" title="SoupMessage"><span class="type">SoupMessage</span></a>, setting the <a class="link" href="SoupURI.html" title="SoupURI"><span class="type">SoupURI</span></a> of the main
+document. If no first party is set in a message when this policy is
+in effect, cookies will be assumed to be third party by default.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-COOKIE-JAR-READ-ONLY:CAPS"></a><h3>SOUP_COOKIE_JAR_READ_ONLY</h3>
+<pre class="programlisting">#define SOUP_COOKIE_JAR_READ_ONLY "read-only"
+</pre>
+<p>Alias for the <a class="link" href="SoupCookieJar.html#SoupCookieJar--read-only" title="The “read-only” property"><span class="type">“read-only”</span></a> property. (Whether
+or not the cookie jar is read-only.)</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SOUP-COOKIE-JAR-ACCEPT-POLICY:CAPS"></a><h3>SOUP_COOKIE_JAR_ACCEPT_POLICY</h3>
+<pre class="programlisting">#define SOUP_COOKIE_JAR_ACCEPT_POLICY "accept-policy"
+</pre>
+<p>Alias for the <a class="link" href="SoupCookieJar.html#SoupCookieJar--accept-policy" title="The “accept-policy” property"><span class="type">“accept-policy”</span></a> property.</p>
+<p class="since">Since: 2.30</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="SoupCookieJar--accept-policy"></a><h3>The <code class="literal">“accept-policy”</code> property</h3>
+<pre class="programlisting">  “accept-policy”            <a class="link" href="SoupCookieJar.html#SoupCookieJarAcceptPolicy" title="enum SoupCookieJarAcceptPolicy"><span class="type">SoupCookieJarAcceptPolicy</span></a></pre>
+<p>The policy the jar should follow to accept or reject cookies</p>
+<p>Flags: Read / Write</p>
+<p>Default value: SOUP_COOKIE_JAR_ACCEPT_ALWAYS</p>
+<p class="since">Since: 2.30</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="SoupCookieJar--read-only"></a><h3>The <code class="literal">“read-only”</code> property</h3>
+<pre class="programlisting">  “read-only”                <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<p>Whether or not the cookie jar is read-only.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="SoupCookieJar.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="SoupCookieJar-changed"></a><h3>The <code class="literal">“changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a> *jar,
+               <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>    *old_cookie,
+               <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a>    *new_cookie,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)</pre>
+<p>Emitted when <em class="parameter"><code>jar</code></em>
+ changes. If a cookie has been added,
+<em class="parameter"><code>new_cookie</code></em>
+ will contain the newly-added cookie and
+<em class="parameter"><code>old_cookie</code></em>
+ will be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. If a cookie has been deleted,
+<em class="parameter"><code>old_cookie</code></em>
+ will contain the to-be-deleted cookie and
+<em class="parameter"><code>new_cookie</code></em>
+ will be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. If a cookie has been changed,
+<em class="parameter"><code>old_cookie</code></em>
+ will contain its old value, and <em class="parameter"><code>new_cookie</code></em>
+ its
+new value.</p>
+<div class="refsect3">
+<a name="id-1.4.6.14.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>jar</p></td>
+<td class="parameter_description"><p>the <a class="link" href="SoupCookieJar.html" title="SoupCookieJar"><span class="type">SoupCookieJar</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>old_cookie</p></td>
+<td class="parameter_description"><p>the old <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>new_cookie</p></td>
+<td class="parameter_description"><p>the new <a class="link" href="SoupCookie.html" title="SoupCookie"><span class="type">SoupCookie</span></a> value</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run First</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.24</div>
+</body>
+</html>

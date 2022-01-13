@@ -1,0 +1,29 @@
+#######
+# @licence make begin@
+# SPDX license identifier: MPL-2.0
+#
+# Copyright (C) 2011-2015, BMW AG
+#
+# This file is part of GENIVI Project DLT - Diagnostic Log and Trace.
+#
+# This Source Code Form is subject to the terms of the
+# Mozilla Public License (MPL), v. 2.0.
+# If a copy of the MPL was not distributed with this file,
+# You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# For further information see http://www.genivi.org/.
+# @licence end@
+#######
+
+prefix=/usr
+exec_prefix=/usr
+libdir=${exec_prefix}/lib
+includedir=${exec_prefix}/include
+
+Name: DLT
+Description: Diagnostic Log and Trace
+Version: 2.16.0
+Requires:
+Libs: -L${libdir} -ldlt -lrt -lpthread -lz
+Cflags: -I${includedir}/dlt -DDLT_2_16
+

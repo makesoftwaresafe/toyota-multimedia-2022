@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+
+import sys
+import dbus
+
+bus = dbus.SystemBus()
+
+manager = dbus.Interface(bus.get_object('org.ofono', '/'),
+						'org.ofono.Manager')
+
+if (len(sys.argv) == 1):
+	modems = manager.GetModems()
+	path = modems[0][0]
+elif (len(sys.argv) == 2):
+	path = sys.argv[1]
+else:
+	print("Usage: %s [modem]" % (sys.argv[0]))
+	sys.exit(1)
+
+manager = dbus.Interface(bus.get_object('org.ofono', path),
+						'org.ofono.VoiceCallManager')
+
+mpty = manager.CreateMultiparty()
+
+for path in mpty:
+	print(path)

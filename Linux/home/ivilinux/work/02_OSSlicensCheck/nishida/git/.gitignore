@@ -1,0 +1,50 @@
+# General
+
+*.o
+
+ChangeLog
+
+# http://www.gnu.org/software/automake
+Makefile
+Makefile.in
+INSTALL
+
+# http://www.gnu.org/software/autoconf
+
+/autom4te.cache
+/aclocal.m4
+/compile
+/config.guess
+/config.h
+/config.h.in
+/config.log
+/config.status
+/config.sub
+/configure
+/depcomp
+/install-sh
+/missing
+/m4/
+/stamp-h1
+.deps/
+
+# http://www.gnu.org/software/libtool
+
+*.la
+*.lo
+.libs/
+/libtool
+/ltmain.sh
+
+# http://www.freedesktop.org/wiki/Software/pkg-config/
+
+*.pc
+
+# http://www.gtk.org/gtk-doc/
+
+/gtk-doc.make
+
+# https://wiki.gnome.org/GObjectIntrospection
+
+*.gir
+*.typelib

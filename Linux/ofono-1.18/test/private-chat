@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+
+import sys
+import dbus
+
+if (len(sys.argv) != 2):
+	print("Usage: %s [voicecall_path]" % (sys.argv[0]))
+	exit(1)
+
+bus = dbus.SystemBus()
+
+manager = dbus.Interface(bus.get_object('org.ofono', '/'),
+						'org.ofono.Manager')
+
+call = sys.argv[1]
+sep = call.find("/", 1)
+path = call[0:sep]
+
+manager = dbus.Interface(bus.get_object('org.ofono', path),
+						'org.ofono.VoiceCallManager')
+
+mpty = manager.PrivateChat(call, timeout=100)
+
+for path in mpty:
+	print(path)

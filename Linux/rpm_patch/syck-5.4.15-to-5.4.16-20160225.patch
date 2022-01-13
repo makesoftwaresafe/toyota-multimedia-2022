@@ -1,0 +1,701 @@
+Diff from rpm 5.4.15 to current development 5.4.16 (20160224)
+
+Signed-off-by: Mark Hatle <mark.hatle@windriver.com>
+
+diff -urN rpm-5.4.15/syck/autogen.sh rpm-5.4-cvs/syck/autogen.sh
+--- rpm-5.4.15/syck/autogen.sh	2014-08-11 15:22:31.000000000 -0500
++++ rpm-5.4-cvs/syck/autogen.sh	2015-02-11 16:43:08.000000000 -0600
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+ #   configure the requirements
+-AMV="automake (GNU automake) 1.14.1"
++AMV="automake (GNU automake) 1.15"
+ ACV="autoconf (GNU Autoconf) 2.69"
+ LTV="libtoolize (GNU libtool) 2.4.2"
+-GTT="gettextize (GNU gettext-tools) 0.19.2"
++GTT="gettextize (GNU gettext-tools) 0.19.4"
+ USAGE="
+ To build RPM from plain CVS sources the following
+ installed developer tools are mandatory:
+diff -urN rpm-5.4.15/syck/.cvsignore rpm-5.4-cvs/syck/.cvsignore
+--- rpm-5.4.15/syck/.cvsignore	2013-07-09 00:34:37.000000000 -0500
++++ rpm-5.4-cvs/syck/.cvsignore	2015-05-10 12:55:16.000000000 -0500
+@@ -10,6 +10,7 @@
+ config.log
+ config.status
+ configure
++cscope.*
+ libtool
+ Makefile
+ Makefile.in
+diff -urN rpm-5.4.15/syck/lib/emitter.c rpm-5.4-cvs/syck/lib/emitter.c
+--- rpm-5.4.15/syck/lib/emitter.c	2010-01-05 23:40:27.000000000 -0600
++++ rpm-5.4-cvs/syck/lib/emitter.c	2015-02-16 15:23:18.000000000 -0600
+@@ -157,14 +157,14 @@
+      */
+     if ( e->anchors != NULL )
+     {
+-        st_foreach( e->anchors, syck_st_free_anchors, NULL );
+-        st_free_table( e->anchors );
++        syck_st_foreach( e->anchors, syck_st_free_anchors, NULL );
++        syck_st_free_table( e->anchors );
+         e->anchors = NULL;
+     }
+ 
+     if ( e->anchored != NULL )
+     {
+-        st_free_table( e->anchored );
++        syck_st_free_table( e->anchored );
+         e->anchored = NULL;
+     }
+ 
+@@ -173,7 +173,7 @@
+      */
+     if ( e->markers != NULL )
+     {
+-        st_free_table( e->markers );
++        syck_st_free_table( e->markers );
+         e->markers = NULL;
+     }
+ }
+@@ -400,17 +400,17 @@
+ 
+     /* Look for anchor */
+     if ( e->anchors != NULL &&
+-        st_lookup( e->markers, n, (void *)&oid ) &&
+-        st_lookup( e->anchors, (st_data_t)oid, (void *)&anchor_name ) )
++        syck_st_lookup( e->markers, n, (void *)&oid ) &&
++        syck_st_lookup( e->anchors, (st_data_t)oid, (void *)&anchor_name ) )
+     {
+         if ( e->anchored == NULL )
+         {
+-            e->anchored = st_init_numtable();
++            e->anchored = syck_st_init_numtable();
+         }
+ assert(e->anchored != NULL);
+ assert(anchor_name != NULL);
+ 
+-        if ( ! st_lookup( e->anchored, (st_data_t)anchor_name, (void *)&x ) )
++        if ( ! syck_st_lookup( e->anchored, (st_data_t)anchor_name, (void *)&x ) )
+         {
+             char *an = S_ALLOC_N( char, strlen( anchor_name ) + 3 );
+             sprintf( an, "&%s ", anchor_name );
+@@ -425,7 +425,7 @@
+             free( an );
+ 
+             x = 1;
+-            st_insert( e->anchored, (st_data_t)anchor_name, (st_data_t)x );
++            syck_st_insert( e->anchored, (st_data_t)anchor_name, (st_data_t)x );
+             lvl->anctag = 1;
+         }
+         else
+@@ -1236,7 +1236,7 @@
+      */
+     if ( e->markers == NULL )
+     {
+-        e->markers = st_init_numtable();
++        e->markers = syck_st_init_numtable();
+     }
+ assert(e->markers != NULL);
+ 
+@@ -1245,23 +1245,23 @@
+      * object.  Doesn't yet create an anchor, simply notes the
+      * position.
+      */
+-    if ( ! st_lookup( e->markers, n, (void *)&oid ) )
++    if ( ! syck_st_lookup( e->markers, n, (void *)&oid ) )
+     {
+         /*
+          * Store all markers
+          */
+         oid = e->markers->num_entries + 1;
+-        st_insert( e->markers, n, (st_data_t)oid );
++        syck_st_insert( e->markers, n, (st_data_t)oid );
+     }
+     else
+     {
+         if ( e->anchors == NULL )
+         {
+-            e->anchors = st_init_numtable();
++            e->anchors = syck_st_init_numtable();
+         }
+ assert(e->anchors != NULL);
+ 
+-        if ( ! st_lookup( e->anchors, (st_data_t)oid, (void *)&anchor_name ) )
++        if ( ! syck_st_lookup( e->anchors, (st_data_t)oid, (void *)&anchor_name ) )
+         {
+             int idx = 0;
+             char *anc = ( e->anchor_format == NULL ? DEFAULT_ANCHOR_FORMAT : e->anchor_format );
+@@ -1279,7 +1279,7 @@
+             /*
+              * Insert into anchors table
+              */
+-            st_insert( e->anchors, (st_data_t)oid, (st_data_t)anchor_name );
++            syck_st_insert( e->anchors, (st_data_t)oid, (st_data_t)anchor_name );
+         }
+     }
+     return oid;
+diff -urN rpm-5.4.15/syck/lib/gram.y rpm-5.4-cvs/syck/lib/gram.y
+--- rpm-5.4.15/syck/lib/gram.y	2009-03-31 18:05:59.000000000 -0500
++++ rpm-5.4-cvs/syck/lib/gram.y	2015-02-23 03:37:01.000000000 -0600
+@@ -9,10 +9,18 @@
+ 
+ %start doc
+ %pure-parser
++%parse-param {void* parser}
++%lex-param {void* parser}
+ 
+ 
+ %{
+ 
++#define YYDEBUG 1
++#define YYERROR_VERBOSE 1
++#ifndef YYSTACK_USE_ALLOCA
++#define YYSTACK_USE_ALLOCA 0
++#endif
++
+ #include "system.h"
+ #include "syck.h"
+ #include "debug.h"
+@@ -20,9 +28,6 @@
+ void apply_seq_in_map( SyckParser *parser, SyckNode *n )
+ 	/*@*/;
+ 
+-#define YYPARSE_PARAM   parser
+-#define YYLEX_PARAM     parser
+-
+ #define NULL_NODE(parser, node) \
+         SyckNode *node = syck_new_str( "", scalar_plain ); \
+         if ( ((SyckParser *)parser)->taguri_expansion == 1 ) \
+diff -urN rpm-5.4.15/syck/lib/handler.c rpm-5.4-cvs/syck/lib/handler.c
+--- rpm-5.4.15/syck/lib/handler.c	2008-10-17 17:00:13.000000000 -0500
++++ rpm-5.4-cvs/syck/lib/handler.c	2015-02-16 15:23:18.000000000 -0600
+@@ -38,7 +38,7 @@
+     if ( p->bad_anchors != NULL )
+     {
+         SyckNode *bad;
+-        if ( st_lookup( p->bad_anchors, (st_data_t)a, (void *)&bad ) )
++        if ( syck_st_lookup( p->bad_anchors, (st_data_t)a, (void *)&bad ) )
+         {
+             if ( n->kind != syck_str_kind )
+             {
+@@ -51,17 +51,17 @@
+     }
+     if ( p->anchors == NULL )
+     {
+-        p->anchors = st_init_strtable();
++        p->anchors = syck_st_init_strtable();
+     }
+ assert(p->anchors != NULL);
+-    if ( st_lookup( p->anchors, (st_data_t)a, (void *)&ntmp ) )
++    if ( syck_st_lookup( p->anchors, (st_data_t)a, (void *)&ntmp ) )
+     {
+         if ( ntmp != (void *)1 )
+         {
+             syck_free_node( ntmp );
+         }
+     }
+-    st_insert( p->anchors, (st_data_t)a, (st_data_t)n );
++    syck_st_insert( p->anchors, (st_data_t)a, (st_data_t)n );
+     return n;
+ }
+ 
+@@ -72,17 +72,17 @@
+     SyckNode *ntmp;
+     if ( p->anchors == NULL )
+     {
+-        p->anchors = st_init_strtable();
++        p->anchors = syck_st_init_strtable();
+     }
+ assert(p->anchors != NULL);
+-    if ( st_delete( p->anchors, (void *)&atmp, (void *)&ntmp ) )
++    if ( syck_st_delete( p->anchors, (void *)&atmp, (void *)&ntmp ) )
+     {
+         if ( ntmp != (void *)1 )
+         {
+             syck_free_node( ntmp );
+         }
+     }
+-    st_insert( p->anchors, (st_data_t)a, (st_data_t)1 );
++    syck_st_insert( p->anchors, (st_data_t)a, (st_data_t)1 );
+ }
+ 
+ SyckNode *
+@@ -93,7 +93,7 @@
+ 
+     if ( p->anchors != NULL )
+     {
+-        if ( st_lookup( p->anchors, (st_data_t)a, (void *)&n ) )
++        if ( syck_st_lookup( p->anchors, (st_data_t)a, (void *)&n ) )
+         {
+             if ( n != (void *)1 )
+             {    
+@@ -104,13 +104,13 @@
+             {
+                 if ( p->bad_anchors == NULL )
+                 {
+-                    p->bad_anchors = st_init_strtable();
++                    p->bad_anchors = syck_st_init_strtable();
+                 }
+ assert(p->bad_anchors != NULL);
+-                if ( ! st_lookup( p->bad_anchors, (st_data_t)a, (void *)&n ) )
++                if ( ! syck_st_lookup( p->bad_anchors, (st_data_t)a, (void *)&n ) )
+                 {
+                     n = (p->bad_anchor_handler)( p, a );
+-                    st_insert( p->bad_anchors, (st_data_t)a, (st_data_t)n );
++                    syck_st_insert( p->bad_anchors, (st_data_t)a, (st_data_t)n );
+                 }
+             }
+         }
+diff -urN rpm-5.4.15/syck/lib/implicit.c rpm-5.4-cvs/syck/lib/implicit.c
+--- rpm-5.4.15/syck/lib/implicit.c	2008-10-17 15:45:32.000000000 -0500
++++ rpm-5.4-cvs/syck/lib/implicit.c	2015-02-23 03:37:02.000000000 -0600
+@@ -19,6 +19,11 @@
+ #define YYLIMIT     limit
+ #define YYFILL(n)
+ 
++#ifdef  __clang__
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wempty-body"
++#endif
++
+ void
+ try_tag_implicit( SyckNode *n, int taguri )
+ {
+@@ -2994,4 +2999,9 @@
+ 
+ 
+ }
++
++#ifdef  __clang__
++#pragma clang diagnostic pop
++#endif
++
+ /*@=noret@*/
+diff -urN rpm-5.4.15/syck/lib/Makefile.am rpm-5.4-cvs/syck/lib/Makefile.am
+--- rpm-5.4.15/syck/lib/Makefile.am	2013-08-11 10:59:39.000000000 -0500
++++ rpm-5.4-cvs/syck/lib/Makefile.am	2015-02-23 03:13:25.000000000 -0600
+@@ -49,25 +49,25 @@
+ 	token.c \
+ 	implicit.c
+ 
+-gram.c:	gram.y
+-	$(YACC) -d -t -v -p syck -o $@ $<
+-	-@if test -f gram.c; then \
+-	{ echo "/*@-globs -mods -modnomods -moduncon -modunconnomods @*/";\
+-	  echo "/*@-noeffect -noeffectuncon @*/";\
+-	  echo "/*@-nullassign @*/";\
+-	  echo "/*@-readonlytrans @*/";\
+-	  echo "/*@-uniondef @*/";\
+-	  echo "/*@-warnlintcomments @*/";\
+-	  cat gram.c;\
+-	  echo "/*@=warnlintcomments @*/";\
+-	  echo "/*@=uniondef @*/";\
+-	  echo "/*@=readonlytrans @*/";\
+-	  echo "/*@=nullassign @*/";\
+-	  echo "/*@=noeffect =noeffectuncon @*/";\
+-	  echo "/*@=globs =mods =modnomods =moduncon =modunconnomods @*/";\
+-	} > _gram.c ;\
+-	  mv -f _gram.c gram.c; \
+-	fi
++#gram.c:	gram.y
++#	$(YACC) -d -t -v -p syck -o $@ $<
++#	-@if test -f gram.c; then \
++#	{ echo "/*@-globs -mods -modnomods -moduncon -modunconnomods @*/";\
++#	  echo "/*@-noeffect -noeffectuncon @*/";\
++#	  echo "/*@-nullassign @*/";\
++#	  echo "/*@-readonlytrans @*/";\
++#	  echo "/*@-uniondef @*/";\
++#	  echo "/*@-warnlintcomments @*/";\
++#	  cat gram.c;\
++#	  echo "/*@=warnlintcomments @*/";\
++#	  echo "/*@=uniondef @*/";\
++#	  echo "/*@=readonlytrans @*/";\
++#	  echo "/*@=nullassign @*/";\
++#	  echo "/*@=noeffect =noeffectuncon @*/";\
++#	  echo "/*@=globs =mods =modnomods =moduncon =modunconnomods @*/";\
++#	} > _gram.c ;\
++#	  mv -f _gram.c gram.c; \
++#	fi
+ 
+ BUILT_SOURCES = gram.c gram.h
+ 
+diff -urN rpm-5.4.15/syck/lib/syck.c rpm-5.4-cvs/syck/lib/syck.c
+--- rpm-5.4.15/syck/lib/syck.c	2010-01-17 04:51:34.000000000 -0600
++++ rpm-5.4-cvs/syck/lib/syck.c	2015-02-23 03:37:02.000000000 -0600
+@@ -196,11 +196,11 @@
+     SYMID id = 0;
+     if ( p->syms == NULL )
+     {
+-        p->syms = st_init_numtable();
++        p->syms = syck_st_init_numtable();
+     }
+ assert(p->syms != NULL);
+     id = p->syms->num_entries + 1;
+-    st_insert( p->syms, (st_data_t)id, (st_data_t)data );
++    syck_st_insert( p->syms, (st_data_t)id, (st_data_t)data );
+     return id;
+ }
+ 
+@@ -208,7 +208,7 @@
+ syck_lookup_sym( SyckParser *p, SYMID id, char **data )
+ {
+     if ( p->syms == NULL ) return 0;
+-    return st_lookup( p->syms, (st_data_t)id, (void *)data );
++    return syck_st_lookup( p->syms, (st_data_t)id, (void *)data );
+ }
+ 
+ enum st_retval
+@@ -231,15 +231,15 @@
+      */
+     if ( p->anchors != NULL )
+     {
+-        st_foreach( p->anchors, syck_st_free_nodes, NULL );
+-        st_free_table( p->anchors );
++        syck_st_foreach( p->anchors, syck_st_free_nodes, NULL );
++        syck_st_free_table( p->anchors );
+         p->anchors = NULL;
+     }
+ 
+     if ( p->bad_anchors != NULL )
+     {
+-        st_foreach( p->bad_anchors, syck_st_free_nodes, NULL );
+-        st_free_table( p->bad_anchors );
++        syck_st_foreach( p->bad_anchors, syck_st_free_nodes, NULL );
++        syck_st_free_table( p->bad_anchors );
+         p->bad_anchors = NULL;
+     }
+ }
+@@ -252,7 +252,7 @@
+      */
+     if ( p->syms != NULL )
+     {
+-        st_free_table( p->syms );
++        syck_st_free_table( p->syms );
+         p->syms = NULL;
+     }
+ 
+@@ -519,7 +519,7 @@
+ }
+ 
+ void
+-syck_default_error_handler( SyckParser *p, char *msg )
++syck_default_error_handler( SyckParser *p, const char *msg )
+ {
+     printf( "Error at [Line %d, Col %ld]: %s\n", 
+         p->linect,
+diff -urN rpm-5.4.15/syck/lib/syck.h rpm-5.4-cvs/syck/lib/syck.h
+--- rpm-5.4.15/syck/lib/syck.h	2009-04-02 08:23:49.000000000 -0500
++++ rpm-5.4-cvs/syck/lib/syck.h	2015-02-23 03:37:02.000000000 -0600
+@@ -175,7 +175,7 @@
+ typedef struct _syck_level SyckLevel;
+ 
+ typedef SYMID (*SyckNodeHandler)(SyckParser *p, SyckNode *n);
+-typedef void (*SyckErrorHandler)(SyckParser *p, char *);
++typedef void (*SyckErrorHandler)(SyckParser *p, const char *);
+ typedef SyckNode * (*SyckBadAnchorHandler)(SyckParser *p, char *);
+ typedef long (*SyckIoFileRead)(char *, SyckIoFile *, long, long); 
+ typedef long (*SyckIoStrRead)(char *, SyckIoStr *, long, long);
+@@ -546,7 +546,7 @@
+ SYMID syck_parse( SyckParser *p )
+ 	/*@globals fileSystem @*/
+ 	/*@modifies p, fileSystem @*/;
+-void syck_default_error_handler( SyckParser *p, char * )
++void syck_default_error_handler( SyckParser *p, const char * )
+ 	/*@globals fileSystem @*/
+ 	/*@modifies p, fileSystem @*/;
+ SYMID syck_yaml2byte_handler( SyckParser *p, SyckNode *n )
+@@ -619,7 +619,7 @@
+ /*
+  * Lexer prototypes
+  */
+-void syckerror( char *msg )
++void syckerror( void *, const char *msg )
+ 	/*@*/;
+ int syckparse( void * )
+ 	/*@globals fileSystem @*/
+diff -urN rpm-5.4.15/syck/lib/syck_st.c rpm-5.4-cvs/syck/lib/syck_st.c
+--- rpm-5.4.15/syck/lib/syck_st.c	2013-08-04 15:58:26.000000000 -0500
++++ rpm-5.4-cvs/syck/lib/syck_st.c	2015-02-16 15:23:18.000000000 -0600
+@@ -198,7 +198,7 @@
+ #endif
+ 
+ st_table*
+-st_init_table_with_size(struct st_hash_type *type, size_t size)
++syck_st_init_table_with_size(struct st_hash_type *type, size_t size)
+ {
+     st_table *tbl;
+ 
+@@ -221,37 +221,37 @@
+ }
+ 
+ st_table*
+-st_init_table(struct st_hash_type *type)
++syck_st_init_table(struct st_hash_type *type)
+ {
+-    return st_init_table_with_size(type, 0);
++    return syck_st_init_table_with_size(type, 0);
+ }
+ 
+ st_table*
+-st_init_numtable(void)
++syck_st_init_numtable(void)
+ {
+-    return st_init_table(&type_numhash);
++    return syck_st_init_table(&type_numhash);
+ }
+ 
+ st_table*
+-st_init_numtable_with_size(int size)
++syck_st_init_numtable_with_size(int size)
+ {
+-    return st_init_table_with_size(&type_numhash, size);
++    return syck_st_init_table_with_size(&type_numhash, size);
+ }
+ 
+ st_table*
+-st_init_strtable(void)
++syck_st_init_strtable(void)
+ {
+-    return st_init_table(&type_strhash);
++    return syck_st_init_table(&type_strhash);
+ }
+ 
+ st_table*
+-st_init_strtable_with_size(int size)
++syck_st_init_strtable_with_size(int size)
+ {
+-    return st_init_table_with_size(&type_strhash, size);
++    return syck_st_init_table_with_size(&type_strhash, size);
+ }
+ 
+ void
+-st_free_table(st_table *table)
++syck_st_free_table(st_table *table)
+ {
+     register st_table_entry *ptr, *next;
+     int i;
+@@ -290,7 +290,7 @@
+ } while (0)
+ 
+ int
+-st_lookup(st_table *table, const char *key, const void **value)
++syck_st_lookup(st_table *table, const char *key, const void **value)
+ {
+     unsigned int hash_val, bin_pos;
+     register st_table_entry *ptr;
+@@ -354,7 +354,7 @@
+ } while (0)
+ 
+ int
+-st_insert(st_table *table, const char *key, const void *value)
++syck_st_insert(st_table *table, const char *key, const void *value)
+ {
+     unsigned int hash_val, bin_pos;
+     register st_table_entry *ptr;
+@@ -373,7 +373,7 @@
+ }
+ 
+ void
+-st_add_direct(st_table *table, const char *key, const void *value)
++syck_st_add_direct(st_table *table, const char *key, const void *value)
+ {
+     unsigned int hash_val, bin_pos;
+ 
+@@ -383,7 +383,7 @@
+ }
+ 
+ st_table*
+-st_copy(st_table *old_table)
++syck_st_copy(st_table *old_table)
+ {
+     st_table *new_table;
+     st_table_entry *ptr, *entry;
+@@ -423,7 +423,7 @@
+ }
+ 
+ int
+-st_delete(st_table *table, const void **key, const void **value)
++syck_st_delete(st_table *table, const void **key, const void **value)
+ {
+     unsigned int hash_val;
+     st_table_entry *tmp;
+@@ -462,7 +462,7 @@
+ }
+ 
+ int
+-st_delete_safe(st_table *table, const void **key, const void **value, char *never)
++syck_st_delete_safe(st_table *table, const void **key, const void **value, char *never)
+ {
+     unsigned int hash_val;
+     register st_table_entry *ptr;
+@@ -496,7 +496,7 @@
+ }
+ 
+ void
+-st_foreach(st_table *table,
++syck_st_foreach(st_table *table,
+ 		enum st_retval (*func)(const char *key, const void *record, void *arg),
+ 		void *arg)
+ {
+@@ -532,10 +532,10 @@
+ }
+ 
+ void
+-st_cleanup_safe(st_table *table, char *never)
++syck_st_cleanup_safe(st_table *table, char *never)
+ {
+     int num_entries = table->num_entries;
+ 
+-    st_foreach(table, delete_never, never);
++    syck_st_foreach(table, delete_never, never);
+     table->num_entries = num_entries;
+ }
+diff -urN rpm-5.4.15/syck/lib/syck_st.h rpm-5.4-cvs/syck/lib/syck_st.h
+--- rpm-5.4.15/syck/lib/syck_st.h	2013-08-04 15:58:26.000000000 -0500
++++ rpm-5.4-cvs/syck/lib/syck_st.h	2015-02-16 15:23:18.000000000 -0600
+@@ -31,44 +31,44 @@
+ #endif
+ 
+ /*@null@*/
+-st_table *st_init_table(struct st_hash_type *type)
++st_table *syck_st_init_table(struct st_hash_type *type)
+ 	/*@*/;
+ /*@null@*/
+-st_table *st_init_table_with_size(struct st_hash_type *type, size_t size)
++st_table *syck_st_init_table_with_size(struct st_hash_type *type, size_t size)
+ 	/*@*/;
+ /*@null@*/
+-st_table *st_init_numtable(void)
++st_table *syck_st_init_numtable(void)
+ 	/*@*/;
+ /*@null@*/
+-st_table *st_init_numtable_with_size(int size)
++st_table *syck_st_init_numtable_with_size(int size)
+ 	/*@*/;
+ /*@null@*/
+-st_table *st_init_strtable(void)
++st_table *syck_st_init_strtable(void)
+ 	/*@*/;
+ /*@null@*/
+-st_table *st_init_strtable_with_size(int size)
++st_table *syck_st_init_strtable_with_size(int size)
+ 	/*@*/;
+-void st_free_table(/*@only@*/ st_table *table)
++void syck_st_free_table(/*@only@*/ st_table *table)
+ 	/*@modifies table @*/;
+-int st_lookup(st_table *table, const char *key, /*@out@*/ const void **value)
++int syck_st_lookup(st_table *table, const char *key, /*@out@*/ const void **value)
+ 	/*@modifies *value @*/;
+-int st_insert(st_table *table, const char *key, const void *value)
++int syck_st_insert(st_table *table, const char *key, const void *value)
+ 	/*@modifies table @*/;
+-void st_add_direct(st_table *table, const char *key, const void *value)
++void syck_st_add_direct(st_table *table, const char *key, const void *value)
+ 	/*@modifies table @*/;
+ /*@null@*/
+-st_table *st_copy(st_table *old_table)
++st_table *syck_st_copy(st_table *old_table)
+ 	/*@modifies old_table @*/;
+-int st_delete(st_table *table, const void **key, /*@out@*/ const void **value)
++int syck_st_delete(st_table *table, const void **key, /*@out@*/ const void **value)
+ 	/*@modifies table, *key, *value @*/;
+-int st_delete_safe(st_table *table, const void **key, /*@out@*/ const void **value,
++int syck_st_delete_safe(st_table *table, const void **key, /*@out@*/ const void **value,
+ 		char *never)
+ 	/*@modifies table, *key, *value @*/;
+-void st_foreach(st_table *table,
++void syck_st_foreach(st_table *table,
+ 		enum st_retval (*func) (const char *key, const void *record, void *arg),
+ 		/*@null@*/ void *arg)
+ 	/*@modifies table @*/;
+-void st_cleanup_safe(st_table *table, char *never)
++void syck_st_cleanup_safe(st_table *table, char *never)
+ 	/*@modifies table @*/;
+ 
+ #ifdef __cplusplus
+diff -urN rpm-5.4.15/syck/lib/token.c rpm-5.4-cvs/syck/lib/token.c
+--- rpm-5.4.15/syck/lib/token.c	2009-04-03 06:16:57.000000000 -0500
++++ rpm-5.4-cvs/syck/lib/token.c	2015-02-23 03:37:02.000000000 -0600
+@@ -270,11 +270,11 @@
+         return sycklex_yaml_utf8( sycklval, parser );
+ 
+         case syck_yaml_utf16:
+-            syckerror( "UTF-16 is not currently supported in Syck.\nPlease contribute code to help this happen!" );
++            syckerror( parser, "UTF-16 is not currently supported in Syck.\nPlease contribute code to help this happen!" );
+         break;
+ 
+         case syck_yaml_utf32:
+-            syckerror( "UTF-32 is not currently supported in Syck.\nPlease contribute code to help this happen!" );
++            syckerror( parser, "UTF-32 is not currently supported in Syck.\nPlease contribute code to help this happen!" );
+         break;
+ 
+         case syck_bytecode_utf8:
+@@ -2739,14 +2739,15 @@
+ }
+ 
+ void 
+-syckerror( char *msg )
++syckerror( void *p, const char *msg )
+ {
++    SyckParser * parser = (SyckParser *)p;
+ /*@-mods@*/
+-    if ( syck_parser_ptr->error_handler == NULL )
+-        syck_parser_ptr->error_handler = syck_default_error_handler;
++    if ( parser->error_handler == NULL )
++        parser->error_handler = syck_default_error_handler;
+ 
+-    syck_parser_ptr->root = syck_parser_ptr->root_on_error;
++    parser->root = parser->root_on_error;
+ /*@=mods@*/
+-    (syck_parser_ptr->error_handler)(syck_parser_ptr, msg);
++    (parser->error_handler)(parser, msg);
+ }
+ 
+diff -urN rpm-5.4.15/syck/Makefile.am rpm-5.4-cvs/syck/Makefile.am
+--- rpm-5.4.15/syck/Makefile.am	2009-04-01 15:43:57.000000000 -0500
++++ rpm-5.4-cvs/syck/Makefile.am	2015-05-10 12:55:16.000000000 -0500
+@@ -5,3 +5,6 @@
+ #
+ SUBDIRS = lib tests
+ 
++distclean-local:
++	rm -f .syntastic_c_config
++	rm -f cscope.files cscope.out cscope.in.out cscope.po.out
+diff -urN rpm-5.4.15/syck/tests/Parse.c rpm-5.4-cvs/syck/tests/Parse.c
+--- rpm-5.4.15/syck/tests/Parse.c	2009-04-01 16:16:55.000000000 -0500
++++ rpm-5.4-cvs/syck/tests/Parse.c	2015-02-16 15:23:18.000000000 -0600
+@@ -135,7 +135,7 @@
+     syck_parser_handler( parser, SyckParseStringHandler );
+     syck_parser_str_auto( parser, "--- {test: 1, and: 2, or: &test 13}", NULL );
+     syckparse( parser );
+-    st_foreach( parser->anchors, (void *)ListAnchors, tc );
++    syck_st_foreach( parser->anchors, (void *)ListAnchors, tc );
+     syck_free_parser( parser );
+ }
+ 
+diff -urN rpm-5.4.15/syck/tests/YTS.c rpm-5.4-cvs/syck/tests/YTS.c
+--- rpm-5.4.15/syck/tests/YTS.c	2009-04-01 16:16:55.000000000 -0500
++++ rpm-5.4-cvs/syck/tests/YTS.c	2015-02-16 15:23:18.000000000 -0600
+@@ -173,7 +173,7 @@
+     /* Free the node tables and the parser */
+     S_FREE( ystream );
+     if ( parser->syms != NULL )
+-        st_foreach( parser->syms, (void *)syck_free_copies, 0 );
++        syck_st_foreach( parser->syms, (void *)syck_free_copies, 0 );
+     syck_free_parser( parser );
+ }
+ 
+diff -urN rpm-5.4.15/syck/tests/YTS.c.erb rpm-5.4-cvs/syck/tests/YTS.c.erb
+--- rpm-5.4.15/syck/tests/YTS.c.erb	2008-10-17 14:01:17.000000000 -0500
++++ rpm-5.4-cvs/syck/tests/YTS.c.erb	2015-02-16 15:23:18.000000000 -0600
+@@ -172,7 +172,7 @@
+     /* Free the node tables and the parser */
+     S_FREE( ystream );
+     if ( parser->syms != NULL )
+-        st_foreach( parser->syms, syck_free_copies, 0 );
++        syck_st_foreach( parser->syms, syck_free_copies, 0 );
+     syck_free_parser( parser );
+ }
+ 

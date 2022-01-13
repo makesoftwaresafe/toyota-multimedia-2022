@@ -1,0 +1,143 @@
+# Translation of ca-certificates debconf template to Swedish
+# Copyright (C) 2011 Martin Bagge <brother@bsnet.se>
+# This file is distributed under the same license as the ca-certificates package.
+#
+# Daniel Nylander <po@danielnylander.se>, 2007
+# Martin Bagge <brother@bsnet.se>, 2011
+msgid ""
+msgstr ""
+"Project-Id-Version: ca-certificates 20050804\n"
+"Report-Msgid-Bugs-To: ca-certificates@packages.debian.org\n"
+"POT-Creation-Date: 2011-10-22 14:41+0200\n"
+"PO-Revision-Date: 2011-09-05 23:40+0100\n"
+"Last-Translator: Martin Bagge / brother <brother@bsnet.se>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: Sweden\n"
+
+#. Type: title
+#. Description
+#: ../templates:2001
+msgid "ca-certificates configuration"
+msgstr "Inställningar för ca-certificates"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "yes"
+msgstr "ja"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "no"
+msgstr "nej"
+
+#. Type: select
+#. Choices
+#: ../templates:3001
+msgid "ask"
+msgstr "fråga"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid "Trust new certificates from certificate authorities?"
+msgstr "Lita på nya certifikat från certifikatutfärdare?"
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+"This package may install new CA (Certificate Authority) certificates when "
+"upgrading. You may want to check such new CA certificates and select only "
+"certificates that you trust."
+msgstr ""
+"Detta paket kan installera nya CA-certifikat (Certificate Authority) vid "
+"uppgradering.  Du kanske vill kontrollera de nya CA-certifikaten och endast "
+"välja de certifikat som du litar på."
+
+#. Type: select
+#. Description
+#: ../templates:3002
+msgid ""
+" - yes: new CA certificates will be trusted and installed;\n"
+" - no : new CA certificates will not be installed by default;\n"
+" - ask: prompt for each new CA certificate."
+msgstr ""
+" - ja: nya CA-certifikat kommer att litas på och installeras;\n"
+" - nej: nya CA-certifikat kommer inte att installeras som standard;\n"
+" - fråga: fråga för varje nytt CA-certifikat."
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid "New certificates to activate:"
+msgstr "Nya certfikat att aktivera:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:4001
+msgid ""
+"During upgrades, new certificates will be added. Please choose those you "
+"trust."
+msgstr ""
+"Under uppgraderingar kommer nya certifikat att läggas till. Välj de som du "
+"litar på."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid "Certificates to activate:"
+msgstr "Certfikat att aktivera:"
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"This package installs common CA (Certificate Authority) certificates in /usr/"
+"share/ca-certificates."
+msgstr ""
+"Detta paket installerar gemensamma CA-certifikat (Certificate Authority) i /"
+"usr/share/ca-certificates."
+
+#. Type: multiselect
+#. Description
+#: ../templates:5001
+msgid ""
+"Please select the certificate authorities you trust so that their "
+"certificates are installed into /etc/ssl/certs. They will be compiled into a "
+"single /etc/ssl/certs/ca-certificates.crt file."
+msgstr ""
+"Välj de certifikatutfärdare som du litar på så att deras certifikat "
+"installeras i /etc/ssl/certs. De kommer att kompileras till en enda fil, /"
+"etc/ssl/certs/ca-certificates.crt."
+
+#~ msgid "yes, no, ask"
+#~ msgstr "ja, nej, fråga"
+
+#~ msgid "${new_crts}"
+#~ msgstr "${new_crts}"
+
+#~ msgid "${enable_crts}"
+#~ msgstr "${enable_crts}"
+
+#~ msgid "Select new certificates to activate:"
+#~ msgstr "Välj ett nytt certifikat som ska aktiveras:"
+
+#~ msgid ""
+#~ "This package installs common CA (Certificate Authority) certificates in /"
+#~ "usr/share/ca-certificates. You can select certs from these available "
+#~ "certs to be installed into /etc/ssl/certs. This package will make "
+#~ "symlinks and generate a single file of all your selected certs, /etc/ssl/"
+#~ "certs/ca-certificates.crt."
+#~ msgstr ""
+#~ "Detta paket installerar allmänna CA (Certificate Authority)-certifikat i /"
+#~ "usr/share/ca-certificates. Du kan välja certifikat bland dessa "
+#~ "tillgängliga certifikat för att installeras till /etc/ssl/certs. Detta "
+#~ "paket kommer att göra symboliska länkar och generera en enda fil av alla "
+#~ "dina valda certifikat, /etc/ssl/certs/ca-certificates.crt."
