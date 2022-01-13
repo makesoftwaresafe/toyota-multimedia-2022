@@ -1,0 +1,12 @@
+version: '1.14'
+project: makesoftwaresafe/toyota-multimedia-2022
+target: atftpd
+baseimage: makesoftwaresafe/toyota-multimedia-2022:atftpd
+duration: 86400 # 1 day
+
+cmds:
+- cmd: /usr/sbin/atftpd --no-fork --daemon --port 8069  /srv/tftp/
+  network:
+     is_client: false
+     timeout: 10.0
+     url: udp://localhost:8069
