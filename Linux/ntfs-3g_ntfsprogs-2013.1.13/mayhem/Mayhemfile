@@ -1,0 +1,9 @@
+version: '1.15'
+baseimage: $MAYHEM_DOCKER_REGISTRY/makesoftwaresafe/toyota-multimedia-2022/ntfs-3g:latest
+project: makesoftwaresafe/toyota-multimedia-2022
+target: ntfs-3g-ntfsinfo
+advanced_triage: true
+cmds:
+  - cmd: /ntfs-3g/bin/ntfsinfo -i 0 @@
+    max_length: 2097152
+
