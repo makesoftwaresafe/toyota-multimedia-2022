@@ -1,0 +1,42 @@
+# Mayhem by https://forallsecure.com
+# Mayhemfile: configuration file for testing your target with Mayhem
+# Format: YAML 1.1
+
+# Mayhemfile version specifier
+version: '1.16'
+
+# Namespaced project name that the target belongs to
+project: makesoftwaresafe/toyota-multimedia-2022
+
+# Target name (should be unique within the project)
+target: atftp-atftpd-tftp
+
+# Base image to run the binary in.
+baseimage: $MAYHEM_DOCKER_REGISTRY/makesoftwaresafe/toyota-multimedia-2022/atftpd:latest
+
+# List of commands used to test the target
+cmds:
+
+  # Command used to start the target, "@@" is the input file
+  # (when "@@" is omitted Mayhem defaults to stdin inputs)
+  - cmd: /usr/local/bin/atftpd --daemon --no-fork --user root.root --logfile - /tftpboot
+
+    ## Uncomment to change default dir (/) from which the target is invoked
+    #chdir: /
+
+    ## If this is a network target, uncomment the block below and remove
+    ## the @@ input file reference in the cmd (you can either test network or
+    ## file inputs, not both).
+    network:
+    # Use "127.0.0.1" instead of "localhost" below if you want to test only
+    # for IPv4. For IPv6, use "[::1]". By leaving as "localhost", Mayhem will
+    # attempt to autodetect the one used by the target.
+      url: udp://localhost:69    # protocol, host and port to analyze
+      is_client: false           # target is a client-side program
+      timeout: 2.0               # max seconds for sending data
+
+    ## Max test case length (in bytes) to be taken into account. Test cases over
+    ## that length will be truncated. Be very careful about increasing this
+    ## limit as it can severely affect your fuzzer performance.
+    # max_length: 8192
+
